@@ -23,6 +23,18 @@ coverage-report:
 	@echo "Generating code coverage report..."
 	@gcovr -f src --exclude='src/main.cpp' --json-summary -o tests/coverage_report.json
 
+# Met à jour le README.md avec la table
+update-readme:
+	@python3 tests/coverage_report/generate_coverage_table.py
+	@awk '/<!-- COVERAGE-START -->/,/<!-- COVERAGE-END -->/ { next } { print }' README.md > README.tmp
+	@echo '<!-- COVERAGE-START -->' >> README.tmp
+	@cat COVERAGE_TABLE.md >> README.tmp
+	@echo '<!-- COVERAGE-END -->' >> README.tmp
+	@mv README.tmp README.md
+	@rm COVERAGE_TABLE.md
+	@echo "README.md mis à jour avec la couverture de code."
+
+
 # Generate documentation using Doxygen
 generate-doc:
 	@echo "Generating documentation..."
