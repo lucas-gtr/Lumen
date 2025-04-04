@@ -9,20 +9,20 @@ permissions:
   contents: write
 
 jobs:
-#  clang-format-and-tidy:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Checkout code
-#        uses: actions/checkout@v3
+# clang-format-and-tidy:
+#   runs-on: ubuntu-latest
+#   steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v3
 #
-#      - name: Install dependencies for clang-format and clang-tidy
-#        run: |
-#          sudo apt-get update
-#          sudo apt-get install -y clang-format clang-tidy
+#     - name: Install dependencies for clang-format and clang-tidy
+#       run: |
+#         sudo apt-get update
+#         sudo apt-get install -y clang-format clang-tidy
 #
-#      - name: Check code format and lint
-#        run: |
-#          make check-format-and-lint
+#     - name: Check code format and lint
+#       run: |
+#         make check-format-and-lint
 
   run-tests:
     runs-on: ubuntu-latest
@@ -45,9 +45,12 @@ jobs:
           make coverage-report
 
       - name: Commit updated coverage report
-        uses: EndBug/add-and-commit@v9
-        with:
-          author_name: "github-actions"
-          author_email: "actions@github.com"
-          message: 'Update code coverage report'
-          add: 'tests/*'
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git pull origin main
+          git add tests/
+          git commit -m "Update code coverage report"
+          git push origin HEAD:main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
