@@ -19,6 +19,10 @@ run-tests:
 	@cmake --build build
 	@./build/tests/Tests
 
+coverage-report:
+	@echo "Generating code coverage report..."
+	@gcovr -f src --exclude='src/main.cpp' --json-summary -o tests/coverage_report/coverage_report.json
+
 # Generate documentation using Doxygen
 generate-doc:
 	@echo "Generating documentation..."
