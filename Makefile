@@ -34,6 +34,7 @@ update-readme:
 	@rm COVERAGE_TABLE.md
 	@echo "README.md mis à jour avec la couverture de code."
 
+
 # Generate documentation using Doxygen
 generate-doc:
 	@echo "Generating documentation..."
