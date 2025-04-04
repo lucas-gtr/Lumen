@@ -10,8 +10,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS YES)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
-add_subdirectory(external/googletest)
-
 add_library(Factorial STATIC src/factorial.cpp)
 target_include_directories(Factorial PUBLIC
     ${CMAKE_SOURCE_DIR}/include 
@@ -71,5 +69,6 @@ if(ENABLE_DOXYGEN)
 endif()
 
 if(ENABLE_TESTS)
+    add_subdirectory(external/googletest)
     add_subdirectory(tests)
 endif()
