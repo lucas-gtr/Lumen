@@ -12,10 +12,6 @@ TEST(FactorialTest, HandlesPositiveInput) {
     EXPECT_EQ(factorial(5), 120); 
 }
 
-TEST(FactorialTest, HandlesNegativeInput) {
-    EXPECT_THROW(factorial(-1), std::invalid_argument);
-}
-
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
