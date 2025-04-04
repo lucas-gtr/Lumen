@@ -69,6 +69,7 @@ if(ENABLE_DOXYGEN)
 endif()
 
 if(ENABLE_TESTS)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage -O0 -g")
     add_subdirectory(external/googletest)
     add_subdirectory(tests)
 endif()
