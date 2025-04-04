@@ -1,0 +1,16 @@
+BasedOnStyle: LLVM
+IndentWidth: 2
+UseTab: Never
+TabWidth: 2
+ColumnLimit: 120
+AllowShortIfStatementsOnASingleLine: false
+BreakBeforeBraces: Attach
+SpaceBeforeParens: Never
+SpacesInParentheses: false
+SpaceAfterCStyleCast: false
+PointerAlignment: Left
+AlignAfterOpenBracket: Align
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+AlignOperands: true
+MaxEmptyLinesToKeep: 1

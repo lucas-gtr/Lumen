@@ -1,0 +1,4 @@
+Checks: '*,-misc-no-recursion,-llvmlibc-implementation-in-namespace,-modernize-use-trailing-return-type,-llvmlibc-callee-namespace,-llvmlibc-restrict-system-libc-headers'
+HeaderFilterRegex: '.*'
+FormatStyle: 'file'
+WarningsAsErrors: '*'
