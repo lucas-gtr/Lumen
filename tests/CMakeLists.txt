@@ -1,7 +1,6 @@
 add_executable(Tests tests.cpp)
 
 target_link_libraries(Tests PUBLIC 
-    Factorial
     gtest)
 
 target_include_directories(Tests PUBLIC

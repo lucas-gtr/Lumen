@@ -10,10 +10,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS YES)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
-add_library(Factorial STATIC src/factorial.cpp)
-target_include_directories(Factorial PUBLIC
-    ${CMAKE_SOURCE_DIR}/include 
-)
+add_subdirectory(external/eigen)
 
 add_executable(Lumen src/main.cpp)
 
@@ -22,14 +19,13 @@ target_include_directories(Lumen PUBLIC
     ${CMAKE_SOURCE_DIR}/external
 )
 
-target_link_libraries(Lumen PUBLIC
-    Factorial    
-    gtest
-)
+# target_link_libraries(Lumen PUBLIC    
+# )
 
 option(ENABLE_COMPILE_WARNINGS "Enable Compiler Warnings" ON)
 option(ENABLE_SANITIZERS "Enable Sanitizers" ON)
-option(ENABLE_LTO "Enable Link Time Optimization" ON)
+option(ENABLE_COMPILER_OPTIMIZATIONS "Enable Compiler Optimizations" ON)
+option(ENABLE_LTO "Enable Link Time Optimization" OFF)
 
 option(ENABLE_CLANG_FORMAT "Enable Clang-Format" OFF)
 option(ENABLE_CLANG_TIDY "Enable Clang-Tidy" OFF)
@@ -37,6 +33,10 @@ option(ENABLE_DOXYGEN "Enable Doxygen" OFF)
 option(ENABLE_TESTS "Enable Tests" OFF)
 
 set(FILES_TO_CHECK "" CACHE STRING "Files to check with Clang-Tidy and Clang-Format. Set to 'all' to check all source files.")
+
+if(ENABLE_COMPILER_OPTIMIZATIONS)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -march=native")
+endif()
 
 if(ENABLE_CLANG_FORMAT)
     include(clang-format)
