@@ -8,20 +8,20 @@ all: configure build
 # Check all source files with clang-format and clang-tidy
 check-format-and-lint:
 	@echo "Checking all files with clang-format and clang-tidy..."
-	@cmake -S . -B build -DFILES_TO_CHECK=all -DENABLE_CLANG_FORMAT=ON -DENABLE_CLANG_TIDY=ON
-	@cmake --build build --target run-clang-format
-	@cmake --build build --target run-clang-tidy
+	@cmake -S . -B build-lint -DFILES_TO_CHECK=all -DENABLE_CLANG_FORMAT=ON -DENABLE_CLANG_TIDY=ON
+	@cmake --build build-lint --target run-clang-format
+	@cmake --build build-lint --target run-clang-tidy
 
 # Run tests after building
 run-tests:
-	@echo "Running tests..."
-	@cmake -S . -B build -DENABLE_TESTS=ON
-	@cmake --build build
-	@./build/tests/Tests
+	@echo "Running unit tests..."
+	@cmake -S . -B build-tests -DENABLE_TESTS=ON -DENABLE_COMPILER_OPTIMIZATIONS=OFF
+	@cmake --build build-tests
+	@./build-tests/tests/Tests
 
 coverage-report:
 	@echo "Generating code coverage report..."
-	@gcovr -f src --exclude='src/main.cpp' --json-summary -o tests/coverage_report.json
+	@gcovr -f src --exclude='src/main.cpp' --json-summary -o tests/coverage_report/coverage_report.json
 
 # Met à jour le README.md avec la table
 update-readme:
@@ -38,8 +38,8 @@ update-readme:
 # Generate documentation using Doxygen
 generate-doc:
 	@echo "Generating documentation..."
-	@cmake -S . -B build -DENABLE_DOXYGEN=ON
-	@cmake --build build --target generate-doc
+	@cmake -S . -B build-dev -DENABLE_DOXYGEN=ON
+	@cmake --build build-dev --target generate-doc
 
 # Configure the project with CMake
 configure:
@@ -48,15 +48,17 @@ configure:
 
 # Build the project
 build:
-	@echo "Building the project..."
-	@cmake --build build
-	@echo "Operation completed successfully."
+	@echo "Building development version..."
+	@cmake -S . -B build-dev
+	@cmake --build build-dev
 
 # Clean the build folder
 clean:
 	@if [ -d "build" ]; then \
 		echo "Removing 'build' folder..."; \
-		rm -rf build; \
+		rm -rf build-dev; \
+		rm -rf build-tests; \
+		rm -rf build-lint; \
 	else \
 		echo "'build' folder does not exist."; \
 	fi

@@ -1,9 +1,10 @@
 #include <climits>
+#include <eigen/Eigen/Core>
 #include <iostream>
 
-#include "factorial.hpp"
-
 int main() {
-  std::cout << factorial(3) << '\n';
+  const Eigen::Matrix3f mat = Eigen::Matrix3f::Identity();
+  std::cout << "Identity matrix:\n" << mat << '\n';
+
   return 0;
 }
