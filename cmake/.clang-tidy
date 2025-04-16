@@ -1,4 +1,9 @@
-Checks: '*,-misc-no-recursion,-llvmlibc-implementation-in-namespace,-modernize-use-trailing-return-type,-llvmlibc-callee-namespace,-llvmlibc-restrict-system-libc-headers'
+Checks: '*,-misc-no-recursion,-llvmlibc-*,-modernize-use-trailing-return-type, -readability-identifier-length, -altera-*, -modernize-use-nodiscard, -fuchsia-overloaded-operator, -modernize-pass-by-value, -fuchsia-default-arguments-calls'
 HeaderFilterRegex: '^(?!.*external).*'
 FormatStyle: 'file'
+CheckOptions: 
+  - key: cppcoreguidelines-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic
+    value: '1'
+  - key: misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic
+    value: '1'
 WarningsAsErrors: '*'

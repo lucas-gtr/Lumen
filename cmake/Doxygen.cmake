@@ -6,7 +6,7 @@ function(generate_doxygen_docs)
         return()
     endif()
     
-    set(DOXYGEN_INPUT_DIR "${CMAKE_SOURCE_DIR}/src")
+    set(DOXYGEN_INPUT_DIR "${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/include")
     set(DOXYGEN_OUTPUT_DIR "${CMAKE_SOURCE_DIR}/docs")
     set(DOXYGEN_CONFIG_FILE "${CMAKE_BINARY_DIR}/Doxyfile")
 

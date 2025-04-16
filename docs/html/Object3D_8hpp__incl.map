@@ -1,0 +1,18 @@
+<map id="/home/lucasgtr/lumen/include/Core/Object3D.hpp" name="/home/lucasgtr/lumen/include/Core/Object3D.hpp">
+<area shape="rect" id="Node000001" title="Header file for the Object3D class." alt="" coords="79,5,278,45"/>
+<area shape="rect" id="Node000002" href="$Mesh_8hpp.html" title="Header file for the Mesh class, the Vertex and Face structures." alt="" coords="75,93,160,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,47,137,84,133,81,162,44"/>
+<area shape="rect" id="Node000006" href="$Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="184,93,299,119"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="196,44,225,81,221,84,192,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="173,167,265,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="135,116,192,156,189,161,132,121"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,167,61,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="106,121,59,160,56,155,102,117"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="86,167,149,192"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="120,119,120,153,115,153,115,119"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="240,120,229,154,224,153,235,118"/>
+<area shape="rect" id="Node000007" href="$MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="289,167,471,192"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="265,116,346,158,344,163,262,121"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="341,240,419,265"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="383,192,383,226,377,226,377,192"/>
+</map>
