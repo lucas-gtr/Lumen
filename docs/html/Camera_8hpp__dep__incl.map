@@ -1,0 +1,12 @@
+<map id="/home/lucasgtr/lumen/include/Core/Camera.hpp" name="/home/lucasgtr/lumen/include/Core/Camera.hpp">
+<area shape="rect" id="Node000001" title="Header file for the Camera class." alt="" coords="201,5,392,45"/>
+<area shape="rect" id="Node000002" href="$Scene_8hpp.html" title="Header file for the Scene class." alt="" coords="110,93,289,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="267,56,223,95,219,91,263,52"/>
+<area shape="rect" id="Node000005" href="$Camera_8cpp.html" title=" " alt="" coords="313,93,477,133"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="330,52,375,91,372,95,327,56"/>
+<area shape="rect" id="Node000003" href="$Renderer_8hpp.html" title="Header file for the Renderer class." alt="" coords="5,181,239,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="175,145,141,183,137,179,171,142"/>
+<area shape="rect" id="Node000004" href="$Renderer_8cpp.html" title=" " alt="" coords="97,269,301,309"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="231,142,244,160,254,180,258,201,254,222,240,249,222,271,218,267,235,246,249,220,253,201,249,182,239,163,227,145"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="150,230,184,267,180,271,146,233"/>
+</map>

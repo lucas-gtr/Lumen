@@ -10,7 +10,7 @@ function(run_clang_format)
     
     if(FILES_TO_CHECK)
         if(FILES_TO_CHECK STREQUAL "all")
-            file(GLOB_RECURSE SOURCE_FILES "${CMAKE_SOURCE_DIR}/src/*.cpp" "${CMAKE_SOURCE_DIR}/src/*.h" "${CMAKE_SOURCE_DIR}/src/*.hpp")
+            file(GLOB_RECURSE SOURCE_FILES "${CMAKE_SOURCE_DIR}/src/*.cpp" "${CMAKE_SOURCE_DIR}/include/*.hpp")
         else()
             foreach(file IN LISTS FILES_TO_CHECK)
                 if(file MATCHES ".*\\.cpp$" OR file MATCHES ".*\\.h$" OR file MATCHES ".*\\.hpp$")

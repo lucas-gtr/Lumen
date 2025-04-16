@@ -1,9 +1,11 @@
-.PHONY: all configure build clean check-format-and-lint run-tests generate-doc
+.PHONY: all run check-format-and-lint configure-tests run-tests coverage-report update-readme generate-doc configure-dev build-dev clean
 
 MAKEFLAGS += --no-print-directory
 
-# Configure and build the project
-all: configure build
+# Run the development version of the program
+run:
+	@make build-dev
+	@./build-dev/Lumen
 
 # Check all source files with clang-format and clang-tidy
 check-format-and-lint:
@@ -12,20 +14,25 @@ check-format-and-lint:
 	@cmake --build build-lint --target run-clang-format
 	@cmake --build build-lint --target run-clang-tidy
 
+# Configure the project for unit tests
+configure-tests:
+	@echo "Configuring unit tests..."
+	@cmake -S . -B build-tests -DENABLE_TESTS=ON -DENABLE_COMPILER_OPTIMIZATIONS=OFF
+
 # Run tests after building
 run-tests:
 	@echo "Running unit tests..."
-	@cmake -S . -B build-tests -DENABLE_TESTS=ON -DENABLE_COMPILER_OPTIMIZATIONS=OFF
 	@cmake --build build-tests
 	@./build-tests/tests/Tests
 
-coverage-report:
+coverage-report: run-tests
 	@echo "Generating code coverage report..."
-	@gcovr -f src --exclude='src/main.cpp' --json-summary -o tests/coverage_report/coverage_report.json
+	@gcovr -f src -f include --exclude='src/main.cpp' --exclude-throw-branches --json-summary -o tests/coverage_report/coverage_report.json
+	@gcovr -f src -f include --exclude='src/main.cpp' --exclude-throw-branches --html-details -o tests/coverage_report/coverage_report.html
 
 # Met à jour le README.md avec la table
 update-readme:
-	@python3 tests/coverage_report/generate_coverage_table.py
+	@python3 tests/generate_coverage_table.py
 	@awk '/<!-- COVERAGE-START -->/,/<!-- COVERAGE-END -->/ { next } { print }' README.md > README.tmp
 	@echo '<!-- COVERAGE-START -->' >> README.tmp
 	@cat COVERAGE_TABLE.md >> README.tmp
@@ -42,14 +49,13 @@ generate-doc:
 	@cmake --build build-dev --target generate-doc
 
 # Configure the project with CMake
-configure:
+configure-dev:
 	@echo "Configuring the project with CMake..."
-	@cmake -S . -B build
+	@cmake -S . -B build-dev
 
 # Build the project
-build:
+build-dev:
 	@echo "Building development version..."
-	@cmake -S . -B build-dev
 	@cmake --build build-dev
 
 # Clean the build folder

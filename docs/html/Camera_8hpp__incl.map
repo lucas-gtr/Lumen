@@ -1,0 +1,20 @@
+<map id="/home/lucasgtr/lumen/include/Core/Camera.hpp" name="/home/lucasgtr/lumen/include/Core/Camera.hpp">
+<area shape="rect" id="Node000001" title="Header file for the Camera class." alt="" coords="241,5,432,45"/>
+<area shape="rect" id="Node000002" href="$Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="86,93,211,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="293,48,190,90,188,85,291,43"/>
+<area shape="rect" id="Node000005" href="$MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="221,167,404,192"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="328,47,317,69,309,94,306,124,310,153,304,153,301,124,303,93,312,67,323,45"/>
+<area shape="rect" id="Node000007" href="$Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="318,93,467,119"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="352,44,379,80,374,84,348,47"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="491,93,577,119"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="385,43,493,86,491,91,383,48"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,167,76,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="133,121,71,161,68,157,130,116"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="100,167,197,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="151,119,151,153,146,153,146,119"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="273,240,352,265"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="315,192,315,226,310,226,310,192"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="382,121,338,160,334,156,378,117"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="428,167,520,192"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="407,117,452,156,449,160,404,121"/>
+</map>

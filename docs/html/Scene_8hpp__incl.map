@@ -1,0 +1,38 @@
+<map id="/home/lucasgtr/lumen/include/Core/Scene.hpp" name="/home/lucasgtr/lumen/include/Core/Scene.hpp">
+<area shape="rect" id="Node000001" title="Header file for the Scene class." alt="" coords="497,5,676,45"/>
+<area shape="rect" id="Node000002" href="$Camera_8hpp.html" title="Header file for the Camera class." alt="" coords="166,93,301,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="503,48,299,93,298,88,501,43"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="443,240,535,265"/>
+<area shape="poly" id="edge17_Node000001_Node000009" title=" " alt="" coords="581,46,502,228,497,226,576,44"/>
+<area shape="rect" id="Node000011" href="$Object3D_8hpp.html" title="Header file for the Object3D class." alt="" coords="325,93,469,119"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="542,48,439,90,437,85,540,43"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="641,240,703,265"/>
+<area shape="poly" id="edge20_Node000001_Node000014" title=" " alt="" coords="597,45,644,166,666,226,661,228,639,168,592,47"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="704,93,781,119"/>
+<area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="625,43,709,85,706,89,623,48"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="806,93,866,119"/>
+<area shape="poly" id="edge19_Node000001_Node000016" title=" " alt="" coords="647,43,794,89,792,94,646,48"/>
+<area shape="rect" id="Node000003" href="$Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="115,167,240,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="226,121,197,157,193,154,222,117"/>
+<area shape="rect" id="Node000006" href="$MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="237,240,419,265"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="243,118,315,227,311,230,239,121"/>
+<area shape="rect" id="Node000008" href="$Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="319,167,468,192"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="260,116,356,159,354,163,258,121"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="5,167,91,192"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="205,121,92,164,90,159,203,116"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="142,240,213,265"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="180,192,180,226,175,226,175,192"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="21,240,118,265"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="161,194,100,235,97,230,159,190"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="289,313,367,339"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="331,266,331,300,325,300,325,266"/>
+<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="385,194,350,232,346,228,381,191"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="410,190,464,229,461,234,407,194"/>
+<area shape="poly" id="edge16_Node000011_Node000008" title=" " alt="" coords="399,119,397,153,392,153,394,119"/>
+<area shape="rect" id="Node000012" href="$Mesh_8hpp.html" title="Header file for the Mesh class, the Vertex and Face structures." alt="" coords="544,167,629,192"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="429,116,544,159,542,164,427,121"/>
+<area shape="poly" id="edge13_Node000012_Node000009" title=" " alt="" coords="573,194,518,234,515,229,569,190"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="560,240,616,265"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="590,192,590,226,585,227,584,192"/>
+<area shape="poly" id="edge15_Node000012_Node000014" title=" " alt="" coords="602,190,649,229,646,233,599,194"/>
+</map>

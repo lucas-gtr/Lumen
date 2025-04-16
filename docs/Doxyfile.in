@@ -9,13 +9,15 @@ INPUT                  = @DOXYGEN_INPUT_DIR@
 
 RECURSIVE             = YES
 FILE_PATTERNS         = *.h *.cpp *.hpp
-EXCLUDE_PATTERNS      = */tests/* */build/*
+EXCLUDE_PATTERNS      = */tests/* */build-* main.cpp
 
 MARKDOWN_SUPPORT      = YES
 GENERATE_HTML         = YES
 GENERATE_LATEX        = NO
 GENERATE_MAN          = NO
 GENERATE_XML          = NO
+HAVE_DOT              = YES
+
 
 QUIET                 = YES
 WARN_IF_UNDOCUMENTED  = YES

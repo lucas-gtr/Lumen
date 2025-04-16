@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classTransform.html" title="Represents a 3D transformation consisting of position, rotation, and scale." alt="" coords="5,31,92,56"/>
+<area shape="rect" id="Node000001" href="$classCamera.html" title="Class representing a camera with adjustable parameters such as field of view, focal length,..." alt="" coords="145,5,218,31"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="105,30,144,22,145,28,106,35"/>
+<area shape="rect" id="Node000002" href="$classObject3D.html" title="A class representing a 3D object with a mesh and transformation." alt="" coords="140,55,223,80"/>
+<area shape="poly" id="edge3_Node000000_Node000002" title=" " alt="" coords="106,51,140,57,139,63,105,56"/>
+</map>

@@ -12,15 +12,23 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 add_subdirectory(external/eigen)
 
+add_subdirectory(src/Core)
+add_subdirectory(src/Rendering)
+add_subdirectory(src/Export)
+
 add_executable(Lumen src/main.cpp)
 
 target_include_directories(Lumen PUBLIC
     ${CMAKE_SOURCE_DIR}/include
-    ${CMAKE_SOURCE_DIR}/external
+    ${CMAKE_SOURCE_DIR}/external/eigen
 )
 
-# target_link_libraries(Lumen PUBLIC    
-# )
+target_link_libraries(Lumen
+    PUBLIC
+        Core
+        Rendering
+        Export
+)
 
 option(ENABLE_COMPILE_WARNINGS "Enable Compiler Warnings" ON)
 option(ENABLE_SANITIZERS "Enable Sanitizers" ON)
@@ -35,7 +43,7 @@ option(ENABLE_TESTS "Enable Tests" OFF)
 set(FILES_TO_CHECK "" CACHE STRING "Files to check with Clang-Tidy and Clang-Format. Set to 'all' to check all source files.")
 
 if(ENABLE_COMPILER_OPTIMIZATIONS)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -march=native")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -march=native" CACHE STRING "Compiler flags for optimization" FORCE)
 endif()
 
 if(ENABLE_CLANG_FORMAT)
@@ -69,7 +77,7 @@ if(ENABLE_DOXYGEN)
 endif()
 
 if(ENABLE_TESTS)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage -O0 -g")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage -O0 -g" CACHE STRING "Compiler flags for tests" FORCE)
     add_subdirectory(external/googletest)
     add_subdirectory(tests)
 endif()

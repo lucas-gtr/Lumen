@@ -1,0 +1,19 @@
+<map id="/home/lucasgtr/lumen/src/Core/Framebuffer.cpp" name="/home/lucasgtr/lumen/src/Core/Framebuffer.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="185,5,373,45"/>
+<area shape="rect" id="Node000002" href="$Framebuffer_8hpp.html" title="Header file for the Framebuffer class." alt="" coords="79,93,242,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="252,48,191,88,188,84,249,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,167,97,192"/>
+<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="186,37,154,45,123,57,94,73,69,95,61,108,56,123,52,153,47,152,51,121,56,106,65,92,91,69,121,52,152,40,184,32"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="231,167,301,192"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="280,46,271,153,266,153,275,46"/>
+<area shape="rect" id="Node000006" href="$MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="317,93,500,119"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="312,43,379,84,377,88,309,48"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="525,93,591,119"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="347,43,512,89,510,94,345,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="145,121,82,161,79,157,142,116"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="179,116,239,157,236,161,176,121"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="129,167,192,192"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="163,119,163,153,158,153,158,119"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="369,167,448,192"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="411,119,411,153,406,153,406,119"/>
+</map>
