@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['camera_0',['Camera',['../classCamera.html',1,'']]],
-  ['camerarayemitter_1',['CameraRayEmitter',['../classCameraRayEmitter.html',1,'']]]
+  ['bilinearsampleinfo_0',['BilinearSampleInfo',['../structTextureSampling_1_1BilinearSampleInfo.html',1,'TextureSampling']]]
 ];

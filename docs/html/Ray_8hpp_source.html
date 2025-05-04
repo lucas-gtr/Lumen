@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -89,8 +96,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structRay.html">   17</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structRay.html">Ray</a> {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structRay.html#a09026f5b742ef47dba8bc47afb15a448">   18</a></span>  Eigen::Vector3d <a class="code hl_variable" href="structRay.html#a09026f5b742ef47dba8bc47afb15a448">origin</a>    = Eigen::Vector3d::Zero();         </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structRay.html#ad66a226186fa3c011842a9168178b353">   19</a></span>  Eigen::Vector3d <a class="code hl_variable" href="structRay.html#ad66a226186fa3c011842a9168178b353">direction</a> = Eigen::Vector3d(0.0, 0.0, -1.0); </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structRay.html#a09026f5b742ef47dba8bc47afb15a448">   18</a></span>  Eigen::Vector3d <a class="code hl_variable" href="structRay.html#a09026f5b742ef47dba8bc47afb15a448">origin</a>    = {0, 0, 0};</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structRay.html#ad66a226186fa3c011842a9168178b353">   19</a></span>  Eigen::Vector3d <a class="code hl_variable" href="structRay.html#ad66a226186fa3c011842a9168178b353">direction</a> = {0, 0, -1};</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structRay.html#a4c8d138f48dbd8c05e2bb38989d0a5eb">   21</a></span>  <a class="code hl_function" href="structRay.html#a4c8d138f48dbd8c05e2bb38989d0a5eb">Ray</a>() = <span class="keywordflow">default</span>; </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
@@ -103,10 +110,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#endif </span><span class="comment">// CORE_RAY_HPP</span></div>
 <div class="ttc" id="astructRay_html"><div class="ttname"><a href="structRay.html">Ray</a></div><div class="ttdoc">A structure representing a ray in 3D space.</div><div class="ttdef"><b>Definition</b> Ray.hpp:17</div></div>
-<div class="ttc" id="astructRay_html_a09026f5b742ef47dba8bc47afb15a448"><div class="ttname"><a href="structRay.html#a09026f5b742ef47dba8bc47afb15a448">Ray::origin</a></div><div class="ttdeci">Eigen::Vector3d origin</div><div class="ttdoc">The origin of the ray in 3D space.</div><div class="ttdef"><b>Definition</b> Ray.hpp:18</div></div>
+<div class="ttc" id="astructRay_html_a09026f5b742ef47dba8bc47afb15a448"><div class="ttname"><a href="structRay.html#a09026f5b742ef47dba8bc47afb15a448">Ray::origin</a></div><div class="ttdeci">Eigen::Vector3d origin</div><div class="ttdef"><b>Definition</b> Ray.hpp:18</div></div>
 <div class="ttc" id="astructRay_html_a4c8d138f48dbd8c05e2bb38989d0a5eb"><div class="ttname"><a href="structRay.html#a4c8d138f48dbd8c05e2bb38989d0a5eb">Ray::Ray</a></div><div class="ttdeci">Ray()=default</div><div class="ttdoc">Default constructor.</div></div>
 <div class="ttc" id="astructRay_html_a50e3b99291319733c9a1c8605e508ddb"><div class="ttname"><a href="structRay.html#a50e3b99291319733c9a1c8605e508ddb">Ray::Ray</a></div><div class="ttdeci">Ray(const Eigen::Vector3d &amp;origin, const Eigen::Vector3d &amp;point)</div><div class="ttdoc">Constructs a Ray from an origin and a point in 3D space.</div><div class="ttdef"><b>Definition</b> Ray.hpp:32</div></div>
-<div class="ttc" id="astructRay_html_ad66a226186fa3c011842a9168178b353"><div class="ttname"><a href="structRay.html#ad66a226186fa3c011842a9168178b353">Ray::direction</a></div><div class="ttdeci">Eigen::Vector3d direction</div><div class="ttdoc">The normalized direction vector of the ray.</div><div class="ttdef"><b>Definition</b> Ray.hpp:19</div></div>
+<div class="ttc" id="astructRay_html_ad66a226186fa3c011842a9168178b353"><div class="ttname"><a href="structRay.html#ad66a226186fa3c011842a9168178b353">Ray::direction</a></div><div class="ttdeci">Eigen::Vector3d direction</div><div class="ttdef"><b>Definition</b> Ray.hpp:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

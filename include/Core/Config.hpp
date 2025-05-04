@@ -5,7 +5,6 @@
 #ifndef CORE_CONFIG_HPP
 #define CORE_CONFIG_HPP
 
-#include <cstddef>
 #include <string_view>
 
 //<-------- CAMERA CLASS --------->
@@ -30,17 +29,17 @@ static constexpr double MIN_FOCUS_DISTANCE     = 0.3;
 static constexpr double MAX_FOCUS_DISTANCE     = 10000.0;
 
 //<-------- RENDER SETTINGS --------->
-static constexpr size_t DEFAULT_WIDTH = 800; // in pixels
-static constexpr size_t MIN_WIDTH     = 1;
-static constexpr size_t MAX_WIDTH     = 8192;
+static constexpr int DEFAULT_WIDTH = 800; // in pixels
+static constexpr int MIN_WIDTH     = 1;
+static constexpr int MAX_WIDTH     = 8192;
 
-static constexpr size_t DEFAULT_HEIGHT = 600; // in pixels
-static constexpr size_t MIN_HEIGHT     = 1;
-static constexpr size_t MAX_HEIGHT     = 8192;
+static constexpr int DEFAULT_HEIGHT = 600; // in pixels
+static constexpr int MIN_HEIGHT     = 1;
+static constexpr int MAX_HEIGHT     = 8192;
 
-static constexpr size_t DEFAULT_CHANNEL_COUNT = 3; // RGB
-static constexpr size_t MIN_CHANNEL_COUNT     = 1;
-static constexpr size_t MAX_CHANNEL_COUNT     = 4;
+static constexpr int DEFAULT_CHANNEL_COUNT = 3; // RGB
+static constexpr int MIN_CHANNEL_COUNT     = 1;
+static constexpr int MAX_CHANNEL_COUNT     = 4;
 
 static constexpr double DEFAULT_NEAR_PLANE = 0.1;  // in meters
 static constexpr double MIN_NEAR_PLANE     = 0.01; // in meters
@@ -61,5 +60,29 @@ static constexpr int MAX_SAMPLES_PER_PIXEL     = 1024;
 //<-------- RENDER EXPORTER --------->
 static constexpr std::string_view DEFAULT_FILE_PATH = "RenderImages/";
 static constexpr std::string_view DEFAULT_FILE_NAME = "output";
+
+//<-------- SKYBOX --------->
+static constexpr double DEFAULT_SKYBOX_COLOR_R = 0.65;
+static constexpr double DEFAULT_SKYBOX_COLOR_G = 0.65;
+static constexpr double DEFAULT_SKYBOX_COLOR_B = 0.9;
+
+//<-------- TEXTURE --------->
+static constexpr double DEFAULT_TEXTURE_UNDEFINED_R = 1.0;
+static constexpr double DEFAULT_TEXTURE_UNDEFINED_G = 0.0;
+static constexpr double DEFAULT_TEXTURE_UNDEFINED_B = 1.0;
+
+//<-------- LIGHT --------->
+static constexpr double DEFAULT_LIGHT_INTENSITY        = 1.0;
+static constexpr double MIN_LIGHT_INTENSITY            = 0.0;
+static constexpr double MAX_LIGHT_INTENSITY            = 10000.0;
+static constexpr double DEFAULT_SPOT_LIGHT_INNER_ANGLE = 10.0;
+static constexpr double DEFAULT_SPOT_LIGHT_OUTER_ANGLE = 12.5;
+static constexpr double MIN_SPOT_LIGHT_ANGLE           = 0.0;
+static constexpr double MAX_SPOT_LIGHT_ANGLE           = 90.0;
+
+//<-------- POST-PROCESSING --------->
+static constexpr double DEFAULT_TONE_MAPPING_EXPOSURE = 1.0;
+static constexpr double MIN_TONE_MAPPING_EXPOSURE     = 0.0;
+static constexpr double MAX_TONE_MAPPING_EXPOSURE     = 10.0;
 
 #endif // CORE_CONFIG_HPP

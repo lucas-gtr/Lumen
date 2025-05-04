@@ -17,6 +17,7 @@ GENERATE_LATEX        = NO
 GENERATE_MAN          = NO
 GENERATE_XML          = NO
 HAVE_DOT              = YES
+USE_MATHJAX           = YES
 
 
 QUIET                 = YES

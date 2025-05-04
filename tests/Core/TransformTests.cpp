@@ -1,7 +1,7 @@
-#include <gtest/gtest.h>
 #include "Core/Transform.hpp"
-#include <Eigen/Core>
-#include <Eigen/Geometry>
+
+#include <Eigen/Dense>
+#include <gtest/gtest.h>
 
 
 TEST(TransformTest, DefaultConstructorTest) {
@@ -17,7 +17,7 @@ TEST(TransformTest, ParameterizedConstructorTest) {
     Eigen::Vector3d scale(2.0, 2.0, 2.0);
     
     Transform t(position, rotation, scale);
-    
+
     EXPECT_EQ(t.getPosition(), position);
     EXPECT_EQ(t.getRotation(), rotation * M_PI / 180.0);
     EXPECT_EQ(t.getScale(), scale);

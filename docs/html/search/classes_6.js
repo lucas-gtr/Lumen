@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['scene_0',['Scene',['../classScene.html',1,'']]]
+  ['light_0',['Light',['../classLight.html',1,'']]]
 ];

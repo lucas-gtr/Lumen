@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lensradius_0',['lensRadius',['../structRayEmitterParameters.html#ac17200621d040172790a26bf00b1633a',1,'RayEmitterParameters']]]
+  ['imageaspectratio_0',['imageAspectRatio',['../structRayEmitterParameters.html#a611771784b7eb9b2c877bedbc8f3ed40',1,'RayEmitterParameters']]]
 ];

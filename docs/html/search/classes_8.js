@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vertex_0',['Vertex',['../structVertex.html',1,'']]]
+  ['notonemapping_0',['NoToneMapping',['../classNoToneMapping.html',1,'']]]
 ];

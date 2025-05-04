@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -79,7 +86,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Header file for the <a class="el" href="classOutputFormat.html">OutputFormat</a> class.  
+<p>Header file for the <a class="el" href="classOutputFormat.html" title="Abstract base class for different image output formats.">OutputFormat</a> class.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;string&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -97,15 +104,16 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="OutputFormat_8hpp__dep__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Export_2OutputFormat_8hppdep" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2include_2Export_2OutputFormat_8hppdep" id="a_2home_2lucasgtr_2lumen_2include_2Export_2OutputFormat_8hppdep">
-<area shape="rect" title="Header file for the OutputFormat class." alt="" coords="131,5,372,45"/>
+<area shape="rect" title="Header file for the OutputFormat class." alt="" coords="259,5,500,45"/>
 <area shape="rect" href="OutputFormatPng_8hpp.html" title="Header file for the OutputFormatPng class." alt="" coords="17,93,230,148"/>
-<area shape="poly" title=" " alt="" coords="216,55,161,95,158,91,213,51"/>
+<area shape="poly" title=" " alt="" coords="315,53,196,96,195,91,314,48"/>
 <area shape="rect" href="RenderExporter_8hpp.html" title="Header file for the RenderExporter class." alt="" coords="254,101,505,141"/>
-<area shape="poly" title=" " alt="" coords="290,51,355,98,352,103,287,56"/>
+<area shape="poly" title=" " alt="" coords="382,59,382,101,377,101,377,59"/>
+<area shape="rect" href="RenderExporter_8cpp.html" title=" " alt="" coords="349,196,572,236"/>
+<area shape="poly" title=" " alt="" coords="468,49,496,67,519,92,526,107,527,120,519,149,504,176,485,197,481,194,500,173,514,147,522,120,521,108,514,95,493,71,465,53"/>
 <area shape="rect" href="OutputFormatPng_8cpp.html" title=" " alt="" coords="5,196,241,236"/>
 <area shape="poly" title=" " alt="" coords="126,162,126,196,121,196,121,162"/>
-<area shape="rect" href="RenderExporter_8cpp.html" title=" " alt="" coords="268,196,491,236"/>
-<area shape="poly" title=" " alt="" coords="382,154,382,196,377,196,377,154"/>
+<area shape="poly" title=" " alt="" coords="407,149,446,194,442,198,403,153"/>
 </map>
 </div>
 </div>
@@ -114,11 +122,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOutputFormat.html">OutputFormat</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract base class for different image output formats.  <a href="classOutputFormat.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Header file for the <a class="el" href="classOutputFormat.html">OutputFormat</a> class. </p>
-<p>This file defines the <a class="el" href="classOutputFormat.html">OutputFormat</a> class, which is an abstract base class for exporting rendered images in different formats. The class provides a pure virtual function <code>write_image</code> that must be implemented by derived classes to handle the specific image format export logic. </p>
+<div class="textblock"><p>Header file for the <a class="el" href="classOutputFormat.html" title="Abstract base class for different image output formats.">OutputFormat</a> class. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

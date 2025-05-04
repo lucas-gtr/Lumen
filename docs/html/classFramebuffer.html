@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -83,9 +90,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a64957e7bc496a1d3c8476552d5d37b2c" id="r_a64957e7bc496a1d3c8476552d5d37b2c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a64957e7bc496a1d3c8476552d5d37b2c">Framebuffer</a> (<a class="el" href="structImageProperties.html">ImageProperties</a> properties)</td></tr>
-<tr class="memdesc:a64957e7bc496a1d3c8476552d5d37b2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classFramebuffer.html" title="A class representing a framebuffer for storing image data.">Framebuffer</a> class.  <br /></td></tr>
-<tr class="separator:a64957e7bc496a1d3c8476552d5d37b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03db0c1b3c5e641dba0c38be25ec0d92" id="r_a03db0c1b3c5e641dba0c38be25ec0d92"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a03db0c1b3c5e641dba0c38be25ec0d92">Framebuffer</a> (<a class="el" href="structImageProperties.html">ImageProperties</a> framebuffer_properties)</td></tr>
+<tr class="memdesc:a03db0c1b3c5e641dba0c38be25ec0d92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classFramebuffer.html" title="A class representing a framebuffer for storing image data.">Framebuffer</a> class.  <br /></td></tr>
+<tr class="separator:a03db0c1b3c5e641dba0c38be25ec0d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad023fa43b1bc49f4e0b227a77cc9756c" id="r_ad023fa43b1bc49f4e0b227a77cc9756c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#ad023fa43b1bc49f4e0b227a77cc9756c">Framebuffer</a> (const <a class="el" href="classFramebuffer.html">Framebuffer</a> &amp;)=delete</td></tr>
 <tr class="memdesc:ad023fa43b1bc49f4e0b227a77cc9756c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy constructor.  <br /></td></tr>
 <tr class="separator:ad023fa43b1bc49f4e0b227a77cc9756c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -98,39 +105,42 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3d31c4dd7d5a88567d7d88832f67dacc" id="r_a3d31c4dd7d5a88567d7d88832f67dacc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFramebuffer.html">Framebuffer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a3d31c4dd7d5a88567d7d88832f67dacc">operator=</a> (<a class="el" href="classFramebuffer.html">Framebuffer</a> &amp;&amp;)=delete</td></tr>
 <tr class="memdesc:a3d31c4dd7d5a88567d7d88832f67dacc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted move assignment operator.  <br /></td></tr>
 <tr class="separator:a3d31c4dd7d5a88567d7d88832f67dacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9357e8a11c6eec2b0a85a607d476673" id="r_ae9357e8a11c6eec2b0a85a607d476673"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#ae9357e8a11c6eec2b0a85a607d476673">getWidth</a> () const</td></tr>
-<tr class="memdesc:ae9357e8a11c6eec2b0a85a607d476673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the width of the framebuffer.  <br /></td></tr>
-<tr class="separator:ae9357e8a11c6eec2b0a85a607d476673"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a565f0c7a838d4c09347325fd96c45b1d" id="r_a565f0c7a838d4c09347325fd96c45b1d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a565f0c7a838d4c09347325fd96c45b1d">getHeight</a> () const</td></tr>
-<tr class="memdesc:a565f0c7a838d4c09347325fd96c45b1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the height of the framebuffer.  <br /></td></tr>
-<tr class="separator:a565f0c7a838d4c09347325fd96c45b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5659778eb7b3eb05b356eca306d5d3e5" id="r_a5659778eb7b3eb05b356eca306d5d3e5"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a5659778eb7b3eb05b356eca306d5d3e5">getChannelCount</a> () const</td></tr>
-<tr class="memdesc:a5659778eb7b3eb05b356eca306d5d3e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of channels per pixel.  <br /></td></tr>
-<tr class="separator:a5659778eb7b3eb05b356eca306d5d3e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec033019966573470d9f8462e45fa27b" id="r_aec033019966573470d9f8462e45fa27b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#aec033019966573470d9f8462e45fa27b">setFramebufferProperties</a> (<a class="el" href="structImageProperties.html">ImageProperties</a> properties)</td></tr>
-<tr class="memdesc:aec033019966573470d9f8462e45fa27b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the properties of the framebuffer (width, height, and channel count).  <br /></td></tr>
-<tr class="separator:aec033019966573470d9f8462e45fa27b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bb62f7241cd0e9afee0f4acd8d6cdd3" id="r_a0bb62f7241cd0e9afee0f4acd8d6cdd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a0bb62f7241cd0e9afee0f4acd8d6cdd3">generateImage</a> ()</td></tr>
-<tr class="memdesc:a0bb62f7241cd0e9afee0f4acd8d6cdd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the image from the framebuffer data.  <br /></td></tr>
-<tr class="separator:a0bb62f7241cd0e9afee0f4acd8d6cdd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a068687e564df9935d6138efa181e4446" id="r_a068687e564df9935d6138efa181e4446"><td class="memItemLeft" align="right" valign="top">const unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a068687e564df9935d6138efa181e4446">getImage</a> () const</td></tr>
-<tr class="memdesc:a068687e564df9935d6138efa181e4446"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image data as a constant pointer.  <br /></td></tr>
-<tr class="separator:a068687e564df9935d6138efa181e4446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22b9f4bcbf98acad1b578e556e8e855e" id="r_a22b9f4bcbf98acad1b578e556e8e855e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a22b9f4bcbf98acad1b578e556e8e855e">getWidth</a> () const</td></tr>
+<tr class="memdesc:a22b9f4bcbf98acad1b578e556e8e855e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the width of the framebuffer.  <br /></td></tr>
+<tr class="separator:a22b9f4bcbf98acad1b578e556e8e855e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dbe4c57174da486244e49893d40ea3b" id="r_a9dbe4c57174da486244e49893d40ea3b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a9dbe4c57174da486244e49893d40ea3b">getHeight</a> () const</td></tr>
+<tr class="memdesc:a9dbe4c57174da486244e49893d40ea3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the height of the framebuffer.  <br /></td></tr>
+<tr class="separator:a9dbe4c57174da486244e49893d40ea3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3018e783056f527942175e96bd09657d" id="r_a3018e783056f527942175e96bd09657d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a3018e783056f527942175e96bd09657d">getChannelCount</a> () const</td></tr>
+<tr class="memdesc:a3018e783056f527942175e96bd09657d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of channels per pixel.  <br /></td></tr>
+<tr class="separator:a3018e783056f527942175e96bd09657d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b46d4898a446fd6a10f71a77b0071f4" id="r_a8b46d4898a446fd6a10f71a77b0071f4"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a8b46d4898a446fd6a10f71a77b0071f4">getSize</a> () const</td></tr>
+<tr class="memdesc:a8b46d4898a446fd6a10f71a77b0071f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the size of the framebuffer.  <br /></td></tr>
+<tr class="separator:a8b46d4898a446fd6a10f71a77b0071f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca92863b30f30f681732818fd12ad1b3" id="r_aca92863b30f30f681732818fd12ad1b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#aca92863b30f30f681732818fd12ad1b3">setFramebufferProperties</a> (<a class="el" href="structImageProperties.html">ImageProperties</a> framebuffer_properties)</td></tr>
+<tr class="memdesc:aca92863b30f30f681732818fd12ad1b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the properties of the framebuffer (width, height, and channel count).  <br /></td></tr>
+<tr class="separator:aca92863b30f30f681732818fd12ad1b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b36fad645b911130ce13b4871c47a6a" id="r_a9b36fad645b911130ce13b4871c47a6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a9b36fad645b911130ce13b4871c47a6a">convertToSRGBColorSpace</a> ()</td></tr>
+<tr class="memdesc:a9b36fad645b911130ce13b4871c47a6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the framebuffer data to sRGB color space.  <br /></td></tr>
+<tr class="separator:a9b36fad645b911130ce13b4871c47a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aeb1b591fd33db8c885080ac2d8d8f9" id="r_a9aeb1b591fd33db8c885080ac2d8d8f9"><td class="memItemLeft" align="right" valign="top">const double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a9aeb1b591fd33db8c885080ac2d8d8f9">getFramebuffer</a> () const</td></tr>
+<tr class="memdesc:a9aeb1b591fd33db8c885080ac2d8d8f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the framebuffer data.  <br /></td></tr>
+<tr class="separator:a9aeb1b591fd33db8c885080ac2d8d8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49beff864decae43b73e57593ca739fb" id="r_a49beff864decae43b73e57593ca739fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a49beff864decae43b73e57593ca739fb">updateFrameBuffer</a> ()</td></tr>
 <tr class="memdesc:a49beff864decae43b73e57593ca739fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the framebuffer properties.  <br /></td></tr>
 <tr class="separator:a49beff864decae43b73e57593ca739fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3f0cb3adb4e9a1bda72dfde1c044aa8" id="r_ae3f0cb3adb4e9a1bda72dfde1c044aa8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#ae3f0cb3adb4e9a1bda72dfde1c044aa8">setPixelColor</a> (size_t x, size_t y, const Eigen::Vector3d &amp;color, double weight)</td></tr>
-<tr class="memdesc:ae3f0cb3adb4e9a1bda72dfde1c044aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color of a specific pixel in the framebuffer.  <br /></td></tr>
-<tr class="separator:ae3f0cb3adb4e9a1bda72dfde1c044aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d14797e3ea79f7bbba2121e9c1cc0d4" id="r_a6d14797e3ea79f7bbba2121e9c1cc0d4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a6d14797e3ea79f7bbba2121e9c1cc0d4">~Framebuffer</a> ()=default</td></tr>
-<tr class="separator:a6d14797e3ea79f7bbba2121e9c1cc0d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab694e23b3f6f53c140f15ebfcad7260b" id="r_ab694e23b3f6f53c140f15ebfcad7260b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#ab694e23b3f6f53c140f15ebfcad7260b">setPixelColor</a> (<a class="el" href="structPixelCoord.html">PixelCoord</a> pixel_coord, const Eigen::Vector4d &amp;color, double weight)</td></tr>
+<tr class="memdesc:ab694e23b3f6f53c140f15ebfcad7260b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color of a specific pixel in the framebuffer.  <br /></td></tr>
+<tr class="separator:ab694e23b3f6f53c140f15ebfcad7260b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a037bf3e17455354d5d907ceea00313dd" id="r_a037bf3e17455354d5d907ceea00313dd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a037bf3e17455354d5d907ceea00313dd">~Framebuffer</a> ()</td></tr>
+<tr class="separator:a037bf3e17455354d5d907ceea00313dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class representing a framebuffer for storing image data. </p>
 <p>This class provides methods for creating, managing, and manipulating a framebuffer with support for setting pixel colors and generating image output. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a64957e7bc496a1d3c8476552d5d37b2c" name="a64957e7bc496a1d3c8476552d5d37b2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64957e7bc496a1d3c8476552d5d37b2c">&#9670;&#160;</a></span>Framebuffer() <span class="overload">[1/3]</span></h2>
+<a id="a03db0c1b3c5e641dba0c38be25ec0d92" name="a03db0c1b3c5e641dba0c38be25ec0d92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03db0c1b3c5e641dba0c38be25ec0d92">&#9670;&#160;</a></span>Framebuffer() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,7 +152,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">Framebuffer::Framebuffer </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structImageProperties.html">ImageProperties</a>&#160;</td>
-          <td class="paramname"><em>properties</em></td><td>)</td>
+          <td class="paramname"><em>framebuffer_properties</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -156,7 +166,7 @@ Public Member Functions</h2></td></tr>
 <p>Constructor for the <a class="el" href="classFramebuffer.html" title="A class representing a framebuffer for storing image data.">Framebuffer</a> class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">properties</td><td>The properties of the image (width, height, and channel count). </td></tr>
+    <tr><td class="paramname">framebuffer_properties</td><td>The properties of the image (width, height, and channel count). </td></tr>
   </table>
   </dd>
 </dl>
@@ -219,14 +229,11 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6d14797e3ea79f7bbba2121e9c1cc0d4" name="a6d14797e3ea79f7bbba2121e9c1cc0d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d14797e3ea79f7bbba2121e9c1cc0d4">&#9670;&#160;</a></span>~Framebuffer()</h2>
+<a id="a037bf3e17455354d5d907ceea00313dd" name="a037bf3e17455354d5d907ceea00313dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a037bf3e17455354d5d907ceea00313dd">&#9670;&#160;</a></span>~Framebuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Framebuffer::~Framebuffer </td>
@@ -235,24 +242,19 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0bb62f7241cd0e9afee0f4acd8d6cdd3" name="a0bb62f7241cd0e9afee0f4acd8d6cdd3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bb62f7241cd0e9afee0f4acd8d6cdd3">&#9670;&#160;</a></span>generateImage()</h2>
+<a id="a9b36fad645b911130ce13b4871c47a6a" name="a9b36fad645b911130ce13b4871c47a6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b36fad645b911130ce13b4871c47a6a">&#9670;&#160;</a></span>convertToSRGBColorSpace()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Framebuffer::generateImage </td>
+          <td class="memname">void Framebuffer::convertToSRGBColorSpace </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -260,12 +262,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Generates the image from the framebuffer data. </p>
+<p>Converts the framebuffer data to sRGB color space. </p>
 
 </div>
 </div>
-<a id="a5659778eb7b3eb05b356eca306d5d3e5" name="a5659778eb7b3eb05b356eca306d5d3e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5659778eb7b3eb05b356eca306d5d3e5">&#9670;&#160;</a></span>getChannelCount()</h2>
+<a id="a3018e783056f527942175e96bd09657d" name="a3018e783056f527942175e96bd09657d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3018e783056f527942175e96bd09657d">&#9670;&#160;</a></span>getChannelCount()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,7 +276,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t Framebuffer::getChannelCount </td>
+          <td class="memname">int Framebuffer::getChannelCount </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -292,8 +294,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a565f0c7a838d4c09347325fd96c45b1d" name="a565f0c7a838d4c09347325fd96c45b1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a565f0c7a838d4c09347325fd96c45b1d">&#9670;&#160;</a></span>getHeight()</h2>
+<a id="a9aeb1b591fd33db8c885080ac2d8d8f9" name="a9aeb1b591fd33db8c885080ac2d8d8f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aeb1b591fd33db8c885080ac2d8d8f9">&#9670;&#160;</a></span>getFramebuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -302,7 +304,35 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t Framebuffer::getHeight </td>
+          <td class="memname">const double * Framebuffer::getFramebuffer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the framebuffer data. </p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the framebuffer data. </dd></dl>
+
+</div>
+</div>
+<a id="a9dbe4c57174da486244e49893d40ea3b" name="a9dbe4c57174da486244e49893d40ea3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dbe4c57174da486244e49893d40ea3b">&#9670;&#160;</a></span>getHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Framebuffer::getHeight </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -320,8 +350,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a068687e564df9935d6138efa181e4446" name="a068687e564df9935d6138efa181e4446"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a068687e564df9935d6138efa181e4446">&#9670;&#160;</a></span>getImage()</h2>
+<a id="a8b46d4898a446fd6a10f71a77b0071f4" name="a8b46d4898a446fd6a10f71a77b0071f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b46d4898a446fd6a10f71a77b0071f4">&#9670;&#160;</a></span>getSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -330,7 +360,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const unsigned char * Framebuffer::getImage </td>
+          <td class="memname">size_t Framebuffer::getSize </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -343,13 +373,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets the image data as a constant pointer. </p>
-<dl class="section return"><dt>Returns</dt><dd>A constant pointer to the image data. </dd></dl>
+<p>Gets the size of the framebuffer. </p>
+<dl class="section return"><dt>Returns</dt><dd>The size of the framebuffer. </dd></dl>
 
 </div>
 </div>
-<a id="ae9357e8a11c6eec2b0a85a607d476673" name="ae9357e8a11c6eec2b0a85a607d476673"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9357e8a11c6eec2b0a85a607d476673">&#9670;&#160;</a></span>getWidth()</h2>
+<a id="a22b9f4bcbf98acad1b578e556e8e855e" name="a22b9f4bcbf98acad1b578e556e8e855e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22b9f4bcbf98acad1b578e556e8e855e">&#9670;&#160;</a></span>getWidth()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -358,7 +388,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">size_t Framebuffer::getWidth </td>
+          <td class="memname">int Framebuffer::getWidth </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -432,8 +462,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aec033019966573470d9f8462e45fa27b" name="aec033019966573470d9f8462e45fa27b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec033019966573470d9f8462e45fa27b">&#9670;&#160;</a></span>setFramebufferProperties()</h2>
+<a id="aca92863b30f30f681732818fd12ad1b3" name="aca92863b30f30f681732818fd12ad1b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca92863b30f30f681732818fd12ad1b3">&#9670;&#160;</a></span>setFramebufferProperties()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -442,7 +472,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void Framebuffer::setFramebufferProperties </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structImageProperties.html">ImageProperties</a>&#160;</td>
-          <td class="paramname"><em>properties</em></td><td>)</td>
+          <td class="paramname"><em>framebuffer_properties</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -451,7 +481,7 @@ Public Member Functions</h2></td></tr>
 <p>Sets the properties of the framebuffer (width, height, and channel count). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">properties</td><td>The properties of the image to be set. </td></tr>
+    <tr><td class="paramname">framebuffer_properties</td><td>The properties of the image to be set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -459,8 +489,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae3f0cb3adb4e9a1bda72dfde1c044aa8" name="ae3f0cb3adb4e9a1bda72dfde1c044aa8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3f0cb3adb4e9a1bda72dfde1c044aa8">&#9670;&#160;</a></span>setPixelColor()</h2>
+<a id="ab694e23b3f6f53c140f15ebfcad7260b" name="ab694e23b3f6f53c140f15ebfcad7260b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab694e23b3f6f53c140f15ebfcad7260b">&#9670;&#160;</a></span>setPixelColor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -468,19 +498,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void Framebuffer::setPixelColor </td>
           <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
+          <td class="paramtype"><a class="el" href="structPixelCoord.html">PixelCoord</a>&#160;</td>
+          <td class="paramname"><em>pixel_coord</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::Vector3d &amp;&#160;</td>
+          <td class="paramtype">const Eigen::Vector4d &amp;&#160;</td>
           <td class="paramname"><em>color</em>, </td>
         </tr>
         <tr>
@@ -500,8 +524,7 @@ Public Member Functions</h2></td></tr>
 <p>Sets the color of a specific pixel in the framebuffer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>The x-coordinate of the pixel. </td></tr>
-    <tr><td class="paramname">y</td><td>The y-coordinate of the pixel. </td></tr>
+    <tr><td class="paramname">pixel_coord</td><td>The coordinates of the pixel to set. </td></tr>
     <tr><td class="paramname">color</td><td>The color to set the pixel to. </td></tr>
     <tr><td class="paramname">weight</td><td>The weight of the color to apply. </td></tr>
   </table>

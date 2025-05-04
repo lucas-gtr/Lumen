@@ -5,13 +5,15 @@
 #ifndef RENDERING_RENDERER_HPP
 #define RENDERING_RENDERER_HPP
 
+#include <Eigen/Core>
+
+#include "Core/CommonTypes.hpp"
 #include "Core/Framebuffer.hpp"
 #include "Core/Ray.hpp"
-#include "Core/Scene.hpp"
 #include "Rendering/CameraRayEmitter.hpp"
+#include "Rendering/RayIntersection.hpp"
 #include "Rendering/RenderSettings.hpp"
-
-#include <Eigen/Core>
+#include "Scene/Scene.hpp"
 
 /**
  * @class Renderer
@@ -22,14 +24,15 @@
  */
 class Renderer {
 private:
-  const RenderSettings* m_renderSettings;
+  const RenderSettings* m_render_settings;
   const Scene*          m_scene;
   Framebuffer*          m_framebuffer;
 
   CameraRayEmitter m_cameraRayEmitter;
 
-  Eigen::Vector3d traceRay(const Ray& ray) const;
-  void            renderSample(double sample_weight);
+  Eigen::Vector4d traceRay(const Ray& ray) const;
+  void            renderSample(double sample_weight, PixelCoord grid_position, double cell_size);
+  bool            isValidHit(const RayHitInfo& hit_info) const;
 
 public:
   /**
@@ -41,6 +44,7 @@ public:
    * @param scene The scene to be rendered.
    */
   Renderer(const RenderSettings* render_settings, const Scene* scene);
+
   Renderer(const Renderer&)            = delete;
   Renderer& operator=(const Renderer&) = delete;
   Renderer(Renderer&&)                 = delete;
@@ -69,7 +73,7 @@ public:
    *
    * @return A constant reference to the current render settings.
    */
-  const RenderSettings& getRenderSettings() const { return *m_renderSettings; }
+  const RenderSettings& getRenderSettings() const { return *m_render_settings; }
 
   /**
    * @brief Gets the current scene.

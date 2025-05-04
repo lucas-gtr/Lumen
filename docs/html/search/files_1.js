@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['framebuffer_2ecpp_0',['Framebuffer.cpp',['../Framebuffer_8cpp.html',1,'']]],
-  ['framebuffer_2ehpp_1',['Framebuffer.hpp',['../Framebuffer_8hpp.html',1,'']]]
+  ['directionallight_2ecpp_0',['DirectionalLight.cpp',['../DirectionalLight_8cpp.html',1,'']]],
+  ['directionallight_2ehpp_1',['DirectionalLight.hpp',['../DirectionalLight_8hpp.html',1,'']]]
 ];

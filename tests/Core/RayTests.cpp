@@ -1,7 +1,6 @@
 #include "Core/Ray.hpp"
 
 #include <gtest/gtest.h>
-#include <Eigen/Core>
 
 TEST(RayTest, DefaultConstructorTest) {
     Ray ray;

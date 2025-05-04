@@ -1,9 +1,9 @@
-#include "Rendering/CameraRayEmitter.hpp"
+#include <Eigen/Core>
+
 #include "Core/MathConstants.hpp"
 #include "Core/Random.hpp"
 #include "Core/Ray.hpp"
-
-#include <Eigen/Core>
+#include "Rendering/CameraRayEmitter.hpp"
 
 void CameraRayEmitter::initializeViewport(const RayEmitterParameters& parameters) {
   m_parameters = parameters;

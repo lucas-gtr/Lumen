@@ -1,0 +1,22 @@
+<map id="/home/lucasgtr/lumen/src/Rendering/RenderSettings.cpp" name="/home/lucasgtr/lumen/src/Rendering/RenderSettings.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="85,5,331,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,167,91,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,48,72,159,68,155,186,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="115,167,178,192"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,47,176,69,162,94,154,124,150,154,145,153,149,123,158,92,172,66,189,44"/>
+<area shape="rect" id="Node000004" href="$Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="491,167,616,192"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="273,43,337,64,404,91,470,124,525,157,522,162,467,129,402,96,335,69,271,48"/>
+<area shape="rect" id="Node000006" href="$RenderSettings_8hpp.html" title="Header file for the RenderSettings class." alt="" coords="172,93,391,119"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="228,44,263,81,259,85,224,47"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="505,240,602,265"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="556,192,556,226,551,226,551,192"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="245,121,99,165,98,160,243,116"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="261,121,182,162,180,158,258,116"/>
+<area shape="poly" id="edge11_Node000006_Node000004" title=" " alt="" coords="326,116,497,161,496,166,324,121"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="203,167,261,192"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="275,121,250,157,246,154,271,117"/>
+<area shape="rect" id="Node000008" href="$CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="286,167,466,192"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="298,117,351,156,348,160,295,121"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="343,240,409,265"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="379,192,379,226,373,226,373,192"/>
+</map>

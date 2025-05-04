@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -80,26 +87,47 @@ $(function() {
  <a href="structRayHitInfo.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="RayIntersection_8hpp_source.html">RayIntersection.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for RayHitInfo:</div>
+<div class="dyncontent">
+<div class="center"><img src="structRayHitInfo__coll__graph.png" border="0" usemap="#aRayHitInfo_coll__map" alt="Collaboration graph"/></div>
+<map name="aRayHitInfo_coll__map" id="aRayHitInfo_coll__map">
+<area shape="rect" title="Structure that holds information about a ray intersection." alt="" coords="51,93,142,119"/>
+<area shape="rect" href="classMaterial.html" title="Class representing a material with albedo and normal textures." alt="" coords="5,5,81,31"/>
+<area shape="poly" title=" " alt="" coords="52,43,63,68,84,91,80,95,58,71,47,45"/>
+<area shape="rect" href="structTextureUV.html" title="Structure to hold the UV coordinates of a texture." alt="" coords="105,5,195,31"/>
+<area shape="poly" title=" " alt="" coords="139,44,123,71,107,94,103,92,118,68,134,42"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:af790af177c6fcbcab989d758df90e4d6" id="r_af790af177c6fcbcab989d758df90e4d6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRayHitInfo.html#af790af177c6fcbcab989d758df90e4d6">distance</a> = std::numeric_limits&lt;double&gt;::max()</td></tr>
 <tr class="separator:af790af177c6fcbcab989d758df90e4d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab77f4d24b3fcd6169c3c0c36635477d0" id="r_ab77f4d24b3fcd6169c3c0c36635477d0"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRayHitInfo.html#ab77f4d24b3fcd6169c3c0c36635477d0">color</a></td></tr>
-<tr class="separator:ab77f4d24b3fcd6169c3c0c36635477d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64833bbb2a2536372d9d03d7a94eb412" id="r_a64833bbb2a2536372d9d03d7a94eb412"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMaterial.html">Material</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRayHitInfo.html#a64833bbb2a2536372d9d03d7a94eb412">material</a> = nullptr</td></tr>
+<tr class="separator:a64833bbb2a2536372d9d03d7a94eb412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88822e8372954d1008b3fb45a812016d" id="r_a88822e8372954d1008b3fb45a812016d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTextureUV.html">TextureUV</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRayHitInfo.html#a88822e8372954d1008b3fb45a812016d">uvCoordinates</a></td></tr>
+<tr class="separator:a88822e8372954d1008b3fb45a812016d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa1faf8e95ddf88f87234d80ec56ed12" id="r_afa1faf8e95ddf88f87234d80ec56ed12"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRayHitInfo.html#afa1faf8e95ddf88f87234d80ec56ed12">normal</a></td></tr>
+<tr class="separator:afa1faf8e95ddf88f87234d80ec56ed12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b1c50b816231ef99fae1cec04c3ce5" id="r_a69b1c50b816231ef99fae1cec04c3ce5"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRayHitInfo.html#a69b1c50b816231ef99fae1cec04c3ce5">tangent</a></td></tr>
+<tr class="separator:a69b1c50b816231ef99fae1cec04c3ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d726c4336fabcc7de56400056acab4d" id="r_a7d726c4336fabcc7de56400056acab4d"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRayHitInfo.html#a7d726c4336fabcc7de56400056acab4d">bitangent</a></td></tr>
+<tr class="separator:a7d726c4336fabcc7de56400056acab4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f4b6d32be97163a7cd4a16c74ec173d" id="r_a0f4b6d32be97163a7cd4a16c74ec173d"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRayHitInfo.html#a0f4b6d32be97163a7cd4a16c74ec173d">hitPoint</a></td></tr>
+<tr class="separator:a0f4b6d32be97163a7cd4a16c74ec173d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Structure that holds information about a ray intersection. </p>
-<p>This structure contains the distance from the ray origin to the hit point and the color at the intersection. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="ab77f4d24b3fcd6169c3c0c36635477d0" name="ab77f4d24b3fcd6169c3c0c36635477d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab77f4d24b3fcd6169c3c0c36635477d0">&#9670;&#160;</a></span>color</h2>
+<a id="a7d726c4336fabcc7de56400056acab4d" name="a7d726c4336fabcc7de56400056acab4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d726c4336fabcc7de56400056acab4d">&#9670;&#160;</a></span>bitangent</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::Vector3d RayHitInfo::color</td>
+          <td class="memname">Eigen::Vector3d RayHitInfo::bitangent</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -120,8 +148,78 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a0f4b6d32be97163a7cd4a16c74ec173d" name="a0f4b6d32be97163a7cd4a16c74ec173d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f4b6d32be97163a7cd4a16c74ec173d">&#9670;&#160;</a></span>hitPoint</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Vector3d RayHitInfo::hitPoint</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a64833bbb2a2536372d9d03d7a94eb412" name="a64833bbb2a2536372d9d03d7a94eb412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64833bbb2a2536372d9d03d7a94eb412">&#9670;&#160;</a></span>material</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMaterial.html">Material</a>* RayHitInfo::material = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afa1faf8e95ddf88f87234d80ec56ed12" name="afa1faf8e95ddf88f87234d80ec56ed12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa1faf8e95ddf88f87234d80ec56ed12">&#9670;&#160;</a></span>normal</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Vector3d RayHitInfo::normal</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69b1c50b816231ef99fae1cec04c3ce5" name="a69b1c50b816231ef99fae1cec04c3ce5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69b1c50b816231ef99fae1cec04c3ce5">&#9670;&#160;</a></span>tangent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Vector3d RayHitInfo::tangent</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a88822e8372954d1008b3fb45a812016d" name="a88822e8372954d1008b3fb45a812016d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88822e8372954d1008b3fb45a812016d">&#9670;&#160;</a></span>uvCoordinates</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTextureUV.html">TextureUV</a> RayHitInfo::uvCoordinates</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/lucasgtr/lumen/include/Core/<a class="el" href="RayIntersection_8hpp_source.html">RayIntersection.hpp</a></li>
+<li>/home/lucasgtr/lumen/include/Rendering/<a class="el" href="RayIntersection_8hpp_source.html">RayIntersection.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

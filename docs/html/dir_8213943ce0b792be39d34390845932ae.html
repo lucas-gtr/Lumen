@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -88,8 +95,11 @@ Directory dependency graph for Core:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="Camera_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Camera_8hpp.html">Camera.hpp</a></td></tr>
-<tr class="memdesc:Camera_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header file for the <a class="el" href="classCamera.html" title="Class representing a camera with adjustable parameters such as field of view, focal length,...">Camera</a> class. <br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="ColorUtils_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ColorUtils_8hpp.html">ColorUtils.hpp</a></td></tr>
+<tr class="memdesc:ColorUtils_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header file for color utility functions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="CommonTypes_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CommonTypes_8hpp.html">CommonTypes.hpp</a></td></tr>
+<tr class="memdesc:CommonTypes_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header file for common types used in the project. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="Config_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Config_8hpp.html">Config.hpp</a></td></tr>
 <tr class="memdesc:Config_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration file for the rendering engine. <br /></td></tr>
@@ -100,23 +110,11 @@ Files</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="MathConstants_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MathConstants_8hpp.html">MathConstants.hpp</a></td></tr>
 <tr class="memdesc:MathConstants_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header file for mathematical constants used in the project. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="Mesh_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Mesh_8hpp.html">Mesh.hpp</a></td></tr>
-<tr class="memdesc:Mesh_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header file for the <a class="el" href="classMesh.html" title="Class representing a 3D mesh, containing vertices and faces.">Mesh</a> class, the <a class="el" href="structVertex.html" title="Structure representing a vertex in a 3D mesh.">Vertex</a> and <a class="el" href="structFace.html" title="Structure representing a face in a 3D mesh, defined by three vertices.">Face</a> structures. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="Object3D_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Object3D_8hpp.html">Object3D.hpp</a></td></tr>
-<tr class="memdesc:Object3D_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header file for the <a class="el" href="classObject3D.html" title="A class representing a 3D object with a mesh and transformation.">Object3D</a> class. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="Random_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Random_8hpp.html">Random.hpp</a></td></tr>
 <tr class="memdesc:Random_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header file for random number generation functions. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="Ray_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Ray_8hpp.html">Ray.hpp</a></td></tr>
 <tr class="memdesc:Ray_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header file for the <a class="el" href="structRay.html" title="A structure representing a ray in 3D space.">Ray</a> structure. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="RayIntersection_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RayIntersection_8hpp.html">RayIntersection.hpp</a></td></tr>
-<tr class="memdesc:RayIntersection_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header file for the <a class="el" href="classRayIntersection.html" title="Class responsible for ray-triangle and ray-mesh intersection calculations.">RayIntersection</a> class. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="Scene_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Scene_8hpp.html">Scene.hpp</a></td></tr>
-<tr class="memdesc:Scene_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header file for the <a class="el" href="classScene.html" title="Represents a 3D scene that holds objects and a camera.">Scene</a> class. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="Transform_8hpp_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Transform_8hpp.html">Transform.hpp</a></td></tr>
 <tr class="memdesc:Transform_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header file for the <a class="el" href="classTransform.html" title="Represents a 3D transformation consisting of position, rotation, and scale.">Transform</a> class. <br /></td></tr>

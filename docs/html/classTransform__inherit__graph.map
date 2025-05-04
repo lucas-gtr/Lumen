@@ -1,7 +1,15 @@
 <map id="Transform" name="Transform">
-<area shape="rect" id="Node000001" title="Represents a 3D transformation consisting of position, rotation, and scale." alt="" coords="49,5,136,31"/>
-<area shape="rect" id="Node000002" href="$classCamera.html" title="Class representing a camera with adjustable parameters such as field of view, focal length,..." alt="" coords="5,79,79,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,44,52,80,48,77,74,41"/>
-<area shape="rect" id="Node000003" href="$classObject3D.html" title="A class representing a 3D object with a mesh and transformation." alt="" coords="103,79,186,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="111,40,138,77,134,80,107,43"/>
+<area shape="rect" id="Node000001" title="Represents a 3D transformation consisting of position, rotation, and scale." alt="" coords="155,5,242,31"/>
+<area shape="rect" id="Node000002" href="$classCamera.html" title="Class representing a camera with adjustable parameters such as field of view, focal length,..." alt="" coords="74,79,147,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,41,127,81,123,76,172,37"/>
+<area shape="rect" id="Node000003" href="$classLight.html" title="A class representing a light source in a 3D scene." alt="" coords="171,79,226,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="201,44,201,79,196,79,196,44"/>
+<area shape="rect" id="Node000007" href="$classObject3D.html" title="A class representing a 3D object with a mesh and transformation." alt="" coords="251,79,333,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="226,37,278,76,275,81,223,41"/>
+<area shape="rect" id="Node000004" href="$classDirectionalLight.html" title="A class representing a directional light source in a 3D scene." alt="" coords="5,152,131,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="167,113,91,154,88,149,164,108"/>
+<area shape="rect" id="Node000005" href="$classPointLight.html" title="A class representing a point light source in a 3D scene." alt="" coords="155,152,242,177"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="201,118,201,152,196,152,196,118"/>
+<area shape="rect" id="Node000006" href="$classSpotLight.html" title="A class representing a spot light source in a 3D scene." alt="" coords="267,152,349,177"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="229,109,292,150,289,154,226,114"/>
 </map>

@@ -1,9 +1,6 @@
 add_library(Core STATIC
     Framebuffer.cpp
-    RayIntersection.cpp
     Transform.cpp
-    Camera.cpp
-    Mesh.cpp
     Random.cpp
 )
 

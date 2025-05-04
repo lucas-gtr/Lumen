@@ -7,14 +7,20 @@
 
 #include <string>
 
+/**
+ * @class OutputFormat
+ * @brief Abstract base class for different image output formats.
+ *
+ * This class defines the interface for writing images to files in various formats.
+ * Derived classes should implement the write_image method for specific formats.
+ */
 class OutputFormat {
-
 public:
   OutputFormat()                               = default; ///< Default constructor.
-  OutputFormat(const OutputFormat&)            = default; ///< Default copy constructor.
-  OutputFormat& operator=(const OutputFormat&) = default; ///< Default copy assignment operator.
-  OutputFormat(OutputFormat&&)                 = default; ///< Default move constructor.
-  OutputFormat& operator=(OutputFormat&&)      = default; ///< Default move assignment operator.
+  OutputFormat(const OutputFormat&)            = delete;  ///< Default copy constructor.
+  OutputFormat& operator=(const OutputFormat&) = delete;  ///< Default copy assignment operator.
+  OutputFormat(OutputFormat&&)                 = delete;  ///< Default move constructor.
+  OutputFormat& operator=(OutputFormat&&)      = delete;  ///< Default move assignment operator.
 
   /**
    * @brief Pure virtual function to write an image to a file.

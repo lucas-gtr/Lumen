@@ -1,0 +1,11 @@
+<map id="Light" name="Light">
+<area shape="rect" id="Node000001" title="A class representing a light source in a 3D scene." alt="" coords="171,79,226,104"/>
+<area shape="rect" id="Node000003" href="$classDirectionalLight.html" title="A class representing a directional light source in a 3D scene." alt="" coords="5,152,131,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,113,91,154,88,149,164,108"/>
+<area shape="rect" id="Node000004" href="$classPointLight.html" title="A class representing a point light source in a 3D scene." alt="" coords="155,152,242,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="201,118,201,152,196,152,196,118"/>
+<area shape="rect" id="Node000005" href="$classSpotLight.html" title="A class representing a spot light source in a 3D scene." alt="" coords="267,152,349,177"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="229,109,292,150,289,154,226,114"/>
+<area shape="rect" id="Node000002" href="$classTransform.html" title="Represents a 3D transformation consisting of position, rotation, and scale." alt="" coords="155,5,242,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,44,201,79,196,79,196,44"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="ReinhardToneMapping" name="ReinhardToneMapping">
+<area shape="rect" id="Node000001" title="Class implementing the Reinhard tone mapping algorithm." alt="" coords="5,79,172,104"/>
+<area shape="rect" id="Node000002" href="$classToneMappingStrategy.html" title="Abstract base class for tone mapping strategies." alt="" coords="7,5,170,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,44,91,79,86,79,86,44"/>
+</map>

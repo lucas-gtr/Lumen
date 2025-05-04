@@ -1,22 +1,27 @@
-#include "Rendering/Renderer.hpp"
-#include "Core/Framebuffer.hpp"
-#include "Core/Ray.hpp"
-#include "Core/RayIntersection.hpp"
-#include "Core/Scene.hpp"
-#include "Rendering/CameraRayEmitter.hpp"
-#include "Rendering/RenderSettings.hpp"
-
 #include <Eigen/Core>
-#include <cstddef>
+#include <Eigen/Dense>
+#include <chrono>
+#include <cmath>
 #include <iostream>
 
+#include "Core/CommonTypes.hpp"
+#include "Core/Framebuffer.hpp"
+#include "Core/Random.hpp"
+#include "Core/Ray.hpp"
+#include "Rendering/CameraRayEmitter.hpp"
+#include "Rendering/RayIntersection.hpp"
+#include "Rendering/RenderSettings.hpp"
+#include "Rendering/Renderer.hpp"
+#include "Scene/Scene.hpp"
+#include "Surface/Material.hpp"
+
 Renderer::Renderer(const RenderSettings* render_settings, const Scene* scene)
-    : m_renderSettings(render_settings), m_scene(scene),
+    : m_render_settings(render_settings), m_scene(scene),
       m_framebuffer(new Framebuffer(
           {render_settings->getWidth(), render_settings->getHeight(), render_settings->getChannelCount()})) {}
 
 void Renderer::setRenderSettings(const RenderSettings* settings) {
-  m_renderSettings                 = settings;
+  m_render_settings                = settings;
   const ImageProperties properties = {settings->getWidth(), settings->getHeight(), settings->getChannelCount()};
   m_framebuffer->setFramebufferProperties(properties);
 }
@@ -40,55 +45,77 @@ void Renderer::renderFrame() {
                                                    m_scene->getCamera()->getFocalLength(),
                                                    m_scene->getCamera()->getFocusDistance(),
                                                    m_scene->getCamera()->getLensRadius(),
-                                                   static_cast<double>(m_renderSettings->getWidth()) /
-                                                       static_cast<double>(m_renderSettings->getHeight())};
+                                                   static_cast<double>(m_render_settings->getWidth()) /
+                                                       static_cast<double>(m_render_settings->getHeight())};
   m_cameraRayEmitter.initializeViewport(emitter_parameters);
 
-  const double sample_weight = 1.0 / m_renderSettings->getSamplesPerPixel();
-  for(int s = 0; s < m_renderSettings->getSamplesPerPixel(); ++s) {
-    std::cout << "Sample: " << s + 1 << "/" << m_renderSettings->getSamplesPerPixel() << '\n';
-    renderSample(sample_weight);
+  const double sample_weight   = 1.0 / m_render_settings->getSamplesPerPixel();
+  const int    samples_per_row = static_cast<int>(std::sqrt(m_render_settings->getSamplesPerPixel()));
+  const double cell_size       = 1.0 / static_cast<double>(samples_per_row);
+
+  const auto start_time = std::chrono::high_resolution_clock::now();
+
+  for(int s = 0; s < m_render_settings->getSamplesPerPixel(); ++s) {
+    std::cout << "Sample: " << s + 1 << "/" << m_render_settings->getSamplesPerPixel() << '\n';
+    const PixelCoord grid_pos{s % samples_per_row, s / samples_per_row};
+    renderSample(sample_weight, grid_pos, cell_size);
   }
+  m_framebuffer->convertToSRGBColorSpace();
+  const auto                          end_time        = std::chrono::high_resolution_clock::now();
+  const std::chrono::duration<double> render_duration = end_time - start_time;
+
+  std::cout << "Render time: " << render_duration.count() << " seconds.\n";
 }
 
-void Renderer::renderSample(double sample_weight) {
-  const size_t height = m_renderSettings->getHeight();
-  const size_t width  = m_renderSettings->getWidth();
+void Renderer::renderSample(double sample_weight, PixelCoord grid_pos, double cell_size) {
+  const int height = m_render_settings->getHeight();
+  const int width  = m_render_settings->getWidth();
 
   const double dy = 1.0 / static_cast<double>(height);
   const double dx = 1.0 / static_cast<double>(width);
 
-  for(size_t y = 0; y < height; ++y) {
-    const double v = (static_cast<double>(y) + 0.5) * dy;
-    for(size_t x = 0; x < width; ++x) {
-      const double          u     = (static_cast<double>(x) + 0.5) * dx;
+  for(int y = 0; y < height; ++y) {
+    for(int x = 0; x < width; ++x) {
+      const double          v     = (static_cast<double>(y) + (grid_pos.y + randomUniform01()) * cell_size) * dy;
+      const double          u     = (static_cast<double>(x) + (grid_pos.x + randomUniform01()) * cell_size) * dx;
       const Ray             ray   = m_cameraRayEmitter.generateRay(u, v);
-      const Eigen::Vector3d color = traceRay(ray);
-      m_framebuffer->setPixelColor(x, y, color, sample_weight);
+      const Eigen::Vector4d color = traceRay(ray);
+      m_framebuffer->setPixelColor({x, y}, color, sample_weight);
     }
   }
 }
 
-Eigen::Vector3d Renderer::traceRay(const Ray& ray) const {
-  RayHitInfo closest_hit;
-  for(const auto& object : m_scene->getObjectList()) {
-    const RayHitInfo hit = RayIntersection::getObjectIntersection(ray, object.get());
-    if(hit.distance < closest_hit.distance) {
-      closest_hit = hit;
+bool Renderer::isValidHit(const RayHitInfo& hit_info) const {
+  const double distance = hit_info.distance;
+  return distance >= m_render_settings->getNearPlane() && distance <= m_render_settings->getFarPlane();
+}
+
+Eigen::Vector4d Renderer::traceRay(const Ray& ray) const {
+  const RayHitInfo hit_info = RayIntersection::getSceneIntersection(ray, m_scene);
+  if(!isValidHit(hit_info)) {
+    return m_scene->getSkyboxColor(ray.direction);
+  }
+
+  const Eigen::Vector4d diffuse_color = hit_info.material->getAlbedo(hit_info.uvCoordinates);
+
+  Eigen::Vector3d light_factor = {0.0, 0.0, 0.0};
+  for(const auto& light : m_scene->getLightList()) {
+    Ray shadow_ray;
+    shadow_ray.direction = light->getDirectionFromPoint(hit_info.hitPoint);
+    shadow_ray.origin    = hit_info.hitPoint + shadow_ray.direction * RayIntersection::RAY_OFFSET_FACTOR;
+
+    const RayHitInfo shadow_hit = RayIntersection::getSceneIntersection(shadow_ray, m_scene);
+    if(isValidHit(shadow_hit)) {
+      continue;
     }
+
+    light_factor += light->getLightFactor(hit_info.hitPoint, hit_info.normal);
   }
 
-  if(closest_hit.distance < m_renderSettings->getFarPlane() &&
-     closest_hit.distance > m_renderSettings->getNearPlane()) {
-    return closest_hit.color;
-  }
-
-  return m_scene->getBackgroundColor();
+  Eigen::Vector4d final_color;
+  final_color.head<3>() = diffuse_color.head<3>().cwiseProduct(light_factor);
+  final_color[3]        = diffuse_color[3];
+  return final_color;
 }
 
-Renderer::~Renderer() {
-  if(m_framebuffer != nullptr) {
-    delete m_framebuffer;
-    m_framebuffer = nullptr;
-  }
-}
+Renderer::~Renderer() { delete m_framebuffer; }

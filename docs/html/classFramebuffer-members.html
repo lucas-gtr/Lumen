@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -75,20 +82,21 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="classFramebuffer.html">Framebuffer</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classFramebuffer.html#a64957e7bc496a1d3c8476552d5d37b2c">Framebuffer</a>(ImageProperties properties)</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classFramebuffer.html#ad023fa43b1bc49f4e0b227a77cc9756c">Framebuffer</a>(const Framebuffer &amp;)=delete</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classFramebuffer.html#a4f22d58d068b65f86ee0818e65afaff3">Framebuffer</a>(Framebuffer &amp;&amp;)=delete</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classFramebuffer.html#a0bb62f7241cd0e9afee0f4acd8d6cdd3">generateImage</a>()</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classFramebuffer.html#a5659778eb7b3eb05b356eca306d5d3e5">getChannelCount</a>() const</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classFramebuffer.html#a565f0c7a838d4c09347325fd96c45b1d">getHeight</a>() const</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classFramebuffer.html#a068687e564df9935d6138efa181e4446">getImage</a>() const</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classFramebuffer.html#ae9357e8a11c6eec2b0a85a607d476673">getWidth</a>() const</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classFramebuffer.html#aae33f5a97f542d7723618d54b493606a">operator=</a>(const Framebuffer &amp;)=delete</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classFramebuffer.html#a3d31c4dd7d5a88567d7d88832f67dacc">operator=</a>(Framebuffer &amp;&amp;)=delete</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classFramebuffer.html#aec033019966573470d9f8462e45fa27b">setFramebufferProperties</a>(ImageProperties properties)</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classFramebuffer.html#ae3f0cb3adb4e9a1bda72dfde1c044aa8">setPixelColor</a>(size_t x, size_t y, const Eigen::Vector3d &amp;color, double weight)</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classFramebuffer.html#a49beff864decae43b73e57593ca739fb">updateFrameBuffer</a>()</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classFramebuffer.html#a6d14797e3ea79f7bbba2121e9c1cc0d4">~Framebuffer</a>()=default</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classFramebuffer.html#a9b36fad645b911130ce13b4871c47a6a">convertToSRGBColorSpace</a>()</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classFramebuffer.html#a03db0c1b3c5e641dba0c38be25ec0d92">Framebuffer</a>(ImageProperties framebuffer_properties)</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classFramebuffer.html#ad023fa43b1bc49f4e0b227a77cc9756c">Framebuffer</a>(const Framebuffer &amp;)=delete</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classFramebuffer.html#a4f22d58d068b65f86ee0818e65afaff3">Framebuffer</a>(Framebuffer &amp;&amp;)=delete</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classFramebuffer.html#a3018e783056f527942175e96bd09657d">getChannelCount</a>() const</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classFramebuffer.html#a9aeb1b591fd33db8c885080ac2d8d8f9">getFramebuffer</a>() const</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classFramebuffer.html#a9dbe4c57174da486244e49893d40ea3b">getHeight</a>() const</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classFramebuffer.html#a8b46d4898a446fd6a10f71a77b0071f4">getSize</a>() const</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classFramebuffer.html#a22b9f4bcbf98acad1b578e556e8e855e">getWidth</a>() const</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classFramebuffer.html#aae33f5a97f542d7723618d54b493606a">operator=</a>(const Framebuffer &amp;)=delete</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classFramebuffer.html#a3d31c4dd7d5a88567d7d88832f67dacc">operator=</a>(Framebuffer &amp;&amp;)=delete</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classFramebuffer.html#aca92863b30f30f681732818fd12ad1b3">setFramebufferProperties</a>(ImageProperties framebuffer_properties)</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classFramebuffer.html#ab694e23b3f6f53c140f15ebfcad7260b">setPixelColor</a>(PixelCoord pixel_coord, const Eigen::Vector4d &amp;color, double weight)</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classFramebuffer.html#a49beff864decae43b73e57593ca739fb">updateFrameBuffer</a>()</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classFramebuffer.html#a037bf3e17455354d5d907ceea00313dd">~Framebuffer</a>()</td><td class="entry"><a class="el" href="classFramebuffer.html">Framebuffer</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -83,9 +90,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a93ccc41b0a2f6c24e467d5d9de76ec0d" id="r_a93ccc41b0a2f6c24e467d5d9de76ec0d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a93ccc41b0a2f6c24e467d5d9de76ec0d">Scene</a> ()=default</td></tr>
-<tr class="memdesc:a93ccc41b0a2f6c24e467d5d9de76ec0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
-<tr class="separator:a93ccc41b0a2f6c24e467d5d9de76ec0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad10176d75a9cc0da56626f682d083507" id="r_ad10176d75a9cc0da56626f682d083507"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#ad10176d75a9cc0da56626f682d083507">Scene</a> ()</td></tr>
+<tr class="separator:ad10176d75a9cc0da56626f682d083507"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab278e1cce7985696ecccb1f8f113cacb" id="r_ab278e1cce7985696ecccb1f8f113cacb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#ab278e1cce7985696ecccb1f8f113cacb">Scene</a> (const <a class="el" href="classScene.html">Scene</a> &amp;other)=delete</td></tr>
 <tr class="separator:ab278e1cce7985696ecccb1f8f113cacb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f8910723e46fca1384cb11c7e4eb650" id="r_a5f8910723e46fca1384cb11c7e4eb650"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classScene.html">Scene</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a5f8910723e46fca1384cb11c7e4eb650">operator=</a> (const <a class="el" href="classScene.html">Scene</a> &amp;other)=delete</td></tr>
@@ -97,37 +103,39 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2161d81b083c0ecdb47d8cd763061c2d" id="r_a2161d81b083c0ecdb47d8cd763061c2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a2161d81b083c0ecdb47d8cd763061c2d">addObject</a> (std::unique_ptr&lt; <a class="el" href="classObject3D.html">Object3D</a> &gt; object)</td></tr>
 <tr class="memdesc:a2161d81b083c0ecdb47d8cd763061c2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a 3D object to the scene.  <br /></td></tr>
 <tr class="separator:a2161d81b083c0ecdb47d8cd763061c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c71513261015895b2220396667e7ee0" id="r_a4c71513261015895b2220396667e7ee0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a4c71513261015895b2220396667e7ee0">addLight</a> (std::unique_ptr&lt; <a class="el" href="classLight.html">Light</a> &gt; light)</td></tr>
+<tr class="memdesc:a4c71513261015895b2220396667e7ee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a light to the scene.  <br /></td></tr>
+<tr class="separator:a4c71513261015895b2220396667e7ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a869a9d3699f7c2d9e994aab7c0e0e260" id="r_a869a9d3699f7c2d9e994aab7c0e0e260"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a869a9d3699f7c2d9e994aab7c0e0e260">setCamera</a> (std::unique_ptr&lt; <a class="el" href="classCamera.html">Camera</a> &gt; camera)</td></tr>
 <tr class="memdesc:a869a9d3699f7c2d9e994aab7c0e0e260"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the camera for the scene.  <br /></td></tr>
 <tr class="separator:a869a9d3699f7c2d9e994aab7c0e0e260"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8660a2d2d1b1b924f474a8ad4743f3de" id="r_a8660a2d2d1b1b924f474a8ad4743f3de"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classObject3D.html">Object3D</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a8660a2d2d1b1b924f474a8ad4743f3de">getObjectList</a> () const</td></tr>
 <tr class="memdesc:a8660a2d2d1b1b924f474a8ad4743f3de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the list of objects in the scene.  <br /></td></tr>
 <tr class="separator:a8660a2d2d1b1b924f474a8ad4743f3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8e117520a0123c6cfe4c6ec81852ec0" id="r_af8e117520a0123c6cfe4c6ec81852ec0"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classLight.html">Light</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#af8e117520a0123c6cfe4c6ec81852ec0">getLightList</a> () const</td></tr>
+<tr class="memdesc:af8e117520a0123c6cfe4c6ec81852ec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the list of lights in the scene.  <br /></td></tr>
+<tr class="separator:af8e117520a0123c6cfe4c6ec81852ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c6fc0308a126965ce5a87e8619ac7ef" id="r_a2c6fc0308a126965ce5a87e8619ac7ef"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classCamera.html">Camera</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a2c6fc0308a126965ce5a87e8619ac7ef">getCamera</a> () const</td></tr>
 <tr class="memdesc:a2c6fc0308a126965ce5a87e8619ac7ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current camera of the scene.  <br /></td></tr>
 <tr class="separator:a2c6fc0308a126965ce5a87e8619ac7ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54036ce71cb2b6a8558fda8e6622897b" id="r_a54036ce71cb2b6a8558fda8e6622897b"><td class="memItemLeft" align="right" valign="top">const Eigen::Vector3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a54036ce71cb2b6a8558fda8e6622897b">getBackgroundColor</a> () const</td></tr>
-<tr class="memdesc:a54036ce71cb2b6a8558fda8e6622897b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the background color.  <br /></td></tr>
-<tr class="separator:a54036ce71cb2b6a8558fda8e6622897b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fd89a9016dcca0f73658d0aefccbb12" id="r_a7fd89a9016dcca0f73658d0aefccbb12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a7fd89a9016dcca0f73658d0aefccbb12">setBackgroundColor</a> (const Eigen::Vector3d &amp;color)</td></tr>
-<tr class="memdesc:a7fd89a9016dcca0f73658d0aefccbb12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the background color.  <br /></td></tr>
-<tr class="separator:a7fd89a9016dcca0f73658d0aefccbb12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afea995759da5ddb83218edf0ad2bb663" id="r_afea995759da5ddb83218edf0ad2bb663"><td class="memItemLeft" align="right" valign="top">Eigen::Vector4d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#afea995759da5ddb83218edf0ad2bb663">getSkyboxColor</a> (const Eigen::Vector3d direction) const</td></tr>
+<tr class="memdesc:afea995759da5ddb83218edf0ad2bb663"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the color of the skybox based on a given direction.  <br /></td></tr>
+<tr class="separator:afea995759da5ddb83218edf0ad2bb663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a08cdced45e2dd7fd9069210b24bfee" id="r_a9a08cdced45e2dd7fd9069210b24bfee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a9a08cdced45e2dd7fd9069210b24bfee">setSkybox</a> (const std::shared_ptr&lt; <a class="el" href="classTexture.html">Texture</a> &gt; &amp;skybox_texture)</td></tr>
+<tr class="memdesc:a9a08cdced45e2dd7fd9069210b24bfee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the skybox texture for the scene.  <br /></td></tr>
+<tr class="separator:a9a08cdced45e2dd7fd9069210b24bfee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a631eef7493cafce5d74739a2cad12a58" id="r_a631eef7493cafce5d74739a2cad12a58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a631eef7493cafce5d74739a2cad12a58">~Scene</a> ()=default</td></tr>
 <tr class="memdesc:a631eef7493cafce5d74739a2cad12a58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
 <tr class="separator:a631eef7493cafce5d74739a2cad12a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a 3D scene that holds objects and a camera. </p>
-<p>This class manages a collection of 3D objects (<a class="el" href="classObject3D.html" title="A class representing a 3D object with a mesh and transformation.">Object3D</a>) and the current camera for the scene. It allows adding objects to the scene, setting the active camera, and retrieving the list of objects and the camera. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a93ccc41b0a2f6c24e467d5d9de76ec0d" name="a93ccc41b0a2f6c24e467d5d9de76ec0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93ccc41b0a2f6c24e467d5d9de76ec0d">&#9670;&#160;</a></span>Scene() <span class="overload">[1/3]</span></h2>
+<a id="ad10176d75a9cc0da56626f682d083507" name="ad10176d75a9cc0da56626f682d083507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad10176d75a9cc0da56626f682d083507">&#9670;&#160;</a></span>Scene() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Scene::Scene </td>
@@ -136,14 +144,7 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-
-<p>Default constructor. </p>
 
 </div>
 </div>
@@ -227,6 +228,40 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4c71513261015895b2220396667e7ee0" name="a4c71513261015895b2220396667e7ee0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c71513261015895b2220396667e7ee0">&#9670;&#160;</a></span>addLight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::addLight </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classLight.html">Light</a> &gt;&#160;</td>
+          <td class="paramname"><em>light</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a light to the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">light</td><td>A unique pointer to a <a class="el" href="classLight.html" title="A class representing a light source in a 3D scene.">Light</a> to be added to the scene. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a2161d81b083c0ecdb47d8cd763061c2d" name="a2161d81b083c0ecdb47d8cd763061c2d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2161d81b083c0ecdb47d8cd763061c2d">&#9670;&#160;</a></span>addObject()</h2>
 
@@ -261,34 +296,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a54036ce71cb2b6a8558fda8e6622897b" name="a54036ce71cb2b6a8558fda8e6622897b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54036ce71cb2b6a8558fda8e6622897b">&#9670;&#160;</a></span>getBackgroundColor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const Eigen::Vector3d &amp; Scene::getBackgroundColor </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the background color. </p>
-<dl class="section return"><dt>Returns</dt><dd>The background color as an Eigen::Vector3d representing RGB values. </dd></dl>
-
-</div>
-</div>
 <a id="a2c6fc0308a126965ce5a87e8619ac7ef" name="a2c6fc0308a126965ce5a87e8619ac7ef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2c6fc0308a126965ce5a87e8619ac7ef">&#9670;&#160;</a></span>getCamera()</h2>
 
@@ -317,6 +324,34 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="af8e117520a0123c6cfe4c6ec81852ec0" name="af8e117520a0123c6cfe4c6ec81852ec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8e117520a0123c6cfe4c6ec81852ec0">&#9670;&#160;</a></span>getLightList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classLight.html">Light</a> &gt; &gt; &amp; Scene::getLightList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the list of lights in the scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>A constant reference to the list of <a class="el" href="classLight.html" title="A class representing a light source in a 3D scene.">Light</a> pointers in the scene. </dd></dl>
+
+</div>
+</div>
 <a id="a8660a2d2d1b1b924f474a8ad4743f3de" name="a8660a2d2d1b1b924f474a8ad4743f3de"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8660a2d2d1b1b924f474a8ad4743f3de">&#9670;&#160;</a></span>getObjectList()</h2>
 
@@ -342,6 +377,41 @@ Public Member Functions</h2></td></tr>
 
 <p>Gets the list of objects in the scene. </p>
 <dl class="section return"><dt>Returns</dt><dd>A constant reference to the list of <a class="el" href="classObject3D.html" title="A class representing a 3D object with a mesh and transformation.">Object3D</a> pointers in the scene. </dd></dl>
+
+</div>
+</div>
+<a id="afea995759da5ddb83218edf0ad2bb663" name="afea995759da5ddb83218edf0ad2bb663"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afea995759da5ddb83218edf0ad2bb663">&#9670;&#160;</a></span>getSkyboxColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Vector4d Scene::getSkyboxColor </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::Vector3d&#160;</td>
+          <td class="paramname"><em>direction</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the color of the skybox based on a given direction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">direction</td><td>The direction vector for which to get the skybox color. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The color of the skybox as an Eigen::Vector4d. </dd></dl>
 
 </div>
 </div>
@@ -397,40 +467,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7fd89a9016dcca0f73658d0aefccbb12" name="a7fd89a9016dcca0f73658d0aefccbb12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fd89a9016dcca0f73658d0aefccbb12">&#9670;&#160;</a></span>setBackgroundColor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Scene::setBackgroundColor </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::Vector3d &amp;&#160;</td>
-          <td class="paramname"><em>color</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Set the background color. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">color</td><td>The background color as an Eigen::Vector3d representing RGB values. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a869a9d3699f7c2d9e994aab7c0e0e260" name="a869a9d3699f7c2d9e994aab7c0e0e260"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a869a9d3699f7c2d9e994aab7c0e0e260">&#9670;&#160;</a></span>setCamera()</h2>
 
@@ -465,8 +501,43 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/lucasgtr/lumen/include/Core/<a class="el" href="Scene_8hpp_source.html">Scene.hpp</a></li>
+<a id="a9a08cdced45e2dd7fd9069210b24bfee" name="a9a08cdced45e2dd7fd9069210b24bfee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a08cdced45e2dd7fd9069210b24bfee">&#9670;&#160;</a></span>setSkybox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::setSkybox </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classTexture.html">Texture</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>skybox_texture</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the skybox texture for the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">skybox_texture</td><td>A shared pointer to the <a class="el" href="classTexture.html" title="Class representing a texture for 3D rendering.">Texture</a> to be used as the skybox. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>/home/lucasgtr/lumen/include/Scene/<a class="el" href="Scene_8hpp_source.html">Scene.hpp</a></li>
+<li>/home/lucasgtr/lumen/src/Scene/<a class="el" href="Scene_8cpp.html">Scene.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['half_0',['HALF',['../MathConstants_8hpp.html#a41fce4c7218b88ea01b610ef01b3bc4e',1,'MathConstants.hpp']]],
-  ['height_1',['height',['../structImageProperties.html#adcfa7f32f6d7c7773ddc681b7742dee8',1,'ImageProperties']]]
+  ['focallength_0',['focalLength',['../structRayEmitterParameters.html#ab0ffad5fc5dec801116a55a4a01ed99c',1,'RayEmitterParameters']]],
+  ['focusdistance_1',['focusDistance',['../structRayEmitterParameters.html#a18c9041bbb5556d2c6b643b50dbb2f41',1,'RayEmitterParameters']]]
 ];

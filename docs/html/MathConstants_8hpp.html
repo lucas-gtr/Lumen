@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -73,8 +80,6 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">MathConstants.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -97,218 +102,75 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="MathConstants_8hpp__dep__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Core_2MathConstants_8hppdep" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2include_2Core_2MathConstants_8hppdep" id="a_2home_2lucasgtr_2lumen_2include_2Core_2MathConstants_8hppdep">
-<area shape="rect" title="Header file for mathematical constants used in the project." alt="" coords="417,5,654,45"/>
-<area shape="rect" href="Camera_8hpp.html" title="Header file for the Camera class." alt="" coords="172,181,363,221"/>
-<area shape="poly" title=" " alt="" coords="443,52,396,70,353,96,330,116,309,139,280,183,275,180,305,136,326,112,350,91,394,66,441,47"/>
-<area shape="rect" href="Camera_8cpp.html" title=" " alt="" coords="5,269,169,309"/>
-<area shape="poly" title=" " alt="" coords="429,51,363,71,292,99,223,136,161,183,124,228,99,271,94,268,120,225,157,179,220,132,290,94,361,66,427,46"/>
-<area shape="rect" href="Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="364,93,568,133"/>
-<area shape="poly" title=" " alt="" coords="513,58,483,95,479,91,509,55"/>
-<area shape="rect" href="Transform_8cpp.html" title=" " alt="" coords="609,181,784,221"/>
-<area shape="poly" title=" " alt="" coords="564,54,635,132,680,179,676,183,631,135,560,58"/>
-<area shape="rect" href="Framebuffer_8cpp.html" title=" " alt="" coords="644,93,832,133"/>
-<area shape="poly" title=" " alt="" coords="593,48,695,91,693,96,591,53"/>
-<area shape="rect" href="CameraRayEmitter_8cpp.html" title=" " alt="" coords="857,93,1126,133"/>
-<area shape="poly" title=" " alt="" coords="649,45,892,91,891,96,648,50"/>
-<area shape="rect" href="Scene_8hpp.html" title="Header file for the Scene class." alt="" coords="194,269,373,309"/>
-<area shape="poly" title=" " alt="" coords="276,234,282,269,277,270,271,235"/>
-<area shape="poly" title=" " alt="" coords="217,230,128,272,126,267,215,225"/>
-<area shape="rect" href="Renderer_8hpp.html" title="Header file for the Renderer class." alt="" coords="167,357,400,397"/>
-<area shape="poly" title=" " alt="" coords="286,323,286,357,281,357,281,323"/>
-<area shape="rect" href="Renderer_8cpp.html" title=" " alt="" coords="336,445,540,485"/>
-<area shape="poly" title=" " alt="" coords="357,313,388,331,413,356,426,377,434,402,440,445,435,445,429,403,421,380,409,359,384,336,355,318"/>
-<area shape="poly" title=" " alt="" coords="331,402,405,443,403,448,328,406"/>
-<area shape="poly" title=" " alt="" coords="411,141,312,184,310,179,409,136"/>
-<area shape="rect" href="Object3D_8hpp.html" title="Header file for the Object3D class." alt="" coords="387,181,585,221"/>
-<area shape="poly" title=" " alt="" coords="476,146,484,181,479,182,471,148"/>
-<area shape="poly" title=" " alt="" coords="530,136,647,179,645,184,528,141"/>
-<area shape="poly" title=" " alt="" coords="430,229,329,272,327,267,428,224"/>
-<area shape="rect" href="RayIntersection_8hpp.html" title="Header file for the RayIntersection class." alt="" coords="397,269,639,309"/>
-<area shape="poly" title=" " alt="" coords="500,233,513,268,508,270,495,235"/>
-<area shape="rect" href="RayIntersection_8cpp.html" title=" " alt="" coords="555,357,767,397"/>
-<area shape="poly" title=" " alt="" coords="595,224,627,242,653,268,664,290,669,314,667,357,662,357,664,314,659,291,649,271,624,246,592,229"/>
-<area shape="poly" title=" " alt="" coords="506,323,449,446,444,444,501,321"/>
-<area shape="poly" title=" " alt="" coords="562,314,631,355,628,360,560,319"/>
+<area shape="rect" title="Header file for mathematical constants used in the project." alt="" coords="1377,5,1615,45"/>
+<area shape="rect" href="Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="957,93,1161,133"/>
+<area shape="poly" title=" " alt="" coords="1387,51,1155,96,1154,91,1386,45"/>
+<area shape="rect" href="SpotLight_8hpp.html" title="Header file for the SpotLight class." alt="" coords="1041,277,1263,317"/>
+<area shape="poly" title=" " alt="" coords="1476,58,1450,95,1430,132,1417,164,1401,193,1371,223,1344,242,1314,257,1254,279,1252,274,1312,252,1341,237,1368,219,1396,190,1412,161,1425,130,1446,92,1471,55"/>
+<area shape="rect" href="SpotLight_8cpp.html" title=" " alt="" coords="1393,372,1586,412"/>
+<area shape="poly" title=" " alt="" coords="1498,59,1492,372,1487,372,1493,59"/>
+<area shape="rect" href="Camera_8hpp.html" title="Header file for the Camera class." alt="" coords="959,181,1158,221"/>
+<area shape="poly" title=" " alt="" coords="1437,53,1328,96,1107,184,1105,179,1326,91,1435,48"/>
+<area shape="rect" href="Camera_8cpp.html" title=" " alt="" coords="1288,277,1459,317"/>
+<area shape="poly" title=" " alt="" coords="1486,59,1416,222,1387,277,1382,275,1411,220,1481,57"/>
+<area shape="rect" href="Transform_8cpp.html" title=" " alt="" coords="1182,181,1357,221"/>
+<area shape="poly" title=" " alt="" coords="1445,54,1378,95,1327,141,1287,183,1283,179,1323,137,1374,91,1442,49"/>
+<area shape="rect" href="CubeMeshBuilder_8cpp.html" title=" " alt="" coords="1533,93,1792,133"/>
+<area shape="poly" title=" " alt="" coords="1546,49,1627,91,1625,96,1543,54"/>
+<area shape="rect" href="PlaneMeshBuilder_8cpp.html" title=" " alt="" coords="1816,93,2077,133"/>
+<area shape="poly" title=" " alt="" coords="1609,45,1848,91,1848,96,1608,51"/>
+<area shape="rect" href="CameraRayEmitter_8cpp.html" title=" " alt="" coords="2101,93,2371,133"/>
+<area shape="poly" title=" " alt="" coords="1628,38,2090,91,2101,92,2101,97,2089,96,1628,44"/>
+<area shape="rect" href="Skybox_8cpp.html" title=" " alt="" coords="2395,93,2562,133"/>
+<area shape="poly" title=" " alt="" coords="1629,29,1971,49,2177,67,2383,91,2395,92,2395,98,2382,96,2177,72,1971,55,1628,34"/>
+<area shape="rect" href="Material_8cpp.html" title=" " alt="" coords="2586,93,2769,133"/>
+<area shape="poly" title=" " alt="" coords="1629,27,2051,46,2313,64,2575,91,2586,92,2585,97,2574,96,2312,70,2051,51,1629,32"/>
+<area shape="rect" href="Light_8hpp.html" title="Header file for the Light class." alt="" coords="742,181,935,221"/>
+<area shape="poly" title=" " alt="" coords="999,141,888,184,886,179,997,136"/>
+<area shape="poly" title=" " alt="" coords="1061,147,1061,181,1056,181,1056,147"/>
+<area shape="rect" href="Object3D_8hpp.html" title="Header file for the Object3D class." alt="" coords="437,181,645,221"/>
+<area shape="poly" title=" " alt="" coords="943,136,646,185,645,180,943,131"/>
+<area shape="poly" title=" " alt="" coords="1118,136,1224,179,1222,184,1116,141"/>
+<area shape="rect" href="DirectionalLight_8hpp.html" title="Header file for the DirectionalLight class." alt="" coords="285,269,489,324"/>
+<area shape="poly" title=" " alt="" coords="734,227,490,277,489,272,733,222"/>
+<area shape="rect" href="PointLight_8hpp.html" title="Header file for the PointLight class." alt="" coords="579,277,805,317"/>
+<area shape="poly" title=" " alt="" coords="799,231,723,279,720,274,796,226"/>
+<area shape="poly" title=" " alt="" coords="916,223,1089,274,1088,279,914,228"/>
+<area shape="rect" href="Scene_8hpp.html" title="Header file for the Scene class." alt="" coords="829,277,1016,317"/>
+<area shape="poly" title=" " alt="" coords="867,230,908,275,904,278,863,233"/>
+<area shape="rect" href="DirectionalLight_8cpp.html" title=" " alt="" coords="259,372,493,412"/>
+<area shape="poly" title=" " alt="" coords="385,338,381,372,376,372,379,337"/>
+<area shape="rect" href="PointLight_8cpp.html" title=" " alt="" coords="517,372,715,412"/>
+<area shape="poly" title=" " alt="" coords="670,329,633,374,629,370,666,326"/>
+<area shape="poly" title=" " alt="" coords="1234,318,1422,369,1420,375,1233,323"/>
+<area shape="rect" href="RayIntersection_8hpp.html" title="Header file for ray intersection functions." alt="" coords="789,372,1067,412"/>
+<area shape="poly" title=" " alt="" coords="927,330,930,372,924,372,922,330"/>
+<area shape="rect" href="Renderer_8hpp.html" title="Header file for the Renderer class." alt="" coords="1046,460,1279,500"/>
+<area shape="poly" title=" " alt="" coords="1011,317,1028,321,1066,327,1101,327,1162,323,1190,323,1217,330,1244,345,1270,370,1277,384,1278,397,1273,410,1263,422,1237,444,1206,462,1203,458,1234,440,1259,419,1268,408,1272,396,1272,385,1266,374,1241,349,1215,335,1189,329,1162,328,1101,332,1066,332,1028,327,1009,322"/>
+<area shape="rect" href="Renderer_8cpp.html" title=" " alt="" coords="1061,548,1265,588"/>
+<area shape="poly" title=" " alt="" coords="1010,317,1028,321,1088,328,1166,333,1241,345,1271,355,1291,370,1312,402,1318,434,1312,466,1294,501,1282,517,1267,531,1232,550,1229,546,1263,526,1278,514,1290,499,1307,465,1313,434,1307,404,1287,374,1268,360,1240,350,1166,339,1088,333,1028,327,1009,322"/>
+<area shape="rect" href="RayIntersection_8cpp.html" title=" " alt="" coords="628,460,876,500"/>
+<area shape="poly" title=" " alt="" coords="848,324,811,345,779,374,767,394,760,417,755,460,749,459,755,416,763,392,775,370,807,341,845,320"/>
+<area shape="rect" href="Scene_8cpp.html" title=" " alt="" coords="1091,372,1255,412"/>
+<area shape="poly" title=" " alt="" coords="987,319,1124,369,1122,374,985,324"/>
+<area shape="poly" title=" " alt="" coords="993,414,1112,457,1110,462,991,419"/>
+<area shape="poly" title=" " alt="" coords="954,421,991,459,1035,498,1077,524,1119,546,1117,550,1075,529,1032,502,987,463,950,424"/>
+<area shape="poly" title=" " alt="" coords="878,420,792,462,789,458,876,416"/>
+<area shape="poly" title=" " alt="" coords="1165,514,1165,548,1160,548,1160,514"/>
+<area shape="poly" title=" " alt="" coords="1022,231,952,279,949,274,1019,227"/>
+<area shape="poly" title=" " alt="" coords="1136,223,1311,274,1309,279,1134,228"/>
+<area shape="poly" title=" " alt="" coords="633,222,818,267,847,274,846,279,817,272,632,227"/>
+<area shape="poly" title=" " alt="" coords="542,235,547,281,555,303,568,322,596,334,649,347,789,370,789,375,648,352,594,339,565,326,550,306,541,282,536,236"/>
+<area shape="poly" title=" " alt="" coords="424,222,334,243,297,256,274,271,245,305,229,340,227,358,229,375,236,393,248,410,265,420,297,429,394,445,628,468,627,473,393,451,296,434,263,425,245,414,231,395,224,376,221,358,224,339,241,303,270,267,295,251,332,238,423,217"/>
+<area shape="rect" href="Object3D_8cpp.html" title=" " alt="" coords="5,277,184,317"/>
+<area shape="poly" title=" " alt="" coords="428,227,203,272,171,279,170,274,202,267,426,221"/>
 </map>
 </div>
 </div>
 <p><a href="MathConstants_8hpp_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:af3c8be8089d316e91d144d02065f8f96" id="r_af3c8be8089d316e91d144d02065f8f96"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MathConstants_8hpp.html#af3c8be8089d316e91d144d02065f8f96">ANGLE_MAX_DEGREES</a> = 180.0</td></tr>
-<tr class="separator:af3c8be8089d316e91d144d02065f8f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a410b5189721a469108e809fbf4f6e601" id="r_a410b5189721a469108e809fbf4f6e601"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MathConstants_8hpp.html#a410b5189721a469108e809fbf4f6e601">DEG_TO_RAD</a> = std::numbers::pi / <a class="el" href="MathConstants_8hpp.html#af3c8be8089d316e91d144d02065f8f96">ANGLE_MAX_DEGREES</a></td></tr>
-<tr class="separator:a410b5189721a469108e809fbf4f6e601"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f95b5d2bf49e6debc73481d885ea505" id="r_a7f95b5d2bf49e6debc73481d885ea505"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MathConstants_8hpp.html#a7f95b5d2bf49e6debc73481d885ea505">RAD_TO_DEG</a> = <a class="el" href="MathConstants_8hpp.html#af3c8be8089d316e91d144d02065f8f96">ANGLE_MAX_DEGREES</a> / std::numbers::pi</td></tr>
-<tr class="separator:a7f95b5d2bf49e6debc73481d885ea505"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a413457a8cdc8139b3492e2f1cc2f346a" id="r_a413457a8cdc8139b3492e2f1cc2f346a"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MathConstants_8hpp.html#a413457a8cdc8139b3492e2f1cc2f346a">MM_TO_M</a> = 0.001</td></tr>
-<tr class="separator:a413457a8cdc8139b3492e2f1cc2f346a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4f6e46ab01527c5035686776ba15eb6" id="r_ae4f6e46ab01527c5035686776ba15eb6"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MathConstants_8hpp.html#ae4f6e46ab01527c5035686776ba15eb6">M_TO_MM</a> = 1000.0</td></tr>
-<tr class="separator:ae4f6e46ab01527c5035686776ba15eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41fce4c7218b88ea01b610ef01b3bc4e" id="r_a41fce4c7218b88ea01b610ef01b3bc4e"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MathConstants_8hpp.html#a41fce4c7218b88ea01b610ef01b3bc4e">HALF</a> = 0.5</td></tr>
-<tr class="separator:a41fce4c7218b88ea01b610ef01b3bc4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6988c447a3af33899f0b595fc38db572" id="r_a6988c447a3af33899f0b595fc38db572"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MathConstants_8hpp.html#a6988c447a3af33899f0b595fc38db572">NORMALIZED_TO_COLOR8</a> = 255.999</td></tr>
-<tr class="separator:a6988c447a3af33899f0b595fc38db572"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header file for mathematical constants used in the project. </p>
-</div><h2 class="groupheader">Variable Documentation</h2>
-<a id="af3c8be8089d316e91d144d02065f8f96" name="af3c8be8089d316e91d144d02065f8f96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3c8be8089d316e91d144d02065f8f96">&#9670;&#160;</a></span>ANGLE_MAX_DEGREES</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr double ANGLE_MAX_DEGREES = 180.0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a410b5189721a469108e809fbf4f6e601" name="a410b5189721a469108e809fbf4f6e601"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a410b5189721a469108e809fbf4f6e601">&#9670;&#160;</a></span>DEG_TO_RAD</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr double DEG_TO_RAD = std::numbers::pi / <a class="el" href="MathConstants_8hpp.html#af3c8be8089d316e91d144d02065f8f96">ANGLE_MAX_DEGREES</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a41fce4c7218b88ea01b610ef01b3bc4e" name="a41fce4c7218b88ea01b610ef01b3bc4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41fce4c7218b88ea01b610ef01b3bc4e">&#9670;&#160;</a></span>HALF</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr double HALF = 0.5</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae4f6e46ab01527c5035686776ba15eb6" name="ae4f6e46ab01527c5035686776ba15eb6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4f6e46ab01527c5035686776ba15eb6">&#9670;&#160;</a></span>M_TO_MM</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr double M_TO_MM = 1000.0</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a413457a8cdc8139b3492e2f1cc2f346a" name="a413457a8cdc8139b3492e2f1cc2f346a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a413457a8cdc8139b3492e2f1cc2f346a">&#9670;&#160;</a></span>MM_TO_M</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr double MM_TO_M = 0.001</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6988c447a3af33899f0b595fc38db572" name="a6988c447a3af33899f0b595fc38db572"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6988c447a3af33899f0b595fc38db572">&#9670;&#160;</a></span>NORMALIZED_TO_COLOR8</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr double NORMALIZED_TO_COLOR8 = 255.999</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7f95b5d2bf49e6debc73481d885ea505" name="a7f95b5d2bf49e6debc73481d885ea505"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f95b5d2bf49e6debc73481d885ea505">&#9670;&#160;</a></span>RAD_TO_DEG</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr double RAD_TO_DEG = <a class="el" href="MathConstants_8hpp.html#af3c8be8089d316e91d144d02065f8f96">ANGLE_MAX_DEGREES</a> / std::numbers::pi</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8

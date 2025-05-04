@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -85,11 +92,19 @@ Inheritance diagram for Transform:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTransform__inherit__graph.png" border="0" usemap="#aTransform_inherit__map" alt="Inheritance graph"/></div>
 <map name="aTransform_inherit__map" id="aTransform_inherit__map">
-<area shape="rect" title="Represents a 3D transformation consisting of position, rotation, and scale." alt="" coords="49,5,136,31"/>
-<area shape="rect" href="classCamera.html" title="Class representing a camera with adjustable parameters such as field of view, focal length,..." alt="" coords="5,79,79,104"/>
-<area shape="poly" title=" " alt="" coords="78,44,52,80,48,77,74,41"/>
-<area shape="rect" href="classObject3D.html" title="A class representing a 3D object with a mesh and transformation." alt="" coords="103,79,186,104"/>
-<area shape="poly" title=" " alt="" coords="111,40,138,77,134,80,107,43"/>
+<area shape="rect" title="Represents a 3D transformation consisting of position, rotation, and scale." alt="" coords="155,5,242,31"/>
+<area shape="rect" href="classCamera.html" title="Class representing a camera with adjustable parameters such as field of view, focal length,..." alt="" coords="74,79,147,104"/>
+<area shape="poly" title=" " alt="" coords="176,41,127,81,123,76,172,37"/>
+<area shape="rect" href="classLight.html" title="A class representing a light source in a 3D scene." alt="" coords="171,79,226,104"/>
+<area shape="poly" title=" " alt="" coords="201,44,201,79,196,79,196,44"/>
+<area shape="rect" href="classObject3D.html" title="A class representing a 3D object with a mesh and transformation." alt="" coords="251,79,333,104"/>
+<area shape="poly" title=" " alt="" coords="226,37,278,76,275,81,223,41"/>
+<area shape="rect" href="classDirectionalLight.html" title="A class representing a directional light source in a 3D scene." alt="" coords="5,152,131,177"/>
+<area shape="poly" title=" " alt="" coords="167,113,91,154,88,149,164,108"/>
+<area shape="rect" href="classPointLight.html" title="A class representing a point light source in a 3D scene." alt="" coords="155,152,242,177"/>
+<area shape="poly" title=" " alt="" coords="201,118,201,152,196,152,196,118"/>
+<area shape="rect" href="classSpotLight.html" title="A class representing a spot light source in a 3D scene." alt="" coords="267,152,349,177"/>
+<area shape="poly" title=" " alt="" coords="229,109,292,150,289,154,226,114"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -125,9 +140,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a39e5b58f0dfbe9342654e6fae5d93ff5" id="r_a39e5b58f0dfbe9342654e6fae5d93ff5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransform.html#a39e5b58f0dfbe9342654e6fae5d93ff5">setPositionZ</a> (double z)</td></tr>
 <tr class="memdesc:a39e5b58f0dfbe9342654e6fae5d93ff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Z component of the position.  <br /></td></tr>
 <tr class="separator:a39e5b58f0dfbe9342654e6fae5d93ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c378f9c11f5e0bf4ef380949287f52a" id="r_a2c378f9c11f5e0bf4ef380949287f52a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransform.html#a2c378f9c11f5e0bf4ef380949287f52a">updateTranslationMatrix</a> ()</td></tr>
-<tr class="memdesc:a2c378f9c11f5e0bf4ef380949287f52a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the translation matrix based on the current position.  <br /></td></tr>
-<tr class="separator:a2c378f9c11f5e0bf4ef380949287f52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe1bbdb3335d2c8b274bc61d9db4d8ef" id="r_afe1bbdb3335d2c8b274bc61d9db4d8ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransform.html#afe1bbdb3335d2c8b274bc61d9db4d8ef">setRotation</a> (const Eigen::Vector3d &amp;rot)</td></tr>
 <tr class="memdesc:afe1bbdb3335d2c8b274bc61d9db4d8ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the rotation of the object.  <br /></td></tr>
 <tr class="separator:afe1bbdb3335d2c8b274bc61d9db4d8ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,9 +152,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2ad80a0719f69bab41b71db2709f1965" id="r_a2ad80a0719f69bab41b71db2709f1965"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransform.html#a2ad80a0719f69bab41b71db2709f1965">setRotationZ</a> (double z)</td></tr>
 <tr class="memdesc:a2ad80a0719f69bab41b71db2709f1965"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Z component of the rotation.  <br /></td></tr>
 <tr class="separator:a2ad80a0719f69bab41b71db2709f1965"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb6617ecb0eb2630bdd764538fca8fb5" id="r_aeb6617ecb0eb2630bdd764538fca8fb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransform.html#aeb6617ecb0eb2630bdd764538fca8fb5">updateRotationMatrix</a> ()</td></tr>
-<tr class="memdesc:aeb6617ecb0eb2630bdd764538fca8fb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the rotation matrix based on the current rotation.  <br /></td></tr>
-<tr class="separator:aeb6617ecb0eb2630bdd764538fca8fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff93180ea0fad7737ce83c9bf47f7ffc" id="r_aff93180ea0fad7737ce83c9bf47f7ffc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransform.html#aff93180ea0fad7737ce83c9bf47f7ffc">setScale</a> (const Eigen::Vector3d &amp;scale)</td></tr>
 <tr class="memdesc:aff93180ea0fad7737ce83c9bf47f7ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the scale of the object.  <br /></td></tr>
 <tr class="separator:aff93180ea0fad7737ce83c9bf47f7ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,12 +167,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4acd1689ea8c50ae034b6422a5a01f08" id="r_a4acd1689ea8c50ae034b6422a5a01f08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransform.html#a4acd1689ea8c50ae034b6422a5a01f08">setScaleZ</a> (double z)</td></tr>
 <tr class="memdesc:a4acd1689ea8c50ae034b6422a5a01f08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Z component of the scale.  <br /></td></tr>
 <tr class="separator:a4acd1689ea8c50ae034b6422a5a01f08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d17ec7019b65a5f731b9283ef861ca5" id="r_a7d17ec7019b65a5f731b9283ef861ca5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransform.html#a7d17ec7019b65a5f731b9283ef861ca5">updateScaleMatrix</a> ()</td></tr>
-<tr class="memdesc:a7d17ec7019b65a5f731b9283ef861ca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the scale matrix based on the current scale.  <br /></td></tr>
-<tr class="separator:a7d17ec7019b65a5f731b9283ef861ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46d580234ae07d6728c53b86b5bf4512" id="r_a46d580234ae07d6728c53b86b5bf4512"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransform.html#a46d580234ae07d6728c53b86b5bf4512">updateTransformationMatrix</a> ()</td></tr>
-<tr class="memdesc:a46d580234ae07d6728c53b86b5bf4512"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the final transformation matrix based on position, rotation, and scale.  <br /></td></tr>
-<tr class="separator:a46d580234ae07d6728c53b86b5bf4512"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ad590b3f170630ae3befb49f262b5b9" id="r_a3ad590b3f170630ae3befb49f262b5b9"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransform.html#a3ad590b3f170630ae3befb49f262b5b9">getPosition</a> () const</td></tr>
 <tr class="memdesc:a3ad590b3f170630ae3befb49f262b5b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current position of the object.  <br /></td></tr>
 <tr class="separator:a3ad590b3f170630ae3befb49f262b5b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,6 +191,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abe83f8028df13b99e5dc4ae9e8c56ffa" id="r_abe83f8028df13b99e5dc4ae9e8c56ffa"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix4d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransform.html#abe83f8028df13b99e5dc4ae9e8c56ffa">getInverseMatrix</a> () const</td></tr>
 <tr class="memdesc:abe83f8028df13b99e5dc4ae9e8c56ffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the inverse of the transformation matrix.  <br /></td></tr>
 <tr class="separator:abe83f8028df13b99e5dc4ae9e8c56ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad884b0d3b463ed70ae6fbb8dc89bd969" id="r_ad884b0d3b463ed70ae6fbb8dc89bd969"><td class="memItemLeft" align="right" valign="top">Eigen::Matrix3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransform.html#ad884b0d3b463ed70ae6fbb8dc89bd969">getNormalMatrix</a> () const</td></tr>
+<tr class="memdesc:ad884b0d3b463ed70ae6fbb8dc89bd969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the normal matrix for transforming normals.  <br /></td></tr>
+<tr class="separator:ad884b0d3b463ed70ae6fbb8dc89bd969"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bccb958391795992a6b9100739047f1" id="r_a0bccb958391795992a6b9100739047f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransform.html#a0bccb958391795992a6b9100739047f1">~Transform</a> ()=default</td></tr>
 <tr class="memdesc:a0bccb958391795992a6b9100739047f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
 <tr class="separator:a0bccb958391795992a6b9100739047f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -376,6 +382,34 @@ Public Member Functions</h2></td></tr>
 
 <p>Gets the inverse of the transformation matrix. </p>
 <dl class="section return"><dt>Returns</dt><dd>The inverse transformation matrix. </dd></dl>
+
+</div>
+</div>
+<a id="ad884b0d3b463ed70ae6fbb8dc89bd969" name="ad884b0d3b463ed70ae6fbb8dc89bd969"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad884b0d3b463ed70ae6fbb8dc89bd969">&#9670;&#160;</a></span>getNormalMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Matrix3d Transform::getNormalMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the normal matrix for transforming normals. </p>
+<dl class="section return"><dt>Returns</dt><dd>The normal matrix. </dd></dl>
 
 </div>
 </div>
@@ -966,82 +1000,6 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="aeb6617ecb0eb2630bdd764538fca8fb5" name="aeb6617ecb0eb2630bdd764538fca8fb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb6617ecb0eb2630bdd764538fca8fb5">&#9670;&#160;</a></span>updateRotationMatrix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Transform::updateRotationMatrix </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Updates the rotation matrix based on the current rotation. </p>
-
-</div>
-</div>
-<a id="a7d17ec7019b65a5f731b9283ef861ca5" name="a7d17ec7019b65a5f731b9283ef861ca5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d17ec7019b65a5f731b9283ef861ca5">&#9670;&#160;</a></span>updateScaleMatrix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Transform::updateScaleMatrix </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Updates the scale matrix based on the current scale. </p>
-
-</div>
-</div>
-<a id="a46d580234ae07d6728c53b86b5bf4512" name="a46d580234ae07d6728c53b86b5bf4512"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46d580234ae07d6728c53b86b5bf4512">&#9670;&#160;</a></span>updateTransformationMatrix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Transform::updateTransformationMatrix </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Updates the final transformation matrix based on position, rotation, and scale. </p>
-
-</div>
-</div>
-<a id="a2c378f9c11f5e0bf4ef380949287f52a" name="a2c378f9c11f5e0bf4ef380949287f52a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c378f9c11f5e0bf4ef380949287f52a">&#9670;&#160;</a></span>updateTranslationMatrix()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Transform::updateTranslationMatrix </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Updates the translation matrix based on the current position. </p>
 
 </div>
 </div>

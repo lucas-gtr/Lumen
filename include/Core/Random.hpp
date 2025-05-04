@@ -21,4 +21,14 @@
  */
 Eigen::Vector2d randomPointInUnitDisk();
 
+/**
+ * @brief Generates a random number uniformly distributed in the range [0, 1).
+ *
+ * This function uses a random number generator to produce a double-precision
+ * floating-point number uniformly distributed in the range [0, 1).
+ *
+ * @return A double representing the random number in the range [0, 1).
+ */
+double randomUniform01();
+
 #endif // CORE_RANDOM_HPP

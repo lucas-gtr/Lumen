@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -102,6 +109,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a6c4ae81c8452b08161e82a249a8a1051" id="r_a6c4ae81c8452b08161e82a249a8a1051"><td class="memItemLeft" align="right" valign="top">Eigen::Vector2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Random_8cpp.html#a6c4ae81c8452b08161e82a249a8a1051">randomPointInUnitDisk</a> ()</td></tr>
 <tr class="memdesc:a6c4ae81c8452b08161e82a249a8a1051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random point inside the unit disk.  <br /></td></tr>
 <tr class="separator:a6c4ae81c8452b08161e82a249a8a1051"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40522eacb8294915a9d6c79c6aa3eef8" id="r_a40522eacb8294915a9d6c79c6aa3eef8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Random_8cpp.html#a40522eacb8294915a9d6c79c6aa3eef8">randomUniform01</a> ()</td></tr>
+<tr class="memdesc:a40522eacb8294915a9d6c79c6aa3eef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random number uniformly distributed in the range [0, 1).  <br /></td></tr>
+<tr class="separator:a40522eacb8294915a9d6c79c6aa3eef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a6c4ae81c8452b08161e82a249a8a1051" name="a6c4ae81c8452b08161e82a249a8a1051"></a>
@@ -120,9 +130,30 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Generates a random point inside the unit disk. </p>
-<p>This function generates a random 2D point where both coordinates lie within the unit disk, i.e., the point satisfies the condition: <picture><source srcset="form_0_dark.png" media="(prefers-color-scheme: dark)"/><img class="formulaInl" alt="$ x^2 + y^2 \leq 1 $" src="form_0.png" width="64" height="14"/></picture>.</p>
+<p>This function generates a random 2D point where both coordinates lie within the unit disk, i.e., the point satisfies the condition: \( x^2 + y^2 \leq 1 \).</p>
 <p>The point is generated using a random angle and radius within the unit disk, ensuring uniform distribution within the disk.</p>
 <dl class="section return"><dt>Returns</dt><dd>A 2D vector (Eigen::Vector2d) representing the random point in the unit disk. </dd></dl>
+
+</div>
+</div>
+<a id="a40522eacb8294915a9d6c79c6aa3eef8" name="a40522eacb8294915a9d6c79c6aa3eef8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40522eacb8294915a9d6c79c6aa3eef8">&#9670;&#160;</a></span>randomUniform01()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double randomUniform01 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates a random number uniformly distributed in the range [0, 1). </p>
+<p>This function uses a random number generator to produce a double-precision floating-point number uniformly distributed in the range [0, 1).</p>
+<dl class="section return"><dt>Returns</dt><dd>A double representing the random number in the range [0, 1). </dd></dl>
 
 </div>
 </div>

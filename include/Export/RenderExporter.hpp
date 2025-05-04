@@ -5,11 +5,20 @@
 #ifndef EXPORT_RENDEREXPORTER_HPP
 #define EXPORT_RENDEREXPORTER_HPP
 
+#include <cstdint>
+#include <memory>
+#include <string>
+
 #include "Core/Config.hpp"
 #include "Core/Framebuffer.hpp"
 #include "Export/OutputFormat.hpp"
+#include "ImplementationParameters/Parameters.hpp"
+#include "PostProcessing/ToneMapping/ToneMapping.hpp"
 
-#include <string>
+/**
+ * @brief Enumeration for different tone mapping strategies.
+ */
+enum class ToneMapping : std::uint8_t { NONE, REINHARD, EXPOSURE };
 
 /**
  * @class RenderExporter
@@ -17,10 +26,13 @@
  */
 class RenderExporter {
 private:
-  Framebuffer*        m_framebuffer;
-  std::string         m_path          = std::string(DEFAULT_FILE_PATH);
-  std::string         m_filename      = std::string(DEFAULT_FILE_NAME);
-  const OutputFormat* m_output_format = nullptr;
+  Framebuffer*                  m_framebuffer;
+  std::string                   m_path     = std::string(DEFAULT_FILE_PATH);
+  std::string                   m_filename = std::string(DEFAULT_FILE_NAME);
+  std::unique_ptr<OutputFormat> m_output_format;
+
+  std::unique_ptr<Parameters>          m_tonemapping_parameters;
+  std::unique_ptr<ToneMappingStrategy> m_tone_mapping;
 
 public:
   /**
@@ -62,12 +74,39 @@ public:
    * @brief Sets the output format for the render.
    * @param output_format Pointer to the OutputFormat object that defines the export format.
    */
-  void setOutputFormat(const OutputFormat* output_format) { m_output_format = output_format; }
+  void setOutputFormat(std::unique_ptr<OutputFormat> output_format);
+
+  /**
+   * @brief Sets the tone mapping strategy for the render.
+   * @param tone_mapping Pointer to the ToneMappingStrategy object that defines the tone mapping.
+   */
+  void setToneMapping(ToneMapping tone_mapping);
+
   /**
    * @brief Retrieves the framebuffer.
    * @return Pointer to the framebuffer containing the rendered image.
    */
   Framebuffer* getFramebuffer() const { return m_framebuffer; }
+
+  /**
+   * @brief Retrieves the parameters for tone mapping.
+   * @return Pointer to the Parameters object containing tone mapping parameters.
+   */
+  Parameters* getParameters() const { return m_tonemapping_parameters.get(); }
+
+  /**
+   * @brief Sets a parameter (an integer) for exporting.
+   * @param name  The name of the parameter to set.
+   * @param value The value of the parameter to set.
+   */
+  void setParameter(const std::string& name, int value) { m_tonemapping_parameters->setParameter(name, value); }
+
+  /**
+   * @brief Sets a parameter (a double) for exporting.
+   * @param name  The name of the parameter to set.
+   * @param value The value of the parameter to set.
+   */
+  void setParameter(const std::string& name, double value) { m_tonemapping_parameters->setParameter(name, value); }
 
   /**
    * @brief Exports the render to the specified location.

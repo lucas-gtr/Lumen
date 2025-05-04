@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['imageproperties_0',['ImageProperties',['../structImageProperties.html',1,'']]]
+  ['directionallight_0',['DirectionalLight',['../classDirectionalLight.html',1,'']]],
+  ['doubleparam_1',['DoubleParam',['../classDoubleParam.html',1,'']]]
 ];
