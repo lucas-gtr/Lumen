@@ -40,7 +40,7 @@ public:
 /**
  * @class DoubleParam
  * @brief Represents a double parameter value.
- * 
+ *
  * This class is derived from ParameterValue and holds a double value.
  */
 class DoubleParam : public ParameterValue {

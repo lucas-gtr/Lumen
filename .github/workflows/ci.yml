@@ -24,7 +24,7 @@ jobs:
 
       - name: Check code format and lint
         run: |
-          make check-format-and-lint
+          make format-and-lint
 
   run-tests:
     runs-on: ubuntu-latest

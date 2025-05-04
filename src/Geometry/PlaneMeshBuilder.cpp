@@ -23,8 +23,7 @@ Mesh PlaneMeshBuilder::build() const {
 
   for(auto& vertex : vertices) {
     vertex.normal  = Eigen::Vector3d(0.0, 1.0, 0.0);
-    vertex.uvCoord = {vertex.position.x() / width + HALF,
-                      vertex.position.z() / length + HALF};
+    vertex.uvCoord = {vertex.position.x() / width + HALF, vertex.position.z() / length + HALF};
   }
 
   faces.push_back({{0, 1, 2}});

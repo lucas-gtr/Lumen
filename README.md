@@ -172,9 +172,7 @@ I'm a software engineer specializing in 3D development and modern C++ practices.
 
 ![Cube example](Gallery/CubeExample.png)
 
-*Image 800x600 - 12 triangles - 2 lights - 4 samples per pixel*
-
-**Render time**: 03s 01ms
+*Image 800x600 - 12 triangles - 2 lights - 4 samples per pixel* | **Render time**: 03s 01ms
 
 ### Plane example
 
@@ -182,33 +180,25 @@ I'm a software engineer specializing in 3D development and modern C++ practices.
 
 ![Plane example (no tone mapping)](Gallery/PlaneExampleNoToneMapping.png)
 
-*Image 800x600 - 2 triangles - 4 lights - 4 samples per pixel*
-
-**Render time**: 02s 82ms
+*Image 800x600 - 2 triangles - 4 lights - 4 samples per pixel* | **Render time**: 02s 82ms
 
 **Plane with 1 directional light and 3 spot lights, Reinhard tone mapping**
 
 ![Plane example (Reinhard tone mapping)](Gallery/PlaneExampleReinhard.png)
 
-*Image 800x600 - 2 triangles - 4 lights - 4 samples per pixel*
-
-**Render time**: 02s 75ms
+*Image 800x600 - 2 triangles - 4 lights - 4 samples per pixel* | **Render time**: 02s 75ms
 
 **Plane with 1 directional light and 3 spot lights, exposure (0.5) tone mapping**
 
 ![Plane example (exposure 0.5 tone mapping)](Gallery/PlaneExampleExposure-05.png)
 
-*Image 800x600 - 2 triangles - 4 lights - 4 samples per pixel*
-
-**Render time**: 02s 80ms
+*Image 800x600 - 2 triangles - 4 lights - 4 samples per pixel* | **Render time**: 02s 80ms
 
 **Plane with 1 directional light and 3 spot lights, exposure (1.0) tone mapping**
 
 ![Plane example (exposure 1.0 tone mapping)](Gallery/PlaneExampleExposure-1.png)
 
-*Image 800x600 - 2 triangles - 4 lights - 4 samples per pixel*
-
-**Render time**: 02s 81ms
+*Image 800x600 - 2 triangles - 4 lights - 4 samples per pixel* | **Render time**: 02s 81ms
 
 ### Sphere example
 
@@ -216,17 +206,13 @@ I'm a software engineer specializing in 3D development and modern C++ practices.
 
 ![Sphere example (without normal map)](Gallery/SphereExampleWithoutNormal.png)
 
-*Image 800x600 - 1024 triangles - 1 light - 4 samples per pixel*
-
-**Render time**: 22s 84ms
+*Image 800x600 - 1024 triangles - 1 light - 4 samples per pixel* | **Render time**: 22s 84ms
 
 **Sphere with 1 directional light, grayscale,  with normal map**
 
 ![Sphere example (with normal map)](Gallery/SphereExampleWithNormal.png)
 
-*Image 800x600 - 1024 triangles - 1 light - 4 samples per pixel*
-
-**Render time**: 22s 59ms
+*Image 800x600 - 1024 triangles - 1 light - 4 samples per pixel* | **Render time**: 22s 59ms
 
 ### OBJ example
 
@@ -234,6 +220,4 @@ I'm a software engineer specializing in 3D development and modern C++ practices.
 
 ![OBJ example](Gallery/OBJExample.png)
 
-*Image 800x600 - 2492 triangles - 2 lights - 4 samples per pixel*
-
-**Render time**: 3min 16s 10ms
+*Image 800x600 - 2492 triangles - 2 lights - 4 samples per pixel* | **Render time**: 3min 16s 10ms
