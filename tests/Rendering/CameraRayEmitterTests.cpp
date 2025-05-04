@@ -1,6 +1,7 @@
 #include "Rendering/CameraRayEmitter.hpp"
-#include "gtest/gtest.h"
-#include <Eigen/Geometry>
+
+#include <Eigen/Dense>
+#include <gtest/gtest.h>
 
 TEST(CameraRayEmitterTest, InitializeViewport) {
   RayEmitterParameters parameters;

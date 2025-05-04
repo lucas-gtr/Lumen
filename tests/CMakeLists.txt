@@ -1,20 +1,40 @@
 add_executable(Tests tests.cpp)
 
 target_sources(Tests PRIVATE 
-    Core/CameraTests.cpp
-    Core/MeshTests.cpp
+    Scene/CameraTests.cpp
+    Geometry/MeshTests.cpp
+    Geometry/CubeMeshBuilderTests.cpp
+    Geometry/PlaneMeshBuilderTests.cpp
+    Geometry/SphereMeshBuilderTests.cpp
+    Geometry/OBJLoaderTests.cpp
     Core/RayTests.cpp
     Core/FramebufferTests.cpp
-    Core/SceneTests.cpp
-    Core/Object3DTests.cpp
+    Core/ColorUtilsTests.cpp
+    Scene/SceneTests.cpp
+    Scene/Object3DTests.cpp
+    Scene/SkyboxTests.cpp
     Core/TransformTests.cpp
-    Core/RayIntersectionTests.cpp
+    Rendering/RayIntersectionTests.cpp
     Core/RandomTests.cpp
+    PostProcessing/ExposureTests.cpp
+    PostProcessing/NoneTests.cpp
+    PostProcessing/ReinhardTests.cpp
     Rendering/RenderSettingsTests.cpp
     Rendering/CameraRayEmitterTests.cpp
     Rendering/RendererTests.cpp
     Export/RenderExporterTests.cpp
     Export/OutputFormatPngTests.cpp
+    Lighting/LightTests.cpp
+    Lighting/DirectionalLightTests.cpp
+    Lighting/PointLightTests.cpp
+    Lighting/SpotLightTests.cpp
+    ImplementationParameters/ParametersTests.cpp
+    ImplementationParameters/ParameterTypesTests.cpp
+    Surface/MaterialTests.cpp
+    Surface/TextureTests.cpp
+    Surface/TextureLoaderTests.cpp
+    Surface/TextureFilteringTests.cpp
+    Surface/TextureWrappingTests.cpp
 )
 
 target_link_libraries(Tests PUBLIC 

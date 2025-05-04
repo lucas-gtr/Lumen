@@ -26,9 +26,18 @@ private:
   Eigen::Matrix3d m_rotationMatrix    = Eigen::Matrix3d::Identity();
   Eigen::Matrix3d m_scaleMatrix       = Eigen::Matrix3d::Identity();
 
+  Eigen::Matrix3d m_normalMatrix = Eigen::Matrix3d::Identity();
+
   Eigen::Vector3d m_position;
   Eigen::Vector3d m_rotation;
   Eigen::Vector3d m_scale;
+
+  void updateTranslationMatrix();
+  void updateScaleMatrix();
+  void updateTransformationMatrix();
+  void updateInverseMatrix();
+  void updateNormalMatrix();
+  void updateRotationMatrix();
 
 public:
   /**
@@ -76,11 +85,6 @@ public:
   void setPositionZ(double z);
 
   /**
-   * @brief Updates the translation matrix based on the current position.
-   */
-  void updateTranslationMatrix();
-
-  /**
    * @brief Sets the rotation of the object.
    * @param rot The new rotation in Euler angles (degrees).
    */
@@ -103,11 +107,6 @@ public:
    * @param z The new Z rotation (in degrees).
    */
   void setRotationZ(double z);
-
-  /**
-   * @brief Updates the rotation matrix based on the current rotation.
-   */
-  void updateRotationMatrix();
 
   /**
    * @brief Sets the scale of the object.
@@ -138,16 +137,6 @@ public:
    * @param z The new Z scale.
    */
   void setScaleZ(double z);
-
-  /**
-   * @brief Updates the scale matrix based on the current scale.
-   */
-  void updateScaleMatrix();
-
-  /**
-   * @brief Updates the final transformation matrix based on position, rotation, and scale.
-   */
-  void updateTransformationMatrix();
 
   /**
    * @brief Gets the current position of the object.
@@ -196,6 +185,12 @@ public:
    * @return The inverse transformation matrix.
    */
   Eigen::Matrix4d getInverseMatrix() const { return m_inverseMatrix; }
+
+  /**
+   * @brief Gets the normal matrix for transforming normals.
+   * @return The normal matrix.
+   */
+  Eigen::Matrix3d getNormalMatrix() const { return m_normalMatrix; }
 
   ~Transform() = default; ///< Default destructor.
 };

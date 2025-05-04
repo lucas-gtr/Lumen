@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -76,14 +83,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Abstract base class for different image output formats.  
+ <a href="classOutputFormat.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="OutputFormat_8hpp_source.html">OutputFormat.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for OutputFormat:</div>
 <div class="dyncontent">
 <div class="center"><img src="classOutputFormat__inherit__graph.png" border="0" usemap="#aOutputFormat_inherit__map" alt="Inheritance graph"/></div>
 <map name="aOutputFormat_inherit__map" id="aOutputFormat_inherit__map">
-<area shape="rect" title=" " alt="" coords="17,5,129,31"/>
-<area shape="rect" href="classOutputFormatPng.html" title=" " alt="" coords="5,79,141,104"/>
+<area shape="rect" title="Abstract base class for different image output formats." alt="" coords="17,5,129,31"/>
+<area shape="rect" href="classOutputFormatPng.html" title="Class for exporting images in PNG format." alt="" coords="5,79,141,104"/>
 <area shape="poly" title=" " alt="" coords="76,44,76,79,71,79,71,44"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -93,18 +103,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af018b099e2afdb90ce85b6d4b931d6e4" id="r_af018b099e2afdb90ce85b6d4b931d6e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOutputFormat.html#af018b099e2afdb90ce85b6d4b931d6e4">OutputFormat</a> ()=default</td></tr>
 <tr class="memdesc:af018b099e2afdb90ce85b6d4b931d6e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
 <tr class="separator:af018b099e2afdb90ce85b6d4b931d6e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8135b994560732855c23215e80b65bfd" id="r_a8135b994560732855c23215e80b65bfd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOutputFormat.html#a8135b994560732855c23215e80b65bfd">OutputFormat</a> (const <a class="el" href="classOutputFormat.html">OutputFormat</a> &amp;)=default</td></tr>
-<tr class="memdesc:a8135b994560732855c23215e80b65bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy constructor.  <br /></td></tr>
-<tr class="separator:a8135b994560732855c23215e80b65bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3dec4145228810cd6ba7ee760887a80" id="r_af3dec4145228810cd6ba7ee760887a80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classOutputFormat.html">OutputFormat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOutputFormat.html#af3dec4145228810cd6ba7ee760887a80">operator=</a> (const <a class="el" href="classOutputFormat.html">OutputFormat</a> &amp;)=default</td></tr>
-<tr class="memdesc:af3dec4145228810cd6ba7ee760887a80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy assignment operator.  <br /></td></tr>
-<tr class="separator:af3dec4145228810cd6ba7ee760887a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2f5ebb53e0d550a01d796c572d19903" id="r_ad2f5ebb53e0d550a01d796c572d19903"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOutputFormat.html#ad2f5ebb53e0d550a01d796c572d19903">OutputFormat</a> (<a class="el" href="classOutputFormat.html">OutputFormat</a> &amp;&amp;)=default</td></tr>
-<tr class="memdesc:ad2f5ebb53e0d550a01d796c572d19903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default move constructor.  <br /></td></tr>
-<tr class="separator:ad2f5ebb53e0d550a01d796c572d19903"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa879919976821611add2d3412d63c736" id="r_aa879919976821611add2d3412d63c736"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classOutputFormat.html">OutputFormat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOutputFormat.html#aa879919976821611add2d3412d63c736">operator=</a> (<a class="el" href="classOutputFormat.html">OutputFormat</a> &amp;&amp;)=default</td></tr>
-<tr class="memdesc:aa879919976821611add2d3412d63c736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default move assignment operator.  <br /></td></tr>
-<tr class="separator:aa879919976821611add2d3412d63c736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a9796f1984123806697b866a2cc8abf" id="r_a3a9796f1984123806697b866a2cc8abf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOutputFormat.html#a3a9796f1984123806697b866a2cc8abf">OutputFormat</a> (const <a class="el" href="classOutputFormat.html">OutputFormat</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a3a9796f1984123806697b866a2cc8abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy constructor.  <br /></td></tr>
+<tr class="separator:a3a9796f1984123806697b866a2cc8abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3805841198533d698dd5282e14d8d252" id="r_a3805841198533d698dd5282e14d8d252"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classOutputFormat.html">OutputFormat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOutputFormat.html#a3805841198533d698dd5282e14d8d252">operator=</a> (const <a class="el" href="classOutputFormat.html">OutputFormat</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a3805841198533d698dd5282e14d8d252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy assignment operator.  <br /></td></tr>
+<tr class="separator:a3805841198533d698dd5282e14d8d252"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b8e0db1a422cc2b837d2a1a98e79055" id="r_a3b8e0db1a422cc2b837d2a1a98e79055"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOutputFormat.html#a3b8e0db1a422cc2b837d2a1a98e79055">OutputFormat</a> (<a class="el" href="classOutputFormat.html">OutputFormat</a> &amp;&amp;)=delete</td></tr>
+<tr class="memdesc:a3b8e0db1a422cc2b837d2a1a98e79055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default move constructor.  <br /></td></tr>
+<tr class="separator:a3b8e0db1a422cc2b837d2a1a98e79055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e5c40ac4013106c1e6f6e753fd4c914" id="r_a8e5c40ac4013106c1e6f6e753fd4c914"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classOutputFormat.html">OutputFormat</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOutputFormat.html#a8e5c40ac4013106c1e6f6e753fd4c914">operator=</a> (<a class="el" href="classOutputFormat.html">OutputFormat</a> &amp;&amp;)=delete</td></tr>
+<tr class="memdesc:a8e5c40ac4013106c1e6f6e753fd4c914"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default move assignment operator.  <br /></td></tr>
+<tr class="separator:a8e5c40ac4013106c1e6f6e753fd4c914"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad94101141c57ed05387fc1fe2204b2ac" id="r_ad94101141c57ed05387fc1fe2204b2ac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOutputFormat.html#ad94101141c57ed05387fc1fe2204b2ac">write_image</a> (const std::string &amp;file_path, int width, int height, int channel_count, const unsigned char *image) const =0</td></tr>
 <tr class="memdesc:ad94101141c57ed05387fc1fe2204b2ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual function to write an image to a file.  <br /></td></tr>
 <tr class="separator:ad94101141c57ed05387fc1fe2204b2ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -112,7 +122,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1f88a75d2c5824a40ec9df484db8f475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
 <tr class="separator:a1f88a75d2c5824a40ec9df484db8f475"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract base class for different image output formats. </p>
+<p>This class defines the interface for writing images to files in various formats. Derived classes should implement the write_image method for specific formats. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af018b099e2afdb90ce85b6d4b931d6e4" name="af018b099e2afdb90ce85b6d4b931d6e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af018b099e2afdb90ce85b6d4b931d6e4">&#9670;&#160;</a></span>OutputFormat() <span class="overload">[1/3]</span></h2>
 
@@ -140,8 +153,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8135b994560732855c23215e80b65bfd" name="a8135b994560732855c23215e80b65bfd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8135b994560732855c23215e80b65bfd">&#9670;&#160;</a></span>OutputFormat() <span class="overload">[2/3]</span></h2>
+<a id="a3a9796f1984123806697b866a2cc8abf" name="a3a9796f1984123806697b866a2cc8abf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a9796f1984123806697b866a2cc8abf">&#9670;&#160;</a></span>OutputFormat() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,7 +172,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -168,8 +181,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad2f5ebb53e0d550a01d796c572d19903" name="ad2f5ebb53e0d550a01d796c572d19903"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2f5ebb53e0d550a01d796c572d19903">&#9670;&#160;</a></span>OutputFormat() <span class="overload">[3/3]</span></h2>
+<a id="a3b8e0db1a422cc2b837d2a1a98e79055" name="a3b8e0db1a422cc2b837d2a1a98e79055"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b8e0db1a422cc2b837d2a1a98e79055">&#9670;&#160;</a></span>OutputFormat() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -187,7 +200,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -224,8 +237,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="af3dec4145228810cd6ba7ee760887a80" name="af3dec4145228810cd6ba7ee760887a80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3dec4145228810cd6ba7ee760887a80">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+<a id="a3805841198533d698dd5282e14d8d252" name="a3805841198533d698dd5282e14d8d252"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3805841198533d698dd5282e14d8d252">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -243,7 +256,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -252,8 +265,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa879919976821611add2d3412d63c736" name="aa879919976821611add2d3412d63c736"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa879919976821611add2d3412d63c736">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+<a id="a8e5c40ac4013106c1e6f6e753fd4c914" name="a8e5c40ac4013106c1e6f6e753fd4c914"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e5c40ac4013106c1e6f6e753fd4c914">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -271,7 +284,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -75,11 +82,11 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="classOutputFormat.html">OutputFormat</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classOutputFormat.html#af3dec4145228810cd6ba7ee760887a80">operator=</a>(const OutputFormat &amp;)=default</td><td class="entry"><a class="el" href="classOutputFormat.html">OutputFormat</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classOutputFormat.html#aa879919976821611add2d3412d63c736">operator=</a>(OutputFormat &amp;&amp;)=default</td><td class="entry"><a class="el" href="classOutputFormat.html">OutputFormat</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classOutputFormat.html#a3805841198533d698dd5282e14d8d252">operator=</a>(const OutputFormat &amp;)=delete</td><td class="entry"><a class="el" href="classOutputFormat.html">OutputFormat</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classOutputFormat.html#a8e5c40ac4013106c1e6f6e753fd4c914">operator=</a>(OutputFormat &amp;&amp;)=delete</td><td class="entry"><a class="el" href="classOutputFormat.html">OutputFormat</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classOutputFormat.html#af018b099e2afdb90ce85b6d4b931d6e4">OutputFormat</a>()=default</td><td class="entry"><a class="el" href="classOutputFormat.html">OutputFormat</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classOutputFormat.html#a8135b994560732855c23215e80b65bfd">OutputFormat</a>(const OutputFormat &amp;)=default</td><td class="entry"><a class="el" href="classOutputFormat.html">OutputFormat</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classOutputFormat.html#ad2f5ebb53e0d550a01d796c572d19903">OutputFormat</a>(OutputFormat &amp;&amp;)=default</td><td class="entry"><a class="el" href="classOutputFormat.html">OutputFormat</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classOutputFormat.html#a3a9796f1984123806697b866a2cc8abf">OutputFormat</a>(const OutputFormat &amp;)=delete</td><td class="entry"><a class="el" href="classOutputFormat.html">OutputFormat</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classOutputFormat.html#a3b8e0db1a422cc2b837d2a1a98e79055">OutputFormat</a>(OutputFormat &amp;&amp;)=delete</td><td class="entry"><a class="el" href="classOutputFormat.html">OutputFormat</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classOutputFormat.html#ad94101141c57ed05387fc1fe2204b2ac">write_image</a>(const std::string &amp;file_path, int width, int height, int channel_count, const unsigned char *image) const =0</td><td class="entry"><a class="el" href="classOutputFormat.html">OutputFormat</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classOutputFormat.html#a1f88a75d2c5824a40ec9df484db8f475">~OutputFormat</a>()=default</td><td class="entry"><a class="el" href="classOutputFormat.html">OutputFormat</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->

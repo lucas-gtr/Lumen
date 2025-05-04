@@ -5,13 +5,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Lumen: /home/lucasgtr/lumen/include/Core/Scene.hpp Source File</title>
+<title>Lumen: /home/lucasgtr/lumen/include/Scene/Scene.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -74,7 +81,7 @@ $(document).ready(function() { init_codefold(0); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_8213943ce0b792be39d34390845932ae.html">Core</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_599b8f1f2ff57000baa5ade9aac495d5.html">Scene</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -82,26 +89,30 @@ $(document).ready(function() { init_codefold(0); });
 </div><!--header-->
 <div class="contents">
 <a href="Scene_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef CORE_SCENE_HPP</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define CORE_SCENE_HPP</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef SCENE_SCENE_HPP</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define SCENE_SCENE_HPP</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="Camera_8hpp.html">Core/Camera.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="Object3D_8hpp.html">Core/Object3D.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="Light_8hpp.html">Lighting/Light.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="Camera_8hpp.html">Scene/Camera.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="Object3D_8hpp.html">Scene/Object3D.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="Skybox_8hpp.html">Scene/Skybox.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="Texture_8hpp.html">Surface/Texture.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classScene.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="classScene.html">Scene</a> {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  std::vector&lt;std::unique_ptr&lt;Object3D&gt;&gt; m_object_list;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  std::unique_ptr&lt;Camera&gt;                m_current_camera;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  Eigen::Vector3d m_background_color = Eigen::Vector3d::Zero(); </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  std::vector&lt;std::unique_ptr&lt;Light&gt;&gt;    m_light_list;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  std::unique_ptr&lt;Camera&gt;                m_current_camera;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  std::unique_ptr&lt;Skybox&gt;                m_skybox;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classScene.html#a93ccc41b0a2f6c24e467d5d9de76ec0d">   31</a></span>  <a class="code hl_function" href="classScene.html#a93ccc41b0a2f6c24e467d5d9de76ec0d">Scene</a>() = <span class="keywordflow">default</span>; </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <a class="code hl_function" href="classScene.html#ad10176d75a9cc0da56626f682d083507">Scene</a>();</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classScene.html#ab278e1cce7985696ecccb1f8f113cacb">   33</a></span>  <a class="code hl_function" href="classScene.html#ab278e1cce7985696ecccb1f8f113cacb">Scene</a>(<span class="keyword">const</span> <a class="code hl_class" href="classScene.html">Scene</a>&amp; other)            = <span class="keyword">delete</span>;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classScene.html#a5f8910723e46fca1384cb11c7e4eb650">   34</a></span>  <a class="code hl_class" href="classScene.html">Scene</a>&amp; <a class="code hl_function" href="classScene.html#a5f8910723e46fca1384cb11c7e4eb650">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classScene.html">Scene</a>&amp; other) = <span class="keyword">delete</span>;</div>
@@ -110,37 +121,46 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classScene.html#a2161d81b083c0ecdb47d8cd763061c2d">   43</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classScene.html#a2161d81b083c0ecdb47d8cd763061c2d">addObject</a>(std::unique_ptr&lt;Object3D&gt; <span class="keywordtype">object</span>) { m_object_list.push_back(std::move(<span class="keywordtype">object</span>)); }</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classScene.html#a869a9d3699f7c2d9e994aab7c0e0e260">   50</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classScene.html#a869a9d3699f7c2d9e994aab7c0e0e260">setCamera</a>(std::unique_ptr&lt;Camera&gt; camera) { m_current_camera = std::move(camera); }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classScene.html#a4c71513261015895b2220396667e7ee0">   50</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classScene.html#a4c71513261015895b2220396667e7ee0">addLight</a>(std::unique_ptr&lt;Light&gt; light) { m_light_list.push_back(std::move(light)); }</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classScene.html#a8660a2d2d1b1b924f474a8ad4743f3de">   57</a></span>  <span class="keyword">const</span> std::vector&lt;std::unique_ptr&lt;Object3D&gt;&gt;&amp; <a class="code hl_function" href="classScene.html#a8660a2d2d1b1b924f474a8ad4743f3de">getObjectList</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_object_list; }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classScene.html#a869a9d3699f7c2d9e994aab7c0e0e260">   57</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classScene.html#a869a9d3699f7c2d9e994aab7c0e0e260">setCamera</a>(std::unique_ptr&lt;Camera&gt; camera) { m_current_camera = std::move(camera); }</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classScene.html#a2c6fc0308a126965ce5a87e8619ac7ef">   64</a></span>  <span class="keyword">const</span> <a class="code hl_class" href="classCamera.html">Camera</a>* <a class="code hl_function" href="classScene.html#a2c6fc0308a126965ce5a87e8619ac7ef">getCamera</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_current_camera.get(); }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classScene.html#a8660a2d2d1b1b924f474a8ad4743f3de">   64</a></span>  <span class="keyword">const</span> std::vector&lt;std::unique_ptr&lt;Object3D&gt;&gt;&amp; <a class="code hl_function" href="classScene.html#a8660a2d2d1b1b924f474a8ad4743f3de">getObjectList</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_object_list; }</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classScene.html#a54036ce71cb2b6a8558fda8e6622897b">   70</a></span>  <span class="keyword">const</span> Eigen::Vector3d&amp; <a class="code hl_function" href="classScene.html#a54036ce71cb2b6a8558fda8e6622897b">getBackgroundColor</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_background_color; }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classScene.html#a7fd89a9016dcca0f73658d0aefccbb12">   76</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classScene.html#a7fd89a9016dcca0f73658d0aefccbb12">setBackgroundColor</a>(<span class="keyword">const</span> Eigen::Vector3d&amp; color) { this-&gt;m_background_color = color; }</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classScene.html#a631eef7493cafce5d74739a2cad12a58">   78</a></span>  <a class="code hl_function" href="classScene.html#a631eef7493cafce5d74739a2cad12a58">~Scene</a>() = <span class="keywordflow">default</span>; </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>};</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classScene.html#af8e117520a0123c6cfe4c6ec81852ec0">   71</a></span>  <span class="keyword">const</span> std::vector&lt;std::unique_ptr&lt;Light&gt;&gt;&amp; <a class="code hl_function" href="classScene.html#af8e117520a0123c6cfe4c6ec81852ec0">getLightList</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_light_list; }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classScene.html#a2c6fc0308a126965ce5a87e8619ac7ef">   78</a></span>  <span class="keyword">const</span> <a class="code hl_class" href="classCamera.html">Camera</a>* <a class="code hl_function" href="classScene.html#a2c6fc0308a126965ce5a87e8619ac7ef">getCamera</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_current_camera.get(); }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classScene.html#afea995759da5ddb83218edf0ad2bb663">   86</a></span>  Eigen::Vector4d <a class="code hl_function" href="classScene.html#afea995759da5ddb83218edf0ad2bb663">getSkyboxColor</a>(<span class="keyword">const</span> Eigen::Vector3d direction)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_skybox-&gt;getColor(direction); }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classScene.html#a9a08cdced45e2dd7fd9069210b24bfee">   93</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classScene.html#a9a08cdced45e2dd7fd9069210b24bfee">setSkybox</a>(<span class="keyword">const</span> std::shared_ptr&lt;Texture&gt;&amp; skybox_texture) { m_skybox-&gt;setTexture(skybox_texture); }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classScene.html#a631eef7493cafce5d74739a2cad12a58">   95</a></span>  <a class="code hl_function" href="classScene.html#a631eef7493cafce5d74739a2cad12a58">~Scene</a>() = <span class="keywordflow">default</span>; </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>};</div>
 </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#endif </span><span class="comment">// CORE_SCENE_HPP</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#endif </span><span class="comment">// SCENE_SCENE_HPP</span></div>
 <div class="ttc" id="aCamera_8hpp_html"><div class="ttname"><a href="Camera_8hpp.html">Camera.hpp</a></div><div class="ttdoc">Header file for the Camera class.</div></div>
+<div class="ttc" id="aLight_8hpp_html"><div class="ttname"><a href="Light_8hpp.html">Light.hpp</a></div><div class="ttdoc">Header file for the Light class.</div></div>
 <div class="ttc" id="aObject3D_8hpp_html"><div class="ttname"><a href="Object3D_8hpp.html">Object3D.hpp</a></div><div class="ttdoc">Header file for the Object3D class.</div></div>
+<div class="ttc" id="aSkybox_8hpp_html"><div class="ttname"><a href="Skybox_8hpp.html">Skybox.hpp</a></div><div class="ttdoc">Header file for the Skybox class.</div></div>
+<div class="ttc" id="aTexture_8hpp_html"><div class="ttname"><a href="Texture_8hpp.html">Texture.hpp</a></div><div class="ttdoc">Header file for the Texture class.</div></div>
 <div class="ttc" id="aclassCamera_html"><div class="ttname"><a href="classCamera.html">Camera</a></div><div class="ttdoc">Class representing a camera with adjustable parameters such as field of view, focal length,...</div><div class="ttdef"><b>Definition</b> Camera.hpp:19</div></div>
 <div class="ttc" id="aclassScene_html"><div class="ttname"><a href="classScene.html">Scene</a></div><div class="ttdoc">Represents a 3D scene that holds objects and a camera.</div><div class="ttdef"><b>Definition</b> Scene.hpp:23</div></div>
 <div class="ttc" id="aclassScene_html_a2161d81b083c0ecdb47d8cd763061c2d"><div class="ttname"><a href="classScene.html#a2161d81b083c0ecdb47d8cd763061c2d">Scene::addObject</a></div><div class="ttdeci">void addObject(std::unique_ptr&lt; Object3D &gt; object)</div><div class="ttdoc">Adds a 3D object to the scene.</div><div class="ttdef"><b>Definition</b> Scene.hpp:43</div></div>
-<div class="ttc" id="aclassScene_html_a2c6fc0308a126965ce5a87e8619ac7ef"><div class="ttname"><a href="classScene.html#a2c6fc0308a126965ce5a87e8619ac7ef">Scene::getCamera</a></div><div class="ttdeci">const Camera * getCamera() const</div><div class="ttdoc">Gets the current camera of the scene.</div><div class="ttdef"><b>Definition</b> Scene.hpp:64</div></div>
-<div class="ttc" id="aclassScene_html_a54036ce71cb2b6a8558fda8e6622897b"><div class="ttname"><a href="classScene.html#a54036ce71cb2b6a8558fda8e6622897b">Scene::getBackgroundColor</a></div><div class="ttdeci">const Eigen::Vector3d &amp; getBackgroundColor() const</div><div class="ttdoc">Get the background color.</div><div class="ttdef"><b>Definition</b> Scene.hpp:70</div></div>
+<div class="ttc" id="aclassScene_html_a2c6fc0308a126965ce5a87e8619ac7ef"><div class="ttname"><a href="classScene.html#a2c6fc0308a126965ce5a87e8619ac7ef">Scene::getCamera</a></div><div class="ttdeci">const Camera * getCamera() const</div><div class="ttdoc">Gets the current camera of the scene.</div><div class="ttdef"><b>Definition</b> Scene.hpp:78</div></div>
+<div class="ttc" id="aclassScene_html_a4c71513261015895b2220396667e7ee0"><div class="ttname"><a href="classScene.html#a4c71513261015895b2220396667e7ee0">Scene::addLight</a></div><div class="ttdeci">void addLight(std::unique_ptr&lt; Light &gt; light)</div><div class="ttdoc">Adds a light to the scene.</div><div class="ttdef"><b>Definition</b> Scene.hpp:50</div></div>
 <div class="ttc" id="aclassScene_html_a5b37bc2b8acb2d4e2250984639a1c26c"><div class="ttname"><a href="classScene.html#a5b37bc2b8acb2d4e2250984639a1c26c">Scene::operator=</a></div><div class="ttdeci">Scene &amp; operator=(Scene &amp;&amp;other)=delete</div></div>
 <div class="ttc" id="aclassScene_html_a5f8910723e46fca1384cb11c7e4eb650"><div class="ttname"><a href="classScene.html#a5f8910723e46fca1384cb11c7e4eb650">Scene::operator=</a></div><div class="ttdeci">Scene &amp; operator=(const Scene &amp;other)=delete</div></div>
 <div class="ttc" id="aclassScene_html_a631eef7493cafce5d74739a2cad12a58"><div class="ttname"><a href="classScene.html#a631eef7493cafce5d74739a2cad12a58">Scene::~Scene</a></div><div class="ttdeci">~Scene()=default</div><div class="ttdoc">Default destructor.</div></div>
-<div class="ttc" id="aclassScene_html_a7fd89a9016dcca0f73658d0aefccbb12"><div class="ttname"><a href="classScene.html#a7fd89a9016dcca0f73658d0aefccbb12">Scene::setBackgroundColor</a></div><div class="ttdeci">void setBackgroundColor(const Eigen::Vector3d &amp;color)</div><div class="ttdoc">Set the background color.</div><div class="ttdef"><b>Definition</b> Scene.hpp:76</div></div>
-<div class="ttc" id="aclassScene_html_a8660a2d2d1b1b924f474a8ad4743f3de"><div class="ttname"><a href="classScene.html#a8660a2d2d1b1b924f474a8ad4743f3de">Scene::getObjectList</a></div><div class="ttdeci">const std::vector&lt; std::unique_ptr&lt; Object3D &gt; &gt; &amp; getObjectList() const</div><div class="ttdoc">Gets the list of objects in the scene.</div><div class="ttdef"><b>Definition</b> Scene.hpp:57</div></div>
-<div class="ttc" id="aclassScene_html_a869a9d3699f7c2d9e994aab7c0e0e260"><div class="ttname"><a href="classScene.html#a869a9d3699f7c2d9e994aab7c0e0e260">Scene::setCamera</a></div><div class="ttdeci">void setCamera(std::unique_ptr&lt; Camera &gt; camera)</div><div class="ttdoc">Sets the camera for the scene.</div><div class="ttdef"><b>Definition</b> Scene.hpp:50</div></div>
-<div class="ttc" id="aclassScene_html_a93ccc41b0a2f6c24e467d5d9de76ec0d"><div class="ttname"><a href="classScene.html#a93ccc41b0a2f6c24e467d5d9de76ec0d">Scene::Scene</a></div><div class="ttdeci">Scene()=default</div><div class="ttdoc">Default constructor.</div></div>
+<div class="ttc" id="aclassScene_html_a8660a2d2d1b1b924f474a8ad4743f3de"><div class="ttname"><a href="classScene.html#a8660a2d2d1b1b924f474a8ad4743f3de">Scene::getObjectList</a></div><div class="ttdeci">const std::vector&lt; std::unique_ptr&lt; Object3D &gt; &gt; &amp; getObjectList() const</div><div class="ttdoc">Gets the list of objects in the scene.</div><div class="ttdef"><b>Definition</b> Scene.hpp:64</div></div>
+<div class="ttc" id="aclassScene_html_a869a9d3699f7c2d9e994aab7c0e0e260"><div class="ttname"><a href="classScene.html#a869a9d3699f7c2d9e994aab7c0e0e260">Scene::setCamera</a></div><div class="ttdeci">void setCamera(std::unique_ptr&lt; Camera &gt; camera)</div><div class="ttdoc">Sets the camera for the scene.</div><div class="ttdef"><b>Definition</b> Scene.hpp:57</div></div>
+<div class="ttc" id="aclassScene_html_a9a08cdced45e2dd7fd9069210b24bfee"><div class="ttname"><a href="classScene.html#a9a08cdced45e2dd7fd9069210b24bfee">Scene::setSkybox</a></div><div class="ttdeci">void setSkybox(const std::shared_ptr&lt; Texture &gt; &amp;skybox_texture)</div><div class="ttdoc">Sets the skybox texture for the scene.</div><div class="ttdef"><b>Definition</b> Scene.hpp:93</div></div>
 <div class="ttc" id="aclassScene_html_ab278e1cce7985696ecccb1f8f113cacb"><div class="ttname"><a href="classScene.html#ab278e1cce7985696ecccb1f8f113cacb">Scene::Scene</a></div><div class="ttdeci">Scene(const Scene &amp;other)=delete</div></div>
+<div class="ttc" id="aclassScene_html_ad10176d75a9cc0da56626f682d083507"><div class="ttname"><a href="classScene.html#ad10176d75a9cc0da56626f682d083507">Scene::Scene</a></div><div class="ttdeci">Scene()</div><div class="ttdef"><b>Definition</b> Scene.cpp:6</div></div>
 <div class="ttc" id="aclassScene_html_adb7836c08d271fb2f2faebf720d7b5e2"><div class="ttname"><a href="classScene.html#adb7836c08d271fb2f2faebf720d7b5e2">Scene::Scene</a></div><div class="ttdeci">Scene(Scene &amp;&amp;other)=delete</div></div>
+<div class="ttc" id="aclassScene_html_af8e117520a0123c6cfe4c6ec81852ec0"><div class="ttname"><a href="classScene.html#af8e117520a0123c6cfe4c6ec81852ec0">Scene::getLightList</a></div><div class="ttdeci">const std::vector&lt; std::unique_ptr&lt; Light &gt; &gt; &amp; getLightList() const</div><div class="ttdoc">Gets the list of lights in the scene.</div><div class="ttdef"><b>Definition</b> Scene.hpp:71</div></div>
+<div class="ttc" id="aclassScene_html_afea995759da5ddb83218edf0ad2bb663"><div class="ttname"><a href="classScene.html#afea995759da5ddb83218edf0ad2bb663">Scene::getSkyboxColor</a></div><div class="ttdeci">Eigen::Vector4d getSkyboxColor(const Eigen::Vector3d direction) const</div><div class="ttdoc">Gets the color of the skybox based on a given direction.</div><div class="ttdef"><b>Definition</b> Scene.hpp:86</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

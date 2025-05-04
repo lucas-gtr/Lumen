@@ -5,13 +5,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Lumen: /home/lucasgtr/lumen/src/Core/Camera.cpp File Reference</title>
+<title>Lumen: /home/lucasgtr/lumen/src/Scene/Camera.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -69,14 +76,14 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a2f0e5642e47e7ed59fe0f0829eafb5f.html">Core</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_204260ac86670e69c647eaba8962e745.html">Scene</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">Camera.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="Camera_8hpp_source.html">Core/Camera.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="Camera_8hpp_source.html">Scene/Camera.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Config_8hpp_source.html">Core/Config.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="MathConstants_8hpp_source.html">Core/MathConstants.hpp</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
@@ -84,33 +91,31 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Camera.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="Camera_8cpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2src_2Core_2Camera_8cpp" alt=""/></div>
-<map name="a_2home_2lucasgtr_2lumen_2src_2Core_2Camera_8cpp" id="a_2home_2lucasgtr_2lumen_2src_2Core_2Camera_8cpp">
-<area shape="rect" title=" " alt="" coords="421,5,585,45"/>
-<area shape="rect" href="Camera_8hpp.html" title="Header file for the Camera class." alt="" coords="331,93,465,119"/>
-<area shape="poly" title=" " alt="" coords="479,48,426,87,423,83,476,43"/>
-<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="75,167,201,192"/>
-<area shape="poly" title=" " alt="" coords="448,48,319,96,174,163,171,158,317,91,446,43"/>
-<area shape="rect" href="MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="359,240,541,265"/>
-<area shape="poly" title=" " alt="" coords="519,44,536,74,552,112,558,153,556,174,548,193,526,219,498,237,495,232,523,215,544,191,551,172,553,153,547,113,532,76,515,47"/>
-<area shape="rect" title=" " alt="" coords="449,167,534,192"/>
-<area shape="poly" title=" " alt="" coords="504,46,496,153,491,153,499,46"/>
-<area shape="rect" title=" " alt="" coords="609,93,672,119"/>
-<area shape="poly" title=" " alt="" coords="538,43,610,84,607,89,535,48"/>
-<area shape="poly" title=" " alt="" coords="357,121,194,166,193,160,356,116"/>
-<area shape="poly" title=" " alt="" coords="405,118,444,226,439,228,400,120"/>
-<area shape="rect" href="Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="225,167,374,192"/>
-<area shape="poly" title=" " alt="" coords="384,121,328,161,325,156,381,117"/>
-<area shape="poly" title=" " alt="" coords="415,117,467,156,464,160,411,121"/>
-<area shape="rect" title=" " alt="" coords="5,240,76,265"/>
-<area shape="poly" title=" " alt="" coords="124,194,69,234,66,229,121,190"/>
-<area shape="rect" title=" " alt="" coords="100,240,197,265"/>
-<area shape="poly" title=" " alt="" coords="142,192,148,226,142,227,137,193"/>
-<area shape="rect" title=" " alt="" coords="411,313,489,339"/>
-<area shape="poly" title=" " alt="" coords="453,266,453,300,447,300,447,266"/>
-<area shape="poly" title=" " alt="" coords="325,190,414,232,412,236,322,194"/>
-<area shape="rect" title=" " alt="" coords="243,240,335,265"/>
-<area shape="poly" title=" " alt="" coords="300,193,295,227,290,226,295,192"/>
+<div class="center"><img src="Camera_8cpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2src_2Scene_2Camera_8cpp" alt=""/></div>
+<map name="a_2home_2lucasgtr_2lumen_2src_2Scene_2Camera_8cpp" id="a_2home_2lucasgtr_2lumen_2src_2Scene_2Camera_8cpp">
+<area shape="rect" title=" " alt="" coords="351,5,521,45"/>
+<area shape="rect" href="Camera_8hpp.html" title="Header file for the Camera class." alt="" coords="255,93,399,119"/>
+<area shape="poly" title=" " alt="" coords="411,48,355,87,352,83,408,43"/>
+<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="5,167,131,192"/>
+<area shape="poly" title=" " alt="" coords="377,48,244,96,168,130,103,162,101,158,165,125,242,91,375,43"/>
+<area shape="rect" href="MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="278,240,461,265"/>
+<area shape="poly" title=" " alt="" coords="451,44,468,74,483,112,489,153,486,174,478,193,454,219,425,237,422,232,451,215,474,191,481,173,484,153,478,113,463,76,447,47"/>
+<area shape="rect" title=" " alt="" coords="379,167,464,192"/>
+<area shape="poly" title=" " alt="" coords="437,46,426,153,421,153,431,46"/>
+<area shape="rect" title=" " alt="" coords="539,93,602,119"/>
+<area shape="poly" title=" " alt="" coords="470,43,540,84,538,89,467,48"/>
+<area shape="poly" title=" " alt="" coords="286,121,124,166,122,160,284,116"/>
+<area shape="poly" title=" " alt="" coords="333,118,365,226,359,227,328,120"/>
+<area shape="rect" href="Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="155,167,304,192"/>
+<area shape="poly" title=" " alt="" coords="313,121,258,160,255,156,309,117"/>
+<area shape="poly" title=" " alt="" coords="343,117,396,156,393,160,340,121"/>
+<area shape="rect" title=" " alt="" coords="19,240,117,265"/>
+<area shape="poly" title=" " alt="" coords="71,192,71,226,65,226,65,192"/>
+<area shape="rect" title=" " alt="" coords="330,313,409,339"/>
+<area shape="poly" title=" " alt="" coords="372,266,372,300,367,300,367,266"/>
+<area shape="poly" title=" " alt="" coords="253,190,336,231,333,236,251,194"/>
+<area shape="rect" title=" " alt="" coords="162,240,254,265"/>
+<area shape="poly" title=" " alt="" coords="228,193,218,228,213,226,223,192"/>
 </map>
 </div>
 </div></div><!-- contents -->

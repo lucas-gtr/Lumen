@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['m_5fto_5fmm_0',['M_TO_MM',['../MathConstants_8hpp.html#ae4f6e46ab01527c5035686776ba15eb6',1,'MathConstants.hpp']]],
-  ['mathconstants_2ehpp_1',['MathConstants.hpp',['../MathConstants_8hpp.html',1,'']]],
-  ['mesh_2',['mesh',['../classMesh.html',1,'Mesh'],['../classMesh.html#ae6b6c56f0ebfa2f6b2b10d25a835c865',1,'Mesh::Mesh()=default'],['../classMesh.html#aa1cf3c0ea06012a527caba847f5df84a',1,'Mesh::Mesh(const std::vector&lt; Vertex &gt; &amp;vertices, const std::vector&lt; Face &gt; &amp;faces)'],['../classMesh.html#a182bab27228d1b69ad4352d896b36225',1,'Mesh::Mesh(const Mesh &amp;)=default'],['../classMesh.html#a9320a207f0acff24ba80b6af1cc3d5aa',1,'Mesh::Mesh(Mesh &amp;&amp;)=default']]],
-  ['mesh_2ecpp_3',['Mesh.cpp',['../Mesh_8cpp.html',1,'']]],
-  ['mesh_2ehpp_4',['Mesh.hpp',['../Mesh_8hpp.html',1,'']]],
-  ['mm_5fto_5fm_5',['MM_TO_M',['../MathConstants_8hpp.html#a413457a8cdc8139b3492e2f1cc2f346a',1,'MathConstants.hpp']]]
+  ['lensradius_0',['lensRadius',['../structRayEmitterParameters.html#ac17200621d040172790a26bf00b1633a',1,'RayEmitterParameters']]],
+  ['light_1',['light',['../classLight.html',1,'Light'],['../classLight.html#a73b7f4f2e1e317b69485fcbdfd814620',1,'Light::Light(LightType light_type)'],['../classLight.html#af7741722407c342095df307dc7441e98',1,'Light::Light(const Light &amp;)=default'],['../classLight.html#aa3e7b1e12bb0b3dc0d864d9ce98a2149',1,'Light::Light(Light &amp;&amp;)=default']]],
+  ['light_2ehpp_2',['Light.hpp',['../Light_8hpp.html',1,'']]],
+  ['lighttype_3',['LightType',['../Light_8hpp.html#a334f02e8b0313de02a05fab6e8bf4c12',1,'Light.hpp']]],
+  ['load_4',['load',['../classOBJLoader.html#a698682f088f1d8fe86113901784022bf',1,'OBJLoader::load()'],['../namespaceTextureLoader.html#a87140fe173e9fb564d84fa78625b4ef4',1,'TextureLoader::load()']]]
 ];

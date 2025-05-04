@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -74,41 +81,62 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">RenderExporter.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Header file for the <a class="el" href="classRenderExporter.html" title="Abstract base class for exporting rendered frames.">RenderExporter</a> class.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="Config_8hpp_source.html">Core/Config.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &quot;<a class="el" href="Config_8hpp_source.html">Core/Config.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Framebuffer_8hpp_source.html">Core/Framebuffer.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="OutputFormat_8hpp_source.html">Export/OutputFormat.hpp</a>&quot;</code><br />
-<code>#include &lt;string&gt;</code><br />
+<code>#include &quot;<a class="el" href="Parameters_8hpp_source.html">ImplementationParameters/Parameters.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ToneMapping_8hpp_source.html">PostProcessing/ToneMapping/ToneMapping.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for RenderExporter.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="RenderExporter_8hpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Export_2RenderExporter_8hpp" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2include_2Export_2RenderExporter_8hpp" id="a_2home_2lucasgtr_2lumen_2include_2Export_2RenderExporter_8hpp">
-<area shape="rect" title="Header file for the RenderExporter class." alt="" coords="241,5,491,45"/>
-<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="37,93,162,119"/>
-<area shape="poly" title=" " alt="" coords="303,48,152,92,151,87,301,43"/>
-<area shape="rect" href="Framebuffer_8hpp.html" title="Header file for the Framebuffer class." alt="" coords="186,93,349,119"/>
-<area shape="poly" title=" " alt="" coords="344,48,294,87,291,82,340,43"/>
-<area shape="rect" href="OutputFormat_8hpp.html" title="Header file for the OutputFormat class." alt="" coords="373,93,559,119"/>
-<area shape="poly" title=" " alt="" coords="392,43,442,82,439,87,389,48"/>
-<area shape="rect" title=" " alt="" coords="502,167,561,192"/>
-<area shape="poly" title=" " alt="" coords="493,39,537,59,557,74,574,92,579,109,576,126,556,158,552,155,571,124,574,109,569,95,553,77,535,63,491,44"/>
-<area shape="rect" title=" " alt="" coords="127,167,197,192"/>
-<area shape="poly" title=" " alt="" coords="112,117,145,154,141,158,108,121"/>
-<area shape="rect" title=" " alt="" coords="5,167,103,192"/>
-<area shape="poly" title=" " alt="" coords="94,120,71,157,66,154,90,118"/>
-<area shape="poly" title=" " alt="" coords="252,121,192,161,189,157,249,116"/>
-<area shape="rect" title=" " alt="" coords="221,167,313,192"/>
-<area shape="poly" title=" " alt="" coords="270,119,270,153,265,153,265,119"/>
-<area shape="rect" title=" " alt="" coords="337,167,400,192"/>
-<area shape="poly" title=" " alt="" coords="285,116,342,156,339,161,282,121"/>
-<area shape="poly" title=" " alt="" coords="479,117,513,155,510,158,475,121"/>
+<area shape="rect" title="Header file for the RenderExporter class." alt="" coords="462,5,712,45"/>
+<area shape="rect" title=" " alt="" coords="18,277,84,302"/>
+<area shape="poly" title=" " alt="" coords="462,44,334,64,198,93,136,112,83,133,41,157,15,183,8,203,12,225,22,246,34,265,30,268,17,248,7,226,3,202,10,180,38,152,80,128,134,107,197,88,333,59,461,38"/>
+<area shape="rect" title=" " alt="" coords="338,277,415,302"/>
+<area shape="poly" title=" " alt="" coords="573,48,534,95,396,267,392,264,530,92,569,44"/>
+<area shape="rect" title=" " alt="" coords="672,357,731,383"/>
+<area shape="poly" title=" " alt="" coords="707,43,746,62,778,92,811,146,820,172,824,198,822,224,816,251,791,311,770,335,745,353,742,349,767,331,786,308,811,250,817,223,818,198,815,173,807,149,774,95,743,67,705,48"/>
+<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="1056,101,1182,126"/>
+<area shape="poly" title=" " alt="" coords="713,39,872,61,1045,91,1064,95,1063,100,1044,96,871,66,712,44"/>
+<area shape="rect" href="Framebuffer_8hpp.html" title="Header file for the Framebuffer class." alt="" coords="223,101,386,126"/>
+<area shape="poly" title=" " alt="" coords="526,48,356,99,354,94,524,43"/>
+<area shape="rect" href="OutputFormat_8hpp.html" title="Header file for the OutputFormat class." alt="" coords="846,101,1032,126"/>
+<area shape="poly" title=" " alt="" coords="665,43,879,95,878,100,664,48"/>
+<area shape="rect" href="Parameters_8hpp.html" title="Header file for the Parameters class." alt="" coords="491,181,691,221"/>
+<area shape="poly" title=" " alt="" coords="572,47,556,69,544,94,540,113,544,133,553,152,565,169,561,172,548,154,539,134,535,113,539,92,552,66,567,44"/>
+<area shape="rect" href="ToneMapping_8hpp.html" title="Header file for the ToneMappingStrategy class." alt="" coords="554,93,764,133"/>
+<area shape="poly" title=" " alt="" coords="605,44,636,81,632,85,601,47"/>
+<area shape="rect" title=" " alt="" coords="1070,189,1168,214"/>
+<area shape="poly" title=" " alt="" coords="1122,126,1122,174,1116,174,1116,126"/>
+<area shape="rect" title=" " alt="" coords="229,189,321,214"/>
+<area shape="poly" title=" " alt="" coords="303,127,286,176,281,174,298,125"/>
+<area shape="rect" title=" " alt="" coords="345,189,416,214"/>
+<area shape="poly" title=" " alt="" coords="317,124,362,176,358,179,313,128"/>
+<area shape="rect" href="CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="25,189,205,214"/>
+<area shape="poly" title=" " alt="" coords="280,129,154,185,152,180,278,124"/>
+<area shape="poly" title=" " alt="" coords="108,216,70,267,66,264,104,213"/>
+<area shape="poly" title=" " alt="" coords="938,127,926,162,904,211,874,264,834,311,790,341,745,360,743,355,788,336,831,307,870,261,900,209,921,160,933,126"/>
+<area shape="poly" title=" " alt="" coords="545,224,418,274,416,269,543,219"/>
+<area shape="poly" title=" " alt="" coords="537,224,505,243,480,271,473,290,480,308,491,317,508,326,555,341,659,361,658,366,554,347,506,331,488,322,475,311,468,290,475,268,501,239,534,219"/>
+<area shape="rect" title=" " alt="" coords="713,277,776,302"/>
+<area shape="poly" title=" " alt="" coords="626,219,713,268,711,272,623,224"/>
+<area shape="rect" href="ParameterValue_8hpp.html" title="Header file for the ParameterValue class." alt="" coords="490,269,690,309"/>
+<area shape="poly" title=" " alt="" coords="593,222,593,255,587,255,588,222"/>
+<area shape="poly" title=" " alt="" coords="618,307,675,347,672,351,615,312"/>
+<area shape="poly" title=" " alt="" coords="646,135,617,172,612,169,642,132"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -129,10 +157,49 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html">RenderExporter</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract base class for exporting rendered frames.  <a href="classRenderExporter.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a864b9093408eb25e8a8f0e9bf1aa8efb" id="r_a864b9093408eb25e8a8f0e9bf1aa8efb"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RenderExporter_8hpp.html#a864b9093408eb25e8a8f0e9bf1aa8efb">ToneMapping</a> : std::uint8_t { <a class="el" href="RenderExporter_8hpp.html#a864b9093408eb25e8a8f0e9bf1aa8efbab50339a10e1de285ac99d4c3990b8693">NONE</a>
+, <a class="el" href="RenderExporter_8hpp.html#a864b9093408eb25e8a8f0e9bf1aa8efba1b4b22589337500313086c6fabed736d">REINHARD</a>
+, <a class="el" href="RenderExporter_8hpp.html#a864b9093408eb25e8a8f0e9bf1aa8efba23c53320729451a2128b25273d9c00f8">EXPOSURE</a>
+ }</td></tr>
+<tr class="memdesc:a864b9093408eb25e8a8f0e9bf1aa8efb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration for different tone mapping strategies.  <a href="RenderExporter_8hpp.html#a864b9093408eb25e8a8f0e9bf1aa8efb">More...</a><br /></td></tr>
+<tr class="separator:a864b9093408eb25e8a8f0e9bf1aa8efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header file for the <a class="el" href="classRenderExporter.html" title="Abstract base class for exporting rendered frames.">RenderExporter</a> class. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a864b9093408eb25e8a8f0e9bf1aa8efb" name="a864b9093408eb25e8a8f0e9bf1aa8efb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a864b9093408eb25e8a8f0e9bf1aa8efb">&#9670;&#160;</a></span>ToneMapping</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="RenderExporter_8hpp.html#a864b9093408eb25e8a8f0e9bf1aa8efb">ToneMapping</a> : std::uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enumeration for different tone mapping strategies. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a864b9093408eb25e8a8f0e9bf1aa8efbab50339a10e1de285ac99d4c3990b8693" name="a864b9093408eb25e8a8f0e9bf1aa8efbab50339a10e1de285ac99d4c3990b8693"></a>NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a864b9093408eb25e8a8f0e9bf1aa8efba1b4b22589337500313086c6fabed736d" name="a864b9093408eb25e8a8f0e9bf1aa8efba1b4b22589337500313086c6fabed736d"></a>REINHARD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a864b9093408eb25e8a8f0e9bf1aa8efba23c53320729451a2128b25273d9c00f8" name="a864b9093408eb25e8a8f0e9bf1aa8efba23c53320729451a2128b25273d9c00f8"></a>EXPOSURE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8

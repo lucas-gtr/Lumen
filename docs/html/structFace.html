@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -90,7 +97,7 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a62d1c026c6d5a647c5aab0a8a218effc" id="r_a62d1c026c6d5a647c5aab0a8a218effc"><td class="memItemLeft" align="right" valign="top">std::array&lt; int, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFace.html#a62d1c026c6d5a647c5aab0a8a218effc">vertexIndices</a></td></tr>
+<tr class="memitem:a62d1c026c6d5a647c5aab0a8a218effc" id="r_a62d1c026c6d5a647c5aab0a8a218effc"><td class="memItemLeft" align="right" valign="top">std::array&lt; int, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFace.html#a62d1c026c6d5a647c5aab0a8a218effc">vertexIndices</a> = {0, 0, 0}</td></tr>
 <tr class="memdesc:a62d1c026c6d5a647c5aab0a8a218effc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indices of the vertices making up the face.  <br /></td></tr>
 <tr class="separator:a62d1c026c6d5a647c5aab0a8a218effc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -140,7 +147,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;int, 3&gt; Face::vertexIndices</td>
+          <td class="memname">std::array&lt;int, 3&gt; Face::vertexIndices = {0, 0, 0}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -150,7 +157,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/lucasgtr/lumen/include/Core/<a class="el" href="Mesh_8hpp_source.html">Mesh.hpp</a></li>
+<li>/home/lucasgtr/lumen/include/Geometry/<a class="el" href="Mesh_8hpp_source.html">Mesh.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

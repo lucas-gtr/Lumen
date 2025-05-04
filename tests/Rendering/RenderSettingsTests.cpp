@@ -1,5 +1,6 @@
-#include <gtest/gtest.h>
 #include "Rendering/RenderSettings.hpp"
+
+#include <gtest/gtest.h>
 
 TEST(RenderSettingsTest, DefaultValues) {
   RenderSettings settings;
@@ -71,4 +72,20 @@ TEST(RenderSettingsTest, FarPlaneCannotBeSmallerThanNearPlane) {
   settings.setNearPlane(100.0);
 
   EXPECT_GE(settings.getFarPlane(), settings.getNearPlane());
+}
+
+TEST(RenderSettingsTest, SamplesPerPixels) {
+  RenderSettings settings;
+
+  settings.setSamplesPerPixel(0);
+  EXPECT_EQ(settings.getSamplesPerPixel(), 1);
+
+  settings.setSamplesPerPixel(6);
+  EXPECT_EQ(settings.getSamplesPerPixel(), 4);
+
+  settings.setSamplesPerPixel(7);
+  EXPECT_EQ(settings.getSamplesPerPixel(), 9);
+
+  settings.setSamplesPerPixel(9);
+  EXPECT_EQ(settings.getSamplesPerPixel(), 9);
 }

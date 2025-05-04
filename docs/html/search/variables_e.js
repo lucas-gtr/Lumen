@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vertexindices_0',['vertexIndices',['../structFace.html#a62d1c026c6d5a647c5aab0a8a218effc',1,'Face']]]
+  ['tangent_0',['tangent',['../structVertex.html#a94aefe9861eca6190e781fcb20c99e3b',1,'Vertex::tangent'],['../structRayHitInfo.html#a69b1c50b816231ef99fae1cec04c3ce5',1,'RayHitInfo::tangent']]]
 ];

@@ -1,5 +1,5 @@
-#include <gtest/gtest.h>
 #include "Core/Random.hpp"
+#include <gtest/gtest.h>
 
 TEST(RandomTest, PointsAreInsideUnitDisk) {
     for (int i = 0; i < 1000; ++i) {

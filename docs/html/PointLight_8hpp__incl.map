@@ -1,0 +1,17 @@
+<map id="/home/lucasgtr/lumen/include/Lighting/PointLight.hpp" name="/home/lucasgtr/lumen/include/Lighting/PointLight.hpp">
+<area shape="rect" id="Node000001" title="Header file for the PointLight class." alt="" coords="5,5,232,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="70,240,162,265"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,46,100,94,98,130,100,166,112,226,106,227,95,166,92,130,95,93,108,45"/>
+<area shape="rect" id="Node000003" href="$Light_8hpp.html" title="Header file for the Light class." alt="" coords="109,93,248,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="135,44,164,81,159,84,131,47"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="172,120,144,168,124,227,119,225,139,166,168,118"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="153,167,220,192"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="183,119,187,153,181,153,177,119"/>
+<area shape="rect" id="Node000005" href="$Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="244,167,393,192"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="202,116,285,158,283,163,200,121"/>
+<area shape="poly" id="edge8_Node000005_Node000002" title=" " alt="" coords="287,195,162,238,161,233,285,190"/>
+<area shape="rect" id="Node000006" href="$MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="227,240,410,265"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="321,192,321,226,316,226,316,192"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="279,313,358,339"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="321,266,321,300,316,300,316,266"/>
+</map>

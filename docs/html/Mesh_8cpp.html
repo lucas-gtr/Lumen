@@ -5,13 +5,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Lumen: /home/lucasgtr/lumen/src/Core/Mesh.cpp File Reference</title>
+<title>Lumen: /home/lucasgtr/lumen/src/Geometry/Mesh.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -69,33 +76,39 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a2f0e5642e47e7ed59fe0f0829eafb5f.html">Core</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_cae27912e177176a90175eee3a6288a5.html">Geometry</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">Mesh.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="Mesh_8hpp_source.html">Core/Mesh.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="Mesh_8hpp_source.html">Geometry/Mesh.hpp</a>&quot;</code><br />
+<code>#include &lt;Eigen/Core&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Mesh.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="Mesh_8cpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2src_2Core_2Mesh_8cpp" alt=""/></div>
-<map name="a_2home_2lucasgtr_2lumen_2src_2Core_2Mesh_8cpp" id="a_2home_2lucasgtr_2lumen_2src_2Core_2Mesh_8cpp">
-<area shape="rect" title=" " alt="" coords="161,5,325,45"/>
-<area shape="rect" href="Mesh_8hpp.html" title="Header file for the Mesh class, the Vertex and Face structures." alt="" coords="87,93,205,119"/>
-<area shape="poly" title=" " alt="" coords="221,48,173,87,169,82,218,43"/>
-<area shape="rect" title=" " alt="" coords="209,167,272,192"/>
-<area shape="poly" title=" " alt="" coords="246,46,244,153,238,153,240,46"/>
-<area shape="rect" title=" " alt="" coords="281,93,366,119"/>
-<area shape="poly" title=" " alt="" coords="265,44,303,82,300,85,261,47"/>
+<div class="center"><img src="Mesh_8cpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2src_2Geometry_2Mesh_8cpp" alt=""/></div>
+<map name="a_2home_2lucasgtr_2lumen_2src_2Geometry_2Mesh_8cpp" id="a_2home_2lucasgtr_2lumen_2src_2Geometry_2Mesh_8cpp">
+<area shape="rect" title=" " alt="" coords="228,5,408,45"/>
+<area shape="rect" href="Mesh_8hpp.html" title="Header file for the Mesh class, the Vertex and Face structures." alt="" coords="183,93,338,119"/>
+<area shape="poly" title=" " alt="" coords="306,47,279,84,275,80,302,44"/>
 <area shape="rect" title=" " alt="" coords="5,167,97,192"/>
-<area shape="poly" title=" " alt="" coords="132,121,79,160,76,156,129,117"/>
+<area shape="poly" title=" " alt="" coords="272,48,173,96,122,128,78,160,75,156,118,124,170,91,269,43"/>
+<area shape="rect" title=" " alt="" coords="407,167,469,192"/>
+<area shape="poly" title=" " alt="" coords="335,44,423,154,418,157,331,47"/>
+<area shape="rect" title=" " alt="" coords="413,93,498,119"/>
+<area shape="poly" title=" " alt="" coords="352,43,424,84,422,89,350,48"/>
+<area shape="poly" title=" " alt="" coords="228,121,99,165,98,160,226,116"/>
 <area shape="rect" title=" " alt="" coords="122,167,178,192"/>
-<area shape="poly" title=" " alt="" coords="149,119,151,153,146,153,144,119"/>
-<area shape="poly" title=" " alt="" coords="163,117,216,156,213,160,160,121"/>
+<area shape="poly" title=" " alt="" coords="244,121,181,161,178,157,241,116"/>
+<area shape="poly" title=" " alt="" coords="290,116,398,159,396,164,288,121"/>
+<area shape="rect" href="CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="203,167,383,192"/>
+<area shape="poly" title=" " alt="" coords="268,118,284,153,280,155,264,120"/>
+<area shape="rect" title=" " alt="" coords="259,240,326,265"/>
+<area shape="poly" title=" " alt="" coords="295,192,295,226,290,226,290,192"/>
 </map>
 </div>
 </div></div><!-- contents -->

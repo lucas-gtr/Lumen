@@ -1,0 +1,18 @@
+<map id="/home/lucasgtr/lumen/include/Surface/Texture.hpp" name="/home/lucasgtr/lumen/include/Surface/Texture.hpp">
+<area shape="rect" id="Node000001" title="Header file for the Texture class." alt="" coords="172,5,379,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,97,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,48,98,91,96,86,221,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="311,240,378,265"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="220,48,193,61,172,77,160,96,160,106,163,117,191,156,227,188,266,214,303,232,301,237,264,218,224,193,187,160,158,120,154,107,155,95,168,74,190,57,218,43"/>
+<area shape="rect" id="Node000004" href="$CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="321,167,501,192"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="326,43,361,63,391,92,406,122,412,152,407,153,401,124,387,95,358,68,324,48"/>
+<area shape="rect" id="Node000005" href="$TextureFiltering_8hpp.html" title="Header file for texture filtering functions." alt="" coords="173,93,377,119"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="278,46,278,79,273,79,273,46"/>
+<area shape="rect" id="Node000006" href="$TextureWrapping_8hpp.html" title="Header file for texture wrapping modes and functions." alt="" coords="453,93,666,119"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="344,43,506,87,504,92,343,48"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="402,194,367,232,363,228,398,191"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="282,118,311,191,332,227,327,230,306,193,277,120"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="298,116,378,158,376,163,296,121"/>
+<area shape="poly" id="edge10_Node000006_Node000003" title=" " alt="" coords="558,120,543,156,531,176,514,194,486,214,454,229,393,247,391,242,452,224,483,209,511,190,526,173,539,154,553,118"/>
+<area shape="poly" id="edge9_Node000006_Node000004" title=" " alt="" coords="537,121,449,163,447,158,534,116"/>
+</map>

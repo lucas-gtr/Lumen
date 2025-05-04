@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -81,6 +88,16 @@ $(function() {
  <a href="structVertex.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Mesh_8hpp_source.html">Mesh.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Vertex:</div>
+<div class="dyncontent">
+<div class="center"><img src="structVertex__coll__graph.png" border="0" usemap="#aVertex_coll__map" alt="Collaboration graph"/></div>
+<map name="aVertex_coll__map" id="aVertex_coll__map">
+<area shape="rect" title="Structure representing a vertex in a 3D mesh." alt="" coords="18,93,82,119"/>
+<area shape="rect" href="structTextureUV.html" title="Structure to hold the UV coordinates of a texture." alt="" coords="5,5,95,31"/>
+<area shape="poly" title=" " alt="" coords="53,45,53,93,47,93,47,45"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -90,15 +107,21 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aa7476c32e6c48e1a260ab3c17921618c" id="r_aa7476c32e6c48e1a260ab3c17921618c"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVertex.html#aa7476c32e6c48e1a260ab3c17921618c">position</a></td></tr>
+<tr class="memitem:aa7476c32e6c48e1a260ab3c17921618c" id="r_aa7476c32e6c48e1a260ab3c17921618c"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVertex.html#aa7476c32e6c48e1a260ab3c17921618c">position</a> = {0.0, 0.0, 0.0}</td></tr>
 <tr class="memdesc:aa7476c32e6c48e1a260ab3c17921618c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position of the vertex in 3D space.  <br /></td></tr>
 <tr class="separator:aa7476c32e6c48e1a260ab3c17921618c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f91db73bb7cac670bda0549b5bb9361" id="r_a0f91db73bb7cac670bda0549b5bb9361"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVertex.html#a0f91db73bb7cac670bda0549b5bb9361">normal</a></td></tr>
+<tr class="memitem:a0f91db73bb7cac670bda0549b5bb9361" id="r_a0f91db73bb7cac670bda0549b5bb9361"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVertex.html#a0f91db73bb7cac670bda0549b5bb9361">normal</a> = {0.0, 0.0, 0.0}</td></tr>
 <tr class="memdesc:a0f91db73bb7cac670bda0549b5bb9361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normal vector at the vertex.  <br /></td></tr>
 <tr class="separator:a0f91db73bb7cac670bda0549b5bb9361"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab95b8d599f13a9ca83659eaf3e3b412d" id="r_ab95b8d599f13a9ca83659eaf3e3b412d"><td class="memItemLeft" align="right" valign="top">Eigen::Vector2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVertex.html#ab95b8d599f13a9ca83659eaf3e3b412d">texCoord</a></td></tr>
-<tr class="memdesc:ab95b8d599f13a9ca83659eaf3e3b412d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texture coordinates of the vertex.  <br /></td></tr>
-<tr class="separator:ab95b8d599f13a9ca83659eaf3e3b412d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2891ea555479ae551c65c54cd6fc1eed" id="r_a2891ea555479ae551c65c54cd6fc1eed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTextureUV.html">TextureUV</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVertex.html#a2891ea555479ae551c65c54cd6fc1eed">uvCoord</a> = {0, 0}</td></tr>
+<tr class="memdesc:a2891ea555479ae551c65c54cd6fc1eed"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classTexture.html" title="Class representing a texture for 3D rendering.">Texture</a> coordinates of the vertex.  <br /></td></tr>
+<tr class="separator:a2891ea555479ae551c65c54cd6fc1eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94aefe9861eca6190e781fcb20c99e3b" id="r_a94aefe9861eca6190e781fcb20c99e3b"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVertex.html#a94aefe9861eca6190e781fcb20c99e3b">tangent</a> = {0.0, 0.0, 0.0}</td></tr>
+<tr class="memdesc:a94aefe9861eca6190e781fcb20c99e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tangent vector at the vertex.  <br /></td></tr>
+<tr class="separator:a94aefe9861eca6190e781fcb20c99e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3be9896e1aa35006efb2c6eea55c21a" id="r_ad3be9896e1aa35006efb2c6eea55c21a"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVertex.html#ad3be9896e1aa35006efb2c6eea55c21a">bitangent</a> = {0.0, 0.0, 0.0}</td></tr>
+<tr class="memdesc:ad3be9896e1aa35006efb2c6eea55c21a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitangent vector at the vertex.  <br /></td></tr>
+<tr class="separator:ad3be9896e1aa35006efb2c6eea55c21a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Structure representing a vertex in a 3D mesh. </p>
@@ -139,6 +162,22 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="ad3be9896e1aa35006efb2c6eea55c21a" name="ad3be9896e1aa35006efb2c6eea55c21a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3be9896e1aa35006efb2c6eea55c21a">&#9670;&#160;</a></span>bitangent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Vector3d Vertex::bitangent = {0.0, 0.0, 0.0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bitangent vector at the vertex. </p>
+
+</div>
+</div>
 <a id="a0f91db73bb7cac670bda0549b5bb9361" name="a0f91db73bb7cac670bda0549b5bb9361"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f91db73bb7cac670bda0549b5bb9361">&#9670;&#160;</a></span>normal</h2>
 
@@ -146,7 +185,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::Vector3d Vertex::normal</td>
+          <td class="memname">Eigen::Vector3d Vertex::normal = {0.0, 0.0, 0.0}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -162,7 +201,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::Vector3d Vertex::position</td>
+          <td class="memname">Eigen::Vector3d Vertex::position = {0.0, 0.0, 0.0}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -171,24 +210,40 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab95b8d599f13a9ca83659eaf3e3b412d" name="ab95b8d599f13a9ca83659eaf3e3b412d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab95b8d599f13a9ca83659eaf3e3b412d">&#9670;&#160;</a></span>texCoord</h2>
+<a id="a94aefe9861eca6190e781fcb20c99e3b" name="a94aefe9861eca6190e781fcb20c99e3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94aefe9861eca6190e781fcb20c99e3b">&#9670;&#160;</a></span>tangent</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::Vector2d Vertex::texCoord</td>
+          <td class="memname">Eigen::Vector3d Vertex::tangent = {0.0, 0.0, 0.0}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Texture coordinates of the vertex. </p>
+<p>Tangent vector at the vertex. </p>
+
+</div>
+</div>
+<a id="a2891ea555479ae551c65c54cd6fc1eed" name="a2891ea555479ae551c65c54cd6fc1eed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2891ea555479ae551c65c54cd6fc1eed">&#9670;&#160;</a></span>uvCoord</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTextureUV.html">TextureUV</a> Vertex::uvCoord = {0, 0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classTexture.html" title="Class representing a texture for 3D rendering.">Texture</a> coordinates of the vertex. </p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/lucasgtr/lumen/include/Core/<a class="el" href="Mesh_8hpp_source.html">Mesh.hpp</a></li>
+<li>/home/lucasgtr/lumen/include/Geometry/<a class="el" href="Mesh_8hpp_source.html">Mesh.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

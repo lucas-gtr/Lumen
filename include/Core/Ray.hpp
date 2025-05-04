@@ -15,8 +15,8 @@
  * the origin and a given point, which makes the ray direction unit length.
  */
 struct Ray {
-  Eigen::Vector3d origin    = Eigen::Vector3d::Zero();         ///< The origin of the ray in 3D space.
-  Eigen::Vector3d direction = Eigen::Vector3d(0.0, 0.0, -1.0); ///< The normalized direction vector of the ray.
+  Eigen::Vector3d origin    = {0, 0, 0};
+  Eigen::Vector3d direction = {0, 0, -1};
 
   Ray() = default; ///< Default constructor.
 

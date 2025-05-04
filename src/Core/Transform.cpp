@@ -2,12 +2,14 @@
 #include "Core/MathConstants.hpp"
 
 #include <Eigen/Core>
+#include <Eigen/Dense>
 #include <Eigen/Geometry>
 #include <cmath>
 
 // NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 Transform::Transform(const Eigen::Vector3d& position, const Eigen::Vector3d& rotation, const Eigen::Vector3d& scale)
     : m_position(position), m_rotation(rotation), m_scale(scale) {
+
   updateTranslationMatrix();
   updateRotationMatrix();
   updateScaleMatrix();
@@ -110,5 +112,12 @@ void Transform::updateTransformationMatrix() {
   scaleMatrix4d.block<3, 3>(0, 0) = m_scaleMatrix;
 
   m_transformationMatrix = m_translationMatrix * scaleMatrix4d * rotationMatrix4d;
-  m_inverseMatrix        = m_transformationMatrix.inverse();
+  updateInverseMatrix();
+  updateNormalMatrix();
+}
+
+void Transform::updateInverseMatrix() { m_inverseMatrix = m_transformationMatrix.inverse(); }
+
+void Transform::updateNormalMatrix() {
+  m_normalMatrix = m_transformationMatrix.block<3, 3>(0, 0).inverse().transpose();
 }

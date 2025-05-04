@@ -1,12 +1,21 @@
-<map id="/home/lucasgtr/lumen/include/Core/Camera.hpp" name="/home/lucasgtr/lumen/include/Core/Camera.hpp">
-<area shape="rect" id="Node000001" title="Header file for the Camera class." alt="" coords="201,5,392,45"/>
-<area shape="rect" id="Node000002" href="$Scene_8hpp.html" title="Header file for the Scene class." alt="" coords="110,93,289,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="267,56,223,95,219,91,263,52"/>
-<area shape="rect" id="Node000005" href="$Camera_8cpp.html" title=" " alt="" coords="313,93,477,133"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="330,52,375,91,372,95,327,56"/>
-<area shape="rect" id="Node000003" href="$Renderer_8hpp.html" title="Header file for the Renderer class." alt="" coords="5,181,239,221"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="175,145,141,183,137,179,171,142"/>
-<area shape="rect" id="Node000004" href="$Renderer_8cpp.html" title=" " alt="" coords="97,269,301,309"/>
-<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="231,142,244,160,254,180,258,201,254,222,240,249,222,271,218,267,235,246,249,220,253,201,249,182,239,163,227,145"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="150,230,184,267,180,271,146,233"/>
+<map id="/home/lucasgtr/lumen/include/Scene/Camera.hpp" name="/home/lucasgtr/lumen/include/Scene/Camera.hpp">
+<area shape="rect" id="Node000001" title="Header file for the Camera class." alt="" coords="476,5,675,45"/>
+<area shape="rect" id="Node000002" href="$Scene_8hpp.html" title="Header file for the Scene class." alt="" coords="381,93,567,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="544,56,498,95,495,91,541,52"/>
+<area shape="rect" id="Node000008" href="$Camera_8cpp.html" title=" " alt="" coords="591,93,762,133"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="610,52,656,91,653,95,607,56"/>
+<area shape="rect" id="Node000003" href="$RayIntersection_8hpp.html" title="Header file for ray intersection functions." alt="" coords="159,181,437,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="424,142,338,184,335,179,422,137"/>
+<area shape="rect" id="Node000004" href="$Renderer_8hpp.html" title="Header file for the Renderer class." alt="" coords="5,269,239,309"/>
+<area shape="poly" id="edge7_Node000002_Node000004" title=" " alt="" coords="367,127,302,136,238,148,184,164,164,173,149,183,135,203,128,226,123,270,118,269,122,224,131,200,145,179,161,168,182,159,237,142,301,130,366,122"/>
+<area shape="rect" id="Node000005" href="$Renderer_8cpp.html" title=" " alt="" coords="175,357,379,397"/>
+<area shape="poly" id="edge9_Node000002_Node000005" title=" " alt="" coords="509,141,544,176,575,220,586,243,590,266,588,289,576,311,563,322,545,332,497,348,438,361,379,369,378,364,438,355,495,343,543,327,560,318,572,308,583,288,585,267,581,245,571,222,540,180,506,145"/>
+<area shape="rect" id="Node000006" href="$RayIntersection_8cpp.html" title=" " alt="" coords="314,269,562,309"/>
+<area shape="poly" id="edge8_Node000002_Node000006" title=" " alt="" coords="470,147,445,270,439,269,465,146"/>
+<area shape="rect" id="Node000007" href="$Scene_8cpp.html" title=" " alt="" coords="637,181,801,221"/>
+<area shape="poly" id="edge10_Node000002_Node000007" title=" " alt="" coords="542,135,666,179,665,184,540,140"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="248,230,162,272,159,267,246,225"/>
+<area shape="poly" id="edge6_Node000003_Node000005" title=" " alt="" coords="297,235,282,357,276,357,291,235"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="342,226,409,267,406,272,339,231"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="169,314,244,355,242,360,167,318"/>
 </map>

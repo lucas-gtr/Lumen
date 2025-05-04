@@ -1,6 +1,7 @@
+#include "Export/OutputFormatPng.hpp"
+
 #include <gtest/gtest.h>
 #include <fstream>
-#include "Export/OutputFormatPng.hpp"
 
 TEST(OutputFormatPngTests, WritesPngFile) {
   OutputFormatPng output_format;

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['texcoord_0',['texCoord',['../structVertex.html#ab95b8d599f13a9ca83659eaf3e3b412d',1,'Vertex']]]
+  ['sensorwidth_0',['sensorWidth',['../structRayEmitterParameters.html#a2d73e2b72afeb3be30a1844ee5c70ffa',1,'RayEmitterParameters']]]
 ];

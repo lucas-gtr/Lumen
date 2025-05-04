@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -81,27 +88,31 @@ $(function() {
 
 <p>Header file for the <a class="el" href="classRenderSettings.html" title="Class to manage the settings for rendering, including resolution, clipping planes,...">RenderSettings</a> class.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="Config_8hpp_source.html">Core/Config.hpp</a>&quot;</code><br />
-<code>#include &lt;algorithm&gt;</code><br />
-<code>#include &lt;cstddef&gt;</code><br />
+<div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
+<code>#include &quot;<a class="el" href="CommonTypes_8hpp_source.html">Core/CommonTypes.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Config_8hpp_source.html">Core/Config.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for RenderSettings.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="RenderSettings_8hpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Rendering_2RenderSettings_8hpp" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2include_2Rendering_2RenderSettings_8hpp" id="a_2home_2lucasgtr_2lumen_2include_2Rendering_2RenderSettings_8hpp">
-<area shape="rect" title="Header file for the RenderSettings class." alt="" coords="67,5,342,45"/>
-<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="78,93,203,119"/>
-<area shape="poly" title=" " alt="" coords="191,47,161,84,157,81,187,44"/>
-<area shape="rect" title=" " alt="" coords="5,167,76,192"/>
-<area shape="poly" title=" " alt="" coords="140,48,101,67,68,95,53,123,45,153,40,152,48,121,64,92,98,63,138,43"/>
-<area shape="rect" title=" " alt="" coords="227,93,313,119"/>
-<area shape="poly" title=" " alt="" coords="223,44,254,81,250,84,218,47"/>
-<area shape="rect" title=" " alt="" coords="337,93,395,119"/>
-<area shape="poly" title=" " alt="" coords="244,43,331,85,329,90,242,48"/>
-<area shape="poly" title=" " alt="" coords="126,121,70,161,67,156,123,117"/>
-<area shape="rect" title=" " alt="" coords="100,167,197,192"/>
-<area shape="poly" title=" " alt="" coords="145,119,149,153,143,153,139,119"/>
+<area shape="rect" title="Header file for the RenderSettings class." alt="" coords="95,5,369,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,91,119"/>
+<area shape="poly" title=" " alt="" coords="189,48,89,90,86,85,187,43"/>
+<area shape="rect" title=" " alt="" coords="115,93,178,119"/>
+<area shape="poly" title=" " alt="" coords="213,48,171,86,168,82,210,44"/>
+<area shape="rect" title=" " alt="" coords="203,93,261,119"/>
+<area shape="poly" title=" " alt="" coords="235,46,235,79,229,79,229,46"/>
+<area shape="rect" href="CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="286,93,466,119"/>
+<area shape="poly" title=" " alt="" coords="268,43,344,84,342,89,265,48"/>
+<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="491,93,616,119"/>
+<area shape="poly" title=" " alt="" coords="310,43,494,87,492,93,308,48"/>
+<area shape="rect" title=" " alt="" coords="343,167,409,192"/>
+<area shape="poly" title=" " alt="" coords="379,119,379,153,373,153,373,119"/>
+<area shape="rect" title=" " alt="" coords="505,167,602,192"/>
+<area shape="poly" title=" " alt="" coords="556,119,556,153,551,153,551,119"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -109,11 +120,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="RenderSettings_8hpp__dep__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Rendering_2RenderSettings_8hppdep" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2include_2Rendering_2RenderSettings_8hppdep" id="a_2home_2lucasgtr_2lumen_2include_2Rendering_2RenderSettings_8hppdep">
-<area shape="rect" title="Header file for the RenderSettings class." alt="" coords="62,5,337,45"/>
+<area shape="rect" title="Header file for the RenderSettings class." alt="" coords="139,5,414,45"/>
 <area shape="rect" href="Renderer_8hpp.html" title="Header file for the Renderer class." alt="" coords="5,93,239,133"/>
-<area shape="poly" title=" " alt="" coords="175,57,141,95,137,91,171,54"/>
+<area shape="poly" title=" " alt="" coords="232,54,157,96,155,91,229,50"/>
 <area shape="rect" href="Renderer_8cpp.html" title=" " alt="" coords="97,181,301,221"/>
-<area shape="poly" title=" " alt="" coords="231,54,244,72,254,92,258,113,254,134,240,161,222,183,218,179,235,158,249,132,253,113,249,94,239,75,227,57"/>
+<area shape="poly" title=" " alt="" coords="275,60,267,96,254,134,238,161,220,183,216,179,233,158,249,132,262,95,270,59"/>
+<area shape="rect" href="RenderSettings_8cpp.html" title=" " alt="" coords="314,93,559,133"/>
+<area shape="poly" title=" " alt="" coords="325,49,403,91,400,96,322,54"/>
 <area shape="poly" title=" " alt="" coords="150,142,184,179,180,183,146,145"/>
 </map>
 </div>

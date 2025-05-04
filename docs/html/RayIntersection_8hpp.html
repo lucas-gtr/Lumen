@@ -5,13 +5,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Lumen: /home/lucasgtr/lumen/include/Core/RayIntersection.hpp File Reference</title>
+<title>Lumen: /home/lucasgtr/lumen/include/Rendering/RayIntersection.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -69,65 +76,130 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_8213943ce0b792be39d34390845932ae.html">Core</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_a4707f8f85ce7a80afd7fc353854a536.html">Rendering</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">RayIntersection.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Header file for the <a class="el" href="classRayIntersection.html" title="Class responsible for ray-triangle and ray-mesh intersection calculations.">RayIntersection</a> class.  
+<p>Header file for ray intersection functions.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="Mesh_8hpp_source.html">Core/Mesh.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Object3D_8hpp_source.html">Core/Object3D.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="CommonTypes_8hpp_source.html">Core/CommonTypes.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Ray_8hpp_source.html">Core/Ray.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Mesh_8hpp_source.html">Geometry/Mesh.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Object3D_8hpp_source.html">Scene/Object3D.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Scene_8hpp_source.html">Scene/Scene.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Material_8hpp_source.html">Surface/Material.hpp</a>&quot;</code><br />
 <code>#include &lt;Eigen/Core&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for RayIntersection.hpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="RayIntersection_8hpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Core_2RayIntersection_8hpp" alt=""/></div>
-<map name="a_2home_2lucasgtr_2lumen_2include_2Core_2RayIntersection_8hpp" id="a_2home_2lucasgtr_2lumen_2include_2Core_2RayIntersection_8hpp">
-<area shape="rect" title="Header file for the RayIntersection class." alt="" coords="278,5,519,45"/>
-<area shape="rect" href="Mesh_8hpp.html" title="Header file for the Mesh class, the Vertex and Face structures." alt="" coords="63,167,182,192"/>
-<area shape="poly" title=" " alt="" coords="287,48,232,67,182,95,154,124,136,155,131,152,150,121,178,91,230,62,285,43"/>
-<area shape="rect" title=" " alt="" coords="379,240,471,265"/>
-<area shape="poly" title=" " alt="" coords="413,44,442,97,456,131,467,166,469,179,467,193,458,213,447,230,442,228,453,210,461,191,463,179,461,167,451,133,437,100,408,47"/>
-<area shape="rect" href="Object3D_8hpp.html" title="Header file for the Object3D class." alt="" coords="192,93,336,119"/>
-<area shape="poly" title=" " alt="" coords="368,48,297,89,294,84,365,43"/>
-<area shape="rect" href="Ray_8hpp.html" title="Header file for the Ray structure." alt="" coords="345,167,452,192"/>
-<area shape="poly" title=" " alt="" coords="401,46,401,153,396,153,396,46"/>
-<area shape="rect" title=" " alt="" coords="527,93,585,119"/>
-<area shape="poly" title=" " alt="" coords="438,43,522,85,519,89,435,48"/>
-<area shape="poly" title=" " alt="" coords="172,189,367,235,366,240,171,195"/>
-<area shape="rect" title=" " alt="" coords="5,240,61,265"/>
-<area shape="poly" title=" " alt="" coords="110,194,60,233,57,229,107,190"/>
-<area shape="rect" title=" " alt="" coords="86,240,149,265"/>
-<area shape="poly" title=" " alt="" coords="124,193,122,227,117,226,119,192"/>
-<area shape="poly" title=" " alt="" coords="242,121,159,163,157,158,240,116"/>
-<area shape="rect" href="Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="207,167,321,192"/>
-<area shape="poly" title=" " alt="" coords="267,119,267,153,261,153,261,119"/>
-<area shape="poly" title=" " alt="" coords="291,190,388,232,385,237,289,194"/>
-<area shape="rect" href="MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="173,240,355,265"/>
-<area shape="poly" title=" " alt="" coords="267,192,267,226,261,226,261,192"/>
-<area shape="rect" title=" " alt="" coords="225,313,303,339"/>
-<area shape="poly" title=" " alt="" coords="267,266,267,300,261,300,261,266"/>
-<area shape="poly" title=" " alt="" coords="406,191,419,226,414,228,401,193"/>
+<div class="center"><img src="RayIntersection_8hpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Rendering_2RayIntersection_8hpp" alt=""/></div>
+<map name="a_2home_2lucasgtr_2lumen_2include_2Rendering_2RayIntersection_8hpp" id="a_2home_2lucasgtr_2lumen_2include_2Rendering_2RayIntersection_8hpp">
+<area shape="rect" title="Header file for ray intersection functions." alt="" coords="1016,5,1293,45"/>
+<area shape="rect" href="CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="1037,460,1217,485"/>
+<area shape="poly" title=" " alt="" coords="1294,31,1367,46,1402,58,1434,73,1462,92,1483,116,1498,144,1503,178,1503,327,1500,356,1490,378,1473,396,1449,414,1411,431,1357,445,1231,464,1230,459,1356,440,1410,426,1447,410,1470,392,1485,375,1494,355,1497,327,1497,178,1493,146,1479,119,1458,96,1431,78,1400,63,1366,51,1293,36"/>
+<area shape="rect" href="Ray_8hpp.html" title="Header file for the Ray structure." alt="" coords="409,93,516,119"/>
+<area shape="poly" title=" " alt="" coords="1016,45,530,100,529,94,1016,40"/>
+<area shape="rect" title=" " alt="" coords="569,387,661,412"/>
+<area shape="poly" title=" " alt="" coords="1016,34,741,49,582,61,425,76,282,95,165,119,120,132,86,147,66,162,59,179,59,254,60,272,65,285,83,306,111,321,145,336,178,348,223,358,335,375,555,392,555,398,335,380,222,364,177,353,143,341,108,326,80,310,61,288,55,273,53,254,53,177,61,159,84,142,118,127,164,114,281,90,425,71,582,55,741,44,1015,29"/>
+<area shape="rect" href="Mesh_8hpp.html" title="Header file for the Mesh class, the Vertex and Face structures." alt="" coords="728,240,883,265"/>
+<area shape="poly" title=" " alt="" coords="1039,48,981,67,927,96,891,126,861,162,819,229,815,226,857,159,887,122,924,91,979,62,1037,43"/>
+<area shape="rect" href="Object3D_8hpp.html" title="Header file for the Object3D class." alt="" coords="1195,167,1349,192"/>
+<area shape="poly" title=" " alt="" coords="1172,44,1257,154,1252,157,1167,47"/>
+<area shape="rect" href="Material_8hpp.html" title="Header file for the Material class." alt="" coords="1275,240,1432,265"/>
+<area shape="poly" title=" " alt="" coords="1208,43,1248,62,1291,89,1331,123,1362,165,1368,181,1369,197,1365,227,1359,226,1364,197,1362,182,1358,168,1327,127,1288,93,1246,67,1205,48"/>
+<area shape="rect" href="Scene_8hpp.html" title="Header file for the Scene class." alt="" coords="938,93,1070,119"/>
+<area shape="poly" title=" " alt="" coords="1120,48,1040,89,1037,84,1117,43"/>
+<area shape="rect" title=" " alt="" coords="1537,93,1596,119"/>
+<area shape="poly" title=" " alt="" coords="1265,43,1519,91,1524,92,1523,97,1518,96,1264,48"/>
+<area shape="rect" title=" " alt="" coords="937,533,1004,559"/>
+<area shape="poly" title=" " alt="" coords="1103,488,1010,530,1008,525,1101,483"/>
+<area shape="poly" title=" " alt="" coords="409,114,348,121,281,132,222,148,201,158,186,169,155,211,145,232,140,253,139,274,143,295,153,316,168,337,187,347,222,356,327,372,555,392,555,397,326,377,221,361,185,351,165,341,148,318,138,296,134,274,134,252,140,230,150,208,182,165,198,153,221,143,280,127,347,116,409,109"/>
+<area shape="poly" title=" " alt="" coords="808,265,809,295,816,335,831,377,843,395,858,410,885,424,926,437,1024,456,1023,461,924,442,883,429,854,414,838,398,826,379,811,337,804,296,802,266"/>
+<area shape="poly" title=" " alt="" coords="777,268,736,288,692,315,659,346,633,377,629,374,656,342,689,311,733,283,775,263"/>
+<area shape="rect" title=" " alt="" coords="703,313,759,339"/>
+<area shape="poly" title=" " alt="" coords="795,267,755,306,751,302,792,263"/>
+<area shape="rect" title=" " alt="" coords="834,313,897,339"/>
+<area shape="poly" title=" " alt="" coords="817,264,849,301,845,305,813,267"/>
+<area shape="poly" title=" " alt="" coords="1197,195,895,241,894,235,1197,189"/>
+<area shape="rect" title=" " alt="" coords="1199,313,1276,339"/>
+<area shape="poly" title=" " alt="" coords="1272,193,1246,301,1241,299,1267,192"/>
+<area shape="rect" href="Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="245,240,395,265"/>
+<area shape="poly" title=" " alt="" coords="1195,188,801,213,409,243,408,237,800,208,1195,183"/>
+<area shape="poly" title=" " alt="" coords="1287,190,1332,229,1328,233,1283,194"/>
+<area shape="poly" title=" " alt="" coords="335,263,381,299,443,336,501,361,558,380,557,385,499,366,440,341,378,303,332,268"/>
+<area shape="rect" href="MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="195,313,378,339"/>
+<area shape="poly" title=" " alt="" coords="317,267,300,302,295,300,312,265"/>
+<area shape="rect" title=" " alt="" coords="247,387,326,412"/>
+<area shape="poly" title=" " alt="" coords="289,339,289,373,284,373,284,339"/>
+<area shape="poly" title=" " alt="" coords="1368,264,1395,292,1423,330,1433,351,1438,373,1436,394,1426,414,1413,425,1395,434,1347,449,1290,460,1231,467,1230,462,1289,455,1346,444,1393,429,1410,420,1422,410,1431,393,1433,373,1428,353,1418,333,1391,295,1364,267"/>
+<area shape="poly" title=" " alt="" coords="1350,267,1328,305,1311,325,1289,341,1253,352,1192,361,1020,378,675,398,675,393,1020,373,1191,356,1252,347,1287,336,1307,321,1324,302,1346,264"/>
+<area shape="poly" title=" " alt="" coords="1336,268,1269,308,1267,304,1333,263"/>
+<area shape="rect" href="Texture_8hpp.html" title="Header file for the Texture class." alt="" coords="973,313,1123,339"/>
+<area shape="poly" title=" " alt="" coords="1305,268,1111,313,1110,308,1304,263"/>
+<area shape="poly" title=" " alt="" coords="1058,338,1086,385,1118,446,1113,449,1082,388,1053,340"/>
+<area shape="poly" title=" " alt="" coords="985,341,908,361,877,374,858,388,850,406,850,425,857,444,869,462,904,497,941,524,938,528,900,501,865,466,852,446,844,426,845,405,854,385,874,369,906,356,983,336"/>
+<area shape="poly" title=" " alt="" coords="979,341,675,391,674,386,978,336"/>
+<area shape="rect" href="TextureFiltering_8hpp.html" title="Header file for texture filtering functions." alt="" coords="869,387,1073,412"/>
+<area shape="poly" title=" " alt="" coords="1037,341,995,379,992,375,1034,337"/>
+<area shape="rect" href="TextureWrapping_8hpp.html" title="Header file for texture wrapping modes and functions." alt="" coords="1199,387,1412,412"/>
+<area shape="poly" title=" " alt="" coords="1090,336,1251,380,1250,386,1089,341"/>
+<area shape="poly" title=" " alt="" coords="997,410,1090,452,1088,457,995,414"/>
+<area shape="poly" title=" " alt="" coords="973,412,973,520,968,520,968,412"/>
+<area shape="poly" title=" " alt="" coords="1278,415,1169,457,1167,452,1276,410"/>
+<area shape="poly" title=" " alt="" coords="1300,414,1273,450,1253,471,1229,488,1176,512,1119,529,1065,539,1018,545,1018,540,1064,534,1118,524,1174,507,1227,483,1249,467,1269,447,1296,410"/>
+<area shape="poly" title=" " alt="" coords="966,121,913,139,849,165,781,200,718,242,686,273,660,309,626,375,622,373,656,306,682,270,714,238,778,195,847,161,911,134,964,116"/>
+<area shape="poly" title=" " alt="" coords="999,120,882,303,878,300,994,118"/>
+<area shape="poly" title=" " alt="" coords="1048,116,1216,161,1215,166,1046,121"/>
+<area shape="poly" title=" " alt="" coords="1029,116,1066,137,1104,165,1141,199,1174,236,1224,301,1220,304,1170,240,1137,203,1101,169,1063,142,1026,121"/>
+<area shape="poly" title=" " alt="" coords="1003,119,991,183,990,224,998,264,1010,285,1025,302,1021,306,1006,288,994,266,985,225,985,183,998,118"/>
+<area shape="rect" title=" " alt="" coords="1009,167,1069,192"/>
+<area shape="poly" title=" " alt="" coords="1012,118,1029,153,1025,155,1007,120"/>
+<area shape="rect" href="Light_8hpp.html" title="Header file for the Light class." alt="" coords="196,167,335,192"/>
+<area shape="poly" title=" " alt="" coords="938,116,349,173,348,167,938,111"/>
+<area shape="rect" href="Camera_8hpp.html" title="Header file for the Camera class." alt="" coords="409,167,553,192"/>
+<area shape="poly" title=" " alt="" coords="938,119,568,169,567,164,937,114"/>
+<area shape="rect" href="Skybox_8hpp.html" title="Header file for the Skybox class." alt="" coords="1009,240,1149,265"/>
+<area shape="poly" title=" " alt="" coords="1030,117,1059,136,1072,150,1082,166,1090,197,1087,227,1082,226,1084,197,1078,168,1068,153,1055,140,1027,121"/>
+<area shape="poly" title=" " alt="" coords="197,192,135,206,73,232,47,249,26,270,13,295,8,325,8,400,16,416,38,431,74,445,122,459,245,482,392,501,698,527,923,540,923,545,698,533,391,506,244,487,121,464,73,450,36,436,11,419,3,401,3,324,8,293,22,267,44,245,71,227,133,201,195,186"/>
+<area shape="poly" title=" " alt="" coords="253,194,222,222,191,259,180,280,174,300,175,319,185,337,202,346,236,355,336,371,555,391,555,397,335,376,235,360,200,351,181,341,170,321,169,299,175,278,187,256,218,218,249,190"/>
+<area shape="poly" title=" " alt="" coords="276,191,305,228,301,231,272,194"/>
+<area shape="poly" title=" " alt="" coords="456,194,360,237,358,232,454,190"/>
+<area shape="poly" title=" " alt="" coords="410,191,305,210,262,224,235,242,230,257,235,272,247,288,262,303,258,307,243,292,230,275,225,256,231,238,260,219,304,204,409,185"/>
+<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="419,240,544,265"/>
+<area shape="poly" title=" " alt="" coords="484,192,484,226,479,226,479,192"/>
+<area shape="rect" title=" " alt="" coords="568,240,653,265"/>
+<area shape="poly" title=" " alt="" coords="503,190,578,231,576,235,501,194"/>
+<area shape="rect" title=" " alt="" coords="454,313,551,339"/>
+<area shape="poly" title=" " alt="" coords="487,265,498,299,493,301,482,266"/>
+<area shape="poly" title=" " alt="" coords="1097,264,1119,284,1137,312,1146,348,1147,385,1137,447,1131,446,1141,384,1141,349,1132,314,1115,288,1093,267"/>
+<area shape="poly" title=" " alt="" coords="1057,268,909,341,847,360,785,374,675,393,674,388,784,369,846,354,907,336,1055,263"/>
+<area shape="poly" title=" " alt="" coords="1105,263,1200,305,1198,310,1103,268"/>
+<area shape="poly" title=" " alt="" coords="1076,267,1061,302,1056,300,1071,265"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="RayIntersection_8hpp__dep__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Core_2RayIntersection_8hppdep" alt=""/></div>
-<map name="a_2home_2lucasgtr_2lumen_2include_2Core_2RayIntersection_8hppdep" id="a_2home_2lucasgtr_2lumen_2include_2Core_2RayIntersection_8hppdep">
-<area shape="rect" title="Header file for the RayIntersection class." alt="" coords="107,5,348,45"/>
-<area shape="rect" href="RayIntersection_8cpp.html" title=" " alt="" coords="5,93,217,133"/>
-<area shape="poly" title=" " alt="" coords="192,56,139,95,135,91,189,52"/>
-<area shape="rect" href="Renderer_8cpp.html" title=" " alt="" coords="241,93,445,133"/>
-<area shape="poly" title=" " alt="" coords="266,52,319,91,316,95,262,56"/>
+<div class="center"><img src="RayIntersection_8hpp__dep__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Rendering_2RayIntersection_8hppdep" alt=""/></div>
+<map name="a_2home_2lucasgtr_2lumen_2include_2Rendering_2RayIntersection_8hppdep" id="a_2home_2lucasgtr_2lumen_2include_2Rendering_2RayIntersection_8hppdep">
+<area shape="rect" title="Header file for ray intersection functions." alt="" coords="138,5,415,45"/>
+<area shape="rect" href="Renderer_8hpp.html" title="Header file for the Renderer class." alt="" coords="5,93,239,133"/>
+<area shape="poly" title=" " alt="" coords="232,54,157,96,155,91,229,50"/>
+<area shape="rect" href="Renderer_8cpp.html" title=" " alt="" coords="97,181,301,221"/>
+<area shape="poly" title=" " alt="" coords="275,60,267,96,254,134,238,161,220,183,216,179,233,158,249,132,262,95,270,59"/>
+<area shape="rect" href="RayIntersection_8cpp.html" title=" " alt="" coords="314,93,562,133"/>
+<area shape="poly" title=" " alt="" coords="325,49,404,91,401,96,323,54"/>
+<area shape="poly" title=" " alt="" coords="150,142,184,179,180,183,146,145"/>
 </map>
 </div>
 </div>
@@ -138,12 +210,42 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRayHitInfo.html">RayHitInfo</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure that holds information about a ray intersection.  <a href="structRayHitInfo.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayIntersection.html">RayIntersection</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class responsible for ray-triangle and ray-mesh intersection calculations.  <a href="classRayIntersection.html#details">More...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceRayIntersection" id="r_namespaceRayIntersection"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html">RayIntersection</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:abffbfa5104024327e0f112cdc105f0ea" id="r_abffbfa5104024327e0f112cdc105f0ea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#abffbfa5104024327e0f112cdc105f0ea">RayIntersection::getTriangleIntersection</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const Eigen::Vector3d &amp;p0, const Eigen::Vector3d &amp;p1, const Eigen::Vector3d &amp;p2, double &amp;hit_distance, Eigen::Vector3d &amp;bary_coords)</td></tr>
+<tr class="separator:abffbfa5104024327e0f112cdc105f0ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb1183c6f2553679a95d20f9cdc2e01b" id="r_aeb1183c6f2553679a95d20f9cdc2e01b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRayHitInfo.html">RayHitInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#aeb1183c6f2553679a95d20f9cdc2e01b">RayIntersection::getMeshIntersection</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const <a class="el" href="classMesh.html">Mesh</a> &amp;mesh)</td></tr>
+<tr class="separator:aeb1183c6f2553679a95d20f9cdc2e01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac54b3b3579e4786bb20dbbf6de74786a" id="r_ac54b3b3579e4786bb20dbbf6de74786a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRayHitInfo.html">RayHitInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#ac54b3b3579e4786bb20dbbf6de74786a">RayIntersection::getObjectIntersection</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const <a class="el" href="classObject3D.html">Object3D</a> *object)</td></tr>
+<tr class="separator:ac54b3b3579e4786bb20dbbf6de74786a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69407475c8a132dd692f8efc8276dfdf" id="r_a69407475c8a132dd692f8efc8276dfdf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRayHitInfo.html">RayHitInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a69407475c8a132dd692f8efc8276dfdf">RayIntersection::getSceneIntersection</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const <a class="el" href="classScene.html">Scene</a> *scene)</td></tr>
+<tr class="separator:a69407475c8a132dd692f8efc8276dfdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0b74d99b0ccd8ad017f98a41f9c8228" id="r_aa0b74d99b0ccd8ad017f98a41f9c8228"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#aa0b74d99b0ccd8ad017f98a41f9c8228">RayIntersection::processFaceIntersection</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const <a class="el" href="classMesh.html">Mesh</a> &amp;mesh, const <a class="el" href="structFace.html">Face</a> &amp;face, <a class="el" href="structRayHitInfo.html">RayHitInfo</a> &amp;closest_hit)</td></tr>
+<tr class="separator:aa0b74d99b0ccd8ad017f98a41f9c8228"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87ac28058944d89e7ca5264247574f70" id="r_a87ac28058944d89e7ca5264247574f70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a87ac28058944d89e7ca5264247574f70">RayIntersection::updateHitInfoFromBarycentric</a> (<a class="el" href="structRayHitInfo.html">RayHitInfo</a> &amp;hit_info, double distance, const Eigen::Vector3d &amp;bary, const <a class="el" href="structVertex.html">Vertex</a> &amp;v0, const <a class="el" href="structVertex.html">Vertex</a> &amp;v1, const <a class="el" href="structVertex.html">Vertex</a> &amp;v2)</td></tr>
+<tr class="separator:a87ac28058944d89e7ca5264247574f70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8250133de9c2e677707dded1c46fd6f" id="r_aa8250133de9c2e677707dded1c46fd6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRay.html">Ray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#aa8250133de9c2e677707dded1c46fd6f">RayIntersection::transformRayToObjectSpace</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const <a class="el" href="classObject3D.html">Object3D</a> *object)</td></tr>
+<tr class="separator:aa8250133de9c2e677707dded1c46fd6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50261cf0e3ca183ae3b0ea427df5ad91" id="r_a50261cf0e3ca183ae3b0ea427df5ad91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a50261cf0e3ca183ae3b0ea427df5ad91">RayIntersection::transformHitInfoToWorldSpace</a> (<a class="el" href="structRayHitInfo.html">RayHitInfo</a> &amp;hit_info, const <a class="el" href="structRay.html">Ray</a> &amp;local_ray, const <a class="el" href="structRay.html">Ray</a> &amp;original_ray, const <a class="el" href="classObject3D.html">Object3D</a> *object)</td></tr>
+<tr class="separator:a50261cf0e3ca183ae3b0ea427df5ad91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfd5b7fa4d8f7c00503dbde587fc9b6d" id="r_adfd5b7fa4d8f7c00503dbde587fc9b6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#adfd5b7fa4d8f7c00503dbde587fc9b6d">RayIntersection::updateNormalWithTangentSpace</a> (<a class="el" href="structRayHitInfo.html">RayHitInfo</a> &amp;hit_info)</td></tr>
+<tr class="separator:adfd5b7fa4d8f7c00503dbde587fc9b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a01f175394047bff6b7d05b0130f4d39e" id="r_a01f175394047bff6b7d05b0130f4d39e"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a01f175394047bff6b7d05b0130f4d39e">RayIntersection::RAY_OFFSET_FACTOR</a> = 0.0001</td></tr>
+<tr class="separator:a01f175394047bff6b7d05b0130f4d39e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39243e3dc92c97cff6cee02760a9bdac" id="r_a39243e3dc92c97cff6cee02760a9bdac"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a39243e3dc92c97cff6cee02760a9bdac">RayIntersection::EPSILON</a> = 1e-6</td></tr>
+<tr class="separator:a39243e3dc92c97cff6cee02760a9bdac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Header file for the <a class="el" href="classRayIntersection.html" title="Class responsible for ray-triangle and ray-mesh intersection calculations.">RayIntersection</a> class. </p>
+<div class="textblock"><p>Header file for ray intersection functions. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

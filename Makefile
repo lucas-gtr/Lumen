@@ -1,70 +1,65 @@
-.PHONY: all run check-format-and-lint configure-tests run-tests coverage-report update-readme generate-doc configure-dev build-dev clean
+.PHONY: run format lint format-and-lint configure-tests run-tests coverage update-readme generate-doc configure build clean
 
 MAKEFLAGS += --no-print-directory
 
-# Run the development version of the program
-run:
-	@make build-dev
+run: build
+	@echo "Launching Lumen executable..."
 	@./build-dev/Lumen
 
-# Check all source files with clang-format and clang-tidy
-check-format-and-lint:
-	@echo "Checking all files with clang-format and clang-tidy..."
-	@cmake -S . -B build-lint -DFILES_TO_CHECK=all -DENABLE_CLANG_FORMAT=ON -DENABLE_CLANG_TIDY=ON
+format:
+	@echo "Running clang-format on codebase..."
+	@cmake -S . -B build-lint -DFILES_TO_CHECK=all -DENABLE_CLANG_FORMAT=ON -DENABLE_CLANG_TIDY=OFF
 	@cmake --build build-lint --target run-clang-format
+
+lint:
+	@echo "Running clang-tidy analysis..."
+	@cmake -S . -B build-lint -DFILES_TO_CHECK=all -DENABLE_CLANG_FORMAT=OFF -DENABLE_CLANG_TIDY=ON
 	@cmake --build build-lint --target run-clang-tidy
 
-# Configure the project for unit tests
+format-and-lint: format lint
+	@echo "Clang-format and clang-tidy checks completed."
+
 configure-tests:
-	@echo "Configuring unit tests..."
+	@echo "Setting up test environment..."
 	@cmake -S . -B build-tests -DENABLE_TESTS=ON -DENABLE_COMPILER_OPTIMIZATIONS=OFF
 
-# Run tests after building
 run-tests:
-	@echo "Running unit tests..."
+	@echo "Executing unit tests..."
 	@cmake --build build-tests
 	@./build-tests/tests/Tests
 
-coverage-report: run-tests
-	@echo "Generating code coverage report..."
+coverage: run-tests
+	@echo "Generating coverage reports..."
 	@gcovr -f src -f include --exclude='src/main.cpp' --exclude-throw-branches --json-summary -o tests/coverage_report/coverage_report.json
 	@gcovr -f src -f include --exclude='src/main.cpp' --exclude-throw-branches --html-details -o tests/coverage_report/coverage_report.html
 
-# Met à jour le README.md avec la table
 update-readme:
+	@echo "Injecting coverage report into README.md..."
 	@python3 tests/generate_coverage_table.py
-	@awk '/<!-- COVERAGE-START -->/,/<!-- COVERAGE-END -->/ { next } { print }' README.md > README.tmp
-	@echo '<!-- COVERAGE-START -->' >> README.tmp
-	@cat COVERAGE_TABLE.md >> README.tmp
-	@echo '<!-- COVERAGE-END -->' >> README.tmp
+	@awk ' \
+		BEGIN { in_block = 0 } \
+		/<!-- COVERAGE-START -->/ { print; print ""; while ((getline line < "COVERAGE_TABLE.md") > 0) print line; in_block = 1; next } \
+		/<!-- COVERAGE-END -->/ { in_block = 0; print ""; print; next } \
+		!in_block { print } \
+	' README.md > README.tmp
 	@mv README.tmp README.md
 	@rm COVERAGE_TABLE.md
-	@echo "README.md mis à jour avec la couverture de code."
+	@echo "README.md successfully updated."
 
-
-# Generate documentation using Doxygen
 generate-doc:
-	@echo "Generating documentation..."
+	@echo "Building project documentation..."
 	@cmake -S . -B build-dev -DENABLE_DOXYGEN=ON
 	@cmake --build build-dev --target generate-doc
 
-# Configure the project with CMake
-configure-dev:
-	@echo "Configuring the project with CMake..."
-	@cmake -S . -B build-dev
+configure:
+	@echo "Configuring development build environment..."
+	@cmake -S . -B build-dev -DENABLE_LTO=ON
 
-# Build the project
-build-dev:
-	@echo "Building development version..."
+build: 
+	@echo "Building project..."
 	@cmake --build build-dev
 
-# Clean the build folder
 clean:
-	@if [ -d "build" ]; then \
-		echo "Removing 'build' folder..."; \
-		rm -rf build-dev; \
-		rm -rf build-tests; \
-		rm -rf build-lint; \
-	else \
-		echo "'build' folder does not exist."; \
-	fi
+	@echo "Cleaning all build artifacts..."
+	@rm -rf build-dev build-tests build-lint
+	@echo "Cleanup complete."

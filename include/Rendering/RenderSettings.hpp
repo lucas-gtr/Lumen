@@ -5,10 +5,12 @@
 #ifndef RENDERING_RENDERSETTINGS_HPP
 #define RENDERING_RENDERSETTINGS_HPP
 
-#include "Core/Config.hpp"
 #include <algorithm>
-#include <cstddef>
+#include <cmath>
 #include <limits>
+
+#include "Core/CommonTypes.hpp"
+#include "Core/Config.hpp"
 
 /**
  * @class RenderSettings
@@ -21,10 +23,7 @@
  */
 class RenderSettings {
 private:
-  size_t m_width  = DEFAULT_WIDTH;  // in pixels
-  size_t m_height = DEFAULT_HEIGHT; // in pixels
-
-  size_t m_channel_count = DEFAULT_CHANNEL_COUNT;
+  ImageProperties m_properties = {DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_CHANNEL_COUNT};
 
   double m_near_plane = DEFAULT_NEAR_PLANE; // in meters
   double m_far_plane  = DEFAULT_FAR_PLANE;  // in meters
@@ -43,41 +42,41 @@ public:
    * @brief Get the width of the rendered image.
    * @return The width of the image in pixels.
    */
-  size_t getWidth() const { return m_width; }
+  int getWidth() const { return m_properties.width; }
 
   /**
    * @brief Set the width of the rendered image.
    * The width will be clamped to a valid range between MIN_WIDTH and MAX_WIDTH.
    * @param width The width of the image in pixels.
    */
-  void setWidth(size_t width) { m_width = std::clamp(width, MIN_WIDTH, MAX_WIDTH); }
+  void setWidth(int width) { m_properties.width = std::clamp(width, MIN_WIDTH, MAX_WIDTH); }
 
   /**
    * @brief Get the height of the rendered image.
    * @return The height of the image in pixels.
    */
-  size_t getHeight() const { return m_height; }
+  int getHeight() const { return m_properties.height; }
 
   /**
    * @brief Set the height of the rendered image.
    * The height will be clamped to a valid range between MIN_HEIGHT and MAX_HEIGHT.
    * @param height The height of the image in pixels.
    */
-  void setHeight(size_t height) { m_height = std::clamp(height, MIN_HEIGHT, MAX_HEIGHT); }
+  void setHeight(int height) { m_properties.height = std::clamp(height, MIN_HEIGHT, MAX_HEIGHT); }
 
   /**
    * @brief Get the number of color channels.
    * @return The number of color channels (e.g., 3 for RGB, 4 for RGBA).
    */
-  size_t getChannelCount() const { return m_channel_count; }
+  int getChannelCount() const { return m_properties.channels; }
 
   /**
    * @brief Set the number of color channels.
    * The channel count will be clamped to a valid range between MIN_CHANNEL_COUNT and MAX_CHANNEL_COUNT.
-   * @param channel_count The number of color channels.
+   * @param channels The number of color channels.
    */
-  void setChannelCount(size_t channel_count) {
-    m_channel_count = std::clamp(channel_count, MIN_CHANNEL_COUNT, MAX_CHANNEL_COUNT);
+  void setChannelCount(int channels) {
+    m_properties.channels = std::clamp(channels, MIN_CHANNEL_COUNT, MAX_CHANNEL_COUNT);
   }
 
   /**
@@ -133,13 +132,11 @@ public:
 
   /**
    * @brief Set the number of samples per pixel for anti-aliasing.
-   * The number of samples per pixel will be clamped to a valid range between MIN_SAMPLES_PER_PIXEL and
-   * MAX_SAMPLES_PER_PIXEL.
-   * @param samples_per_pixels The number of samples per pixel.
+   * The number of samples per pixel will be adjusted to the nearest perfect square within the valid range
+   * between MIN_SAMPLES_PER_PIXEL and MAX_SAMPLES_PER_PIXEL.
+   * @param samples_per_pixels The desired number of samples per pixel.
    */
-  void setSamplesPerPixel(int samples_per_pixels) {
-    m_samples_per_pixels = std::clamp(samples_per_pixels, MIN_SAMPLES_PER_PIXEL, MAX_SAMPLES_PER_PIXEL);
-  }
+  void setSamplesPerPixel(int samples_per_pixels);
 
   ~RenderSettings() = default; ///< Default destructor.
 };

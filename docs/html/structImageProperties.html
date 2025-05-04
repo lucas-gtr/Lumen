@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -70,66 +77,102 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structImageProperties-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ImageProperties Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>A structure representing the properties of an image.  
+<p>Structure to hold image properties such as width, height, and number of channels.  
  <a href="structImageProperties.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="Framebuffer_8hpp_source.html">Framebuffer.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="CommonTypes_8hpp_source.html">CommonTypes.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a8b5e014f67904466d28a20ceeb321ceb" id="r_a8b5e014f67904466d28a20ceeb321ceb"><td class="memItemLeft" align="right" valign="top">std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structImageProperties.html#a8b5e014f67904466d28a20ceeb321ceb">bufferSize</a> () const</td></tr>
+<tr class="memdesc:a8b5e014f67904466d28a20ceeb321ceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the size of the array of the framebuffer.  <br /></td></tr>
+<tr class="separator:a8b5e014f67904466d28a20ceeb321ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a8845dc040e72367b5f8797ad47d3b563" id="r_a8845dc040e72367b5f8797ad47d3b563"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structImageProperties.html#a8845dc040e72367b5f8797ad47d3b563">width</a></td></tr>
-<tr class="separator:a8845dc040e72367b5f8797ad47d3b563"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcfa7f32f6d7c7773ddc681b7742dee8" id="r_adcfa7f32f6d7c7773ddc681b7742dee8"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structImageProperties.html#adcfa7f32f6d7c7773ddc681b7742dee8">height</a></td></tr>
-<tr class="separator:adcfa7f32f6d7c7773ddc681b7742dee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7958d2f99b11aa88048bb6748846368" id="r_ae7958d2f99b11aa88048bb6748846368"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structImageProperties.html#ae7958d2f99b11aa88048bb6748846368">channel_count</a></td></tr>
-<tr class="separator:ae7958d2f99b11aa88048bb6748846368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ae4780b3fe2f40627fb81048836043e" id="r_a0ae4780b3fe2f40627fb81048836043e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structImageProperties.html#a0ae4780b3fe2f40627fb81048836043e">width</a> = 1</td></tr>
+<tr class="separator:a0ae4780b3fe2f40627fb81048836043e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29843e3de864c5f4cddb7117c353d582" id="r_a29843e3de864c5f4cddb7117c353d582"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structImageProperties.html#a29843e3de864c5f4cddb7117c353d582">height</a> = 1</td></tr>
+<tr class="separator:a29843e3de864c5f4cddb7117c353d582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20ef20a4eb449a9f844c7e0fa423f01b" id="r_a20ef20a4eb449a9f844c7e0fa423f01b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structImageProperties.html#a20ef20a4eb449a9f844c7e0fa423f01b">channels</a> = 1</td></tr>
+<tr class="separator:a20ef20a4eb449a9f844c7e0fa423f01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A structure representing the properties of an image. </p>
-<p>This structure contains the width, height, and number of channels of an image. </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="ae7958d2f99b11aa88048bb6748846368" name="ae7958d2f99b11aa88048bb6748846368"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7958d2f99b11aa88048bb6748846368">&#9670;&#160;</a></span>channel_count</h2>
+<div class="textblock"><p>Structure to hold image properties such as width, height, and number of channels. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8b5e014f67904466d28a20ceeb321ceb" name="a8b5e014f67904466d28a20ceeb321ceb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b5e014f67904466d28a20ceeb321ceb">&#9670;&#160;</a></span>bufferSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::uint64_t ImageProperties::bufferSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the size of the array of the framebuffer. </p>
+<dl class="section return"><dt>Returns</dt><dd>The size of the framebuffer. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The size is calculated as width * height * channels. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a20ef20a4eb449a9f844c7e0fa423f01b" name="a20ef20a4eb449a9f844c7e0fa423f01b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20ef20a4eb449a9f844c7e0fa423f01b">&#9670;&#160;</a></span>channels</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t ImageProperties::channel_count</td>
+          <td class="memname">int ImageProperties::channels = 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="adcfa7f32f6d7c7773ddc681b7742dee8" name="adcfa7f32f6d7c7773ddc681b7742dee8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcfa7f32f6d7c7773ddc681b7742dee8">&#9670;&#160;</a></span>height</h2>
+<a id="a29843e3de864c5f4cddb7117c353d582" name="a29843e3de864c5f4cddb7117c353d582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29843e3de864c5f4cddb7117c353d582">&#9670;&#160;</a></span>height</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t ImageProperties::height</td>
+          <td class="memname">int ImageProperties::height = 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a8845dc040e72367b5f8797ad47d3b563" name="a8845dc040e72367b5f8797ad47d3b563"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8845dc040e72367b5f8797ad47d3b563">&#9670;&#160;</a></span>width</h2>
+<a id="a0ae4780b3fe2f40627fb81048836043e" name="a0ae4780b3fe2f40627fb81048836043e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ae4780b3fe2f40627fb81048836043e">&#9670;&#160;</a></span>width</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t ImageProperties::width</td>
+          <td class="memname">int ImageProperties::width = 1</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -137,7 +180,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/lucasgtr/lumen/include/Core/<a class="el" href="Framebuffer_8hpp_source.html">Framebuffer.hpp</a></li>
+<li>/home/lucasgtr/lumen/include/Core/<a class="el" href="CommonTypes_8hpp_source.html">CommonTypes.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

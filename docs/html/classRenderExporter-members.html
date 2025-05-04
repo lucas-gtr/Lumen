@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -78,15 +85,19 @@ $(function() {
   <tr class="even"><td class="entry"><a class="el" href="classRenderExporter.html#ac31afadecf9af40171e1620d593bcdff">exportRender</a>()</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classRenderExporter.html#a81e44cd218b079ac821d413cc7a5fad4">getFilename</a>() const</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classRenderExporter.html#a6472d225e326fd0bb9f1756856091b45">getFramebuffer</a>() const</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classRenderExporter.html#a12d14471397cd8d78c0712ededa923ce">getPath</a>() const</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classRenderExporter.html#a284bfc98a628548b9dbad11fc9dfa53a">operator=</a>(const RenderExporter &amp;)=delete</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classRenderExporter.html#a6f922576357fe6c6e6e483ea2e74a376">operator=</a>(RenderExporter &amp;&amp;)=delete</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classRenderExporter.html#af30aef1f1b22b4a6f20fa0a9885d3f73">RenderExporter</a>(Framebuffer *framebuffer)</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classRenderExporter.html#a0bb179a0dcdffa422a52d1a04f6c11b5">RenderExporter</a>(const RenderExporter &amp;)=delete</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classRenderExporter.html#a7f344e5274c73c1145ce7380f7f2feab">RenderExporter</a>(RenderExporter &amp;&amp;)=delete</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classRenderExporter.html#a1919d59009b85ec04c1d7fa833983229">setFilename</a>(const std::string &amp;filename)</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classRenderExporter.html#ad70d1e2fd433720d7dc401d12d623dc3">setOutputFormat</a>(const OutputFormat *output_format)</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classRenderExporter.html#a0dba329c3ef63136012cff5294611fc3">setPath</a>(const std::string &amp;path)</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classRenderExporter.html#a0a396568743dff4a6e34269d3da5707e">getParameters</a>() const</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classRenderExporter.html#a12d14471397cd8d78c0712ededa923ce">getPath</a>() const</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classRenderExporter.html#a284bfc98a628548b9dbad11fc9dfa53a">operator=</a>(const RenderExporter &amp;)=delete</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classRenderExporter.html#a6f922576357fe6c6e6e483ea2e74a376">operator=</a>(RenderExporter &amp;&amp;)=delete</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classRenderExporter.html#af30aef1f1b22b4a6f20fa0a9885d3f73">RenderExporter</a>(Framebuffer *framebuffer)</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classRenderExporter.html#a0bb179a0dcdffa422a52d1a04f6c11b5">RenderExporter</a>(const RenderExporter &amp;)=delete</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classRenderExporter.html#a7f344e5274c73c1145ce7380f7f2feab">RenderExporter</a>(RenderExporter &amp;&amp;)=delete</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classRenderExporter.html#a1919d59009b85ec04c1d7fa833983229">setFilename</a>(const std::string &amp;filename)</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classRenderExporter.html#a5e94d52e3ca11aeb9d0e5f97475afb3e">setOutputFormat</a>(std::unique_ptr&lt; OutputFormat &gt; output_format)</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classRenderExporter.html#a826bf90e6fd2b3cbf484c93ae62c2e72">setParameter</a>(const std::string &amp;name, int value)</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classRenderExporter.html#acac2566fb9f18d82b88d6d95db0ec590">setParameter</a>(const std::string &amp;name, double value)</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classRenderExporter.html#a0dba329c3ef63136012cff5294611fc3">setPath</a>(const std::string &amp;path)</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classRenderExporter.html#ae9f5c022178f8df6b10c486fc0394245">setToneMapping</a>(ToneMapping tone_mapping)</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classRenderExporter.html#af0f316fa32d3eee90db98c33a6ed9715">~RenderExporter</a>()=default</td><td class="entry"><a class="el" href="classRenderExporter.html">RenderExporter</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->

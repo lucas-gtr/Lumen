@@ -7,19 +7,8 @@
 
 #include <Eigen/Core>
 #include <cstddef>
-#include <vector>
 
-/**
- * @struct ImageProperties
- * @brief A structure representing the properties of an image.
- *
- * This structure contains the width, height, and number of channels of an image.
- */
-struct ImageProperties {
-  size_t width;
-  size_t height;
-  size_t channel_count;
-};
+#include "Core/CommonTypes.hpp"
 
 /**
  * @class Framebuffer
@@ -30,19 +19,17 @@ struct ImageProperties {
  */
 class Framebuffer {
 private:
-  std::vector<double>        m_framebuffer;
-  std::vector<unsigned char> m_image;
+  double* m_framebuffer = nullptr;
 
-  size_t m_width;
-  size_t m_height;
-  size_t m_channel_count;
+  ImageProperties m_framebuffer_properties;
 
 public:
   /**
    * @brief Constructor for the Framebuffer class.
-   * @param properties The properties of the image (width, height, and channel count).
+   * @param framebuffer_properties The properties of the image (width, height, and channel count).
    */
-  explicit Framebuffer(ImageProperties properties);
+  explicit Framebuffer(ImageProperties framebuffer_properties);
+
   Framebuffer(const Framebuffer&)            = delete; ///< Deleted copy constructor.
   Framebuffer& operator=(const Framebuffer&) = delete; ///< Deleted copy assignment operator.
   Framebuffer(Framebuffer&&)                 = delete; ///< Deleted move constructor.
@@ -52,37 +39,43 @@ public:
    * @brief Gets the width of the framebuffer.
    * @return The width of the framebuffer.
    */
-  size_t getWidth() const { return m_width; }
+  int getWidth() const { return m_framebuffer_properties.width; }
 
   /**
    * @brief Gets the height of the framebuffer.
    * @return The height of the framebuffer.
    */
-  size_t getHeight() const { return m_height; }
+  int getHeight() const { return m_framebuffer_properties.height; }
 
   /**
    * @brief Gets the number of channels per pixel.
    * @return The number of channels per pixel.
    */
-  size_t getChannelCount() const { return m_channel_count; }
+  int getChannelCount() const { return m_framebuffer_properties.channels; }
+
+  /**
+   * @brief Gets the size of the framebuffer.
+   * @return The size of the framebuffer.
+   */
+  size_t getSize() const { return m_framebuffer_properties.bufferSize(); }
 
   /**
    * @brief Sets the properties of the framebuffer (width, height, and channel count).
-   * @param properties The properties of the image to be set.
+   * @param framebuffer_properties The properties of the image to be set.
    * @note This method will clear the framebuffer and reallocate memory if the properties change.
    */
-  void setFramebufferProperties(ImageProperties properties);
+  void setFramebufferProperties(ImageProperties framebuffer_properties);
 
   /**
-   * @brief Generates the image from the framebuffer data.
+   * @brief Converts the framebuffer data to sRGB color space.
    */
-  void generateImage();
+  void convertToSRGBColorSpace();
 
   /**
-   * @brief Gets the image data as a constant pointer.
-   * @return A constant pointer to the image data.
+   * @brief Gets the framebuffer data.
+   * @return A pointer to the framebuffer data.
    */
-  const unsigned char* getImage() const { return m_image.data(); };
+  const double* getFramebuffer() const { return m_framebuffer; };
 
   /**
    * @brief Changes the framebuffer properties.
@@ -91,14 +84,13 @@ public:
 
   /**
    * @brief Sets the color of a specific pixel in the framebuffer.
-   * @param x The x-coordinate of the pixel.
-   * @param y The y-coordinate of the pixel.
+   * @param pixel_coord The coordinates of the pixel to set.
    * @param color The color to set the pixel to.
    * @param weight The weight of the color to apply.
    */
-  void setPixelColor(size_t x, size_t y, const Eigen::Vector3d& color, double weight);
+  void setPixelColor(PixelCoord pixel_coord, const Eigen::Vector4d& color, double weight);
 
-  ~Framebuffer() = default; /// Default destructor.
+  ~Framebuffer(); /// Default destructor.
 };
 
 #endif // CORE_FRAMEBUFFER_HPP
