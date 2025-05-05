@@ -124,7 +124,7 @@ This will produce a coverage report and inject a summary into the README.md betw
 
 <!-- COVERAGE-END -->
 
-The full details of the coverage report are available [here](tests/coverage_report/coverage_report.html)
+The full details of the coverage report are available [here](https://html-preview.github.io/?url=https://github.com/lucas-gtr/Lumen/blob/main/tests/coverage_report/coverage_report.html)
 
 ## Commands
 
@@ -216,7 +216,7 @@ I'm a software engineer specializing in 3D development and modern C++ practices.
 
 ### OBJ example
 
-**Loading OBJ model with 2 directional lights, front view**
+**Loading OBJ model with 2 directional lights**
 
 ![OBJ example](Gallery/OBJExample.png)
 
