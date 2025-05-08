@@ -165,7 +165,7 @@ RayHitInfo getObjectIntersection(const Ray& ray, const Object3D* object) {
   return hit_info;
 }
 
-//NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
+// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 bool getAABBIntersection(const Ray& ray, const Eigen::Vector3d& min_bound, const Eigen::Vector3d& max_bound,
                          double& hit_distance) {
   const Eigen::Vector3d inv_dir = ray.direction.cwiseInverse();
@@ -241,7 +241,7 @@ std::vector<RayBVHHitInfo> getBVHIntersection(const Ray& ray, const BVHNode* bvh
 }
 
 RayHitInfo getSceneIntersectionWithBVH(const Ray& ray, const Scene* scene) {
-  RayHitInfo                 closest_hit;
+  RayHitInfo                       closest_hit;
   const std::vector<RayBVHHitInfo> bvh_hits = getBVHIntersection(ray, scene->getBVHRoot());
 
   for(const auto& bvh_hit : bvh_hits) {
@@ -249,7 +249,7 @@ RayHitInfo getSceneIntersectionWithBVH(const Ray& ray, const Scene* scene) {
       updateNormalWithTangentSpace(closest_hit);
       return closest_hit;
     }
-    const Object3D* object = scene->getObjectList()[bvh_hit.index_to_check].get();
+    const Object3D*  object   = scene->getObjectList()[bvh_hit.index_to_check].get();
     const RayHitInfo hit_info = getObjectIntersection(ray, object);
     if(hit_info.distance < closest_hit.distance) {
       closest_hit = hit_info;

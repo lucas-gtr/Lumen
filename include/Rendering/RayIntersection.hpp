@@ -44,7 +44,6 @@ constexpr double EPSILON           = 1e-6;
 bool getTriangleIntersection(const Ray& ray, const Eigen::Vector3d& p0, const Eigen::Vector3d& p1,
                              const Eigen::Vector3d& p2, double& hit_distance, Eigen::Vector3d& bary_coords);
 
-
 RayHitInfo getMeshIntersectionWithBVH(const Ray& ray, const Mesh& mesh);
 RayHitInfo getMeshIntersectionWithoutBVH(const Ray& ray, const Mesh& mesh);
 RayHitInfo getMeshIntersection(const Ray& ray, const Mesh& mesh);
@@ -55,8 +54,8 @@ RayHitInfo getSceneIntersectionWithBVH(const Ray& ray, const Scene* scene);
 RayHitInfo getSceneIntersectionWithoutBVH(const Ray& ray, const Scene* scene);
 RayHitInfo getSceneIntersection(const Ray& ray, const Scene* scene);
 
-bool       getAABBIntersection(const Ray& ray, const Eigen::Vector3d& min_bound, const Eigen::Vector3d& max_bound,
-                               double& hit_distance);
+bool getAABBIntersection(const Ray& ray, const Eigen::Vector3d& min_bound, const Eigen::Vector3d& max_bound,
+                         double& hit_distance);
 std::vector<RayBVHHitInfo> getBVHIntersection(const Ray& ray, const BVHNode* bvh_node);
 
 void processFaceIntersection(const Ray& ray, const Mesh& mesh, const Face& face, RayHitInfo& closest_hit);

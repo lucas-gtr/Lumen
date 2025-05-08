@@ -10,9 +10,12 @@ namespace BVH {
 int getLargestAxis(const Eigen::Vector3d& extent) {
   if(extent.y() > extent.x() && extent.y() > extent.z()) {
     return 1;
-  } else if(extent.z() > extent.x()) {
+  }
+
+  if(extent.z() > extent.x()) {
     return 2;
   }
+
   return 0;
 }
 
@@ -33,8 +36,8 @@ void constructNode(std::shared_ptr<BVHNode>& node, std::vector<std::shared_ptr<B
   }
   node = std::make_shared<BVHNode>(min_bound, max_bound);
 
-  Eigen::Vector3d extent = max_bound - min_bound;
-  int axis = getLargestAxis(extent);
+  const Eigen::Vector3d extent = max_bound - min_bound;
+  const int             axis   = getLargestAxis(extent);
 
   const int mid = (start + end) / 2;
   std::nth_element(objects.begin() + start, objects.begin() + mid, objects.begin() + end,

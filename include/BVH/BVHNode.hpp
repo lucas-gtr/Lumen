@@ -11,7 +11,7 @@ private:
 
   Eigen::Vector3d m_min_bound = Eigen::Vector3d::Zero();
   Eigen::Vector3d m_max_bound = Eigen::Vector3d::Zero();
-  Eigen::Vector3d m_center = Eigen::Vector3d::Zero();
+  Eigen::Vector3d m_center    = Eigen::Vector3d::Zero();
 
   int m_leaf_index = -1;
 
