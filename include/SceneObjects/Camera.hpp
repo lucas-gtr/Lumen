@@ -2,8 +2,8 @@
  * @file Camera.hpp
  * @brief Header file for the Camera class.
  */
-#ifndef SCENE_CAMERA_HPP
-#define SCENE_CAMERA_HPP
+#ifndef SCENEOBJECTS_CAMERA_HPP
+#define SCENEOBJECTS_CAMERA_HPP
 
 #include "Core/Config.hpp"
 #include "Core/MathConstants.hpp"
@@ -138,4 +138,4 @@ public:
   ~Camera() = default; ///< Default destructor.
 };
 
-#endif // SCENE_CAMERA_HPP
+#endif // SCENEOBJECTS_CAMERA_HPP

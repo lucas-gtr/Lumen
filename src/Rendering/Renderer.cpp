@@ -15,7 +15,7 @@
 #include "Scene/Scene.hpp"
 #include "Surface/Material.hpp"
 
-Renderer::Renderer(const RenderSettings* render_settings, const Scene* scene)
+Renderer::Renderer(const RenderSettings* render_settings, Scene* scene)
     : m_render_settings(render_settings), m_scene(scene),
       m_framebuffer(new Framebuffer(
           {render_settings->getWidth(), render_settings->getHeight(), render_settings->getChannelCount()})) {}
@@ -55,6 +55,7 @@ void Renderer::renderFrame() {
 
   const auto start_time = std::chrono::high_resolution_clock::now();
 
+  m_scene->buildBVH();
   for(int s = 0; s < m_render_settings->getSamplesPerPixel(); ++s) {
     std::cout << "Sample: " << s + 1 << "/" << m_render_settings->getSamplesPerPixel() << '\n';
     const PixelCoord grid_pos{s % samples_per_row, s / samples_per_row};

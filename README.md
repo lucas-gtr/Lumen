@@ -206,18 +206,25 @@ I'm a software engineer specializing in 3D development and modern C++ practices.
 
 ![Sphere example (without normal map)](Gallery/SphereExampleWithoutNormal.png)
 
-*Image 800x600 - 1024 triangles - 1 light - 4 samples per pixel* | **Render time**: 22s 84ms
+*Image 800x600 - 1024 triangles - 1 light - 4 samples per pixel* | **Render time**: 9s 57ms
 
 **Sphere with 1 directional light, grayscale,  with normal map**
 
 ![Sphere example (with normal map)](Gallery/SphereExampleWithNormal.png)
 
-*Image 800x600 - 1024 triangles - 1 light - 4 samples per pixel* | **Render time**: 22s 59ms
+*Image 800x600 - 1024 triangles - 1 light - 4 samples per pixel* | **Render time**: 8s 75ms
 
 ### OBJ example
 
-**Loading OBJ model with 2 directional lights**
+**Loading OBJ model with 2 directional lights, wtihout BVH**
 
-![OBJ example](Gallery/OBJExample.png)
+![OBJ example](Gallery/OBJExampleWithoutBVH.png)
 
-*Image 800x600 - 2492 triangles - 2 lights - 4 samples per pixel* | **Render time**: 3min 16s 10ms
+*Image 800x600 - 2492 triangles - 2 lights - 4 samples per pixel* | **Render time**: 1min 05s 26ms
+
+**Loading OBJ model with 2 directional lights, wtih BVH**
+
+![OBJ example](Gallery/OBJExampleWithBVH.png)
+
+*Image 800x600 - 2492 triangles - 2 lights - 4 samples per pixel* | **Render time**: 19s 96ms
+

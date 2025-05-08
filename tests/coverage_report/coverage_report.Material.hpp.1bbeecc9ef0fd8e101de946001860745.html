@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-05-03 11:22:21</td>
+      <td>2025-05-08 17:32:05</td>
     </tr>
   </table>
 </div>
@@ -73,9 +73,9 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l36">Material::setAlbedoTexture(std::shared_ptr&lt;Texture&gt; const&amp;) (line 36)</a></td><td>called 25 times, returned 25 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l42">Material::setNormalTexture(std::shared_ptr&lt;Texture&gt; const&amp;) (line 42)</a></td><td>called 25 times, returned 25 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l55">Material::~Material() (line 55)</a></td><td>called 392 times, returned 392 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l36">Material::setAlbedoTexture(std::shared_ptr&lt;Texture&gt; const&amp;) (line 36)</a></td><td>called 36 times, returned 36 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l42">Material::setNormalTexture(std::shared_ptr&lt;Texture&gt; const&amp;) (line 42)</a></td><td>called 29 times, returned 29 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l55">Material::~Material() (line 55)</a></td><td>called 254 times, returned 254 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -165,7 +165,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Core/TextureUV.hpp&quot;</span></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Core/CommonTypes.hpp&quot;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l12" href="#l12">12</a></td>
@@ -339,7 +339,7 @@
       <td class="lineno"><a id="l36" href="#l36">36</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">25</td>
+      <td class="linecount coveredLine">36</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setAlbedoTexture</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">texture</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_albedoTexture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">texture</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -381,7 +381,7 @@
       <td class="lineno"><a id="l42" href="#l42">42</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">25</td>
+      <td class="linecount coveredLine">29</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setNormalTexture</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">texture</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_normalTexture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">texture</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -472,7 +472,7 @@
       <td class="lineno"><a id="l55" href="#l55">55</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">392</td>
+      <td class="linecount coveredLine">254</td>
       <td class="src coveredLine"><span class="w">  </span><span class="o">~</span><span class="n">Material</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default destructor.</span></td>
     </tr>
     <tr class="source-line">

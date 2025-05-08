@@ -119,3 +119,19 @@ TEST(MeshTest, FaceEquality) {
     Face f6 {{0, 1, 2}};
     EXPECT_EQ(f1, f6);  // Identical indices
 }
+
+TEST(MeshTest, BuildBVH) {
+    Vertex v1 {Eigen::Vector3d(1.0, 2.0, 3.0), Eigen::Vector3d(0.0, 1.0, 0.0), {0.5, 0.5}};
+    Vertex v2 {Eigen::Vector3d(4.0, 5.0, 6.0), Eigen::Vector3d(0.0, 0.0, 1.0), {0.25, 0.25}};
+    Vertex v3 {Eigen::Vector3d(7.0, 8.0, 9.0), Eigen::Vector3d(1.0, 0.0, 0.0), {0.75, 0.75}};
+    Face f1 {{0, 1, 2}};
+
+    std::vector<Vertex> vertices = {v1, v2, v3};
+    std::vector<Face> faces = {f1};
+
+    Mesh mesh(vertices, faces);
+    mesh.buildBVH();
+
+    EXPECT_NE(mesh.getBVHRoot(), nullptr);
+    EXPECT_EQ(mesh.getBVHRoot()->getLeafIndex(), 0);
+}

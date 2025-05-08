@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "Rendering/Renderer.hpp"
-#include "Scene/Camera.hpp"
-#include "Scene/Object3D.hpp"
+#include "SceneObjects/Camera.hpp"
+#include "SceneObjects/Object3D.hpp"
 #include "Geometry/Mesh.hpp"
 #include "Geometry/CubeMeshBuilder.hpp"
 #include "Lighting/DirectionalLight.hpp"

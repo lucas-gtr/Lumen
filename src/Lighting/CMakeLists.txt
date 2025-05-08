@@ -4,9 +4,9 @@ add_library(Lighting STATIC
     SpotLight.cpp
 )
 
-target_include_directories(Lighting PUBLIC
+target_include_directories(Lighting PRIVATE
     ${CMAKE_SOURCE_DIR}/include
     ${CMAKE_SOURCE_DIR}/external/eigen
 )
 
-target_link_libraries(Lighting PUBLIC Core)
+target_link_libraries(Lighting PRIVATE Core)

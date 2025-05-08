@@ -1,13 +1,17 @@
 #include <Eigen/Core>
 #include <Eigen/Dense>
+#include <algorithm>
 #include <cmath>
 #include <limits>
+#include <stack>
+#include <vector>
 
+#include "BVH/BVHNode.hpp"
 #include "Core/Ray.hpp"
 #include "Geometry/Mesh.hpp"
 #include "Rendering/RayIntersection.hpp"
-#include "Scene/Object3D.hpp"
 #include "Scene/Scene.hpp"
+#include "SceneObjects/Object3D.hpp"
 
 namespace RayIntersection {
 
@@ -74,14 +78,55 @@ void updateHitInfoFromBarycentric(RayHitInfo& hit_info, double distance, const E
   hit_info.bitangent       = (bary.x() * v0.bitangent + bary.y() * v1.bitangent + bary.z() * v2.bitangent).normalized();
 }
 
-RayHitInfo getMeshIntersection(const Ray& ray, const Mesh& mesh) {
+RayHitInfo getMeshIntersectionWithBVH(const Ray& ray, const Mesh& mesh) {
+  RayHitInfo hit_info;
+  hit_info.distance = std::numeric_limits<double>::max();
+
+  const std::vector<RayBVHHitInfo> bvh_hits = getBVHIntersection(ray, mesh.getBVHRoot());
+
+  for(const auto& bvh_hit : bvh_hits) {
+    if(bvh_hit.distance > hit_info.distance) {
+      return hit_info;
+    }
+    const Face& face = mesh.getFaces()[bvh_hit.index_to_check];
+    processFaceIntersection(ray, mesh, face, hit_info);
+  }
+
+  return hit_info;
+}
+
+RayHitInfo getMeshIntersectionWithoutBVH(const Ray& ray, const Mesh& mesh) {
   RayHitInfo hit_info;
   hit_info.distance = std::numeric_limits<double>::max();
 
   for(const auto& face : mesh.getFaces()) {
     processFaceIntersection(ray, mesh, face, hit_info);
   }
+
   return hit_info;
+}
+
+RayHitInfo getMeshIntersection(const Ray& ray, const Mesh& mesh) {
+  if(mesh.getBVHRoot() != nullptr) {
+    return getMeshIntersectionWithBVH(ray, mesh);
+  }
+  return getMeshIntersectionWithoutBVH(ray, mesh);
+}
+
+void updateNormalWithTangentSpace(RayHitInfo& hit_info) {
+  if(hit_info.material == nullptr) {
+    return;
+  }
+
+  Eigen::Matrix3d tangent_space;
+  tangent_space.col(0) = hit_info.tangent;
+  tangent_space.col(1) = hit_info.bitangent;
+  tangent_space.col(2) = hit_info.normal;
+
+  Eigen::Vector3d normal_texture = hit_info.material->getNormal(hit_info.uvCoordinates);
+  normal_texture                 = (normal_texture * 2) - Eigen::Vector3d(1.0, 1.0, 1.0);
+
+  hit_info.normal = (tangent_space * normal_texture).normalized();
 }
 
 Ray transformRayToObjectSpace(const Ray& ray, const Object3D* object) {
@@ -120,12 +165,94 @@ RayHitInfo getObjectIntersection(const Ray& ray, const Object3D* object) {
   return hit_info;
 }
 
-RayHitInfo getSceneIntersection(const Ray& ray, const Scene* scene) {
-  RayHitInfo closest_hit;
-  for(const auto& object : scene->getObjectList()) {
-    const RayHitInfo hit = getObjectIntersection(ray, object.get());
-    if(hit.distance < closest_hit.distance) {
-      closest_hit = hit;
+//NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
+bool getAABBIntersection(const Ray& ray, const Eigen::Vector3d& min_bound, const Eigen::Vector3d& max_bound,
+                         double& hit_distance) {
+  const Eigen::Vector3d inv_dir = ray.direction.cwiseInverse();
+  const Eigen::Vector3d t0      = (min_bound - ray.origin).cwiseProduct(inv_dir);
+  const Eigen::Vector3d t1      = (max_bound - ray.origin).cwiseProduct(inv_dir);
+
+  const Eigen::Vector3d t_min = t0.cwiseMin(t1);
+  const Eigen::Vector3d t_max = t0.cwiseMax(t1);
+
+  const double t_entry = t_min.maxCoeff();
+  const double t_exit  = t_max.minCoeff();
+
+  if(t_entry > t_exit || t_exit < 0) {
+    return false;
+  }
+  hit_distance = t_entry;
+  return true;
+}
+
+std::vector<RayBVHHitInfo> getBVHIntersection(const Ray& ray, const BVHNode* bvh_node) {
+  std::vector<RayBVHHitInfo> bvh_hits;
+  std::stack<const BVHNode*> nodeStack;
+  nodeStack.push(bvh_node);
+
+  while(!nodeStack.empty()) {
+    const BVHNode* node = nodeStack.top();
+    nodeStack.pop();
+
+    double hit_distance = std::numeric_limits<double>::max();
+    if(!getAABBIntersection(ray, node->getMinBound(), node->getMaxBound(), hit_distance)) {
+      continue;
+    }
+
+    const int leafIndex = node->getLeafIndex();
+    if(leafIndex != -1) {
+      bvh_hits.push_back({leafIndex, hit_distance});
+    } else {
+      BVHNode* left  = node->getLeftChild().get();
+      BVHNode* right = node->getRightChild().get();
+
+      double left_child_distance  = std::numeric_limits<float>::max();
+      double right_child_distance = std::numeric_limits<float>::max();
+
+      bool leftHit = false;
+
+      if(left != nullptr) {
+        leftHit = getAABBIntersection(ray, left->getMinBound(), left->getMaxBound(), left_child_distance);
+      }
+      bool rightHit = false;
+      if(right != nullptr) {
+        rightHit = getAABBIntersection(ray, right->getMinBound(), right->getMaxBound(), right_child_distance);
+      }
+
+      if(leftHit && rightHit) {
+        if(left_child_distance < right_child_distance) {
+          nodeStack.push(right);
+          nodeStack.push(left);
+        } else {
+          nodeStack.push(left);
+          nodeStack.push(right);
+        }
+      } else if(leftHit) {
+        nodeStack.push(left);
+      } else if(rightHit) {
+        nodeStack.push(right);
+      }
+    }
+  }
+
+  std::sort(bvh_hits.begin(), bvh_hits.end(),
+            [](const RayBVHHitInfo& a, const RayBVHHitInfo& b) { return a.distance < b.distance; });
+  return bvh_hits;
+}
+
+RayHitInfo getSceneIntersectionWithBVH(const Ray& ray, const Scene* scene) {
+  RayHitInfo                 closest_hit;
+  const std::vector<RayBVHHitInfo> bvh_hits = getBVHIntersection(ray, scene->getBVHRoot());
+
+  for(const auto& bvh_hit : bvh_hits) {
+    if(bvh_hit.distance > closest_hit.distance) {
+      updateNormalWithTangentSpace(closest_hit);
+      return closest_hit;
+    }
+    const Object3D* object = scene->getObjectList()[bvh_hit.index_to_check].get();
+    const RayHitInfo hit_info = getObjectIntersection(ray, object);
+    if(hit_info.distance < closest_hit.distance) {
+      closest_hit = hit_info;
     }
   }
 
@@ -133,20 +260,25 @@ RayHitInfo getSceneIntersection(const Ray& ray, const Scene* scene) {
   return closest_hit;
 }
 
-void updateNormalWithTangentSpace(RayHitInfo& hit_info) {
-  if(hit_info.material == nullptr) {
-    return;
+RayHitInfo getSceneIntersectionWithoutBVH(const Ray& ray, const Scene* scene) {
+  RayHitInfo closest_hit;
+  closest_hit.distance = std::numeric_limits<double>::max();
+
+  for(const auto& object : scene->getObjectList()) {
+    const RayHitInfo hit_info = getObjectIntersection(ray, object.get());
+    if(hit_info.distance < closest_hit.distance) {
+      closest_hit = hit_info;
+    }
   }
 
-  Eigen::Matrix3d tangent_space;
-  tangent_space.col(0) = hit_info.tangent;
-  tangent_space.col(1) = hit_info.bitangent;
-  tangent_space.col(2) = hit_info.normal;
-
-  Eigen::Vector3d normal_texture = hit_info.material->getNormal(hit_info.uvCoordinates);
-  normal_texture                 = (normal_texture * 2) - Eigen::Vector3d(1.0, 1.0, 1.0);
-
-  hit_info.normal = (tangent_space * normal_texture).normalized();
+  updateNormalWithTangentSpace(closest_hit);
+  return closest_hit;
 }
 
+RayHitInfo getSceneIntersection(const Ray& ray, const Scene* scene) {
+  if(scene->getBVHRoot() != nullptr) {
+    return getSceneIntersectionWithBVH(ray, scene);
+  }
+  return getSceneIntersectionWithoutBVH(ray, scene);
+}
 } // namespace RayIntersection

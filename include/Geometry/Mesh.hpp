@@ -7,8 +7,10 @@
 
 #include <Eigen/Core>
 #include <array>
+#include <memory>
 #include <vector>
 
+#include "BVH/BVHNode.hpp"
 #include "Core/CommonTypes.hpp"
 
 /**
@@ -57,8 +59,10 @@ struct Face {
  */
 class Mesh {
 private:
-  std::vector<Vertex> vertices; ///< List of vertices in the mesh.
-  std::vector<Face>   faces;    ///< List of faces in the mesh.
+  std::vector<Vertex> m_vertices;
+  std::vector<Face>   m_faces;
+
+  std::shared_ptr<BVHNode> m_bvh_root;
 
   void computeTangentsAndBitangents(); ///< Computes tangents and bitangents for the mesh.
 public:
@@ -80,27 +84,35 @@ public:
    * @brief Retrieves the list of vertices in the mesh.
    * @return A const reference to the list of vertices.
    */
-  const std::vector<Vertex>& getVertices() const { return vertices; }
+  const std::vector<Vertex>& getVertices() const { return m_vertices; }
 
   /**
    * @brief Retrieves a specific vertex by index.
    * @param index The index of the vertex.
    * @return A const reference to the vertex at the given index.
    */
-  const Vertex& getVertex(int index) const { return vertices[index]; }
+  const Vertex& getVertex(int index) const { return m_vertices[index]; }
 
   /**
    * @brief Retrieves the list of faces in the mesh.
    * @return A const reference to the list of faces.
    */
-  const std::vector<Face>& getFaces() const { return faces; }
+  const std::vector<Face>& getFaces() const { return m_faces; }
 
   /**
    * @brief Equality operator for comparing two meshes.
    * @param other The mesh to compare with.
    * @return True if the meshes are equal, false otherwise.
    */
-  bool operator==(const Mesh& other) const { return vertices == other.vertices && faces == other.faces; }
+  bool operator==(const Mesh& other) const { return m_vertices == other.m_vertices && m_faces == other.m_faces; }
+
+  void buildBVH();
+
+  /**
+   * @brief Retrieves the bounding volume hierarchy (BVH) root node of the mesh.
+   * @return A shared pointer to the BVH root node.
+   */
+  const BVHNode* getBVHRoot() const { return m_bvh_root.get(); }
 
   ~Mesh() = default; ///< Default destructor.
 };
