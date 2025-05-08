@@ -6,9 +6,9 @@ add_library(Geometry STATIC
     OBJLoader.cpp
 )
 
-target_include_directories(Geometry PUBLIC
+target_include_directories(Geometry PRIVATE
     ${CMAKE_SOURCE_DIR}/include
     ${CMAKE_SOURCE_DIR}/external/eigen
 )
 
-target_link_libraries(Geometry PUBLIC Core)
+target_link_libraries(Geometry PRIVATE Core BVH)

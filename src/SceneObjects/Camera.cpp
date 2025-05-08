@@ -1,9 +1,9 @@
-#include "Scene/Camera.hpp"
-#include "Core/Config.hpp"
-#include "Core/MathConstants.hpp"
-
 #include <algorithm>
 #include <cmath>
+
+#include "Core/Config.hpp"
+#include "Core/MathConstants.hpp"
+#include "SceneObjects/Camera.hpp"
 
 Camera::Camera() : m_sensor_width(getUpdatedSensorWidth()), m_lens_radius(getUpdatedLensRadius()) {}
 

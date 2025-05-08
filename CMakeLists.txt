@@ -14,8 +14,10 @@ add_subdirectory(external/eigen)
 
 add_subdirectory(src/Core)
 add_subdirectory(src/ImplementationParameters)
+add_subdirectory(src/BVH)
 add_subdirectory(src/Surface)
 add_subdirectory(src/Geometry)
+add_subdirectory(src/SceneObjects)
 add_subdirectory(src/Lighting)
 add_subdirectory(src/Scene)
 add_subdirectory(src/Rendering)
@@ -24,21 +26,23 @@ add_subdirectory(src/Export)
 
 add_executable(Lumen src/main.cpp)
 
-target_include_directories(Lumen PUBLIC
+target_include_directories(Lumen PRIVATE
     ${CMAKE_SOURCE_DIR}/include
     ${CMAKE_SOURCE_DIR}/external/eigen
 )
 
 target_link_libraries(Lumen
-    PUBLIC
+    PRIVATE
         Core
-        Rendering
-        Export
-        Scene
+        ImplementationParameters
+        BVH
         Geometry
         Surface
+        SceneObjects
         Lighting
-        ImplementationParameters
+        Scene
+        Rendering
+        Export        
 )
 
 option(ENABLE_COMPILE_WARNINGS "Enable Compiler Warnings" ON)

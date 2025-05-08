@@ -31,3 +31,11 @@ TEST(SceneTest, GetSkyboxColor) {
   Eigen::Vector4d color = scene.getSkyboxColor(direction);
   EXPECT_EQ(color, Eigen::Vector4d(1.0, 0.0, 0.0, 1.0)); // Assuming default color is white
 }
+
+TEST(SceneTest, BuildBVH) {
+  Scene scene;
+  scene.addObject(std::make_unique<Object3D>(Mesh()));
+  scene.buildBVH();
+  EXPECT_NE(scene.getBVHRoot(), nullptr);
+  EXPECT_EQ(scene.getBVHRoot()->getLeafIndex(), 0);
+}

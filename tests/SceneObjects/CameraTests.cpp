@@ -1,4 +1,4 @@
-#include "Scene/Camera.hpp"
+#include "SceneObjects/Camera.hpp"
 
 #include <gtest/gtest.h>
 

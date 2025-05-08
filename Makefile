@@ -30,6 +30,7 @@ run-tests:
 
 coverage: run-tests
 	@echo "Generating coverage reports..."
+	@mkdir -p tests/coverage_report
 	@gcovr -f src -f include --exclude='src/main.cpp' --exclude-throw-branches --json-summary -o tests/coverage_report/coverage_report.json
 	@gcovr -f src -f include --exclude='src/main.cpp' --exclude-throw-branches --html-details -o tests/coverage_report/coverage_report.html
 

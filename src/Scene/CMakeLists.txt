@@ -1,12 +1,11 @@
 add_library(Scene STATIC
-    Camera.cpp
-    Object3D.cpp
     Scene.cpp
     Skybox.cpp
 )
 
-target_include_directories(Scene PUBLIC
+target_include_directories(Scene PRIVATE
     ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/external/eigen
 )
 
-target_link_libraries(Scene PUBLIC Core Lighting Surface)
+target_link_libraries(Scene PRIVATE Core BVH Geometry Surface SceneObjects Lighting)

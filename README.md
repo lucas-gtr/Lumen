@@ -3,7 +3,7 @@
 **Lumen** is a modular, modern C++20 3D rendering engine designed to demonstrate advanced software engineering practices and 3D graphics programming.  
 It serves as a testament to my proficiency in building scalable, maintainable, and high-performance rendering systems.
 
-![OBJ example](Gallery/OBJExample.png)
+![OBJ example](Gallery/OBJExampleWithBVH.png)
 
 ## ✨ Features
 
@@ -14,6 +14,7 @@ It serves as a testament to my proficiency in building scalable, maintainable, a
 - **Camera System:** Configurable camera with aperture, focus distance, field of view, and transformation controls
 - **Skybox Integration:** Supports environment mapping using skybox textures
 - **Image Exporting:** Renders can be exported as PNG images with tone mapping and exposure adjustments
+- **Ray Acceleration:** Ray traversal acceleration with a *Bounding Volume Hierarchy* (BVH)
 - **Comprehensive CI:** Automated formatting, linting and testing via GitHub Actions
 
 ## 🧱 Architecture Overview
@@ -119,8 +120,8 @@ This will produce a coverage report and inject a summary into the README.md betw
 
 | Metric    | Coverage |
 |-----------|----------|
-| Functions | 100.00% (273/273) |
-| Lines     | 99.90% (1100/1101) |
+| Functions | 100.00% (303/303) |
+| Lines     | 99.90% (1264/1265) |
 
 <!-- COVERAGE-END -->
 
@@ -149,7 +150,6 @@ These are the available Make targets:
 
 Planned enhancements for future development:
 
-- Implementation of a **BVH** (Bounding Volume Hierarchy) for ray traversal acceleration
 - **Multithreading on CPU** for faster rendering
 - **GPU acceleration with CUDA** for real-time performance
 - **Qt-based user interface** for scene editing and parameters configuration
@@ -206,18 +206,25 @@ I'm a software engineer specializing in 3D development and modern C++ practices.
 
 ![Sphere example (without normal map)](Gallery/SphereExampleWithoutNormal.png)
 
-*Image 800x600 - 1024 triangles - 1 light - 4 samples per pixel* | **Render time**: 22s 84ms
+*Image 800x600 - 1024 triangles - 1 light - 4 samples per pixel* | **Render time**: 9s 57ms
 
 **Sphere with 1 directional light, grayscale,  with normal map**
 
 ![Sphere example (with normal map)](Gallery/SphereExampleWithNormal.png)
 
-*Image 800x600 - 1024 triangles - 1 light - 4 samples per pixel* | **Render time**: 22s 59ms
+*Image 800x600 - 1024 triangles - 1 light - 4 samples per pixel* | **Render time**: 8s 75ms
 
 ### OBJ example
 
-**Loading OBJ model with 2 directional lights**
+**Loading OBJ model with 2 directional lights, wtihout BVH**
 
-![OBJ example](Gallery/OBJExample.png)
+![OBJ example](Gallery/OBJExampleWithoutBVH.png)
 
-*Image 800x600 - 2492 triangles - 2 lights - 4 samples per pixel* | **Render time**: 3min 16s 10ms
+*Image 800x600 - 2492 triangles - 2 lights - 4 samples per pixel* | **Render time**: 1min 05s 26ms
+
+**Loading OBJ model with 2 directional lights, wtih BVH**
+
+![OBJ example](Gallery/OBJExampleWithBVH.png)
+
+*Image 800x600 - 2492 triangles - 2 lights - 4 samples per pixel* | **Render time**: 19s 96ms
+

@@ -6,10 +6,10 @@ add_library(Surface STATIC
     TextureLoader.cpp
 )
 
-target_include_directories(Surface PUBLIC
+target_include_directories(Surface PRIVATE
     ${CMAKE_SOURCE_DIR}/include
     ${CMAKE_SOURCE_DIR}/external/eigen
     ${CMAKE_SOURCE_DIR}/external/stb
 )
 
-target_link_libraries(Surface PUBLIC Core)
+target_link_libraries(Surface PRIVATE Core)

@@ -5,9 +5,9 @@ add_library(Rendering STATIC
     RenderSettings.cpp
 )
 
-target_include_directories(Rendering PUBLIC
+target_include_directories(Rendering PRIVATE
     ${CMAKE_SOURCE_DIR}/include
     ${CMAKE_SOURCE_DIR}/external/eigen
 )
 
-target_link_libraries(Rendering PUBLIC Core Scene Geometry)
+target_link_libraries(Rendering PRIVATE Core Geometry SceneObjects Scene Surface)

@@ -10,9 +10,9 @@
 #include "Lighting/SpotLight.hpp"
 #include "Rendering/RenderSettings.hpp"
 #include "Rendering/Renderer.hpp"
-#include "Scene/Camera.hpp"
-#include "Scene/Object3D.hpp"
 #include "Scene/Scene.hpp"
+#include "SceneObjects/Camera.hpp"
+#include "SceneObjects/Object3D.hpp"
 #include "Surface/Material.hpp"
 #include "Surface/Texture.hpp"
 #include "Surface/TextureLoader.hpp"
@@ -228,9 +228,6 @@ void renderOBJExample() {
   eye_inner_material->setNormalTexture(eye_inner_normal);
   eye_inner_object->setMaterial(eye_inner_material);
 
-  std::cout << obj->getMesh().getFaces().size() << std::endl;
-  std::cout << eye_inner_object->getMesh().getFaces().size() << std::endl;
-
   std::unique_ptr<Camera> camera = std::make_unique<Camera>();
   camera->setPosition(Eigen::Vector3d(-1.0, 0.0, 4.0));
   camera->setRotation(Eigen::Vector3d(0.0, -15.0, 0.0));
@@ -280,8 +277,8 @@ void renderOBJExample() {
 int main() {
   // renderCubeExemple();
   // renderPlaneExemple();
-  // renderSphereExemple();
-  renderOBJExample();
+  renderSphereExemple();
+  // renderOBJExample();
 
   return 0;
 }

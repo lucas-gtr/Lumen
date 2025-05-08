@@ -3,9 +3,10 @@
  * @brief Header file for the Object3D class.
  */
 
-#ifndef SCENE_OBJECT3D_HPP
-#define SCENE_OBJECT3D_HPP
+#ifndef SCENEOBJECTS_OBJECT3D_HPP
+#define SCENEOBJECTS_OBJECT3D_HPP
 
+#include <Eigen/Core>
 #include <memory>
 
 #include "Core/Transform.hpp"
@@ -54,7 +55,13 @@ public:
    * @brief Gets the mesh associated with this 3D object.
    * @return The mesh of the 3D object.
    */
-  Mesh getMesh() const { return m_mesh; }
+  const Mesh& getMesh() const { return m_mesh; }
+
+  /**
+   * @brief Gets a modifiable reference to the mesh of this 3D object.
+   * @return A reference to the mesh of the 3D object.
+   */
+  Mesh& getMesh() { return m_mesh; }
 
   /**
    * @brief Gets the material associated with this 3D object.
@@ -62,7 +69,10 @@ public:
    */
   std::shared_ptr<Material> getMaterial() const { return m_material; }
 
+  Eigen::Vector3d getMinBound() const;
+  Eigen::Vector3d getMaxBound() const;
+
   ~Object3D() = default; ///< Default destructor.
 };
 
-#endif // SCENE_OBJECT3D_HPP
+#endif // SCENEOBJECTS_OBJECT3D_HPP

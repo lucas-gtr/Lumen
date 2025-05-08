@@ -85,4 +85,7 @@ static constexpr double DEFAULT_TONE_MAPPING_EXPOSURE = 1.0;
 static constexpr double MIN_TONE_MAPPING_EXPOSURE     = 0.0;
 static constexpr double MAX_TONE_MAPPING_EXPOSURE     = 10.0;
 
+//<-------- BVH --------->
+static constexpr double BVH_CONSTRUCTION_EPSILON = 0.0001;
+
 #endif // CORE_CONFIG_HPP

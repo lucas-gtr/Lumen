@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "Rendering/RayIntersection.hpp"
 #include "Scene/Scene.hpp"
+#include "Geometry/CubeMeshBuilder.hpp"
 
 #include <Eigen/Core>
 #include <limits>
@@ -190,4 +191,100 @@ TEST(RayIntersectionTest, RayIntersectionScene) {
     scene.getObjectList()[0]->setScale(1.2);
     hit = RayIntersection::getSceneIntersection(ray, &scene);
     EXPECT_NEAR(hit.distance, 1.0, EPSILON);
+}
+
+TEST(RayIntersectionTest, RayIntersectionAABB) {
+    Ray ray({0, 0, 1}, {0, 0, -1});
+    Eigen::Vector3d min_bound(-0.5, -0.5, -0.5);
+    Eigen::Vector3d max_bound(0.5, 0.5, 0.5);
+
+    double hit_distance = std::numeric_limits<double>::max();
+    bool hit = RayIntersection::getAABBIntersection(ray, min_bound, max_bound, hit_distance);
+    EXPECT_TRUE(hit);
+    EXPECT_NEAR(hit_distance, 0.5, EPSILON);
+}
+
+TEST(RayIntersectionTest, RayIntersectionAABBNoHit) {
+    Ray ray({0, 0, 1}, {0, 0, 2});
+    Eigen::Vector3d min_bound(-0.5, -0.5, -0.5);
+    Eigen::Vector3d max_bound(0.5, 0.5, 0.5);
+
+    double hit_distance = std::numeric_limits<double>::max();
+    bool hit = RayIntersection::getAABBIntersection(ray, min_bound, max_bound, hit_distance);
+    EXPECT_FALSE(hit);
+}
+
+TEST(RayIntersectionTest, RayIntersectionBVH) {
+    Ray ray({0, 0, 2}, {0, 0, 0});
+    Eigen::Vector3d min_bound(-1.0, -1.0, -1.0);
+    Eigen::Vector3d max_bound(1.0, 1.0, 1.0);
+
+    std::shared_ptr<BVHNode> root = std::make_shared<BVHNode>(min_bound, max_bound);
+
+    root->getLeftChild() = std::make_shared<BVHNode>(Eigen::Vector3d(-1.0, -1.0, -1.0),
+                                                     Eigen::Vector3d(0.0, 0.0, 0.0), 0);
+    root->getRightChild() = std::make_shared<BVHNode>(Eigen::Vector3d(0.0, 0.0, 0.0),
+                                                      Eigen::Vector3d(1.0, 1.0, 1.0), 1);
+    std::vector<RayIntersection::RayBVHHitInfo> hits;
+
+    hits = RayIntersection::getBVHIntersection(ray, root.get());
+    EXPECT_EQ(hits.size(), 2);
+    EXPECT_EQ(hits[0].index_to_check, 1);
+    EXPECT_EQ(hits[1].index_to_check, 0);
+}
+
+TEST(RayIntersectionTest, RayIntersectionBVHNoHit) {
+    Ray ray({0, 0, 2}, {0, 0, 3});
+    Eigen::Vector3d min_bound(-1.0, -1.0, -1.0);
+    Eigen::Vector3d max_bound(1.0, 1.0, 1.0);
+
+    std::shared_ptr<BVHNode> root = std::make_shared<BVHNode>(min_bound, max_bound);
+
+    root->getLeftChild() = std::make_shared<BVHNode>(Eigen::Vector3d(-1.0, -1.0, -1.0),
+                                                     Eigen::Vector3d(0.0, 0.0, 0.0), 0);
+    root->getRightChild() = std::make_shared<BVHNode>(Eigen::Vector3d(2.0, 2.0, 2.0),
+                                                      Eigen::Vector3d(3.0, 3.0, 3.0), 1);
+    std::vector<RayIntersection::RayBVHHitInfo> hits;
+
+    hits = RayIntersection::getBVHIntersection(ray, root.get());
+    EXPECT_EQ(hits.size(), 0);
+}
+
+TEST(RayIntersectionTest, RayIntersectionSceneWithBVHEarlyExit) {
+    Ray ray({0, 0, 2}, {0, 0, 0});
+    Mesh mesh1 = CubeMeshBuilder(1.0).build();
+    std::unique_ptr<Object3D> object1 = std::make_unique<Object3D>(mesh1);
+    object1->setPosition(Eigen::Vector3d(0.0, 0.0, -2.0));
+
+    Mesh mesh2 = CubeMeshBuilder(1.0).build();
+    std::unique_ptr<Object3D> object2 = std::make_unique<Object3D>(mesh2);
+    
+    
+    Scene scene;
+    scene.addObject(std::move(object1));
+    scene.addObject(std::move(object2));
+    scene.buildBVH();
+
+    RayHitInfo hit = RayIntersection::getSceneIntersection(ray, &scene);
+    EXPECT_EQ(hit.distance, 1.5);
+}
+
+TEST(RayIntersectionTest, UpdateNormalWithTangentSpace) {
+    Eigen::Vector3d normal(0, 0, 1);
+    Eigen::Vector3d tangent(1, 0, 0);
+    Eigen::Vector3d bitangent(0, 1, 0);
+
+    RayHitInfo hit;
+    hit.normal = normal;
+    hit.tangent = tangent;
+    hit.bitangent = bitangent;
+
+    std::unique_ptr<Texture> normal_texture = std::make_unique<Texture>(Eigen::Vector3d(0.75, 1.0, 0.5));
+    std::unique_ptr<Material> material = std::make_unique<Material>();
+    material->setNormalTexture(std::move(normal_texture));
+    hit.material = material.get();
+
+    RayIntersection::updateNormalWithTangentSpace(hit);
+
+    EXPECT_TRUE(hit.normal.isApprox(Eigen::Vector3d(0.5, 1, 0).normalized(), EPSILON));
 }

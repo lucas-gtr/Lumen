@@ -25,7 +25,7 @@
 class Renderer {
 private:
   const RenderSettings* m_render_settings;
-  const Scene*          m_scene;
+  Scene*                m_scene;
   Framebuffer*          m_framebuffer;
 
   CameraRayEmitter m_cameraRayEmitter;
@@ -43,7 +43,7 @@ public:
    * @param render_settings The render settings to be used for rendering.
    * @param scene The scene to be rendered.
    */
-  Renderer(const RenderSettings* render_settings, const Scene* scene);
+  Renderer(const RenderSettings* render_settings, Scene* scene);
 
   Renderer(const Renderer&)            = delete;
   Renderer& operator=(const Renderer&) = delete;
@@ -66,7 +66,7 @@ public:
    *
    * @param scene The new scene to render.
    */
-  void setScene(const Scene* scene) { this->m_scene = scene; }
+  void setScene(Scene* scene) { this->m_scene = scene; }
 
   /**
    * @brief Gets the current render settings.

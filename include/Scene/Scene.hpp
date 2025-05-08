@@ -10,10 +10,11 @@
 #include <utility>
 #include <vector>
 
+#include "BVH/BVHNode.hpp"
 #include "Lighting/Light.hpp"
-#include "Scene/Camera.hpp"
-#include "Scene/Object3D.hpp"
 #include "Scene/Skybox.hpp"
+#include "SceneObjects/Camera.hpp"
+#include "SceneObjects/Object3D.hpp"
 #include "Surface/Texture.hpp"
 
 /**
@@ -26,6 +27,7 @@ private:
   std::vector<std::unique_ptr<Light>>    m_light_list;
   std::unique_ptr<Camera>                m_current_camera;
   std::unique_ptr<Skybox>                m_skybox;
+  std::shared_ptr<BVHNode>               m_bvh_root = nullptr;
 
 public:
   Scene();
@@ -91,6 +93,18 @@ public:
    * @param skybox_texture A shared pointer to the Texture to be used as the skybox.
    */
   void setSkybox(const std::shared_ptr<Texture>& skybox_texture) { m_skybox->setTexture(skybox_texture); }
+
+  /**
+   * @brief Builds the bounding volume hierarchy (BVH) for the objects in the scene.
+   */
+  void buildBVH();
+
+  /**
+   * @brief Gets the bounding volume hierarchy (BVH) root node.
+   *
+   * @return A pointer to the BVHNode representing the root of the BVH.
+   */
+  const BVHNode* getBVHRoot() const { return m_bvh_root.get(); }
 
   ~Scene() = default; ///< Default destructor.
 };
