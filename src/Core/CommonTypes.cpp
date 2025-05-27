@@ -4,9 +4,7 @@ ColorRGB::ColorRGB(double red, double green, double blue) : r(red), g(green), b(
 ColorRGB::ColorRGB(double grayscale) : r(grayscale), g(grayscale), b(grayscale) {}
 ColorRGB::ColorRGB(const ColorRGBA& color) : r(color.r), g(color.g), b(color.b) {}
 
-ColorRGB ColorRGB::operator+(const ColorRGB& other) const {
-  return ColorRGB(r + other.r, g + other.g, b + other.b);
-}
+ColorRGB ColorRGB::operator+(const ColorRGB& other) const { return ColorRGB(r + other.r, g + other.g, b + other.b); }
 
 ColorRGB& ColorRGB::operator+=(const ColorRGB& other) {
   r += other.r;
@@ -15,22 +13,15 @@ ColorRGB& ColorRGB::operator+=(const ColorRGB& other) {
   return *this;
 }
 
-ColorRGB ColorRGB::operator*(double scalar) const {
-  return ColorRGB(r * scalar, g * scalar, b * scalar);
-}
+ColorRGB ColorRGB::operator*(double scalar) const { return ColorRGB(r * scalar, g * scalar, b * scalar); }
 
-ColorRGB operator*(double scalar, const ColorRGB& color) {
-  return color * scalar;
-}
+ColorRGB operator*(double scalar, const ColorRGB& color) { return color * scalar; }
 
-ColorRGBA::ColorRGBA(double red, double green, double blue, double alpha)
-    : r(red), g(green), b(blue), a(alpha) {}
+ColorRGBA::ColorRGBA(double red, double green, double blue, double alpha) : r(red), g(green), b(blue), a(alpha) {}
 
-ColorRGBA::ColorRGBA(double grayscale, double alpha)
-    : r(grayscale), g(grayscale), b(grayscale), a(alpha) {}
+ColorRGBA::ColorRGBA(double grayscale, double alpha) : r(grayscale), g(grayscale), b(grayscale), a(alpha) {}
 
-ColorRGBA::ColorRGBA(const ColorRGB& color, double alpha)
-    : r(color.r), g(color.g), b(color.b), a(alpha) {}
+ColorRGBA::ColorRGBA(const ColorRGB& color, double alpha) : r(color.r), g(color.g), b(color.b), a(alpha) {}
 
 ColorRGBA ColorRGBA::operator+(const ColorRGBA& other) const {
   return ColorRGBA(r + other.r, g + other.g, b + other.b, a + other.a);
@@ -40,6 +31,4 @@ ColorRGBA ColorRGBA::operator*(double scalar) const {
   return ColorRGBA(r * scalar, g * scalar, b * scalar, a * scalar);
 }
 
-ColorRGBA operator*(double scalar, const ColorRGBA& color) {
-  return color * scalar;
-}
+ColorRGBA operator*(double scalar, const ColorRGBA& color) { return color * scalar; }

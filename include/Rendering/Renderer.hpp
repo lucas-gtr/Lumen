@@ -29,8 +29,8 @@ private:
   CameraRayEmitter m_cameraRayEmitter;
 
   ColorRGBA traceRay(const Ray& ray) const;
-  void            renderSample(double sample_weight, PixelCoord grid_position, double cell_size);
-  bool            isValidHit(const RayHitInfo& hit_info) const;
+  void      renderSample(double sample_weight, PixelCoord grid_position, double cell_size);
+  bool      isValidHit(const RayHitInfo& hit_info) const;
 
 public:
   /**

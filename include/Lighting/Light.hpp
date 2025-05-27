@@ -27,7 +27,7 @@ private:
   LightType m_type;
 
   ColorRGB m_color     = {1.0, 1.0, 1.0};
-  double          m_intensity = 1.0;
+  double   m_intensity = 1.0;
 
 public:
   explicit Light(LightType light_type) : m_type(light_type) {} ///< Constructor with light type.
@@ -40,9 +40,9 @@ public:
   void setColor(const ColorRGB& color) { m_color = color; }
   void setIntensity(double intensity) { m_intensity = intensity; }
 
-  ColorRGB getColor() const { return m_color; }
-  double          getIntensity() const { return m_intensity; }
-  LightType       getType() const { return m_type; }
+  ColorRGB  getColor() const { return m_color; }
+  double    getIntensity() const { return m_intensity; }
+  LightType getType() const { return m_type; }
 
   /**
    * @brief Gets the direction of the light from a given point.

@@ -77,9 +77,9 @@ void Renderer::renderSample(double sample_weight, PixelCoord grid_pos, double ce
 
   for(int y = 0; y < height; ++y) {
     for(int x = 0; x < width; ++x) {
-      const double          v     = (static_cast<double>(y) + (grid_pos.y + randomUniform01()) * cell_size) * dy;
-      const double          u     = (static_cast<double>(x) + (grid_pos.x + randomUniform01()) * cell_size) * dx;
-      const Ray             ray   = m_cameraRayEmitter.generateRay(u, v);
+      const double    v     = (static_cast<double>(y) + (grid_pos.y + randomUniform01()) * cell_size) * dy;
+      const double    u     = (static_cast<double>(x) + (grid_pos.x + randomUniform01()) * cell_size) * dx;
+      const Ray       ray   = m_cameraRayEmitter.generateRay(u, v);
       const ColorRGBA color = traceRay(ray);
       m_framebuffer->setPixelColor({x, y}, color, sample_weight);
     }
@@ -113,12 +113,8 @@ ColorRGBA Renderer::traceRay(const Ray& ray) const {
     light_factor += light->getLightFactor(hit_info.hitPoint, hit_info.normal);
   }
 
-  ColorRGBA final_color = {
-      diffuse_color.r * light_factor.r,
-      diffuse_color.g * light_factor.g,
-      diffuse_color.b * light_factor.b,
-      diffuse_color.a
-  };
+  ColorRGBA final_color = {diffuse_color.r * light_factor.r, diffuse_color.g * light_factor.g,
+                           diffuse_color.b * light_factor.b, diffuse_color.a};
   return final_color;
 }
 

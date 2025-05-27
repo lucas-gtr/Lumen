@@ -126,9 +126,7 @@ public:
    * @brief Sets the border color (RGB) of the texture.
    * @param color The new border color for the texture.
    */
-  void setBorderColor(const ColorRGB& color) {
-    m_border_color = ColorRGBA(color, 1.0);
-  }
+  void setBorderColor(const ColorRGB& color) { m_border_color = ColorRGBA(color, 1.0); }
 
   /**
    * @brief Sets the border color (grayscale) of the texture.

@@ -72,9 +72,9 @@ struct ColorRGB {
   ColorRGB(double grayscale);
   ColorRGB(const ColorRGBA& color); // Ne pas définir ici
 
-  ColorRGB operator+(const ColorRGB& other) const;
+  ColorRGB  operator+(const ColorRGB& other) const;
   ColorRGB& operator+=(const ColorRGB& other);
-  ColorRGB operator*(double scalar) const;
+  ColorRGB  operator*(double scalar) const;
 
   friend ColorRGB operator*(double scalar, const ColorRGB& color);
 };

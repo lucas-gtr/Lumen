@@ -10,8 +10,8 @@
 #include "Surface/Texture.hpp"
 
 Skybox::Skybox() {
-  m_texture = std::make_shared<Texture>(
-      ColorRGBA(DEFAULT_SKYBOX_COLOR_R, DEFAULT_SKYBOX_COLOR_G, DEFAULT_SKYBOX_COLOR_B, 1.0));
+  m_texture =
+      std::make_shared<Texture>(ColorRGBA(DEFAULT_SKYBOX_COLOR_R, DEFAULT_SKYBOX_COLOR_G, DEFAULT_SKYBOX_COLOR_B, 1.0));
   m_texture->setColorSpace(ColorSpace::RGB);
 }
 

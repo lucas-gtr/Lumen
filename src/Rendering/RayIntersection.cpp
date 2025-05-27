@@ -123,7 +123,7 @@ void updateNormalWithTangentSpace(RayHitInfo& hit_info) {
   tangent_space.col(1) = hit_info.bitangent;
   tangent_space.col(2) = hit_info.normal;
 
-  ColorRGB normal_color = hit_info.material->getNormal(hit_info.uvCoordinates);
+  ColorRGB        normal_color     = hit_info.material->getNormal(hit_info.uvCoordinates);
   Eigen::Vector3d normal_direction = {normal_color.r, normal_color.g, normal_color.b};
   normal_direction                 = (normal_direction * 2) - Eigen::Vector3d(1.0, 1.0, 1.0);
 
