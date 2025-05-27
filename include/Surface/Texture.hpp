@@ -5,7 +5,6 @@
 #ifndef SURFACE_TEXTURE_HPP
 #define SURFACE_TEXTURE_HPP
 
-#include <Eigen/Core>
 #include <cstdint>
 
 #include "Core/CommonTypes.hpp"
@@ -41,7 +40,7 @@ private:
   TextureSampling::TextureFiltering m_filtering_mode = TextureSampling::TextureFiltering::BILINEAR;
   TextureSampling::TextureWrapping  m_wrapping_mode  = TextureSampling::TextureWrapping::MIRRORED_REPEAT;
 
-  Eigen::Vector4d m_border_color;
+  ColorRGBA m_border_color;
 
 public:
   /**
@@ -54,13 +53,13 @@ public:
    * @brief Constructor for the Texture class with color.
    * @param color The initial color for the texture.
    */
-  explicit Texture(const Eigen::Vector3d& color);
+  explicit Texture(const ColorRGB& color);
 
   /**
    * @brief Constructor for the Texture class with RGBA color.
    * @param color The initial RGBA color for the texture.
    */
-  explicit Texture(const Eigen::Vector4d& color);
+  explicit Texture(const ColorRGBA& color);
 
   /**
    * @brief Constructor for the Texture class with image data (as unsigned char).
@@ -91,13 +90,13 @@ public:
    * @brief Sets the value of the texture with color.
    * @param color The new RGB color for the texture.
    */
-  void setValue(const Eigen::Vector3d& color);
+  void setValue(const ColorRGB& color);
 
   /**
    * @brief Sets the value of the texture with RGBA color.
    * @param color The new RGBA color for the texture.
    */
-  void setValue(const Eigen::Vector4d& color);
+  void setValue(const ColorRGBA& color);
 
   /**
    * @brief Sets the color space of the texture.
@@ -121,21 +120,21 @@ public:
    * @brief Sets the border color (RGBA) of the texture.
    * @param color The new border color for the texture.
    */
-  void setBorderColor(const Eigen::Vector4d& color) { m_border_color = color; }
+  void setBorderColor(const ColorRGBA& color) { m_border_color = color; }
 
   /**
    * @brief Sets the border color (RGB) of the texture.
    * @param color The new border color for the texture.
    */
-  void setBorderColor(const Eigen::Vector3d& color) {
-    m_border_color = Eigen::Vector4d(color.x(), color.y(), color.z(), 1.0);
+  void setBorderColor(const ColorRGB& color) {
+    m_border_color = ColorRGBA(color, 1.0);
   }
 
   /**
    * @brief Sets the border color (grayscale) of the texture.
    * @param value The new grayscale value for the border color.
    */
-  void setBorderColor(double value) { m_border_color = Eigen::Vector4d(value, value, value, 1.0); }
+  void setBorderColor(double value) { m_border_color = {value, value, value, 1.0}; }
 
   /**
    * @brief Sets the image data of the texture.
@@ -158,15 +157,6 @@ public:
   /**
    * @brief Gets the value of the texture.
    * @param uv_coord The texture coordinates (u, v).
-   * @param channels The number of color channels to sample.
-   *
-   * @return The value of the texture as an Eigen vector.
-   */
-  Eigen::VectorXd getValueNd(TextureUV uv_coord, int channels) const;
-
-  /**
-   * @brief Gets the value of the texture.
-   * @param uv_coord The texture coordinates (u, v).
    *
    * @return The value of the texture.
    */
@@ -178,7 +168,7 @@ public:
    *
    * @return The color RGB of the texture.
    */
-  Eigen::Vector3d getValue3d(TextureUV uv_coord) const;
+  ColorRGB getValue3d(TextureUV uv_coord) const;
 
   /**
    * @brief Gets the color of the texture with alpha.
@@ -186,7 +176,7 @@ public:
    *
    * @return The color RGBA of the texture.
    */
-  Eigen::Vector4d getValue4d(TextureUV uv_coord) const;
+  ColorRGBA getValue4d(TextureUV uv_coord) const;
 
   ~Texture(); ///< Destructor.
 };

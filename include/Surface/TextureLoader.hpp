@@ -5,8 +5,9 @@
 #ifndef SURFACE_TEXTURELOADER_HPP
 #define SURFACE_TEXTURELOADER_HPP
 
-#include "Surface/Texture.hpp"
 #include <memory>
+
+#include "Surface/Texture.hpp"
 
 namespace TextureLoader {
 /**

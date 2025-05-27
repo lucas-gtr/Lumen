@@ -5,8 +5,10 @@
 #ifndef LIGHTING_DIRECTIONALLIGHT_HPP
 #define LIGHTING_DIRECTIONALLIGHT_HPP
 
-#include "Lighting/Light.hpp"
 #include <Eigen/Core>
+
+#include "Core/CommonTypes.hpp"
+#include "Lighting/Light.hpp"
 
 /**
  * @class DirectionalLight
@@ -53,7 +55,7 @@ public:
    * @param normal The normal vector at the point.
    * @return The light factor at the given point and normal.
    */
-  Eigen::Vector3d getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const override;
+  ColorRGB getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const override;
 
   ~DirectionalLight() override = default; ///< Default destructor.
 };

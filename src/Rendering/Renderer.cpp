@@ -80,7 +80,7 @@ void Renderer::renderSample(double sample_weight, PixelCoord grid_pos, double ce
       const double          v     = (static_cast<double>(y) + (grid_pos.y + randomUniform01()) * cell_size) * dy;
       const double          u     = (static_cast<double>(x) + (grid_pos.x + randomUniform01()) * cell_size) * dx;
       const Ray             ray   = m_cameraRayEmitter.generateRay(u, v);
-      const Eigen::Vector4d color = traceRay(ray);
+      const ColorRGBA color = traceRay(ray);
       m_framebuffer->setPixelColor({x, y}, color, sample_weight);
     }
   }
@@ -91,15 +91,15 @@ bool Renderer::isValidHit(const RayHitInfo& hit_info) const {
   return distance >= m_render_settings->getNearPlane() && distance <= m_render_settings->getFarPlane();
 }
 
-Eigen::Vector4d Renderer::traceRay(const Ray& ray) const {
+ColorRGBA Renderer::traceRay(const Ray& ray) const {
   const RayHitInfo hit_info = RayIntersection::getSceneIntersection(ray, m_scene);
   if(!isValidHit(hit_info)) {
     return m_scene->getSkyboxColor(ray.direction);
   }
 
-  const Eigen::Vector4d diffuse_color = hit_info.material->getAlbedo(hit_info.uvCoordinates);
+  const ColorRGBA diffuse_color = hit_info.material->getAlbedo(hit_info.uvCoordinates);
 
-  Eigen::Vector3d light_factor = {0.0, 0.0, 0.0};
+  ColorRGB light_factor = {0.0, 0.0, 0.0};
   for(const auto& light : m_scene->getLightList()) {
     Ray shadow_ray;
     shadow_ray.direction = light->getDirectionFromPoint(hit_info.hitPoint);
@@ -113,9 +113,12 @@ Eigen::Vector4d Renderer::traceRay(const Ray& ray) const {
     light_factor += light->getLightFactor(hit_info.hitPoint, hit_info.normal);
   }
 
-  Eigen::Vector4d final_color;
-  final_color.head<3>() = diffuse_color.head<3>().cwiseProduct(light_factor);
-  final_color[3]        = diffuse_color[3];
+  ColorRGBA final_color = {
+      diffuse_color.r * light_factor.r,
+      diffuse_color.g * light_factor.g,
+      diffuse_color.b * light_factor.b,
+      diffuse_color.a
+  };
   return final_color;
 }
 

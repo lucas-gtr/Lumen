@@ -1,4 +1,3 @@
-#include <Eigen/Core>
 #include <algorithm>
 #include <cmath>
 #include <cstddef>
@@ -15,17 +14,17 @@ Texture::Texture(double value) : m_texture_properties({1, 1, 1}), m_image_data(n
   m_image_data[0] = value;
 }
 
-Texture::Texture(const Eigen::Vector3d& color) : m_texture_properties({1, 1, 3}), m_image_data(new double[3]) {
-  m_image_data[0] = color.x();
-  m_image_data[1] = color.y();
-  m_image_data[2] = color.z();
+Texture::Texture(const ColorRGB& color) : m_texture_properties({1, 1, 3}), m_image_data(new double[3]) {
+  m_image_data[0] = color.r;
+  m_image_data[1] = color.g;
+  m_image_data[2] = color.b;
 }
 
-Texture::Texture(const Eigen::Vector4d& color) : m_texture_properties({1, 1, 4}), m_image_data(new double[4]) {
-  m_image_data[0] = color.x();
-  m_image_data[1] = color.y();
-  m_image_data[2] = color.z();
-  m_image_data[3] = color.w();
+Texture::Texture(const ColorRGBA& color) : m_texture_properties({1, 1, 4}), m_image_data(new double[4]) {
+  m_image_data[0] = color.r;
+  m_image_data[1] = color.g;
+  m_image_data[2] = color.b;
+  m_image_data[3] = color.a;
 }
 
 Texture::Texture(const unsigned char* image_data, ImageProperties texture_properties)
@@ -97,27 +96,27 @@ void Texture::setValue(double value) {
   m_image_data[0] = value;
 }
 
-void Texture::setValue(const Eigen::Vector3d& color) {
+void Texture::setValue(const ColorRGB& color) {
   delete[] m_image_data;
 
   m_texture_properties = {1, 1, 3};
   // NOLINTNEXTLINE(cppcoreguidelines-owning-memory)
   m_image_data    = new double[3];
-  m_image_data[0] = color.x();
-  m_image_data[1] = color.y();
-  m_image_data[2] = color.z();
+  m_image_data[0] = color.r;
+  m_image_data[1] = color.g;
+  m_image_data[2] = color.b;
 }
 
-void Texture::setValue(const Eigen::Vector4d& color) {
+void Texture::setValue(const ColorRGBA& color) {
   delete[] m_image_data;
 
   m_texture_properties = {1, 1, 4};
   // NOLINTNEXTLINE(cppcoreguidelines-owning-memory)
   m_image_data    = new double[4];
-  m_image_data[0] = color.x();
-  m_image_data[1] = color.y();
-  m_image_data[2] = color.z();
-  m_image_data[3] = color.w();
+  m_image_data[0] = color.r;
+  m_image_data[1] = color.g;
+  m_image_data[2] = color.b;
+  m_image_data[3] = color.a;
 }
 
 void Texture::setImageData(const double* image_data, ImageProperties texture_properties) {
@@ -144,43 +143,43 @@ void Texture::flipVertically() {
   }
 }
 
-Eigen::VectorXd Texture::getValueNd(TextureUV uv_coord, int channels) const {
-  switch(m_filtering_mode) {
-  case TextureSampling::TextureFiltering::NEAREST: {
-    auto pixel_coord =
-        TextureSampling::sampleNearest(uv_coord, {m_texture_properties.width, m_texture_properties.height});
-    Eigen::VectorXd result(channels);
-    for(int c = 0; c < channels; ++c) {
-      result[c] = m_image_data[pixel_coord.y * m_texture_properties.width * m_texture_properties.channels +
-                               pixel_coord.x * m_texture_properties.channels + c];
-    }
-    return result;
-  }
-  case TextureSampling::TextureFiltering::BILINEAR: {
-    const auto info =
-        TextureSampling::sampleBilinear(uv_coord, {m_texture_properties.width, m_texture_properties.height});
-    Eigen::VectorXd c00(channels);
-    Eigen::VectorXd c01(channels);
-    Eigen::VectorXd c10(channels);
-    Eigen::VectorXd c11(channels);
+// Eigen::VectorXd Texture::getValueNd(TextureUV uv_coord, int channels) const {
+//   switch(m_filtering_mode) {
+//     case TextureSampling::TextureFiltering::NEAREST: {
+//       auto pixel_coord =
+//           TextureSampling::sampleNearest(uv_coord, {m_texture_properties.width, m_texture_properties.height});
+//       Eigen::VectorXd result(channels);
+//       for(int c = 0; c < channels; ++c) {
+//         result[c] = m_image_data[pixel_coord.y * m_texture_properties.width * m_texture_properties.channels +
+//                                 pixel_coord.x * m_texture_properties.channels + c];
+//       }
+//       return result;
+//     }
+//     case TextureSampling::TextureFiltering::BILINEAR: {
+//       const auto info =
+//           TextureSampling::sampleBilinear(uv_coord, {m_texture_properties.width, m_texture_properties.height});
+//       Eigen::VectorXd c00(channels);
+//       Eigen::VectorXd c01(channels);
+//       Eigen::VectorXd c10(channels);
+//       Eigen::VectorXd c11(channels);
 
-    for(int c = 0; c < channels; ++c) {
-      c00[c] = m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
-                            info.x0 * m_texture_properties.channels + c];
-      c01[c] = m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
-                            info.x1 * m_texture_properties.channels + c];
-      c10[c] = m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
-                            info.x0 * m_texture_properties.channels + c];
-      c11[c] = m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
-                            info.x1 * m_texture_properties.channels + c];
-    }
-    return (1.0 - info.dx) * (1.0 - info.dy) * c00 + info.dx * (1.0 - info.dy) * c01 + (1.0 - info.dx) * info.dy * c10 +
-           info.dx * info.dy * c11;
-  }
-  }
+//       for(int c = 0; c < channels; ++c) {
+//         c00[c] = m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+//                               info.x0 * m_texture_properties.channels + c];
+//         c01[c] = m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+//                               info.x1 * m_texture_properties.channels + c];
+//         c10[c] = m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+//                               info.x0 * m_texture_properties.channels + c];
+//         c11[c] = m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+//                               info.x1 * m_texture_properties.channels + c];
+//       }
+//       return (1.0 - info.dx) * (1.0 - info.dy) * c00 + info.dx * (1.0 - info.dy) * c01 + (1.0 - info.dx) * info.dy * c10 +
+//             info.dx * info.dy * c11;
+//     }
+//   }
 
-  return Eigen::VectorXd::Zero(channels);
-}
+//   return Eigen::VectorXd::Zero(channels);
+// }
 
 double Texture::getValue1d(TextureUV uv_coord) const {
   if(m_texture_properties.channels == 3) {
@@ -195,10 +194,31 @@ double Texture::getValue1d(TextureUV uv_coord) const {
     return toGrayscale(m_border_color);
   }
 
-  return getValueNd(uv_coord, 1)[0];
+  switch(m_filtering_mode) {
+    case TextureSampling::TextureFiltering::NEAREST: {
+      auto pixel_coord =
+          TextureSampling::sampleNearest(uv_coord, {m_texture_properties.width, m_texture_properties.height});
+      return m_image_data[pixel_coord.y * m_texture_properties.width * m_texture_properties.channels +
+                          pixel_coord.x * m_texture_properties.channels];
+      }
+    case TextureSampling::TextureFiltering::BILINEAR: {
+      const auto info =
+          TextureSampling::sampleBilinear(uv_coord, {m_texture_properties.width, m_texture_properties.height});
+      double c00 = m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x0 * m_texture_properties.channels];
+      double c01 = m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x1 * m_texture_properties.channels];
+      double c10 = m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x0 * m_texture_properties.channels];
+      double c11 = m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x1 * m_texture_properties.channels];
+      return (1.0 - info.dx) * (1.0 - info.dy) * c00 + info.dx * (1.0 - info.dy) * c01 + (1.0 - info.dx) * info.dy * c10 +
+             info.dx * info.dy * c11;
+    }
+  }
 }
 
-Eigen::Vector3d Texture::getValue3d(TextureUV uv_coord) const {
+ColorRGB Texture::getValue3d(TextureUV uv_coord) const {
   if(m_texture_properties.channels == 1) {
     return toRGB(getValue1d(uv_coord));
   }
@@ -208,13 +228,54 @@ Eigen::Vector3d Texture::getValue3d(TextureUV uv_coord) const {
 
   TextureSampling::wrapCoordinates(uv_coord, m_wrapping_mode);
   if(uv_coord.u == -1.0 || uv_coord.v == -1.0) {
-    return m_border_color.head<3>();
+    return ColorRGB(m_border_color);
   }
 
-  return getValueNd(uv_coord, 3);
+  switch(m_filtering_mode) {
+    case TextureSampling::TextureFiltering::NEAREST: {
+      auto pixel_coord =
+          TextureSampling::sampleNearest(uv_coord, {m_texture_properties.width, m_texture_properties.height});
+      return ColorRGB(m_image_data[pixel_coord.y * m_texture_properties.width * m_texture_properties.channels +
+                                   pixel_coord.x * m_texture_properties.channels + 0],
+                      m_image_data[pixel_coord.y * m_texture_properties.width * m_texture_properties.channels +
+                                   pixel_coord.x * m_texture_properties.channels + 1],
+                      m_image_data[pixel_coord.y * m_texture_properties.width * m_texture_properties.channels +
+                                   pixel_coord.x * m_texture_properties.channels + 2]);
+    }
+    case TextureSampling::TextureFiltering::BILINEAR: {
+      const auto info =
+          TextureSampling::sampleBilinear(uv_coord, {m_texture_properties.width, m_texture_properties.height});
+      ColorRGB c00(m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x0 * m_texture_properties.channels + 0],
+                   m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x0 * m_texture_properties.channels + 1],
+                   m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x0 * m_texture_properties.channels + 2]);
+      ColorRGB c01(m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x1 * m_texture_properties.channels + 0],
+                   m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x1 * m_texture_properties.channels + 1],
+                   m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x1 * m_texture_properties.channels + 2]);
+      ColorRGB c10(m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x0 * m_texture_properties.channels + 0],
+                   m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x0 * m_texture_properties.channels + 1],
+                   m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x0 * m_texture_properties.channels + 2]);
+      ColorRGB c11(m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x1 * m_texture_properties.channels + 0],
+                   m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x1 * m_texture_properties.channels + 1],
+                   m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x1 * m_texture_properties.channels + 2]);
+      return (1.0 - info.dx) * (1.0 - info.dy) * c00 + info.dx * (1.0 - info.dy) * c01 + (1.0 - info.dx) * info.dy * c10 +
+             info.dx * info.dy * c11;
+    }
+  }
 }
 
-Eigen::Vector4d Texture::getValue4d(TextureUV uv_coord) const {
+ColorRGBA Texture::getValue4d(TextureUV uv_coord) const {
   if(m_texture_properties.channels == 1) {
     return toRGBA(getValue1d(uv_coord));
   }
@@ -227,7 +288,58 @@ Eigen::Vector4d Texture::getValue4d(TextureUV uv_coord) const {
     return m_border_color;
   }
 
-  return getValueNd(uv_coord, 4);
+  switch(m_filtering_mode) {
+    case TextureSampling::TextureFiltering::NEAREST: {
+      auto pixel_coord =
+          TextureSampling::sampleNearest(uv_coord, {m_texture_properties.width, m_texture_properties.height});
+      return ColorRGBA(m_image_data[pixel_coord.y * m_texture_properties.width * m_texture_properties.channels +
+                                   pixel_coord.x * m_texture_properties.channels + 0],
+                      m_image_data[pixel_coord.y * m_texture_properties.width * m_texture_properties.channels +
+                                   pixel_coord.x * m_texture_properties.channels + 1],
+                      m_image_data[pixel_coord.y * m_texture_properties.width * m_texture_properties.channels +
+                                   pixel_coord.x * m_texture_properties.channels + 2],
+                      m_image_data[pixel_coord.y * m_texture_properties.width * m_texture_properties.channels +
+                                   pixel_coord.x * m_texture_properties.channels + 3]);
+    }
+    case TextureSampling::TextureFiltering::BILINEAR: {
+      const auto info =
+          TextureSampling::sampleBilinear(uv_coord, {m_texture_properties.width, m_texture_properties.height});
+      ColorRGBA c00(m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x0 * m_texture_properties.channels + 0],
+                   m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x0 * m_texture_properties.channels + 1],
+                   m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x0 * m_texture_properties.channels + 2],
+                   m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x0 * m_texture_properties.channels + 3]);
+      ColorRGBA c01(m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x1 * m_texture_properties.channels + 0],
+                   m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x1 * m_texture_properties.channels + 1],
+                   m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x1 * m_texture_properties.channels + 2],
+                   m_image_data[info.y0 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x1 * m_texture_properties.channels + 3]);
+      ColorRGBA c10(m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x0 * m_texture_properties.channels + 0],
+                   m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x0 * m_texture_properties.channels + 1],
+                   m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x0 * m_texture_properties.channels + 2],
+                   m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x0 * m_texture_properties.channels + 3]);
+      ColorRGBA c11(m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x1 * m_texture_properties.channels + 0],
+                   m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x1 * m_texture_properties.channels + 1],
+                   m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x1 * m_texture_properties.channels + 2],
+                   m_image_data[info.y1 * m_texture_properties.width * m_texture_properties.channels +
+                                 info.x1 * m_texture_properties.channels + 3]);
+      return (1.0 - info.dx) * (1.0 - info.dy) * c00 + info.dx * (1.0 - info.dy) * c01 + (1.0 - info.dx) * info.dy * c10 +
+             info.dx * info.dy * c11;
+    }
+  }
 }
 
 void Texture::setColorSpace(ColorSpace colorSpace) {

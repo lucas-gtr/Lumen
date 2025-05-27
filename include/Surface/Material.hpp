@@ -5,7 +5,6 @@
 #ifndef SURFACE_MATERIAL_HPP
 #define SURFACE_MATERIAL_HPP
 
-#include <Eigen/Core>
 #include <memory>
 
 #include "Core/CommonTypes.hpp"
@@ -45,12 +44,12 @@ public:
    * @brief Gets the albedo texture of this material.
    * @return The albedo texture.
    */
-  Eigen::Vector4d getAlbedo(TextureUV uv_coord) const;
+  ColorRGBA getAlbedo(TextureUV uv_coord) const;
   /**
    * @brief Gets the normal texture of this material.
    * @return The normal texture.
    */
-  Eigen::Vector3d getNormal(TextureUV uv_coord) const;
+  ColorRGB getNormal(TextureUV uv_coord) const;
 
   ~Material() = default; ///< Default destructor.
 };

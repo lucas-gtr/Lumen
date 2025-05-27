@@ -5,9 +5,9 @@
 #ifndef SURFACE_TEXTUREWRAPPING_HPP
 #define SURFACE_TEXTUREWRAPPING_HPP
 
-#include "Core/CommonTypes.hpp"
-
 #include <cstdint>
+
+#include "Core/CommonTypes.hpp"
 
 namespace TextureSampling {
 

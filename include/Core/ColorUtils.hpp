@@ -5,8 +5,9 @@
 #ifndef CORE_COLORUTILS_HPP
 #define CORE_COLORUTILS_HPP
 
-#include <Eigen/Core>
 #include <cmath>
+
+#include "CommonTypes.hpp"
 
 static constexpr double NORMALIZED_TO_COLOR8 = 255.999;
 static constexpr int    COLOR8_MAX_VALUE     = 255;
@@ -32,8 +33,8 @@ static constexpr double COLOR_SPACE_ADDENDUM  = 0.055;
  * @param color The color vector (r, g, b).
  * @return The grayscale value.
  */
-inline double toGrayscale(const Eigen::Vector3d& color) {
-  return RED_CHANNEL * color.x() + GREEN_CHANNEL * color.y() + BLUE_CHANNEL * color.z();
+inline double toGrayscale(const ColorRGB& color) {
+  return RED_CHANNEL * color.r + GREEN_CHANNEL * color.g + BLUE_CHANNEL * color.b;
 }
 
 /**
@@ -41,8 +42,8 @@ inline double toGrayscale(const Eigen::Vector3d& color) {
  * @param color The color vector (r, g, b, a).
  * @return The grayscale value.
  */
-inline double toGrayscale(const Eigen::Vector4d& color) {
-  return RED_CHANNEL * color.x() + GREEN_CHANNEL * color.y() + BLUE_CHANNEL * color.z();
+inline double toGrayscale(const ColorRGBA& color) {
+  return RED_CHANNEL * color.r + GREEN_CHANNEL * color.g + BLUE_CHANNEL * color.b;
 }
 
 /**
@@ -50,28 +51,28 @@ inline double toGrayscale(const Eigen::Vector4d& color) {
  * @param grayscale The grayscale value.
  * @return The RGB color vector (r, g, b).
  */
-inline Eigen::Vector3d toRGB(double grayscale) { return {grayscale, grayscale, grayscale}; }
+inline ColorRGB toRGB(double grayscale) { return {grayscale, grayscale, grayscale}; }
 
 /**
  * @brief Converts a color represented as a 4D vector to an RGB color.
  * @param color The color vector (r, g, b, a).
  * @return The RGB color vector (r, g, b).
  */
-inline Eigen::Vector3d toRGB(const Eigen::Vector4d& color) { return {color.x(), color.y(), color.z()}; }
+inline ColorRGB toRGB(const ColorRGBA& color) { return {color.r, color.g, color.b}; }
 
 /**
  * @brief Converts a grayscale value to an RGBA color.
  * @param grayscale The grayscale value.
  * @return The RGBA color vector (r, g, b, a).
  */
-inline Eigen::Vector4d toRGBA(double grayscale) { return {grayscale, grayscale, grayscale, 1.0}; }
+inline ColorRGBA toRGBA(double grayscale) { return {grayscale, grayscale, grayscale, 1.0}; }
 
 /**
  * @brief Converts a color represented as a 3D vector to an RGBA color.
  * @param color The color vector (r, g, b).
  * @return The RGBA color vector (r, g, b, a).
  */
-inline Eigen::Vector4d toRGBA(const Eigen::Vector3d& color) { return {color.x(), color.y(), color.z(), 1.0}; }
+inline ColorRGBA toRGBA(const ColorRGB& color) { return {color.r, color.g, color.b, 1.0}; }
 
 /**
  * @brief Converts a value from linear space to sRGB space.

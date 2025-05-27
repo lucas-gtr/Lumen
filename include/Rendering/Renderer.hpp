@@ -5,8 +5,6 @@
 #ifndef RENDERING_RENDERER_HPP
 #define RENDERING_RENDERER_HPP
 
-#include <Eigen/Core>
-
 #include "Core/CommonTypes.hpp"
 #include "Core/Framebuffer.hpp"
 #include "Core/Ray.hpp"
@@ -30,7 +28,7 @@ private:
 
   CameraRayEmitter m_cameraRayEmitter;
 
-  Eigen::Vector4d traceRay(const Ray& ray) const;
+  ColorRGBA traceRay(const Ray& ray) const;
   void            renderSample(double sample_weight, PixelCoord grid_position, double cell_size);
   bool            isValidHit(const RayHitInfo& hit_info) const;
 

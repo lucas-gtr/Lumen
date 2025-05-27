@@ -1,4 +1,5 @@
 add_library(Core STATIC
+    CommonTypes.cpp
     Framebuffer.cpp
     Transform.cpp
     Random.cpp

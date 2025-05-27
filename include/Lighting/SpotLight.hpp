@@ -8,6 +8,7 @@
 #include <Eigen/Core>
 #include <algorithm>
 
+#include "Core/CommonTypes.hpp"
 #include "Core/Config.hpp"
 #include "Core/MathConstants.hpp"
 #include "Lighting/Light.hpp"
@@ -84,7 +85,7 @@ public:
    * @param normal The normal vector at the point.
    * @return The light factor at the given point and normal.
    */
-  Eigen::Vector3d getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const override;
+  ColorRGB getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const override;
 
   ~SpotLight() override = default; ///< Default destructor.
 };

@@ -8,7 +8,7 @@ Eigen::Vector3d PointLight::getDirectionFromPoint(const Eigen::Vector3d& point) 
 }
 
 // NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
-Eigen::Vector3d PointLight::getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const {
+ColorRGB PointLight::getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const {
   const double          distance    = (point - getPosition()).norm();
   const double          attenuation = getIntensity() / (distance * distance);
   const Eigen::Vector3d light_dir   = (getPosition() - point).normalized();

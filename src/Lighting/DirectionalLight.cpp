@@ -11,7 +11,7 @@ Eigen::Vector3d DirectionalLight::getDirection() const { return m_direction; }
 Eigen::Vector3d DirectionalLight::getDirectionFromPoint(const Eigen::Vector3d& point) const { return -m_direction; }
 
 // NOLINTNEXTLINE(misc-unused-parameters, bugprone-easily-swappable-parameters)
-Eigen::Vector3d DirectionalLight::getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const {
+ColorRGB DirectionalLight::getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const {
   const double dot_product = normal.dot(-m_direction);
   return getIntensity() * getColor() * std::max(0.0, dot_product);
 }

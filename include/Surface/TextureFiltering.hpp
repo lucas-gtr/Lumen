@@ -5,9 +5,9 @@
 #ifndef SURFACE_TEXTUREFILTERING_HPP
 #define SURFACE_TEXTUREFILTERING_HPP
 
-#include "Core/CommonTypes.hpp"
-
 #include <cstdint>
+
+#include "Core/CommonTypes.hpp"
 
 namespace TextureSampling {
 
