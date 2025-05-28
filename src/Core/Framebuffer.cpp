@@ -2,7 +2,6 @@
 #include "Core/ColorUtils.hpp"
 #include "Core/CommonTypes.hpp"
 
-#include <Eigen/Core>
 #include <algorithm>
 #include <cstdint>
 #include <iostream>

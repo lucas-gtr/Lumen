@@ -36,11 +36,15 @@ TEST_F(PointLightTest, GetLightFactorConsidersDistanceAndNormalInclination) {
     normalSlightlyInclined.x() += 0.1; 
     normalSlightlyInclined.normalize();
 
-    Eigen::Vector3d factorNearFacing = light.getLightFactor(pointNear, normalFacing);
-    Eigen::Vector3d factorNearInclined = light.getLightFactor(pointNear, normalSlightlyInclined);
-    Eigen::Vector3d factorFarFacing = light.getLightFactor(pointFar, normalFacing);
+    ColorRGB factorNearFacing = light.getLightFactor(pointNear, normalFacing);
+    ColorRGB factorNearInclined = light.getLightFactor(pointNear, normalSlightlyInclined);
+    ColorRGB factorFarFacing = light.getLightFactor(pointFar, normalFacing);
 
-    EXPECT_GT(factorNearFacing.norm(), factorNearInclined.norm());
-    EXPECT_GT(factorNearFacing.norm(), factorFarFacing.norm());
+    EXPECT_GT(factorNearFacing.r, factorNearInclined.r);
+    EXPECT_GT(factorNearFacing.g, factorNearInclined.g);
+    EXPECT_GT(factorNearFacing.b, factorNearInclined.b);
+    EXPECT_LT(factorFarFacing.r, factorNearFacing.r);
+    EXPECT_LT(factorFarFacing.g, factorNearFacing.g);   
+    EXPECT_LT(factorFarFacing.b, factorNearFacing.b);
 }
 

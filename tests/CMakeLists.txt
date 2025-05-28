@@ -3,6 +3,7 @@ add_executable(Tests tests.cpp)
 target_sources(Tests PRIVATE 
     BVH/BVHBuilderTests.cpp
     BVH/BVHNodeTests.cpp
+    Core/CommonTypesTests.cpp
     Core/ColorUtilsTests.cpp
     Core/FramebufferTests.cpp
     Core/RandomTests.cpp

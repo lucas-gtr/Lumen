@@ -120,6 +120,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae41d7097a9a6cd84d4a5169a6861ec25" id="r_ae41d7097a9a6cd84d4a5169a6861ec25"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMesh.html#ae41d7097a9a6cd84d4a5169a6861ec25">operator==</a> (const <a class="el" href="classMesh.html">Mesh</a> &amp;other) const</td></tr>
 <tr class="memdesc:ae41d7097a9a6cd84d4a5169a6861ec25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operator for comparing two meshes.  <br /></td></tr>
 <tr class="separator:ae41d7097a9a6cd84d4a5169a6861ec25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af878c0757498120946741121e262571c" id="r_af878c0757498120946741121e262571c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMesh.html#af878c0757498120946741121e262571c">buildBVH</a> ()</td></tr>
+<tr class="memdesc:af878c0757498120946741121e262571c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds the bounding volume hierarchy (<a class="el" href="namespaceBVH.html" title="Namespace for Bounding Volume Hierarchy (BVH) related functions.">BVH</a>) for the mesh.  <br /></td></tr>
+<tr class="separator:af878c0757498120946741121e262571c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a8d2865e00f14a0d0f215870415e042" id="r_a6a8d2865e00f14a0d0f215870415e042"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classBVHNode.html">BVHNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMesh.html#a6a8d2865e00f14a0d0f215870415e042">getBVHRoot</a> () const</td></tr>
+<tr class="memdesc:a6a8d2865e00f14a0d0f215870415e042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the bounding volume hierarchy (<a class="el" href="namespaceBVH.html" title="Namespace for Bounding Volume Hierarchy (BVH) related functions.">BVH</a>) root node of the mesh.  <br /></td></tr>
+<tr class="separator:a6a8d2865e00f14a0d0f215870415e042"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3654f011325ece82e0dffe148cef6e63" id="r_a3654f011325ece82e0dffe148cef6e63"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMesh.html#a3654f011325ece82e0dffe148cef6e63">~Mesh</a> ()=default</td></tr>
 <tr class="memdesc:a3654f011325ece82e0dffe148cef6e63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
 <tr class="separator:a3654f011325ece82e0dffe148cef6e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -275,6 +281,53 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af878c0757498120946741121e262571c" name="af878c0757498120946741121e262571c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af878c0757498120946741121e262571c">&#9670;&#160;</a></span>buildBVH()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mesh::buildBVH </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Builds the bounding volume hierarchy (<a class="el" href="namespaceBVH.html" title="Namespace for Bounding Volume Hierarchy (BVH) related functions.">BVH</a>) for the mesh. </p>
+
+</div>
+</div>
+<a id="a6a8d2865e00f14a0d0f215870415e042" name="a6a8d2865e00f14a0d0f215870415e042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a8d2865e00f14a0d0f215870415e042">&#9670;&#160;</a></span>getBVHRoot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classBVHNode.html">BVHNode</a> * Mesh::getBVHRoot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the bounding volume hierarchy (<a class="el" href="namespaceBVH.html" title="Namespace for Bounding Volume Hierarchy (BVH) related functions.">BVH</a>) root node of the mesh. </p>
+<dl class="section return"><dt>Returns</dt><dd>A shared pointer to the <a class="el" href="namespaceBVH.html" title="Namespace for Bounding Volume Hierarchy (BVH) related functions.">BVH</a> root node. </dd></dl>
+
+</div>
+</div>
 <a id="ad356c83c10098f1d92e7e0ed4c7a32e6" name="ad356c83c10098f1d92e7e0ed4c7a32e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad356c83c10098f1d92e7e0ed4c7a32e6">&#9670;&#160;</a></span>getFaces()</h2>
 

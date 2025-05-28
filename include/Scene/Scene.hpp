@@ -5,11 +5,13 @@
 #ifndef SCENE_SCENE_HPP
 #define SCENE_SCENE_HPP
 
+#include <Eigen/Core>
 #include <memory>
 #include <utility>
 #include <vector>
 
 #include "BVH/BVHNode.hpp"
+#include "Core/CommonTypes.hpp"
 #include "Lighting/Light.hpp"
 #include "Scene/Skybox.hpp"
 #include "SceneObjects/Camera.hpp"

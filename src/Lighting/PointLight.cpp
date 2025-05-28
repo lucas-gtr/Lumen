@@ -1,6 +1,7 @@
 #include <Eigen/Core>
 #include <algorithm>
 
+#include "Core/CommonTypes.hpp"
 #include "Lighting/PointLight.hpp"
 
 Eigen::Vector3d PointLight::getDirectionFromPoint(const Eigen::Vector3d& point) const {

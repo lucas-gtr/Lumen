@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['textureloader_0',['TextureLoader',['../namespaceTextureLoader.html',1,'']]],
-  ['texturesampling_1',['TextureSampling',['../namespaceTextureSampling.html',1,'']]]
+  ['objloader_0',['OBJLoader',['../namespaceOBJLoader.html',1,'']]]
 ];

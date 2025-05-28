@@ -2,39 +2,39 @@
 #include <gtest/gtest.h>
 
 TEST(ColorUtilsTest, Vector3dToGrayscale) {
-    Eigen::Vector3d color(0.5, 0.2, 0.3);
+    ColorRGB color(0.5, 0.2, 0.3);
     double expectedGrayscale = RED_CHANNEL * 0.5 + GREEN_CHANNEL * 0.2 + BLUE_CHANNEL * 0.3;
     EXPECT_DOUBLE_EQ(toGrayscale(color), expectedGrayscale);
 }
 
 TEST(ColorUtilsTest, Vector4dToGrayscale) {
-    Eigen::Vector4d color(0.5, 0.2, 0.3, 1.0);
+    ColorRGBA color(0.5, 0.2, 0.3, 1.0);
     double expectedGrayscale = RED_CHANNEL * 0.5 + GREEN_CHANNEL * 0.2 + BLUE_CHANNEL * 0.3;
     EXPECT_DOUBLE_EQ(toGrayscale(color), expectedGrayscale);
 }
 
 TEST(ColorUtilsTest, GrayscaleToRGB) {
     double grayscale = 0.4;
-    Eigen::Vector3d expectedColor(0.4, 0.4, 0.4);
-    EXPECT_TRUE(toRGB(grayscale).isApprox(expectedColor));
+    ColorRGB expectedColor(0.4, 0.4, 0.4);
+    EXPECT_EQ(toRGB(grayscale), expectedColor);
 }
 
 TEST(ColorUtilsTest, Vector4dToRGB) {
-    Eigen::Vector4d color(0.5, 0.6, 0.7, 1.0);
-    Eigen::Vector3d expectedColor(0.5, 0.6, 0.7);
-    EXPECT_TRUE(toRGB(color).isApprox(expectedColor));
+    ColorRGBA color(0.5, 0.6, 0.7, 1.0);
+    ColorRGB expectedColor(0.5, 0.6, 0.7);
+    EXPECT_EQ(toRGB(color), expectedColor);
 }
 
 TEST(ColorUtilsTest, GrayscaleToRGBA) {
     double grayscale = 0.8;
-    Eigen::Vector4d expectedColor(0.8, 0.8, 0.8, 1.0);
-    EXPECT_TRUE(toRGBA(grayscale).isApprox(expectedColor));
+    ColorRGBA expectedColor(0.8, 0.8, 0.8, 1.0);
+    EXPECT_EQ(toRGBA(grayscale), expectedColor);
 }
 
 TEST(ColorUtilsTest, Vector3dToRGBAFrom) {
-    Eigen::Vector3d color(0.1, 0.2, 0.3);
-    Eigen::Vector4d expectedColor(0.1, 0.2, 0.3, 1.0);
-    EXPECT_TRUE(toRGBA(color).isApprox(expectedColor));
+    ColorRGB color(0.1, 0.2, 0.3);
+    ColorRGBA expectedColor(0.1, 0.2, 0.3, 1.0);
+    EXPECT_EQ(toRGBA(color), expectedColor);
 }
 
 TEST(ColorSpaceConversionTest, ConvertToSRGBSpaceBelowThreshold) {

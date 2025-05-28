@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <cmath>
 
+#include "Core/CommonTypes.hpp"
 #include "Core/MathConstants.hpp"
 #include "Lighting/SpotLight.hpp"
 

@@ -1,11 +1,9 @@
 <map id="/home/lucasgtr/lumen/include/Core/Framebuffer.hpp" name="/home/lucasgtr/lumen/include/Core/Framebuffer.hpp">
-<area shape="rect" id="Node000001" title="Header file for the Framebuffer class." alt="" coords="48,5,265,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,97,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,48,80,87,76,83,130,43"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="121,93,192,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="159,46,159,79,154,79,154,46"/>
-<area shape="rect" id="Node000004" href="$CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="216,93,396,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="194,43,273,84,270,89,191,48"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="273,167,339,192"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="309,119,309,153,303,153,303,119"/>
+<area shape="rect" id="Node000001" title="Header file for the Framebuffer class." alt="" coords="7,5,224,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,76,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,47,63,85,59,81,95,44"/>
+<area shape="rect" id="Node000003" href="$CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="100,93,280,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="135,44,171,81,167,85,131,47"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="157,167,223,192"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="193,119,193,153,187,153,187,119"/>
 </map>

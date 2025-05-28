@@ -1,6 +1,7 @@
 #include <Eigen/Core>
 #include <algorithm>
 
+#include "Core/CommonTypes.hpp"
 #include "Lighting/DirectionalLight.hpp"
 
 void DirectionalLight::setDirection(const Eigen::Vector3d& direction) { m_direction = direction.normalized(); }

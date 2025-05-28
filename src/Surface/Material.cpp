@@ -1,8 +1,6 @@
-#include <Eigen/Core>
-
+#include "Surface/Material.hpp"
 #include "Core/CommonTypes.hpp"
 #include "Core/MathConstants.hpp"
-#include "Surface/Material.hpp"
 
 Material::Material() : m_albedoTexture(nullptr), m_normalTexture(nullptr) {}
 

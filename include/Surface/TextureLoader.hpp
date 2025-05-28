@@ -1,6 +1,6 @@
 /**
  * @file TextureLoader.hpp
- * @brief Header file for the TextureLoader class.
+ * @brief Header file for the TextureLoader namespace.
  */
 #ifndef SURFACE_TEXTURELOADER_HPP
 #define SURFACE_TEXTURELOADER_HPP
@@ -9,6 +9,10 @@
 
 #include "Surface/Texture.hpp"
 
+/**
+ * @namespace TextureLoader
+ * @brief Namespace for loading textures from files.
+ */
 namespace TextureLoader {
 /**
  * @brief Loads a texture from a file.

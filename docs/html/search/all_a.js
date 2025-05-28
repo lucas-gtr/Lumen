@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['material_0',['material',['../classMaterial.html',1,'Material'],['../classMaterial.html#a137e987401b63eb7c6c27c3e38bc74b5',1,'Material::Material()'],['../classMaterial.html#a7ea61c71ac05b6df27fafa0ce2680341',1,'Material::Material(const Material &amp;)=default'],['../classMaterial.html#a72345d1950352861ca330ea83e22b188',1,'Material::Material(Material &amp;&amp;)=default'],['../structRayHitInfo.html#a64833bbb2a2536372d9d03d7a94eb412',1,'RayHitInfo::material']]],
+  ['material_0',['material',['../classMaterial.html',1,'Material'],['../structRayHitInfo.html#a64833bbb2a2536372d9d03d7a94eb412',1,'RayHitInfo::material'],['../classMaterial.html#a137e987401b63eb7c6c27c3e38bc74b5',1,'Material::Material()'],['../classMaterial.html#a7ea61c71ac05b6df27fafa0ce2680341',1,'Material::Material(const Material &amp;)=default'],['../classMaterial.html#a72345d1950352861ca330ea83e22b188',1,'Material::Material(Material &amp;&amp;)=default']]],
   ['material_2ecpp_1',['Material.cpp',['../Material_8cpp.html',1,'']]],
   ['material_2ehpp_2',['Material.hpp',['../Material_8hpp.html',1,'']]],
   ['mathconstants_2ehpp_3',['MathConstants.hpp',['../MathConstants_8hpp.html',1,'']]],

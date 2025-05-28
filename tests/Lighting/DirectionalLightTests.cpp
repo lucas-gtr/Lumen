@@ -41,8 +41,8 @@ TEST(DirectionalLightTest, GetLightFactor) {
     DirectionalLight light;
     Eigen::Vector3d point(1.0, 2.0, 3.0);
     Eigen::Vector3d normal(0.0, 0.0, 1.0);
-    light.setColor(Eigen::Vector3d(1.0, 1.0, 1.0));
-    light.setIntensity(1.0);
-    Eigen::Vector3d factor = light.getLightFactor(point, normal);
-    EXPECT_EQ(factor, Eigen::Vector3d(1.0, 1.0, 1.0));
+    light.setColor({0.2, 0.3, 0.4});
+    light.setIntensity(2.0);
+    ColorRGB factor = light.getLightFactor(point, normal);
+    EXPECT_EQ(factor, ColorRGB(0.4, 0.6, 0.8));
 }

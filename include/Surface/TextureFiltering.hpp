@@ -9,8 +9,11 @@
 
 #include "Core/CommonTypes.hpp"
 
+/**
+ * @namespace TextureSampling
+ * @brief Namespace for texture sampling functions and enums.
+ */
 namespace TextureSampling {
-
 /**
  * @enum TextureFiltering
  * @brief Enumeration for texture filtering modes.

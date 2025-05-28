@@ -88,89 +88,93 @@ $(function() {
 
 <p>Header file for the <a class="el" href="classScene.html" title="Represents a 3D scene that holds objects and a camera.">Scene</a> class.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;Eigen/Core&gt;</code><br />
-<code>#include &lt;memory&gt;</code><br />
+<div class="textblock"><code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="BVHNode_8hpp_source.html">BVH/BVHNode.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Light_8hpp_source.html">Lighting/Light.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Camera_8hpp_source.html">Scene/Camera.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Object3D_8hpp_source.html">Scene/Object3D.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Skybox_8hpp_source.html">Scene/Skybox.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Camera_8hpp_source.html">SceneObjects/Camera.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Object3D_8hpp_source.html">SceneObjects/Object3D.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Texture_8hpp_source.html">Surface/Texture.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Scene.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Scene_8hpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Scene_2Scene_8hpp" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2include_2Scene_2Scene_8hpp" id="a_2home_2lucasgtr_2lumen_2include_2Scene_2Scene_8hpp">
-<area shape="rect" title="Header file for the Scene class." alt="" coords="611,5,797,45"/>
-<area shape="rect" title=" " alt="" coords="717,313,809,339"/>
-<area shape="poly" title=" " alt="" coords="698,47,683,88,669,144,666,175,667,206,672,236,682,264,701,287,725,305,722,309,697,291,678,267,666,237,661,206,661,175,664,143,678,87,693,45"/>
-<area shape="rect" title=" " alt="" coords="960,240,1037,265"/>
-<area shape="poly" title=" " alt="" coords="798,39,856,59,884,74,910,91,940,123,964,159,993,226,989,228,959,162,936,126,906,95,881,78,854,64,797,45"/>
-<area shape="rect" title=" " alt="" coords="555,93,615,119"/>
-<area shape="poly" title=" " alt="" coords="677,48,616,88,613,84,674,43"/>
-<area shape="rect" title=" " alt="" coords="691,240,754,265"/>
-<area shape="poly" title=" " alt="" coords="708,45,723,226,718,227,703,46"/>
-<area shape="rect" href="Light_8hpp.html" title="Header file for the Light class." alt="" coords="392,93,531,119"/>
-<area shape="poly" title=" " alt="" coords="647,48,511,92,509,86,645,43"/>
-<area shape="rect" href="Camera_8hpp.html" title="Header file for the Camera class." alt="" coords="205,93,349,119"/>
-<area shape="poly" title=" " alt="" coords="611,46,354,93,353,88,610,41"/>
-<area shape="rect" href="Object3D_8hpp.html" title="Header file for the Object3D class." alt="" coords="742,93,895,119"/>
-<area shape="poly" title=" " alt="" coords="733,43,792,83,789,88,730,48"/>
-<area shape="rect" href="Texture_8hpp.html" title="Header file for the Texture class." alt="" coords="1214,240,1365,265"/>
-<area shape="poly" title=" " alt="" coords="798,30,945,44,1113,69,1193,87,1264,108,1321,134,1342,149,1358,165,1364,184,1357,203,1341,220,1323,235,1320,230,1338,216,1352,200,1359,184,1354,168,1339,153,1318,139,1262,113,1192,92,1112,74,944,49,797,35"/>
-<area shape="rect" href="Skybox_8hpp.html" title="Header file for the Skybox class." alt="" coords="1203,167,1343,192"/>
-<area shape="poly" title=" " alt="" coords="798,43,1003,91,1125,126,1228,160,1226,165,1124,132,1002,96,797,48"/>
-<area shape="poly" title=" " alt="" coords="475,117,555,193,636,263,678,287,720,306,718,311,676,292,633,268,551,197,471,121"/>
-<area shape="rect" title=" " alt="" coords="1117,460,1184,485"/>
-<area shape="poly" title=" " alt="" coords="469,118,491,174,500,212,504,251,504,327,509,348,523,367,546,384,575,399,653,424,747,442,848,454,947,462,1104,468,1104,474,946,467,847,460,746,447,652,429,573,404,543,388,519,371,504,350,499,328,499,251,495,213,486,176,464,120"/>
-<area shape="rect" href="Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="315,167,464,192"/>
-<area shape="poly" title=" " alt="" coords="451,121,413,159,409,155,448,117"/>
-<area shape="poly" title=" " alt="" coords="415,190,490,224,585,263,713,307,711,312,583,268,488,229,413,195"/>
-<area shape="rect" href="MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="234,240,417,265"/>
-<area shape="poly" title=" " alt="" coords="381,194,347,232,343,228,377,191"/>
-<area shape="rect" title=" " alt="" coords="286,313,365,339"/>
-<area shape="poly" title=" " alt="" coords="328,266,328,300,323,300,323,266"/>
-<area shape="poly" title=" " alt="" coords="297,116,361,157,358,161,294,121"/>
-<area shape="poly" title=" " alt="" coords="283,118,305,191,318,226,313,228,300,193,278,120"/>
-<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="5,167,131,192"/>
-<area shape="poly" title=" " alt="" coords="245,121,116,165,114,160,243,116"/>
-<area shape="rect" title=" " alt="" coords="155,167,240,192"/>
-<area shape="poly" title=" " alt="" coords="266,121,222,160,219,156,263,117"/>
-<area shape="rect" title=" " alt="" coords="19,240,117,265"/>
-<area shape="poly" title=" " alt="" coords="71,192,71,226,65,226,65,192"/>
-<area shape="poly" title=" " alt="" coords="839,117,910,165,979,228,976,232,906,169,836,121"/>
-<area shape="poly" title=" " alt="" coords="750,121,473,167,472,162,749,116"/>
-<area shape="rect" href="Mesh_8hpp.html" title="Header file for the Mesh class, the Vertex and Face structures." alt="" coords="741,167,896,192"/>
-<area shape="poly" title=" " alt="" coords="821,119,821,153,816,153,816,119"/>
-<area shape="rect" href="Material_8hpp.html" title="Header file for the Material class." alt="" coords="1021,167,1179,192"/>
-<area shape="poly" title=" " alt="" coords="865,116,1042,161,1041,166,863,121"/>
-<area shape="poly" title=" " alt="" coords="817,193,775,301,770,300,812,191"/>
-<area shape="poly" title=" " alt="" coords="805,194,751,234,748,229,802,190"/>
-<area shape="rect" title=" " alt="" coords="829,240,885,265"/>
-<area shape="poly" title=" " alt="" coords="827,191,847,227,842,229,823,194"/>
-<area shape="rect" href="CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="1061,387,1241,412"/>
-<area shape="poly" title=" " alt="" coords="836,190,886,224,949,263,1000,286,1023,296,1051,311,1095,343,1131,375,1127,379,1091,348,1048,316,1021,300,998,291,947,268,883,228,833,194"/>
-<area shape="poly" title=" " alt="" coords="1153,412,1153,446,1148,446,1148,412"/>
-<area shape="poly" title=" " alt="" coords="1099,193,1083,230,1069,250,1051,268,823,316,822,310,1048,263,1065,247,1078,227,1094,191"/>
-<area shape="poly" title=" " alt="" coords="1085,194,1028,234,1025,230,1082,190"/>
-<area shape="poly" title=" " alt="" coords="1105,192,1147,372,1142,374,1100,193"/>
-<area shape="poly" title=" " alt="" coords="1131,190,1246,232,1245,237,1129,195"/>
-<area shape="poly" title=" " alt="" coords="1214,266,822,316,822,311,1214,261"/>
-<area shape="poly" title=" " alt="" coords="1365,257,1419,266,1467,281,1485,292,1497,305,1499,321,1492,340,1463,374,1428,401,1389,423,1348,440,1266,462,1198,471,1197,466,1265,457,1346,435,1387,418,1425,397,1459,370,1487,337,1494,321,1492,307,1482,296,1465,286,1418,271,1365,262"/>
-<area shape="poly" title=" " alt="" coords="1271,268,1241,288,1210,315,1185,346,1166,376,1161,373,1181,343,1206,311,1238,284,1268,263"/>
-<area shape="rect" href="TextureFiltering_8hpp.html" title="Header file for texture filtering functions." alt="" coords="833,313,1037,339"/>
-<area shape="poly" title=" " alt="" coords="1233,268,1006,313,1005,308,1232,263"/>
-<area shape="rect" href="TextureWrapping_8hpp.html" title="Header file for texture wrapping modes and functions." alt="" coords="1264,313,1477,339"/>
-<area shape="poly" title=" " alt="" coords="1304,263,1349,302,1345,306,1301,267"/>
-<area shape="poly" title=" " alt="" coords="951,337,1051,410,1119,451,1117,456,1048,414,948,341"/>
-<area shape="poly" title=" " alt="" coords="970,336,1104,380,1102,385,969,341"/>
-<area shape="poly" title=" " alt="" coords="1357,341,1255,414,1185,456,1182,451,1252,410,1354,337"/>
-<area shape="poly" title=" " alt="" coords="1336,341,1200,385,1198,380,1335,336"/>
-<area shape="poly" title=" " alt="" coords="1252,195,1177,231,1079,268,1010,286,954,296,823,316,822,311,953,291,1009,281,1078,263,1175,226,1250,190"/>
-<area shape="poly" title=" " alt="" coords="1230,195,1051,241,1050,235,1229,189"/>
-<area shape="poly" title=" " alt="" coords="1310,190,1340,203,1368,220,1384,241,1385,254,1380,267,1366,282,1352,292,1322,299,1289,303,1272,307,1253,316,1209,347,1174,379,1170,375,1206,343,1251,311,1270,302,1288,297,1321,294,1350,287,1363,278,1375,264,1380,253,1379,243,1364,224,1338,207,1308,195"/>
-<area shape="poly" title=" " alt="" coords="1279,192,1286,226,1281,227,1273,193"/>
+<area shape="rect" title="Header file for the Scene class." alt="" coords="701,5,888,45"/>
+<area shape="rect" title=" " alt="" coords="704,313,781,339"/>
+<area shape="poly" title=" " alt="" coords="794,46,750,300,744,299,789,45"/>
+<area shape="rect" title=" " alt="" coords="595,93,655,119"/>
+<area shape="poly" title=" " alt="" coords="755,48,664,90,662,85,753,43"/>
+<area shape="rect" title=" " alt="" coords="806,240,869,265"/>
+<area shape="poly" title=" " alt="" coords="801,45,835,226,830,227,796,46"/>
+<area shape="rect" href="BVHNode_8hpp.html" title="Header file for the BVHNode class." alt="" coords="1075,240,1219,265"/>
+<area shape="poly" title=" " alt="" coords="889,26,935,33,984,45,1031,64,1074,91,1102,122,1122,159,1136,195,1145,226,1139,227,1131,197,1117,161,1097,125,1070,95,1029,69,982,50,934,38,888,32"/>
+<area shape="rect" href="Light_8hpp.html" title="Header file for the Light class." alt="" coords="1344,167,1483,192"/>
+<area shape="poly" title=" " alt="" coords="889,41,1118,91,1252,127,1365,160,1363,165,1251,132,1117,96,888,47"/>
+<area shape="rect" href="Skybox_8hpp.html" title="Header file for the Skybox class." alt="" coords="385,167,525,192"/>
+<area shape="poly" title=" " alt="" coords="775,48,728,85,668,121,599,148,531,166,529,161,597,143,666,116,725,80,772,43"/>
+<area shape="rect" href="Texture_8hpp.html" title="Header file for the Texture class." alt="" coords="299,240,450,265"/>
+<area shape="poly" title=" " alt="" coords="701,30,618,40,573,50,527,63,483,81,442,104,405,133,374,168,368,182,366,196,369,226,364,227,360,196,363,180,370,165,401,129,439,100,481,76,526,58,572,45,617,35,701,25"/>
+<area shape="rect" href="Camera_8hpp.html" title="Header file for the Camera class." alt="" coords="1586,167,1779,192"/>
+<area shape="poly" title=" " alt="" coords="889,40,1603,162,1602,167,888,45"/>
+<area shape="rect" href="Object3D_8hpp.html" title="Header file for the Object3D class." alt="" coords="857,93,1060,119"/>
+<area shape="poly" title=" " alt="" coords="835,43,924,85,921,90,833,48"/>
+<area shape="poly" title=" " alt="" coords="1082,268,796,318,795,313,1081,263"/>
+<area shape="rect" title=" " alt="" coords="1261,313,1353,339"/>
+<area shape="poly" title=" " alt="" coords="1173,263,1269,305,1267,310,1171,268"/>
+<area shape="poly" title=" " alt="" coords="1407,194,1326,304,1321,301,1402,191"/>
+<area shape="rect" title=" " alt="" coords="341,460,408,485"/>
+<area shape="poly" title=" " alt="" coords="1419,192,1429,240,1432,271,1428,297,1417,320,1395,341,1360,362,1315,380,1201,411,1064,434,916,450,767,462,627,469,422,474,422,468,627,463,766,456,915,445,1064,429,1200,406,1313,375,1357,357,1392,337,1413,317,1423,296,1426,271,1424,240,1414,193"/>
+<area shape="rect" href="CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="450,387,630,412"/>
+<area shape="poly" title=" " alt="" coords="1417,192,1416,223,1410,263,1395,306,1383,325,1367,341,1328,356,1259,369,1062,386,837,396,644,400,643,394,837,390,1062,381,1258,363,1326,351,1364,336,1379,321,1390,303,1405,262,1410,222,1411,192"/>
+<area shape="rect" href="Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="1496,240,1645,265"/>
+<area shape="poly" title=" " alt="" coords="1440,190,1534,232,1532,237,1438,194"/>
+<area shape="poly" title=" " alt="" coords="515,414,415,457,413,452,512,410"/>
+<area shape="poly" title=" " alt="" coords="1529,268,1363,312,1362,307,1528,263"/>
+<area shape="rect" href="MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="1545,313,1727,339"/>
+<area shape="poly" title=" " alt="" coords="1583,264,1618,301,1614,305,1580,267"/>
+<area shape="rect" title=" " alt="" coords="1597,387,1675,412"/>
+<area shape="poly" title=" " alt="" coords="1639,339,1639,373,1633,373,1633,339"/>
+<area shape="poly" title=" " alt="" coords="479,190,709,305,707,310,477,195"/>
+<area shape="poly" title=" " alt="" coords="463,191,490,243,520,312,537,372,532,374,515,314,485,245,459,193"/>
+<area shape="poly" title=" " alt="" coords="444,194,400,233,396,229,440,190"/>
+<area shape="poly" title=" " alt="" coords="299,258,222,263,140,273,68,290,42,302,25,315,13,333,8,350,11,365,19,378,33,391,51,403,100,423,158,439,220,451,328,465,327,470,219,456,157,444,98,428,49,408,29,395,15,382,6,366,3,349,8,331,21,312,39,297,67,285,139,268,221,258,299,253"/>
+<area shape="poly" title=" " alt="" coords="408,263,449,283,490,311,514,342,532,372,527,375,510,345,486,315,446,287,406,268"/>
+<area shape="rect" href="TextureFiltering_8hpp.html" title="Header file for texture filtering functions." alt="" coords="273,313,477,339"/>
+<area shape="poly" title=" " alt="" coords="377,266,377,300,372,300,372,266"/>
+<area shape="rect" href="TextureWrapping_8hpp.html" title="Header file for texture wrapping modes and functions." alt="" coords="35,313,248,339"/>
+<area shape="poly" title=" " alt="" coords="338,268,193,312,191,307,336,263"/>
+<area shape="poly" title=" " alt="" coords="377,339,377,446,372,446,372,339"/>
+<area shape="poly" title=" " alt="" coords="402,336,502,379,500,384,400,341"/>
+<area shape="poly" title=" " alt="" coords="161,337,346,450,343,455,159,341"/>
+<area shape="poly" title=" " alt="" coords="206,336,462,382,461,387,205,341"/>
+<area shape="poly" title=" " alt="" coords="1666,194,1602,235,1599,230,1663,190"/>
+<area shape="poly" title=" " alt="" coords="1682,193,1660,266,1648,301,1643,299,1655,265,1677,191"/>
+<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="1829,240,1955,265"/>
+<area shape="poly" title=" " alt="" coords="1717,189,1846,233,1844,238,1715,195"/>
+<area shape="rect" title=" " alt="" coords="1720,240,1805,265"/>
+<area shape="poly" title=" " alt="" coords="1697,190,1741,229,1738,233,1694,194"/>
+<area shape="rect" title=" " alt="" coords="1843,313,1941,339"/>
+<area shape="poly" title=" " alt="" coords="1895,266,1895,300,1889,300,1889,266"/>
+<area shape="poly" title=" " alt="" coords="942,121,873,169,833,204,795,242,773,272,756,302,752,299,769,269,791,238,829,200,870,165,939,117"/>
+<area shape="poly" title=" " alt="" coords="1014,116,1072,132,1139,157,1206,192,1238,214,1267,238,1289,268,1302,299,1297,301,1284,271,1263,242,1235,218,1204,197,1136,162,1070,137,1013,121"/>
+<area shape="poly" title=" " alt="" coords="1061,107,1175,113,1300,123,1415,140,1461,151,1496,164,1515,177,1533,193,1559,226,1555,229,1529,197,1512,181,1493,169,1460,156,1414,145,1300,129,1174,118,1060,113"/>
+<area shape="rect" href="Mesh_8hpp.html" title="Header file for the Mesh class, the Vertex and Face structures." alt="" coords="895,167,1049,192"/>
+<area shape="poly" title=" " alt="" coords="964,119,970,153,965,154,958,119"/>
+<area shape="rect" href="Material_8hpp.html" title="Header file for the Material class." alt="" coords="549,167,707,192"/>
+<area shape="poly" title=" " alt="" coords="906,121,695,166,694,161,905,116"/>
+<area shape="poly" title=" " alt="" coords="987,190,1001,206,1014,225,1021,247,1014,267,999,279,978,290,920,306,855,317,795,323,795,318,854,311,919,300,976,285,996,275,1010,264,1015,247,1010,228,997,209,983,194"/>
+<area shape="poly" title=" " alt="" coords="952,194,873,236,870,231,949,190"/>
+<area shape="poly" title=" " alt="" coords="1001,190,1106,232,1104,237,999,194"/>
+<area shape="poly" title=" " alt="" coords="1050,183,1140,201,1188,216,1232,238,1268,268,1294,300,1290,304,1264,271,1229,242,1186,221,1139,206,1049,189"/>
+<area shape="poly" title=" " alt="" coords="965,194,900,264,850,306,795,341,720,370,644,388,643,383,718,365,792,336,847,302,896,260,961,190"/>
+<area shape="rect" title=" " alt="" coords="944,240,1000,265"/>
+<area shape="poly" title=" " alt="" coords="975,192,975,226,969,226,969,192"/>
+<area shape="poly" title=" " alt="" coords="640,191,727,301,723,304,635,194"/>
+<area shape="poly" title=" " alt="" coords="626,193,552,375,547,373,621,191"/>
+<area shape="poly" title=" " alt="" coords="588,195,430,239,428,234,587,189"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">

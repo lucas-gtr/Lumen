@@ -1,18 +1,16 @@
 <map id="/home/lucasgtr/lumen/include/Surface/Texture.hpp" name="/home/lucasgtr/lumen/include/Surface/Texture.hpp">
-<area shape="rect" id="Node000001" title="Header file for the Texture class." alt="" coords="172,5,379,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,97,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,48,98,91,96,86,221,43"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="311,240,378,265"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="220,48,193,61,172,77,160,96,160,106,163,117,191,156,227,188,266,214,303,232,301,237,264,218,224,193,187,160,158,120,154,107,155,95,168,74,190,57,218,43"/>
-<area shape="rect" id="Node000004" href="$CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="321,167,501,192"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="326,43,361,63,391,92,406,122,412,152,407,153,401,124,387,95,358,68,324,48"/>
-<area shape="rect" id="Node000005" href="$TextureFiltering_8hpp.html" title="Header file for texture filtering functions." alt="" coords="173,93,377,119"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="278,46,278,79,273,79,273,46"/>
-<area shape="rect" id="Node000006" href="$TextureWrapping_8hpp.html" title="Header file for texture wrapping modes and functions." alt="" coords="453,93,666,119"/>
-<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="344,43,506,87,504,92,343,48"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="402,194,367,232,363,228,398,191"/>
-<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="282,118,311,191,332,227,327,230,306,193,277,120"/>
-<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="298,116,378,158,376,163,296,121"/>
-<area shape="poly" id="edge10_Node000006_Node000003" title=" " alt="" coords="558,120,543,156,531,176,514,194,486,214,454,229,393,247,391,242,452,224,483,209,511,190,526,173,539,154,553,118"/>
-<area shape="poly" id="edge9_Node000006_Node000004" title=" " alt="" coords="537,121,449,163,447,158,534,116"/>
+<area shape="rect" id="Node000001" title="Header file for the Texture class." alt="" coords="97,5,303,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="167,240,233,265"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,43,53,63,34,77,18,95,9,117,12,138,24,158,44,177,98,209,155,233,153,238,96,214,41,181,20,161,7,140,4,116,14,92,30,73,50,58,96,38"/>
+<area shape="rect" id="Node000003" href="$CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="177,167,357,192"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,44,246,92,258,123,265,153,260,154,252,125,242,94,213,47"/>
+<area shape="rect" id="Node000004" href="$TextureFiltering_8hpp.html" title="Header file for texture filtering functions." alt="" coords="29,93,233,119"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="185,47,152,84,148,81,181,44"/>
+<area shape="rect" id="Node000005" href="$TextureWrapping_8hpp.html" title="Header file for texture wrapping modes and functions." alt="" coords="308,93,521,119"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="252,43,371,86,369,91,250,48"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="258,194,222,232,218,228,254,191"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="137,118,166,191,187,227,183,230,162,193,132,120"/>
+<area shape="poly" id="edge6_Node000004_Node000003" title=" " alt="" coords="154,116,234,158,231,163,151,121"/>
+<area shape="poly" id="edge8_Node000005_Node000002" title=" " alt="" coords="414,120,399,156,386,176,370,194,341,214,309,229,248,247,246,242,307,224,338,209,366,190,382,173,394,154,409,118"/>
+<area shape="poly" id="edge9_Node000005_Node000003" title=" " alt="" coords="392,121,304,163,302,158,390,116"/>
 </map>

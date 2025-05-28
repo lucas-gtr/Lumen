@@ -118,12 +118,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2c6fc0308a126965ce5a87e8619ac7ef" id="r_a2c6fc0308a126965ce5a87e8619ac7ef"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classCamera.html">Camera</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a2c6fc0308a126965ce5a87e8619ac7ef">getCamera</a> () const</td></tr>
 <tr class="memdesc:a2c6fc0308a126965ce5a87e8619ac7ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current camera of the scene.  <br /></td></tr>
 <tr class="separator:a2c6fc0308a126965ce5a87e8619ac7ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afea995759da5ddb83218edf0ad2bb663" id="r_afea995759da5ddb83218edf0ad2bb663"><td class="memItemLeft" align="right" valign="top">Eigen::Vector4d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#afea995759da5ddb83218edf0ad2bb663">getSkyboxColor</a> (const Eigen::Vector3d direction) const</td></tr>
-<tr class="memdesc:afea995759da5ddb83218edf0ad2bb663"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the color of the skybox based on a given direction.  <br /></td></tr>
-<tr class="separator:afea995759da5ddb83218edf0ad2bb663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9dca4a6560ba6fbf1e2b46497f123c1" id="r_ac9dca4a6560ba6fbf1e2b46497f123c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structColorRGBA.html">ColorRGBA</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#ac9dca4a6560ba6fbf1e2b46497f123c1">getSkyboxColor</a> (const Eigen::Vector3d direction) const</td></tr>
+<tr class="memdesc:ac9dca4a6560ba6fbf1e2b46497f123c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the color of the skybox based on a given direction.  <br /></td></tr>
+<tr class="separator:ac9dca4a6560ba6fbf1e2b46497f123c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a08cdced45e2dd7fd9069210b24bfee" id="r_a9a08cdced45e2dd7fd9069210b24bfee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a9a08cdced45e2dd7fd9069210b24bfee">setSkybox</a> (const std::shared_ptr&lt; <a class="el" href="classTexture.html">Texture</a> &gt; &amp;skybox_texture)</td></tr>
 <tr class="memdesc:a9a08cdced45e2dd7fd9069210b24bfee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the skybox texture for the scene.  <br /></td></tr>
 <tr class="separator:a9a08cdced45e2dd7fd9069210b24bfee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93ca746ce7cef310809ea9e6c8faf9cd" id="r_a93ca746ce7cef310809ea9e6c8faf9cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a93ca746ce7cef310809ea9e6c8faf9cd">buildBVH</a> ()</td></tr>
+<tr class="memdesc:a93ca746ce7cef310809ea9e6c8faf9cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds the bounding volume hierarchy (<a class="el" href="namespaceBVH.html" title="Namespace for Bounding Volume Hierarchy (BVH) related functions.">BVH</a>) for the objects in the scene.  <br /></td></tr>
+<tr class="separator:a93ca746ce7cef310809ea9e6c8faf9cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ce0a085f369403b6b92271c808988f9" id="r_a2ce0a085f369403b6b92271c808988f9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classBVHNode.html">BVHNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a2ce0a085f369403b6b92271c808988f9">getBVHRoot</a> () const</td></tr>
+<tr class="memdesc:a2ce0a085f369403b6b92271c808988f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bounding volume hierarchy (<a class="el" href="namespaceBVH.html" title="Namespace for Bounding Volume Hierarchy (BVH) related functions.">BVH</a>) root node.  <br /></td></tr>
+<tr class="separator:a2ce0a085f369403b6b92271c808988f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a631eef7493cafce5d74739a2cad12a58" id="r_a631eef7493cafce5d74739a2cad12a58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a631eef7493cafce5d74739a2cad12a58">~Scene</a> ()=default</td></tr>
 <tr class="memdesc:a631eef7493cafce5d74739a2cad12a58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
 <tr class="separator:a631eef7493cafce5d74739a2cad12a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -296,6 +302,53 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a93ca746ce7cef310809ea9e6c8faf9cd" name="a93ca746ce7cef310809ea9e6c8faf9cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93ca746ce7cef310809ea9e6c8faf9cd">&#9670;&#160;</a></span>buildBVH()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::buildBVH </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Builds the bounding volume hierarchy (<a class="el" href="namespaceBVH.html" title="Namespace for Bounding Volume Hierarchy (BVH) related functions.">BVH</a>) for the objects in the scene. </p>
+
+</div>
+</div>
+<a id="a2ce0a085f369403b6b92271c808988f9" name="a2ce0a085f369403b6b92271c808988f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ce0a085f369403b6b92271c808988f9">&#9670;&#160;</a></span>getBVHRoot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classBVHNode.html">BVHNode</a> * Scene::getBVHRoot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the bounding volume hierarchy (<a class="el" href="namespaceBVH.html" title="Namespace for Bounding Volume Hierarchy (BVH) related functions.">BVH</a>) root node. </p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the <a class="el" href="classBVHNode.html" title="Class representing a node in a Bounding Volume Hierarchy (BVH).">BVHNode</a> representing the root of the <a class="el" href="namespaceBVH.html" title="Namespace for Bounding Volume Hierarchy (BVH) related functions.">BVH</a>. </dd></dl>
+
+</div>
+</div>
 <a id="a2c6fc0308a126965ce5a87e8619ac7ef" name="a2c6fc0308a126965ce5a87e8619ac7ef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2c6fc0308a126965ce5a87e8619ac7ef">&#9670;&#160;</a></span>getCamera()</h2>
 
@@ -380,8 +433,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afea995759da5ddb83218edf0ad2bb663" name="afea995759da5ddb83218edf0ad2bb663"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afea995759da5ddb83218edf0ad2bb663">&#9670;&#160;</a></span>getSkyboxColor()</h2>
+<a id="ac9dca4a6560ba6fbf1e2b46497f123c1" name="ac9dca4a6560ba6fbf1e2b46497f123c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9dca4a6560ba6fbf1e2b46497f123c1">&#9670;&#160;</a></span>getSkyboxColor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -390,7 +443,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::Vector4d Scene::getSkyboxColor </td>
+          <td class="memname"><a class="el" href="structColorRGBA.html">ColorRGBA</a> Scene::getSkyboxColor </td>
           <td>(</td>
           <td class="paramtype">const Eigen::Vector3d&#160;</td>
           <td class="paramname"><em>direction</em></td><td>)</td>
@@ -411,7 +464,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The color of the skybox as an Eigen::Vector4d. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The color of the skybox. </dd></dl>
 
 </div>
 </div>

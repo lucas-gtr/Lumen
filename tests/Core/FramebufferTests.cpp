@@ -27,7 +27,7 @@ TEST(FramebufferTest, SetFramebufferPropertiesResizesCorrectly) {
 
 TEST(FramebufferTest, SetPixelColorAffectsFramebuffer3Channels) {
     Framebuffer fb({2, 2, 3});
-    Eigen::Vector4d color(0.5, 0.25, 0.75, 1.0);
+    ColorRGBA color(0.5, 0.25, 0.75, 1.0);
     fb.setPixelColor({1, 1}, color, 1.0);
     const double* image = fb.getFramebuffer();
     int index = (1 * 2 + 1) * 3;
@@ -38,7 +38,7 @@ TEST(FramebufferTest, SetPixelColorAffectsFramebuffer3Channels) {
 
 TEST(FramebufferTest, SetPixelColorAffectsFramebuffer1Channel) {
     Framebuffer fb({2, 2, 1});
-    Eigen::Vector4d color(0.5, 0.25, 0.75, 1.0);
+    ColorRGBA color(0.5, 0.25, 0.75, 1.0);
     fb.setPixelColor({1, 1}, color, 1.0);
     const double* image = fb.getFramebuffer();
     int index = (1 * 2 + 1) * 1;
@@ -47,7 +47,7 @@ TEST(FramebufferTest, SetPixelColorAffectsFramebuffer1Channel) {
 
 TEST(FramebufferTest, SetPixelColorAffectsFramebuffer2Channels) {
     Framebuffer fb({2, 2, 2});
-    Eigen::Vector4d color(0.5, 0.25, 0.75, 1.0);
+    ColorRGBA color(0.5, 0.25, 0.75, 1.0);
     fb.setPixelColor({1, 1}, color, 1.0);
     const double* image = fb.getFramebuffer();
     int index = (1 * 2 + 1) * 2;
@@ -59,7 +59,7 @@ TEST(FramebufferTest, SetPixelColorAffectsFramebuffer2Channels) {
 
 TEST(FramebufferTest, SetPixelColorAffectsFramebuffer4Channels) {
     Framebuffer fb({2, 2, 4});
-    Eigen::Vector4d color(0.5, 0.25, 0.75, 1.0);
+    ColorRGBA color(0.5, 0.25, 0.75, 1.0);
     fb.setPixelColor({1, 1}, color, 1.0);
     const double* image = fb.getFramebuffer();
     int index = (1 * 2 + 1) * 4;
@@ -71,7 +71,7 @@ TEST(FramebufferTest, SetPixelColorAffectsFramebuffer4Channels) {
 
 TEST(FramebufferTest, SetPixelColorOutOfBoundsDoesNothing) {
     Framebuffer fb({2, 2, 3});
-    Eigen::Vector4d color(1.0, 1.0, 1.0, 1.0);
+    ColorRGBA color(1.0, 1.0, 1.0, 1.0);
     fb.setPixelColor({-1, 0}, color, 1.0);
     fb.setPixelColor({2, 0}, color, 1.0); 
     fb.setPixelColor({0, -1}, color, 1.0);

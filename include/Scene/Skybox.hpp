@@ -5,6 +5,7 @@
 #ifndef SCENE_SKYBOX_HPP
 #define SCENE_SKYBOX_HPP
 
+#include <Eigen/Core>
 #include <memory>
 
 #include "Core/CommonTypes.hpp"

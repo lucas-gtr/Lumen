@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-05-08 17:32:05</td>
+      <td>2025-05-28 10:24:22</td>
     </tr>
   </table>
 </div>
@@ -73,16 +73,16 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l8">Camera::Camera() (line 8)</a></td><td>called 696 times, returned 696 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l18">Camera::getMaxSensorWidth() const (line 18)</a></td><td>called 145 times, returned 145 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l16">Camera::getMinSensorWidth() const (line 16)</a></td><td>called 145 times, returned 145 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l14">Camera::getUpdatedFov() const (line 14)</a></td><td>called 145 times, returned 145 times</td><td>64.0%</td></tr>
-    <tr><td><a href="#l10">Camera::getUpdatedLensRadius() const (line 10)</a></td><td>called 928 times, returned 928 times</td><td>64.0%</td></tr>
-    <tr><td><a href="#l12">Camera::getUpdatedSensorWidth() const (line 12)</a></td><td>called 1102 times, returned 1102 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l36">Camera::setAperture(double) (line 36)</a></td><td>called 116 times, returned 116 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l30">Camera::setFocalLength(double) (line 30)</a></td><td>called 116 times, returned 116 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l20">Camera::setFov(double) (line 20)</a></td><td>called 290 times, returned 290 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l25">Camera::setSensorWidth(double) (line 25)</a></td><td>called 145 times, returned 145 times</td><td>87.0%</td></tr>
+    <tr><td><a href="#l8">Camera::Camera() (line 8)</a></td><td>called 48 times, returned 48 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l18">Camera::getMaxSensorWidth() const (line 18)</a></td><td>called 10 times, returned 10 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l16">Camera::getMinSensorWidth() const (line 16)</a></td><td>called 10 times, returned 10 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l14">Camera::getUpdatedFov() const (line 14)</a></td><td>called 10 times, returned 10 times</td><td>64.0%</td></tr>
+    <tr><td><a href="#l10">Camera::getUpdatedLensRadius() const (line 10)</a></td><td>called 64 times, returned 64 times</td><td>64.0%</td></tr>
+    <tr><td><a href="#l12">Camera::getUpdatedSensorWidth() const (line 12)</a></td><td>called 76 times, returned 76 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l36">Camera::setAperture(double) (line 36)</a></td><td>called 8 times, returned 8 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l30">Camera::setFocalLength(double) (line 30)</a></td><td>called 8 times, returned 8 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l20">Camera::setFov(double) (line 20)</a></td><td>called 20 times, returned 20 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l25">Camera::setSensorWidth(double) (line 25)</a></td><td>called 10 times, returned 10 times</td><td>87.0%</td></tr>
   </table>
 </details>
 
@@ -150,7 +150,7 @@
       <td class="lineno"><a id="l8" href="#l8">8</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">696</td>
+      <td class="linecount coveredLine">48</td>
       <td class="src coveredLine"><span class="n">Camera</span><span class="o">::</span><span class="n">Camera</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_sensor_width</span><span class="p">(</span><span class="n">getUpdatedSensorWidth</span><span class="p">()),</span><span class="w"> </span><span class="n">m_lens_radius</span><span class="p">(</span><span class="n">getUpdatedLensRadius</span><span class="p">())</span><span class="w"> </span><span class="p">{}</span></td>
     </tr>
     <tr class="source-line">
@@ -167,11 +167,11 @@
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
-          <div class="takenBranch">&check; Branch 3 taken 928 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 64 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount partialCoveredLine">928</td>
+      <td class="linecount partialCoveredLine">64</td>
       <td class="src partialCoveredLine"><span class="kt">double</span><span class="w"> </span><span class="n">Camera</span><span class="o">::</span><span class="n">getUpdatedLensRadius</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">m_focal_length</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">m_aperture</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">HALF</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -185,7 +185,7 @@
       <td class="lineno"><a id="l12" href="#l12">12</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1102</td>
+      <td class="linecount coveredLine">76</td>
       <td class="src coveredLine"><span class="kt">double</span><span class="w"> </span><span class="n">Camera</span><span class="o">::</span><span class="n">getUpdatedSensorWidth</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_focal_length</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">tan</span><span class="p">(</span><span class="n">m_horizontal_fov</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">HALF</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">DEG_TO_RAD</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -202,11 +202,11 @@
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
-          <div class="takenBranch">&check; Branch 3 taken 145 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 10 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount partialCoveredLine">145</td>
+      <td class="linecount partialCoveredLine">10</td>
       <td class="src partialCoveredLine"><span class="kt">double</span><span class="w"> </span><span class="n">Camera</span><span class="o">::</span><span class="n">getUpdatedFov</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">atan</span><span class="p">(</span><span class="n">m_sensor_width</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_focal_length</span><span class="p">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">RAD_TO_DEG</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -220,7 +220,7 @@
       <td class="lineno"><a id="l16" href="#l16">16</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">145</td>
+      <td class="linecount coveredLine">10</td>
       <td class="src coveredLine"><span class="kt">double</span><span class="w"> </span><span class="n">Camera</span><span class="o">::</span><span class="n">getMinSensorWidth</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_focal_length</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">tan</span><span class="p">((</span><span class="n">MIN_HORIZONTAL_FOV</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">HALF</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">DEG_TO_RAD</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -234,7 +234,7 @@
       <td class="lineno"><a id="l18" href="#l18">18</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">145</td>
+      <td class="linecount coveredLine">10</td>
       <td class="src coveredLine"><span class="kt">double</span><span class="w"> </span><span class="n">Camera</span><span class="o">::</span><span class="n">getMaxSensorWidth</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_focal_length</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">tan</span><span class="p">((</span><span class="n">MAX_HORIZONTAL_FOV</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">HALF</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">DEG_TO_RAD</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -248,28 +248,28 @@
       <td class="lineno"><a id="l20" href="#l20">20</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">290</td>
+      <td class="linecount coveredLine">20</td>
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Camera</span><span class="o">::</span><span class="n">setFov</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">fov</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l21" href="#l21">21</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">290</td>
+      <td class="linecount coveredLine">20</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_horizontal_fov</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">fov</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_HORIZONTAL_FOV</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_HORIZONTAL_FOV</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l22" href="#l22">22</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">290</td>
+      <td class="linecount coveredLine">20</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_sensor_width</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">getUpdatedSensorWidth</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l23" href="#l23">23</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">290</td>
+      <td class="linecount coveredLine">20</td>
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -283,7 +283,7 @@
       <td class="lineno"><a id="l25" href="#l25">25</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">145</td>
+      <td class="linecount coveredLine">10</td>
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Camera</span><span class="o">::</span><span class="n">setSensorWidth</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">sensor_width</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -292,25 +292,25 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 9 taken 145 times.</div>
+          <div class="takenBranch">&check; Branch 9 taken 10 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">145</td>
+      <td class="linecount coveredLine">10</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_sensor_width</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">sensor_width</span><span class="p">,</span><span class="w"> </span><span class="n">getMinSensorWidth</span><span class="p">(),</span><span class="w"> </span><span class="n">getMaxSensorWidth</span><span class="p">());</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l27" href="#l27">27</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">145</td>
+      <td class="linecount coveredLine">10</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_horizontal_fov</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getUpdatedFov</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l28" href="#l28">28</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">145</td>
+      <td class="linecount coveredLine">10</td>
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -324,35 +324,35 @@
       <td class="lineno"><a id="l30" href="#l30">30</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">116</td>
+      <td class="linecount coveredLine">8</td>
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Camera</span><span class="o">::</span><span class="n">setFocalLength</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">focal_length</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l31" href="#l31">31</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">116</td>
+      <td class="linecount coveredLine">8</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_focal_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">focal_length</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_FOCAL_LENGTH</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_FOCAL_LENGTH</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l32" href="#l32">32</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">116</td>
+      <td class="linecount coveredLine">8</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_sensor_width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getUpdatedSensorWidth</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l33" href="#l33">33</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">116</td>
+      <td class="linecount coveredLine">8</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_lens_radius</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">getUpdatedLensRadius</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l34" href="#l34">34</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">116</td>
+      <td class="linecount coveredLine">8</td>
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -366,28 +366,28 @@
       <td class="lineno"><a id="l36" href="#l36">36</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">116</td>
+      <td class="linecount coveredLine">8</td>
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Camera</span><span class="o">::</span><span class="n">setAperture</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">aperture</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l37" href="#l37">37</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">116</td>
+      <td class="linecount coveredLine">8</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_aperture</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">aperture</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_APERTURE</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_APERTURE</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l38" href="#l38">38</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">116</td>
+      <td class="linecount coveredLine">8</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_lens_radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getUpdatedLensRadius</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l39" href="#l39">39</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">116</td>
+      <td class="linecount coveredLine">8</td>
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">

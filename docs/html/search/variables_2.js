@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['direction_0',['direction',['../structRay.html#ad66a226186fa3c011842a9168178b353',1,'Ray']]],
-  ['distance_1',['distance',['../structRayHitInfo.html#af790af177c6fcbcab989d758df90e4d6',1,'RayHitInfo']]],
-  ['dx_2',['dx',['../structTextureSampling_1_1BilinearSampleInfo.html#a4bdbb353e746766f5f6a2da733036b29',1,'TextureSampling::BilinearSampleInfo']]],
-  ['dy_3',['dy',['../structTextureSampling_1_1BilinearSampleInfo.html#a0e99a03af8713a4b8e2a44d29583001a',1,'TextureSampling::BilinearSampleInfo']]]
+  ['cameraposition_0',['cameraPosition',['../structRayEmitterParameters.html#a5efd64c17dd719fad5ba7f16316ae59e',1,'RayEmitterParameters']]],
+  ['camerarotationmatrix_1',['cameraRotationMatrix',['../structRayEmitterParameters.html#a65bc73d237bcb0e2ffee5213e041b8d2',1,'RayEmitterParameters']]],
+  ['channels_2',['channels',['../structImageProperties.html#a20ef20a4eb449a9f844c7e0fa423f01b',1,'ImageProperties']]]
 ];

@@ -1,14 +1,17 @@
 <map id="/home/lucasgtr/lumen/include/Lighting/Light.hpp" name="/home/lucasgtr/lumen/include/Lighting/Light.hpp">
-<area shape="rect" id="Node000001" title="Header file for the Light class." alt="" coords="5,5,199,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,167,97,192"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,47,72,69,59,94,53,124,52,153,47,153,48,123,54,92,67,66,83,44"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="69,93,135,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,46,105,79,99,79,99,46"/>
-<area shape="rect" id="Node000004" href="$Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="159,93,309,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="135,43,204,84,201,88,132,48"/>
-<area shape="poly" id="edge6_Node000004_Node000002" title=" " alt="" coords="206,121,95,164,93,159,204,116"/>
-<area shape="rect" id="Node000005" href="$MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="143,167,325,192"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="237,119,237,153,231,153,231,119"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="195,240,273,265"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="237,192,237,226,231,226,231,192"/>
+<area shape="rect" id="Node000001" title="Header file for the Light class." alt="" coords="81,5,274,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="195,167,287,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,44,217,92,237,152,232,154,212,94,187,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="16,167,83,192"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="82,47,43,66,27,79,13,95,8,109,11,125,30,155,25,158,6,127,3,109,8,92,23,75,40,61,79,42"/>
+<area shape="rect" id="Node000004" href="$CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="23,93,203,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="164,47,134,84,130,81,160,44"/>
+<area shape="rect" id="Node000005" href="$Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="279,93,428,119"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="221,43,316,85,314,90,218,48"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="105,121,71,158,67,155,101,117"/>
+<area shape="poly" id="edge8_Node000005_Node000002" title=" " alt="" coords="337,121,273,161,270,157,334,116"/>
+<area shape="rect" id="Node000006" href="$MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="311,167,494,192"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="364,117,389,154,385,157,359,121"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="363,240,442,265"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="405,192,405,226,400,226,400,192"/>
 </map>

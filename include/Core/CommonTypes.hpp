@@ -69,12 +69,14 @@ struct ColorRGB {
 
   ColorRGB() = default;
   ColorRGB(double red, double green, double blue);
-  ColorRGB(double grayscale);
-  ColorRGB(const ColorRGBA& color); // Ne pas définir ici
+  explicit ColorRGB(double grayscale);
+  explicit ColorRGB(const ColorRGBA& color); // Ne pas définir ici
 
   ColorRGB  operator+(const ColorRGB& other) const;
   ColorRGB& operator+=(const ColorRGB& other);
   ColorRGB  operator*(double scalar) const;
+
+  bool operator==(const ColorRGB& other) const;
 
   friend ColorRGB operator*(double scalar, const ColorRGB& color);
 };
@@ -90,12 +92,16 @@ struct ColorRGBA {
   double a = 1.0; ///< Alpha component of the color (opacity)
 
   ColorRGBA() = default;
-  ColorRGBA(double red, double green, double blue, double alpha = 1.0);
-  ColorRGBA(double grayscale, double alpha = 1.0);
-  ColorRGBA(const ColorRGB& color, double alpha = 1.0);
+  ColorRGBA(double red, double green, double blue, double alpha);
+  explicit ColorRGBA(double grayscale);
+  ColorRGBA(double grayscale, double alpha);
+  explicit ColorRGBA(const ColorRGB& color);
+  ColorRGBA(const ColorRGB& color, double alpha);
 
   ColorRGBA operator+(const ColorRGBA& other) const;
   ColorRGBA operator*(double scalar) const;
+
+  bool operator==(const ColorRGBA& other) const;
 
   friend ColorRGBA operator*(double scalar, const ColorRGBA& color);
 };
