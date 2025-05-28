@@ -1,0 +1,13 @@
+<map id="/home/lucasgtr/lumen/include/BVH/BVHBuilder.hpp" name="/home/lucasgtr/lumen/include/BVH/BVHBuilder.hpp">
+<area shape="rect" id="Node000001" title="Header file for the BVH builder functions." alt="" coords="65,5,275,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,167,97,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,48,52,67,37,79,24,95,19,109,21,124,35,154,31,156,16,125,14,108,20,92,33,76,49,62,85,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="122,167,199,192"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="223,43,250,57,273,75,285,96,285,108,280,120,267,136,250,150,214,168,211,163,248,145,263,133,276,117,280,107,280,97,269,78,247,62,220,48"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="203,93,265,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="188,44,218,81,214,84,183,47"/>
+<area shape="rect" id="Node000005" href="$BVHNode_8hpp.html" title="Header file for the BVHNode class." alt="" coords="34,93,178,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="157,47,126,84,122,81,152,44"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="99,121,71,157,66,154,95,117"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="117,117,146,154,141,157,113,121"/>
+</map>

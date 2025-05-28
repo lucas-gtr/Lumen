@@ -48,7 +48,7 @@ public:
    * @param direction The direction vector for which to get the color.
    * @return The color for the given direction.
    */
-  Eigen::Vector4d getColor(const Eigen::Vector3d& direction) const;
+  ColorRGBA getColor(const Eigen::Vector3d& direction) const;
 
   ~Skybox() = default; ///< Default destructor.
 };

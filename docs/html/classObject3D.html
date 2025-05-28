@@ -134,12 +134,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af65cadeb88cdb2b492dc877042bbc504" id="r_af65cadeb88cdb2b492dc877042bbc504"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject3D.html#af65cadeb88cdb2b492dc877042bbc504">setMaterial</a> (const std::shared_ptr&lt; <a class="el" href="classMaterial.html">Material</a> &gt; &amp;material)</td></tr>
 <tr class="memdesc:af65cadeb88cdb2b492dc877042bbc504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the material for this 3D object.  <br /></td></tr>
 <tr class="separator:af65cadeb88cdb2b492dc877042bbc504"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d4f461f5f752848ad39c2b70c3e72f6" id="r_a5d4f461f5f752848ad39c2b70c3e72f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMesh.html">Mesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject3D.html#a5d4f461f5f752848ad39c2b70c3e72f6">getMesh</a> () const</td></tr>
-<tr class="memdesc:a5d4f461f5f752848ad39c2b70c3e72f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the mesh associated with this 3D object.  <br /></td></tr>
-<tr class="separator:a5d4f461f5f752848ad39c2b70c3e72f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18f8e912c74809acec1c9f2babae7f43" id="r_a18f8e912c74809acec1c9f2babae7f43"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classMesh.html">Mesh</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject3D.html#a18f8e912c74809acec1c9f2babae7f43">getMesh</a> () const</td></tr>
+<tr class="memdesc:a18f8e912c74809acec1c9f2babae7f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the mesh associated with this 3D object.  <br /></td></tr>
+<tr class="separator:a18f8e912c74809acec1c9f2babae7f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd5d448f3ea5def38a4977163af72463" id="r_abd5d448f3ea5def38a4977163af72463"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMesh.html">Mesh</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject3D.html#abd5d448f3ea5def38a4977163af72463">getMesh</a> ()</td></tr>
+<tr class="memdesc:abd5d448f3ea5def38a4977163af72463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a modifiable reference to the mesh of this 3D object.  <br /></td></tr>
+<tr class="separator:abd5d448f3ea5def38a4977163af72463"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad749c720d54fa9fd689dd7e17b192ad1" id="r_ad749c720d54fa9fd689dd7e17b192ad1"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classMaterial.html">Material</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject3D.html#ad749c720d54fa9fd689dd7e17b192ad1">getMaterial</a> () const</td></tr>
 <tr class="memdesc:ad749c720d54fa9fd689dd7e17b192ad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the material associated with this 3D object.  <br /></td></tr>
 <tr class="separator:ad749c720d54fa9fd689dd7e17b192ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ad9d6fa8dd0c09fa94282fcc943086d" id="r_a9ad9d6fa8dd0c09fa94282fcc943086d"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject3D.html#a9ad9d6fa8dd0c09fa94282fcc943086d">getMinBound</a> () const</td></tr>
+<tr class="separator:a9ad9d6fa8dd0c09fa94282fcc943086d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74baf1a00c60532b9ae446786b0fa20b" id="r_a74baf1a00c60532b9ae446786b0fa20b"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject3D.html#a74baf1a00c60532b9ae446786b0fa20b">getMaxBound</a> () const</td></tr>
+<tr class="separator:a74baf1a00c60532b9ae446786b0fa20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c0f564d8ea7625558156cb2f5774613" id="r_a3c0f564d8ea7625558156cb2f5774613"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject3D.html#a3c0f564d8ea7625558156cb2f5774613">~Object3D</a> ()=default</td></tr>
 <tr class="memdesc:a3c0f564d8ea7625558156cb2f5774613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
 <tr class="separator:a3c0f564d8ea7625558156cb2f5774613"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -401,8 +408,25 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5d4f461f5f752848ad39c2b70c3e72f6" name="a5d4f461f5f752848ad39c2b70c3e72f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d4f461f5f752848ad39c2b70c3e72f6">&#9670;&#160;</a></span>getMesh()</h2>
+<a id="a74baf1a00c60532b9ae446786b0fa20b" name="a74baf1a00c60532b9ae446786b0fa20b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74baf1a00c60532b9ae446786b0fa20b">&#9670;&#160;</a></span>getMaxBound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Vector3d Object3D::getMaxBound </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abd5d448f3ea5def38a4977163af72463" name="abd5d448f3ea5def38a4977163af72463"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd5d448f3ea5def38a4977163af72463">&#9670;&#160;</a></span>getMesh() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -411,7 +435,35 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classMesh.html">Mesh</a> Object3D::getMesh </td>
+          <td class="memname"><a class="el" href="classMesh.html">Mesh</a> &amp; Object3D::getMesh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a modifiable reference to the mesh of this 3D object. </p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the mesh of the 3D object. </dd></dl>
+
+</div>
+</div>
+<a id="a18f8e912c74809acec1c9f2babae7f43" name="a18f8e912c74809acec1c9f2babae7f43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18f8e912c74809acec1c9f2babae7f43">&#9670;&#160;</a></span>getMesh() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classMesh.html">Mesh</a> &amp; Object3D::getMesh </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -426,6 +478,23 @@ Public Member Functions</h2></td></tr>
 
 <p>Gets the mesh associated with this 3D object. </p>
 <dl class="section return"><dt>Returns</dt><dd>The mesh of the 3D object. </dd></dl>
+
+</div>
+</div>
+<a id="a9ad9d6fa8dd0c09fa94282fcc943086d" name="a9ad9d6fa8dd0c09fa94282fcc943086d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ad9d6fa8dd0c09fa94282fcc943086d">&#9670;&#160;</a></span>getMinBound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Vector3d Object3D::getMinBound </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -554,8 +623,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/lucasgtr/lumen/include/Scene/<a class="el" href="Object3D_8hpp_source.html">Object3D.hpp</a></li>
-<li>/home/lucasgtr/lumen/src/Scene/<a class="el" href="Object3D_8cpp.html">Object3D.cpp</a></li>
+<li>/home/lucasgtr/lumen/include/SceneObjects/<a class="el" href="Object3D_8hpp_source.html">Object3D.hpp</a></li>
+<li>/home/lucasgtr/lumen/src/SceneObjects/<a class="el" href="Object3D_8cpp.html">Object3D.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

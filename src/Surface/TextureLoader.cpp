@@ -18,7 +18,7 @@ std::shared_ptr<Texture> load(const char* filename) {
 
   if(data == nullptr) {
     std::cerr << "Failed to load texture: " << filename << '\n';
-    return std::make_shared<Texture>(Eigen::Vector4d(1.0, 0.0, 1.0, 1.0));
+    return std::make_shared<Texture>(ColorRGBA(1.0, 0.0, 1.0, 1.0)); // Return a default texture if loading fails
   }
   const ImageProperties texture_properties = {width, height, channels};
   auto                  texture            = std::make_shared<Texture>(data, texture_properties);

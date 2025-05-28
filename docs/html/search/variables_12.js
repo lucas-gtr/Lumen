@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['x_0',['x',['../structPixelCoord.html#a1b9e9435e5d733ec2f5d101f6e30f03f',1,'PixelCoord']]],
-  ['x0_1',['x0',['../structTextureSampling_1_1BilinearSampleInfo.html#a43f7dc5ad9ba2bcc4895c37f8960c714',1,'TextureSampling::BilinearSampleInfo']]],
-  ['x1_2',['x1',['../structTextureSampling_1_1BilinearSampleInfo.html#af0811a17100f3f2faf36d68915b34993',1,'TextureSampling::BilinearSampleInfo']]]
+  ['v_0',['v',['../structTextureUV.html#abf8f5580d06c9c43842c7a1a7e4c1fd8',1,'TextureUV']]],
+  ['vertexindices_1',['vertexIndices',['../structFace.html#a62d1c026c6d5a647c5aab0a8a218effc',1,'Face']]]
 ];

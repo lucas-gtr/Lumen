@@ -83,7 +83,7 @@ TEST_F(RendererTest, FramebufferUpdatesWhenRenderSettingsChange) {
 TEST_F(RendererTest, RenderInfluencedByLight) {
   auto light = std::make_unique<DirectionalLight>();
   light->setDirection(Eigen::Vector3d(0.0, 0.0, -1.0));
-  light->setColor(Eigen::Vector3d(0.9, 0.0, 0.0));
+  light->setColor({0.9, 0.0, 0.0});
   light->setIntensity(1.0);
   scene.addLight(std::move(light));
 
@@ -92,7 +92,7 @@ TEST_F(RendererTest, RenderInfluencedByLight) {
   auto cube_object = std::make_unique<Object3D>(cube_mesh);
   cube_object->setPosition(Eigen::Vector3d(0.0, 0.0, -7.0));
   
-  auto texture = std::make_shared<Texture>(Eigen::Vector3d(0.5, 0.3, 0.9));
+  auto texture = std::make_shared<Texture>(ColorRGB(0.5, 0.3, 0.9));
   auto material = std::make_shared<Material>();
   material->setAlbedoTexture(texture);
   cube_object->setMaterial(material);
@@ -120,7 +120,7 @@ TEST_F(RendererTest, RenderInfluencedByLight) {
 TEST_F(RendererTest, ShadowRayBlockedByObject) {
   auto light = std::make_unique<DirectionalLight>();
   light->setDirection(Eigen::Vector3d(0.0, 0.0, -1.0));
-  light->setColor(Eigen::Vector3d(0.9, 0.0, 0.0));
+  light->setColor({0.9, 0.0, 0.0});
   light->setIntensity(1.0);
   scene.addLight(std::move(light));
 
@@ -134,7 +134,7 @@ TEST_F(RendererTest, ShadowRayBlockedByObject) {
   auto cube_object2 = std::make_unique<Object3D>(cube_mesh2);
   cube_object2->setPosition(Eigen::Vector3d(0.0, 0.0, 6.5));
   
-  auto texture = std::make_shared<Texture>(Eigen::Vector3d(0.5, 0.3, 0.9));
+  auto texture = std::make_shared<Texture>(ColorRGB(0.5, 0.3, 0.9));
   auto material = std::make_shared<Material>();
   material->setAlbedoTexture(texture);
   cube_object->setMaterial(material);

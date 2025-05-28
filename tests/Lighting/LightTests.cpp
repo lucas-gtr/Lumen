@@ -7,11 +7,11 @@ class MockLight : public Light {
       explicit MockLight(LightType type) : Light(type) {}
   
       Eigen::Vector3d getDirectionFromPoint(const Eigen::Vector3d& point) const override {
-          return Eigen::Vector3d(1.0, 0.0, 0.0); // valeur arbitraire
+          return Eigen::Vector3d(1.0, 0.0, 0.0);
       }
   
-      Eigen::Vector3d getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const override {
-          return Eigen::Vector3d(1.0, 1.0, 1.0); // valeur arbitraire
+      ColorRGB getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const override {
+          return ColorRGB(1.0, 0.9, 0.8);
       }
   };
   
@@ -22,7 +22,7 @@ class MockLight : public Light {
   
   TEST(LightTest, DefaultColorIsWhite) {
       MockLight light(LightType::Directional);
-      Eigen::Vector3d expected_color(1.0, 1.0, 1.0);
+      ColorRGB expected_color(1.0, 1.0, 1.0);
       EXPECT_EQ(light.getColor(), expected_color);
   }
   
@@ -33,7 +33,7 @@ class MockLight : public Light {
   
   TEST(LightTest, SetColorChangesColor) {
       MockLight light(LightType::Point);
-      Eigen::Vector3d new_color(0.5, 0.4, 0.3);
+      ColorRGB new_color(0.5, 0.4, 0.3);
       light.setColor(new_color);
       EXPECT_EQ(light.getColor(), new_color);
   }
@@ -56,7 +56,7 @@ class MockLight : public Light {
       MockLight light(LightType::Point);
       Eigen::Vector3d point(0.0, 0.0, 0.0);
       Eigen::Vector3d normal(0.0, 1.0, 0.0);
-      Eigen::Vector3d expected_light_factor(1.0, 1.0, 1.0);
+      ColorRGB expected_light_factor(1.0, 0.9, 0.8);
       EXPECT_EQ(light.getLightFactor(point, normal), expected_light_factor);
   }
   

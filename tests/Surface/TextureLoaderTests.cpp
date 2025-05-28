@@ -41,14 +41,14 @@ TEST_F(TextureLoaderTest, LoadValidImage) {
 
   texture->setFilteringMode(TextureSampling::TextureFiltering::NEAREST);
 
-  const Eigen::Vector4d& color = texture->getValue4d({0, 1});
-  EXPECT_EQ(color, Eigen::Vector4d(0.0, 0.0, 1.0, 1.0));
+  const ColorRGBA& color = texture->getValue4d({0, 1});
+  EXPECT_EQ(color, ColorRGBA(0.0, 0.0, 1.0, 1.0));
 }
 
 TEST(TextureLoaderErrorTest, LoadNonexistentImage) {
   std::shared_ptr<Texture> texture = TextureLoader::load("does_not_exist.png");
   ASSERT_NE(texture, nullptr);
 
-  const Eigen::Vector4d& color = texture->getValue4d({0, 0});
-  EXPECT_EQ(color, Eigen::Vector4d(1.0, 0.0, 1.0, 1.0));
+  const ColorRGBA& color = texture->getValue4d({0, 0});
+  EXPECT_EQ(color, ColorRGBA(1.0, 0.0, 1.0, 1.0));
 }

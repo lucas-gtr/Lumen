@@ -32,11 +32,11 @@ TEST_F(SpotLightTest, LightFactorIsMaxInsideInnerCone) {
     Eigen::Vector3d point(0.0, 0.0, -1.0);
     Eigen::Vector3d normal(0.0, 0.0, 1.0);
 
-    Eigen::Vector3d factor = light.getLightFactor(point, normal);
+    ColorRGB factor = light.getLightFactor(point, normal);
 
-    EXPECT_NEAR(factor.x(), 1.0, 1e-6);
-    EXPECT_NEAR(factor.y(), 1.0, 1e-6);
-    EXPECT_NEAR(factor.z(), 1.0, 1e-6);
+    EXPECT_NEAR(factor.r, 1.0, 1e-6);
+    EXPECT_NEAR(factor.g, 1.0, 1e-6);
+    EXPECT_NEAR(factor.b, 1.0, 1e-6);
 }
 
 TEST_F(SpotLightTest, LightFactorIsHalfwayBasedOnCosine) {
@@ -52,15 +52,15 @@ TEST_F(SpotLightTest, LightFactorIsHalfwayBasedOnCosine) {
   Eigen::Vector3d point(radius, 0.0, -1.0);
   Eigen::Vector3d normal(0.0, 0.0, 1.0);
 
-  Eigen::Vector3d factor = light.getLightFactor(point, normal);
+  ColorRGB factor = light.getLightFactor(point, normal);
 
   double distance = (point - light.getPosition()).norm();
   double attenuation = 1.0 / (distance * distance);
 
   double expected = attenuation * 0.5;
-  EXPECT_NEAR(factor.x(), expected, 0.05);
-  EXPECT_NEAR(factor.y(), expected, 0.05);
-  EXPECT_NEAR(factor.z(), expected, 0.05);
+  EXPECT_NEAR(factor.r, expected, 0.05);
+  EXPECT_NEAR(factor.g, expected, 0.05);
+  EXPECT_NEAR(factor.b, expected, 0.05);
 }
 
 TEST_F(SpotLightTest, LightFactorIsZeroOutsideOuterCone) {
@@ -71,24 +71,24 @@ TEST_F(SpotLightTest, LightFactorIsZeroOutsideOuterCone) {
     Eigen::Vector3d point(offsetX * 5.0, 0.0, offsetZ * 5.0);
     Eigen::Vector3d normal(0.0, 0.0, 1.0);
 
-    Eigen::Vector3d factor = light.getLightFactor(point, normal);
+    ColorRGB factor = light.getLightFactor(point, normal);
 
-    EXPECT_NEAR(factor.x(), 0.0, 1e-6);
-    EXPECT_NEAR(factor.y(), 0.0, 1e-6);
-    EXPECT_NEAR(factor.z(), 0.0, 1e-6);
+    EXPECT_NEAR(factor.r, 0.0, 1e-6);
+    EXPECT_NEAR(factor.g, 0.0, 1e-6);
+    EXPECT_NEAR(factor.b, 0.0, 1e-6);
 }
 
 TEST_F(SpotLightTest, LightFactorDependsOnNormalDirection) {
     Eigen::Vector3d point(0.0, 0.0, -5.0);
 
     Eigen::Vector3d normalFacingLight(0.0, 0.0, 1.0);
-    Eigen::Vector3d factorFacing = light.getLightFactor(point, normalFacingLight);
+    ColorRGB factorFacing = light.getLightFactor(point, normalFacingLight);
 
     Eigen::Vector3d normalOppositeToLight(0.0, 0.0, -1.0);
-    Eigen::Vector3d factorOpposite = light.getLightFactor(point, normalOppositeToLight);
+    ColorRGB factorOpposite = light.getLightFactor(point, normalOppositeToLight);
 
-    EXPECT_GT(factorFacing.x(), factorOpposite.x());
-    EXPECT_GT(factorFacing.y(), factorOpposite.y());
-    EXPECT_GT(factorFacing.z(), factorOpposite.z());
+    EXPECT_GT(factorFacing.r, factorOpposite.r);
+    EXPECT_GT(factorFacing.g, factorOpposite.g);
+    EXPECT_GT(factorFacing.b, factorOpposite.b);
 }
 

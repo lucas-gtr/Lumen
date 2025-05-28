@@ -11,6 +11,7 @@
 #include <vector>
 
 #include "BVH/BVHNode.hpp"
+#include "Core/CommonTypes.hpp"
 #include "Lighting/Light.hpp"
 #include "Scene/Skybox.hpp"
 #include "SceneObjects/Camera.hpp"
@@ -83,9 +84,9 @@ public:
    * @brief Gets the color of the skybox based on a given direction.
    *
    * @param direction The direction vector for which to get the skybox color.
-   * @return The color of the skybox as an Eigen::Vector4d.
+   * @return The color of the skybox.
    */
-  Eigen::Vector4d getSkyboxColor(const Eigen::Vector3d direction) const { return m_skybox->getColor(direction); }
+  ColorRGBA getSkyboxColor(const Eigen::Vector3d direction) const { return m_skybox->getColor(direction); }
 
   /**
    * @brief Sets the skybox texture for the scene.

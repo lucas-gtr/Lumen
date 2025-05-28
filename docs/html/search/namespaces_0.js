@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rayintersection_0',['RayIntersection',['../namespaceRayIntersection.html',1,'']]]
+  ['bvh_0',['BVH',['../namespaceBVH.html',1,'']]]
 ];

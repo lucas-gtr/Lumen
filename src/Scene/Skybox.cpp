@@ -10,8 +10,8 @@
 #include "Surface/Texture.hpp"
 
 Skybox::Skybox() {
-  m_texture = std::make_shared<Texture>(
-      Eigen::Vector4d(DEFAULT_SKYBOX_COLOR_R, DEFAULT_SKYBOX_COLOR_G, DEFAULT_SKYBOX_COLOR_B, 1.0));
+  m_texture =
+      std::make_shared<Texture>(ColorRGBA(DEFAULT_SKYBOX_COLOR_R, DEFAULT_SKYBOX_COLOR_G, DEFAULT_SKYBOX_COLOR_B, 1.0));
   m_texture->setColorSpace(ColorSpace::RGB);
 }
 
@@ -31,7 +31,7 @@ TextureUV Skybox::getUVCoordinates(const Eigen::Vector3d& direction) {
   return uv_coord;
 }
 
-Eigen::Vector4d Skybox::getColor(const Eigen::Vector3d& direction) const {
+ColorRGBA Skybox::getColor(const Eigen::Vector3d& direction) const {
   const TextureUV uv_coord = getUVCoordinates(direction);
   return m_texture->getValue4d(uv_coord);
 }

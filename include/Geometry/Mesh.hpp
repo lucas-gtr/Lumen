@@ -106,6 +106,9 @@ public:
    */
   bool operator==(const Mesh& other) const { return m_vertices == other.m_vertices && m_faces == other.m_faces; }
 
+  /**
+   * @brief Builds the bounding volume hierarchy (BVH) for the mesh.
+   */
   void buildBVH();
 
   /**

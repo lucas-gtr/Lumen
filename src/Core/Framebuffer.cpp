@@ -2,7 +2,6 @@
 #include "Core/ColorUtils.hpp"
 #include "Core/CommonTypes.hpp"
 
-#include <Eigen/Core>
 #include <algorithm>
 #include <cstdint>
 #include <iostream>
@@ -34,7 +33,7 @@ void Framebuffer::convertToSRGBColorSpace() {
   }
 }
 
-void Framebuffer::setPixelColor(PixelCoord pixel_coord, const Eigen::Vector4d& color, double weight) {
+void Framebuffer::setPixelColor(PixelCoord pixel_coord, const ColorRGBA& color, double weight) {
   if(pixel_coord.x < 0 || pixel_coord.x >= m_framebuffer_properties.width || pixel_coord.y < 0 ||
      pixel_coord.y >= m_framebuffer_properties.height) {
     std::cerr << "Pixel coordinates out of bounds: (" << pixel_coord.x << ", " << pixel_coord.y << ").\n";
@@ -48,15 +47,15 @@ void Framebuffer::setPixelColor(PixelCoord pixel_coord, const Eigen::Vector4d& c
     m_framebuffer[index] += toGrayscale(color) * weight;
     break;
   case 3:
-    m_framebuffer[index] += color[0] * weight;
-    m_framebuffer[index + 1] += color[1] * weight;
-    m_framebuffer[index + 2] += color[2] * weight;
+    m_framebuffer[index] += color.r * weight;
+    m_framebuffer[index + 1] += color.g * weight;
+    m_framebuffer[index + 2] += color.b * weight;
     break;
   case 4:
-    m_framebuffer[index] += color[0] * weight;
-    m_framebuffer[index + 1] += color[1] * weight;
-    m_framebuffer[index + 2] += color[2] * weight;
-    m_framebuffer[index + 3] += color[3] * weight;
+    m_framebuffer[index] += color.r * weight;
+    m_framebuffer[index + 1] += color.g * weight;
+    m_framebuffer[index + 2] += color.b * weight;
+    m_framebuffer[index + 3] += color.a * weight;
     break;
   default:
     std::cerr << "Unsupported channel count: " << m_framebuffer_properties.channels

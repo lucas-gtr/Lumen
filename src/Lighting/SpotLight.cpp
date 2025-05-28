@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <cmath>
 
+#include "Core/CommonTypes.hpp"
 #include "Core/MathConstants.hpp"
 #include "Lighting/SpotLight.hpp"
 
@@ -10,7 +11,7 @@ Eigen::Vector3d SpotLight::getDirectionFromPoint(const Eigen::Vector3d& point) c
 }
 
 // NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
-Eigen::Vector3d SpotLight::getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const {
+ColorRGB SpotLight::getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const {
   const double distance    = (getPosition() - point).norm();
   const double attenuation = getIntensity() / (distance * distance);
 

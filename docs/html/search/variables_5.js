@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['height_0',['height',['../structImageProperties.html#a29843e3de864c5f4cddb7117c353d582',1,'ImageProperties::height'],['../structResolution.html#ad418665a8360ad05ba83afec67962904',1,'Resolution::height']]],
-  ['hitpoint_1',['hitPoint',['../structRayHitInfo.html#a0f4b6d32be97163a7cd4a16c74ec173d',1,'RayHitInfo']]]
+  ['focallength_0',['focalLength',['../structRayEmitterParameters.html#ab0ffad5fc5dec801116a55a4a01ed99c',1,'RayEmitterParameters']]],
+  ['focusdistance_1',['focusDistance',['../structRayEmitterParameters.html#a18c9041bbb5556d2c6b643b50dbb2f41',1,'RayEmitterParameters']]]
 ];

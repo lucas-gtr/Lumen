@@ -5,12 +5,15 @@
 #ifndef SURFACE_TEXTUREWRAPPING_HPP
 #define SURFACE_TEXTUREWRAPPING_HPP
 
-#include "Core/CommonTypes.hpp"
-
 #include <cstdint>
 
-namespace TextureSampling {
+#include "Core/CommonTypes.hpp"
 
+/**
+ * @namespace TextureSampling
+ * @brief Namespace for texture sampling functions and enums.
+ */
+namespace TextureSampling {
 /**
  * @enum TextureWrapping
  * @brief Enumeration for texture wrapping modes.

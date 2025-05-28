@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "BVH/BVHNode.hpp"
+#include "Core/CommonTypes.hpp"
 #include "Core/Ray.hpp"
 #include "Geometry/Mesh.hpp"
 #include "Rendering/RayIntersection.hpp"
@@ -123,10 +124,11 @@ void updateNormalWithTangentSpace(RayHitInfo& hit_info) {
   tangent_space.col(1) = hit_info.bitangent;
   tangent_space.col(2) = hit_info.normal;
 
-  Eigen::Vector3d normal_texture = hit_info.material->getNormal(hit_info.uvCoordinates);
-  normal_texture                 = (normal_texture * 2) - Eigen::Vector3d(1.0, 1.0, 1.0);
+  const ColorRGB  normal_color     = hit_info.material->getNormal(hit_info.uvCoordinates);
+  Eigen::Vector3d normal_direction = {normal_color.r, normal_color.g, normal_color.b};
+  normal_direction                 = (normal_direction * 2) - Eigen::Vector3d(1.0, 1.0, 1.0);
 
-  hit_info.normal = (tangent_space * normal_texture).normalized();
+  hit_info.normal = (tangent_space * normal_direction).normalized();
 }
 
 Ray transformRayToObjectSpace(const Ray& ray, const Object3D* object) {

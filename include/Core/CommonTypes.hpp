@@ -56,4 +56,54 @@ struct TextureUV {
   double v = 0.0; ///< V coordinate of the texture.
 };
 
+struct ColorRGBA; ///< Forward declaration for ColorRGBA.
+
+/**
+ * @struct ColorRGB
+ * @brief Structure to hold RGB color values.
+ */
+struct ColorRGB {
+  double r = 0.0; ///< Red component of the color
+  double g = 0.0; ///< Green component of the color
+  double b = 0.0; ///< Blue component of the color
+
+  ColorRGB() = default;
+  ColorRGB(double red, double green, double blue);
+  explicit ColorRGB(double grayscale);
+  explicit ColorRGB(const ColorRGBA& color); // Ne pas définir ici
+
+  ColorRGB  operator+(const ColorRGB& other) const;
+  ColorRGB& operator+=(const ColorRGB& other);
+  ColorRGB  operator*(double scalar) const;
+
+  bool operator==(const ColorRGB& other) const;
+
+  friend ColorRGB operator*(double scalar, const ColorRGB& color);
+};
+
+/**
+ * @struct ColorRGBA
+ * @brief Structure to hold RGBA color values.
+ */
+struct ColorRGBA {
+  double r = 0.0; ///< Red component of the color
+  double g = 0.0; ///< Green component of the color
+  double b = 0.0; ///< Blue component of the color
+  double a = 1.0; ///< Alpha component of the color (opacity)
+
+  ColorRGBA() = default;
+  ColorRGBA(double red, double green, double blue, double alpha);
+  explicit ColorRGBA(double grayscale);
+  ColorRGBA(double grayscale, double alpha);
+  explicit ColorRGBA(const ColorRGB& color);
+  ColorRGBA(const ColorRGB& color, double alpha);
+
+  ColorRGBA operator+(const ColorRGBA& other) const;
+  ColorRGBA operator*(double scalar) const;
+
+  bool operator==(const ColorRGBA& other) const;
+
+  friend ColorRGBA operator*(double scalar, const ColorRGBA& color);
+};
+
 #endif // CORE_COMMONTYPES_HPP

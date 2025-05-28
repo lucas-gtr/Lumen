@@ -83,32 +83,52 @@ $(function() {
   <div class="headertitle"><div class="title">Mesh.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="Mesh_8hpp_source.html">Geometry/Mesh.hpp</a>&quot;</code><br />
-<code>#include &lt;Eigen/Core&gt;</code><br />
+<div class="textblock"><code>#include &lt;Eigen/Core&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="BVHBuilder_8hpp_source.html">BVH/BVHBuilder.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="BVHNode_8hpp_source.html">BVH/BVHNode.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Mesh_8hpp_source.html">Geometry/Mesh.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Mesh.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Mesh_8cpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2src_2Geometry_2Mesh_8cpp" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2src_2Geometry_2Mesh_8cpp" id="a_2home_2lucasgtr_2lumen_2src_2Geometry_2Mesh_8cpp">
-<area shape="rect" title=" " alt="" coords="228,5,408,45"/>
-<area shape="rect" href="Mesh_8hpp.html" title="Header file for the Mesh class, the Vertex and Face structures." alt="" coords="183,93,338,119"/>
-<area shape="poly" title=" " alt="" coords="306,47,279,84,275,80,302,44"/>
-<area shape="rect" title=" " alt="" coords="5,167,97,192"/>
-<area shape="poly" title=" " alt="" coords="272,48,173,96,122,128,78,160,75,156,118,124,170,91,269,43"/>
-<area shape="rect" title=" " alt="" coords="407,167,469,192"/>
-<area shape="poly" title=" " alt="" coords="335,44,423,154,418,157,331,47"/>
-<area shape="rect" title=" " alt="" coords="413,93,498,119"/>
-<area shape="poly" title=" " alt="" coords="352,43,424,84,422,89,350,48"/>
-<area shape="poly" title=" " alt="" coords="228,121,99,165,98,160,226,116"/>
-<area shape="rect" title=" " alt="" coords="122,167,178,192"/>
-<area shape="poly" title=" " alt="" coords="244,121,181,161,178,157,241,116"/>
-<area shape="poly" title=" " alt="" coords="290,116,398,159,396,164,288,121"/>
-<area shape="rect" href="CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="203,167,383,192"/>
-<area shape="poly" title=" " alt="" coords="268,118,284,153,280,155,264,120"/>
-<area shape="rect" title=" " alt="" coords="259,240,326,265"/>
-<area shape="poly" title=" " alt="" coords="295,192,295,226,290,226,290,192"/>
+<area shape="rect" title=" " alt="" coords="216,5,396,45"/>
+<area shape="rect" title=" " alt="" coords="165,240,257,265"/>
+<area shape="poly" title=" " alt="" coords="216,38,157,47,98,59,49,75,32,85,20,95,9,117,12,137,24,157,45,176,103,209,162,233,160,238,100,214,42,180,20,161,7,139,4,116,16,92,29,80,47,70,97,54,156,41,215,33"/>
+<area shape="rect" title=" " alt="" coords="30,93,115,119"/>
+<area shape="poly" title=" " alt="" coords="251,48,120,91,119,86,249,43"/>
+<area shape="rect" title=" " alt="" coords="140,93,210,119"/>
+<area shape="poly" title=" " alt="" coords="275,48,207,88,205,84,273,43"/>
+<area shape="rect" title=" " alt="" coords="471,240,548,265"/>
+<area shape="poly" title=" " alt="" coords="396,32,525,48,670,74,738,92,798,113,845,137,876,165,881,180,876,194,854,210,822,223,738,241,644,250,562,253,562,248,643,245,737,235,820,218,851,205,872,190,876,180,871,168,842,141,796,118,737,97,669,80,524,53,396,37"/>
+<area shape="rect" title=" " alt="" coords="413,167,476,192"/>
+<area shape="poly" title=" " alt="" coords="389,43,426,62,441,76,455,92,461,107,462,124,457,154,452,153,457,123,456,108,450,95,438,80,423,67,387,48"/>
+<area shape="rect" href="BVHBuilder_8hpp.html" title="Header file for the BVH builder functions." alt="" coords="286,93,440,119"/>
+<area shape="poly" title=" " alt="" coords="322,44,348,80,344,84,317,47"/>
+<area shape="rect" href="BVHNode_8hpp.html" title="Header file for the BVHNode class." alt="" coords="194,167,338,192"/>
+<area shape="poly" title=" " alt="" coords="297,47,276,94,271,124,268,153,263,152,265,123,271,93,292,45"/>
+<area shape="rect" href="Mesh_8hpp.html" title="Header file for the Mesh class, the Vertex and Face structures." alt="" coords="515,93,670,119"/>
+<area shape="poly" title=" " alt="" coords="375,43,538,87,537,92,374,48"/>
+<area shape="poly" title=" " alt="" coords="286,115,257,121,229,132,204,147,184,168,179,182,180,197,195,228,190,230,175,199,173,181,179,165,201,143,227,127,256,116,285,110"/>
+<area shape="poly" title=" " alt="" coords="368,118,380,153,389,173,402,190,432,214,465,232,462,237,429,219,398,194,385,175,375,155,363,120"/>
+<area shape="poly" title=" " alt="" coords="378,117,422,156,419,160,374,121"/>
+<area shape="poly" title=" " alt="" coords="349,121,294,160,291,156,346,117"/>
+<area shape="poly" title=" " alt="" coords="259,194,230,231,226,228,254,191"/>
+<area shape="poly" title=" " alt="" coords="306,189,459,234,457,239,304,195"/>
+<area shape="poly" title=" " alt="" coords="583,121,544,158,517,178,488,194,433,216,375,232,271,249,270,244,374,227,431,211,486,190,514,173,540,154,579,117"/>
+<area shape="poly" title=" " alt="" coords="604,118,623,152,627,173,621,193,610,208,595,221,563,239,560,234,592,217,606,205,617,191,621,173,618,154,599,120"/>
+<area shape="poly" title=" " alt="" coords="570,121,482,163,480,158,567,116"/>
+<area shape="poly" title=" " alt="" coords="540,121,332,166,331,161,539,116"/>
+<area shape="rect" title=" " alt="" coords="551,167,607,192"/>
+<area shape="poly" title=" " alt="" coords="593,119,586,154,581,153,587,119"/>
+<area shape="rect" href="CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="682,167,862,192"/>
+<area shape="poly" title=" " alt="" coords="622,116,731,159,729,164,620,121"/>
+<area shape="rect" title=" " alt="" coords="739,240,806,265"/>
+<area shape="poly" title=" " alt="" coords="775,192,775,226,770,226,770,192"/>
 </map>
 </div>
 </div></div><!-- contents -->

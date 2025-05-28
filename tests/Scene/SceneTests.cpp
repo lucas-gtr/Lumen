@@ -25,11 +25,11 @@ TEST(SceneTest, SetCamera) {
 
 TEST(SceneTest, GetSkyboxColor) {
   Scene scene;
-  std::shared_ptr<Texture> texture = std::make_shared<Texture>(Eigen::Vector3d(1.0, 0.0, 0.0));
+  std::shared_ptr<Texture> texture = std::make_shared<Texture>(ColorRGB(1.0, 0.0, 0.0));
   scene.setSkybox(texture);
   Eigen::Vector3d direction(1.0, 0.0, 0.0);
-  Eigen::Vector4d color = scene.getSkyboxColor(direction);
-  EXPECT_EQ(color, Eigen::Vector4d(1.0, 0.0, 0.0, 1.0)); // Assuming default color is white
+  ColorRGBA color = scene.getSkyboxColor(direction);
+  EXPECT_EQ(color, ColorRGBA(1.0, 0.0, 0.0, 1.0)); // Assuming default color is white
 }
 
 TEST(SceneTest, BuildBVH) {

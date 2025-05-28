@@ -27,18 +27,18 @@ void renderCubeExemple() {
   auto            cube_object = std::make_unique<Object3D>(cube_mesh);
   cube_object->setPosition(Eigen::Vector3d(0.0, 0.0, 0.0));
 
-  auto texture  = std::make_shared<Texture>(Eigen::Vector3d(1.0, 1.0, 1.0));
+  auto texture  = std::make_shared<Texture>(ColorRGB(1.0, 1.0, 1.0));
   auto material = std::make_shared<Material>();
   material->setAlbedoTexture(texture);
   cube_object->setMaterial(material);
 
   std::unique_ptr<DirectionalLight> directional_light = std::make_unique<DirectionalLight>();
-  directional_light->setColor(Eigen::Vector3d(1.0, 1.0, 1.0));
+  directional_light->setColor({1.0, 1.0, 1.0});
   directional_light->setIntensity(1);
   directional_light->setDirection(Eigen::Vector3d(-3.0, -1.0, -2.0));
 
   std::unique_ptr<PointLight> point_light_red = std::make_unique<PointLight>();
-  point_light_red->setColor(Eigen::Vector3d(1.0, 0.0, 0.0));
+  point_light_red->setColor({1.0, 0.0, 0.0});
   point_light_red->setIntensity(1.0);
   point_light_red->setPosition(Eigen::Vector3d(0.2, 1.5, -1.0));
 
@@ -88,12 +88,12 @@ void renderPlaneExemple() {
   plane_object->setMaterial(material);
 
   std::unique_ptr<DirectionalLight> directional_light = std::make_unique<DirectionalLight>();
-  directional_light->setColor(Eigen::Vector3d(1.0, 1.0, 1.0));
+  directional_light->setColor({1.0, 1.0, 1.0});
   directional_light->setIntensity(1.0);
   directional_light->setDirection(Eigen::Vector3d(0.0, -1.0, 0.0));
 
   std::unique_ptr<SpotLight> spot_light_red = std::make_unique<SpotLight>();
-  spot_light_red->setColor(Eigen::Vector3d(1.0, 0.0, 0.0));
+  spot_light_red->setColor({1.0, 0.0, 0.0});
   spot_light_red->setIntensity(10.0);
   spot_light_red->setPosition(Eigen::Vector3d(-2.5, 1.5, -2.5));
   spot_light_red->setDirection(Eigen::Vector3d(0.0, -1.0, 0.0));
@@ -101,7 +101,7 @@ void renderPlaneExemple() {
   spot_light_red->setOuterAngle(60.0);
 
   std::unique_ptr<SpotLight> spot_light_green = std::make_unique<SpotLight>();
-  spot_light_green->setColor(Eigen::Vector3d(0.0, 1.0, 0.0));
+  spot_light_green->setColor({0.0, 1.0, 0.0});
   spot_light_green->setIntensity(10.0);
   spot_light_green->setPosition(Eigen::Vector3d(0.0, 1.5, 0.0));
   spot_light_green->setDirection(Eigen::Vector3d(0.0, -1.0, 0.0));
@@ -109,7 +109,7 @@ void renderPlaneExemple() {
   spot_light_green->setOuterAngle(60.0);
 
   std::unique_ptr<SpotLight> spot_light_blue = std::make_unique<SpotLight>();
-  spot_light_blue->setColor(Eigen::Vector3d(0.0, 0.0, 1.0));
+  spot_light_blue->setColor({0.0, 0.0, 1.0});
   spot_light_blue->setIntensity(20.0);
   spot_light_blue->setPosition(Eigen::Vector3d(2.5, 1.5, 2.5));
   spot_light_blue->setDirection(Eigen::Vector3d(0.0, -1.0, 0.0));
@@ -165,7 +165,7 @@ void renderSphereExemple() {
   sphere_object->setMaterial(material);
 
   std::unique_ptr<DirectionalLight> directional_light = std::make_unique<DirectionalLight>();
-  directional_light->setColor(Eigen::Vector3d(1.0, 1.0, 1.0));
+  directional_light->setColor({1.0, 1.0, 1.0});
   directional_light->setIntensity(1.0);
   directional_light->setDirection(Eigen::Vector3d(1.0, 0.0, -2.0));
 
@@ -234,12 +234,12 @@ void renderOBJExample() {
   camera->setAperture(22.0);
 
   std::unique_ptr<DirectionalLight> directional_light_orange = std::make_unique<DirectionalLight>();
-  directional_light_orange->setColor(Eigen::Vector3d(1.0, 0.5, 0.0));
+  directional_light_orange->setColor({1.0, 0.5, 0.0});
   directional_light_orange->setIntensity(1.0);
   directional_light_orange->setDirection(Eigen::Vector3d(-1.0, 0.0, -1.0));
 
   std::unique_ptr<DirectionalLight> directional_light_blue = std::make_unique<DirectionalLight>();
-  directional_light_blue->setColor(Eigen::Vector3d(0.2, 0.5, 1.0));
+  directional_light_blue->setColor({0.2, 0.5, 1.0});
   directional_light_blue->setIntensity(1.0);
   directional_light_blue->setDirection(Eigen::Vector3d(1.0, 0.0, -1.0));
 
@@ -277,8 +277,8 @@ void renderOBJExample() {
 int main() {
   // renderCubeExemple();
   // renderPlaneExemple();
-  renderSphereExemple();
-  // renderOBJExample();
+  // renderSphereExemple();
+  renderOBJExample();
 
   return 0;
 }

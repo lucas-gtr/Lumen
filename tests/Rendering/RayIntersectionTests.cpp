@@ -279,7 +279,7 @@ TEST(RayIntersectionTest, UpdateNormalWithTangentSpace) {
     hit.tangent = tangent;
     hit.bitangent = bitangent;
 
-    std::unique_ptr<Texture> normal_texture = std::make_unique<Texture>(Eigen::Vector3d(0.75, 1.0, 0.5));
+    std::unique_ptr<Texture> normal_texture = std::make_unique<Texture>(ColorRGB(0.75, 1.0, 0.5));
     std::unique_ptr<Material> material = std::make_unique<Material>();
     material->setNormalTexture(std::move(normal_texture));
     hit.material = material.get();

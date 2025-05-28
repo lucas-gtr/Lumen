@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['cameraposition_0',['cameraPosition',['../structRayEmitterParameters.html#a5efd64c17dd719fad5ba7f16316ae59e',1,'RayEmitterParameters']]],
-  ['camerarotationmatrix_1',['cameraRotationMatrix',['../structRayEmitterParameters.html#a65bc73d237bcb0e2ffee5213e041b8d2',1,'RayEmitterParameters']]],
-  ['channels_2',['channels',['../structImageProperties.html#a20ef20a4eb449a9f844c7e0fa423f01b',1,'ImageProperties']]]
+  ['b_0',['b',['../structColorRGB.html#ac7cde59d5ee8a9f220e43f27cac47296',1,'ColorRGB::b'],['../structColorRGBA.html#a1de6ee448de3bc947c02d3111f52b6ff',1,'ColorRGBA::b']]],
+  ['bitangent_1',['bitangent',['../structVertex.html#ad3be9896e1aa35006efb2c6eea55c21a',1,'Vertex::bitangent'],['../structRayHitInfo.html#a7d726c4336fabcc7de56400056acab4d',1,'RayHitInfo::bitangent']]]
 ];

@@ -5,7 +5,6 @@
 #ifndef CORE_FRAMEBUFFER_HPP
 #define CORE_FRAMEBUFFER_HPP
 
-#include <Eigen/Core>
 #include <cstddef>
 
 #include "Core/CommonTypes.hpp"
@@ -88,7 +87,7 @@ public:
    * @param color The color to set the pixel to.
    * @param weight The weight of the color to apply.
    */
-  void setPixelColor(PixelCoord pixel_coord, const Eigen::Vector4d& color, double weight);
+  void setPixelColor(PixelCoord pixel_coord, const ColorRGBA& color, double weight);
 
   ~Framebuffer(); /// Default destructor.
 };

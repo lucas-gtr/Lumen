@@ -9,7 +9,7 @@ TEST(SkyboxTest, DefaultConstructorUsesDefaultColor) {
   Skybox skybox;
 
   Eigen::Vector3d direction(1.0, 0.0, 0.0);
-  Eigen::Vector4d color = skybox.getColor(direction);
+  ColorRGBA color = skybox.getColor(direction);
 
   double r = 0.65;
   convertToLinearSpace(r);
@@ -18,30 +18,30 @@ TEST(SkyboxTest, DefaultConstructorUsesDefaultColor) {
   double b = 0.9;
   convertToLinearSpace(b);
 
-  EXPECT_DOUBLE_EQ(color.x(), r);
-  EXPECT_DOUBLE_EQ(color.y(), g);
-  EXPECT_DOUBLE_EQ(color.z(), b);
-  EXPECT_DOUBLE_EQ(color.w(), 1.0);
+  EXPECT_DOUBLE_EQ(color.r, r);
+  EXPECT_DOUBLE_EQ(color.g, g);
+  EXPECT_DOUBLE_EQ(color.b, b);
+  EXPECT_DOUBLE_EQ(color.a, 1.0);
 }
 
 TEST(SkyboxTest, SetTextureWithSingleColorReturnsCorrectColor) {
   Skybox skybox;
 
   Eigen::Vector3d direction(0.0, 1.0, 0.0);
-  Eigen::Vector3d color_rgb(0.2, 0.4, 0.6);
+  ColorRGB color_rgb(0.2, 0.4, 0.6);
   auto texture = std::make_shared<Texture>(color_rgb);
   skybox.setTexture(texture);
 
-  Eigen::Vector4d color = skybox.getColor(direction);
+  ColorRGBA color = skybox.getColor(direction);
 
-  convertToLinearSpace(color_rgb.x());
-  convertToLinearSpace(color_rgb.y());
-  convertToLinearSpace(color_rgb.z());
+  convertToLinearSpace(color_rgb.r);
+  convertToLinearSpace(color_rgb.g);
+  convertToLinearSpace(color_rgb.b);
 
-  EXPECT_DOUBLE_EQ(color.x(), color_rgb.x());
-  EXPECT_DOUBLE_EQ(color.y(), color_rgb.y());
-  EXPECT_DOUBLE_EQ(color.z(), color_rgb.z());
-  EXPECT_DOUBLE_EQ(color.w(), 1.0);
+  EXPECT_DOUBLE_EQ(color.r, color_rgb.r);
+  EXPECT_DOUBLE_EQ(color.g, color_rgb.g);
+  EXPECT_DOUBLE_EQ(color.b, color_rgb.b);
+  EXPECT_DOUBLE_EQ(color.a, 1.0);
 }
 
 TEST(SkyboxTest, GetUVCoordinatesIsCorrectlyComputed) {
@@ -85,7 +85,7 @@ TEST(SkyboxTest, GetUVCoordinatesIsCorrectlyComputed) {
 TEST(SkyboxTest, ReturnsDefaultColorAfterTextureIsResetToNull) {
   Skybox skybox;
 
-  auto texture = std::make_shared<Texture>(Eigen::Vector4d(0.1, 0.2, 0.3, 1.0));
+  auto texture = std::make_shared<Texture>(ColorRGBA(0.1, 0.2, 0.3, 1.0));
   skybox.setTexture(texture);
 
   skybox.setTexture(nullptr);
@@ -98,10 +98,10 @@ TEST(SkyboxTest, ReturnsDefaultColorAfterTextureIsResetToNull) {
   convertToLinearSpace(b);
 
   Eigen::Vector3d direction(0.0, 0.0, 1.0);
-  Eigen::Vector4d color = skybox.getColor(direction);
+  ColorRGBA color = skybox.getColor(direction);
 
-  EXPECT_DOUBLE_EQ(color.x(), r);
-  EXPECT_DOUBLE_EQ(color.y(), g);
-  EXPECT_DOUBLE_EQ(color.z(), b);
-  EXPECT_DOUBLE_EQ(color.w(), 1.0);
+  EXPECT_DOUBLE_EQ(color.r, r);
+  EXPECT_DOUBLE_EQ(color.g, g);
+  EXPECT_DOUBLE_EQ(color.b, b);
+  EXPECT_DOUBLE_EQ(color.a, 1.0);
 }
