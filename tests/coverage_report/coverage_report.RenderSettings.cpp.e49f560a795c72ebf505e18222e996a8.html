@@ -27,7 +27,11 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
+<<<<<<< HEAD
       <td>2025-05-29 15:24:27</td>
+=======
+      <td>2025-05-28 10:24:22</td>
+>>>>>>> main
     </tr>
   </table>
 </div>
@@ -73,8 +77,12 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
+<<<<<<< HEAD
     <tr><td><a href="#l9">RenderSettings::RenderSettings() (line 9)</a></td><td>called 147 times, returned 147 times</td><td>86.0%</td></tr>
     <tr><td><a href="#l11">RenderSettings::setSamplesPerPixel(int) (line 11)</a></td><td>called 96 times, returned 96 times</td><td>89.0%</td></tr>
+=======
+    <tr><td><a href="#l7">RenderSettings::setSamplesPerPixel(int) (line 7)</a></td><td>called 24 times, returned 24 times</td><td>89.0%</td></tr>
+>>>>>>> main
   </table>
 </details>
 
@@ -135,8 +143,13 @@
       <td class="lineno"><a id="l7" href="#l7">7</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount "></td>
       <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Rendering/RenderSettings.hpp&quot;</span></td>
+=======
+      <td class="linecount coveredLine">24</td>
+      <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">RenderSettings::setSamplesPerPixel</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">samples_per_pixels</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l8" href="#l8">8</a></td>
@@ -151,12 +164,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 28 taken 147 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">147</td>
       <td class="src coveredLine"><span class="n">RenderSettings</span><span class="o">::</span><span class="n">RenderSettings</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_renderer_parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Parameters</span><span class="o">&gt;</span><span class="p">();</span><span class="w"> </span><span class="p">}</span></td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 24 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">24</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">samples_per_pixels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">samples_per_pixels</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_SAMPLES_PER_PIXEL</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_SAMPLES_PER_PIXEL</span><span class="p">);</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l10" href="#l10">10</a></td>
@@ -168,16 +190,34 @@
     <tr class="source-line">
       <td class="lineno"><a id="l11" href="#l11">11</a></td>
       <td class="linebranch">
+<<<<<<< HEAD
       </td>
       <td class="linecount coveredLine">96</td>
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">RenderSettings</span><span class="o">::</span><span class="n">setSamplesPerPixel</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">samples_per_pixels</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+=======
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+          <div class="takenBranch">&check; Branch 2 taken 24 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">24</td>
+      <td class="src partialCoveredLine"><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sqrt_value</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">samples_per_pixels</span><span class="p">));</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l12" href="#l12">12</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount "></td>
       <td class="src "><span class="w">  </span><span class="p">{</span></td>
+=======
+      <td class="linecount coveredLine">24</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">lower_square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqrt_value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sqrt_value</span><span class="p">;</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l13" href="#l13">13</a></td>
@@ -189,8 +229,13 @@
         </div>
         </details>
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">96</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">samples_per_pixels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">samples_per_pixels</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_SAMPLES_PER_PIXEL</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_SAMPLES_PER_PIXEL</span><span class="p">);</span></td>
+=======
+      <td class="linecount coveredLine">24</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">upper_square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">sqrt_value</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">sqrt_value</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l14" href="#l14">14</a></td>
@@ -205,6 +250,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
           <div class="takenBranch">&check; Branch 2 taken 96 times.</div>
         </div>
@@ -212,13 +258,27 @@
       </td>
       <td class="linecount partialCoveredLine">96</td>
       <td class="src partialCoveredLine"><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sqrt_value</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">samples_per_pixels</span><span class="p">));</span></td>
+=======
+          <div class="takenBranch">&check; Branch 0 taken 22 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 2 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">24</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">samples_per_pixels</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">lower_square</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">upper_square</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">samples_per_pixels</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l16" href="#l16">16</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">96</td>
       <td class="src coveredLine"><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">lower_square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqrt_value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">sqrt_value</span><span class="p">;</span></td>
+=======
+      <td class="linecount coveredLine">22</td>
+      <td class="src coveredLine"><span class="w">      </span><span class="n">m_samples_per_pixels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">lower_square</span><span class="p">);</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l17" href="#l17">17</a></td>
@@ -266,7 +326,11 @@
       <td class="lineno"><a id="l22" href="#l22">22</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">8</td>
+=======
+      <td class="linecount coveredLine">2</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">      </span><span class="n">m_samples_per_pixels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">upper_square</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -287,7 +351,11 @@
       <td class="lineno"><a id="l25" href="#l25">25</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">96</td>
+=======
+      <td class="linecount coveredLine">24</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">

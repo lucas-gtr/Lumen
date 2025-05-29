@@ -27,7 +27,11 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
+<<<<<<< HEAD
       <td>2025-05-29 15:24:27</td>
+=======
+      <td>2025-05-28 10:24:22</td>
+>>>>>>> main
     </tr>
   </table>
 </div>
@@ -73,6 +77,7 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
+<<<<<<< HEAD
     <tr><td><a href="#l53">Scene::addLight(std::unique_ptr&lt;Light, std::default_delete&lt;Light&gt; &gt;) (line 53)</a></td><td>called 24 times, returned 24 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l46">Scene::addObject(std::unique_ptr&lt;Object3D, std::default_delete&lt;Object3D&gt; &gt;) (line 46)</a></td><td>called 88 times, returned 88 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l108">Scene::getBVHRoot() const (line 108)</a></td><td>called 165 times, returned 165 times</td><td>100.0%</td></tr>
@@ -83,6 +88,18 @@
     <tr><td><a href="#l60">Scene::setCamera(std::unique_ptr&lt;Camera, std::default_delete&lt;Camera&gt; &gt;) (line 60)</a></td><td>called 72 times, returned 72 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l96">Scene::setSkybox(std::shared_ptr&lt;Texture&gt; const&amp;) (line 96)</a></td><td>called 11 times, returned 11 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l110">Scene::~Scene() (line 110)</a></td><td>called 154 times, returned 154 times</td><td>100.0%</td></tr>
+=======
+    <tr><td><a href="#l53">Scene::addLight(std::unique_ptr&lt;Light, std::default_delete&lt;Light&gt; &gt;) (line 53)</a></td><td>called 9 times, returned 9 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l46">Scene::addObject(std::unique_ptr&lt;Object3D, std::default_delete&lt;Object3D&gt; &gt;) (line 46)</a></td><td>called 24 times, returned 24 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l108">Scene::getBVHRoot() const (line 108)</a></td><td>called 45 times, returned 45 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l81">Scene::getCamera() const (line 81)</a></td><td>called 75 times, returned 75 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l74">Scene::getLightList() const (line 74)</a></td><td>called 12 times, returned 12 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l67">Scene::getObjectList() const (line 67)</a></td><td>called 36 times, returned 36 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l89">Scene::getSkyboxColor(Eigen::Matrix&lt;double, 3, 1, 0, 3, 1&gt;) const (line 89)</a></td><td>called 6 times, returned 6 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l60">Scene::setCamera(std::unique_ptr&lt;Camera, std::default_delete&lt;Camera&gt; &gt;) (line 60)</a></td><td>called 27 times, returned 27 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l96">Scene::setSkybox(std::shared_ptr&lt;Texture&gt; const&amp;) (line 96)</a></td><td>called 3 times, returned 3 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l110">Scene::~Scene() (line 110)</a></td><td>called 42 times, returned 42 times</td><td>100.0%</td></tr>
+>>>>>>> main
   </table>
 </details>
 
@@ -416,7 +433,11 @@
       <td class="lineno"><a id="l46" href="#l46">46</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">88</td>
+=======
+      <td class="linecount coveredLine">24</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">addObject</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Object3D</span><span class="o">&gt;</span><span class="w"> </span><span class="n">object</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_object_list</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">object</span><span class="p">));</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -465,7 +486,11 @@
       <td class="lineno"><a id="l53" href="#l53">53</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">24</td>
+=======
+      <td class="linecount coveredLine">9</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">addLight</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Light</span><span class="o">&gt;</span><span class="w"> </span><span class="n">light</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_light_list</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">light</span><span class="p">));</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -514,7 +539,11 @@
       <td class="lineno"><a id="l60" href="#l60">60</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">72</td>
+=======
+      <td class="linecount coveredLine">27</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setCamera</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Camera</span><span class="o">&gt;</span><span class="w"> </span><span class="n">camera</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_current_camera</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">camera</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -563,7 +592,11 @@
       <td class="lineno"><a id="l67" href="#l67">67</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">128</td>
+=======
+      <td class="linecount coveredLine">36</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Object3D</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">getObjectList</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_object_list</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -612,7 +645,11 @@
       <td class="lineno"><a id="l74" href="#l74">74</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">44</td>
+=======
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Light</span><span class="o">&gt;&gt;&amp;</span><span class="w"> </span><span class="n">getLightList</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_light_list</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -661,7 +698,11 @@
       <td class="lineno"><a id="l81" href="#l81">81</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">275</td>
+=======
+      <td class="linecount coveredLine">75</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Camera</span><span class="o">*</span><span class="w"> </span><span class="n">getCamera</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_current_camera</span><span class="p">.</span><span class="n">get</span><span class="p">();</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -717,7 +758,11 @@
       <td class="lineno"><a id="l89" href="#l89">89</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">22</td>
+=======
+      <td class="linecount coveredLine">6</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">ColorRGBA</span><span class="w"> </span><span class="n">getSkyboxColor</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">direction</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_skybox</span><span class="o">-&gt;</span><span class="n">getColor</span><span class="p">(</span><span class="n">direction</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -766,7 +811,11 @@
       <td class="lineno"><a id="l96" href="#l96">96</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">11</td>
+=======
+      <td class="linecount coveredLine">3</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">setSkybox</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Texture</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">skybox_texture</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_skybox</span><span class="o">-&gt;</span><span class="n">setTexture</span><span class="p">(</span><span class="n">skybox_texture</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -850,7 +899,11 @@
       <td class="lineno"><a id="l108" href="#l108">108</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">165</td>
+=======
+      <td class="linecount coveredLine">45</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">BVHNode</span><span class="o">*</span><span class="w"> </span><span class="nf">getBVHRoot</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_bvh_root</span><span class="p">.</span><span class="n">get</span><span class="p">();</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -864,7 +917,11 @@
       <td class="lineno"><a id="l110" href="#l110">110</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">154</td>
+=======
+      <td class="linecount coveredLine">42</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="o">~</span><span class="n">Scene</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default destructor.</span></td>
     </tr>
     <tr class="source-line">

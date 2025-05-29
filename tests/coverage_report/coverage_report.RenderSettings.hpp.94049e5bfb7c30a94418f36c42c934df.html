@@ -27,7 +27,11 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
+<<<<<<< HEAD
       <td>2025-05-29 15:24:27</td>
+=======
+      <td>2025-05-28 10:24:22</td>
+>>>>>>> main
     </tr>
   </table>
 </div>
@@ -73,6 +77,7 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
+<<<<<<< HEAD
     <tr><td><a href="#l102">RenderSettings::getChannelCount() const (line 102)</a></td><td>called 23 times, returned 23 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l64">RenderSettings::getDx() const (line 64)</a></td><td>called 3 times, returned 3 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l86">RenderSettings::getDy() const (line 86)</a></td><td>called 3 times, returned 3 times</td><td>100.0%</td></tr>
@@ -93,6 +98,22 @@
     <tr><td><a href="#l195">RenderSettings::setParameter(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, int) (line 195)</a></td><td>called 2 times, returned 2 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l71">RenderSettings::setWidth(int) (line 71)</a></td><td>called 12 times, returned 12 times</td><td>88.0%</td></tr>
     <tr><td><a href="#l197">RenderSettings::~RenderSettings() (line 197)</a></td><td>called 21 times, returned 21 times</td><td>100.0%</td></tr>
+=======
+    <tr><td><a href="#l35">RenderSettings::RenderSettings() (line 35)</a></td><td>called 21 times, returned 21 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l71">RenderSettings::getChannelCount() const (line 71)</a></td><td>called 736 times, returned 736 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l102">RenderSettings::getFarPlane() const (line 102)</a></td><td>called 288 times, returned 288 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l58">RenderSettings::getHeight() const (line 58)</a></td><td>called 960 times, returned 960 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l118">RenderSettings::getMaxBounces() const (line 118)</a></td><td>called 64 times, returned 64 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l86">RenderSettings::getNearPlane() const (line 86)</a></td><td>called 288 times, returned 288 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l131">RenderSettings::getSamplesPerPixel() const (line 131)</a></td><td>called 672 times, returned 672 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l45">RenderSettings::getWidth() const (line 45)</a></td><td>called 960 times, returned 960 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l78">RenderSettings::setChannelCount(int) (line 78)</a></td><td>called 256 times, returned 256 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l109">RenderSettings::setFarPlane(double) (line 109)</a></td><td>called 320 times, returned 320 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l65">RenderSettings::setHeight(int) (line 65)</a></td><td>called 384 times, returned 384 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l125">RenderSettings::setMaxBounces(int) (line 125)</a></td><td>called 32 times, returned 32 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l93">RenderSettings::setNearPlane(double) (line 93)</a></td><td>called 320 times, returned 320 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l52">RenderSettings::setWidth(int) (line 52)</a></td><td>called 384 times, returned 384 times</td><td>100.0%</td></tr>
+>>>>>>> main
   </table>
 </details>
 
@@ -349,8 +370,13 @@
       <td class="lineno"><a id="l35" href="#l35">35</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount "></td>
       <td class="src "><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">dy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">m_properties</span><span class="p">.</span><span class="n">height</span><span class="p">);</span></td>
+=======
+      <td class="linecount coveredLine">21</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">RenderSettings</span><span class="p">()</span><span class="w">                                 </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default constructor.</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l36" href="#l36">36</a></td>
@@ -419,8 +445,13 @@
       <td class="lineno"><a id="l45" href="#l45">45</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount "></td>
       <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Parameters</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_renderer_parameters</span><span class="p">;</span></td>
+=======
+      <td class="linecount coveredLine">960</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">getWidth</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_properties</span><span class="p">.</span><span class="n">width</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l46" href="#l46">46</a></td>
@@ -468,8 +499,13 @@
       <td class="lineno"><a id="l52" href="#l52">52</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount "></td>
       <td class="src "><span class="w">  </span><span class="n">RenderSettings</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">RenderSettings</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span></td>
+=======
+      <td class="linecount coveredLine">384</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setWidth</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_properties</span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_WIDTH</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_WIDTH</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l53" href="#l53">53</a></td>
@@ -510,8 +546,13 @@
       <td class="lineno"><a id="l58" href="#l58">58</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">30</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">getWidth</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_properties</span><span class="p">.</span><span class="n">width</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+=======
+      <td class="linecount coveredLine">960</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">getHeight</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_properties</span><span class="p">.</span><span class="n">height</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l59" href="#l59">59</a></td>
@@ -559,6 +600,16 @@
       <td class="lineno"><a id="l65" href="#l65">65</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
+=======
+      <td class="linecount coveredLine">384</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setHeight</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_properties</span><span class="p">.</span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_HEIGHT</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_HEIGHT</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l66" href="#l66">66</a></td>
+      <td class="linebranch">
+      </td>
+>>>>>>> main
       <td class="linecount "></td>
       <td class="src "></td>
     </tr>
@@ -601,8 +652,13 @@
       <td class="lineno"><a id="l71" href="#l71">71</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">12</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setWidth</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+=======
+      <td class="linecount coveredLine">736</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">getChannelCount</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_properties</span><span class="p">.</span><span class="n">channels</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l72" href="#l72">72</a></td>
@@ -657,22 +713,37 @@
       <td class="lineno"><a id="l78" href="#l78">78</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount "></td>
       <td class="src "><span class="cm">   * @return The height of the image in pixels.</span></td>
+=======
+      <td class="linecount coveredLine">256</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setChannelCount</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">channels</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l79" href="#l79">79</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount "></td>
       <td class="src "><span class="cm">   */</span></td>
+=======
+      <td class="linecount coveredLine">256</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">m_properties</span><span class="p">.</span><span class="n">channels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">channels</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_CHANNEL_COUNT</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_CHANNEL_COUNT</span><span class="p">);</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l80" href="#l80">80</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">30</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">getHeight</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_properties</span><span class="p">.</span><span class="n">height</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+=======
+      <td class="linecount coveredLine">256</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="p">}</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l81" href="#l81">81</a></td>
@@ -713,8 +784,13 @@
       <td class="lineno"><a id="l86" href="#l86">86</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">3</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getDy</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">dy</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+=======
+      <td class="linecount coveredLine">288</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getNearPlane</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_near_plane</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l87" href="#l87">87</a></td>
@@ -762,15 +838,25 @@
       <td class="lineno"><a id="l93" href="#l93">93</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">12</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setHeight</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+=======
+      <td class="linecount coveredLine">320</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setNearPlane</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">near_plane</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l94" href="#l94">94</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">12</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">m_properties</span><span class="p">.</span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_HEIGHT</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_HEIGHT</span><span class="p">);</span></td>
+=======
+      <td class="linecount coveredLine">320</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">near_plane</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">near_plane</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_NEAR_PLANE</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_NEAR_PLANE</span><span class="p">);</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l95" href="#l95">95</a></td>
@@ -783,14 +869,23 @@
         </div>
         </details>
       </td>
+<<<<<<< HEAD
       <td class="linecount partialCoveredLine">12</td>
       <td class="src partialCoveredLine"><span class="w">    </span><span class="n">dy</span><span class="w">                  </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">height</span><span class="p">);</span></td>
+=======
+      <td class="linecount coveredLine">320</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">m_near_plane</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">near_plane</span><span class="p">,</span><span class="w"> </span><span class="n">m_far_plane</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">epsilon</span><span class="p">());</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l96" href="#l96">96</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">12</td>
+=======
+      <td class="linecount coveredLine">320</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -832,8 +927,13 @@
       <td class="lineno"><a id="l102" href="#l102">102</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">23</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">getChannelCount</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_properties</span><span class="p">.</span><span class="n">channels</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+=======
+      <td class="linecount coveredLine">288</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getFarPlane</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_far_plane</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l103" href="#l103">103</a></td>
@@ -881,29 +981,49 @@
       <td class="lineno"><a id="l109" href="#l109">109</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">8</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setChannelCount</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">channels</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+=======
+      <td class="linecount coveredLine">320</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setFarPlane</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">far_plane</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l110" href="#l110">110</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">8</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">m_properties</span><span class="p">.</span><span class="n">channels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">channels</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_CHANNEL_COUNT</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_CHANNEL_COUNT</span><span class="p">);</span></td>
+=======
+      <td class="linecount coveredLine">320</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">far_plane</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">far_plane</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_FAR_PLANE</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_FAR_PLANE</span><span class="p">);</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l111" href="#l111">111</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">8</td>
       <td class="src coveredLine"><span class="w">  </span><span class="p">}</span></td>
+=======
+      <td class="linecount coveredLine">320</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">m_far_plane</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="n">far_plane</span><span class="p">,</span><span class="w"> </span><span class="n">m_near_plane</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">epsilon</span><span class="p">());</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l112" href="#l112">112</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount "></td>
       <td class="src "></td>
+=======
+      <td class="linecount coveredLine">320</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="p">}</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l113" href="#l113">113</a></td>
@@ -944,8 +1064,13 @@
       <td class="lineno"><a id="l118" href="#l118">118</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount "></td>
       <td class="src "></td>
+=======
+      <td class="linecount coveredLine">64</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">getMaxBounces</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_max_bounces</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l119" href="#l119">119</a></td>
@@ -993,8 +1118,13 @@
       <td class="lineno"><a id="l125" href="#l125">125</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">10</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">near_plane</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">near_plane</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_NEAR_PLANE</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_NEAR_PLANE</span><span class="p">);</span></td>
+=======
+      <td class="linecount coveredLine">32</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setMaxBounces</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">max_bounces</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_max_bounces</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">max_bounces</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_MAX_BOUNCES</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_MAX_BOUNCES</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l126" href="#l126">126</a></td>
@@ -1035,8 +1165,13 @@
       <td class="lineno"><a id="l131" href="#l131">131</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount "></td>
       <td class="src "><span class="cm">   * @return The far clipping plane value.</span></td>
+=======
+      <td class="linecount coveredLine">672</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">getSamplesPerPixel</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_samples_per_pixels</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l132" href="#l132">132</a></td>

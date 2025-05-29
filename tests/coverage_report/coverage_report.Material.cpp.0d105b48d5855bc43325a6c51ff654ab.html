@@ -27,7 +27,11 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
+<<<<<<< HEAD
       <td>2025-05-29 15:24:27</td>
+=======
+      <td>2025-05-28 10:24:22</td>
+>>>>>>> main
     </tr>
   </table>
 </div>
@@ -73,9 +77,15 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
+<<<<<<< HEAD
     <tr><td><a href="#l5">Material::Material() (line 5)</a></td><td>called 208 times, returned 208 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l7">Material::getAlbedo(TextureUV) const (line 7)</a></td><td>called 32 times, returned 32 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l14">Material::getNormal(TextureUV) const (line 14)</a></td><td>called 64 times, returned 64 times</td><td>100.0%</td></tr>
+=======
+    <tr><td><a href="#l7">Material::Material() (line 7)</a></td><td>called 78 times, returned 78 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l9">Material::getAlbedo(TextureUV) const (line 9)</a></td><td>called 12 times, returned 12 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l16">Material::getNormal(TextureUV) const (line 16)</a></td><td>called 24 times, returned 24 times</td><td>100.0%</td></tr>
+>>>>>>> main
   </table>
 </details>
 
@@ -136,8 +146,13 @@
       <td class="lineno"><a id="l7" href="#l7">7</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">32</td>
       <td class="src coveredLine"><span class="n">ColorRGBA</span><span class="w"> </span><span class="n">Material</span><span class="o">::</span><span class="n">getAlbedo</span><span class="p">(</span><span class="n">TextureUV</span><span class="w"> </span><span class="n">uv_coord</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
+=======
+      <td class="linecount coveredLine">78</td>
+      <td class="src coveredLine"><span class="n">Material</span><span class="o">::</span><span class="n">Material</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_albedoTexture</span><span class="p">(</span><span class="k">nullptr</span><span class="p">),</span><span class="w"> </span><span class="n">m_normalTexture</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l8" href="#l8">8</a></td>
@@ -157,28 +172,68 @@
       <td class="lineno"><a id="l9" href="#l9">9</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">24</td>
       <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">m_albedoTexture</span><span class="o">-&gt;</span><span class="n">getValue4d</span><span class="p">(</span><span class="n">uv_coord</span><span class="p">);</span></td>
+=======
+      <td class="linecount coveredLine">12</td>
+      <td class="src coveredLine"><span class="n">ColorRGBA</span><span class="w"> </span><span class="n">Material</span><span class="o">::</span><span class="n">getAlbedo</span><span class="p">(</span><span class="n">TextureUV</span><span class="w"> </span><span class="n">uv_coord</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l10" href="#l10">10</a></td>
       <td class="linebranch">
+<<<<<<< HEAD
       </td>
       <td class="linecount "></td>
       <td class="src "><span class="w">  </span><span class="p">}</span></td>
+=======
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 4 taken 9 times.</div>
+          <div class="takenBranch">&check; Branch 5 taken 3 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">m_albedoTexture</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l11" href="#l11">11</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">8</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">};</span></td>
+=======
+      <td class="linecount coveredLine">9</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">m_albedoTexture</span><span class="o">-&gt;</span><span class="n">getValue4d</span><span class="p">(</span><span class="n">uv_coord</span><span class="p">);</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l12" href="#l12">12</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
+<<<<<<< HEAD
+=======
+      <td class="src "><span class="w">  </span><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l13" href="#l13">13</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">3</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">};</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l14" href="#l14">14</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+>>>>>>> main
       <td class="src "><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -192,7 +247,11 @@
       <td class="lineno"><a id="l14" href="#l14">14</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">64</td>
+=======
+      <td class="linecount coveredLine">24</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="n">ColorRGB</span><span class="w"> </span><span class="n">Material</span><span class="o">::</span><span class="n">getNormal</span><span class="p">(</span><span class="n">TextureUV</span><span class="w"> </span><span class="n">uv_coord</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -201,19 +260,32 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 6 taken 16 times.</div>
           <div class="takenBranch">&check; Branch 7 taken 48 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">64</td>
+=======
+          <div class="takenBranch">&check; Branch 6 taken 6 times.</div>
+          <div class="takenBranch">&check; Branch 7 taken 18 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">24</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">m_normalTexture</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l16" href="#l16">16</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">16</td>
+=======
+      <td class="linecount coveredLine">6</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">m_normalTexture</span><span class="o">-&gt;</span><span class="n">getValue3d</span><span class="p">(</span><span class="n">uv_coord</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -227,7 +299,11 @@
       <td class="lineno"><a id="l18" href="#l18">18</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">48</td>
+=======
+      <td class="linecount coveredLine">18</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="n">HALF</span><span class="p">,</span><span class="w"> </span><span class="n">HALF</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">};</span></td>
     </tr>
     <tr class="source-line">

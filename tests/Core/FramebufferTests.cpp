@@ -41,6 +41,7 @@ TEST_F(FramebufferTest, SetFramebufferPropertiesReallocates) {
   EXPECT_EQ(framebuffer.getSize(), 4);
 }
 
+<<<<<<< HEAD
 TEST_F(FramebufferTest, SetFramebufferPropertiesReallocatesChannels) {
   ImageProperties new_props{4, 4, 4};
   framebuffer.setFramebufferProperties(new_props);
@@ -59,6 +60,34 @@ TEST_F(FramebufferTest, InitThreadBuffersAllocatesCorrectSize) {
 TEST_F(FramebufferTest, SetPixelColorRGBThreadBufferUpdated) {
   framebuffer.setPixelColor(pixel22, red, 1.0);
   framebuffer.reduceThreadBuffers();
+=======
+TEST(FramebufferTest, SetPixelColorAffectsFramebuffer3Channels) {
+    Framebuffer fb({2, 2, 3});
+    ColorRGBA color(0.5, 0.25, 0.75, 1.0);
+    fb.setPixelColor({1, 1}, color, 1.0);
+    const double* image = fb.getFramebuffer();
+    int index = (1 * 2 + 1) * 3;
+    EXPECT_EQ(image[index + 0], 0.5);
+    EXPECT_EQ(image[index + 1], 0.25);
+    EXPECT_EQ(image[index + 2], 0.75);
+}
+
+TEST(FramebufferTest, SetPixelColorAffectsFramebuffer1Channel) {
+    Framebuffer fb({2, 2, 1});
+    ColorRGBA color(0.5, 0.25, 0.75, 1.0);
+    fb.setPixelColor({1, 1}, color, 1.0);
+    const double* image = fb.getFramebuffer();
+    int index = (1 * 2 + 1) * 1;
+    EXPECT_EQ(image[index], toGrayscale(color));
+}
+
+TEST(FramebufferTest, SetPixelColorAffectsFramebuffer2Channels) {
+    Framebuffer fb({2, 2, 2});
+    ColorRGBA color(0.5, 0.25, 0.75, 1.0);
+    fb.setPixelColor({1, 1}, color, 1.0);
+    const double* image = fb.getFramebuffer();
+    int index = (1 * 2 + 1) * 2;
+>>>>>>> main
 
   const int idx = (2 * 4 + 2) * 3;
   const double* data = framebuffer.getFramebuffer();
@@ -67,6 +96,7 @@ TEST_F(FramebufferTest, SetPixelColorRGBThreadBufferUpdated) {
   EXPECT_DOUBLE_EQ(data[idx + 2], 0.0);
 }
 
+<<<<<<< HEAD
 TEST_F(FramebufferTest, SetPixelColorOutOfBoundsIsIgnored) {
   PixelCoord invalid{-1, 10};
   testing::internal::CaptureStderr();
@@ -88,6 +118,31 @@ TEST_F(FramebufferTest, ReduceThreadBuffersCombinesData) {
   EXPECT_DOUBLE_EQ(data[idx], 1.0);
   EXPECT_DOUBLE_EQ(data[idx + 1], 0.0);
   EXPECT_DOUBLE_EQ(data[idx + 2], 0.0);
+=======
+TEST(FramebufferTest, SetPixelColorAffectsFramebuffer4Channels) {
+    Framebuffer fb({2, 2, 4});
+    ColorRGBA color(0.5, 0.25, 0.75, 1.0);
+    fb.setPixelColor({1, 1}, color, 1.0);
+    const double* image = fb.getFramebuffer();
+    int index = (1 * 2 + 1) * 4;
+    EXPECT_EQ(image[index + 0], 0.5);
+    EXPECT_EQ(image[index + 1], 0.25);
+    EXPECT_EQ(image[index + 2], 0.75);
+    EXPECT_EQ(image[index + 3], 1.0);
+}
+
+TEST(FramebufferTest, SetPixelColorOutOfBoundsDoesNothing) {
+    Framebuffer fb({2, 2, 3});
+    ColorRGBA color(1.0, 1.0, 1.0, 1.0);
+    fb.setPixelColor({-1, 0}, color, 1.0);
+    fb.setPixelColor({2, 0}, color, 1.0); 
+    fb.setPixelColor({0, -1}, color, 1.0);
+    fb.setPixelColor({0, 2}, color, 1.0);
+    const double* image = fb.getFramebuffer();
+    for (int i = 0; i < 2 * 2 * 3; ++i) {
+        EXPECT_EQ(image[i], 0);
+    }
+>>>>>>> main
 }
 
 TEST_F(FramebufferTest, ConvertToSRGBColorSpaceDoesNotCrash) {

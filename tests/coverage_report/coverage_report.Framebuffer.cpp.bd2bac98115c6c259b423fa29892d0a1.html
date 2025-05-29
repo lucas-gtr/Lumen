@@ -27,7 +27,11 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
+<<<<<<< HEAD
       <td>2025-05-29 15:24:27</td>
+=======
+      <td>2025-05-28 10:24:22</td>
+>>>>>>> main
     </tr>
   </table>
 </div>
@@ -73,6 +77,7 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
+<<<<<<< HEAD
     <tr><td><a href="#l17">Framebuffer::Framebuffer(ImageProperties) (line 17)</a></td><td>called 94 times, returned 94 times</td><td>75.0%</td></tr>
     <tr><td><a href="#l36">Framebuffer::convertToSRGBColorSpace() (line 36)</a></td><td>called 16 times, returned 16 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l44">Framebuffer::initThreadBuffers(unsigned int) (line 44)</a></td><td>called 74 times, returned 74 times</td><td>83.0%</td></tr>
@@ -83,6 +88,14 @@
     <tr><td><a href="#l19">Framebuffer::updateFrameBuffer() (line 19)</a></td><td>called 116 times, returned 116 times</td><td>96.0%</td></tr>
     <tr><td><a href="#l105">Framebuffer::~Framebuffer() (line 105)</a></td><td>called 94 times, returned 94 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l61">auto Framebuffer::reduceThreadBuffers()::{lambda(int)#1}::operator()(int) const::{lambda(auto:1 const&amp;)#1}::operator()&lt;std::vector&lt;double, std::allocator&lt;double&gt; &gt; &gt;(std::vector&lt;double, std::allocator&lt;double&gt; &gt; const&amp;) const (line 61)</a></td><td>called 1220 times, returned 1220 times</td><td>100.0%</td></tr>
+=======
+    <tr><td><a href="#l9">Framebuffer::Framebuffer(ImageProperties) (line 9)</a></td><td>called 40 times, returned 40 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l28">Framebuffer::convertToSRGBColorSpace() (line 28)</a></td><td>called 6 times, returned 6 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l20">Framebuffer::setFramebufferProperties(ImageProperties) (line 20)</a></td><td>called 8 times, returned 8 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l36">Framebuffer::setPixelColor(PixelCoord, ColorRGBA const&amp;, double) (line 36)</a></td><td>called 22 times, returned 22 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l11">Framebuffer::updateFrameBuffer() (line 11)</a></td><td>called 48 times, returned 48 times</td><td>96.0%</td></tr>
+    <tr><td><a href="#l67">Framebuffer::~Framebuffer() (line 67)</a></td><td>called 40 times, returned 40 times</td><td>100.0%</td></tr>
+>>>>>>> main
   </table>
 </details>
 
@@ -130,35 +143,56 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
+<<<<<<< HEAD
       <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;functional&gt;</span></td>
+=======
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;algorithm&gt;</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l6" href="#l6">6</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
+<<<<<<< HEAD
       <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span></td>
+=======
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdint&gt;</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l7" href="#l7">7</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
+<<<<<<< HEAD
       <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;numeric&gt;</span></td>
+=======
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l8" href="#l8">8</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
+<<<<<<< HEAD
       <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;thread&gt;</span></td>
+=======
+      <td class="src "></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l9" href="#l9">9</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount "></td>
       <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span></td>
+=======
+      <td class="linecount coveredLine">40</td>
+      <td class="src coveredLine"><span class="n">Framebuffer</span><span class="o">::</span><span class="n">Framebuffer</span><span class="p">(</span><span class="n">ImageProperties</span><span class="w"> </span><span class="n">properties</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">(</span><span class="n">properties</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">updateFrameBuffer</span><span class="p">();</span><span class="w"> </span><span class="p">}</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l10" href="#l10">10</a></td>
@@ -171,12 +205,18 @@
       <td class="lineno"><a id="l11" href="#l11">11</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount "></td>
       <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Core/ColorUtils.hpp&quot;</span></td>
+=======
+      <td class="linecount coveredLine">48</td>
+      <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Framebuffer</span><span class="o">::</span><span class="n">updateFrameBuffer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l12" href="#l12">12</a></td>
       <td class="linebranch">
+<<<<<<< HEAD
       </td>
       <td class="linecount "></td>
       <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Core/CommonTypes.hpp&quot;</span></td>
@@ -187,27 +227,72 @@
       </td>
       <td class="linecount "></td>
       <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Core/Framebuffer.hpp&quot;</span></td>
+=======
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 1 taken 8 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 40 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">48</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">m_framebuffer</span><span class="p">;</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
-      <td class="lineno"><a id="l14" href="#l14">14</a></td>
+      <td class="lineno"><a id="l13" href="#l13">13</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
       <td class="src "></td>
     </tr>
     <tr class="source-line">
-      <td class="lineno"><a id="l15" href="#l15">15</a></td>
+      <td class="lineno"><a id="l14" href="#l14">14</a></td>
       <td class="linebranch">
+<<<<<<< HEAD
       </td>
       <td class="linecount "></td>
       <td class="src "><span class="k">thread_local</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Framebuffer</span><span class="o">::</span><span class="n">m_thread_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span></td>
+=======
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 4 taken 48 times.</div>
+          <div class="notTakenBranch">&cross; Branch 5 not taken.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">48</td>
+      <td class="src partialCoveredLine"><span class="w">  </span><span class="n">m_framebuffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">double</span><span class="p">[</span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">bufferSize</span><span class="p">()];</span></td>
+>>>>>>> main
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l15" href="#l15">15</a></td>
+      <td class="linebranch">
+<<<<<<< HEAD
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+=======
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 4 taken 14409314 times.</div>
+          <div class="takenBranch">&check; Branch 5 taken 48 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">14409362</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">bufferSize</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l16" href="#l16">16</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount coveredLine">14409314</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">m_framebuffer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l17" href="#l17">17</a></td>
@@ -219,22 +304,37 @@
         </div>
         </details>
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">94</td>
       <td class="src coveredLine"><span class="n">Framebuffer</span><span class="o">::</span><span class="n">Framebuffer</span><span class="p">(</span><span class="n">ImageProperties</span><span class="w"> </span><span class="n">properties</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">(</span><span class="n">properties</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">updateFrameBuffer</span><span class="p">();</span><span class="w"> </span><span class="p">}</span></td>
+=======
+      <td class="linecount "></td>
+      <td class="src "><span class="w">  </span><span class="p">}</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l18" href="#l18">18</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount "></td>
       <td class="src "></td>
+=======
+      <td class="linecount coveredLine">48</td>
+      <td class="src coveredLine"><span class="p">}</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l19" href="#l19">19</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">116</td>
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Framebuffer</span><span class="o">::</span><span class="n">updateFrameBuffer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span></td>
+=======
+      <td class="linecount "></td>
+      <td class="src "></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l20" href="#l20">20</a></td>
@@ -247,21 +347,41 @@
         </div>
         </details>
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">116</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">m_framebuffer</span><span class="p">;</span></td>
+=======
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Framebuffer</span><span class="o">::</span><span class="n">setFramebufferProperties</span><span class="p">(</span><span class="n">ImageProperties</span><span class="w"> </span><span class="n">properties</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l21" href="#l21">21</a></td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">4/4</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 2 taken 4 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 4 times.</div>
+          <div class="takenBranch">&check; Branch 6 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 7 taken 2 times.</div>
+        </div>
+        </details>
       </td>
+<<<<<<< HEAD
       <td class="linecount "></td>
       <td class="src "><span class="w">  </span><span class="c1">// NOLINTNEXTLINE(cppcoreguidelines-owning-memory)</span></td>
+=======
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">properties</span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">height</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">properties</span><span class="p">.</span><span class="n">height</span><span class="w"> </span><span class="o">||</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l22" href="#l22">22</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
+<<<<<<< HEAD
         <div class="linebranchContents">
           <div class="takenBranch">&check; Branch 4 taken 116 times.</div>
           <div class="notTakenBranch">&cross; Branch 5 not taken.</div>
@@ -284,13 +404,35 @@
       </td>
       <td class="linecount coveredLine">26882952</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">uint64_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">bufferSize</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+=======
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 2 taken 2 times.</div>
+          <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">2</td>
+      <td class="src partialCoveredLine"><span class="w">     </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">channels</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">properties</span><span class="p">.</span><span class="n">channels</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+>>>>>>> main
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l23" href="#l23">23</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">m_framebuffer_properties</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">properties</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l24" href="#l24">24</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">26882836</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">m_framebuffer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span></td>
+=======
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">updateFrameBuffer</span><span class="p">();</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l25" href="#l25">25</a></td>
@@ -303,7 +445,7 @@
       <td class="lineno"><a id="l26" href="#l26">26</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">116</td>
+      <td class="linecount coveredLine">8</td>
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -317,6 +459,7 @@
       <td class="lineno"><a id="l28" href="#l28">28</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">22</td>
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Framebuffer</span><span class="o">::</span><span class="n">setFramebufferProperties</span><span class="p">(</span><span class="n">ImageProperties</span><span class="w"> </span><span class="n">properties</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
@@ -335,6 +478,24 @@
       </td>
       <td class="linecount partialCoveredLine">22</td>
       <td class="src partialCoveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">properties</span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">height</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">properties</span><span class="p">.</span><span class="n">height</span><span class="w"> </span><span class="o">||</span></td>
+=======
+      <td class="linecount coveredLine">6</td>
+      <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Framebuffer</span><span class="o">::</span><span class="n">convertToSRGBColorSpace</span><span class="p">()</span><span class="w"> </span><span class="p">{</span></td>
+>>>>>>> main
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l29" href="#l29">29</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 4 taken 6 times.</div>
+          <div class="takenBranch">&check; Branch 5 taken 6 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">height</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l30" href="#l30">30</a></td>
@@ -342,6 +503,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 2 taken 2 times.</div>
           <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
         </div>
@@ -349,11 +511,21 @@
       </td>
       <td class="linecount partialCoveredLine">2</td>
       <td class="src partialCoveredLine"><span class="w">     </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">channels</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">properties</span><span class="p">.</span><span class="n">channels</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+=======
+          <div class="takenBranch">&check; Branch 8 taken 18 times.</div>
+          <div class="takenBranch">&check; Branch 9 taken 6 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">24</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">channels</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l31" href="#l31">31</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">22</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">m_framebuffer_properties</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">properties</span><span class="p">;</span></td>
     </tr>
@@ -363,19 +535,30 @@
       </td>
       <td class="linecount coveredLine">22</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">updateFrameBuffer</span><span class="p">();</span></td>
+=======
+      <td class="linecount coveredLine">18</td>
+      <td class="src coveredLine"><span class="w">      </span><span class="n">convertToSRGBSpace</span><span class="p">(</span><span class="n">m_framebuffer</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">channels</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">]);</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
-      <td class="lineno"><a id="l33" href="#l33">33</a></td>
+      <td class="lineno"><a id="l32" href="#l32">32</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
       <td class="src "><span class="w">  </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
-      <td class="lineno"><a id="l34" href="#l34">34</a></td>
+      <td class="lineno"><a id="l33" href="#l33">33</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">22</td>
+      <td class="src coveredLine"><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l34" href="#l34">34</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">6</td>
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -389,13 +572,19 @@
       <td class="lineno"><a id="l36" href="#l36">36</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">16</td>
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Framebuffer</span><span class="o">::</span><span class="n">convertToSRGBColorSpace</span><span class="p">()</span><span class="w"> </span><span class="p">{</span></td>
+=======
+      <td class="linecount coveredLine">22</td>
+      <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Framebuffer</span><span class="o">::</span><span class="n">setPixelColor</span><span class="p">(</span><span class="n">PixelCoord</span><span class="w"> </span><span class="n">pixel_coord</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ColorRGBA</span><span class="o">&amp;</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">weight</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l37" href="#l37">37</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
+<<<<<<< HEAD
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
           <div class="takenBranch">&check; Branch 4 taken 76 times.</div>
@@ -405,6 +594,21 @@
       </td>
       <td class="linecount coveredLine">92</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">height</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+=======
+        <summary class="linebranchSummary">6/6</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 0 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 4 taken 18 times.</div>
+          <div class="takenBranch">&check; Branch 5 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 6 taken 16 times.</div>
+          <div class="takenBranch">&check; Branch 7 taken 2 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">22</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">pixel_coord</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">pixel_coord</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">pixel_coord</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l38" href="#l38">38</a></td>
@@ -412,6 +616,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 8 taken 228 times.</div>
           <div class="takenBranch">&check; Branch 9 taken 76 times.</div>
         </div>
@@ -419,20 +624,39 @@
       </td>
       <td class="linecount coveredLine">304</td>
       <td class="src coveredLine"><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">channels</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+=======
+          <div class="takenBranch">&check; Branch 2 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 14 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">16</td>
+      <td class="src coveredLine"><span class="w">     </span><span class="n">pixel_coord</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">height</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l39" href="#l39">39</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">228</td>
       <td class="src coveredLine"><span class="w">      </span><span class="n">convertToSRGBSpace</span><span class="p">(</span><span class="n">m_framebuffer</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">channels</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">]);</span></td>
+=======
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Pixel coordinates out of bounds: (&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">pixel_coord</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">pixel_coord</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;).</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l40" href="#l40">40</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount "></td>
       <td class="src "><span class="w">    </span><span class="p">}</span></td>
+=======
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="p">;</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l41" href="#l41">41</a></td>
@@ -443,6 +667,7 @@
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l42" href="#l42">42</a></td>
+<<<<<<< HEAD
       <td class="linebranch">
       </td>
       <td class="linecount coveredLine">16</td>
@@ -452,10 +677,29 @@
       <td class="lineno"><a id="l43" href="#l43">43</a></td>
       <td class="linebranch">
       </td>
+=======
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="o">=</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l43" href="#l43">43</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine"><span class="w">      </span><span class="p">(</span><span class="n">pixel_coord</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pixel_coord</span><span class="p">.</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">channels</span><span class="p">;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l44" href="#l44">44</a></td>
+      <td class="linebranch">
+      </td>
+>>>>>>> main
       <td class="linecount "></td>
       <td class="src "></td>
     </tr>
     <tr class="source-line">
+<<<<<<< HEAD
       <td class="lineno"><a id="l44" href="#l44">44</a></td>
       <td class="linebranch">
       </td>
@@ -463,11 +707,14 @@
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Framebuffer</span><span class="o">::</span><span class="n">initThreadBuffers</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">num_threads</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
+=======
+>>>>>>> main
       <td class="lineno"><a id="l45" href="#l45">45</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 6 taken 74 times.</div>
         </div>
         </details>
@@ -481,6 +728,24 @@
       </td>
       <td class="linecount coveredLine">74</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_thread_buffers</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">num_threads</span><span class="p">);</span></td>
+=======
+          <div class="takenBranch">&check; Branch 2 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 8 times.</div>
+          <div class="takenBranch">&check; Branch 4 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 5 taken 2 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">14</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">switch</span><span class="p">(</span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">channels</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+>>>>>>> main
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l46" href="#l46">46</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l47" href="#l47">47</a></td>
@@ -493,8 +758,13 @@
         </div>
         </details>
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">202</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">buffer</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_thread_buffers</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+=======
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">m_framebuffer</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">toGrayscale</span><span class="p">(</span><span class="n">color</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l48" href="#l48">48</a></td>
@@ -506,15 +776,135 @@
         </div>
         </details>
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">128</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">buffer</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">bufferSize</span><span class="p">(),</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span></td>
+=======
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="k">break</span><span class="p">;</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l49" href="#l49">49</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
+=======
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l50" href="#l50">50</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">m_framebuffer</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l51" href="#l51">51</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">m_framebuffer</span><span class="p">[</span><span class="n">index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">g</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l52" href="#l52">52</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">m_framebuffer</span><span class="p">[</span><span class="n">index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">b</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l53" href="#l53">53</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">8</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="k">break</span><span class="p">;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l54" href="#l54">54</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="p">:</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l55" href="#l55">55</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">m_framebuffer</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l56" href="#l56">56</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">m_framebuffer</span><span class="p">[</span><span class="n">index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">g</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l57" href="#l57">57</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">m_framebuffer</span><span class="p">[</span><span class="n">index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">b</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l58" href="#l58">58</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">m_framebuffer</span><span class="p">[</span><span class="n">index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">weight</span><span class="p">;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l59" href="#l59">59</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="k">break</span><span class="p">;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l60" href="#l60">60</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">default</span><span class="o">:</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l61" href="#l61">61</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Unsupported channel count: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">channels</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l62" href="#l62">62</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;. Supported counts are 1, 3, or 4.&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l63" href="#l63">63</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">2</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="c1">// Unsupported channel count</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l64" href="#l64">64</a></td>
+      <td class="linebranch">
+      </td>
       <td class="linecount "></td>
       <td class="src "><span class="w">  </span><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l65" href="#l65">65</a></td>
+      <td class="linebranch">
+      </td>
+>>>>>>> main
+      <td class="linecount "></td>
+      <td class="src "><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l50" href="#l50">50</a></td>
@@ -529,6 +919,7 @@
       </td>
       <td class="linecount "></td>
       <td class="src "></td>
+<<<<<<< HEAD
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l52" href="#l52">52</a></td>
@@ -646,10 +1037,13 @@
       </td>
       <td class="linecount coveredLine">64</td>
       <td class="src coveredLine"><span class="p">}</span></td>
+=======
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l67" href="#l67">67</a></td>
       <td class="linebranch">
+<<<<<<< HEAD
       </td>
       <td class="linecount "></td>
       <td class="src "></td>
@@ -958,15 +1352,29 @@
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
           <div class="takenBranch">&check; Branch 1 taken 94 times.</div>
+=======
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 1 taken 40 times.</div>
+>>>>>>> main
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
         </div>
         </details>
       </td>
+<<<<<<< HEAD
       <td class="linecount partialCoveredLine">94</td>
       <td class="src partialCoveredLine"><span class="n">Framebuffer</span><span class="o">::~</span><span class="n">Framebuffer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">m_framebuffer</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l106" href="#l106">106</a></td>
+=======
+      <td class="linecount partialCoveredLine">40</td>
+      <td class="src partialCoveredLine"><span class="n">Framebuffer</span><span class="o">::~</span><span class="n">Framebuffer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">delete</span><span class="p">[]</span><span class="w"> </span><span class="n">m_framebuffer</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l68" href="#l68">68</a></td>
+>>>>>>> main
       <td class="linebranch">
       </td>
       <td class="linecount "></td>

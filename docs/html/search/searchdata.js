@@ -6,8 +6,13 @@ var indexSectionsWithContent =
   3: "bcdeflmnoprst",
   4: "abcdefgilmnoprstuw~",
   5: "abcdefghilmnoprstuvwxy",
+<<<<<<< HEAD
   6: "clrt",
   7: "bcdegmnprs",
+=======
+  6: "clt",
+  7: "bcdemnprs",
+>>>>>>> main
   8: "o",
   9: "s"
 };

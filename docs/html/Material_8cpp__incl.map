@@ -1,4 +1,5 @@
 <map id="/home/lucasgtr/lumen/src/Surface/Material.cpp" name="/home/lucasgtr/lumen/src/Surface/Material.cpp">
+<<<<<<< HEAD
 <area shape="rect" id="Node000001" title=" " alt="" coords="49,5,231,45"/>
 <area shape="rect" id="Node000002" href="$Material_8hpp.html" title="Header file for the Material class." alt="" coords="61,93,219,119"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,46,143,79,137,79,137,46"/>
@@ -25,4 +26,34 @@
 <area shape="poly" id="edge12_Node000008_Node000005" title=" " alt="" coords="559,267,492,376,488,374,555,264"/>
 <area shape="rect" id="Node000010" title=" " alt="" coords="397,167,475,192"/>
 <area shape="poly" id="edge16_Node000009_Node000010" title=" " alt="" coords="409,118,427,153,422,155,405,120"/>
+=======
+<area shape="rect" id="Node000001" title=" " alt="" coords="125,5,308,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,97,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,48,89,90,87,85,176,43"/>
+<area shape="rect" id="Node000003" href="$CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="183,313,363,339"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,47,196,69,187,94,181,134,182,174,192,217,212,264,228,285,247,303,243,307,224,289,208,267,187,219,177,175,176,133,182,93,191,67,202,44"/>
+<area shape="rect" id="Node000005" href="$MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="415,93,597,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="287,43,451,87,450,92,285,48"/>
+<area shape="rect" id="Node000007" href="$Material_8hpp.html" title="Header file for the Material class." alt="" coords="197,93,354,119"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="233,44,260,80,256,84,229,47"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="489,387,555,412"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="313,336,476,382,475,387,312,341"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="501,167,580,192"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="514,118,531,153,527,155,509,120"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="258,121,234,141,215,168,210,185,210,203,219,240,236,274,256,301,251,304,231,277,214,242,204,204,205,185,210,166,230,137,255,117"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="399,167,477,192"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="303,116,400,159,398,163,300,121"/>
+<area shape="rect" id="Node000009" href="$Texture_8hpp.html" title="Header file for the Texture class." alt="" coords="224,167,375,192"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="282,118,294,153,289,154,277,120"/>
+<area shape="poly" id="edge11_Node000009_Node000003" title=" " alt="" coords="292,194,278,215,266,241,263,271,268,299,262,300,258,271,261,239,273,212,288,191"/>
+<area shape="poly" id="edge10_Node000009_Node000004" title=" " alt="" coords="375,188,597,217,730,238,744,263,741,287,725,309,700,329,635,363,570,387,568,382,633,358,697,325,721,306,736,285,738,264,727,242,596,223,375,193"/>
+<area shape="rect" id="Node000010" href="$TextureFiltering_8hpp.html" title="Header file for texture filtering functions." alt="" coords="275,240,479,265"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="314,190,356,229,352,232,310,194"/>
+<area shape="rect" id="Node000011" href="$TextureWrapping_8hpp.html" title="Header file for texture wrapping modes and functions." alt="" coords="503,240,717,265"/>
+<area shape="poly" id="edge15_Node000009_Node000011" title=" " alt="" coords="350,189,547,234,546,240,349,195"/>
+<area shape="poly" id="edge14_Node000010_Node000003" title=" " alt="" coords="361,268,303,307,300,303,358,263"/>
+<area shape="poly" id="edge13_Node000010_Node000004" title=" " alt="" coords="390,264,502,375,499,379,387,268"/>
+<area shape="poly" id="edge17_Node000011_Node000003" title=" " alt="" coords="556,268,341,313,340,308,555,263"/>
+<area shape="poly" id="edge16_Node000011_Node000004" title=" " alt="" coords="605,267,538,376,534,374,601,264"/>
+>>>>>>> main
 </map>

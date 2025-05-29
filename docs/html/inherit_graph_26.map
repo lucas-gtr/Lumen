@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<<<<<<< HEAD
 <area shape="rect" id="Node000000" href="$classTexture.html" title="Class representing a texture for 3D rendering." alt="" coords="5,5,76,31"/>
+=======
+<area shape="rect" id="Node000000" href="$structTextureUV.html" title="Structure to hold the UV coordinates of a texture." alt="" coords="5,5,95,31"/>
+>>>>>>> main
 </map>

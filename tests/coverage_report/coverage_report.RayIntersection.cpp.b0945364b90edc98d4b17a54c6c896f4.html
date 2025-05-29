@@ -27,7 +27,11 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
+<<<<<<< HEAD
       <td>2025-05-29 15:24:27</td>
+=======
+      <td>2025-05-28 10:24:22</td>
+>>>>>>> main
     </tr>
   </table>
 </div>
@@ -73,6 +77,7 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
+<<<<<<< HEAD
     <tr><td><a href="#l171">RayIntersection::getAABBIntersection(Ray const&amp;, Eigen::Matrix&lt;double, 3, 1, 0, 3, 1&gt; const&amp;, Eigen::Matrix&lt;double, 3, 1, 0, 3, 1&gt; const&amp;, double&amp;) (line 171)</a></td><td>called 2119 times, returned 2119 times</td><td>75.0%</td></tr>
     <tr><td><a href="#l190">RayIntersection::getBVHIntersection(Ray const&amp;, BVHNode const*) (line 190)</a></td><td>called 126 times, returned 126 times</td><td>87.0%</td></tr>
     <tr><td><a href="#l241">RayIntersection::getBVHIntersection(Ray const&amp;, BVHNode const*)::{lambda(RayIntersection::RayBVHHitInfo const&amp;, RayIntersection::RayBVHHitInfo const&amp;)#1}::operator()(RayIntersection::RayBVHHitInfo const&amp;, RayIntersection::RayBVHHitInfo const&amp;) const (line 241)</a></td><td>called 371 times, returned 371 times</td><td>100.0%</td></tr>
@@ -89,6 +94,24 @@
     <tr><td><a href="#l134">RayIntersection::transformRayToObjectSpace(Ray const&amp;, Object3D const*) (line 134)</a></td><td>called 96 times, returned 96 times</td><td>75.0%</td></tr>
     <tr><td><a href="#l72">RayIntersection::updateHitInfoFromBarycentric(RayHitInfo&amp;, double, Eigen::Matrix&lt;double, 3, 1, 0, 3, 1&gt; const&amp;, Vertex const&amp;, Vertex const&amp;, Vertex const&amp;) (line 72)</a></td><td>called 100 times, returned 100 times</td><td>84.0%</td></tr>
     <tr><td><a href="#l117">RayIntersection::updateNormalWithTangentSpace(RayHitInfo&amp;) (line 117)</a></td><td>called 90 times, returned 90 times</td><td>74.0%</td></tr>
+=======
+    <tr><td><a href="#l171">RayIntersection::getAABBIntersection(Ray const&amp;, Eigen::Matrix&lt;double, 3, 1, 0, 3, 1&gt; const&amp;, Eigen::Matrix&lt;double, 3, 1, 0, 3, 1&gt; const&amp;, double&amp;) (line 171)</a></td><td>called 448 times, returned 448 times</td><td>75.0%</td></tr>
+    <tr><td><a href="#l190">RayIntersection::getBVHIntersection(Ray const&amp;, BVHNode const*) (line 190)</a></td><td>called 26 times, returned 26 times</td><td>87.0%</td></tr>
+    <tr><td><a href="#l241">RayIntersection::getBVHIntersection(Ray const&amp;, BVHNode const*)::{lambda(RayIntersection::RayBVHHitInfo const&amp;, RayIntersection::RayBVHHitInfo const&amp;)#1}::operator()(RayIntersection::RayBVHHitInfo const&amp;, RayIntersection::RayBVHHitInfo const&amp;) const (line 241)</a></td><td>called 76 times, returned 76 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l110">RayIntersection::getMeshIntersection(Ray const&amp;, Mesh const&amp;) (line 110)</a></td><td>called 28 times, returned 28 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l82">RayIntersection::getMeshIntersectionWithBVH(Ray const&amp;, Mesh const&amp;) (line 82)</a></td><td>called 12 times, returned 12 times</td><td>86.0%</td></tr>
+    <tr><td><a href="#l99">RayIntersection::getMeshIntersectionWithoutBVH(Ray const&amp;, Mesh const&amp;) (line 99)</a></td><td>called 16 times, returned 16 times</td><td>91.0%</td></tr>
+    <tr><td><a href="#l159">RayIntersection::getObjectIntersection(Ray const&amp;, Object3D const*) (line 159)</a></td><td>called 20 times, returned 20 times</td><td>92.0%</td></tr>
+    <tr><td><a href="#l280">RayIntersection::getSceneIntersection(Ray const&amp;, Scene const*) (line 280)</a></td><td>called 16 times, returned 16 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l245">RayIntersection::getSceneIntersectionWithBVH(Ray const&amp;, Scene const*) (line 245)</a></td><td>called 10 times, returned 10 times</td><td>85.0%</td></tr>
+    <tr><td><a href="#l265">RayIntersection::getSceneIntersectionWithoutBVH(Ray const&amp;, Scene const*) (line 265)</a></td><td>called 6 times, returned 6 times</td><td>88.0%</td></tr>
+    <tr><td><a href="#l19">RayIntersection::getTriangleIntersection(Ray const&amp;, Eigen::Matrix&lt;double, 3, 1, 0, 3, 1&gt; const&amp;, Eigen::Matrix&lt;double, 3, 1, 0, 3, 1&gt; const&amp;, Eigen::Matrix&lt;double, 3, 1, 0, 3, 1&gt; const&amp;, double&amp;, Eigen::Matrix&lt;double, 3, 1, 0, 3, 1&gt;&amp;) (line 19)</a></td><td>called 56 times, returned 56 times</td><td>81.0%</td></tr>
+    <tr><td><a href="#l55">RayIntersection::processFaceIntersection(Ray const&amp;, Mesh const&amp;, Face const&amp;, RayHitInfo&amp;) (line 55)</a></td><td>called 44 times, returned 44 times</td><td>96.0%</td></tr>
+    <tr><td><a href="#l144">RayIntersection::transformHitInfoToWorldSpace(RayHitInfo&amp;, Ray const&amp;, Ray const&amp;, Object3D const*) (line 144)</a></td><td>called 12 times, returned 12 times</td><td>79.0%</td></tr>
+    <tr><td><a href="#l134">RayIntersection::transformRayToObjectSpace(Ray const&amp;, Object3D const*) (line 134)</a></td><td>called 20 times, returned 20 times</td><td>75.0%</td></tr>
+    <tr><td><a href="#l72">RayIntersection::updateHitInfoFromBarycentric(RayHitInfo&amp;, double, Eigen::Matrix&lt;double, 3, 1, 0, 3, 1&gt; const&amp;, Vertex const&amp;, Vertex const&amp;, Vertex const&amp;) (line 72)</a></td><td>called 20 times, returned 20 times</td><td>84.0%</td></tr>
+    <tr><td><a href="#l117">RayIntersection::updateNormalWithTangentSpace(RayHitInfo&amp;) (line 117)</a></td><td>called 18 times, returned 18 times</td><td>74.0%</td></tr>
+>>>>>>> main
   </table>
 </details>
 
@@ -233,7 +256,11 @@
       <td class="lineno"><a id="l19" href="#l19">19</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">272</td>
+=======
+      <td class="linecount coveredLine">56</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="kt">bool</span><span class="w"> </span><span class="nf">getTriangleIntersection</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Ray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p0</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p1</span><span class="p">,</span></td>
     </tr>
     <tr class="source-line">
@@ -249,12 +276,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 5 taken 272 times.</div>
           <div class="takenBranch">&check; Branch 8 taken 272 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">272</td>
+=======
+          <div class="takenBranch">&check; Branch 5 taken 56 times.</div>
+          <div class="takenBranch">&check; Branch 8 taken 56 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">56</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">edge1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p0</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -263,12 +299,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 5 taken 272 times.</div>
           <div class="takenBranch">&check; Branch 8 taken 272 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">272</td>
+=======
+          <div class="takenBranch">&check; Branch 5 taken 56 times.</div>
+          <div class="takenBranch">&check; Branch 8 taken 56 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">56</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">edge2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p0</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -277,11 +322,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 7 taken 272 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">272</td>
+=======
+          <div class="takenBranch">&check; Branch 7 taken 56 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">56</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">h</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">ray</span><span class="p">.</span><span class="n">direction</span><span class="p">.</span><span class="n">cross</span><span class="p">(</span><span class="n">edge2</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -290,11 +343,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 272 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">272</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 56 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">56</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w">          </span><span class="n">a</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">edge1</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">h</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -310,19 +371,32 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 10 times.</div>
           <div class="takenBranch">&check; Branch 2 taken 262 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">272</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 54 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">56</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">abs</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">EPSILON</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l27" href="#l27">27</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">10</td>
+=======
+      <td class="linecount coveredLine">2</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -346,11 +420,19 @@
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
           <div class="notTakenBranch">&cross; Branch 0 not taken.</div>
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 262 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount partialCoveredLine">262</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 54 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">54</td>
+>>>>>>> main
       <td class="src partialCoveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w">          </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">a</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -359,12 +441,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 7 taken 262 times.</div>
           <div class="takenBranch">&check; Branch 10 taken 262 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">262</td>
+=======
+          <div class="takenBranch">&check; Branch 7 taken 54 times.</div>
+          <div class="takenBranch">&check; Branch 10 taken 54 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">54</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ray</span><span class="p">.</span><span class="n">origin</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p0</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -373,11 +464,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 2 taken 262 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">262</td>
+=======
+          <div class="takenBranch">&check; Branch 2 taken 54 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">54</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w">          </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">h</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -393,6 +492,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/4</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 0 taken 224 times.</div>
           <div class="takenBranch">&check; Branch 1 taken 38 times.</div>
           <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
@@ -401,13 +501,27 @@
         </details>
       </td>
       <td class="linecount partialCoveredLine">262</td>
+=======
+          <div class="takenBranch">&check; Branch 0 taken 45 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 9 times.</div>
+          <div class="notTakenBranch">&cross; Branch 2 not taken.</div>
+          <div class="takenBranch">&check; Branch 3 taken 45 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">54</td>
+>>>>>>> main
       <td class="src partialCoveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l35" href="#l35">35</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">38</td>
+=======
+      <td class="linecount coveredLine">9</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -430,11 +544,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 2 taken 224 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">224</td>
+=======
+          <div class="takenBranch">&check; Branch 2 taken 45 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">45</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">cross</span><span class="p">(</span><span class="n">edge1</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -443,11 +565,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 7 taken 224 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">224</td>
+=======
+          <div class="takenBranch">&check; Branch 7 taken 45 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">45</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w">          </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ray</span><span class="p">.</span><span class="n">direction</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">q</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -463,6 +593,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">4/4</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 0 taken 196 times.</div>
           <div class="takenBranch">&check; Branch 1 taken 28 times.</div>
           <div class="takenBranch">&check; Branch 2 taken 20 times.</div>
@@ -471,13 +602,27 @@
         </details>
       </td>
       <td class="linecount coveredLine">224</td>
+=======
+          <div class="takenBranch">&check; Branch 0 taken 40 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 5 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 4 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 36 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">45</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">1.0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l42" href="#l42">42</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">48</td>
+=======
+      <td class="linecount coveredLine">9</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -500,11 +645,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 176 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">176</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 36 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">36</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">hit_distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">edge2</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">q</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -520,12 +673,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 150 times.</div>
           <div class="takenBranch">&check; Branch 2 taken 26 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">176</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 30 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 6 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">36</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">hit_distance</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">EPSILON</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -534,18 +696,30 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 4 taken 150 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">150</td>
+=======
+          <div class="takenBranch">&check; Branch 4 taken 30 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">30</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="n">bary_coords</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">1.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">};</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l49" href="#l49">49</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">150</td>
+=======
+      <td class="linecount coveredLine">30</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -566,7 +740,11 @@
       <td class="lineno"><a id="l52" href="#l52">52</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">26</td>
+=======
+      <td class="linecount coveredLine">6</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -587,28 +765,44 @@
       <td class="lineno"><a id="l55" href="#l55">55</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">212</td>
+=======
+      <td class="linecount coveredLine">44</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">processFaceIntersection</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Ray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="w"> </span><span class="n">mesh</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Face</span><span class="o">&amp;</span><span class="w"> </span><span class="n">face</span><span class="p">,</span><span class="w"> </span><span class="n">RayHitInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">closest_hit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l56" href="#l56">56</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">212</td>
+=======
+      <td class="linecount coveredLine">44</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Vertex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">v0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mesh</span><span class="p">.</span><span class="n">getVertex</span><span class="p">(</span><span class="n">face</span><span class="p">.</span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l57" href="#l57">57</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">212</td>
+=======
+      <td class="linecount coveredLine">44</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Vertex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mesh</span><span class="p">.</span><span class="n">getVertex</span><span class="p">(</span><span class="n">face</span><span class="p">.</span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l58" href="#l58">58</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">212</td>
+=======
+      <td class="linecount coveredLine">44</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Vertex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mesh</span><span class="p">.</span><span class="n">getVertex</span><span class="p">(</span><span class="n">face</span><span class="p">.</span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span></td>
     </tr>
     <tr class="source-line">
@@ -622,7 +816,11 @@
       <td class="lineno"><a id="l60" href="#l60">60</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">212</td>
+=======
+      <td class="linecount coveredLine">44</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="kt">double</span><span class="w">          </span><span class="n">hit_distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -631,11 +829,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 2 taken 212 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">212</td>
+=======
+          <div class="takenBranch">&check; Branch 2 taken 44 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">44</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">bary_coords</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -651,6 +857,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/3</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 10 taken 212 times.</div>
           <div class="takenBranch">&check; Branch 12 taken 92 times.</div>
           <div class="takenBranch">&check; Branch 13 taken 120 times.</div>
@@ -658,13 +865,26 @@
         </details>
       </td>
       <td class="linecount coveredLine">212</td>
+=======
+          <div class="takenBranch">&check; Branch 10 taken 44 times.</div>
+          <div class="takenBranch">&check; Branch 12 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 13 taken 24 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">44</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">getTriangleIntersection</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">v0</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">v2</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">hit_distance</span><span class="p">,</span><span class="w"> </span><span class="n">bary_coords</span><span class="p">))</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l64" href="#l64">64</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">92</td>
+=======
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -687,6 +907,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/4</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 0 taken 120 times.</div>
           <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
           <div class="takenBranch">&check; Branch 3 taken 100 times.</div>
@@ -695,6 +916,16 @@
         </details>
       </td>
       <td class="linecount partialCoveredLine">120</td>
+=======
+          <div class="takenBranch">&check; Branch 0 taken 24 times.</div>
+          <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
+          <div class="takenBranch">&check; Branch 3 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 4 taken 4 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount partialCoveredLine">24</td>
+>>>>>>> main
       <td class="src partialCoveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">hit_distance</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">hit_distance</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">closest_hit</span><span class="p">.</span><span class="n">distance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -703,11 +934,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 100 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">100</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 20 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="n">updateHitInfoFromBarycentric</span><span class="p">(</span><span class="n">closest_hit</span><span class="p">,</span><span class="w"> </span><span class="n">hit_distance</span><span class="p">,</span><span class="w"> </span><span class="n">bary_coords</span><span class="p">,</span><span class="w"> </span><span class="n">v0</span><span class="p">,</span><span class="w"> </span><span class="n">v1</span><span class="p">,</span><span class="w"> </span><span class="n">v2</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -735,7 +974,11 @@
       <td class="lineno"><a id="l72" href="#l72">72</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">100</td>
+=======
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">updateHitInfoFromBarycentric</span><span class="p">(</span><span class="n">RayHitInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">hit_info</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">distance</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">bary</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Vertex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">v0</span><span class="p">,</span></td>
     </tr>
     <tr class="source-line">
@@ -749,21 +992,33 @@
       <td class="lineno"><a id="l74" href="#l74">74</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">100</td>
+=======
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">hit_info</span><span class="p">.</span><span class="n">distance</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">distance</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l75" href="#l75">75</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">100</td>
+=======
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">hit_info</span><span class="p">.</span><span class="n">uvCoordinates</span><span class="p">.</span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bary</span><span class="p">.</span><span class="n">x</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v0</span><span class="p">.</span><span class="n">uvCoord</span><span class="p">.</span><span class="n">u</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bary</span><span class="p">.</span><span class="n">y</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">uvCoord</span><span class="p">.</span><span class="n">u</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bary</span><span class="p">.</span><span class="n">z</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v2</span><span class="p">.</span><span class="n">uvCoord</span><span class="p">.</span><span class="n">u</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l76" href="#l76">76</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">100</td>
+=======
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">hit_info</span><span class="p">.</span><span class="n">uvCoordinates</span><span class="p">.</span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bary</span><span class="p">.</span><span class="n">x</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v0</span><span class="p">.</span><span class="n">uvCoord</span><span class="p">.</span><span class="n">v</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bary</span><span class="p">.</span><span class="n">y</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">uvCoord</span><span class="p">.</span><span class="n">v</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bary</span><span class="p">.</span><span class="n">z</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v2</span><span class="p">.</span><span class="n">uvCoord</span><span class="p">.</span><span class="n">v</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -772,6 +1027,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">10/10</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 10 taken 100 times.</div>
           <div class="takenBranch">&check; Branch 14 taken 100 times.</div>
           <div class="takenBranch">&check; Branch 25 taken 100 times.</div>
@@ -786,6 +1042,22 @@
         </details>
       </td>
       <td class="linecount coveredLine">100</td>
+=======
+          <div class="takenBranch">&check; Branch 10 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 14 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 25 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 29 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 39 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 43 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 46 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 49 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 52 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 59 taken 20 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">hit_info</span><span class="p">.</span><span class="n">normal</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">bary</span><span class="p">.</span><span class="n">x</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v0</span><span class="p">.</span><span class="n">normal</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bary</span><span class="p">.</span><span class="n">y</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">normal</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bary</span><span class="p">.</span><span class="n">z</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v2</span><span class="p">.</span><span class="n">normal</span><span class="p">).</span><span class="n">normalized</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -794,6 +1066,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">10/10</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 10 taken 100 times.</div>
           <div class="takenBranch">&check; Branch 14 taken 100 times.</div>
           <div class="takenBranch">&check; Branch 25 taken 100 times.</div>
@@ -808,6 +1081,22 @@
         </details>
       </td>
       <td class="linecount coveredLine">100</td>
+=======
+          <div class="takenBranch">&check; Branch 10 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 14 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 25 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 29 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 39 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 43 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 46 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 49 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 52 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 59 taken 20 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">hit_info</span><span class="p">.</span><span class="n">tangent</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">bary</span><span class="p">.</span><span class="n">x</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v0</span><span class="p">.</span><span class="n">tangent</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bary</span><span class="p">.</span><span class="n">y</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">tangent</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bary</span><span class="p">.</span><span class="n">z</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v2</span><span class="p">.</span><span class="n">tangent</span><span class="p">).</span><span class="n">normalized</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -816,6 +1105,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">10/10</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 10 taken 100 times.</div>
           <div class="takenBranch">&check; Branch 14 taken 100 times.</div>
           <div class="takenBranch">&check; Branch 25 taken 100 times.</div>
@@ -830,13 +1120,33 @@
         </details>
       </td>
       <td class="linecount coveredLine">100</td>
+=======
+          <div class="takenBranch">&check; Branch 10 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 14 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 25 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 29 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 39 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 43 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 46 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 49 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 52 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 59 taken 20 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">hit_info</span><span class="p">.</span><span class="n">bitangent</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">bary</span><span class="p">.</span><span class="n">x</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v0</span><span class="p">.</span><span class="n">bitangent</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bary</span><span class="p">.</span><span class="n">y</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v1</span><span class="p">.</span><span class="n">bitangent</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bary</span><span class="p">.</span><span class="n">z</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">v2</span><span class="p">.</span><span class="n">bitangent</span><span class="p">).</span><span class="n">normalized</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l80" href="#l80">80</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">100</td>
+=======
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -850,7 +1160,11 @@
       <td class="lineno"><a id="l82" href="#l82">82</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">56</td>
+=======
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="n">RayHitInfo</span><span class="w"> </span><span class="nf">getMeshIntersectionWithBVH</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Ray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="w"> </span><span class="n">mesh</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -859,18 +1173,30 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 56 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">56</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">RayHitInfo</span><span class="w"> </span><span class="n">hit_info</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l84" href="#l84">84</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">56</td>
+=======
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">hit_info</span><span class="p">.</span><span class="n">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -886,11 +1212,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 4 taken 56 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">56</td>
+=======
+          <div class="takenBranch">&check; Branch 4 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">RayBVHHitInfo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bvh_hits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getBVHIntersection</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">mesh</span><span class="p">.</span><span class="n">getBVHRoot</span><span class="p">());</span></td>
     </tr>
     <tr class="source-line">
@@ -906,12 +1240,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 10 taken 152 times.</div>
           <div class="takenBranch">&check; Branch 11 taken 16 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">168</td>
+=======
+          <div class="takenBranch">&check; Branch 10 taken 32 times.</div>
+          <div class="takenBranch">&check; Branch 11 taken 4 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">36</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">bvh_hit</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">bvh_hits</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -920,19 +1263,32 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 2 taken 40 times.</div>
           <div class="takenBranch">&check; Branch 3 taken 112 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">152</td>
+=======
+          <div class="takenBranch">&check; Branch 2 taken 8 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 24 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">32</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">bvh_hit</span><span class="p">.</span><span class="n">distance</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">hit_info</span><span class="p">.</span><span class="n">distance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l90" href="#l90">90</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">40</td>
+=======
+      <td class="linecount coveredLine">8</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">hit_info</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -946,7 +1302,11 @@
       <td class="lineno"><a id="l92" href="#l92">92</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">112</td>
+=======
+      <td class="linecount coveredLine">24</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Face</span><span class="o">&amp;</span><span class="w"> </span><span class="n">face</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mesh</span><span class="p">.</span><span class="n">getFaces</span><span class="p">()[</span><span class="n">bvh_hit</span><span class="p">.</span><span class="n">index_to_check</span><span class="p">];</span></td>
     </tr>
     <tr class="source-line">
@@ -955,11 +1315,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 112 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">112</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 24 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">24</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="n">processFaceIntersection</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">mesh</span><span class="p">,</span><span class="w"> </span><span class="n">face</span><span class="p">,</span><span class="w"> </span><span class="n">hit_info</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -980,14 +1348,22 @@
       <td class="lineno"><a id="l96" href="#l96">96</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">16</td>
+=======
+      <td class="linecount coveredLine">4</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">hit_info</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l97" href="#l97">97</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">56</td>
+=======
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1001,21 +1377,33 @@
       <td class="lineno"><a id="l99" href="#l99">99</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">80</td>
+=======
+      <td class="linecount coveredLine">16</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="n">RayHitInfo</span><span class="w"> </span><span class="nf">getMeshIntersectionWithoutBVH</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Ray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="w"> </span><span class="n">mesh</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l100" href="#l100">100</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">80</td>
+=======
+      <td class="linecount coveredLine">16</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">RayHitInfo</span><span class="w"> </span><span class="n">hit_info</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l101" href="#l101">101</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">80</td>
+=======
+      <td class="linecount coveredLine">16</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">hit_info</span><span class="p">.</span><span class="n">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1031,12 +1419,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 12 taken 100 times.</div>
           <div class="takenBranch">&check; Branch 13 taken 80 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">180</td>
+=======
+          <div class="takenBranch">&check; Branch 12 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 13 taken 16 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">36</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">face</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">mesh</span><span class="p">.</span><span class="n">getFaces</span><span class="p">())</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -1045,11 +1442,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 100 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">100</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 20 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="n">processFaceIntersection</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">mesh</span><span class="p">,</span><span class="w"> </span><span class="n">face</span><span class="p">,</span><span class="w"> </span><span class="n">hit_info</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -1070,7 +1475,11 @@
       <td class="lineno"><a id="l107" href="#l107">107</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">80</td>
+=======
+      <td class="linecount coveredLine">16</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">hit_info</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -1091,7 +1500,11 @@
       <td class="lineno"><a id="l110" href="#l110">110</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">136</td>
+=======
+      <td class="linecount coveredLine">28</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="n">RayHitInfo</span><span class="w"> </span><span class="nf">getMeshIntersection</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Ray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="w"> </span><span class="n">mesh</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -1100,19 +1513,32 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 2 taken 56 times.</div>
           <div class="takenBranch">&check; Branch 3 taken 80 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">136</td>
+=======
+          <div class="takenBranch">&check; Branch 2 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 16 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">28</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">mesh</span><span class="p">.</span><span class="n">getBVHRoot</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l112" href="#l112">112</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">56</td>
+=======
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">getMeshIntersectionWithBVH</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">mesh</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -1126,7 +1552,11 @@
       <td class="lineno"><a id="l114" href="#l114">114</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">80</td>
+=======
+      <td class="linecount coveredLine">16</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">getMeshIntersectionWithoutBVH</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">mesh</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -1147,7 +1577,11 @@
       <td class="lineno"><a id="l117" href="#l117">117</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">90</td>
+=======
+      <td class="linecount coveredLine">18</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">updateNormalWithTangentSpace</span><span class="p">(</span><span class="n">RayHitInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">hit_info</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -1156,19 +1590,32 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 2 taken 30 times.</div>
           <div class="takenBranch">&check; Branch 3 taken 60 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">90</td>
+=======
+          <div class="takenBranch">&check; Branch 2 taken 6 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">18</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">hit_info</span><span class="p">.</span><span class="n">material</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l119" href="#l119">119</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">30</td>
+=======
+      <td class="linecount coveredLine">6</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -1191,11 +1638,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 2 taken 60 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">60</td>
+=======
+          <div class="takenBranch">&check; Branch 2 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix3d</span><span class="w"> </span><span class="n">tangent_space</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -1204,12 +1659,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 5 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 8 taken 60 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">60</td>
+=======
+          <div class="takenBranch">&check; Branch 5 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 8 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">tangent_space</span><span class="p">.</span><span class="n">col</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hit_info</span><span class="p">.</span><span class="n">tangent</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -1218,12 +1682,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 5 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 8 taken 60 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">60</td>
+=======
+          <div class="takenBranch">&check; Branch 5 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 8 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">tangent_space</span><span class="p">.</span><span class="n">col</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hit_info</span><span class="p">.</span><span class="n">bitangent</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -1232,12 +1705,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 5 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 8 taken 60 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">60</td>
+=======
+          <div class="takenBranch">&check; Branch 5 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 8 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">tangent_space</span><span class="p">.</span><span class="n">col</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hit_info</span><span class="p">.</span><span class="n">normal</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -1253,12 +1735,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 7 taken 60 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">60</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">ColorRGB</span><span class="w">  </span><span class="n">normal_color</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">hit_info</span><span class="p">.</span><span class="n">material</span><span class="o">-&gt;</span><span class="n">getNormal</span><span class="p">(</span><span class="n">hit_info</span><span class="p">.</span><span class="n">uvCoordinates</span><span class="p">);</span></td>
+=======
+          <div class="takenBranch">&check; Branch 7 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">ColorRGB</span><span class="w">        </span><span class="n">normal_color</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">hit_info</span><span class="p">.</span><span class="n">material</span><span class="o">-&gt;</span><span class="n">getNormal</span><span class="p">(</span><span class="n">hit_info</span><span class="p">.</span><span class="n">uvCoordinates</span><span class="p">);</span></td>
+>>>>>>> main
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l128" href="#l128">128</a></td>
@@ -1266,11 +1757,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 2 taken 60 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">60</td>
+=======
+          <div class="takenBranch">&check; Branch 2 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">normal_direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">normal_color</span><span class="p">.</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">normal_color</span><span class="p">.</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">normal_color</span><span class="p">.</span><span class="n">b</span><span class="p">};</span></td>
     </tr>
     <tr class="source-line">
@@ -1279,6 +1778,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">4/4</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 9 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 15 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 18 taken 60 times.</div>
@@ -1287,6 +1787,16 @@
         </details>
       </td>
       <td class="linecount coveredLine">60</td>
+=======
+          <div class="takenBranch">&check; Branch 9 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 15 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 18 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 21 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">normal_direction</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">normal_direction</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -1302,6 +1812,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/3</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 3 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 6 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 13 taken 60 times.</div>
@@ -1309,6 +1820,15 @@
         </details>
       </td>
       <td class="linecount coveredLine">60</td>
+=======
+          <div class="takenBranch">&check; Branch 3 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 6 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 13 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">hit_info</span><span class="p">.</span><span class="n">normal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">tangent_space</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">normal_direction</span><span class="p">).</span><span class="n">normalized</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1329,14 +1849,22 @@
       <td class="lineno"><a id="l134" href="#l134">134</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">96</td>
+=======
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="n">Ray</span><span class="w"> </span><span class="nf">transformRayToObjectSpace</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Ray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Object3D</span><span class="o">*</span><span class="w"> </span><span class="n">object</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l135" href="#l135">135</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">96</td>
+=======
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix4d</span><span class="w"> </span><span class="n">inv_matrix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">object</span><span class="o">-&gt;</span><span class="n">getInverseMatrix</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1352,11 +1880,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 96 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">96</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 20 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">Ray</span><span class="w"> </span><span class="n">local_ray</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -1365,6 +1901,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">4/4</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 7 taken 96 times.</div>
           <div class="takenBranch">&check; Branch 11 taken 96 times.</div>
           <div class="takenBranch">&check; Branch 14 taken 96 times.</div>
@@ -1373,6 +1910,16 @@
         </details>
       </td>
       <td class="linecount coveredLine">96</td>
+=======
+          <div class="takenBranch">&check; Branch 7 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 11 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 14 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 17 taken 20 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">local_ray</span><span class="p">.</span><span class="n">origin</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">inv_matrix</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ray</span><span class="p">.</span><span class="n">origin</span><span class="p">.</span><span class="n">homogeneous</span><span class="p">()).</span><span class="n">hnormalized</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1381,6 +1928,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">4/4</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 9 taken 96 times.</div>
           <div class="takenBranch">&check; Branch 12 taken 96 times.</div>
           <div class="takenBranch">&check; Branch 15 taken 96 times.</div>
@@ -1389,6 +1937,16 @@
         </details>
       </td>
       <td class="linecount coveredLine">96</td>
+=======
+          <div class="takenBranch">&check; Branch 9 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 12 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 15 taken 20 times.</div>
+          <div class="takenBranch">&check; Branch 19 taken 20 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">local_ray</span><span class="p">.</span><span class="n">direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">inv_matrix</span><span class="p">.</span><span class="n">block</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ray</span><span class="p">.</span><span class="n">direction</span><span class="p">).</span><span class="n">normalized</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1402,7 +1960,11 @@
       <td class="lineno"><a id="l141" href="#l141">141</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">192</td>
+=======
+      <td class="linecount coveredLine">40</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">local_ray</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -1423,7 +1985,11 @@
       <td class="lineno"><a id="l144" href="#l144">144</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">60</td>
+=======
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">transformHitInfoToWorldSpace</span><span class="p">(</span><span class="n">RayHitInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">hit_info</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Ray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">local_ray</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Ray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">original_ray</span><span class="p">,</span></td>
     </tr>
     <tr class="source-line">
@@ -1439,6 +2005,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/3</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 11 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 17 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 20 taken 60 times.</div>
@@ -1446,6 +2013,15 @@
         </details>
       </td>
       <td class="linecount coveredLine">60</td>
+=======
+          <div class="takenBranch">&check; Branch 11 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 17 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 20 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">hit_local</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">local_ray</span><span class="p">.</span><span class="n">origin</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">hit_info</span><span class="p">.</span><span class="n">distance</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">local_ray</span><span class="p">.</span><span class="n">direction</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -1454,6 +2030,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">4/4</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 5 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 14 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 17 taken 60 times.</div>
@@ -1462,6 +2039,16 @@
         </details>
       </td>
       <td class="linecount coveredLine">60</td>
+=======
+          <div class="takenBranch">&check; Branch 5 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 14 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 17 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 20 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">hit_world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">object</span><span class="o">-&gt;</span><span class="n">getTransformationMatrix</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">hit_local</span><span class="p">.</span><span class="n">homogeneous</span><span class="p">()).</span><span class="n">hnormalized</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1477,12 +2064,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 5 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 8 taken 60 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">60</td>
+=======
+          <div class="takenBranch">&check; Branch 5 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 8 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">hit_info</span><span class="p">.</span><span class="n">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">hit_world</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">original_ray</span><span class="p">.</span><span class="n">origin</span><span class="p">).</span><span class="n">norm</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1491,18 +2087,30 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 4 taken 60 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">60</td>
+=======
+          <div class="takenBranch">&check; Branch 4 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">hit_info</span><span class="p">.</span><span class="n">hitPoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hit_world</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l151" href="#l151">151</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">60</td>
+=======
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">hit_info</span><span class="p">.</span><span class="n">material</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">object</span><span class="o">-&gt;</span><span class="n">getMaterial</span><span class="p">().</span><span class="n">get</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1516,7 +2124,11 @@
       <td class="lineno"><a id="l153" href="#l153">153</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">60</td>
+=======
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix3d</span><span class="w"> </span><span class="n">normal_matrix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">object</span><span class="o">-&gt;</span><span class="n">getNormalMatrix</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1525,6 +2137,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/3</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 6 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 9 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 16 taken 60 times.</div>
@@ -1532,6 +2145,15 @@
         </details>
       </td>
       <td class="linecount coveredLine">60</td>
+=======
+          <div class="takenBranch">&check; Branch 6 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 9 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 16 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">hit_info</span><span class="p">.</span><span class="n">normal</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">normal_matrix</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">hit_info</span><span class="p">.</span><span class="n">normal</span><span class="p">).</span><span class="n">normalized</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1540,6 +2162,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/3</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 6 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 9 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 16 taken 60 times.</div>
@@ -1547,6 +2170,15 @@
         </details>
       </td>
       <td class="linecount coveredLine">60</td>
+=======
+          <div class="takenBranch">&check; Branch 6 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 9 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 16 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">hit_info</span><span class="p">.</span><span class="n">tangent</span><span class="w">                    </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">normal_matrix</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">hit_info</span><span class="p">.</span><span class="n">tangent</span><span class="p">).</span><span class="n">normalized</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1555,6 +2187,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/3</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 6 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 9 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 16 taken 60 times.</div>
@@ -1562,13 +2195,26 @@
         </details>
       </td>
       <td class="linecount coveredLine">60</td>
+=======
+          <div class="takenBranch">&check; Branch 6 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 9 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 16 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">hit_info</span><span class="p">.</span><span class="n">bitangent</span><span class="w">                  </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">normal_matrix</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">hit_info</span><span class="p">.</span><span class="n">bitangent</span><span class="p">).</span><span class="n">normalized</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l157" href="#l157">157</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">60</td>
+=======
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1582,7 +2228,11 @@
       <td class="lineno"><a id="l159" href="#l159">159</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">96</td>
+=======
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="n">RayHitInfo</span><span class="w"> </span><span class="nf">getObjectIntersection</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Ray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Object3D</span><span class="o">*</span><span class="w"> </span><span class="n">object</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -1591,11 +2241,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 2 taken 96 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">96</td>
+=======
+          <div class="takenBranch">&check; Branch 2 taken 20 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Ray</span><span class="w">  </span><span class="n">local_ray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">transformRayToObjectSpace</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">object</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -1604,11 +2262,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 3 taken 96 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">96</td>
+=======
+          <div class="takenBranch">&check; Branch 3 taken 20 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">RayHitInfo</span><span class="w"> </span><span class="n">hit_info</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">getMeshIntersection</span><span class="p">(</span><span class="n">local_ray</span><span class="p">,</span><span class="w"> </span><span class="n">object</span><span class="o">-&gt;</span><span class="n">getMesh</span><span class="p">());</span></td>
     </tr>
     <tr class="source-line">
@@ -1624,12 +2290,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 60 times.</div>
           <div class="takenBranch">&check; Branch 2 taken 36 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">96</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 12 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 8 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">20</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">hit_info</span><span class="p">.</span><span class="n">distance</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">())</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -1638,11 +2313,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 60 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">60</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="n">transformHitInfoToWorldSpace</span><span class="p">(</span><span class="n">hit_info</span><span class="p">,</span><span class="w"> </span><span class="n">local_ray</span><span class="p">,</span><span class="w"> </span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">object</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -1663,7 +2346,11 @@
       <td class="lineno"><a id="l167" href="#l167">167</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">192</td>
+=======
+      <td class="linecount coveredLine">40</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">hit_info</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -1691,7 +2378,11 @@
       <td class="lineno"><a id="l171" href="#l171">171</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">2119</td>
+=======
+      <td class="linecount coveredLine">448</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="kt">bool</span><span class="w"> </span><span class="nf">getAABBIntersection</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Ray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">min_bound</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">max_bound</span><span class="p">,</span></td>
     </tr>
     <tr class="source-line">
@@ -1707,12 +2398,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 8 taken 2119 times.</div>
           <div class="takenBranch">&check; Branch 11 taken 2119 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">2119</td>
+=======
+          <div class="takenBranch">&check; Branch 8 taken 448 times.</div>
+          <div class="takenBranch">&check; Branch 11 taken 448 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">448</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">inv_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ray</span><span class="p">.</span><span class="n">direction</span><span class="p">.</span><span class="n">cwiseInverse</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1721,6 +2421,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/3</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 8 taken 2119 times.</div>
           <div class="takenBranch">&check; Branch 11 taken 2119 times.</div>
           <div class="takenBranch">&check; Branch 14 taken 2119 times.</div>
@@ -1728,6 +2429,15 @@
         </details>
       </td>
       <td class="linecount coveredLine">2119</td>
+=======
+          <div class="takenBranch">&check; Branch 8 taken 448 times.</div>
+          <div class="takenBranch">&check; Branch 11 taken 448 times.</div>
+          <div class="takenBranch">&check; Branch 14 taken 448 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">448</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">t0</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">min_bound</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ray</span><span class="p">.</span><span class="n">origin</span><span class="p">).</span><span class="n">cwiseProduct</span><span class="p">(</span><span class="n">inv_dir</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -1736,6 +2446,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/3</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 8 taken 2119 times.</div>
           <div class="takenBranch">&check; Branch 11 taken 2119 times.</div>
           <div class="takenBranch">&check; Branch 14 taken 2119 times.</div>
@@ -1743,6 +2454,15 @@
         </details>
       </td>
       <td class="linecount coveredLine">2119</td>
+=======
+          <div class="takenBranch">&check; Branch 8 taken 448 times.</div>
+          <div class="takenBranch">&check; Branch 11 taken 448 times.</div>
+          <div class="takenBranch">&check; Branch 14 taken 448 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">448</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">t1</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">max_bound</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ray</span><span class="p">.</span><span class="n">origin</span><span class="p">).</span><span class="n">cwiseProduct</span><span class="p">(</span><span class="n">inv_dir</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -1758,12 +2478,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 3 taken 2119 times.</div>
           <div class="takenBranch">&check; Branch 6 taken 2119 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">2119</td>
+=======
+          <div class="takenBranch">&check; Branch 3 taken 448 times.</div>
+          <div class="takenBranch">&check; Branch 6 taken 448 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">448</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">t_min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">cwiseMin</span><span class="p">(</span><span class="n">t1</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -1772,12 +2501,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 3 taken 2119 times.</div>
           <div class="takenBranch">&check; Branch 6 taken 2119 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">2119</td>
+=======
+          <div class="takenBranch">&check; Branch 3 taken 448 times.</div>
+          <div class="takenBranch">&check; Branch 6 taken 448 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">448</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">t_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">cwiseMax</span><span class="p">(</span><span class="n">t1</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -1793,11 +2531,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 2119 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">2119</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 448 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">448</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">t_entry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t_min</span><span class="p">.</span><span class="n">maxCoeff</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1806,11 +2552,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 2119 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">2119</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 448 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">448</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">t_exit</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">t_max</span><span class="p">.</span><span class="n">minCoeff</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1826,6 +2580,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">4/4</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 0 taken 1724 times.</div>
           <div class="takenBranch">&check; Branch 1 taken 395 times.</div>
           <div class="takenBranch">&check; Branch 2 taken 66 times.</div>
@@ -1834,13 +2589,27 @@
         </details>
       </td>
       <td class="linecount coveredLine">2119</td>
+=======
+          <div class="takenBranch">&check; Branch 0 taken 364 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 84 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 14 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 350 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">448</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">t_entry</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">t_exit</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">t_exit</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l184" href="#l184">184</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">461</td>
+=======
+      <td class="linecount coveredLine">98</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -1854,14 +2623,22 @@
       <td class="lineno"><a id="l186" href="#l186">186</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">1658</td>
+=======
+      <td class="linecount coveredLine">350</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">hit_distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t_entry</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l187" href="#l187">187</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">1658</td>
+=======
+      <td class="linecount coveredLine">350</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -1882,14 +2659,22 @@
       <td class="lineno"><a id="l190" href="#l190">190</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">126</td>
+=======
+      <td class="linecount coveredLine">26</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">RayBVHHitInfo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getBVHIntersection</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Ray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">BVHNode</span><span class="o">*</span><span class="w"> </span><span class="n">bvh_node</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l191" href="#l191">191</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">126</td>
+=======
+      <td class="linecount coveredLine">26</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">RayBVHHitInfo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bvh_hits</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -1898,11 +2683,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 2 taken 126 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">126</td>
+=======
+          <div class="takenBranch">&check; Branch 2 taken 26 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">26</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">stack</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">BVHNode</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">nodeStack</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -1911,11 +2704,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 126 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">126</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 26 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">26</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">nodeStack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">bvh_node</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -1931,26 +2732,43 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 893 times.</div>
           <div class="takenBranch">&check; Branch 2 taken 126 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">1019</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 188 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 26 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">214</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">nodeStack</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l196" href="#l196">196</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">893</td>
+=======
+      <td class="linecount coveredLine">188</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">BVHNode</span><span class="o">*</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nodeStack</span><span class="p">.</span><span class="n">top</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l197" href="#l197">197</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">893</td>
+=======
+      <td class="linecount coveredLine">188</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="n">nodeStack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1964,7 +2782,11 @@
       <td class="lineno"><a id="l199" href="#l199">199</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">893</td>
+=======
+      <td class="linecount coveredLine">188</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">hit_distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1973,6 +2795,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/3</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 9 taken 893 times.</div>
           <div class="takenBranch">&check; Branch 11 taken 12 times.</div>
           <div class="takenBranch">&check; Branch 12 taken 881 times.</div>
@@ -1980,13 +2803,26 @@
         </details>
       </td>
       <td class="linecount coveredLine">893</td>
+=======
+          <div class="takenBranch">&check; Branch 9 taken 188 times.</div>
+          <div class="takenBranch">&check; Branch 11 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 12 taken 186 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">188</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">getAABBIntersection</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">getMinBound</span><span class="p">(),</span><span class="w"> </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">getMaxBound</span><span class="p">(),</span><span class="w"> </span><span class="n">hit_distance</span><span class="p">))</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l201" href="#l201">201</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">12</td>
+=======
+      <td class="linecount coveredLine">2</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">      </span><span class="k">continue</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -2007,7 +2843,11 @@
       <td class="lineno"><a id="l204" href="#l204">204</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">881</td>
+=======
+      <td class="linecount coveredLine">186</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">leafIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">getLeafIndex</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -2016,12 +2856,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 0 taken 278 times.</div>
           <div class="takenBranch">&check; Branch 1 taken 603 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">881</td>
+=======
+          <div class="takenBranch">&check; Branch 0 taken 58 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 128 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">186</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">leafIndex</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -2030,11 +2879,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 3 taken 278 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">278</td>
+=======
+          <div class="takenBranch">&check; Branch 3 taken 58 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">58</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">      </span><span class="n">bvh_hits</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">leafIndex</span><span class="p">,</span><span class="w"> </span><span class="n">hit_distance</span><span class="p">});</span></td>
     </tr>
     <tr class="source-line">
@@ -2048,14 +2905,22 @@
       <td class="lineno"><a id="l208" href="#l208">208</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">603</td>
+=======
+      <td class="linecount coveredLine">128</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">      </span><span class="n">BVHNode</span><span class="o">*</span><span class="w"> </span><span class="n">left</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">getLeftChild</span><span class="p">().</span><span class="n">get</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l209" href="#l209">209</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">603</td>
+=======
+      <td class="linecount coveredLine">128</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">      </span><span class="n">BVHNode</span><span class="o">*</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="o">-&gt;</span><span class="n">getRightChild</span><span class="p">().</span><span class="n">get</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -2069,14 +2934,22 @@
       <td class="lineno"><a id="l211" href="#l211">211</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">603</td>
+=======
+      <td class="linecount coveredLine">128</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">left_child_distance</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l212" href="#l212">212</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">603</td>
+=======
+      <td class="linecount coveredLine">128</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">right_child_distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -2090,7 +2963,11 @@
       <td class="lineno"><a id="l214" href="#l214">214</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">603</td>
+=======
+      <td class="linecount coveredLine">128</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">      </span><span class="kt">bool</span><span class="w"> </span><span class="n">leftHit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -2106,12 +2983,20 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 0 taken 603 times.</div>
+=======
+          <div class="takenBranch">&check; Branch 0 taken 128 times.</div>
+>>>>>>> main
           <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
         </div>
         </details>
       </td>
+<<<<<<< HEAD
       <td class="linecount partialCoveredLine">603</td>
+=======
+      <td class="linecount partialCoveredLine">128</td>
+>>>>>>> main
       <td class="src partialCoveredLine"><span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -2120,11 +3005,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 9 taken 603 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">603</td>
+=======
+          <div class="takenBranch">&check; Branch 9 taken 128 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">128</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">        </span><span class="n">leftHit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getAABBIntersection</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="o">-&gt;</span><span class="n">getMinBound</span><span class="p">(),</span><span class="w"> </span><span class="n">left</span><span class="o">-&gt;</span><span class="n">getMaxBound</span><span class="p">(),</span><span class="w"> </span><span class="n">left_child_distance</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -2138,7 +3031,11 @@
       <td class="lineno"><a id="l219" href="#l219">219</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">603</td>
+=======
+      <td class="linecount coveredLine">128</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">      </span><span class="kt">bool</span><span class="w"> </span><span class="n">rightHit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -2147,12 +3044,20 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 0 taken 603 times.</div>
+=======
+          <div class="takenBranch">&check; Branch 0 taken 128 times.</div>
+>>>>>>> main
           <div class="notTakenBranch">&cross; Branch 1 not taken.</div>
         </div>
         </details>
       </td>
+<<<<<<< HEAD
       <td class="linecount partialCoveredLine">603</td>
+=======
+      <td class="linecount partialCoveredLine">128</td>
+>>>>>>> main
       <td class="src partialCoveredLine"><span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">right</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -2161,11 +3066,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 9 taken 603 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">603</td>
+=======
+          <div class="takenBranch">&check; Branch 9 taken 128 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">128</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">        </span><span class="n">rightHit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getAABBIntersection</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="o">-&gt;</span><span class="n">getMinBound</span><span class="p">(),</span><span class="w"> </span><span class="n">right</span><span class="o">-&gt;</span><span class="n">getMaxBound</span><span class="p">(),</span><span class="w"> </span><span class="n">right_child_distance</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -2188,6 +3101,7 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">4/4</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 0 taken 359 times.</div>
           <div class="takenBranch">&check; Branch 1 taken 244 times.</div>
           <div class="takenBranch">&check; Branch 2 taken 242 times.</div>
@@ -2196,6 +3110,16 @@
         </details>
       </td>
       <td class="linecount coveredLine">603</td>
+=======
+          <div class="takenBranch">&check; Branch 0 taken 76 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 52 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 52 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 24 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">128</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">leftHit</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">rightHit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -2204,12 +3128,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 0 taken 17 times.</div>
           <div class="takenBranch">&check; Branch 1 taken 225 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">242</td>
+=======
+          <div class="takenBranch">&check; Branch 0 taken 4 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 48 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">52</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">left_child_distance</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">right_child_distance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -2218,11 +3151,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 17 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">17</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 4 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">4</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">          </span><span class="n">nodeStack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">right</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -2231,11 +3172,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 17 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">17</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 4 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">4</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">          </span><span class="n">nodeStack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">left</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -2251,11 +3200,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 225 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">225</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 48 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">48</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">          </span><span class="n">nodeStack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">left</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -2264,11 +3221,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 225 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">225</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 48 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">48</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">          </span><span class="n">nodeStack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">right</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -2284,12 +3249,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 0 taken 117 times.</div>
           <div class="takenBranch">&check; Branch 1 taken 244 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">361</td>
+=======
+          <div class="takenBranch">&check; Branch 0 taken 24 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 52 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">76</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">leftHit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -2298,11 +3272,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 117 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">117</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 24 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">24</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">        </span><span class="n">nodeStack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">left</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -2311,12 +3293,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 0 taken 166 times.</div>
           <div class="takenBranch">&check; Branch 1 taken 78 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">244</td>
+=======
+          <div class="takenBranch">&check; Branch 0 taken 34 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 18 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">52</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">rightHit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -2325,11 +3316,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 166 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">166</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 34 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">34</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">        </span><span class="n">nodeStack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">right</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -2366,32 +3365,52 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 3 taken 126 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">126</td>
+=======
+          <div class="takenBranch">&check; Branch 3 taken 26 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">26</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">bvh_hits</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">bvh_hits</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l241" href="#l241">241</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">371</td>
+=======
+      <td class="linecount coveredLine">76</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">            </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="n">RayBVHHitInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">RayBVHHitInfo</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">distance</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">distance</span><span class="p">;</span><span class="w"> </span><span class="p">});</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l242" href="#l242">242</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">252</td>
+=======
+      <td class="linecount coveredLine">52</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">bvh_hits</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l243" href="#l243">243</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">126</td>
+=======
+      <td class="linecount coveredLine">26</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -2405,7 +3424,11 @@
       <td class="lineno"><a id="l245" href="#l245">245</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">50</td>
+=======
+      <td class="linecount coveredLine">10</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="n">RayHitInfo</span><span class="w"> </span><span class="n">getSceneIntersectionWithBVH</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Ray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Scene</span><span class="o">*</span><span class="w"> </span><span class="n">scene</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -2414,11 +3437,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 50 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">50</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 10 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">10</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">RayHitInfo</span><span class="w">                       </span><span class="n">closest_hit</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -2427,11 +3458,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 4 taken 50 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">50</td>
+=======
+          <div class="takenBranch">&check; Branch 4 taken 10 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">10</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">RayBVHHitInfo</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bvh_hits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getBVHIntersection</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">scene</span><span class="o">-&gt;</span><span class="n">getBVHRoot</span><span class="p">());</span></td>
     </tr>
     <tr class="source-line">
@@ -2447,12 +3486,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 10 taken 66 times.</div>
           <div class="takenBranch">&check; Branch 11 taken 40 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">106</td>
+=======
+          <div class="takenBranch">&check; Branch 10 taken 14 times.</div>
+          <div class="takenBranch">&check; Branch 11 taken 8 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">22</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">bvh_hit</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">bvh_hits</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -2461,12 +3509,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 2 taken 10 times.</div>
           <div class="takenBranch">&check; Branch 3 taken 56 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">66</td>
+=======
+          <div class="takenBranch">&check; Branch 2 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">14</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">bvh_hit</span><span class="p">.</span><span class="n">distance</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">closest_hit</span><span class="p">.</span><span class="n">distance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -2475,18 +3532,30 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 10 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">10</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 2 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">2</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">      </span><span class="n">updateNormalWithTangentSpace</span><span class="p">(</span><span class="n">closest_hit</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l252" href="#l252">252</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">10</td>
+=======
+      <td class="linecount coveredLine">2</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="n">closest_hit</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -2500,7 +3569,11 @@
       <td class="lineno"><a id="l254" href="#l254">254</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">56</td>
+=======
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Object3D</span><span class="o">*</span><span class="w">  </span><span class="n">object</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">scene</span><span class="o">-&gt;</span><span class="n">getObjectList</span><span class="p">()[</span><span class="n">bvh_hit</span><span class="p">.</span><span class="n">index_to_check</span><span class="p">].</span><span class="n">get</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -2509,11 +3582,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 2 taken 56 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">56</td>
+=======
+          <div class="takenBranch">&check; Branch 2 taken 12 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">RayHitInfo</span><span class="w"> </span><span class="n">hit_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getObjectIntersection</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">object</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -2522,12 +3603,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 0 taken 40 times.</div>
           <div class="takenBranch">&check; Branch 1 taken 16 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">56</td>
+=======
+          <div class="takenBranch">&check; Branch 0 taken 8 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 4 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">12</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">hit_info</span><span class="p">.</span><span class="n">distance</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">closest_hit</span><span class="p">.</span><span class="n">distance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -2536,11 +3626,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 40 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">40</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 8 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">8</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">      </span><span class="n">closest_hit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hit_info</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -2570,25 +3668,41 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 40 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">40</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 8 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">8</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">updateNormalWithTangentSpace</span><span class="p">(</span><span class="n">closest_hit</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l262" href="#l262">262</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">40</td>
+=======
+      <td class="linecount coveredLine">8</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">closest_hit</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l263" href="#l263">263</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">50</td>
+=======
+      <td class="linecount coveredLine">10</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -2602,21 +3716,33 @@
       <td class="lineno"><a id="l265" href="#l265">265</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">30</td>
+=======
+      <td class="linecount coveredLine">6</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="n">RayHitInfo</span><span class="w"> </span><span class="n">getSceneIntersectionWithoutBVH</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Ray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Scene</span><span class="o">*</span><span class="w"> </span><span class="n">scene</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l266" href="#l266">266</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">30</td>
+=======
+      <td class="linecount coveredLine">6</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">RayHitInfo</span><span class="w"> </span><span class="n">closest_hit</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l267" href="#l267">267</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">30</td>
+=======
+      <td class="linecount coveredLine">6</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">closest_hit</span><span class="p">.</span><span class="n">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -2632,12 +3758,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 12 taken 20 times.</div>
           <div class="takenBranch">&check; Branch 13 taken 30 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">50</td>
+=======
+          <div class="takenBranch">&check; Branch 12 taken 4 times.</div>
+          <div class="takenBranch">&check; Branch 13 taken 6 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">10</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">scene</span><span class="o">-&gt;</span><span class="n">getObjectList</span><span class="p">())</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -2646,11 +3781,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 4 taken 20 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">20</td>
+=======
+          <div class="takenBranch">&check; Branch 4 taken 4 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">4</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">RayHitInfo</span><span class="w"> </span><span class="n">hit_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getObjectIntersection</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="n">get</span><span class="p">());</span></td>
     </tr>
     <tr class="source-line">
@@ -2659,12 +3802,21 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 0 taken 10 times.</div>
           <div class="takenBranch">&check; Branch 1 taken 10 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">20</td>
+=======
+          <div class="takenBranch">&check; Branch 0 taken 2 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 2 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">4</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">hit_info</span><span class="p">.</span><span class="n">distance</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">closest_hit</span><span class="p">.</span><span class="n">distance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -2673,11 +3825,19 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 1 taken 10 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">10</td>
+=======
+          <div class="takenBranch">&check; Branch 1 taken 2 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">2</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">      </span><span class="n">closest_hit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hit_info</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -2705,14 +3865,22 @@
       <td class="lineno"><a id="l276" href="#l276">276</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">30</td>
+=======
+      <td class="linecount coveredLine">6</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="n">updateNormalWithTangentSpace</span><span class="p">(</span><span class="n">closest_hit</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l277" href="#l277">277</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">30</td>
+=======
+      <td class="linecount coveredLine">6</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">closest_hit</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -2733,7 +3901,11 @@
       <td class="lineno"><a id="l280" href="#l280">280</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">80</td>
+=======
+      <td class="linecount coveredLine">16</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="n">RayHitInfo</span><span class="w"> </span><span class="n">getSceneIntersection</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Ray</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Scene</span><span class="o">*</span><span class="w"> </span><span class="n">scene</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -2742,19 +3914,32 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
+<<<<<<< HEAD
           <div class="takenBranch">&check; Branch 2 taken 50 times.</div>
           <div class="takenBranch">&check; Branch 3 taken 30 times.</div>
         </div>
         </details>
       </td>
       <td class="linecount coveredLine">80</td>
+=======
+          <div class="takenBranch">&check; Branch 2 taken 10 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 6 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">16</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">scene</span><span class="o">-&gt;</span><span class="n">getBVHRoot</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l282" href="#l282">282</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">50</td>
+=======
+      <td class="linecount coveredLine">10</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">getSceneIntersectionWithBVH</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">scene</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -2768,7 +3953,11 @@
       <td class="lineno"><a id="l284" href="#l284">284</a></td>
       <td class="linebranch">
       </td>
+<<<<<<< HEAD
       <td class="linecount coveredLine">30</td>
+=======
+      <td class="linecount coveredLine">6</td>
+>>>>>>> main
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">getSceneIntersectionWithoutBVH</span><span class="p">(</span><span class="n">ray</span><span class="p">,</span><span class="w"> </span><span class="n">scene</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
