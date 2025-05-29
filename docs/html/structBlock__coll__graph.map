@@ -1,0 +1,5 @@
+<map id="Block" name="Block">
+<area shape="rect" id="Node000001" title="Represents a block of pixels for rendering." alt="" coords="21,123,80,148"/>
+<area shape="rect" id="Node000002" href="$structPixelCoord.html" title="Structure to hold pixel coordinates (x, y) in the framebuffer." alt="" coords="5,5,96,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,44,53,123,48,123,48,44"/>
+</map>

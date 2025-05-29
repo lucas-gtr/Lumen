@@ -85,33 +85,51 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 <code>#include &quot;<a class="el" href="Config_8hpp_source.html">Core/Config.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Parameters_8hpp_source.html">ImplementationParameters/Parameters.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="RenderSettings_8hpp_source.html">Rendering/RenderSettings.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for RenderSettings.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="RenderSettings_8cpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2src_2Rendering_2RenderSettings_8cpp" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2src_2Rendering_2RenderSettings_8cpp" id="a_2home_2lucasgtr_2lumen_2src_2Rendering_2RenderSettings_8cpp">
-<area shape="rect" title=" " alt="" coords="85,5,331,45"/>
-<area shape="rect" title=" " alt="" coords="5,167,91,192"/>
-<area shape="poly" title=" " alt="" coords="190,48,72,159,68,155,186,44"/>
-<area shape="rect" title=" " alt="" coords="115,167,178,192"/>
-<area shape="poly" title=" " alt="" coords="193,47,176,69,162,94,154,124,150,154,145,153,149,123,158,92,172,66,189,44"/>
-<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="491,167,616,192"/>
-<area shape="poly" title=" " alt="" coords="273,43,337,64,404,91,470,124,525,157,522,162,467,129,402,96,335,69,271,48"/>
-<area shape="rect" href="RenderSettings_8hpp.html" title="Header file for the RenderSettings class." alt="" coords="172,93,391,119"/>
-<area shape="poly" title=" " alt="" coords="228,44,263,81,259,85,224,47"/>
-<area shape="rect" title=" " alt="" coords="505,240,602,265"/>
-<area shape="poly" title=" " alt="" coords="556,192,556,226,551,226,551,192"/>
-<area shape="poly" title=" " alt="" coords="245,121,99,165,98,160,243,116"/>
-<area shape="poly" title=" " alt="" coords="261,121,182,162,180,158,258,116"/>
-<area shape="poly" title=" " alt="" coords="326,116,497,161,496,166,324,121"/>
-<area shape="rect" title=" " alt="" coords="203,167,261,192"/>
-<area shape="poly" title=" " alt="" coords="275,121,250,157,246,154,271,117"/>
-<area shape="rect" href="CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="286,167,466,192"/>
-<area shape="poly" title=" " alt="" coords="298,117,351,156,348,160,295,121"/>
-<area shape="rect" title=" " alt="" coords="343,240,409,265"/>
-<area shape="poly" title=" " alt="" coords="379,192,379,226,373,226,373,192"/>
+<area shape="rect" title=" " alt="" coords="112,5,358,45"/>
+<area shape="rect" title=" " alt="" coords="24,174,110,199"/>
+<area shape="poly" title=" " alt="" coords="217,47,91,166,87,162,213,44"/>
+<area shape="rect" title=" " alt="" coords="134,174,197,199"/>
+<area shape="poly" title=" " alt="" coords="229,47,179,162,174,160,224,44"/>
+<area shape="rect" title=" " alt="" coords="116,262,194,287"/>
+<area shape="poly" title=" " alt="" coords="176,48,133,67,88,93,47,126,15,168,8,187,15,205,32,225,54,241,104,261,102,266,52,246,28,229,10,208,3,187,10,165,43,122,85,88,131,62,174,43"/>
+<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="886,174,1011,199"/>
+<area shape="poly" title=" " alt="" coords="334,43,569,91,722,126,874,164,890,168,889,173,873,169,721,131,568,96,333,48"/>
+<area shape="rect" href="Parameters_8hpp.html" title="Header file for the Parameters class." alt="" coords="272,167,472,207"/>
+<area shape="poly" title=" " alt="" coords="253,44,349,155,345,158,249,47"/>
+<area shape="rect" href="RenderSettings_8hpp.html" title="Header file for the RenderSettings class." alt="" coords="338,93,556,119"/>
+<area shape="poly" title=" " alt="" coords="287,43,404,86,402,91,285,48"/>
+<area shape="rect" title=" " alt="" coords="900,262,997,287"/>
+<area shape="poly" title=" " alt="" coords="951,200,951,248,946,248,946,200"/>
+<area shape="poly" title=" " alt="" coords="326,209,197,259,196,255,324,204"/>
+<area shape="rect" title=" " alt="" coords="512,343,571,368"/>
+<area shape="poly" title=" " alt="" coords="443,204,483,224,517,253,528,271,536,291,543,328,538,329,531,292,524,273,513,256,480,228,441,209"/>
+<area shape="rect" title=" " alt="" coords="441,262,504,287"/>
+<area shape="poly" title=" " alt="" coords="396,205,450,251,446,255,393,209"/>
+<area shape="rect" href="ParameterValue_8hpp.html" title="Header file for the ParameterValue class." alt="" coords="218,255,418,295"/>
+<area shape="poly" title=" " alt="" coords="362,208,339,244,335,242,358,205"/>
+<area shape="poly" title=" " alt="" coords="372,292,500,337,498,342,370,297"/>
+<area shape="poly" title=" " alt="" coords="366,121,250,141,122,169,112,172,110,167,121,164,249,136,366,116"/>
+<area shape="poly" title=" " alt="" coords="397,121,312,142,217,169,208,172,207,167,215,164,311,137,396,116"/>
+<area shape="poly" title=" " alt="" coords="387,121,325,140,262,169,236,188,212,210,174,252,170,249,208,206,232,184,259,164,323,135,386,116"/>
+<area shape="poly" title=" " alt="" coords="552,116,704,136,874,164,894,168,892,173,873,169,704,141,551,121"/>
+<area shape="poly" title=" " alt="" coords="438,121,402,158,398,155,434,117"/>
+<area shape="poly" title=" " alt="" coords="499,116,538,135,555,148,569,165,579,186,584,208,582,254,570,297,556,331,551,329,565,295,576,253,578,209,574,188,565,168,551,152,535,139,496,121"/>
+<area shape="rect" title=" " alt="" coords="684,262,751,287"/>
+<area shape="poly" title=" " alt="" coords="496,116,553,135,612,164,664,207,703,249,699,253,660,211,609,169,551,140,494,121"/>
+<area shape="rect" title=" " alt="" coords="496,174,555,199"/>
+<area shape="poly" title=" " alt="" coords="460,117,506,162,502,166,457,121"/>
+<area shape="rect" href="CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="681,174,861,199"/>
+<area shape="poly" title=" " alt="" coords="495,116,711,168,710,173,493,121"/>
+<area shape="poly" title=" " alt="" coords="766,201,734,251,730,249,761,198"/>
 </map>
 </div>
 </div></div><!-- contents -->

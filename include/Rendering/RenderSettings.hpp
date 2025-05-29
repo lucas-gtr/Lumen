@@ -7,10 +7,16 @@
 
 #include <algorithm>
 #include <cmath>
+#include <cstdint>
 #include <limits>
+#include <memory>
+#include <string>
 
 #include "Core/CommonTypes.hpp"
 #include "Core/Config.hpp"
+#include "ImplementationParameters/Parameters.hpp"
+
+enum class RenderExecutionMode : std::uint8_t { SINGLE_THREADED, MULTI_THREADED_CPU, GPU_CUDA };
 
 /**
  * @class RenderSettings
@@ -25,18 +31,25 @@ class RenderSettings {
 private:
   ImageProperties m_properties = {DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_CHANNEL_COUNT};
 
+  double dx = 1.0 / static_cast<double>(m_properties.width);
+  double dy = 1.0 / static_cast<double>(m_properties.height);
+
   double m_near_plane = DEFAULT_NEAR_PLANE; // in meters
   double m_far_plane  = DEFAULT_FAR_PLANE;  // in meters
 
   int m_max_bounces        = DEFAULT_MAX_BOUNCES;
   int m_samples_per_pixels = DEFAULT_SAMPLES_PER_PIXEL;
 
+  RenderExecutionMode m_execution_mode = RenderExecutionMode::SINGLE_THREADED;
+
+  std::unique_ptr<Parameters> m_renderer_parameters;
+
 public:
-  RenderSettings()                                 = default; ///< Default constructor.
-  RenderSettings(const RenderSettings&)            = default; ///< Copy constructor.
-  RenderSettings& operator=(const RenderSettings&) = default; ///< Copy assignment operator.
-  RenderSettings(RenderSettings&&)                 = default; ///< Move constructor.
-  RenderSettings& operator=(RenderSettings&&)      = default; ///< Move assignment operator.
+  RenderSettings();
+  RenderSettings(const RenderSettings&)            = delete;
+  RenderSettings& operator=(const RenderSettings&) = delete;
+  RenderSettings(RenderSettings&&)                 = delete;
+  RenderSettings& operator=(RenderSettings&&)      = delete;
 
   /**
    * @brief Get the width of the rendered image.
@@ -45,11 +58,20 @@ public:
   int getWidth() const { return m_properties.width; }
 
   /**
+   * @brief Get the horizontal step size for pixel coordinates.
+   * @return The horizontal step size (dx).
+   */
+  double getDx() const { return dx; }
+
+  /**
    * @brief Set the width of the rendered image.
    * The width will be clamped to a valid range between MIN_WIDTH and MAX_WIDTH.
    * @param width The width of the image in pixels.
    */
-  void setWidth(int width) { m_properties.width = std::clamp(width, MIN_WIDTH, MAX_WIDTH); }
+  void setWidth(int width) {
+    m_properties.width = std::clamp(width, MIN_WIDTH, MAX_WIDTH);
+    dx                 = 1.0 / static_cast<double>(width);
+  }
 
   /**
    * @brief Get the height of the rendered image.
@@ -58,11 +80,20 @@ public:
   int getHeight() const { return m_properties.height; }
 
   /**
+   * @brief Get the vertical step size for pixel coordinates.
+   * @return The vertical step size (dy).
+   */
+  double getDy() const { return dy; }
+
+  /**
    * @brief Set the height of the rendered image.
    * The height will be clamped to a valid range between MIN_HEIGHT and MAX_HEIGHT.
    * @param height The height of the image in pixels.
    */
-  void setHeight(int height) { m_properties.height = std::clamp(height, MIN_HEIGHT, MAX_HEIGHT); }
+  void setHeight(int height) {
+    m_properties.height = std::clamp(height, MIN_HEIGHT, MAX_HEIGHT);
+    dy                  = 1.0 / static_cast<double>(height);
+  }
 
   /**
    * @brief Get the number of color channels.
@@ -137,6 +168,31 @@ public:
    * @param samples_per_pixels The desired number of samples per pixel.
    */
   void setSamplesPerPixel(int samples_per_pixels);
+
+  /**
+   * @brief Get the execution mode for rendering.
+   * @return The current render execution mode.
+   */
+  RenderExecutionMode getExecutionMode() const { return m_execution_mode; }
+
+  /**
+   * @brief Set the execution mode for rendering.
+   * @param mode The desired render execution mode.
+   */
+  void setExecutionMode(RenderExecutionMode mode) { m_execution_mode = mode; }
+
+  /**
+   * @brief Get the parameters for the renderer strategies.
+   * @return A pointer to the Parameters object containing renderer parameters.
+   */
+  Parameters* getRendererParameters() const { return m_renderer_parameters.get(); }
+
+  /**
+   * @brief Set a parameter for the renderer.
+   * @param name  The name of the parameter to set.
+   * @param value The value of the parameter to set.
+   */
+  void setParameter(const std::string& name, int value) { m_renderer_parameters->setParameter(name, value); }
 
   ~RenderSettings() = default; ///< Default destructor.
 };

@@ -1,5 +1,15 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<<<<<<< HEAD
+<area shape="rect" id="Node000000" href="$classMeshBuilder.html" title="Abstract base class for building meshes." alt="" coords="5,55,108,80"/>
+<area shape="rect" id="Node000001" href="$classCubeMeshBuilder.html" title="A class for building a cube mesh." alt="" coords="162,5,298,31"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="114,48,184,28,185,33,116,53"/>
+<area shape="rect" id="Node000002" href="$classPlaneMeshBuilder.html" title="A class for building a plane mesh." alt="" coords="161,55,299,80"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="122,65,160,65,160,70,122,70"/>
+<area shape="rect" id="Node000003" href="$classSphereMeshBuilder.html" title="A class for building a sphere mesh." alt="" coords="156,104,304,129"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="116,81,185,101,184,106,114,86"/>
+=======
 <area shape="rect" id="Node000000" href="$classOutputFormat.html" title="Abstract base class for different image output formats." alt="" coords="5,5,117,31"/>
 <area shape="rect" id="Node000001" href="$classOutputFormatPng.html" title="Class for exporting images in PNG format." alt="" coords="165,5,301,31"/>
 <area shape="poly" id="edge4_Node000000_Node000001" title=" " alt="" coords="131,15,165,15,165,21,131,21"/>
+>>>>>>> main
 </map>

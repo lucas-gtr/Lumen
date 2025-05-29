@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-05-28 10:24:22</td>
+      <td>2025-05-29 16:33:52</td>
     </tr>
   </table>
 </div>
@@ -53,9 +53,9 @@
     </tr>
     <tr>
       <th scope="row">Branches:</th>
-      <td>4</td>
+      <td>5</td>
       <td>6</td>
-      <td class="coverage-low">66.7%</td>
+      <td class="coverage-medium">83.3%</td>
     </tr>
   </table>
 </div>
@@ -73,10 +73,10 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l69">DoubleParam* Parameters::get&lt;DoubleParam&gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;) const (line 69)</a></td><td>called 40 times, returned 40 times</td><td>94.0%</td></tr>
-    <tr><td><a href="#l69">IntParam* Parameters::get&lt;IntParam&gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;) const (line 69)</a></td><td>called 192 times, returned 192 times</td><td>89.0%</td></tr>
-    <tr><td><a href="#l29">Parameters::Parameters() (line 29)</a></td><td>called 10 times, returned 10 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l77">Parameters::~Parameters() (line 77)</a></td><td>called 68 times, returned 68 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l69">DoubleParam* Parameters::get&lt;DoubleParam&gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;) const (line 69)</a></td><td>called 30 times, returned 30 times</td><td>94.0%</td></tr>
+    <tr><td><a href="#l69">IntParam* Parameters::get&lt;IntParam&gt;(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;) const (line 69)</a></td><td>called 24 times, returned 24 times</td><td>92.0%</td></tr>
+    <tr><td><a href="#l29">Parameters::Parameters() (line 29)</a></td><td>called 78 times, returned 78 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l77">Parameters::~Parameters() (line 77)</a></td><td>called 114 times, returned 114 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -291,7 +291,7 @@
       <td class="lineno"><a id="l29" href="#l29">29</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">10</td>
+      <td class="linecount coveredLine">78</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">Parameters</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default constructor.</span></td>
     </tr>
     <tr class="source-line">
@@ -571,7 +571,7 @@
       <td class="lineno"><a id="l69" href="#l69">69</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">424</td>
+      <td class="linecount coveredLine">78</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">T</span><span class="o">*</span><span class="w"> </span><span class="n">get</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -580,27 +580,27 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 13 taken 228 times.</div>
-          <div class="takenBranch">&check; Branch 14 taken 4 times.</div>
+          <div class="takenBranch">&check; Branch 13 taken 54 times.</div>
+          <div class="takenBranch">&check; Branch 14 taken 3 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">424</td>
+      <td class="linecount coveredLine">84</td>
       <td class="src coveredLine"><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">param</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_parameters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l71" href="#l71">71</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
+        <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 9 taken 228 times.</div>
-          <div class="notTakenBranch">&cross; Branch 10 not taken.</div>
+          <div class="takenBranch">&check; Branch 9 taken 51 times.</div>
+          <div class="takenBranch">&check; Branch 10 taken 3 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount partialCoveredLine">420</td>
-      <td class="src partialCoveredLine"><span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">param</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
+      <td class="linecount coveredLine">81</td>
+      <td class="src coveredLine"><span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="n">param</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l72" href="#l72">72</a></td>
@@ -608,12 +608,12 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 2 taken 228 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 51 times.</div>
           <div class="notTakenBranch">&cross; Branch 3 not taken.</div>
         </div>
         </details>
       </td>
-      <td class="linecount partialCoveredLine">420</td>
+      <td class="linecount partialCoveredLine">75</td>
       <td class="src partialCoveredLine"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">param</span><span class="p">.</span><span class="n">get</span><span class="p">());</span></td>
     </tr>
     <tr class="source-line">
@@ -634,7 +634,7 @@
       <td class="lineno"><a id="l75" href="#l75">75</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">4</td>
+      <td class="linecount coveredLine">3</td>
       <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">nullptr</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -648,7 +648,7 @@
       <td class="lineno"><a id="l77" href="#l77">77</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">68</td>
+      <td class="linecount coveredLine">114</td>
       <td class="src coveredLine"><span class="w">  </span><span class="o">~</span><span class="n">Parameters</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default destructor.</span></td>
     </tr>
     <tr class="source-line">

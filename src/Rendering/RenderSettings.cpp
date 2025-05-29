@@ -1,8 +1,12 @@
 #include <algorithm>
 #include <cmath>
+#include <memory>
 
 #include "Core/Config.hpp"
+#include "ImplementationParameters/Parameters.hpp"
 #include "Rendering/RenderSettings.hpp"
+
+RenderSettings::RenderSettings() { m_renderer_parameters = std::make_unique<Parameters>(); }
 
 void RenderSettings::setSamplesPerPixel(int samples_per_pixels) {
   {

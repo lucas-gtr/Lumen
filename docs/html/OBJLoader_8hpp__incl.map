@@ -1,4 +1,27 @@
 <map id="/home/lucasgtr/lumen/include/Geometry/OBJLoader.hpp" name="/home/lucasgtr/lumen/include/Geometry/OBJLoader.hpp">
+<<<<<<< HEAD
+<area shape="rect" id="Node000001" title="Header file for the OBJLoader namespace." alt="" coords="54,5,294,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="79,93,138,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,47,129,84,125,81,156,44"/>
+<area shape="rect" id="Node000003" href="$Mesh_8hpp.html" title="Header file for the Mesh class, the Vertex and Face structures." alt="" coords="162,93,317,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,44,223,81,219,84,188,47"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="55,240,147,265"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="162,120,72,139,36,153,13,168,9,177,8,185,18,202,37,218,61,232,58,236,34,223,14,206,3,186,4,176,9,165,33,148,71,134,161,115"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="23,167,79,192"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="210,121,93,165,91,160,208,116"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="211,240,289,265"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="282,116,318,135,335,148,348,165,353,177,352,188,341,207,320,224,296,237,294,232,318,219,337,204,347,186,347,178,344,168,331,152,315,139,280,121"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="272,167,335,192"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="252,117,286,155,282,158,248,121"/>
+<area shape="rect" id="Node000008" href="$BVHNode_8hpp.html" title="Header file for the BVHNode class." alt="" coords="103,167,247,192"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="231,121,197,158,193,155,227,117"/>
+<area shape="rect" id="Node000009" href="$CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="411,167,591,192"/>
+<area shape="poly" id="edge10_Node000003_Node000009" title=" " alt="" coords="282,116,446,160,444,166,281,121"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="165,194,125,232,121,229,161,190"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="189,190,230,229,226,232,185,194"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="467,240,534,265"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="503,192,503,226,498,226,498,192"/>
+=======
 <area shape="rect" id="Node000001" title="Header file for the OBJLoader namespace." alt="" coords="169,5,409,45"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="77,240,169,265"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,48,138,65,88,90,44,124,26,144,12,168,8,179,9,188,21,206,43,221,70,233,67,238,40,226,17,210,4,190,3,178,7,166,22,141,40,120,85,85,136,60,187,43"/>
@@ -25,4 +48,5 @@
 <area shape="poly" id="edge12_Node000008_Node000011" title=" " alt="" coords="235,119,235,153,229,153,229,119"/>
 <area shape="poly" id="edge13_Node000011_Node000002" title=" " alt="" coords="216,194,153,235,151,230,213,190"/>
 <area shape="poly" id="edge14_Node000011_Node000010" title=" " alt="" coords="243,191,272,228,267,231,239,194"/>
+>>>>>>> main
 </map>

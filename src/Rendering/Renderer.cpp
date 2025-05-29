@@ -3,22 +3,38 @@
 #include <chrono>
 #include <cmath>
 #include <iostream>
+#include <memory>
 
 #include "Core/CommonTypes.hpp"
 #include "Core/Framebuffer.hpp"
 #include "Core/Random.hpp"
 #include "Core/Ray.hpp"
 #include "Rendering/CameraRayEmitter.hpp"
+#include "Rendering/MultiThreadedCPU.hpp"
 #include "Rendering/RayIntersection.hpp"
 #include "Rendering/RenderSettings.hpp"
 #include "Rendering/Renderer.hpp"
+#include "Rendering/SingleThreaded.hpp"
 #include "Scene/Scene.hpp"
 #include "Surface/Material.hpp"
 
 Renderer::Renderer(const RenderSettings* render_settings, Scene* scene)
     : m_render_settings(render_settings), m_scene(scene),
       m_framebuffer(new Framebuffer(
-          {render_settings->getWidth(), render_settings->getHeight(), render_settings->getChannelCount()})) {}
+          {render_settings->getWidth(), render_settings->getHeight(), render_settings->getChannelCount()})) {
+  switch(render_settings->getExecutionMode()) {
+  case RenderExecutionMode::SINGLE_THREADED:
+    m_render_strategy = std::make_unique<SingleThreaded>();
+    break;
+  case RenderExecutionMode::MULTI_THREADED_CPU:
+    m_render_strategy = std::make_unique<MultiThreadedCPU>(render_settings->getRendererParameters());
+    break;
+  default:
+    std::cerr << "Unknown render execution mode. Using single-threaded strategy by default." << '\n';
+    m_render_strategy = std::make_unique<SingleThreaded>();
+  }
+  m_render_strategy->setRenderer(this);
+}
 
 void Renderer::setRenderSettings(const RenderSettings* settings) {
   m_render_settings                = settings;
@@ -34,9 +50,9 @@ bool Renderer::isReadyToRender() const {
   return true;
 }
 
-void Renderer::renderFrame() {
+bool Renderer::renderFrame() {
   if(!isReadyToRender()) {
-    return;
+    return false;
   }
 
   const RayEmitterParameters emitter_parameters = {m_scene->getCamera()->getPosition(),
@@ -49,38 +65,42 @@ void Renderer::renderFrame() {
                                                        static_cast<double>(m_render_settings->getHeight())};
   m_cameraRayEmitter.initializeViewport(emitter_parameters);
 
-  const double sample_weight   = 1.0 / m_render_settings->getSamplesPerPixel();
-  const int    samples_per_row = static_cast<int>(std::sqrt(m_render_settings->getSamplesPerPixel()));
-  const double cell_size       = 1.0 / static_cast<double>(samples_per_row);
-
   const auto start_time = std::chrono::high_resolution_clock::now();
 
   m_scene->buildBVH();
-  for(int s = 0; s < m_render_settings->getSamplesPerPixel(); ++s) {
-    std::cout << "Sample: " << s + 1 << "/" << m_render_settings->getSamplesPerPixel() << '\n';
-    const PixelCoord grid_pos{s % samples_per_row, s / samples_per_row};
-    renderSample(sample_weight, grid_pos, cell_size);
+
+  const bool render_successed = m_render_strategy->render();
+  if(!render_successed) {
+    std::cerr << "Rendering failed." << '\n';
+    return false;
   }
+
   m_framebuffer->convertToSRGBColorSpace();
   const auto                          end_time        = std::chrono::high_resolution_clock::now();
   const std::chrono::duration<double> render_duration = end_time - start_time;
 
   std::cout << "Render time: " << render_duration.count() << " seconds.\n";
+  return true;
 }
 
-void Renderer::renderSample(double sample_weight, PixelCoord grid_pos, double cell_size) {
-  const int height = m_render_settings->getHeight();
-  const int width  = m_render_settings->getWidth();
+ColorRGBA Renderer::getPixelColor(const PixelCoord& pixel, double dx, double dy, const PixelCoord& subpixel_grid_pos,
+                                  double cell_size) const {
+  const double v   = (static_cast<double>(pixel.y) + (subpixel_grid_pos.y + randomUniform01()) * cell_size) * dy;
+  const double u   = (static_cast<double>(pixel.x) + (subpixel_grid_pos.x + randomUniform01()) * cell_size) * dx;
+  const Ray    ray = m_cameraRayEmitter.generateRay(u, v);
+  return traceRay(ray);
+}
 
-  const double dy = 1.0 / static_cast<double>(height);
-  const double dx = 1.0 / static_cast<double>(width);
+// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
+void Renderer::renderSample(const PixelCoord& pixel_start, const PixelCoord& pixel_end, double sample_weight,
+                            // NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
+                            const PixelCoord& subpixel_grid_pos, double cell_size) {
+  const double dx = m_render_settings->getDx();
+  const double dy = m_render_settings->getDy();
 
-  for(int y = 0; y < height; ++y) {
-    for(int x = 0; x < width; ++x) {
-      const double    v     = (static_cast<double>(y) + (grid_pos.y + randomUniform01()) * cell_size) * dy;
-      const double    u     = (static_cast<double>(x) + (grid_pos.x + randomUniform01()) * cell_size) * dx;
-      const Ray       ray   = m_cameraRayEmitter.generateRay(u, v);
-      const ColorRGBA color = traceRay(ray);
+  for(int y = pixel_start.y; y < pixel_end.y; ++y) {
+    for(int x = pixel_start.x; x < pixel_end.x; ++x) {
+      const ColorRGBA color = getPixelColor({x, y}, dx, dy, subpixel_grid_pos, cell_size);
       m_framebuffer->setPixelColor({x, y}, color, sample_weight);
     }
   }

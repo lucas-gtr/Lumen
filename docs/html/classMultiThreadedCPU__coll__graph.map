@@ -1,0 +1,5 @@
+<map id="MultiThreadedCPU" name="MultiThreadedCPU">
+<area shape="rect" id="Node000001" title="A rendering strategy that uses multiple threads to render the scene on the CPU." alt="" coords="5,79,148,104"/>
+<area shape="rect" id="Node000002" href="$classRenderStrategy.html" title="Abstract base class for rendering strategies." alt="" coords="15,5,138,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,44,79,79,74,79,74,44"/>
+</map>

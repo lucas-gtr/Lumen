@@ -6,6 +6,7 @@
 #define CORE_FRAMEBUFFER_HPP
 
 #include <cstddef>
+#include <vector>
 
 #include "Core/CommonTypes.hpp"
 
@@ -18,9 +19,12 @@
  */
 class Framebuffer {
 private:
-  double* m_framebuffer = nullptr;
+  double*                          m_framebuffer = nullptr;
+  std::vector<std::vector<double>> m_thread_buffers;
 
   ImageProperties m_framebuffer_properties;
+
+  static thread_local int m_thread_id;
 
 public:
   /**
@@ -82,12 +86,26 @@ public:
   void updateFrameBuffer();
 
   /**
+   * @brief Initializes thread buffers for multi-threaded rendering.
+   * @param num_threads The number of threads to initialize buffers for.
+   */
+  void initThreadBuffers(unsigned int num_threads);
+
+  /**
+   * @brief Reduces the thread buffers into the main framebuffer.
+   * This method aggregates the pixel data from all thread buffers into the main framebuffer.
+   */
+  void reduceThreadBuffers();
+
+  /**
    * @brief Sets the color of a specific pixel in the framebuffer.
    * @param pixel_coord The coordinates of the pixel to set.
    * @param color The color to set the pixel to.
    * @param weight The weight of the color to apply.
    */
-  void setPixelColor(PixelCoord pixel_coord, const ColorRGBA& color, double weight);
+  void setPixelColor(const PixelCoord& pixel_coord, const ColorRGBA& color, double weight);
+
+  static void setThreadId(int thread_id) { m_thread_id = thread_id; }
 
   ~Framebuffer(); /// Default destructor.
 };

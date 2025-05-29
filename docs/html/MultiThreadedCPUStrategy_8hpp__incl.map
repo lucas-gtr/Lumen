@@ -1,0 +1,13 @@
+<map id="/home/lucasgtr/lumen/include/Rendering/MultiThreadedCPUStrategy.hpp" name="/home/lucasgtr/lumen/include/Rendering/MultiThreadedCPUStrategy.hpp">
+<area shape="rect" id="Node000001" title="Header file for the MultiThreadedCPUStrategy class." alt="" coords="81,5,322,60"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,115,72,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,62,72,111,69,106,154,58"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="96,115,160,141"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="183,62,148,106,144,103,178,59"/>
+<area shape="rect" id="Node000004" href="$CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="185,115,365,141"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="224,59,259,103,255,106,220,62"/>
+<area shape="rect" id="Node000006" href="$RenderExecutionStrategy_8hpp.html" title=" " alt="" coords="389,108,590,148"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="283,58,419,101,418,106,282,63"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="241,196,308,221"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="277,141,277,182,272,182,272,141"/>
+</map>

@@ -1,5 +1,7 @@
 add_library(Rendering STATIC
     Renderer.cpp
+    SingleThreadedStrategy.cpp
+    MultiThreadedCPUStrategy.cpp
     CameraRayEmitter.cpp
     RayIntersection.cpp
     RenderSettings.cpp

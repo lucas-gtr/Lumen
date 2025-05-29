@@ -1,5 +1,9 @@
 <map id="/home/lucasgtr/lumen/include/Rendering/Renderer.hpp" name="/home/lucasgtr/lumen/include/Rendering/Renderer.hpp">
-<area shape="rect" id="Node000001" title="Header file for the Renderer class." alt="" coords="5,5,239,45"/>
-<area shape="rect" id="Node000002" href="$Renderer_8cpp.html" title=" " alt="" coords="20,93,224,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,59,125,93,119,93,119,59"/>
+<area shape="rect" id="Node000001" title="Header file for the Renderer class." alt="" coords="229,5,462,45"/>
+<area shape="rect" id="Node000002" href="$MultiThreadedCPUStrategy_8cpp.html" title=" " alt="" coords="5,93,219,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="286,53,179,96,177,91,284,48"/>
+<area shape="rect" id="Node000003" href="$Renderer_8cpp.html" title=" " alt="" coords="243,101,447,141"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="348,59,348,101,343,101,343,59"/>
+<area shape="rect" id="Node000004" href="$SingleThreadedStrategy_8cpp.html" title=" " alt="" coords="471,93,691,148"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="407,48,516,91,514,96,405,53"/>
 </map>

@@ -88,4 +88,9 @@ static constexpr double MAX_TONE_MAPPING_EXPOSURE     = 10.0;
 //<-------- BVH --------->
 static constexpr double BVH_CONSTRUCTION_EPSILON = 0.0001;
 
+//<-------- RENDER EXECUTION --------->
+static constexpr int DEFAULT_BLOCK_SIZE = 256; // in pixels
+static constexpr int MIN_BLOCK_SIZE     = 1;
+static constexpr int MAX_BLOCK_SIZE     = 1024;
+
 #endif // CORE_CONFIG_HPP
