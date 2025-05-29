@@ -29,13 +29,13 @@ Mesh SphereMeshBuilder::build() const {
       const double cosPhi = cos(phi);
 
       Vertex vertex;
-      vertex.position.x() = radius * sinTheta * cosPhi;
-      vertex.position.y() = radius * cosTheta;
-      vertex.position.z() = radius * sinTheta * sinPhi;
+      vertex.position.x = radius * sinTheta * cosPhi;
+      vertex.position.y = radius * cosTheta;
+      vertex.position.z = radius * sinTheta * sinPhi;
 
-      vertex.normal.x() = vertex.position.x() / radius;
-      vertex.normal.y() = vertex.position.y() / radius;
-      vertex.normal.z() = vertex.position.z() / radius;
+      vertex.normal.x = vertex.position.x / radius;
+      vertex.normal.y = vertex.position.y / radius;
+      vertex.normal.z = vertex.position.z / radius;
 
       vertex.uvCoord.u = static_cast<double>(j) / segments;
       vertex.uvCoord.v = static_cast<double>(i) / rings;

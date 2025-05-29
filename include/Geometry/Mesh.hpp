@@ -5,24 +5,24 @@
 #ifndef GEOMETRY_MESH_HPP
 #define GEOMETRY_MESH_HPP
 
-#include <Eigen/Core>
 #include <array>
 #include <memory>
 #include <vector>
 
 #include "BVH/BVHNode.hpp"
 #include "Core/CommonTypes.hpp"
+#include "Core/Math/Vec3.hpp"
 
 /**
  * @struct Vertex
  * @brief Structure representing a vertex in a 3D mesh.
  */
 struct Vertex {
-  Eigen::Vector3d position  = {0.0, 0.0, 0.0}; ///< Position of the vertex in 3D space.
-  Eigen::Vector3d normal    = {0.0, 0.0, 0.0}; ///< Normal vector at the vertex.
-  TextureUV       uvCoord   = {0, 0};          ///< Texture coordinates of the vertex.
-  Eigen::Vector3d tangent   = {0.0, 0.0, 0.0}; ///< Tangent vector at the vertex.
-  Eigen::Vector3d bitangent = {0.0, 0.0, 0.0}; ///< Bitangent vector at the vertex.
+  lin::Vec3 position  = {0.0, 0.0, 0.0}; ///< Position of the vertex in 3D space.
+  lin::Vec3 normal    = {0.0, 0.0, 0.0}; ///< Normal vector at the vertex.
+  TextureUV uvCoord   = {0, 0};          ///< Texture coordinates of the vertex.
+  lin::Vec3 tangent   = {0.0, 0.0, 0.0}; ///< Tangent vector at the vertex.
+  lin::Vec3 bitangent = {0.0, 0.0, 0.0}; ///< Bitangent vector at the vertex.
 
   /**
    * @brief Equality operator for comparing two vertices.

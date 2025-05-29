@@ -6,7 +6,6 @@
 #ifndef SCENEOBJECTS_OBJECT3D_HPP
 #define SCENEOBJECTS_OBJECT3D_HPP
 
-#include <Eigen/Core>
 #include <memory>
 
 #include "Core/Transform.hpp"
@@ -69,8 +68,8 @@ public:
    */
   std::shared_ptr<Material> getMaterial() const { return m_material; }
 
-  Eigen::Vector3d getMinBound() const;
-  Eigen::Vector3d getMaxBound() const;
+  lin::Vec3 getMinBound() const;
+  lin::Vec3 getMaxBound() const;
 
   ~Object3D() = default; ///< Default destructor.
 };

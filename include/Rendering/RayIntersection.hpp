@@ -5,11 +5,11 @@
 #ifndef RENDERING_RAYINTERSECTION_HPP
 #define RENDERING_RAYINTERSECTION_HPP
 
-#include <Eigen/Core>
 #include <limits>
 #include <vector>
 
 #include "Core/CommonTypes.hpp"
+#include "Core/Math/Vec3.hpp"
 #include "Core/Ray.hpp"
 #include "Geometry/Mesh.hpp"
 #include "Scene/Scene.hpp"
@@ -22,13 +22,13 @@
  * @brief Structure that holds information about a ray intersection.
  */
 struct RayHitInfo {
-  double          distance = std::numeric_limits<double>::max();
-  Material*       material = nullptr;
-  TextureUV       uvCoordinates;
-  Eigen::Vector3d normal;
-  Eigen::Vector3d tangent;
-  Eigen::Vector3d bitangent;
-  Eigen::Vector3d hitPoint;
+  double    distance = std::numeric_limits<double>::max();
+  Material* material = nullptr;
+  TextureUV uvCoordinates;
+  lin::Vec3 normal;
+  lin::Vec3 tangent;
+  lin::Vec3 bitangent;
+  lin::Vec3 hitPoint;
 };
 
 /**
@@ -60,8 +60,8 @@ constexpr double EPSILON           = 1e-6;
  * @param bary_coords The barycentric coordinates of the intersection point, if any.
  * @return True if the ray intersects the triangle, false otherwise.
  */
-bool getTriangleIntersection(const Ray& ray, const Eigen::Vector3d& p0, const Eigen::Vector3d& p1,
-                             const Eigen::Vector3d& p2, double& hit_distance, Eigen::Vector3d& bary_coords);
+bool getTriangleIntersection(const Ray& ray, const lin::Vec3& p0, const lin::Vec3& p1, const lin::Vec3& p2,
+                             double& hit_distance, lin::Vec3& bary_coords);
 
 /**
  * @brief Processes the intersection of a ray with a mesh using a BVH.
@@ -127,8 +127,7 @@ RayHitInfo getSceneIntersection(const Ray& ray, const Scene* scene);
  * @param hit_distance The distance to the intersection point, if any.
  * @return True if the ray intersects the AABB, false otherwise.
  */
-bool getAABBIntersection(const Ray& ray, const Eigen::Vector3d& min_bound, const Eigen::Vector3d& max_bound,
-                         double& hit_distance);
+bool getAABBIntersection(const Ray& ray, const lin::Vec3& min_bound, const lin::Vec3& max_bound, double& hit_distance);
 
 /**
  * @brief Gets the intersection information of a ray with a BVH node.
@@ -156,7 +155,7 @@ void processFaceIntersection(const Ray& ray, const Mesh& mesh, const Face& face,
  * @param v1 The second vertex of the triangle.
  * @param v2 The third vertex of the triangle.
  */
-void updateHitInfoFromBarycentric(RayHitInfo& hit_info, double distance, const Eigen::Vector3d& bary, const Vertex& v0,
+void updateHitInfoFromBarycentric(RayHitInfo& hit_info, double distance, const lin::Vec3& bary, const Vertex& v0,
                                   const Vertex& v1, const Vertex& v2);
 
 /**

@@ -3,22 +3,24 @@
 #include <cmath>
 
 #include "Core/CommonTypes.hpp"
+#include "Core/Math/Vec3.hpp"
+#include "Core/Math/lin.hpp"
 #include "Core/MathConstants.hpp"
 #include "Lighting/SpotLight.hpp"
 
-Eigen::Vector3d SpotLight::getDirectionFromPoint(const Eigen::Vector3d& point) const {
+lin::Vec3 SpotLight::getDirectionFromPoint(const lin::Vec3& point) const {
   return (getPosition() - point).normalized();
 }
 
 // NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
-ColorRGB SpotLight::getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const {
-  const double distance    = (getPosition() - point).norm();
+ColorRGB SpotLight::getLightFactor(const lin::Vec3& point, const lin::Vec3& normal) const {
+  const double distance    = (getPosition() - point).length();
   const double attenuation = getIntensity() / (distance * distance);
 
-  const Eigen::Vector3d light_dir   = (getPosition() - point).normalized();
-  const double          dot_product = normal.dot(light_dir);
+  const lin::Vec3 light_dir   = (getPosition() - point).normalized();
+  const double    dot_product = dot(normal, light_dir);
 
-  const double cosine_angle = getDirection().dot(-light_dir);
+  const double cosine_angle = lin::dot(-light_dir, m_direction.normalized());
   const double inner_cutoff = std::cos(m_inner_angle * DEG_TO_RAD);
   const double outer_cutoff = std::cos(m_outer_angle * DEG_TO_RAD);
 

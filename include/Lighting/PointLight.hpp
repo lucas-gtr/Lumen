@@ -5,9 +5,8 @@
 #ifndef LIGHTING_POINTLIGHT_HPP
 #define LIGHTING_POINTLIGHT_HPP
 
-#include <Eigen/Core>
-
 #include "Core/CommonTypes.hpp"
+#include "Core/Math/Vec3.hpp"
 #include "Lighting/Light.hpp"
 
 /**
@@ -31,7 +30,7 @@ public:
    * @param point The point from which to calculate the direction.
    * @return The direction vector from the point to the light.
    */
-  Eigen::Vector3d getDirectionFromPoint(const Eigen::Vector3d& point) const override;
+  lin::Vec3 getDirectionFromPoint(const lin::Vec3& point) const override;
 
   /**
    * @brief Gets the light factor at a given point and normal.
@@ -39,7 +38,7 @@ public:
    * @param normal The normal vector at the point.
    * @return The light factor at the given point and normal.
    */
-  ColorRGB getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const override;
+  ColorRGB getLightFactor(const lin::Vec3& point, const lin::Vec3& normal) const override;
 
   ~PointLight() override = default; ///< Default destructor.
 };

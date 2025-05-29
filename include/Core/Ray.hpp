@@ -5,7 +5,7 @@
 #ifndef CORE_RAY_HPP
 #define CORE_RAY_HPP
 
-#include <Eigen/Core>
+#include "Core/Math/Vec3.hpp"
 
 /**
  * @struct Ray
@@ -15,22 +15,15 @@
  * the origin and a given point, which makes the ray direction unit length.
  */
 struct Ray {
-  Eigen::Vector3d origin    = {0, 0, 0};
-  Eigen::Vector3d direction = {0, 0, -1};
+  lin::Vec3 origin    = {0, 0, 0};
+  lin::Vec3 direction = {0, 0, -1};
 
-  Ray() = default; ///< Default constructor.
+  static Ray FromPoint(const lin::Vec3& from, const lin::Vec3& to) { return Ray{from, (to - from).normalized()}; }
 
-  /**
-   * @brief Constructs a Ray from an origin and a point in 3D space.
-   *
-   * The direction of the ray is calculated as the normalized vector from the origin
-   * to the given point.
-   *
-   * @param origin The origin of the ray.
-   * @param point A point in space to define the direction of the ray.
-   */
-  Ray(const Eigen::Vector3d& origin, const Eigen::Vector3d& point)
-      : origin(origin), direction((point - origin).normalized()) {}
+  static Ray FromDirection(const lin::Vec3& origin, const lin::Vec3& dir) { return Ray{origin, dir.normalized()}; }
+
+private:
+  Ray(const lin::Vec3& o, const lin::Vec3& d) : origin(o), direction(d) {}
 };
 
 #endif // CORE_RAY_HPP

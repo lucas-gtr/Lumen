@@ -5,13 +5,13 @@
 #ifndef SCENE_SCENE_HPP
 #define SCENE_SCENE_HPP
 
-#include <Eigen/Core>
 #include <memory>
 #include <utility>
 #include <vector>
 
 #include "BVH/BVHNode.hpp"
 #include "Core/CommonTypes.hpp"
+#include "Core/Math/Vec3.hpp"
 #include "Lighting/Light.hpp"
 #include "Scene/Skybox.hpp"
 #include "SceneObjects/Camera.hpp"
@@ -86,7 +86,7 @@ public:
    * @param direction The direction vector for which to get the skybox color.
    * @return The color of the skybox.
    */
-  ColorRGBA getSkyboxColor(const Eigen::Vector3d direction) const { return m_skybox->getColor(direction); }
+  ColorRGBA getSkyboxColor(const lin::Vec3& direction) const { return m_skybox->getColor(direction); }
 
   /**
    * @brief Sets the skybox texture for the scene.

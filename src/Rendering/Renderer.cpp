@@ -1,5 +1,3 @@
-#include <Eigen/Core>
-#include <Eigen/Dense>
 #include <chrono>
 #include <cmath>
 #include <iostream>
@@ -7,6 +5,7 @@
 
 #include "Core/CommonTypes.hpp"
 #include "Core/Framebuffer.hpp"
+#include "Core/Math/Vec3.hpp"
 #include "Core/Random.hpp"
 #include "Core/Ray.hpp"
 #include "Rendering/CameraRayEmitter.hpp"
@@ -121,9 +120,9 @@ ColorRGBA Renderer::traceRay(const Ray& ray) const {
 
   ColorRGB light_factor = {0.0, 0.0, 0.0};
   for(const auto& light : m_scene->getLightList()) {
-    Ray shadow_ray;
-    shadow_ray.direction = light->getDirectionFromPoint(hit_info.hitPoint);
-    shadow_ray.origin    = hit_info.hitPoint + shadow_ray.direction * RayIntersection::RAY_OFFSET_FACTOR;
+    const lin::Vec3 light_direction = light->getDirectionFromPoint(hit_info.hitPoint);
+    const Ray       shadow_ray      = Ray::FromDirection(
+        hit_info.hitPoint + shadow_ray.direction * RayIntersection::RAY_OFFSET_FACTOR, light_direction.normalized());
 
     const RayHitInfo shadow_hit = RayIntersection::getSceneIntersection(shadow_ray, m_scene);
     if(isValidHit(shadow_hit)) {
