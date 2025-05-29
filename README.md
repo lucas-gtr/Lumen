@@ -120,8 +120,8 @@ This will produce a coverage report and inject a summary into the README.md betw
 
 | Metric    | Coverage |
 |-----------|----------|
-| Functions | 100.00% (303/303) |
-| Lines     | 99.90% (1264/1265) |
+| Functions | 98.80% (338/342) |
+| Lines     | 94.70% (1401/1480) |
 
 <!-- COVERAGE-END -->
 

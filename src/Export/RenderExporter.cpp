@@ -51,11 +51,16 @@ void RenderExporter::exportRender() {
   const double*              framebuffer = m_framebuffer->getFramebuffer();
   std::vector<unsigned char> image(m_framebuffer->getSize());
 
+  const int channel_count = m_framebuffer->getChannelCount();
   for(int i = 0; i < m_framebuffer->getWidth() * m_framebuffer->getHeight(); ++i) {
-    for(int j = 0; j < std::min(m_framebuffer->getChannelCount(), 3); j++) {
-      double value = framebuffer[i * m_framebuffer->getChannelCount() + j];
+    for(int j = 0; j < std::min(channel_count, 3); j++) {
+      double value = framebuffer[i * channel_count + j];
       m_tone_mapping->apply(value);
-      image[i * m_framebuffer->getChannelCount() + j] = static_cast<unsigned char>(value * NORMALIZED_TO_COLOR8);
+      image[i * channel_count + j] = static_cast<unsigned char>(value * NORMALIZED_TO_COLOR8);
+    }
+    if(channel_count == 4) {
+      const double alpha           = framebuffer[i * channel_count + 3];
+      image[i * channel_count + 3] = static_cast<unsigned char>(alpha * NORMALIZED_TO_COLOR8);
     }
   }
 

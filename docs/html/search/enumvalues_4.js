@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mirrored_5frepeat_0',['MIRRORED_REPEAT',['../namespaceTextureSampling.html#a6a2dbd44cfe757630af60a4d5107c1d9acf6164235e7bfffb5c4c7c4b685f660a',1,'TextureSampling']]]
+  ['gpu_5fcuda_0',['GPU_CUDA',['../RenderSettings_8hpp.html#ae6774af16ebdc6b89147ef757de3e5c9ae532a01aa444c7086d6fcf042bce4e55',1,'RenderSettings.hpp']]]
 ];

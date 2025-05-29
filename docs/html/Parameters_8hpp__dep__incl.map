@@ -1,23 +1,42 @@
 <map id="/home/lucasgtr/lumen/include/ImplementationParameters/Parameters.hpp" name="/home/lucasgtr/lumen/include/ImplementationParameters/Parameters.hpp">
-<area shape="rect" id="Node000001" title="Header file for the Parameters class." alt="" coords="132,5,386,60"/>
-<area shape="rect" id="Node000002" href="$RenderExporter_8hpp.html" title="Header file for the RenderExporter class." alt="" coords="35,218,286,258"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="243,73,172,219,167,217,238,71"/>
-<area shape="rect" id="Node000003" href="$RenderExporter_8cpp.html" title=" " alt="" coords="301,313,524,353"/>
-<area shape="poly" id="edge12_Node000001_Node000003" title=" " alt="" coords="185,68,112,107,77,130,47,155,24,181,11,208,10,236,25,264,42,277,68,289,137,308,220,319,301,326,301,331,219,325,136,313,66,294,39,282,21,267,5,237,5,207,19,178,43,151,74,126,109,102,182,64"/>
-<area shape="rect" id="Node000004" href="$Exposure_8hpp.html" title="Header file for the ExposureToneMapping class." alt="" coords="310,211,514,265"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="261,73,268,118,275,141,287,161,313,188,345,208,342,213,310,192,282,164,270,143,263,119,256,74"/>
-<area shape="rect" id="Node000005" href="$ToneMapping_8hpp.html" title="Header file for the ToneMappingStrategy class." alt="" coords="297,108,528,163"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="312,65,374,106,371,110,309,70"/>
-<area shape="rect" id="Node000008" href="$Parameters_8cpp.html" title=" " alt="" coords="552,108,779,163"/>
-<area shape="poly" id="edge13_Node000001_Node000008" title=" " alt="" coords="379,61,560,105,559,111,377,66"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="225,260,362,311,361,316,223,265"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="415,279,415,313,410,313,410,279"/>
-<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="335,170,209,220,207,215,333,165"/>
-<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="415,176,415,211,410,211,410,176"/>
-<area shape="rect" id="Node000006" href="$None_8hpp.html" title="Header file for the NoToneMapping class." alt="" coords="766,211,944,265"/>
-<area shape="poly" id="edge8_Node000005_Node000006" title=" " alt="" coords="542,161,754,208,766,211,765,216,753,213,541,166"/>
-<area shape="rect" id="Node000007" href="$Reinhard_8hpp.html" title="Header file for the ReinhardToneMapping class." alt="" coords="539,211,742,265"/>
-<area shape="poly" id="edge10_Node000005_Node000007" title=" " alt="" coords="485,166,582,208,580,213,483,171"/>
-<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="753,268,517,316,516,311,752,263"/>
-<area shape="poly" id="edge11_Node000007_Node000003" title=" " alt="" coords="565,273,459,316,457,311,563,268"/>
+<area shape="rect" id="Node000001" title="Header file for the Parameters class." alt="" coords="851,5,1106,60"/>
+<area shape="rect" id="Node000002" href="$RenderExporter_8hpp.html" title="Header file for the RenderExporter class." alt="" coords="32,218,283,258"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="838,45,648,67,544,86,442,111,370,135,301,165,192,220,189,216,298,160,368,130,441,105,543,80,647,62,837,40"/>
+<area shape="rect" id="Node000003" href="$RenderExporter_8cpp.html" title=" " alt="" coords="298,321,521,361"/>
+<area shape="poly" id="edge22_Node000001_Node000003" title=" " alt="" coords="838,40,620,52,496,64,372,80,256,103,153,132,110,149,73,168,44,189,22,212,12,230,8,246,10,260,16,272,41,293,81,310,131,322,186,330,298,337,298,342,186,335,130,327,79,315,39,298,12,275,5,261,3,245,7,228,18,209,40,185,70,164,108,144,152,127,254,98,372,75,496,58,620,47,837,34"/>
+<area shape="rect" id="Node000004" href="$Exposure_8hpp.html" title="Header file for the ExposureToneMapping class." alt="" coords="307,211,511,265"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="838,46,742,55,643,69,558,87,524,98,499,110,473,132,451,159,422,212,417,209,447,156,469,128,496,106,522,93,556,82,642,64,741,50,838,41"/>
+<area shape="rect" id="Node000005" href="$ToneMapping_8hpp.html" title="Header file for the ToneMappingStrategy class." alt="" coords="510,108,741,163"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="875,66,718,111,717,105,873,61"/>
+<area shape="rect" id="Node000008" href="$MultiThreadedCPU_8hpp.html" title="Header file for the MultiThreadedCPU class." alt="" coords="1017,211,1258,265"/>
+<area shape="poly" id="edge12_Node000001_Node000008" title=" " alt="" coords="1010,69,1119,208,1115,212,1005,72"/>
+<area shape="rect" id="Node000009" href="$MultiThreadedCPUStrategy_8cpp.html" title=" " alt="" coords="1031,313,1244,368"/>
+<area shape="poly" id="edge24_Node000001_Node000009" title=" " alt="" coords="975,74,973,116,975,166,985,217,994,241,1006,264,1032,291,1064,311,1061,315,1028,295,1002,267,989,244,980,219,969,167,967,116,970,73"/>
+<area shape="rect" id="Node000011" href="$RenderSettings_8hpp.html" title="Header file for the RenderSettings class." alt="" coords="1261,115,1536,155"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="1102,61,1321,113,1319,118,1100,66"/>
+<area shape="rect" id="Node000014" href="$RenderSettings_8cpp.html" title=" " alt="" coords="1591,218,1836,258"/>
+<area shape="poly" id="edge25_Node000001_Node000014" title=" " alt="" coords="1121,39,1238,48,1361,62,1472,81,1516,92,1549,106,1567,118,1577,131,1586,146,1601,161,1641,191,1681,216,1678,220,1638,195,1597,165,1582,149,1573,135,1563,122,1547,110,1514,97,1470,86,1361,67,1238,53,1120,44"/>
+<area shape="rect" id="Node000015" href="$Parameters_8cpp.html" title=" " alt="" coords="1611,108,1837,163"/>
+<area shape="poly" id="edge23_Node000001_Node000015" title=" " alt="" coords="1120,45,1343,71,1593,105,1611,108,1610,114,1592,111,1342,76,1120,51"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="218,261,363,318,361,323,217,266"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="412,279,412,320,407,320,407,279"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="497,167,246,221,244,215,496,162"/>
+<area shape="poly" id="edge7_Node000005_Node000004" title=" " alt="" coords="558,171,467,213,465,208,556,166"/>
+<area shape="rect" id="Node000006" href="$None_8hpp.html" title="Header file for the NoToneMapping class." alt="" coords="536,211,715,265"/>
+<area shape="poly" id="edge8_Node000005_Node000006" title=" " alt="" coords="628,176,628,211,623,211,623,176"/>
+<area shape="rect" id="Node000007" href="$Reinhard_8hpp.html" title="Header file for the ReinhardToneMapping class." alt="" coords="739,211,941,265"/>
+<area shape="poly" id="edge10_Node000005_Node000007" title=" " alt="" coords="695,166,785,208,783,213,692,171"/>
+<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="558,273,451,323,449,318,556,269"/>
+<area shape="poly" id="edge11_Node000007_Node000003" title=" " alt="" coords="726,269,491,323,490,318,725,263"/>
+<area shape="poly" id="edge13_Node000008_Node000009" title=" " alt="" coords="1140,279,1140,313,1135,313,1135,279"/>
+<area shape="rect" id="Node000010" href="$Renderer_8cpp.html" title=" " alt="" coords="1282,321,1486,361"/>
+<area shape="poly" id="edge14_Node000008_Node000010" title=" " alt="" coords="1215,268,1339,318,1337,323,1213,273"/>
+<area shape="poly" id="edge21_Node000011_Node000010" title=" " alt="" coords="1472,159,1505,180,1530,209,1540,238,1538,252,1530,267,1516,285,1497,301,1456,323,1453,318,1494,297,1512,282,1526,264,1533,250,1535,238,1526,212,1501,184,1470,164"/>
+<area shape="rect" id="Node000012" href="$Renderer_8hpp.html" title="Header file for the Renderer class." alt="" coords="1282,218,1515,258"/>
+<area shape="poly" id="edge16_Node000011_Node000012" title=" " alt="" coords="1401,169,1401,218,1396,218,1396,169"/>
+<area shape="poly" id="edge20_Node000011_Node000014" title=" " alt="" coords="1471,157,1655,215,1654,220,1470,162"/>
+<area shape="poly" id="edge17_Node000012_Node000009" title=" " alt="" coords="1338,266,1207,316,1205,311,1336,261"/>
+<area shape="poly" id="edge18_Node000012_Node000010" title=" " alt="" coords="1397,272,1390,321,1384,320,1391,271"/>
+<area shape="rect" id="Node000013" href="$SingleThreadedStrategy_8cpp.html" title=" " alt="" coords="1510,313,1730,368"/>
+<area shape="poly" id="edge19_Node000012_Node000013" title=" " alt="" coords="1454,261,1563,311,1561,316,1452,266"/>
 </map>

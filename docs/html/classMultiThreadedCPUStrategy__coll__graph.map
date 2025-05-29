@@ -1,0 +1,7 @@
+<map id="MultiThreadedCPUStrategy" name="MultiThreadedCPUStrategy">
+<area shape="rect" id="Node000001" title="A rendering strategy that uses multiple threads to render the scene on the CPU." alt="" coords="5,168,204,193"/>
+<area shape="rect" id="Node000002" href="$classRenderStrategy.html" title="Abstract base class for rendering strategies." alt="" coords="43,93,166,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,133,107,168,102,168,102,133"/>
+<area shape="rect" id="Node000003" href="$classRenderer.html" title="The Renderer class is responsible for rendering a scene using the given render settings and camera se..." alt="" coords="64,5,145,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="107,45,107,93,102,93,102,45"/>
+</map>

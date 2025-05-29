@@ -1,3 +1,4 @@
+#include "ImplementationParameters/ParameterTypes.hpp"
 #include "Rendering/RenderSettings.hpp"
 
 #include <gtest/gtest.h>
@@ -88,4 +89,35 @@ TEST(RenderSettingsTest, SamplesPerPixels) {
 
   settings.setSamplesPerPixel(9);
   EXPECT_EQ(settings.getSamplesPerPixel(), 9);
+}
+
+TEST(RendererSettingsTest, DefaultExecutionModeIsSingleThreaded) {
+  RenderSettings settings;
+
+  EXPECT_EQ(settings.getExecutionMode(), RenderExecutionMode::SINGLE_THREADED);
+}
+
+TEST(RendererSettingsTest, SetAndGetExecutionMode) {
+  RenderSettings settings;
+
+  settings.setExecutionMode(RenderExecutionMode::MULTI_THREADED_CPU);
+  EXPECT_EQ(settings.getExecutionMode(), RenderExecutionMode::MULTI_THREADED_CPU);
+
+  settings.setExecutionMode(RenderExecutionMode::SINGLE_THREADED);
+  EXPECT_EQ(settings.getExecutionMode(), RenderExecutionMode::SINGLE_THREADED);
+}
+
+TEST(RendererSettingsTest, SetAndGetRendererParameter) {
+  RenderSettings settings;
+
+  Parameters* params = settings.getRendererParameters();
+  ASSERT_NE(params, nullptr);
+
+  settings.setParameter("samples", 64);
+  const IntParam* samples_param = params->get<IntParam>("samples");
+  EXPECT_EQ(samples_param->getValue(), 64);
+
+  settings.setParameter("max_depth", 5);
+  const IntParam* max_depth_param = params->get<IntParam>("max_depth");
+  EXPECT_EQ(max_depth_param->getValue(), 5);
 }

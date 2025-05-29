@@ -9,7 +9,7 @@
 #include <utility>
 
 TEST(RenderExporterTest, GettersCorrect) {
-    Framebuffer framebuffer({800, 600, 3});
+    Framebuffer framebuffer({800, 600, 1});
     RenderExporter exporter(&framebuffer);
     exporter.setPath("RenderImages/");
     exporter.setFilename("image");
@@ -57,7 +57,7 @@ TEST(RenderExporterTest, NoExportOutputFormatNull) {
 }
 
 TEST(RenderExporterTest, ExportToneMappingNull) {
-    Framebuffer framebuffer({800, 600, 3});
+    Framebuffer framebuffer({800, 600, 4});
     RenderExporter exporter(&framebuffer);
     std::unique_ptr<OutputFormat> png_format = std::make_unique<OutputFormatPng>();
 

@@ -5,11 +5,14 @@
 #ifndef RENDERING_RENDERER_HPP
 #define RENDERING_RENDERER_HPP
 
+#include <memory>
+
 #include "Core/CommonTypes.hpp"
 #include "Core/Framebuffer.hpp"
 #include "Core/Ray.hpp"
 #include "Rendering/CameraRayEmitter.hpp"
 #include "Rendering/RayIntersection.hpp"
+#include "Rendering/RenderExecution.hpp"
 #include "Rendering/RenderSettings.hpp"
 #include "Scene/Scene.hpp"
 
@@ -26,10 +29,10 @@ private:
   Scene*                m_scene;
   Framebuffer*          m_framebuffer;
 
-  CameraRayEmitter m_cameraRayEmitter;
+  std::unique_ptr<RenderStrategy> m_render_strategy;
+  CameraRayEmitter                m_cameraRayEmitter;
 
   ColorRGBA traceRay(const Ray& ray) const;
-  void      renderSample(double sample_weight, PixelCoord grid_position, double cell_size);
   bool      isValidHit(const RayHitInfo& hit_info) const;
 
 public:
@@ -97,11 +100,40 @@ public:
   bool isReadyToRender() const;
 
   /**
+   * @brief Gets the color of a pixel at a specific subpixel grid position.
+   *
+   * This method calculates the color of a pixel based on its position and the subpixel grid position.
+   *
+   * @param pixel The pixel coordinates.
+   * @param dx The horizontal offset for the subpixel grid.
+   * @param dy The vertical offset for the subpixel grid.
+   * @param subpixel_grid_pos The subpixel grid position within the pixel.
+   * @param cell_size The size of the cell in the subpixel grid.
+   * @return The color of the pixel as a ColorRGBA object.
+   */
+  ColorRGBA getPixelColor(const PixelCoord& pixel, double dx, double dy, const PixelCoord& subpixel_grid_pos,
+                          double cell_size) const;
+
+  /**
+   * @brief Renders a sample at a specific grid position.
+   *
+   * This method renders a single sample based on the provided weight, grid position, and cell size.
+   *
+   * @param pixel_start The starting pixel coordinates for the sample.
+   * @param pixel_end The ending pixel coordinates for the sample.
+   * @param sample_weight The weight of the sample.
+   * @param subpixel_grid_pos The subpixel grid position within the pixel.
+   * @param cell_size The size of the cell in the subpixel grid.
+   */
+  void renderSample(const PixelCoord& pixel_start, const PixelCoord& pixel_end, double sample_weight,
+                    const PixelCoord& subpixel_grid_pos, double cell_size);
+
+  /**
    * @brief Renders a frame of the scene.
    *
    * This method renders a full frame based on the current settings, scene, and camera setup.
    */
-  void renderFrame();
+  bool renderFrame();
 
   ~Renderer(); ///< Destructor to clean up resources.
 };

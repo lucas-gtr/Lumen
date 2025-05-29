@@ -1,17 +1,21 @@
 <map id="/home/lucasgtr/lumen/include/Scene/Scene.hpp" name="/home/lucasgtr/lumen/include/Scene/Scene.hpp">
-<area shape="rect" id="Node000001" title="Header file for the Scene class." alt="" coords="381,5,567,45"/>
-<area shape="rect" id="Node000002" href="$RayIntersection_8hpp.html" title="Header file for ray intersection functions." alt="" coords="159,93,437,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="424,54,338,96,335,91,422,49"/>
-<area shape="rect" id="Node000003" href="$Renderer_8hpp.html" title="Header file for the Renderer class." alt="" coords="5,181,239,221"/>
-<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="367,39,302,48,238,60,184,76,164,85,149,95,135,115,128,138,123,182,118,181,122,136,131,112,145,91,161,80,182,71,237,54,301,42,366,34"/>
-<area shape="rect" id="Node000004" href="$Renderer_8cpp.html" title=" " alt="" coords="175,269,379,309"/>
-<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="509,53,544,88,575,132,586,155,590,178,588,201,576,223,563,234,545,244,497,260,438,273,379,281,378,276,438,267,495,255,543,239,560,230,572,220,583,200,585,179,581,157,571,134,540,92,506,57"/>
-<area shape="rect" id="Node000005" href="$RayIntersection_8cpp.html" title=" " alt="" coords="314,181,562,221"/>
-<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="470,59,445,182,439,181,465,58"/>
-<area shape="rect" id="Node000006" href="$Scene_8cpp.html" title=" " alt="" coords="637,93,801,133"/>
-<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="542,47,666,91,665,96,540,52"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="248,142,162,184,159,179,246,137"/>
-<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="297,147,282,269,276,269,291,147"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="342,138,409,179,406,184,339,143"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="169,226,244,267,242,272,167,230"/>
+<area shape="rect" id="Node000001" title="Header file for the Scene class." alt="" coords="612,5,799,45"/>
+<area shape="rect" id="Node000002" href="$RayIntersection_8hpp.html" title="Header file for ray intersection functions." alt="" coords="391,93,668,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="656,54,569,96,567,91,653,49"/>
+<area shape="rect" id="Node000003" href="$Renderer_8hpp.html" title="Header file for the Renderer class." alt="" coords="237,181,470,221"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="598,39,534,48,470,60,415,76,395,85,381,95,367,115,359,138,355,182,349,181,354,136,362,112,377,91,392,80,413,71,468,54,533,42,598,34"/>
+<area shape="rect" id="Node000005" href="$Renderer_8cpp.html" title=" " alt="" coords="487,277,691,317"/>
+<area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="740,53,774,88,805,131,815,154,820,177,818,201,808,223,784,248,756,266,725,280,693,289,691,283,723,274,753,261,781,243,803,220,813,199,815,178,810,156,800,133,770,91,737,56"/>
+<area shape="rect" id="Node000007" href="$RayIntersection_8cpp.html" title=" " alt="" coords="545,181,793,221"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="701,59,676,182,671,181,696,58"/>
+<area shape="rect" id="Node000008" href="$Scene_8cpp.html" title=" " alt="" coords="869,93,1033,133"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="773,47,898,91,896,96,771,52"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="480,142,393,184,391,179,477,137"/>
+<area shape="poly" id="edge7_Node000002_Node000005" title=" " alt="" coords="528,147,528,183,536,220,552,250,572,275,568,278,547,253,531,222,523,184,523,147"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="573,138,640,179,637,184,570,143"/>
+<area shape="rect" id="Node000004" href="$MultiThreadedCPUStrategy_8cpp.html" title=" " alt="" coords="5,269,219,324"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="293,229,181,272,179,267,291,224"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="415,224,543,274,541,279,413,229"/>
+<area shape="rect" id="Node000006" href="$SingleThreadedStrategy_8cpp.html" title=" " alt="" coords="243,269,463,324"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="356,235,356,269,351,269,351,235"/>
 </map>

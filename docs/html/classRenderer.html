@@ -119,9 +119,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a272bead9b161f1d3d3d5834126af8fba" id="r_a272bead9b161f1d3d3d5834126af8fba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderer.html#a272bead9b161f1d3d3d5834126af8fba">isReadyToRender</a> () const</td></tr>
 <tr class="memdesc:a272bead9b161f1d3d3d5834126af8fba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the renderer is ready to render.  <br /></td></tr>
 <tr class="separator:a272bead9b161f1d3d3d5834126af8fba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02a137957c8783a44df5cad4b5e1b635" id="r_a02a137957c8783a44df5cad4b5e1b635"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderer.html#a02a137957c8783a44df5cad4b5e1b635">renderFrame</a> ()</td></tr>
-<tr class="memdesc:a02a137957c8783a44df5cad4b5e1b635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a frame of the scene.  <br /></td></tr>
-<tr class="separator:a02a137957c8783a44df5cad4b5e1b635"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad46a4c9989445c4e1407d8a29d1755e0" id="r_ad46a4c9989445c4e1407d8a29d1755e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structColorRGBA.html">ColorRGBA</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderer.html#ad46a4c9989445c4e1407d8a29d1755e0">getPixelColor</a> (const <a class="el" href="structPixelCoord.html">PixelCoord</a> &amp;pixel, double dx, double dy, const <a class="el" href="structPixelCoord.html">PixelCoord</a> &amp;subpixel_grid_pos, double cell_size) const</td></tr>
+<tr class="memdesc:ad46a4c9989445c4e1407d8a29d1755e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the color of a pixel at a specific subpixel grid position.  <br /></td></tr>
+<tr class="separator:ad46a4c9989445c4e1407d8a29d1755e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c550e1bcd170d3b82cbc9071a5de2a0" id="r_a6c550e1bcd170d3b82cbc9071a5de2a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderer.html#a6c550e1bcd170d3b82cbc9071a5de2a0">renderSample</a> (const <a class="el" href="structPixelCoord.html">PixelCoord</a> &amp;pixel_start, const <a class="el" href="structPixelCoord.html">PixelCoord</a> &amp;pixel_end, double sample_weight, const <a class="el" href="structPixelCoord.html">PixelCoord</a> &amp;subpixel_grid_pos, double cell_size)</td></tr>
+<tr class="memdesc:a6c550e1bcd170d3b82cbc9071a5de2a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a sample at a specific grid position.  <br /></td></tr>
+<tr class="separator:a6c550e1bcd170d3b82cbc9071a5de2a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a487e403c63f7354d45b02e4853ad572b" id="r_a487e403c63f7354d45b02e4853ad572b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderer.html#a487e403c63f7354d45b02e4853ad572b">renderFrame</a> ()</td></tr>
+<tr class="memdesc:a487e403c63f7354d45b02e4853ad572b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a frame of the scene.  <br /></td></tr>
+<tr class="separator:a487e403c63f7354d45b02e4853ad572b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afeee408862d5bd6255a6882d47e6d5cd" id="r_afeee408862d5bd6255a6882d47e6d5cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderer.html#afeee408862d5bd6255a6882d47e6d5cd">~Renderer</a> ()</td></tr>
 <tr class="memdesc:afeee408862d5bd6255a6882d47e6d5cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor to clean up resources.  <br /></td></tr>
 <tr class="separator:afeee408862d5bd6255a6882d47e6d5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -268,6 +274,66 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad46a4c9989445c4e1407d8a29d1755e0" name="ad46a4c9989445c4e1407d8a29d1755e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad46a4c9989445c4e1407d8a29d1755e0">&#9670;&#160;</a></span>getPixelColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structColorRGBA.html">ColorRGBA</a> Renderer::getPixelColor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structPixelCoord.html">PixelCoord</a> &amp;&#160;</td>
+          <td class="paramname"><em>pixel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structPixelCoord.html">PixelCoord</a> &amp;&#160;</td>
+          <td class="paramname"><em>subpixel_grid_pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>cell_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the color of a pixel at a specific subpixel grid position. </p>
+<p>This method calculates the color of a pixel based on its position and the subpixel grid position.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pixel</td><td>The pixel coordinates. </td></tr>
+    <tr><td class="paramname">dx</td><td>The horizontal offset for the subpixel grid. </td></tr>
+    <tr><td class="paramname">dy</td><td>The vertical offset for the subpixel grid. </td></tr>
+    <tr><td class="paramname">subpixel_grid_pos</td><td>The subpixel grid position within the pixel. </td></tr>
+    <tr><td class="paramname">cell_size</td><td>The size of the cell in the subpixel grid. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The color of the pixel as a <a class="el" href="structColorRGBA.html" title="Structure to hold RGBA color values.">ColorRGBA</a> object. </dd></dl>
+
+</div>
+</div>
 <a id="a9ae41035c4c83d6fd6db68aafc3c04e4" name="a9ae41035c4c83d6fd6db68aafc3c04e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9ae41035c4c83d6fd6db68aafc3c04e4">&#9670;&#160;</a></span>getRenderSettings()</h2>
 
@@ -397,14 +463,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a02a137957c8783a44df5cad4b5e1b635" name="a02a137957c8783a44df5cad4b5e1b635"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02a137957c8783a44df5cad4b5e1b635">&#9670;&#160;</a></span>renderFrame()</h2>
+<a id="a487e403c63f7354d45b02e4853ad572b" name="a487e403c63f7354d45b02e4853ad572b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a487e403c63f7354d45b02e4853ad572b">&#9670;&#160;</a></span>renderFrame()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Renderer::renderFrame </td>
+          <td class="memname">bool Renderer::renderFrame </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -414,6 +480,65 @@ Public Member Functions</h2></td></tr>
 
 <p>Renders a frame of the scene. </p>
 <p>This method renders a full frame based on the current settings, scene, and camera setup. </p>
+
+</div>
+</div>
+<a id="a6c550e1bcd170d3b82cbc9071a5de2a0" name="a6c550e1bcd170d3b82cbc9071a5de2a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c550e1bcd170d3b82cbc9071a5de2a0">&#9670;&#160;</a></span>renderSample()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Renderer::renderSample </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structPixelCoord.html">PixelCoord</a> &amp;&#160;</td>
+          <td class="paramname"><em>pixel_start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structPixelCoord.html">PixelCoord</a> &amp;&#160;</td>
+          <td class="paramname"><em>pixel_end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>sample_weight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structPixelCoord.html">PixelCoord</a> &amp;&#160;</td>
+          <td class="paramname"><em>subpixel_grid_pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>cell_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renders a sample at a specific grid position. </p>
+<p>This method renders a single sample based on the provided weight, grid position, and cell size.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pixel_start</td><td>The starting pixel coordinates for the sample. </td></tr>
+    <tr><td class="paramname">pixel_end</td><td>The ending pixel coordinates for the sample. </td></tr>
+    <tr><td class="paramname">sample_weight</td><td>The weight of the sample. </td></tr>
+    <tr><td class="paramname">subpixel_grid_pos</td><td>The subpixel grid position within the pixel. </td></tr>
+    <tr><td class="paramname">cell_size</td><td>The size of the cell in the subpixel grid. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

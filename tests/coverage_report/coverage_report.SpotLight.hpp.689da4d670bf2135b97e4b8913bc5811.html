@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-05-28 10:24:22</td>
+      <td>2025-05-29 15:24:27</td>
     </tr>
   </table>
 </div>
@@ -73,12 +73,12 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l29">SpotLight::SpotLight() (line 29)</a></td><td>called 18 times, returned 18 times</td><td>83.0%</td></tr>
-    <tr><td><a href="#l39">SpotLight::getDirection() const (line 39)</a></td><td>called 10 times, returned 10 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l45">SpotLight::setDirection(Eigen::Matrix&lt;double, 3, 1, 0, 3, 1&gt; const&amp;) (line 45)</a></td><td>called 18 times, returned 18 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l57">SpotLight::setInnerAngle(double) (line 57)</a></td><td>called 18 times, returned 18 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l71">SpotLight::setOuterAngle(double) (line 71)</a></td><td>called 18 times, returned 18 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l90">SpotLight::~SpotLight() (line 90)</a></td><td>called 18 times, returned 18 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l29">SpotLight::SpotLight() (line 29)</a></td><td>called 66 times, returned 66 times</td><td>83.0%</td></tr>
+    <tr><td><a href="#l39">SpotLight::getDirection() const (line 39)</a></td><td>called 50 times, returned 50 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l45">SpotLight::setDirection(Eigen::Matrix&lt;double, 3, 1, 0, 3, 1&gt; const&amp;) (line 45)</a></td><td>called 66 times, returned 66 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l57">SpotLight::setInnerAngle(double) (line 57)</a></td><td>called 66 times, returned 66 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l71">SpotLight::setOuterAngle(double) (line 71)</a></td><td>called 66 times, returned 66 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l90">SpotLight::~SpotLight() (line 90)</a></td><td>called 66 times, returned 66 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -258,7 +258,7 @@
       <td class="lineno"><a id="l24" href="#l24">24</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">54</td>
+      <td class="linecount coveredLine">198</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="n">m_direction</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0</span><span class="p">};</span></td>
     </tr>
     <tr class="source-line">
@@ -295,11 +295,11 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 14 taken 18 times.</div>
+          <div class="takenBranch">&check; Branch 14 taken 66 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">66</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">SpotLight</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Light</span><span class="p">(</span><span class="n">LightType</span><span class="o">::</span><span class="n">Spot</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w">           </span><span class="c1">///&lt; Constructor with light type.</span></td>
     </tr>
     <tr class="source-line">
@@ -369,7 +369,7 @@
       <td class="lineno"><a id="l39" href="#l39">39</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">10</td>
+      <td class="linecount coveredLine">50</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="w"> </span><span class="nf">getDirection</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_direction</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -411,7 +411,7 @@
       <td class="lineno"><a id="l45" href="#l45">45</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">66</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setDirection</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Eigen</span><span class="o">::</span><span class="n">Vector3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">direction</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">direction</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -495,21 +495,21 @@
       <td class="lineno"><a id="l57" href="#l57">57</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">66</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setInnerAngle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">inner_angle</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l58" href="#l58">58</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">66</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">m_inner_angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">inner_angle</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_SPOT_LIGHT_ANGLE</span><span class="p">,</span><span class="w"> </span><span class="n">m_outer_angle</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l59" href="#l59">59</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">66</td>
       <td class="src coveredLine"><span class="w">  </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -593,21 +593,21 @@
       <td class="lineno"><a id="l71" href="#l71">71</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">66</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setOuterAngle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">outer_angle</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l72" href="#l72">72</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">66</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">m_outer_angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">outer_angle</span><span class="p">,</span><span class="w"> </span><span class="n">m_inner_angle</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_SPOT_LIGHT_ANGLE</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l73" href="#l73">73</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">66</td>
       <td class="src coveredLine"><span class="w">  </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -726,7 +726,7 @@
       <td class="lineno"><a id="l90" href="#l90">90</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">36</td>
+      <td class="linecount coveredLine">132</td>
       <td class="src coveredLine"><span class="w">  </span><span class="o">~</span><span class="n">SpotLight</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default destructor.</span></td>
     </tr>
     <tr class="source-line">

@@ -255,17 +255,24 @@ void renderOBJExample() {
   scene.setSkybox(skybox_texture);
 
   RenderSettings render_settings;
-  render_settings.setWidth(800);
-  render_settings.setHeight(600);
-  render_settings.setChannelCount(3);
+  render_settings.setWidth(1920);
+  render_settings.setHeight(1080);
+  render_settings.setChannelCount(4);
   render_settings.setSamplesPerPixel(4);
+  render_settings.setExecutionMode(RenderExecutionMode::MULTI_THREADED_CPU);
+  // render_settings.setParameter("thread_count", 8);
 
   Renderer renderer(&render_settings, &scene);
-  renderer.renderFrame();
+
+  bool render_success = renderer.renderFrame();
+
+  if(!render_success) {
+    std::cerr << "Failed to render the scene." << std::endl;
+    return;
+  }
 
   std::unique_ptr<OutputFormat> output_format = std::make_unique<OutputFormatPng>();
-
-  RenderExporter exporter(renderer.getFramebuffer());
+  RenderExporter                exporter(renderer.getFramebuffer());
   exporter.setOutputFormat(std::move(output_format));
   exporter.setPath("Gallery");
   exporter.setFilename("OBJExample");

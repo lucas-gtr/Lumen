@@ -1,10 +1,18 @@
-#include "Core/Framebuffer.hpp"
+#include <algorithm>
+#include <cstddef>
+#include <cstdint>
+#include <execution>
+#include <functional>
+#include <iostream>
+#include <numeric>
+#include <thread>
+#include <vector>
+
 #include "Core/ColorUtils.hpp"
 #include "Core/CommonTypes.hpp"
+#include "Core/Framebuffer.hpp"
 
-#include <algorithm>
-#include <cstdint>
-#include <iostream>
+thread_local int Framebuffer::m_thread_id = -1;
 
 Framebuffer::Framebuffer(ImageProperties properties) : m_framebuffer_properties(properties) { updateFrameBuffer(); }
 
@@ -33,29 +41,59 @@ void Framebuffer::convertToSRGBColorSpace() {
   }
 }
 
-void Framebuffer::setPixelColor(PixelCoord pixel_coord, const ColorRGBA& color, double weight) {
+void Framebuffer::initThreadBuffers(unsigned int num_threads) {
+  num_threads = std::clamp(num_threads, 1U, std::thread::hardware_concurrency() - 2);
+  m_thread_buffers.resize(num_threads);
+  for(auto& buffer : m_thread_buffers) {
+    buffer.resize(m_framebuffer_properties.bufferSize(), 0.0);
+  }
+}
+
+void Framebuffer::reduceThreadBuffers() {
+  const int pixel_count = m_framebuffer_properties.width * m_framebuffer_properties.height;
+  const int channels    = m_framebuffer_properties.channels;
+
+  std::vector<int> indices(static_cast<size_t>(pixel_count * channels));
+  std::iota(indices.begin(), indices.end(), 0);
+
+  std::for_each(std::execution::par, indices.begin(), indices.end(), [&](int index) {
+    const double sum = std::transform_reduce(std::execution::seq, m_thread_buffers.begin(), m_thread_buffers.end(), 0.0,
+                                             std::plus<>(), [=](const auto& buffer) { return buffer[index]; });
+    m_framebuffer[index] = sum;
+  });
+
+  m_thread_buffers.clear();
+}
+
+void Framebuffer::setPixelColor(const PixelCoord& pixel_coord, const ColorRGBA& color, double weight) {
   if(pixel_coord.x < 0 || pixel_coord.x >= m_framebuffer_properties.width || pixel_coord.y < 0 ||
      pixel_coord.y >= m_framebuffer_properties.height) {
     std::cerr << "Pixel coordinates out of bounds: (" << pixel_coord.x << ", " << pixel_coord.y << ").\n";
     return;
   }
+
+  if(m_thread_id < 0 || m_thread_id >= static_cast<int>(m_thread_buffers.size())) {
+    std::cerr << "Invalid thread ID: " << m_thread_id << ".\n";
+    return;
+  }
+
   const int index =
       (pixel_coord.y * m_framebuffer_properties.width + pixel_coord.x) * m_framebuffer_properties.channels;
 
   switch(m_framebuffer_properties.channels) {
   case 1:
-    m_framebuffer[index] += toGrayscale(color) * weight;
+    m_thread_buffers[m_thread_id][index] += toGrayscale(color) * weight;
     break;
   case 3:
-    m_framebuffer[index] += color.r * weight;
-    m_framebuffer[index + 1] += color.g * weight;
-    m_framebuffer[index + 2] += color.b * weight;
+    m_thread_buffers[m_thread_id][index] += color.r * weight;
+    m_thread_buffers[m_thread_id][index + 1] += color.g * weight;
+    m_thread_buffers[m_thread_id][index + 2] += color.b * weight;
     break;
   case 4:
-    m_framebuffer[index] += color.r * weight;
-    m_framebuffer[index + 1] += color.g * weight;
-    m_framebuffer[index + 2] += color.b * weight;
-    m_framebuffer[index + 3] += color.a * weight;
+    m_thread_buffers[m_thread_id][index] += color.r * weight;
+    m_thread_buffers[m_thread_id][index + 1] += color.g * weight;
+    m_thread_buffers[m_thread_id][index + 2] += color.b * weight;
+    m_thread_buffers[m_thread_id][index + 3] += 1.0 * weight;
     break;
   default:
     std::cerr << "Unsupported channel count: " << m_framebuffer_properties.channels

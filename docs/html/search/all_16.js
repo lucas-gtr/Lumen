@@ -19,10 +19,11 @@ var searchData=
   ['_7erenderer_16',['~Renderer',['../classRenderer.html#afeee408862d5bd6255a6882d47e6d5cd',1,'Renderer']]],
   ['_7erenderexporter_17',['~RenderExporter',['../classRenderExporter.html#af0f316fa32d3eee90db98c33a6ed9715',1,'RenderExporter']]],
   ['_7erendersettings_18',['~RenderSettings',['../classRenderSettings.html#a0118fdc9b8fb377f68f10935db760218',1,'RenderSettings']]],
-  ['_7escene_19',['~Scene',['../classScene.html#a631eef7493cafce5d74739a2cad12a58',1,'Scene']]],
-  ['_7eskybox_20',['~Skybox',['../classSkybox.html#a66af095c7342933d984b6824c11906ac',1,'Skybox']]],
-  ['_7espotlight_21',['~SpotLight',['../classSpotLight.html#abd2c9461cf808bdf8660395435be8639',1,'SpotLight']]],
-  ['_7etexture_22',['~Texture',['../classTexture.html#a09c4bcb7462f64c1d20fa69dba3cee8a',1,'Texture']]],
-  ['_7etonemappingstrategy_23',['~ToneMappingStrategy',['../classToneMappingStrategy.html#a00fe76da8e0de0255ea9f03e5af4fb1f',1,'ToneMappingStrategy']]],
-  ['_7etransform_24',['~Transform',['../classTransform.html#a0bccb958391795992a6b9100739047f1',1,'Transform']]]
+  ['_7erenderstrategy_19',['~RenderStrategy',['../classRenderStrategy.html#a4a7755700320d5ea62bf19e4b0db6183',1,'RenderStrategy']]],
+  ['_7escene_20',['~Scene',['../classScene.html#a631eef7493cafce5d74739a2cad12a58',1,'Scene']]],
+  ['_7eskybox_21',['~Skybox',['../classSkybox.html#a66af095c7342933d984b6824c11906ac',1,'Skybox']]],
+  ['_7espotlight_22',['~SpotLight',['../classSpotLight.html#abd2c9461cf808bdf8660395435be8639',1,'SpotLight']]],
+  ['_7etexture_23',['~Texture',['../classTexture.html#a09c4bcb7462f64c1d20fa69dba3cee8a',1,'Texture']]],
+  ['_7etonemappingstrategy_24',['~ToneMappingStrategy',['../classToneMappingStrategy.html#a00fe76da8e0de0255ea9f03e5af4fb1f',1,'ToneMappingStrategy']]],
+  ['_7etransform_25',['~Transform',['../classTransform.html#a0bccb958391795992a6b9100739047f1',1,'Transform']]]
 ];

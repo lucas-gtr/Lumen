@@ -1,4 +1,4 @@
-Checks: '*,-misc-no-recursion,-llvmlibc-*,-modernize-use-trailing-return-type, -readability-identifier-length, -altera-*, -modernize-use-nodiscard, -fuchsia-overloaded-operator, -modernize-pass-by-value, -fuchsia-default-arguments-calls, -cppcoreguidelines-pro-bounds-pointer-arithmetic'
+Checks: '*,-misc-no-recursion,-llvmlibc-*,-modernize-use-trailing-return-type, -readability-identifier-length, -altera-*, -modernize-use-nodiscard, -fuchsia-overloaded-operator, -modernize-pass-by-value, -fuchsia-default-arguments-calls, -cppcoreguidelines-pro-bounds-pointer-arithmetic, -fuchsia-default-arguments-declarations'
 HeaderFilterRegex: '^(?!.*external).*'
 FormatStyle: 'file'
 CheckOptions: 

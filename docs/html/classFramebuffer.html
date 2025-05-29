@@ -78,6 +78,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classFramebuffer-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Framebuffer Class Reference</div></div>
 </div><!--header-->
@@ -129,11 +130,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a49beff864decae43b73e57593ca739fb" id="r_a49beff864decae43b73e57593ca739fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a49beff864decae43b73e57593ca739fb">updateFrameBuffer</a> ()</td></tr>
 <tr class="memdesc:a49beff864decae43b73e57593ca739fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the framebuffer properties.  <br /></td></tr>
 <tr class="separator:a49beff864decae43b73e57593ca739fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0be98268800a79c9d26011717c37fe91" id="r_a0be98268800a79c9d26011717c37fe91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a0be98268800a79c9d26011717c37fe91">setPixelColor</a> (<a class="el" href="structPixelCoord.html">PixelCoord</a> pixel_coord, const <a class="el" href="structColorRGBA.html">ColorRGBA</a> &amp;color, double weight)</td></tr>
-<tr class="memdesc:a0be98268800a79c9d26011717c37fe91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color of a specific pixel in the framebuffer.  <br /></td></tr>
-<tr class="separator:a0be98268800a79c9d26011717c37fe91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d41bded634c10f3d1203540e7d318a3" id="r_a8d41bded634c10f3d1203540e7d318a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a8d41bded634c10f3d1203540e7d318a3">initThreadBuffers</a> (unsigned int num_threads)</td></tr>
+<tr class="memdesc:a8d41bded634c10f3d1203540e7d318a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes thread buffers for multi-threaded rendering.  <br /></td></tr>
+<tr class="separator:a8d41bded634c10f3d1203540e7d318a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9459390281bcfe599af640209d64fdf6" id="r_a9459390281bcfe599af640209d64fdf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a9459390281bcfe599af640209d64fdf6">reduceThreadBuffers</a> ()</td></tr>
+<tr class="memdesc:a9459390281bcfe599af640209d64fdf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduces the thread buffers into the main framebuffer. This method aggregates the pixel data from all thread buffers into the main framebuffer.  <br /></td></tr>
+<tr class="separator:a9459390281bcfe599af640209d64fdf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a959967cc7f18f5c75c06ae33958799a3" id="r_a959967cc7f18f5c75c06ae33958799a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a959967cc7f18f5c75c06ae33958799a3">setPixelColor</a> (const <a class="el" href="structPixelCoord.html">PixelCoord</a> &amp;pixel_coord, const <a class="el" href="structColorRGBA.html">ColorRGBA</a> &amp;color, double weight)</td></tr>
+<tr class="memdesc:a959967cc7f18f5c75c06ae33958799a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color of a specific pixel in the framebuffer.  <br /></td></tr>
+<tr class="separator:a959967cc7f18f5c75c06ae33958799a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a037bf3e17455354d5d907ceea00313dd" id="r_a037bf3e17455354d5d907ceea00313dd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a037bf3e17455354d5d907ceea00313dd">~Framebuffer</a> ()</td></tr>
 <tr class="separator:a037bf3e17455354d5d907ceea00313dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a220b4cc0fd31264b4facf09a0c684855" id="r_a220b4cc0fd31264b4facf09a0c684855"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a220b4cc0fd31264b4facf09a0c684855">setThreadId</a> (int thread_id)</td></tr>
+<tr class="separator:a220b4cc0fd31264b4facf09a0c684855"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class representing a framebuffer for storing image data. </p>
@@ -406,6 +418,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a8d41bded634c10f3d1203540e7d318a3" name="a8d41bded634c10f3d1203540e7d318a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d41bded634c10f3d1203540e7d318a3">&#9670;&#160;</a></span>initThreadBuffers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Framebuffer::initThreadBuffers </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>num_threads</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes thread buffers for multi-threaded rendering. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num_threads</td><td>The number of threads to initialize buffers for. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aae33f5a97f542d7723618d54b493606a" name="aae33f5a97f542d7723618d54b493606a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aae33f5a97f542d7723618d54b493606a">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
@@ -462,6 +500,25 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a9459390281bcfe599af640209d64fdf6" name="a9459390281bcfe599af640209d64fdf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9459390281bcfe599af640209d64fdf6">&#9670;&#160;</a></span>reduceThreadBuffers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Framebuffer::reduceThreadBuffers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reduces the thread buffers into the main framebuffer. This method aggregates the pixel data from all thread buffers into the main framebuffer. </p>
+
+</div>
+</div>
 <a id="aca92863b30f30f681732818fd12ad1b3" name="aca92863b30f30f681732818fd12ad1b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aca92863b30f30f681732818fd12ad1b3">&#9670;&#160;</a></span>setFramebufferProperties()</h2>
 
@@ -489,8 +546,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0be98268800a79c9d26011717c37fe91" name="a0be98268800a79c9d26011717c37fe91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0be98268800a79c9d26011717c37fe91">&#9670;&#160;</a></span>setPixelColor()</h2>
+<a id="a959967cc7f18f5c75c06ae33958799a3" name="a959967cc7f18f5c75c06ae33958799a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a959967cc7f18f5c75c06ae33958799a3">&#9670;&#160;</a></span>setPixelColor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -498,7 +555,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void Framebuffer::setPixelColor </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structPixelCoord.html">PixelCoord</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="structPixelCoord.html">PixelCoord</a> &amp;&#160;</td>
           <td class="paramname"><em>pixel_coord</em>, </td>
         </tr>
         <tr>
@@ -530,6 +587,32 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a220b4cc0fd31264b4facf09a0c684855" name="a220b4cc0fd31264b4facf09a0c684855"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a220b4cc0fd31264b4facf09a0c684855">&#9670;&#160;</a></span>setThreadId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Framebuffer::setThreadId </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>thread_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
