@@ -7,5 +7,4 @@ add_library(Core STATIC
 
 target_include_directories(Core PRIVATE
     ${CMAKE_SOURCE_DIR}/include
-    ${CMAKE_SOURCE_DIR}/external/eigen
 )

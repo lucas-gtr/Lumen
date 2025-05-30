@@ -1,14 +1,13 @@
 #include "Lighting/PointLight.hpp"
 
 #include <gtest/gtest.h>
-#include <Eigen/Dense>
 
 class PointLightTest : public ::testing::Test {
 protected:
     PointLight light;
 
     void SetUp() override {
-        light.setPosition(Eigen::Vector3d(1.0, 2.0, 3.0));
+        light.setPosition(lin::Vec3(1.0, 2.0, 3.0));
     }
 };
 
@@ -17,23 +16,23 @@ TEST_F(PointLightTest, ConstructorSetsTypeCorrectly) {
 }
 
 TEST_F(PointLightTest, GetDirectionFromPointReturnsNormalizedVector) {
-    Eigen::Vector3d point(4.0, 6.0, 8.0);
-    Eigen::Vector3d direction = light.getDirectionFromPoint(point);
+    lin::Vec3 point(4.0, 6.0, 8.0);
+    lin::Vec3 direction = light.getDirectionFromPoint(point);
 
-    Eigen::Vector3d expectedDirection = (light.getPosition() - point).normalized();
-    EXPECT_NEAR(direction.x(), expectedDirection.x(), 1e-9);
-    EXPECT_NEAR(direction.y(), expectedDirection.y(), 1e-9);
-    EXPECT_NEAR(direction.z(), expectedDirection.z(), 1e-9);
+    lin::Vec3 expectedDirection = (light.getPosition() - point).normalized();
+    EXPECT_NEAR(direction.x, expectedDirection.x, 1e-9);
+    EXPECT_NEAR(direction.y, expectedDirection.y, 1e-9);
+    EXPECT_NEAR(direction.z, expectedDirection.z, 1e-9);
 }
 
 TEST_F(PointLightTest, GetLightFactorConsidersDistanceAndNormalInclination) {
-    Eigen::Vector3d pointNear(1.5, 2.5, 3.5);
-    Eigen::Vector3d pointFar(10.0, 10.0, 10.0);
+    lin::Vec3 pointNear(1.5, 2.5, 3.5);
+    lin::Vec3 pointFar(10.0, 10.0, 10.0);
 
-    Eigen::Vector3d normalFacing = (light.getPosition() - pointNear).normalized();
+    lin::Vec3 normalFacing = (light.getPosition() - pointNear).normalized();
     
-    Eigen::Vector3d normalSlightlyInclined = (light.getPosition() - pointNear).normalized();
-    normalSlightlyInclined.x() += 0.1; 
+    lin::Vec3 normalSlightlyInclined = (light.getPosition() - pointNear).normalized();
+    normalSlightlyInclined.x += 0.1; 
     normalSlightlyInclined.normalize();
 
     ColorRGB factorNearFacing = light.getLightFactor(pointNear, normalFacing);

@@ -3,82 +3,78 @@
 #include "Scene/Scene.hpp"
 #include "Geometry/CubeMeshBuilder.hpp"
 
-#include <Eigen/Core>
 #include <limits>
 
-constexpr double EPSILON = 1e-8;
-
 TEST(RayIntersectionTest, ValidIntersection) {
-    Ray ray{{0, 0, -1}, {0, 0, 1}};
-    Eigen::Vector3d p0(0, 1, 0), p1(-1, -1, 0), p2(1, -1, 0);
+    Ray ray = Ray::FromPoint({0, 0, -1}, {0, 0, 1});
+    lin::Vec3 p0(0, 1, 0), p1(-1, -1, 0), p2(1, -1, 0);
 
     double distance = std::numeric_limits<double>::max();
-    Eigen::Vector3d bary_coords;
+    lin::Vec3 bary_coords;
 
     bool success = RayIntersection::getTriangleIntersection(ray, p0, p1, p2, distance, bary_coords);
     EXPECT_TRUE(success);
     EXPECT_NEAR(distance, 1.0, EPSILON);
-    std::cout << "Barycentric coordinates: " << bary_coords.transpose() << std::endl;
-    EXPECT_TRUE(bary_coords.isApprox(Eigen::Vector3d(0.5, 0.25, 0.25), EPSILON));
+    EXPECT_TRUE(bary_coords.isApprox(lin::Vec3(0.5, 0.25, 0.25), EPSILON));
 }
 
 TEST(RayIntersectionTest, RayParallelToTriangle) {
-    Ray ray{{0, 0, 0}, {1, 0, 0}};
-    Eigen::Vector3d p0(0, 1, 1), p1(-1, -1, 1), p2(1, -1, 1);
+    Ray ray = Ray::FromPoint({0, 0, 0}, {1, 0, 0});
+    lin::Vec3 p0(0, 1, 1), p1(-1, -1, 1), p2(1, -1, 1);
 
     double distance = std::numeric_limits<double>::max();
-    Eigen::Vector3d bary_coords;
+    lin::Vec3 bary_coords;
 
     bool success = RayIntersection::getTriangleIntersection(ray, p0, p1, p2, distance, bary_coords);
     EXPECT_FALSE(success);
 }
 
 TEST(RayIntersectionTest, IntersectionOutsideTriangle) {
-    Ray ray{{0, 0, -1}, {2, 0, 1}};
-    Eigen::Vector3d p0(0, 1, 0), p1(-1, -1, 0), p2(1, -1, 0);
+    Ray ray = Ray::FromPoint({0, 0, -1}, {2, 0, 1});
+    lin::Vec3 p0(0, 1, 0), p1(-1, -1, 0), p2(1, -1, 0);
 
     double distance = std::numeric_limits<double>::max();
-    Eigen::Vector3d bary_coords;
+    lin::Vec3 bary_coords;
 
     bool success = RayIntersection::getTriangleIntersection(ray, p0, p1, p2, distance, bary_coords);
     EXPECT_FALSE(success);
 }
 
 TEST(RayIntersectionTest, IntersectionBehindRayOrigin) {
-    Ray ray{{0, 0, 1}, {0, 0, 2}};
-    Eigen::Vector3d p0(0, 1, 0), p1(-1, -1, 0), p2(1, -1, 0);
+    Ray ray = Ray::FromPoint({0, 0, 1}, {0, 0, 2});
+    lin::Vec3 p0(0, 1, 0), p1(-1, -1, 0), p2(1, -1, 0);
 
     double distance = std::numeric_limits<double>::max();
-    Eigen::Vector3d bary_coords;
+    lin::Vec3 bary_coords;
 
     bool success = RayIntersection::getTriangleIntersection(ray, p0, p1, p2, distance, bary_coords);
     EXPECT_FALSE(success);
 }
 
 TEST(RayIntersectionTest, IntersectionOnEdge) {
-    Ray ray{{0, 0, 0}, {0, 0, -1}};
-    Eigen::Vector3d p0(1, 0, -1), p1(-1, 0, -1), p2(0, 1, -1);
+    Ray ray = Ray::FromPoint({0, 0, 0}, {0, 0, -1});
+    lin::Vec3 p0(1, 0, -1), p1(-1, 0, -1), p2(0, 1, -1);
 
     double distance = std::numeric_limits<double>::max();
-    Eigen::Vector3d bary_coords;
+    lin::Vec3 bary_coords;
 
     bool success = RayIntersection::getTriangleIntersection(ray, p0, p1, p2, distance, bary_coords);
     EXPECT_TRUE(success);
     EXPECT_NEAR(distance, 1.0, EPSILON);
-    EXPECT_EQ(bary_coords, Eigen::Vector3d(0.5, 0.5, 0));
+    EXPECT_EQ(bary_coords, lin::Vec3(0.5, 0.5, 0));
 }
 
 TEST(RayIntersectionTest, IntersectionOnVertex) {
-    Ray ray{{0, 0, 0}, {0, 0, -1}};
-    Eigen::Vector3d p0(0, 0, -1), p1(0, -1, -1), p2(1, -1, -1);
+    Ray ray = Ray::FromPoint({0, 0, 0}, {0, 0, -1});
+    lin::Vec3 p0(0, 0, -1), p1(0, -1, -1), p2(1, -1, -1);
 
     double distance = std::numeric_limits<double>::max();
-    Eigen::Vector3d bary_coords;
+    lin::Vec3 bary_coords;
 
     bool success = RayIntersection::getTriangleIntersection(ray, p0, p1, p2, distance, bary_coords);
     EXPECT_TRUE(success);
     EXPECT_NEAR(distance, 1.0, EPSILON);
-    EXPECT_EQ(bary_coords, Eigen::Vector3d(1.0, 0.0, 0.0));
+    EXPECT_EQ(bary_coords, lin::Vec3(1.0, 0.0, 0.0));
 }
 
 TEST(RayIntersectionTest, MeshIntersectionSingleTriangleHit) {
@@ -88,7 +84,7 @@ TEST(RayIntersectionTest, MeshIntersectionSingleTriangleHit) {
     Face face{{0, 1, 2}};
 
     Mesh mesh({v0, v1, v2}, {face});
-    Ray ray{{0, 0, -1}, {0, 0, 1}};
+    Ray ray = Ray::FromPoint({0, 0, -1}, {0, 0, 1});
 
     RayHitInfo hit = RayIntersection::getMeshIntersection(ray, mesh);
 
@@ -102,7 +98,7 @@ TEST(RayIntersectionTest, MeshIntersectionNoHit) {
     Face face{{0, 1, 2}};
 
     Mesh mesh({v0, v1, v2}, {face});
-    Ray ray{{0, 0, -1}, {0, 0, 1}};
+    Ray ray = Ray::FromPoint({0, 0, -1}, {0, 0, 1});
 
     RayHitInfo hit = RayIntersection::getMeshIntersection(ray, mesh);
 
@@ -118,13 +114,13 @@ TEST(RayIntersectionTest, TwoTrianglesBehindEachOtherNearestIsReturned) {
     Vertex v0b{{-1, -1, 5}, {0, 0, -1}, {0, 0}};
     Vertex v1b{{1, -1, 5}, {0, 0, -1}, {0, 0}};
     Vertex v2b{{0, 1, 5}, {0, 0, -1}, {0, 0}};
-    Face faceB{{3, 4, 5}};  //(z = 5)
+    Face faceB{{3, 4, 5}};;  //(z = 5)
 
     std::vector<Vertex> vertices = {v0a, v1a, v2a, v0b, v1b, v2b};
     std::vector<Face> faces = {faceA, faceB};
     Mesh mesh(vertices, faces);
 
-    Ray ray{{0, 0, 0}, {0, 0, 1}};
+    Ray ray = Ray::FromPoint({0, 0, 0}, {0, 0, 1});
 
     RayHitInfo hit = RayIntersection::getMeshIntersection(ray, mesh);
 
@@ -146,7 +142,7 @@ TEST(RayIntersectionTest, ReverseOrderTrianglesBehindEachOtherNearestIsStillRetu
     std::vector<Face> faces = {faceA, faceB};
     Mesh mesh(vertices, faces);
 
-    Ray ray{{0, 0, 0}, {0, 0, 1}};
+    Ray ray = Ray::FromPoint({0, 0, 0}, {0, 0, 1});
 
     RayHitInfo hit = RayIntersection::getMeshIntersection(ray, mesh);
 
@@ -160,7 +156,7 @@ TEST(RayIntersectionTest, RayIntersectionObject) {
     Face face{{0, 1, 2}};
 
     Mesh mesh({v0, v1, v2}, {face});
-    Ray ray{{0, -1.1, -1}, {0, -1.1, 0}};
+    Ray ray = Ray::FromPoint({0, -1.1, -1}, {0, -1.1, 0});
 
     std::unique_ptr<Object3D> object = std::make_unique<Object3D>(mesh);
     RayHitInfo hit = RayIntersection::getObjectIntersection(ray, object.get());
@@ -179,7 +175,7 @@ TEST(RayIntersectionTest, RayIntersectionScene) {
     Face face{{0, 1, 2}};
 
     Mesh mesh({v0, v1, v2}, {face});
-    Ray ray{{0, -1.1, -1}, {0, -1.1, 0}};
+    Ray ray = Ray::FromPoint({0, -1.1, -1}, {0, -1.1, 0});
 
     std::unique_ptr<Object3D> object = std::make_unique<Object3D>(mesh);
     Scene scene;
@@ -194,9 +190,9 @@ TEST(RayIntersectionTest, RayIntersectionScene) {
 }
 
 TEST(RayIntersectionTest, RayIntersectionAABB) {
-    Ray ray({0, 0, 1}, {0, 0, -1});
-    Eigen::Vector3d min_bound(-0.5, -0.5, -0.5);
-    Eigen::Vector3d max_bound(0.5, 0.5, 0.5);
+    Ray ray = Ray::FromPoint({0, 0, 1}, {0, 0, -1});
+    lin::Vec3 min_bound(-0.5, -0.5, -0.5);
+    lin::Vec3 max_bound(0.5, 0.5, 0.5);
 
     double hit_distance = std::numeric_limits<double>::max();
     bool hit = RayIntersection::getAABBIntersection(ray, min_bound, max_bound, hit_distance);
@@ -205,9 +201,9 @@ TEST(RayIntersectionTest, RayIntersectionAABB) {
 }
 
 TEST(RayIntersectionTest, RayIntersectionAABBNoHit) {
-    Ray ray({0, 0, 1}, {0, 0, 2});
-    Eigen::Vector3d min_bound(-0.5, -0.5, -0.5);
-    Eigen::Vector3d max_bound(0.5, 0.5, 0.5);
+    Ray ray = Ray::FromPoint({0, 0, 1}, {0, 0, 2});
+    lin::Vec3 min_bound(-0.5, -0.5, -0.5);
+    lin::Vec3 max_bound(0.5, 0.5, 0.5);
 
     double hit_distance = std::numeric_limits<double>::max();
     bool hit = RayIntersection::getAABBIntersection(ray, min_bound, max_bound, hit_distance);
@@ -215,16 +211,16 @@ TEST(RayIntersectionTest, RayIntersectionAABBNoHit) {
 }
 
 TEST(RayIntersectionTest, RayIntersectionBVH) {
-    Ray ray({0, 0, 2}, {0, 0, 0});
-    Eigen::Vector3d min_bound(-1.0, -1.0, -1.0);
-    Eigen::Vector3d max_bound(1.0, 1.0, 1.0);
+    Ray ray = Ray::FromPoint({0, 0, 2}, {0, 0, 0});
+    lin::Vec3 min_bound(-1.0, -1.0, -1.0);
+    lin::Vec3 max_bound(1.0, 1.0, 1.0);
 
     std::shared_ptr<BVHNode> root = std::make_shared<BVHNode>(min_bound, max_bound);
 
-    root->getLeftChild() = std::make_shared<BVHNode>(Eigen::Vector3d(-1.0, -1.0, -1.0),
-                                                     Eigen::Vector3d(0.0, 0.0, 0.0), 0);
-    root->getRightChild() = std::make_shared<BVHNode>(Eigen::Vector3d(0.0, 0.0, 0.0),
-                                                      Eigen::Vector3d(1.0, 1.0, 1.0), 1);
+    root->getLeftChild() = std::make_shared<BVHNode>(lin::Vec3(-1.0, -1.0, -1.0),
+                                                     lin::Vec3(0.0, 0.0, 0.0), 0);
+    root->getRightChild() = std::make_shared<BVHNode>(lin::Vec3(0.0, 0.0, 0.0),
+                                                      lin::Vec3(1.0, 1.0, 1.0), 1);
     std::vector<RayIntersection::RayBVHHitInfo> hits;
 
     hits = RayIntersection::getBVHIntersection(ray, root.get());
@@ -234,16 +230,16 @@ TEST(RayIntersectionTest, RayIntersectionBVH) {
 }
 
 TEST(RayIntersectionTest, RayIntersectionBVHNoHit) {
-    Ray ray({0, 0, 2}, {0, 0, 3});
-    Eigen::Vector3d min_bound(-1.0, -1.0, -1.0);
-    Eigen::Vector3d max_bound(1.0, 1.0, 1.0);
+    Ray ray = Ray::FromPoint({0, 0, 2}, {0, 0, 3});
+    lin::Vec3 min_bound(-1.0, -1.0, -1.0);
+    lin::Vec3 max_bound(1.0, 1.0, 1.0);
 
     std::shared_ptr<BVHNode> root = std::make_shared<BVHNode>(min_bound, max_bound);
 
-    root->getLeftChild() = std::make_shared<BVHNode>(Eigen::Vector3d(-1.0, -1.0, -1.0),
-                                                     Eigen::Vector3d(0.0, 0.0, 0.0), 0);
-    root->getRightChild() = std::make_shared<BVHNode>(Eigen::Vector3d(2.0, 2.0, 2.0),
-                                                      Eigen::Vector3d(3.0, 3.0, 3.0), 1);
+    root->getLeftChild() = std::make_shared<BVHNode>(lin::Vec3(-1.0, -1.0, -1.0),
+                                                     lin::Vec3(0.0, 0.0, 0.0), 0);
+    root->getRightChild() = std::make_shared<BVHNode>(lin::Vec3(2.0, 2.0, 2.0),
+                                                      lin::Vec3(3.0, 3.0, 3.0), 1);
     std::vector<RayIntersection::RayBVHHitInfo> hits;
 
     hits = RayIntersection::getBVHIntersection(ray, root.get());
@@ -251,10 +247,10 @@ TEST(RayIntersectionTest, RayIntersectionBVHNoHit) {
 }
 
 TEST(RayIntersectionTest, RayIntersectionSceneWithBVHEarlyExit) {
-    Ray ray({0, 0, 2}, {0, 0, 0});
+    Ray ray = Ray::FromPoint({0, 0, 2}, {0, 0, 0});
     Mesh mesh1 = CubeMeshBuilder(1.0).build();
     std::unique_ptr<Object3D> object1 = std::make_unique<Object3D>(mesh1);
-    object1->setPosition(Eigen::Vector3d(0.0, 0.0, -2.0));
+    object1->setPosition(lin::Vec3(0.0, 0.0, -2.0));
 
     Mesh mesh2 = CubeMeshBuilder(1.0).build();
     std::unique_ptr<Object3D> object2 = std::make_unique<Object3D>(mesh2);
@@ -270,9 +266,9 @@ TEST(RayIntersectionTest, RayIntersectionSceneWithBVHEarlyExit) {
 }
 
 TEST(RayIntersectionTest, UpdateNormalWithTangentSpace) {
-    Eigen::Vector3d normal(0, 0, 1);
-    Eigen::Vector3d tangent(1, 0, 0);
-    Eigen::Vector3d bitangent(0, 1, 0);
+    lin::Vec3 normal(0, 0, 1);
+    lin::Vec3 tangent(1, 0, 0);
+    lin::Vec3 bitangent(0, 1, 0);
 
     RayHitInfo hit;
     hit.normal = normal;
@@ -286,5 +282,5 @@ TEST(RayIntersectionTest, UpdateNormalWithTangentSpace) {
 
     RayIntersection::updateNormalWithTangentSpace(hit);
 
-    EXPECT_TRUE(hit.normal.isApprox(Eigen::Vector3d(0.5, 1, 0).normalized(), EPSILON));
+    EXPECT_TRUE(hit.normal.isApprox(lin::Vec3(0.5, 1, 0).normalized(), EPSILON));
 }

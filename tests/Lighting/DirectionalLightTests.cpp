@@ -4,43 +4,43 @@
 
 TEST(DirectionalLightTest, DefaultConstructor) {
     DirectionalLight light;
-    EXPECT_EQ(light.getDirection(), Eigen::Vector3d(0.0, 0.0, -1.0));
+    EXPECT_EQ(light.getDirection(), lin::Vec3(0.0, 0.0, -1.0));
 }
 
 TEST(DirectionalLightTest, SetDirection) {
     DirectionalLight light;
-    Eigen::Vector3d direction(1.0, 0.0, 0.0);
+    lin::Vec3 direction(1.0, 0.0, 0.0);
     light.setDirection(direction);
     EXPECT_EQ(light.getDirection(), direction.normalized());
 }
 
 TEST(DirectionalLightTest, GetDirection) {
     DirectionalLight light;
-    Eigen::Vector3d direction(0.0, 1.0, 0.0);
+    lin::Vec3 direction(0.0, 1.0, 0.0);
     light.setDirection(direction);
     EXPECT_EQ(light.getDirection(), direction.normalized());
 }
 
 TEST(DirectionalLightTest, GetDirectionFromPointDefault) {
     DirectionalLight light;
-    Eigen::Vector3d point(1.0, 2.0, 3.0);
-    Eigen::Vector3d direction = light.getDirectionFromPoint(point);
-    EXPECT_EQ(direction, Eigen::Vector3d(0.0, 0.0, 1.0));
+    lin::Vec3 point(1.0, 2.0, 3.0);
+    lin::Vec3 direction = light.getDirectionFromPoint(point);
+    EXPECT_EQ(direction, lin::Vec3(0.0, 0.0, 1.0));
 }
 
 TEST(DirectionalLightTest, GetDirectionFromPoint) {
     DirectionalLight light;
-    Eigen::Vector3d point(1.0, 2.0, 3.0);
-    Eigen::Vector3d direction(2.0, 0.0, 0.0);
+    lin::Vec3 point(1.0, 2.0, 3.0);
+    lin::Vec3 direction(2.0, 0.0, 0.0);
     light.setDirection(direction);
-    Eigen::Vector3d result = light.getDirectionFromPoint(point);
+    lin::Vec3 result = light.getDirectionFromPoint(point);
     EXPECT_EQ(result, -direction.normalized());
 }
 
 TEST(DirectionalLightTest, GetLightFactor) {
     DirectionalLight light;
-    Eigen::Vector3d point(1.0, 2.0, 3.0);
-    Eigen::Vector3d normal(0.0, 0.0, 1.0);
+    lin::Vec3 point(1.0, 2.0, 3.0);
+    lin::Vec3 normal(0.0, 0.0, 1.0);
     light.setColor({0.2, 0.3, 0.4});
     light.setIntensity(2.0);
     ColorRGB factor = light.getLightFactor(point, normal);

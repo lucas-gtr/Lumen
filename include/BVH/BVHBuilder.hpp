@@ -5,11 +5,11 @@
 #ifndef BVH_BVHBUILDER_HPP
 #define BVH_BVHBUILDER_HPP
 
-#include <Eigen/Core>
 #include <memory>
 #include <vector>
 
 #include "BVH/BVHNode.hpp"
+#include "Core/Math/Vec3.hpp"
 
 /**
  * @namespace BVH
@@ -21,7 +21,7 @@ namespace BVH {
  * @param extent The extent vector representing the size in each axis (x, y, z).
  * @return The index of the largest axis (0 for x, 1 for y, 2 for z).
  */
-int getLargestAxis(const Eigen::Vector3d& extent);
+int getLargestAxis(const lin::Vec3& extent);
 
 /**
  * @brief Builds a BVH node (left and right child) from a list of objects.

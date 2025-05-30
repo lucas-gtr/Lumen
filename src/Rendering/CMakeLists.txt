@@ -1,7 +1,7 @@
 add_library(Rendering STATIC
     Renderer.cpp
-    SingleThreadedStrategy.cpp
-    MultiThreadedCPUStrategy.cpp
+    SingleThreaded.cpp
+    MultiThreadedCPU.cpp
     CameraRayEmitter.cpp
     RayIntersection.cpp
     RenderSettings.cpp
@@ -9,7 +9,6 @@ add_library(Rendering STATIC
 
 target_include_directories(Rendering PRIVATE
     ${CMAKE_SOURCE_DIR}/include
-    ${CMAKE_SOURCE_DIR}/external/eigen
 )
 
 target_link_libraries(Rendering PRIVATE Core Geometry SceneObjects Scene Surface)

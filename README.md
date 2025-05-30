@@ -52,7 +52,6 @@ It includes detailed class references and module overviews.
 
 - C++20 compatible compiler (e.g., GCC 10+, Clang 11+, MSVC 2019+)
 - CMake 3.10 or higher
-- Eigen library (included as a submodule)
 
 ### Building the Project
 

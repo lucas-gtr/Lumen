@@ -1,3 +1,5 @@
 .vscode/
 build*/
 RenderImages/
+tests/coverage_report/
+docs/*

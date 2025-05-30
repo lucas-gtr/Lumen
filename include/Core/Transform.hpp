@@ -5,9 +5,10 @@
 #ifndef CORE_TRANSFORM_HPP
 #define CORE_TRANSFORM_HPP
 
+#include "Core/Math/Mat3.hpp"
+#include "Core/Math/Mat4.hpp"
+#include "Core/Math/Vec3.hpp"
 #include "Core/MathConstants.hpp"
-
-#include <Eigen/Core>
 
 /**
  * @class Transform
@@ -19,18 +20,18 @@
  */
 class Transform {
 private:
-  Eigen::Matrix4d m_transformationMatrix = Eigen::Matrix4d::Identity();
-  Eigen::Matrix4d m_inverseMatrix        = Eigen::Matrix4d::Identity();
+  lin::Mat4 m_transformationMatrix = lin::Mat4::Identity();
+  lin::Mat4 m_inverseMatrix        = lin::Mat4::Identity();
 
-  Eigen::Matrix4d m_translationMatrix = Eigen::Matrix4d::Identity();
-  Eigen::Matrix3d m_rotationMatrix    = Eigen::Matrix3d::Identity();
-  Eigen::Matrix3d m_scaleMatrix       = Eigen::Matrix3d::Identity();
+  lin::Mat4 m_translationMatrix = lin::Mat4::Identity();
+  lin::Mat3 m_rotationMatrix    = lin::Mat3::Identity();
+  lin::Mat3 m_scaleMatrix       = lin::Mat3::Identity();
 
-  Eigen::Matrix3d m_normalMatrix = Eigen::Matrix3d::Identity();
+  lin::Mat3 m_normalMatrix = lin::Mat3::Identity();
 
-  Eigen::Vector3d m_position;
-  Eigen::Vector3d m_rotation;
-  Eigen::Vector3d m_scale;
+  lin::Vec3 m_position;
+  lin::Vec3 m_rotation;
+  lin::Vec3 m_scale;
 
   void updateTranslationMatrix();
   void updateScaleMatrix();
@@ -44,8 +45,7 @@ public:
    * @brief Default constructor that initializes position to (0, 0, 0), rotation to (0, 0, 0),
    * and scale to (1, 1, 1).
    */
-  Transform()
-      : m_position(Eigen::Vector3d::Zero()), m_rotation(Eigen::Vector3d::Zero()), m_scale(Eigen::Vector3d::Ones()) {}
+  Transform() : m_position(lin::Vec3(0.0)), m_rotation(lin::Vec3(0.0)), m_scale(lin::Vec3(1.0)) {}
 
   /**
    * @brief Constructs a Transform with specific position, rotation, and scale.
@@ -53,7 +53,7 @@ public:
    * @param rotation The rotation of the object in Euler angles (degrees).
    * @param scale The scale of the object.
    */
-  Transform(const Eigen::Vector3d& position, const Eigen::Vector3d& rotation, const Eigen::Vector3d& scale);
+  Transform(const lin::Vec3& position, const lin::Vec3& rotation, const lin::Vec3& scale);
 
   Transform(const Transform&)            = default; ///< Default copy constructor.
   Transform& operator=(const Transform&) = default; ///< Default copy assignment operator.
@@ -64,7 +64,7 @@ public:
    * @brief Sets the position of the object.
    * @param pos The new position.
    */
-  void setPosition(const Eigen::Vector3d& pos);
+  void setPosition(const lin::Vec3& pos);
 
   /**
    * @brief Sets the X component of the position.
@@ -88,7 +88,7 @@ public:
    * @brief Sets the rotation of the object.
    * @param rot The new rotation in Euler angles (degrees).
    */
-  void setRotation(const Eigen::Vector3d& rot);
+  void setRotation(const lin::Vec3& rot);
 
   /**
    * @brief Sets the X component of the rotation.
@@ -112,7 +112,7 @@ public:
    * @brief Sets the scale of the object.
    * @param scale The new scale.
    */
-  void setScale(const Eigen::Vector3d& scale);
+  void setScale(const lin::Vec3& scale);
 
   /**
    * @brief Sets the scale of the object.
@@ -142,55 +142,55 @@ public:
    * @brief Gets the current position of the object.
    * @return The position vector.
    */
-  Eigen::Vector3d getPosition() const { return m_position; }
+  lin::Vec3 getPosition() const { return m_position; }
 
   /**
    * @brief Gets the current rotation of the object in radians (converted from degrees).
    * @return The rotation vector in radians.
    */
-  Eigen::Vector3d getRotation() const { return m_rotation * DEG_TO_RAD; }
+  lin::Vec3 getRotation() const { return m_rotation * DEG_TO_RAD; }
 
   /**
    * @brief Gets the current scale of the object.
    * @return The scale vector.
    */
-  Eigen::Vector3d getScale() const { return m_scale; }
+  lin::Vec3 getScale() const { return m_scale; }
 
   /**
    * @brief Gets the current translation matrix.
    * @return The translation matrix.
    */
-  Eigen::Matrix4d getTranslationMatrix() const { return m_translationMatrix; }
+  lin::Mat4 getTranslationMatrix() const { return m_translationMatrix; }
 
   /**
    * @brief Gets the current rotation matrix.
    * @return The rotation matrix.
    */
-  Eigen::Matrix3d getRotationMatrix() const { return m_rotationMatrix; }
+  lin::Mat3 getRotationMatrix() const { return m_rotationMatrix; }
 
   /**
    * @brief Gets the current scale matrix.
    * @return The scale matrix.
    */
-  Eigen::Matrix3d getScaleMatrix() const { return m_scaleMatrix; }
+  lin::Mat3 getScaleMatrix() const { return m_scaleMatrix; }
 
   /**
    * @brief Gets the final transformation matrix.
    * @return The transformation matrix.
    */
-  Eigen::Matrix4d getTransformationMatrix() const { return m_transformationMatrix; }
+  lin::Mat4 getTransformationMatrix() const { return m_transformationMatrix; }
 
   /**
    * @brief Gets the inverse of the transformation matrix.
    * @return The inverse transformation matrix.
    */
-  Eigen::Matrix4d getInverseMatrix() const { return m_inverseMatrix; }
+  lin::Mat4 getInverseMatrix() const { return m_inverseMatrix; }
 
   /**
    * @brief Gets the normal matrix for transforming normals.
    * @return The normal matrix.
    */
-  Eigen::Matrix3d getNormalMatrix() const { return m_normalMatrix; }
+  lin::Mat3 getNormalMatrix() const { return m_normalMatrix; }
 
   ~Transform() = default; ///< Default destructor.
 };

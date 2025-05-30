@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['wrapclamptoborder_0',['wrapClampToBorder',['../namespaceTextureSampling.html#aceac824838e476116c3a5c78459c4014',1,'TextureSampling']]],
-  ['wrapclamptoedge_1',['wrapClampToEdge',['../namespaceTextureSampling.html#ad282663bfbc475357c5535673c79ba43',1,'TextureSampling']]],
-  ['wrapcoordinates_2',['wrapCoordinates',['../namespaceTextureSampling.html#a125fd7ce5164fd0403c885b873e0da6b',1,'TextureSampling']]],
-  ['wrapmirroredrepeat_3',['wrapMirroredRepeat',['../namespaceTextureSampling.html#ac5e5310f2785813e5f00e8c375e066d6',1,'TextureSampling']]],
-  ['wraprepeat_4',['wrapRepeat',['../namespaceTextureSampling.html#ac0f1f357f4eb0b753e5aa29e948dbd6a',1,'TextureSampling']]],
-  ['write_5fimage_5',['write_image',['../classOutputFormat.html#ad94101141c57ed05387fc1fe2204b2ac',1,'OutputFormat::write_image()'],['../classOutputFormatPng.html#af26f8b0e16f9c12c59eb4f87a95de74e',1,'OutputFormatPng::write_image()']]]
+  ['vec2_0',['vec2',['../structlin_1_1Vec2.html#aba754774be71963115856f60b4084324',1,'lin::Vec2::Vec2() noexcept'],['../structlin_1_1Vec2.html#a1da35d4f2cc2507299f0e16315afae5e',1,'lin::Vec2::Vec2(double value) noexcept'],['../structlin_1_1Vec2.html#aa91a0a3668b40916ba2eea2b45f8df30',1,'lin::Vec2::Vec2(double x, double y) noexcept']]],
+  ['vec3_1',['vec3',['../structlin_1_1Vec3.html#ad4280f6f235425693b7e9a433a5d8e84',1,'lin::Vec3::Vec3() noexcept'],['../structlin_1_1Vec3.html#a6be59dc67aa33b14a4dd98eb3c122d1e',1,'lin::Vec3::Vec3(double value) noexcept'],['../structlin_1_1Vec3.html#aa980e122095114834573d381df9649c5',1,'lin::Vec3::Vec3(double x, double y, double z) noexcept']]],
+  ['vec4_2',['vec4',['../structlin_1_1Vec4.html#a36c8f47f0b32335b2e778624b02da978',1,'lin::Vec4::Vec4() noexcept'],['../structlin_1_1Vec4.html#a86390c303119ff3b25af04eacdb2525f',1,'lin::Vec4::Vec4(double value) noexcept'],['../structlin_1_1Vec4.html#aeb13720514bb0594ea0f3568c7cded33',1,'lin::Vec4::Vec4(double x, double y, double z, double w) noexcept']]]
 ];

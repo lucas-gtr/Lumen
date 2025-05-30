@@ -9,6 +9,12 @@ target_sources(Tests PRIVATE
     Core/RandomTests.cpp
     Core/RayTests.cpp
     Core/TransformTests.cpp
+    Core/Math/Vec2Tests.cpp
+    Core/Math/Vec3Tests.cpp
+    Core/Math/Vec4Tests.cpp
+    Core/Math/Mat3Tests.cpp
+    Core/Math/Mat4Tests.cpp
+    Core/Math/linTests.cpp
     Export/OutputFormatPngTests.cpp
     Export/RenderExporterTests.cpp
     Geometry/CubeMeshBuilderTests.cpp
@@ -58,6 +64,5 @@ target_include_directories(Tests PRIVATE
     ${CMAKE_SOURCE_DIR}/include
     ${CMAKE_SOURCE_DIR}/external/googletest/include
     ${CMAKE_SOURCE_DIR}/external/googletest/googlemock/include
-    ${CMAKE_SOURCE_DIR}/external/eigen
     ${CMAKE_SOURCE_DIR}/external/stb
 )

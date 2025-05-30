@@ -1,18 +1,18 @@
-#include <Eigen/Core>
 #include <algorithm>
 
 #include "Core/CommonTypes.hpp"
+#include "Core/Math/Vec3.hpp"
+#include "Core/Math/lin.hpp"
 #include "Lighting/PointLight.hpp"
 
-Eigen::Vector3d PointLight::getDirectionFromPoint(const Eigen::Vector3d& point) const {
+lin::Vec3 PointLight::getDirectionFromPoint(const lin::Vec3& point) const {
   return (getPosition() - point).normalized();
 }
 
-// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
-ColorRGB PointLight::getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const {
-  const double          distance    = (point - getPosition()).norm();
-  const double          attenuation = getIntensity() / (distance * distance);
-  const Eigen::Vector3d light_dir   = (getPosition() - point).normalized();
-  const double          dot_product = normal.dot(light_dir);
+ColorRGB PointLight::getLightFactor(const lin::Vec3& point, const lin::Vec3& normal) const {
+  const double    distance    = (point - getPosition()).length();
+  const double    attenuation = getIntensity() / (distance * distance);
+  const lin::Vec3 light_dir   = (getPosition() - point).normalized();
+  const double    dot_product = dot(normal, light_dir);
   return attenuation * getColor() * std::max(0.0, dot_product);
 }

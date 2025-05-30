@@ -1,8 +1,16 @@
 <map id="/home/lucasgtr/lumen/include/Surface/TextureWrapping.hpp" name="/home/lucasgtr/lumen/include/Surface/TextureWrapping.hpp">
 <area shape="rect" id="Node000001" title="Header file for texture wrapping modes and functions." alt="" coords="5,5,273,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="106,167,173,192"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,47,106,80,102,99,103,118,111,137,123,154,118,157,107,140,98,119,96,99,101,78,121,44"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="53,167,119,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,47,103,94,95,124,91,153,85,152,90,123,98,92,124,44"/>
 <area shape="rect" id="Node000003" href="$CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="113,93,293,119"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="157,44,187,81,183,84,153,47"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="195,121,161,158,157,155,191,117"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="186,121,118,162,116,157,183,116"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="149,167,247,192"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="205,119,203,153,197,153,200,119"/>
+<area shape="rect" id="Node000005" href="$Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="271,167,397,192"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="226,116,302,158,300,162,223,121"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="244,240,315,265"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="327,194,299,231,294,228,323,191"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="339,240,436,265"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="345,191,373,228,368,231,341,194"/>
 </map>

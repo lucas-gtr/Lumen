@@ -6,11 +6,11 @@ class MockLight : public Light {
   public:
       explicit MockLight(LightType type) : Light(type) {}
   
-      Eigen::Vector3d getDirectionFromPoint(const Eigen::Vector3d& point) const override {
-          return Eigen::Vector3d(1.0, 0.0, 0.0);
+      lin::Vec3 getDirectionFromPoint(const lin::Vec3& point) const override {
+          return lin::Vec3(1.0, 0.0, 0.0);
       }
   
-      ColorRGB getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const override {
+      ColorRGB getLightFactor(const lin::Vec3& point, const lin::Vec3& normal) const override {
           return ColorRGB(1.0, 0.9, 0.8);
       }
   };
@@ -47,15 +47,15 @@ class MockLight : public Light {
   
   TEST(LightTest, GetDirectionFromPointReturnsExpectedVector) {
       MockLight light(LightType::Point);
-      Eigen::Vector3d point(0.0, 0.0, 0.0);
-      Eigen::Vector3d expected_direction(1.0, 0.0, 0.0);
+      lin::Vec3 point(0.0, 0.0, 0.0);
+      lin::Vec3 expected_direction(1.0, 0.0, 0.0);
       EXPECT_EQ(light.getDirectionFromPoint(point), expected_direction);
   }
   
   TEST(LightTest, GetLightFactorReturnsExpectedVector) {
       MockLight light(LightType::Point);
-      Eigen::Vector3d point(0.0, 0.0, 0.0);
-      Eigen::Vector3d normal(0.0, 1.0, 0.0);
+      lin::Vec3 point(0.0, 0.0, 0.0);
+      lin::Vec3 normal(0.0, 1.0, 0.0);
       ColorRGB expected_light_factor(1.0, 0.9, 0.8);
       EXPECT_EQ(light.getLightFactor(point, normal), expected_light_factor);
   }

@@ -8,7 +8,6 @@ add_library(Surface STATIC
 
 target_include_directories(Surface PRIVATE
     ${CMAKE_SOURCE_DIR}/include
-    ${CMAKE_SOURCE_DIR}/external/eigen
     ${CMAKE_SOURCE_DIR}/external/stb
 )
 

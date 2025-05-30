@@ -1,5 +1,4 @@
 #include <gtest/gtest.h>
-#include <Eigen/Dense>
 
 #include "Core/ColorUtils.hpp"
 #include "Surface/Texture.hpp"

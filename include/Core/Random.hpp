@@ -5,7 +5,7 @@
 #ifndef CORE_RANDOM_HPP
 #define CORE_RANDOM_HPP
 
-#include <Eigen/Core>
+#include "Core/Math/Vec2.hpp"
 
 /**
  * @brief Generates a random point inside the unit disk.
@@ -17,9 +17,9 @@
  * The point is generated using a random angle and radius within the unit disk,
  * ensuring uniform distribution within the disk.
  *
- * @return A 2D vector (Eigen::Vector2d) representing the random point in the unit disk.
+ * @return A 2D vector representing the random point in the unit disk.
  */
-Eigen::Vector2d randomPointInUnitDisk();
+lin::Vec2 randomPointInUnitDisk();
 
 /**
  * @brief Generates a random number uniformly distributed in the range [0, 1).

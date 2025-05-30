@@ -1,15 +1,15 @@
-#include "Core/Random.hpp"
-
-#include <Eigen/Core>
 #include <random>
 
-Eigen::Vector2d randomPointInUnitDisk() {
+#include "Core/Math/Vec2.hpp"
+#include "Core/Random.hpp"
+
+lin::Vec2 randomPointInUnitDisk() {
   static std::mt19937                           gen(std::random_device{}());
   static std::uniform_real_distribution<double> dist(-1.0, 1.0);
 
-  Eigen::Vector2d p = Eigen::Vector2d(dist(gen), dist(gen));
-  while(p.squaredNorm() > 1.0) {
-    p = Eigen::Vector2d(dist(gen), dist(gen));
+  lin::Vec2 p = {dist(gen), dist(gen)};
+  while(p.squaredLength() > 1.0) {
+    p = {dist(gen), dist(gen)};
   }
   return p;
 }

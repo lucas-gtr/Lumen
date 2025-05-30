@@ -6,21 +6,21 @@ TEST(PlaneMeshBuilderTest, BuildVertices) {
     PlaneMeshBuilder builder(10.0, 20.0);
     Mesh mesh = builder.build();
     
-    EXPECT_EQ(mesh.getVertex(0).position.x(), -5.0);
-    EXPECT_EQ(mesh.getVertex(0).position.y(), 0.0);
-    EXPECT_EQ(mesh.getVertex(0).position.z(), -10.0);
+    EXPECT_EQ(mesh.getVertex(0).position.x, -5.0);
+    EXPECT_EQ(mesh.getVertex(0).position.y, 0.0);
+    EXPECT_EQ(mesh.getVertex(0).position.z, -10.0);
 
-    EXPECT_EQ(mesh.getVertex(1).position.x(), 5.0);
-    EXPECT_EQ(mesh.getVertex(1).position.y(), 0.0);
-    EXPECT_EQ(mesh.getVertex(1).position.z(), -10.0);
+    EXPECT_EQ(mesh.getVertex(1).position.x, 5.0);
+    EXPECT_EQ(mesh.getVertex(1).position.y, 0.0);
+    EXPECT_EQ(mesh.getVertex(1).position.z, -10.0);
 
-    EXPECT_EQ(mesh.getVertex(2).position.x(), 5.0);
-    EXPECT_EQ(mesh.getVertex(2).position.y(), 0.0);
-    EXPECT_EQ(mesh.getVertex(2).position.z(), 10.0);
+    EXPECT_EQ(mesh.getVertex(2).position.x, 5.0);
+    EXPECT_EQ(mesh.getVertex(2).position.y, 0.0);
+    EXPECT_EQ(mesh.getVertex(2).position.z, 10.0);
 
-    EXPECT_EQ(mesh.getVertex(3).position.x(), -5.0);
-    EXPECT_EQ(mesh.getVertex(3).position.y(), 0.0);
-    EXPECT_EQ(mesh.getVertex(3).position.z(), 10.0);
+    EXPECT_EQ(mesh.getVertex(3).position.x, -5.0);
+    EXPECT_EQ(mesh.getVertex(3).position.y, 0.0);
+    EXPECT_EQ(mesh.getVertex(3).position.z, 10.0);
 }
 
 TEST(PlaneMeshBuilderTest, BuildFaceIndices) {
@@ -43,9 +43,9 @@ TEST(PlaneMeshBuilderTest, BuildVertexNormals) {
     Mesh mesh = builder.build();
 
     for (int i = 0; i < 4; ++i) {
-        EXPECT_DOUBLE_EQ(mesh.getVertex(i).normal.x(), 0.0);
-        EXPECT_DOUBLE_EQ(mesh.getVertex(i).normal.y(), 1.0);
-        EXPECT_DOUBLE_EQ(mesh.getVertex(i).normal.z(), 0.0);
+        EXPECT_DOUBLE_EQ(mesh.getVertex(i).normal.x, 0.0);
+        EXPECT_DOUBLE_EQ(mesh.getVertex(i).normal.y, 1.0);
+        EXPECT_DOUBLE_EQ(mesh.getVertex(i).normal.z, 0.0);
     }
 }
 

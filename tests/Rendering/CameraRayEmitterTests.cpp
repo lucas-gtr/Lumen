@@ -1,6 +1,5 @@
 #include "Rendering/CameraRayEmitter.hpp"
 
-#include <Eigen/Dense>
 #include <gtest/gtest.h>
 
 TEST(CameraRayEmitterTest, InitializeViewport) {
@@ -9,16 +8,16 @@ TEST(CameraRayEmitterTest, InitializeViewport) {
   parameters.imageAspectRatio = 1.5;
   parameters.focusDistance = 1.0;
   parameters.focalLength = 0.05;
-  parameters.cameraPosition = Eigen::Vector3d(0.0, 0.0, 0.0);
-  parameters.cameraRotationMatrix = Eigen::Matrix3d::Identity();
+  parameters.cameraPosition = lin::Vec3(0.0, 0.0, 0.0);
+  parameters.cameraRotationMatrix = lin::Mat3::Identity();
   parameters.lensRadius = 0;
   
   CameraRayEmitter emitter;
   emitter.initializeViewport(parameters);
   Ray ray = emitter.generateRay(0.5, 0.5);
   
-  EXPECT_TRUE(ray.origin.isApprox(Eigen::Vector3d(0.0, 0.0, 0.0), 1e-6));
-  EXPECT_TRUE(ray.direction.isApprox(Eigen::Vector3d(0.0, 0.0, -1.0), 1e-6));
+  EXPECT_TRUE(ray.origin.isApprox(lin::Vec3(0.0, 0.0, 0.0), 1e-6));
+  EXPECT_TRUE(ray.direction.isApprox(lin::Vec3(0.0, 0.0, -1.0), 1e-6));
 }
 
 TEST(CameraRayEmitterTest, InitializeViewportRotation) {
@@ -27,8 +26,11 @@ TEST(CameraRayEmitterTest, InitializeViewportRotation) {
   parameters.imageAspectRatio = 1.5;
   parameters.focusDistance = 1.0;
   parameters.focalLength = 0.05;
-  parameters.cameraPosition = Eigen::Vector3d(0.0, 0.0, 0.0);
-  parameters.cameraRotationMatrix = Eigen::AngleAxisd(M_PI / 2, Eigen::Vector3d::UnitY()).toRotationMatrix();
+  parameters.cameraPosition = lin::Vec3(0.0, 0.0, 0.0);
+  parameters.cameraRotationMatrix = lin::Mat3({
+    {  0.0,  0.0,  1.0 }, 
+    {  0.0,  1.0,  0.0 }, 
+    { -1.0,  0.0,  0.0 }});
   parameters.lensRadius = 0;
   
   CameraRayEmitter emitter;
@@ -36,8 +38,8 @@ TEST(CameraRayEmitterTest, InitializeViewportRotation) {
 
   Ray ray = emitter.generateRay(0.5, 0.5);
 
-  EXPECT_TRUE(ray.origin.isApprox(Eigen::Vector3d(0.0, 0.0, 0.0), 1e-6));
-  EXPECT_TRUE(ray.direction.isApprox(Eigen::Vector3d(-1.0, 0.0, 0.0), 1e-6));
+  EXPECT_TRUE(ray.origin.isApprox(lin::Vec3(0.0, 0.0, 0.0), 1e-6));
+  EXPECT_TRUE(ray.direction.isApprox(lin::Vec3(-1.0, 0.0, 0.0), 1e-6));
 }
 
 TEST(CameraRayEmitterTest, RayOriginWithLensRadius) {
@@ -46,8 +48,8 @@ TEST(CameraRayEmitterTest, RayOriginWithLensRadius) {
   parameters.imageAspectRatio = 1.5;
   parameters.focusDistance = 1.0;
   parameters.focalLength = 0.05;
-  parameters.cameraPosition = Eigen::Vector3d(0.0, 0.0, 0.0);
-  parameters.cameraRotationMatrix = Eigen::Matrix3d::Identity();
+  parameters.cameraPosition = lin::Vec3(0.0, 0.0, 0.0);
+  parameters.cameraRotationMatrix = lin::Mat3::Identity();
   parameters.lensRadius = 0.1;
   
   CameraRayEmitter emitter;
@@ -63,8 +65,8 @@ TEST(CameraRayEmitterTest, RayOriginWithoutLensRadius) {
   parameters.imageAspectRatio = 1.5;
   parameters.focusDistance = 1.0;
   parameters.focalLength = 0.05;
-  parameters.cameraPosition = Eigen::Vector3d(0.0, 0.0, 0.0);
-  parameters.cameraRotationMatrix = Eigen::Matrix3d::Identity();
+  parameters.cameraPosition = lin::Vec3(0.0, 0.0, 0.0);
+  parameters.cameraRotationMatrix = lin::Mat3::Identity();
   parameters.lensRadius = 0.0;
   
   CameraRayEmitter emitter;
@@ -80,8 +82,8 @@ TEST(CameraRayEmitterTest, GenerateRay) {
   parameters.imageAspectRatio = 1.5;
   parameters.focusDistance = 1.0;
   parameters.focalLength = 0.05;
-  parameters.cameraPosition = Eigen::Vector3d(0.0, 0.0, 0.0);
-  parameters.cameraRotationMatrix = Eigen::Matrix3d::Identity();
+  parameters.cameraPosition = lin::Vec3(0.0, 0.0, 0.0);
+  parameters.cameraRotationMatrix = lin::Mat3::Identity();
   parameters.lensRadius = 0.0;
 
   CameraRayEmitter emitter;
@@ -91,6 +93,6 @@ TEST(CameraRayEmitterTest, GenerateRay) {
   Ray ray = emitter.generateRay(u, v);
 
   EXPECT_EQ(ray.origin, parameters.cameraPosition);
-  EXPECT_TRUE(ray.direction.isApprox(Eigen::Vector3d(0.0, 0.0, -1.0), 1e-6));
+  EXPECT_TRUE(ray.direction.isApprox(lin::Vec3(0.0, 0.0, -1.0), 1e-6));
 }
 

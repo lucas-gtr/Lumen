@@ -33,13 +33,13 @@ TEST(SphereMeshBuilderTest, TestVertexPositionAndNormal) {
     const auto& vertices = mesh.getVertices();
     const Vertex& vertex = vertices[0];
 
-    ASSERT_NEAR(vertex.position.x(), 0.0, 1e-6);
-    ASSERT_NEAR(vertex.position.y(), 1.0, 1e-6);
-    ASSERT_NEAR(vertex.position.z(), 0.0, 1e-6);
+    ASSERT_NEAR(vertex.position.x, 0.0, 1e-6);
+    ASSERT_NEAR(vertex.position.y, 1.0, 1e-6);
+    ASSERT_NEAR(vertex.position.z, 0.0, 1e-6);
 
-    ASSERT_NEAR(vertex.normal.x(), 0.0, 1e-6);
-    ASSERT_NEAR(vertex.normal.y(), 1.0, 1e-6);
-    ASSERT_NEAR(vertex.normal.z(), 0.0, 1e-6);
+    ASSERT_NEAR(vertex.normal.x, 0.0, 1e-6);
+    ASSERT_NEAR(vertex.normal.y, 1.0, 1e-6);
+    ASSERT_NEAR(vertex.normal.z, 0.0, 1e-6);
 }
 
 TEST(SphereMeshBuilderTest, TestUVCoord) {

@@ -4,6 +4,14 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,47,63,84,59,81,89,44"/>
 <area shape="rect" id="Node000003" href="$CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="99,93,245,119"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,44,156,81,152,84,120,47"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="139,167,205,192"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="175,119,175,153,169,153,169,119"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="32,167,99,192"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="156,121,96,161,93,157,153,116"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="123,167,221,192"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="175,119,175,153,169,153,169,119"/>
+<area shape="rect" id="Node000006" href="$Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="245,167,371,192"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="195,116,275,158,273,163,193,121"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="218,240,289,265"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="301,194,273,231,268,228,297,191"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="313,240,410,265"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="319,191,347,228,342,231,315,194"/>
 </map>

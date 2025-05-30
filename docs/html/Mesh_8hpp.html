@@ -88,34 +88,50 @@ $(function() {
 
 <p>Header file for the <a class="el" href="classMesh.html" title="Class representing a 3D mesh, containing vertices and faces.">Mesh</a> class, the <a class="el" href="structVertex.html" title="Structure representing a vertex in a 3D mesh.">Vertex</a> and <a class="el" href="structFace.html" title="Structure representing a face in a 3D mesh, defined by three vertices.">Face</a> structures.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;Eigen/Core&gt;</code><br />
-<code>#include &lt;array&gt;</code><br />
+<div class="textblock"><code>#include &lt;array&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="BVHNode_8hpp_source.html">BVH/BVHNode.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="CommonTypes_8hpp_source.html">Core/CommonTypes.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Vec3_8hpp_source.html">Core/Math/Vec3.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Mesh.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Mesh_8hpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Geometry_2Mesh_8hpp" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2include_2Geometry_2Mesh_8hpp" id="a_2home_2lucasgtr_2lumen_2include_2Geometry_2Mesh_8hpp">
-<area shape="rect" title="Header file for the Mesh class, the Vertex and Face structures." alt="" coords="134,5,344,45"/>
-<area shape="rect" title=" " alt="" coords="54,167,146,192"/>
-<area shape="poly" title=" " alt="" coords="135,47,60,68,31,81,13,95,9,104,8,112,18,129,37,145,61,158,58,163,34,149,14,133,3,113,4,102,9,92,28,76,58,63,133,42"/>
-<area shape="rect" title=" " alt="" coords="23,93,79,119"/>
-<area shape="poly" title=" " alt="" coords="195,48,93,90,90,85,193,43"/>
-<area shape="rect" title=" " alt="" coords="211,167,288,192"/>
-<area shape="poly" title=" " alt="" coords="291,43,323,63,348,92,352,104,352,115,340,134,320,150,296,163,294,159,317,146,336,131,347,113,347,104,343,95,320,67,289,48"/>
-<area shape="rect" title=" " alt="" coords="272,93,334,119"/>
-<area shape="poly" title=" " alt="" coords="257,44,287,81,283,84,253,47"/>
-<area shape="rect" href="BVHNode_8hpp.html" title="Header file for the BVHNode class." alt="" coords="103,93,247,119"/>
-<area shape="poly" title=" " alt="" coords="226,47,195,84,191,81,222,44"/>
-<area shape="rect" href="CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="410,93,590,119"/>
-<area shape="poly" title=" " alt="" coords="302,43,450,87,448,92,301,48"/>
-<area shape="poly" title=" " alt="" coords="165,121,124,159,121,155,161,117"/>
-<area shape="poly" title=" " alt="" coords="189,117,230,155,226,159,185,121"/>
-<area shape="rect" title=" " alt="" coords="467,167,534,192"/>
-<area shape="poly" title=" " alt="" coords="503,119,503,153,498,153,498,119"/>
+<area shape="rect" title="Header file for the Mesh class, the Vertex and Face structures." alt="" coords="177,5,387,45"/>
+<area shape="rect" title=" " alt="" coords="25,93,81,119"/>
+<area shape="poly" title=" " alt="" coords="228,48,94,93,93,88,226,43"/>
+<area shape="rect" title=" " alt="" coords="79,167,157,192"/>
+<area shape="poly" title=" " alt="" coords="217,48,179,67,145,95,130,123,123,153,118,152,125,121,141,92,176,63,215,43"/>
+<area shape="rect" title=" " alt="" coords="425,93,488,119"/>
+<area shape="poly" title=" " alt="" coords="325,43,420,85,417,90,323,48"/>
+<area shape="rect" href="BVHNode_8hpp.html" title="Header file for the BVHNode class." alt="" coords="155,93,299,119"/>
+<area shape="poly" title=" " alt="" coords="271,47,245,84,241,80,267,44"/>
+<area shape="rect" href="Vec3_8hpp.html" title=" " alt="" coords="181,167,333,192"/>
+<area shape="poly" title=" " alt="" coords="298,44,314,79,317,99,314,120,301,141,285,159,281,156,297,138,309,118,312,99,309,81,293,47"/>
+<area shape="rect" href="CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="388,167,568,192"/>
+<area shape="poly" title=" " alt="" coords="308,43,454,156,451,160,305,48"/>
+<area shape="poly" title=" " alt="" coords="211,121,149,161,146,157,208,116"/>
+<area shape="poly" title=" " alt="" coords="235,118,249,153,244,155,230,120"/>
+<area shape="rect" title=" " alt="" coords="5,240,68,265"/>
+<area shape="poly" title=" " alt="" coords="222,195,82,240,80,234,221,189"/>
+<area shape="rect" title=" " alt="" coords="309,240,407,265"/>
+<area shape="poly" title=" " alt="" coords="274,190,332,230,329,234,271,194"/>
+<area shape="rect" title=" " alt="" coords="93,240,173,265"/>
+<area shape="poly" title=" " alt="" coords="238,194,166,235,163,231,235,190"/>
+<area shape="rect" title=" " alt="" coords="197,240,284,265"/>
+<area shape="poly" title=" " alt="" coords="257,193,249,227,244,226,251,192"/>
+<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="431,240,557,265"/>
+<area shape="poly" title=" " alt="" coords="296,189,443,233,442,239,294,195"/>
+<area shape="rect" title=" " alt="" coords="404,313,475,339"/>
+<area shape="poly" title=" " alt="" coords="487,267,459,304,454,301,483,264"/>
+<area shape="rect" title=" " alt="" coords="499,313,596,339"/>
+<area shape="poly" title=" " alt="" coords="505,264,533,301,528,304,501,267"/>
+<area shape="poly" title=" " alt="" coords="460,194,391,235,388,230,457,190"/>
+<area shape="poly" title=" " alt="" coords="483,192,491,226,486,227,478,193"/>
+<area shape="rect" title=" " alt="" coords="581,240,647,265"/>
+<area shape="poly" title=" " alt="" coords="501,190,581,231,579,236,499,194"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -159,38 +175,24 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="poly" title=" " alt="" coords="506,264,507,299,502,299,500,265"/>
 <area shape="poly" title=" " alt="" coords="813,263,823,298,817,299,807,265"/>
 <area shape="poly" title=" " alt="" coords="1092,155,1094,203,1089,203,1087,155"/>
-<<<<<<< HEAD
 <area shape="rect" href="Renderer_8hpp.html" title="Header file for the Renderer class." alt="" coords="1034,387,1267,427"/>
 <area shape="poly" title=" " alt="" coords="1153,353,1153,386,1148,386,1148,353"/>
 <area shape="rect" href="Renderer_8cpp.html" title=" " alt="" coords="1275,482,1479,522"/>
 <area shape="poly" title=" " alt="" coords="1210,342,1246,361,1280,385,1330,434,1367,480,1362,483,1326,437,1277,389,1243,366,1208,347"/>
 <area shape="poly" title=" " alt="" coords="1272,338,1535,384,1534,389,1271,344"/>
-<area shape="rect" href="MultiThreadedCPUStrategy_8cpp.html" title=" " alt="" coords="793,475,1007,529"/>
-<area shape="poly" title=" " alt="" coords="1088,434,972,477,970,472,1086,429"/>
+<area shape="rect" href="MultiThreadedCPU_8cpp.html" title=" " alt="" coords="767,475,980,529"/>
+<area shape="poly" title=" " alt="" coords="1082,434,952,477,951,472,1081,429"/>
 <area shape="poly" title=" " alt="" coords="1210,429,1333,479,1331,484,1208,434"/>
-<area shape="rect" href="SingleThreadedStrategy_8cpp.html" title=" " alt="" coords="1031,475,1251,529"/>
-<area shape="poly" title=" " alt="" coords="1150,440,1147,475,1141,474,1145,440"/>
-=======
-<area shape="rect" href="Renderer_8hpp.html" title="Header file for the Renderer class." alt="" coords="1106,387,1339,427"/>
-<area shape="poly" title=" " alt="" coords="1177,347,1209,385,1205,388,1173,351"/>
-<area shape="rect" href="Renderer_8cpp.html" title=" " alt="" coords="1121,475,1325,515"/>
-<area shape="poly" title=" " alt="" coords="1120,350,1106,368,1095,387,1090,407,1096,425,1107,440,1122,453,1156,472,1154,477,1119,457,1103,444,1091,428,1085,407,1090,385,1101,365,1116,347"/>
-<area shape="poly" title=" " alt="" coords="1272,338,1535,384,1534,389,1271,344"/>
-<area shape="poly" title=" " alt="" coords="1225,441,1225,474,1220,474,1220,441"/>
->>>>>>> main
+<area shape="rect" href="SingleThreaded_8cpp.html" title=" " alt="" coords="1005,482,1251,522"/>
+<area shape="poly" title=" " alt="" coords="1145,441,1135,483,1130,481,1140,439"/>
 <area shape="poly" title=" " alt="" coords="1373,158,1319,198,1291,226,1262,253,1187,301,1184,296,1258,249,1287,222,1316,194,1370,154"/>
 <area shape="poly" title=" " alt="" coords="1477,154,1530,194,1626,297,1641,344,1645,386,1640,387,1636,346,1622,300,1526,198,1474,158"/>
 <area shape="rect" href="Scene_8hpp.html" title="Header file for the Scene class." alt="" coords="1329,203,1516,243"/>
 <area shape="poly" title=" " alt="" coords="1425,162,1425,203,1420,203,1420,162"/>
 <area shape="poly" title=" " alt="" coords="1510,150,1653,201,1651,206,1508,155"/>
 <area shape="poly" title=" " alt="" coords="1355,250,1206,301,1205,296,1354,245"/>
-<<<<<<< HEAD
 <area shape="poly" title=" " alt="" coords="1399,256,1356,298,1303,341,1254,368,1206,389,1203,384,1252,363,1300,336,1353,294,1395,252"/>
 <area shape="poly" title=" " alt="" coords="1416,257,1407,299,1391,402,1382,482,1376,481,1385,401,1401,298,1411,256"/>
-=======
-<area shape="poly" title=" " alt="" coords="1395,255,1303,341,1247,388,1244,384,1300,337,1392,251"/>
-<area shape="poly" title=" " alt="" coords="1417,258,1388,352,1371,397,1353,428,1319,457,1281,477,1279,472,1316,452,1349,425,1366,395,1383,350,1412,256"/>
->>>>>>> main
 <area shape="poly" title=" " alt="" coords="1508,246,1553,267,1594,297,1611,318,1624,342,1641,385,1636,387,1620,344,1607,321,1590,301,1551,271,1506,250"/>
 <area shape="rect" href="Scene_8cpp.html" title=" " alt="" coords="1415,299,1579,339"/>
 <area shape="poly" title=" " alt="" coords="1448,252,1484,297,1480,300,1444,256"/>

@@ -92,11 +92,10 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef SCENE_SKYBOX_HPP</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define SCENE_SKYBOX_HPP</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<<<<<<< HEAD
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;Eigen/Core&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="CommonTypes_8hpp.html">Core/CommonTypes.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="CommonTypes_8hpp.html">Core/CommonTypes.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="Vec3_8hpp.html">Core/Math/Vec3.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="Texture_8hpp.html">Surface/Texture.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
@@ -114,61 +113,31 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classSkybox.html#a4c97ed38e1f494618e8aa458b9a83d24">setTexture</a>(<span class="keyword">const</span> std::shared_ptr&lt;Texture&gt;&amp; texture);</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">static</span> <a class="code hl_struct" href="structTextureUV.html">TextureUV</a> <a class="code hl_function" href="classSkybox.html#a1310aca84db824be919b375732f857e2">getUVCoordinates</a>(<span class="keyword">const</span> Eigen::Vector3d&amp; direction);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">static</span> <a class="code hl_struct" href="structTextureUV.html">TextureUV</a> <a class="code hl_function" href="classSkybox.html#a1a44d4c3d1b8b2a674fcaa35be894f72">getUVCoordinates</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structlin_1_1Vec3.html">lin::Vec3</a>&amp; direction);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_struct" href="structColorRGBA.html">ColorRGBA</a> <a class="code hl_function" href="classSkybox.html#a91efb7e622e676923b4fae9973aa1d46">getColor</a>(<span class="keyword">const</span> Eigen::Vector3d&amp; direction) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_struct" href="structColorRGBA.html">ColorRGBA</a> <a class="code hl_function" href="classSkybox.html#ace0f1a0a868cf3020b7e2c704b617823">getColor</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structlin_1_1Vec3.html">lin::Vec3</a>&amp; direction) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classSkybox.html#a66af095c7342933d984b6824c11906ac">   53</a></span>  <a class="code hl_function" href="classSkybox.html#a66af095c7342933d984b6824c11906ac">~Skybox</a>() = <span class="keywordflow">default</span>; </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
-=======
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="CommonTypes_8hpp.html">Core/CommonTypes.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="Texture_8hpp.html">Surface/Texture.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classSkybox.html">   20</a></span><span class="keyword">class </span><a class="code hl_class" href="classSkybox.html">Skybox</a> {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  std::shared_ptr&lt;Texture&gt; m_texture;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <a class="code hl_function" href="classSkybox.html#a77a92db4492ed94ed4bd101b05ffb1f4">Skybox</a>(); </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classSkybox.html#af4e3de2ccd99a53b52bf3240dfdcfec5">   27</a></span>  <a class="code hl_function" href="classSkybox.html#af4e3de2ccd99a53b52bf3240dfdcfec5">Skybox</a>(<span class="keyword">const</span> <a class="code hl_class" href="classSkybox.html">Skybox</a>&amp;)            = <span class="keywordflow">default</span>; </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classSkybox.html#abdef6c3678e2fde7076dc8c523263ba1">   28</a></span>  <a class="code hl_function" href="classSkybox.html#abdef6c3678e2fde7076dc8c523263ba1">Skybox</a>(<a class="code hl_class" href="classSkybox.html">Skybox</a>&amp;&amp;)                 = <span class="keywordflow">default</span>; </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classSkybox.html#a07c87193e9ba695891b2f49cfd4378ad">   29</a></span>  <a class="code hl_class" href="classSkybox.html">Skybox</a>&amp; <a class="code hl_function" href="classSkybox.html#a07c87193e9ba695891b2f49cfd4378ad">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classSkybox.html">Skybox</a>&amp;) = <span class="keywordflow">default</span>; </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classSkybox.html#a542f0688cbdcb742fb1c6d9c0a1fe96b">   30</a></span>  <a class="code hl_class" href="classSkybox.html">Skybox</a>&amp; <a class="code hl_function" href="classSkybox.html#a542f0688cbdcb742fb1c6d9c0a1fe96b">operator=</a>(<a class="code hl_class" href="classSkybox.html">Skybox</a>&amp;&amp;)      = <span class="keywordflow">default</span>; </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classSkybox.html#a4c97ed38e1f494618e8aa458b9a83d24">setTexture</a>(<span class="keyword">const</span> std::shared_ptr&lt;Texture&gt;&amp; texture);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">static</span> <a class="code hl_struct" href="structTextureUV.html">TextureUV</a> <a class="code hl_function" href="classSkybox.html#a1310aca84db824be919b375732f857e2">getUVCoordinates</a>(<span class="keyword">const</span> Eigen::Vector3d&amp; direction);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <a class="code hl_struct" href="structColorRGBA.html">ColorRGBA</a> <a class="code hl_function" href="classSkybox.html#a91efb7e622e676923b4fae9973aa1d46">getColor</a>(<span class="keyword">const</span> Eigen::Vector3d&amp; direction) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classSkybox.html#a66af095c7342933d984b6824c11906ac">   52</a></span>  <a class="code hl_function" href="classSkybox.html#a66af095c7342933d984b6824c11906ac">~Skybox</a>() = <span class="keywordflow">default</span>; </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
->>>>>>> main
 </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif </span><span class="comment">// SCENE_SKYBOX_HPP</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif </span><span class="comment">// SCENE_SKYBOX_HPP</span></div>
 <div class="ttc" id="aCommonTypes_8hpp_html"><div class="ttname"><a href="CommonTypes_8hpp.html">CommonTypes.hpp</a></div><div class="ttdoc">Header file for common types used in the project.</div></div>
 <div class="ttc" id="aTexture_8hpp_html"><div class="ttname"><a href="Texture_8hpp.html">Texture.hpp</a></div><div class="ttdoc">Header file for the Texture class.</div></div>
-<div class="ttc" id="aclassSkybox_html"><div class="ttname"><a href="classSkybox.html">Skybox</a></div><div class="ttdoc">Class representing a skybox in a 3D scene.</div><div class="ttdef"><b>Definition</b> Skybox.hpp:20</div></div>
+<div class="ttc" id="aVec3_8hpp_html"><div class="ttname"><a href="Vec3_8hpp.html">Vec3.hpp</a></div></div>
+<div class="ttc" id="aclassSkybox_html"><div class="ttname"><a href="classSkybox.html">Skybox</a></div><div class="ttdoc">Class representing a skybox in a 3D scene.</div><div class="ttdef"><b>Definition</b> Skybox.hpp:21</div></div>
 <div class="ttc" id="aclassSkybox_html_a07c87193e9ba695891b2f49cfd4378ad"><div class="ttname"><a href="classSkybox.html#a07c87193e9ba695891b2f49cfd4378ad">Skybox::operator=</a></div><div class="ttdeci">Skybox &amp; operator=(const Skybox &amp;)=default</div><div class="ttdoc">Default copy assignment operator.</div></div>
-<div class="ttc" id="aclassSkybox_html_a1310aca84db824be919b375732f857e2"><div class="ttname"><a href="classSkybox.html#a1310aca84db824be919b375732f857e2">Skybox::getUVCoordinates</a></div><div class="ttdeci">static TextureUV getUVCoordinates(const Eigen::Vector3d &amp;direction)</div><div class="ttdoc">Gets the UV coordinates based on the given direction.</div><div class="ttdef"><b>Definition</b> Skybox.cpp:27</div></div>
+<div class="ttc" id="aclassSkybox_html_a1a44d4c3d1b8b2a674fcaa35be894f72"><div class="ttname"><a href="classSkybox.html#a1a44d4c3d1b8b2a674fcaa35be894f72">Skybox::getUVCoordinates</a></div><div class="ttdeci">static TextureUV getUVCoordinates(const lin::Vec3 &amp;direction)</div><div class="ttdoc">Gets the UV coordinates based on the given direction.</div><div class="ttdef"><b>Definition</b> Skybox.cpp:27</div></div>
 <div class="ttc" id="aclassSkybox_html_a4c97ed38e1f494618e8aa458b9a83d24"><div class="ttname"><a href="classSkybox.html#a4c97ed38e1f494618e8aa458b9a83d24">Skybox::setTexture</a></div><div class="ttdeci">void setTexture(const std::shared_ptr&lt; Texture &gt; &amp;texture)</div><div class="ttdoc">Sets the texture for the skybox.</div><div class="ttdef"><b>Definition</b> Skybox.cpp:18</div></div>
 <div class="ttc" id="aclassSkybox_html_a542f0688cbdcb742fb1c6d9c0a1fe96b"><div class="ttname"><a href="classSkybox.html#a542f0688cbdcb742fb1c6d9c0a1fe96b">Skybox::operator=</a></div><div class="ttdeci">Skybox &amp; operator=(Skybox &amp;&amp;)=default</div><div class="ttdoc">Default move assignment operator.</div></div>
 <div class="ttc" id="aclassSkybox_html_a66af095c7342933d984b6824c11906ac"><div class="ttname"><a href="classSkybox.html#a66af095c7342933d984b6824c11906ac">Skybox::~Skybox</a></div><div class="ttdeci">~Skybox()=default</div><div class="ttdoc">Default destructor.</div></div>
 <div class="ttc" id="aclassSkybox_html_a77a92db4492ed94ed4bd101b05ffb1f4"><div class="ttname"><a href="classSkybox.html#a77a92db4492ed94ed4bd101b05ffb1f4">Skybox::Skybox</a></div><div class="ttdeci">Skybox()</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition</b> Skybox.cpp:12</div></div>
-<div class="ttc" id="aclassSkybox_html_a91efb7e622e676923b4fae9973aa1d46"><div class="ttname"><a href="classSkybox.html#a91efb7e622e676923b4fae9973aa1d46">Skybox::getColor</a></div><div class="ttdeci">ColorRGBA getColor(const Eigen::Vector3d &amp;direction) const</div><div class="ttdoc">Gets the color based on the given direction.</div><div class="ttdef"><b>Definition</b> Skybox.cpp:34</div></div>
 <div class="ttc" id="aclassSkybox_html_abdef6c3678e2fde7076dc8c523263ba1"><div class="ttname"><a href="classSkybox.html#abdef6c3678e2fde7076dc8c523263ba1">Skybox::Skybox</a></div><div class="ttdeci">Skybox(Skybox &amp;&amp;)=default</div><div class="ttdoc">Default move constructor.</div></div>
+<div class="ttc" id="aclassSkybox_html_ace0f1a0a868cf3020b7e2c704b617823"><div class="ttname"><a href="classSkybox.html#ace0f1a0a868cf3020b7e2c704b617823">Skybox::getColor</a></div><div class="ttdeci">ColorRGBA getColor(const lin::Vec3 &amp;direction) const</div><div class="ttdoc">Gets the color based on the given direction.</div><div class="ttdef"><b>Definition</b> Skybox.cpp:34</div></div>
 <div class="ttc" id="aclassSkybox_html_af4e3de2ccd99a53b52bf3240dfdcfec5"><div class="ttname"><a href="classSkybox.html#af4e3de2ccd99a53b52bf3240dfdcfec5">Skybox::Skybox</a></div><div class="ttdeci">Skybox(const Skybox &amp;)=default</div><div class="ttdoc">Default copy constructor.</div></div>
-<<<<<<< HEAD
-<div class="ttc" id="astructColorRGBA_html"><div class="ttname"><a href="structColorRGBA.html">ColorRGBA</a></div><div class="ttdoc">Structure to hold RGBA color values.</div><div class="ttdef"><b>Definition</b> CommonTypes.hpp:88</div></div>
-=======
-<div class="ttc" id="astructColorRGBA_html"><div class="ttname"><a href="structColorRGBA.html">ColorRGBA</a></div><div class="ttdoc">Structure to hold RGBA color values.</div><div class="ttdef"><b>Definition</b> CommonTypes.hpp:86</div></div>
->>>>>>> main
-<div class="ttc" id="astructTextureUV_html"><div class="ttname"><a href="structTextureUV.html">TextureUV</a></div><div class="ttdoc">Structure to hold the UV coordinates of a texture.</div><div class="ttdef"><b>Definition</b> CommonTypes.hpp:54</div></div>
+<div class="ttc" id="astructColorRGBA_html"><div class="ttname"><a href="structColorRGBA.html">ColorRGBA</a></div><div class="ttdoc">Structure to hold RGBA color values.</div><div class="ttdef"><b>Definition</b> CommonTypes.hpp:91</div></div>
+<div class="ttc" id="astructTextureUV_html"><div class="ttname"><a href="structTextureUV.html">TextureUV</a></div><div class="ttdoc">Structure to hold the UV coordinates of a texture.</div><div class="ttdef"><b>Definition</b> CommonTypes.hpp:57</div></div>
+<div class="ttc" id="astructlin_1_1Vec3_html"><div class="ttname"><a href="structlin_1_1Vec3.html">lin::Vec3</a></div><div class="ttdef"><b>Definition</b> Vec3.hpp:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -59,36 +59,36 @@ TEST(Object3DTest, BoundsTestZero) {
     Mesh mesh;
     Object3D obj(mesh);
 
-    Eigen::Vector3d minBound = obj.getMinBound();
-    Eigen::Vector3d maxBound = obj.getMaxBound();
+    lin::Vec3 minBound = obj.getMinBound();
+    lin::Vec3 maxBound = obj.getMaxBound();
 
-    EXPECT_EQ(minBound, Eigen::Vector3d::Zero());
-    EXPECT_EQ(maxBound, Eigen::Vector3d::Zero());
+    EXPECT_EQ(minBound, lin::Vec3(0.0));
+    EXPECT_EQ(maxBound, lin::Vec3(0.0));
 }
 
 TEST(Object3DTest, BoundsTestCube) {
     Mesh mesh = CubeMeshBuilder(1.0).build();
     Object3D obj(mesh);
 
-    Eigen::Vector3d minBound = obj.getMinBound();
-    Eigen::Vector3d maxBound = obj.getMaxBound();
+    lin::Vec3 minBound = obj.getMinBound();
+    lin::Vec3 maxBound = obj.getMaxBound();
 
-    EXPECT_EQ(minBound, Eigen::Vector3d(-0.5, -0.5, -0.5));
-    EXPECT_EQ(maxBound, Eigen::Vector3d(0.5, 0.5, 0.5));
+    EXPECT_EQ(minBound, lin::Vec3(-0.5, -0.5, -0.5));
+    EXPECT_EQ(maxBound, lin::Vec3(0.5, 0.5, 0.5));
 }
 
 TEST(Object3DTest, BoundsTransformationTest) {
     Mesh mesh = CubeMeshBuilder(1.0).build();
     Object3D obj(mesh);
 
-    Eigen::Vector3d translation(1.0, 2.0, 3.0);
+    lin::Vec3 translation(1.0, 2.0, 3.0);
     obj.setPosition(translation);
     obj.setRotationY(45.0);
-    obj.setScale(Eigen::Vector3d(2.0, 2.0, 2.0));
+    obj.setScale(lin::Vec3(2.0, 2.0, 2.0));
 
-    Eigen::Vector3d minBound = obj.getMinBound();
-    Eigen::Vector3d maxBound = obj.getMaxBound();
+    lin::Vec3 minBound = obj.getMinBound();
+    lin::Vec3 maxBound = obj.getMaxBound();
 
-    Eigen::Vector3d expectedMinBound(1.0 - std::sqrt(8.0), 1.0, 3.0 - std::sqrt(8.0));
-    Eigen::Vector3d expectedMaxBound(1.0 + std::sqrt(8.0), 3.0, 3.0 + std::sqrt(8.0));
+    lin::Vec3 expectedMinBound(1.0 - std::sqrt(8.0), 1.0, 3.0 - std::sqrt(8.0));
+    lin::Vec3 expectedMaxBound(1.0 + std::sqrt(8.0), 3.0, 3.0 + std::sqrt(8.0));
 }

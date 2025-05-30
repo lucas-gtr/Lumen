@@ -5,22 +5,22 @@
 #ifndef RENDERING_CAMERARAYEMITTER_HPP
 #define RENDERING_CAMERARAYEMITTER_HPP
 
+#include "Core/Math/Mat3.hpp"
+#include "Core/Math/Vec3.hpp"
 #include "Core/Ray.hpp"
-
-#include <Eigen/Core>
 
 /**
  * @struct RayEmitterParameters
  * @brief Struct to hold parameters for ray emitter configuration.
  */
 struct RayEmitterParameters {
-  Eigen::Vector3d cameraPosition;
-  Eigen::Matrix3d cameraRotationMatrix;
-  double          sensorWidth;
-  double          focalLength;
-  double          focusDistance;
-  double          lensRadius;
-  double          imageAspectRatio;
+  lin::Vec3 cameraPosition;
+  lin::Mat3 cameraRotationMatrix;
+  double    sensorWidth;
+  double    focalLength;
+  double    focusDistance;
+  double    lensRadius;
+  double    imageAspectRatio;
 };
 
 /**
@@ -34,13 +34,13 @@ class CameraRayEmitter {
 private:
   RayEmitterParameters m_parameters;
 
-  Eigen::Vector3d m_viewportTopLeftCorner;
-  Eigen::Vector3d m_horizontalVector;
-  Eigen::Vector3d m_verticalVector;
+  lin::Vec3 m_viewportTopLeftCorner;
+  lin::Vec3 m_horizontalVector;
+  lin::Vec3 m_verticalVector;
 
-  Eigen::Vector3d generateCorner(double x, double y) const;
-  Eigen::Vector3d getRayOrigin() const;
-  Eigen::Vector3d getFocusPoint(double u, double v) const;
+  lin::Vec3 generateCorner(double x, double y) const;
+  lin::Vec3 getRayOrigin() const;
+  lin::Vec3 getFocusPoint(double u, double v) const;
 
 public:
   CameraRayEmitter() = default; ///< Default constructor.

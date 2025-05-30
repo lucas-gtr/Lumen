@@ -5,11 +5,11 @@
 #ifndef LIGHTING_SPOTLIGHT_HPP
 #define LIGHTING_SPOTLIGHT_HPP
 
-#include <Eigen/Core>
 #include <algorithm>
 
 #include "Core/CommonTypes.hpp"
 #include "Core/Config.hpp"
+#include "Core/Math/Vec3.hpp"
 #include "Core/MathConstants.hpp"
 #include "Lighting/Light.hpp"
 
@@ -21,9 +21,9 @@
  */
 class SpotLight : public Light {
 private:
-  Eigen::Vector3d m_direction   = {0.0, 0.0, -1.0};
-  double          m_inner_angle = DEFAULT_SPOT_LIGHT_INNER_ANGLE;
-  double          m_outer_angle = DEFAULT_SPOT_LIGHT_OUTER_ANGLE;
+  lin::Vec3 m_direction   = {0.0, 0.0, -1.0};
+  double    m_inner_angle = DEFAULT_SPOT_LIGHT_INNER_ANGLE;
+  double    m_outer_angle = DEFAULT_SPOT_LIGHT_OUTER_ANGLE;
 
 public:
   SpotLight() : Light(LightType::Spot) {}           ///< Constructor with light type.
@@ -36,13 +36,13 @@ public:
    * @brief Gets the direction of the spot light.
    * @return The direction vector of the light.
    */
-  Eigen::Vector3d getDirection() const { return m_direction; }
+  lin::Vec3 getDirection() const { return m_direction; }
 
   /**
    * @brief Sets the direction of the spot light.
    * @param direction The new direction vector of the light.
    */
-  void setDirection(const Eigen::Vector3d& direction) { m_direction = direction; }
+  void setDirection(const lin::Vec3& direction) { m_direction = direction; }
 
   /**
    * @brief Gets the inner angle of the spot light.
@@ -77,7 +77,7 @@ public:
    * @param point The point from which to calculate the direction.
    * @return The direction vector from the point to the light.
    */
-  Eigen::Vector3d getDirectionFromPoint(const Eigen::Vector3d& point) const override;
+  lin::Vec3 getDirectionFromPoint(const lin::Vec3& point) const override;
 
   /**
    * @brief Gets the light factor at a given point and normal.
@@ -85,7 +85,7 @@ public:
    * @param normal The normal vector at the point.
    * @return The light factor at the given point and normal.
    */
-  ColorRGB getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const override;
+  ColorRGB getLightFactor(const lin::Vec3& point, const lin::Vec3& normal) const override;
 
   ~SpotLight() override = default; ///< Default destructor.
 };

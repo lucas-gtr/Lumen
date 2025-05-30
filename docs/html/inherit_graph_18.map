@@ -1,7 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<<<<<<< HEAD
-<area shape="rect" id="Node000000" href="$structRayIntersection_1_1RayBVHHitInfo.html" title="Structure that holds information about a ray intersection with a BVH node." alt="" coords="5,5,235,31"/>
-=======
-<area shape="rect" id="Node000000" href="$classRenderer.html" title="The Renderer class is responsible for rendering a scene using the given render settings and camera se..." alt="" coords="5,5,87,31"/>
->>>>>>> main
+<area shape="rect" id="Node000000" href="$classParameterValue.html" title="Base class for parameter values." alt="" coords="5,31,131,56"/>
+<area shape="rect" id="Node000001" href="$classDoubleParam.html" title="Represents a double parameter value." alt="" coords="179,5,288,31"/>
+<area shape="poly" id="edge5_Node000000_Node000001" title=" " alt="" coords="144,29,178,24,179,29,145,34"/>
+<area shape="rect" id="Node000002" href="$classIntParam.html" title="Represents an integer parameter value." alt="" coords="193,55,273,80"/>
+<area shape="poly" id="edge6_Node000000_Node000002" title=" " alt="" coords="145,52,193,59,193,64,144,57"/>
 </map>

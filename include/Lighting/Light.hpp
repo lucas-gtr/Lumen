@@ -5,10 +5,10 @@
 #ifndef LIGHTING_LIGHT_HPP
 #define LIGHTING_LIGHT_HPP
 
-#include <Eigen/Core>
 #include <cstdint>
 
 #include "Core/CommonTypes.hpp"
+#include "Core/Math/Vec3.hpp"
 #include "Core/Transform.hpp"
 
 enum class LightType : std::uint8_t { Point, Directional, Spot };
@@ -49,7 +49,7 @@ public:
    * @param point The point from which to calculate the direction.
    * @return The direction vector from the point to the light.
    */
-  virtual Eigen::Vector3d getDirectionFromPoint(const Eigen::Vector3d& point) const = 0;
+  virtual lin::Vec3 getDirectionFromPoint(const lin::Vec3& point) const = 0;
 
   /**
    * @brief Gets the light factor at a given point and normal.
@@ -57,7 +57,7 @@ public:
    * @param normal The normal vector at the point.
    * @return The light factor at the given point and normal.
    */
-  virtual ColorRGB getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const = 0;
+  virtual ColorRGB getLightFactor(const lin::Vec3& point, const lin::Vec3& normal) const = 0;
 
   virtual ~Light() = default; ///< Default destructor.
 };

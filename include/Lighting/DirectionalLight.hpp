@@ -5,9 +5,8 @@
 #ifndef LIGHTING_DIRECTIONALLIGHT_HPP
 #define LIGHTING_DIRECTIONALLIGHT_HPP
 
-#include <Eigen/Core>
-
 #include "Core/CommonTypes.hpp"
+#include "Core/Math/Vec3.hpp"
 #include "Lighting/Light.hpp"
 
 /**
@@ -19,7 +18,7 @@
  */
 class DirectionalLight : public Light {
 private:
-  Eigen::Vector3d m_direction = {0.0, 0.0, -1.0}; ///< Direction vector of the light.
+  lin::Vec3 m_direction = {0.0, 0.0, -1.0}; ///< Direction vector of the light.
 
 public:
   DirectionalLight() : Light(LightType::Directional) {}           ///< Constructor with light type.
@@ -32,13 +31,13 @@ public:
    * @brief Gets the direction of the directional light.
    * @return The direction vector of the light.
    */
-  Eigen::Vector3d getDirection() const;
+  lin::Vec3 getDirection() const;
 
   /**
    * @brief Sets the direction of the directional light.
    * @param direction The new direction vector of the light.
    */
-  void setDirection(const Eigen::Vector3d& direction);
+  void setDirection(const lin::Vec3& direction);
 
   /**
    * @brief Gets the direction of the light from a given point.
@@ -47,7 +46,7 @@ public:
    * This function always returns the same direction vector,
    * as the light is directional and does not depend on the point.
    */
-  Eigen::Vector3d getDirectionFromPoint(const Eigen::Vector3d& point) const override;
+  lin::Vec3 getDirectionFromPoint(const lin::Vec3& point) const override;
 
   /**
    * @brief Gets the light factor at a given point and normal.
@@ -55,7 +54,7 @@ public:
    * @param normal The normal vector at the point.
    * @return The light factor at the given point and normal.
    */
-  ColorRGB getLightFactor(const Eigen::Vector3d& point, const Eigen::Vector3d& normal) const override;
+  ColorRGB getLightFactor(const lin::Vec3& point, const lin::Vec3& normal) const override;
 
   ~DirectionalLight() override = default; ///< Default destructor.
 };

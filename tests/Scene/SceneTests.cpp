@@ -27,7 +27,7 @@ TEST(SceneTest, GetSkyboxColor) {
   Scene scene;
   std::shared_ptr<Texture> texture = std::make_shared<Texture>(ColorRGB(1.0, 0.0, 0.0));
   scene.setSkybox(texture);
-  Eigen::Vector3d direction(1.0, 0.0, 0.0);
+  lin::Vec3 direction(1.0, 0.0, 0.0);
   ColorRGBA color = scene.getSkyboxColor(direction);
   EXPECT_EQ(color, ColorRGBA(1.0, 0.0, 0.0, 1.0)); // Assuming default color is white
 }

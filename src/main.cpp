@@ -25,7 +25,7 @@ void renderCubeExemple() {
   CubeMeshBuilder cube_builder(1.0);
   Mesh            cube_mesh   = cube_builder.build();
   auto            cube_object = std::make_unique<Object3D>(cube_mesh);
-  cube_object->setPosition(Eigen::Vector3d(0.0, 0.0, 0.0));
+  cube_object->setPosition(lin::Vec3(0.0, 0.0, 0.0));
 
   auto texture  = std::make_shared<Texture>(ColorRGB(1.0, 1.0, 1.0));
   auto material = std::make_shared<Material>();
@@ -35,16 +35,16 @@ void renderCubeExemple() {
   std::unique_ptr<DirectionalLight> directional_light = std::make_unique<DirectionalLight>();
   directional_light->setColor({1.0, 1.0, 1.0});
   directional_light->setIntensity(1);
-  directional_light->setDirection(Eigen::Vector3d(-3.0, -1.0, -2.0));
+  directional_light->setDirection(lin::Vec3(-3.0, -1.0, -2.0));
 
   std::unique_ptr<PointLight> point_light_red = std::make_unique<PointLight>();
   point_light_red->setColor({1.0, 0.0, 0.0});
   point_light_red->setIntensity(1.0);
-  point_light_red->setPosition(Eigen::Vector3d(0.2, 1.5, -1.0));
+  point_light_red->setPosition(lin::Vec3(0.2, 1.5, -1.0));
 
   std::unique_ptr<Camera> camera = std::make_unique<Camera>();
-  camera->setPosition(Eigen::Vector3d(-1.1, 1.1, 3.0));
-  camera->setRotation(Eigen::Vector3d(-20.0, -20.0, 0.0));
+  camera->setPosition(lin::Vec3(-1.1, 1.1, 3.0));
+  camera->setRotation(lin::Vec3(-20.0, -20.0, 0.0));
   camera->setAperture(22.0);
 
   Scene scene;
@@ -77,7 +77,7 @@ void renderPlaneExemple() {
   PlaneMeshBuilder plane_builder(8.0, 8.0);
   Mesh             plane_mesh   = plane_builder.build();
   auto             plane_object = std::make_unique<Object3D>(plane_mesh);
-  plane_object->setPosition(Eigen::Vector3d(0.0, 0.0, 0.0));
+  plane_object->setPosition(lin::Vec3(0.0, 0.0, 0.0));
 
   auto rock_albedo = TextureLoader::load("Resources/Textures/Rock/RockAlbedo.png");
   rock_albedo->setColorSpace(ColorSpace::RGB);
@@ -90,35 +90,35 @@ void renderPlaneExemple() {
   std::unique_ptr<DirectionalLight> directional_light = std::make_unique<DirectionalLight>();
   directional_light->setColor({1.0, 1.0, 1.0});
   directional_light->setIntensity(1.0);
-  directional_light->setDirection(Eigen::Vector3d(0.0, -1.0, 0.0));
+  directional_light->setDirection(lin::Vec3(0.0, -1.0, 0.0));
 
   std::unique_ptr<SpotLight> spot_light_red = std::make_unique<SpotLight>();
   spot_light_red->setColor({1.0, 0.0, 0.0});
   spot_light_red->setIntensity(10.0);
-  spot_light_red->setPosition(Eigen::Vector3d(-2.5, 1.5, -2.5));
-  spot_light_red->setDirection(Eigen::Vector3d(0.0, -1.0, 0.0));
+  spot_light_red->setPosition(lin::Vec3(-2.5, 1.5, -2.5));
+  spot_light_red->setDirection(lin::Vec3(0.0, -1.0, 0.0));
   spot_light_red->setInnerAngle(5.0);
   spot_light_red->setOuterAngle(60.0);
 
   std::unique_ptr<SpotLight> spot_light_green = std::make_unique<SpotLight>();
   spot_light_green->setColor({0.0, 1.0, 0.0});
   spot_light_green->setIntensity(10.0);
-  spot_light_green->setPosition(Eigen::Vector3d(0.0, 1.5, 0.0));
-  spot_light_green->setDirection(Eigen::Vector3d(0.0, -1.0, 0.0));
+  spot_light_green->setPosition(lin::Vec3(0.0, 1.5, 0.0));
+  spot_light_green->setDirection(lin::Vec3(0.0, -1.0, 0.0));
   spot_light_green->setInnerAngle(5.0);
   spot_light_green->setOuterAngle(60.0);
 
   std::unique_ptr<SpotLight> spot_light_blue = std::make_unique<SpotLight>();
   spot_light_blue->setColor({0.0, 0.0, 1.0});
   spot_light_blue->setIntensity(20.0);
-  spot_light_blue->setPosition(Eigen::Vector3d(2.5, 1.5, 2.5));
-  spot_light_blue->setDirection(Eigen::Vector3d(0.0, -1.0, 0.0));
+  spot_light_blue->setPosition(lin::Vec3(2.5, 1.5, 2.5));
+  spot_light_blue->setDirection(lin::Vec3(0.0, -1.0, 0.0));
   spot_light_blue->setInnerAngle(5.0);
   spot_light_blue->setOuterAngle(60.0);
 
   std::unique_ptr<Camera> camera = std::make_unique<Camera>();
-  camera->setPosition(Eigen::Vector3d(0.0, 6.0, 12.0));
-  camera->setRotation(Eigen::Vector3d(-30.0, 0.0, 0.0));
+  camera->setPosition(lin::Vec3(0.0, 6.0, 12.0));
+  camera->setRotation(lin::Vec3(-30.0, 0.0, 0.0));
   camera->setAperture(22.0);
 
   Scene scene;
@@ -154,7 +154,7 @@ void renderSphereExemple() {
   SphereMeshBuilder sphere_builder(1.0, 16, 32);
   Mesh              sphere_mesh   = sphere_builder.build();
   auto              sphere_object = std::make_unique<Object3D>(sphere_mesh);
-  sphere_object->setPosition(Eigen::Vector3d(0.0, 0.0, 0.0));
+  sphere_object->setPosition(lin::Vec3(0.0, 0.0, 0.0));
 
   auto brick_albedo = TextureLoader::load("Resources/Textures/BrickWall/sloppy-brick-wall_albedo.png");
   brick_albedo->setColorSpace(ColorSpace::RGB);
@@ -167,11 +167,11 @@ void renderSphereExemple() {
   std::unique_ptr<DirectionalLight> directional_light = std::make_unique<DirectionalLight>();
   directional_light->setColor({1.0, 1.0, 1.0});
   directional_light->setIntensity(1.0);
-  directional_light->setDirection(Eigen::Vector3d(1.0, 0.0, -2.0));
+  directional_light->setDirection(lin::Vec3(1.0, 0.0, -2.0));
 
   std::unique_ptr<Camera> camera = std::make_unique<Camera>();
-  camera->setPosition(Eigen::Vector3d(0.0, 2.5, 8.0));
-  camera->setRotation(Eigen::Vector3d(-20.0, 0.0, 0.0));
+  camera->setPosition(lin::Vec3(0.0, 2.5, 8.0));
+  camera->setRotation(lin::Vec3(-20.0, 0.0, 0.0));
   camera->setAperture(22.0);
 
   Scene scene;
@@ -202,7 +202,8 @@ void renderSphereExemple() {
 void renderOBJExample() {
   Mesh obj_mesh = OBJLoader::load("Resources/obj/african_head/african_head.obj");
   auto obj      = std::make_unique<Object3D>(obj_mesh);
-  obj->setPosition(Eigen::Vector3d(0.0, 0.0, 0.0));
+  obj->setPosition(lin::Vec3(0.0, 0.0, 0.0));
+  obj->setRotation(lin::Vec3(0.0, 0.0, 0.0));
 
   auto african_head_albedo = TextureLoader::load("Resources/obj/african_head/african_head_diffuse.tga");
   african_head_albedo->setColorSpace(ColorSpace::RGB);
@@ -216,7 +217,7 @@ void renderOBJExample() {
 
   Mesh eye_inner_mesh   = OBJLoader::load("Resources/obj/african_head/african_head_eye_inner.obj");
   auto eye_inner_object = std::make_unique<Object3D>(eye_inner_mesh);
-  eye_inner_object->setPosition(Eigen::Vector3d(0.0, 0.0, 0.0));
+  eye_inner_object->setPosition(lin::Vec3(0.0, 0.0, 0.0));
 
   auto eye_inner_albedo = TextureLoader::load("Resources/obj/african_head/african_head_eye_inner_diffuse.tga");
   eye_inner_albedo->setColorSpace(ColorSpace::RGB);
@@ -229,19 +230,19 @@ void renderOBJExample() {
   eye_inner_object->setMaterial(eye_inner_material);
 
   std::unique_ptr<Camera> camera = std::make_unique<Camera>();
-  camera->setPosition(Eigen::Vector3d(-1.0, 0.0, 4.0));
-  camera->setRotation(Eigen::Vector3d(0.0, -15.0, 0.0));
+  camera->setPosition(lin::Vec3(-1.0, 0.0, 4.0));
+  camera->setRotation(lin::Vec3(0.0, -15.0, 0.0));
   camera->setAperture(22.0);
 
   std::unique_ptr<DirectionalLight> directional_light_orange = std::make_unique<DirectionalLight>();
   directional_light_orange->setColor({1.0, 0.5, 0.0});
   directional_light_orange->setIntensity(1.0);
-  directional_light_orange->setDirection(Eigen::Vector3d(-1.0, 0.0, -1.0));
+  directional_light_orange->setDirection(lin::Vec3(-1.0, 0.0, -1.0));
 
   std::unique_ptr<DirectionalLight> directional_light_blue = std::make_unique<DirectionalLight>();
   directional_light_blue->setColor({0.2, 0.5, 1.0});
   directional_light_blue->setIntensity(1.0);
-  directional_light_blue->setDirection(Eigen::Vector3d(1.0, 0.0, -1.0));
+  directional_light_blue->setDirection(lin::Vec3(1.0, 0.0, -1.0));
 
   auto skybox_texture = TextureLoader::load("Resources/Textures/studio.png");
   skybox_texture->setColorSpace(ColorSpace::RGB);

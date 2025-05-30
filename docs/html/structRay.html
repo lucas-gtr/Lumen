@@ -77,7 +77,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structRay-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Ray Struct Reference</div></div>
@@ -88,29 +88,37 @@ $(function() {
  <a href="structRay.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Ray_8hpp_source.html">Ray.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Ray:</div>
+<div class="dyncontent">
+<div class="center"><img src="structRay__coll__graph.png" border="0" usemap="#aRay_coll__map" alt="Collaboration graph"/></div>
+<map name="aRay_coll__map" id="aRay_coll__map">
+<area shape="rect" title="A structure representing a ray in 3D space." alt="" coords="21,108,67,133"/>
+<area shape="rect" href="structlin_1_1Vec3.html" title=" " alt="" coords="5,5,83,31"/>
+<area shape="poly" title=" " alt="" coords="47,45,47,108,41,108,41,45"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a4c8d138f48dbd8c05e2bb38989d0a5eb" id="r_a4c8d138f48dbd8c05e2bb38989d0a5eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRay.html#a4c8d138f48dbd8c05e2bb38989d0a5eb">Ray</a> ()=default</td></tr>
-<tr class="memdesc:a4c8d138f48dbd8c05e2bb38989d0a5eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <br /></td></tr>
-<tr class="separator:a4c8d138f48dbd8c05e2bb38989d0a5eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50e3b99291319733c9a1c8605e508ddb" id="r_a50e3b99291319733c9a1c8605e508ddb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRay.html#a50e3b99291319733c9a1c8605e508ddb">Ray</a> (const Eigen::Vector3d &amp;<a class="el" href="structRay.html#a09026f5b742ef47dba8bc47afb15a448">origin</a>, const Eigen::Vector3d &amp;point)</td></tr>
-<tr class="memdesc:a50e3b99291319733c9a1c8605e508ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="structRay.html" title="A structure representing a ray in 3D space.">Ray</a> from an origin and a point in 3D space.  <br /></td></tr>
-<tr class="separator:a50e3b99291319733c9a1c8605e508ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ab383a87e5fb8eceb8f8c9017f01a3711" id="r_ab383a87e5fb8eceb8f8c9017f01a3711"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structRay.html">Ray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRay.html#ab383a87e5fb8eceb8f8c9017f01a3711">FromPoint</a> (const <a class="el" href="structlin_1_1Vec3.html">lin::Vec3</a> &amp;from, const <a class="el" href="structlin_1_1Vec3.html">lin::Vec3</a> &amp;to)</td></tr>
+<tr class="separator:ab383a87e5fb8eceb8f8c9017f01a3711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaddc0b75a3b50b3312539be5dbff8788" id="r_aaddc0b75a3b50b3312539be5dbff8788"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structRay.html">Ray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRay.html#aaddc0b75a3b50b3312539be5dbff8788">FromDirection</a> (const <a class="el" href="structlin_1_1Vec3.html">lin::Vec3</a> &amp;<a class="el" href="structRay.html#a9adc8da6ed16314f8fe5c2d3f33f5104">origin</a>, const <a class="el" href="structlin_1_1Vec3.html">lin::Vec3</a> &amp;dir)</td></tr>
+<tr class="separator:aaddc0b75a3b50b3312539be5dbff8788"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a09026f5b742ef47dba8bc47afb15a448" id="r_a09026f5b742ef47dba8bc47afb15a448"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRay.html#a09026f5b742ef47dba8bc47afb15a448">origin</a> = {0, 0, 0}</td></tr>
-<tr class="separator:a09026f5b742ef47dba8bc47afb15a448"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad66a226186fa3c011842a9168178b353" id="r_ad66a226186fa3c011842a9168178b353"><td class="memItemLeft" align="right" valign="top">Eigen::Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRay.html#ad66a226186fa3c011842a9168178b353">direction</a> = {0, 0, -1}</td></tr>
-<tr class="separator:ad66a226186fa3c011842a9168178b353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9adc8da6ed16314f8fe5c2d3f33f5104" id="r_a9adc8da6ed16314f8fe5c2d3f33f5104"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">lin::Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRay.html#a9adc8da6ed16314f8fe5c2d3f33f5104">origin</a> = {0, 0, 0}</td></tr>
+<tr class="separator:a9adc8da6ed16314f8fe5c2d3f33f5104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab41de6850d82b1fbbc6761da19580592" id="r_ab41de6850d82b1fbbc6761da19580592"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">lin::Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structRay.html#ab41de6850d82b1fbbc6761da19580592">direction</a> = {0, 0, -1}</td></tr>
+<tr class="separator:ab41de6850d82b1fbbc6761da19580592"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A structure representing a ray in 3D space. </p>
 <p>A ray is defined by its origin and direction. The direction is normalized between the origin and a given point, which makes the ray direction unit length. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4c8d138f48dbd8c05e2bb38989d0a5eb" name="a4c8d138f48dbd8c05e2bb38989d0a5eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c8d138f48dbd8c05e2bb38989d0a5eb">&#9670;&#160;</a></span>Ray() <span class="overload">[1/2]</span></h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aaddc0b75a3b50b3312539be5dbff8788" name="aaddc0b75a3b50b3312539be5dbff8788"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaddc0b75a3b50b3312539be5dbff8788">&#9670;&#160;</a></span>FromDirection()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -119,43 +127,16 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Ray::Ray </td>
+          <td class="memname">static <a class="el" href="structRay.html">Ray</a> Ray::FromDirection </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Default constructor. </p>
-
-</div>
-</div>
-<a id="a50e3b99291319733c9a1c8605e508ddb" name="a50e3b99291319733c9a1c8605e508ddb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50e3b99291319733c9a1c8605e508ddb">&#9670;&#160;</a></span>Ray() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Ray::Ray </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::Vector3d &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">lin::Vec3</a> &amp;&#160;</td>
           <td class="paramname"><em>origin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Eigen::Vector3d &amp;&#160;</td>
-          <td class="paramname"><em>point</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">lin::Vec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>dir</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -165,46 +146,72 @@ Public Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructs a <a class="el" href="structRay.html" title="A structure representing a ray in 3D space.">Ray</a> from an origin and a point in 3D space. </p>
-<p>The direction of the ray is calculated as the normalized vector from the origin to the given point.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">origin</td><td>The origin of the ray. </td></tr>
-    <tr><td class="paramname">point</td><td>A point in space to define the direction of the ray. </td></tr>
-  </table>
-  </dd>
-</dl>
+</div>
+</div>
+<a id="ab383a87e5fb8eceb8f8c9017f01a3711" name="ab383a87e5fb8eceb8f8c9017f01a3711"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab383a87e5fb8eceb8f8c9017f01a3711">&#9670;&#160;</a></span>FromPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structRay.html">Ray</a> Ray::FromPoint </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">lin::Vec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">lin::Vec3</a> &amp;&#160;</td>
+          <td class="paramname"><em>to</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ad66a226186fa3c011842a9168178b353" name="ad66a226186fa3c011842a9168178b353"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad66a226186fa3c011842a9168178b353">&#9670;&#160;</a></span>direction</h2>
+<a id="ab41de6850d82b1fbbc6761da19580592" name="ab41de6850d82b1fbbc6761da19580592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab41de6850d82b1fbbc6761da19580592">&#9670;&#160;</a></span>direction</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::Vector3d Ray::direction = {0, 0, -1}</td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec3.html">lin::Vec3</a> Ray::direction = {0, 0, -1}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a09026f5b742ef47dba8bc47afb15a448" name="a09026f5b742ef47dba8bc47afb15a448"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09026f5b742ef47dba8bc47afb15a448">&#9670;&#160;</a></span>origin</h2>
+<a id="a9adc8da6ed16314f8fe5c2d3f33f5104" name="a9adc8da6ed16314f8fe5c2d3f33f5104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9adc8da6ed16314f8fe5c2d3f33f5104">&#9670;&#160;</a></span>origin</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::Vector3d Ray::origin = {0, 0, 0}</td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec3.html">lin::Vec3</a> Ray::origin = {0, 0, 0}</td>
         </tr>
       </table>
 </div><div class="memdoc">
