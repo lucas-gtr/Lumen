@@ -5,6 +5,7 @@
 #ifndef CORE_CONFIG_HPP
 #define CORE_CONFIG_HPP
 
+#include <cstddef>
 #include <string_view>
 
 //<-------- CAMERA CLASS --------->
@@ -92,5 +93,13 @@ static constexpr double BVH_CONSTRUCTION_EPSILON = 0.0001;
 static constexpr int DEFAULT_BLOCK_SIZE = 256; // in pixels
 static constexpr int MIN_BLOCK_SIZE     = 1;
 static constexpr int MAX_BLOCK_SIZE     = 1024;
+
+//<-------- MATH --------->
+static constexpr double EPSILON = 1e-9; // for floating-point comparisons
+
+//<-------- ALIGNMENT --------->
+static constexpr size_t Align8  = 8;
+static constexpr size_t Align16 = 16;
+static constexpr size_t Align32 = 32;
 
 #endif // CORE_CONFIG_HPP

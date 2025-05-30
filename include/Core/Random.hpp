@@ -17,7 +17,7 @@
  * The point is generated using a random angle and radius within the unit disk,
  * ensuring uniform distribution within the disk.
  *
- * @return A 2D vector (Eigen::Vector2d) representing the random point in the unit disk.
+ * @return A 2D vector representing the random point in the unit disk.
  */
 lin::Vec2 randomPointInUnitDisk();
 

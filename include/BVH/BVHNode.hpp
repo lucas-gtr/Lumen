@@ -21,11 +21,11 @@ private:
   std::shared_ptr<BVHNode> m_left_child  = nullptr;
   std::shared_ptr<BVHNode> m_right_child = nullptr;
 
+  int m_leaf_index = -1;
+
   lin::Vec3 m_min_bound = lin::Vec3(0.0);
   lin::Vec3 m_max_bound = lin::Vec3(0.0);
   lin::Vec3 m_center    = lin::Vec3(0.0);
-
-  int m_leaf_index = -1;
 
 public:
   BVHNode() = default; ///< Default constructor.

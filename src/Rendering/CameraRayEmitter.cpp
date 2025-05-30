@@ -1,4 +1,5 @@
 #include "Rendering/CameraRayEmitter.hpp"
+#include "Core/Math/Vec2.hpp"
 #include "Core/Math/Vec3.hpp"
 #include "Core/Math/lin.hpp"
 #include "Core/MathConstants.hpp"

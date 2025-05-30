@@ -1,6 +1,5 @@
 #include "Core/CommonTypes.hpp"
 
-// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 ColorRGB::ColorRGB(double red, double green, double blue) : r(red), g(green), b(blue) {}
 ColorRGB::ColorRGB(double grayscale) : r(grayscale), g(grayscale), b(grayscale) {}
 ColorRGB::ColorRGB(const ColorRGBA& color) : r(color.r), g(color.g), b(color.b) {}
@@ -20,10 +19,8 @@ bool ColorRGB::operator==(const ColorRGB& other) const { return (r == other.r) &
 
 ColorRGB operator*(double scalar, const ColorRGB& color) { return color * scalar; }
 
-// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 ColorRGBA::ColorRGBA(double red, double green, double blue, double alpha) : r(red), g(green), b(blue), a(alpha) {}
 ColorRGBA::ColorRGBA(double grayscale) : r(grayscale), g(grayscale), b(grayscale) {}
-// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 ColorRGBA::ColorRGBA(double grayscale, double alpha) : r(grayscale), g(grayscale), b(grayscale), a(alpha) {}
 ColorRGBA::ColorRGBA(const ColorRGB& color) : r(color.r), g(color.g), b(color.b) {}
 ColorRGBA::ColorRGBA(const ColorRGB& color, double alpha) : r(color.r), g(color.g), b(color.b), a(alpha) {}

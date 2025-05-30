@@ -1,6 +1,5 @@
 #include "Lighting/SpotLight.hpp"
 #include <gtest/gtest.h>
-#include <Eigen/Dense>
 
 class SpotLightTest : public ::testing::Test {
 protected:

@@ -10,8 +10,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS YES)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
-add_subdirectory(external/eigen)
-
 add_subdirectory(src/Core)
 add_subdirectory(src/ImplementationParameters)
 add_subdirectory(src/BVH)
@@ -28,7 +26,6 @@ add_executable(Lumen src/main.cpp)
 
 target_include_directories(Lumen PRIVATE
     ${CMAKE_SOURCE_DIR}/include
-    ${CMAKE_SOURCE_DIR}/external/eigen
 )
 
 target_link_libraries(Lumen

@@ -1,38 +1,9 @@
 var searchData=
 [
-  ['_7ebvhnode_0',['~BVHNode',['../classBVHNode.html#a3ce9f60e491ed34e0314b3d0b4bce076',1,'BVHNode']]],
-  ['_7ecamera_1',['~Camera',['../classCamera.html#adcb96efefa7af58e3ee6534b15d4979b',1,'Camera']]],
-  ['_7ecamerarayemitter_2',['~CameraRayEmitter',['../classCameraRayEmitter.html#aa06c4922621ff8420691ce7101bc10c8',1,'CameraRayEmitter']]],
-  ['_7edirectionallight_3',['~DirectionalLight',['../classDirectionalLight.html#aea6a2c56380faab93b08fc99f0d4adcd',1,'DirectionalLight']]],
-  ['_7edoubleparam_4',['~DoubleParam',['../classDoubleParam.html#a5e37a142c0c102f7174ae8be0b92c782',1,'DoubleParam']]],
-  ['_7eframebuffer_5',['~Framebuffer',['../classFramebuffer.html#a037bf3e17455354d5d907ceea00313dd',1,'Framebuffer']]],
-  ['_7eintparam_6',['~IntParam',['../classIntParam.html#a734900e46bbc75b940268bbf63b0c6e8',1,'IntParam']]],
-  ['_7elight_7',['~Light',['../classLight.html#ae3e3209d4b97d0bbbd614ded5e1213d9',1,'Light']]],
-  ['_7ematerial_8',['~Material',['../classMaterial.html#ac61ec3cbd9a4ca9e59ef8fd8e74406ab',1,'Material']]],
-  ['_7emesh_9',['~Mesh',['../classMesh.html#a3654f011325ece82e0dffe148cef6e63',1,'Mesh']]],
-  ['_7emeshbuilder_10',['~MeshBuilder',['../classMeshBuilder.html#a737229076d003563859239b907117976',1,'MeshBuilder']]],
-  ['_7eobject3d_11',['~Object3D',['../classObject3D.html#a3c0f564d8ea7625558156cb2f5774613',1,'Object3D']]],
-  ['_7eoutputformat_12',['~OutputFormat',['../classOutputFormat.html#a1f88a75d2c5824a40ec9df484db8f475',1,'OutputFormat']]],
-  ['_7eparameters_13',['~Parameters',['../classParameters.html#ac98709c00479386d18d1759965d7d00d',1,'Parameters']]],
-  ['_7eparametervalue_14',['~ParameterValue',['../classParameterValue.html#af6ec0dd285b511eb1f53918c45841309',1,'ParameterValue']]],
-  ['_7epointlight_15',['~PointLight',['../classPointLight.html#a93e891fe0b37f2d4980881fa5c720689',1,'PointLight']]],
-  ['_7erenderer_16',['~Renderer',['../classRenderer.html#afeee408862d5bd6255a6882d47e6d5cd',1,'Renderer']]],
-  ['_7erenderexporter_17',['~RenderExporter',['../classRenderExporter.html#af0f316fa32d3eee90db98c33a6ed9715',1,'RenderExporter']]],
-  ['_7erendersettings_18',['~RenderSettings',['../classRenderSettings.html#a0118fdc9b8fb377f68f10935db760218',1,'RenderSettings']]],
-<<<<<<< HEAD
-  ['_7erenderstrategy_19',['~RenderStrategy',['../classRenderStrategy.html#a4a7755700320d5ea62bf19e4b0db6183',1,'RenderStrategy']]],
-  ['_7escene_20',['~Scene',['../classScene.html#a631eef7493cafce5d74739a2cad12a58',1,'Scene']]],
-  ['_7eskybox_21',['~Skybox',['../classSkybox.html#a66af095c7342933d984b6824c11906ac',1,'Skybox']]],
-  ['_7espotlight_22',['~SpotLight',['../classSpotLight.html#abd2c9461cf808bdf8660395435be8639',1,'SpotLight']]],
-  ['_7etexture_23',['~Texture',['../classTexture.html#a09c4bcb7462f64c1d20fa69dba3cee8a',1,'Texture']]],
-  ['_7etonemappingstrategy_24',['~ToneMappingStrategy',['../classToneMappingStrategy.html#a00fe76da8e0de0255ea9f03e5af4fb1f',1,'ToneMappingStrategy']]],
-  ['_7etransform_25',['~Transform',['../classTransform.html#a0bccb958391795992a6b9100739047f1',1,'Transform']]]
-=======
-  ['_7escene_19',['~Scene',['../classScene.html#a631eef7493cafce5d74739a2cad12a58',1,'Scene']]],
-  ['_7eskybox_20',['~Skybox',['../classSkybox.html#a66af095c7342933d984b6824c11906ac',1,'Skybox']]],
-  ['_7espotlight_21',['~SpotLight',['../classSpotLight.html#abd2c9461cf808bdf8660395435be8639',1,'SpotLight']]],
-  ['_7etexture_22',['~Texture',['../classTexture.html#a09c4bcb7462f64c1d20fa69dba3cee8a',1,'Texture']]],
-  ['_7etonemappingstrategy_23',['~ToneMappingStrategy',['../classToneMappingStrategy.html#a00fe76da8e0de0255ea9f03e5af4fb1f',1,'ToneMappingStrategy']]],
-  ['_7etransform_24',['~Transform',['../classTransform.html#a0bccb958391795992a6b9100739047f1',1,'Transform']]]
->>>>>>> main
+  ['wrapclamptoborder_0',['wrapClampToBorder',['../namespaceTextureSampling.html#aceac824838e476116c3a5c78459c4014',1,'TextureSampling']]],
+  ['wrapclamptoedge_1',['wrapClampToEdge',['../namespaceTextureSampling.html#ad282663bfbc475357c5535673c79ba43',1,'TextureSampling']]],
+  ['wrapcoordinates_2',['wrapCoordinates',['../namespaceTextureSampling.html#a125fd7ce5164fd0403c885b873e0da6b',1,'TextureSampling']]],
+  ['wrapmirroredrepeat_3',['wrapMirroredRepeat',['../namespaceTextureSampling.html#ac5e5310f2785813e5f00e8c375e066d6',1,'TextureSampling']]],
+  ['wraprepeat_4',['wrapRepeat',['../namespaceTextureSampling.html#ac0f1f357f4eb0b753e5aa29e948dbd6a',1,'TextureSampling']]],
+  ['write_5fimage_5',['write_image',['../classOutputFormat.html#ad94101141c57ed05387fc1fe2204b2ac',1,'OutputFormat::write_image()'],['../classOutputFormatPng.html#af26f8b0e16f9c12c59eb4f87a95de74e',1,'OutputFormatPng::write_image()']]]
 ];

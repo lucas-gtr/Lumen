@@ -2,7 +2,6 @@
 #include <memory>
 
 #include "Core/Math/Vec3.hpp"
-#include "Core/Math/Vec4.hpp"
 #include "Core/Math/lin.hpp"
 #include "Geometry/Mesh.hpp"
 #include "SceneObjects/Object3D.hpp"
@@ -14,7 +13,7 @@ Object3D::Object3D(const Mesh& mesh) : m_mesh(mesh), m_material(std::make_shared
 lin::Vec3 Object3D::getMinBound() const {
   const auto& vertices = m_mesh.getVertices();
   if(vertices.empty()) {
-    return lin::Vec3(0.0);
+    return {0.0, 0.0, 0.0};
   }
 
   lin::Vec3 min_bound = vertices[0].position;
@@ -30,7 +29,7 @@ lin::Vec3 Object3D::getMinBound() const {
 lin::Vec3 Object3D::getMaxBound() const {
   const auto& vertices = m_mesh.getVertices();
   if(vertices.empty()) {
-    return lin::Vec3(0.0);
+    return {0.0, 0.0, 0.0};
   }
 
   lin::Vec3 max_bound = vertices[0].position;

@@ -8,6 +8,7 @@
 
 #include <memory>
 
+#include "Core/Math/Vec3.hpp"
 #include "Core/Transform.hpp"
 #include "Geometry/Mesh.hpp"
 #include "Surface/Material.hpp"

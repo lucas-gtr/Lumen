@@ -1,7 +1,6 @@
 #include "Lighting/PointLight.hpp"
 
 #include <gtest/gtest.h>
-#include <Eigen/Dense>
 
 class PointLightTest : public ::testing::Test {
 protected:

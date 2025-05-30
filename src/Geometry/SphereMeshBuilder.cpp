@@ -6,7 +6,6 @@
 #include "Geometry/Mesh.hpp"
 #include "Geometry/SphereMeshBuilder.hpp"
 
-// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 SphereMeshBuilder::SphereMeshBuilder(double radius, int segments, int rings)
     : radius(radius), segments(segments), rings(rings) {}
 

@@ -7,7 +7,6 @@
 
 #include <cmath>
 
-// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 Transform::Transform(const lin::Vec3& position, const lin::Vec3& rotation, const lin::Vec3& scale)
     : m_position(position), m_rotation(rotation), m_scale(scale) {
 
@@ -103,9 +102,9 @@ void Transform::updateScaleMatrix() {
 }
 
 void Transform::updateTransformationMatrix() {
-  lin::Mat4 rotationMatrix4d(m_rotationMatrix);
+  const lin::Mat4 rotationMatrix4d(m_rotationMatrix);
 
-  lin::Mat4 scaleMatrix4d(m_scaleMatrix);
+  const lin::Mat4 scaleMatrix4d(m_scaleMatrix);
 
   m_transformationMatrix = m_translationMatrix * scaleMatrix4d * rotationMatrix4d;
   updateInverseMatrix();
@@ -114,4 +113,4 @@ void Transform::updateTransformationMatrix() {
 
 void Transform::updateInverseMatrix() { m_inverseMatrix = m_transformationMatrix.inverse(); }
 
-void Transform::updateNormalMatrix() { m_normalMatrix = m_transformationMatrix.topLeft3x3().inverse().transpose(); }
+void Transform::updateNormalMatrix() { m_normalMatrix = m_transformationMatrix.topLeft3x3().inverse().transposed(); }

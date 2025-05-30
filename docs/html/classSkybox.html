@@ -109,18 +109,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4c97ed38e1f494618e8aa458b9a83d24" id="r_a4c97ed38e1f494618e8aa458b9a83d24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSkybox.html#a4c97ed38e1f494618e8aa458b9a83d24">setTexture</a> (const std::shared_ptr&lt; <a class="el" href="classTexture.html">Texture</a> &gt; &amp;texture)</td></tr>
 <tr class="memdesc:a4c97ed38e1f494618e8aa458b9a83d24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the texture for the skybox.  <br /></td></tr>
 <tr class="separator:a4c97ed38e1f494618e8aa458b9a83d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91efb7e622e676923b4fae9973aa1d46" id="r_a91efb7e622e676923b4fae9973aa1d46"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structColorRGBA.html">ColorRGBA</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSkybox.html#a91efb7e622e676923b4fae9973aa1d46">getColor</a> (const Eigen::Vector3d &amp;direction) const</td></tr>
-<tr class="memdesc:a91efb7e622e676923b4fae9973aa1d46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the color based on the given direction.  <br /></td></tr>
-<tr class="separator:a91efb7e622e676923b4fae9973aa1d46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace0f1a0a868cf3020b7e2c704b617823" id="r_ace0f1a0a868cf3020b7e2c704b617823"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structColorRGBA.html">ColorRGBA</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSkybox.html#ace0f1a0a868cf3020b7e2c704b617823">getColor</a> (const <a class="el" href="structlin_1_1Vec3.html">lin::Vec3</a> &amp;direction) const</td></tr>
+<tr class="memdesc:ace0f1a0a868cf3020b7e2c704b617823"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the color based on the given direction.  <br /></td></tr>
+<tr class="separator:ace0f1a0a868cf3020b7e2c704b617823"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66af095c7342933d984b6824c11906ac" id="r_a66af095c7342933d984b6824c11906ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSkybox.html#a66af095c7342933d984b6824c11906ac">~Skybox</a> ()=default</td></tr>
 <tr class="memdesc:a66af095c7342933d984b6824c11906ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
 <tr class="separator:a66af095c7342933d984b6824c11906ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a1310aca84db824be919b375732f857e2" id="r_a1310aca84db824be919b375732f857e2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structTextureUV.html">TextureUV</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSkybox.html#a1310aca84db824be919b375732f857e2">getUVCoordinates</a> (const Eigen::Vector3d &amp;direction)</td></tr>
-<tr class="memdesc:a1310aca84db824be919b375732f857e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the UV coordinates based on the given direction.  <br /></td></tr>
-<tr class="separator:a1310aca84db824be919b375732f857e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a44d4c3d1b8b2a674fcaa35be894f72" id="r_a1a44d4c3d1b8b2a674fcaa35be894f72"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structTextureUV.html">TextureUV</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSkybox.html#a1a44d4c3d1b8b2a674fcaa35be894f72">getUVCoordinates</a> (const <a class="el" href="structlin_1_1Vec3.html">lin::Vec3</a> &amp;direction)</td></tr>
+<tr class="memdesc:a1a44d4c3d1b8b2a674fcaa35be894f72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the UV coordinates based on the given direction.  <br /></td></tr>
+<tr class="separator:a1a44d4c3d1b8b2a674fcaa35be894f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class representing a skybox in a 3D scene. </p>
@@ -229,8 +229,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a91efb7e622e676923b4fae9973aa1d46" name="a91efb7e622e676923b4fae9973aa1d46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91efb7e622e676923b4fae9973aa1d46">&#9670;&#160;</a></span>getColor()</h2>
+<a id="ace0f1a0a868cf3020b7e2c704b617823" name="ace0f1a0a868cf3020b7e2c704b617823"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace0f1a0a868cf3020b7e2c704b617823">&#9670;&#160;</a></span>getColor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -238,7 +238,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structColorRGBA.html">ColorRGBA</a> Skybox::getColor </td>
           <td>(</td>
-          <td class="paramtype">const Eigen::Vector3d &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">lin::Vec3</a> &amp;&#160;</td>
           <td class="paramname"><em>direction</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -256,8 +256,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1310aca84db824be919b375732f857e2" name="a1310aca84db824be919b375732f857e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1310aca84db824be919b375732f857e2">&#9670;&#160;</a></span>getUVCoordinates()</h2>
+<a id="a1a44d4c3d1b8b2a674fcaa35be894f72" name="a1a44d4c3d1b8b2a674fcaa35be894f72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a44d4c3d1b8b2a674fcaa35be894f72">&#9670;&#160;</a></span>getUVCoordinates()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -268,7 +268,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structTextureUV.html">TextureUV</a> Skybox::getUVCoordinates </td>
           <td>(</td>
-          <td class="paramtype">const Eigen::Vector3d &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">lin::Vec3</a> &amp;&#160;</td>
           <td class="paramname"><em>direction</em></td><td>)</td>
           <td></td>
         </tr>

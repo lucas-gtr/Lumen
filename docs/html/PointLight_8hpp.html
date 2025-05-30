@@ -88,33 +88,77 @@ $(function() {
 
 <p>Header file for the <a class="el" href="classPointLight.html" title="A class representing a point light source in a 3D scene.">PointLight</a> class.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;Eigen/Core&gt;</code><br />
-<code>#include &quot;<a class="el" href="CommonTypes_8hpp_source.html">Core/CommonTypes.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="CommonTypes_8hpp_source.html">Core/CommonTypes.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Vec3_8hpp_source.html">Core/Math/Vec3.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Light_8hpp_source.html">Lighting/Light.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for PointLight.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="PointLight_8hpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Lighting_2PointLight_8hpp" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2include_2Lighting_2PointLight_8hpp" id="a_2home_2lucasgtr_2lumen_2include_2Lighting_2PointLight_8hpp">
-<area shape="rect" title="Header file for the PointLight class." alt="" coords="110,5,337,45"/>
-<area shape="rect" title=" " alt="" coords="5,240,97,265"/>
-<area shape="poly" title=" " alt="" coords="197,47,137,97,106,131,80,168,67,198,59,227,54,225,62,196,76,165,102,127,133,94,194,43"/>
-<area shape="rect" href="CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="340,167,520,192"/>
-<area shape="poly" title=" " alt="" coords="251,43,404,156,401,160,248,48"/>
-<area shape="rect" href="Light_8hpp.html" title="Header file for the Light class." alt="" coords="154,93,293,119"/>
-<area shape="poly" title=" " alt="" coords="226,46,226,79,221,79,221,46"/>
-<area shape="rect" title=" " alt="" coords="374,240,441,265"/>
-<area shape="poly" title=" " alt="" coords="429,193,418,228,413,226,424,192"/>
-<area shape="poly" title=" " alt="" coords="189,121,147,140,105,169,81,198,64,228,59,226,77,195,102,165,144,136,187,116"/>
-<area shape="poly" title=" " alt="" coords="257,116,384,160,383,165,256,121"/>
-<area shape="poly" title=" " alt="" coords="239,117,330,190,382,229,379,234,327,194,236,121"/>
-<area shape="rect" href="Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="115,167,265,192"/>
-<area shape="poly" title=" " alt="" coords="220,120,204,155,199,153,215,118"/>
-<area shape="poly" title=" " alt="" coords="169,194,87,236,85,231,167,190"/>
-<area shape="rect" href="MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="121,240,304,265"/>
-<area shape="poly" title=" " alt="" coords="196,192,207,226,202,228,191,193"/>
-<area shape="rect" title=" " alt="" coords="173,313,252,339"/>
-<area shape="poly" title=" " alt="" coords="215,266,215,300,210,300,210,266"/>
+<area shape="rect" title="Header file for the PointLight class." alt="" coords="373,5,600,45"/>
+<area shape="rect" href="CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="181,167,361,192"/>
+<area shape="poly" title=" " alt="" coords="461,48,300,161,297,156,458,43"/>
+<area shape="rect" href="Vec3_8hpp.html" title=" " alt="" coords="825,387,977,412"/>
+<area shape="poly" title=" " alt="" coords="601,38,714,58,829,87,878,105,918,126,945,150,952,164,955,178,955,254,951,288,942,322,918,376,913,374,937,320,946,287,949,254,949,178,947,165,941,153,915,130,876,110,827,92,713,63,600,43"/>
+<area shape="rect" href="Light_8hpp.html" title="Header file for the Light class." alt="" coords="417,93,556,119"/>
+<area shape="poly" title=" " alt="" coords="489,46,489,79,484,79,484,46"/>
+<area shape="rect" title=" " alt="" coords="237,240,304,265"/>
+<area shape="poly" title=" " alt="" coords="273,192,273,226,268,226,268,192"/>
+<area shape="rect" title=" " alt="" coords="340,460,439,485"/>
+<area shape="poly" title=" " alt="" coords="181,193,86,212,48,225,25,242,11,265,9,287,14,310,25,338,40,364,56,382,105,410,161,433,220,449,277,459,327,465,326,470,276,464,219,454,160,438,103,414,53,386,36,367,20,340,9,312,3,287,6,263,21,238,46,221,85,207,180,188"/>
+<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="463,460,588,485"/>
+<area shape="poly" title=" " alt="" coords="258,194,215,234,168,290,151,321,141,353,142,383,156,410,450,457,449,462,153,414,137,384,136,352,146,319,164,287,212,230,254,190"/>
+<area shape="rect" title=" " alt="" coords="435,533,506,559"/>
+<area shape="poly" title=" " alt="" coords="519,487,490,524,486,521,514,484"/>
+<area shape="rect" title=" " alt="" coords="530,533,627,559"/>
+<area shape="poly" title=" " alt="" coords="536,484,564,521,560,524,532,487"/>
+<area shape="poly" title=" " alt="" coords="825,412,659,433,453,462,452,457,658,428,825,407"/>
+<area shape="poly" title=" " alt="" coords="842,415,600,460,599,455,841,409"/>
+<area shape="rect" title=" " alt="" coords="629,460,691,485"/>
+<area shape="poly" title=" " alt="" coords="863,415,705,461,704,456,862,409"/>
+<area shape="rect" title=" " alt="" coords="917,460,997,485"/>
+<area shape="poly" title=" " alt="" coords="913,411,942,448,938,451,909,414"/>
+<area shape="rect" title=" " alt="" coords="745,460,831,485"/>
+<area shape="poly" title=" " alt="" coords="885,414,819,455,817,450,882,410"/>
+<area shape="poly" title=" " alt="" coords="453,121,320,165,318,160,451,116"/>
+<area shape="poly" title=" " alt="" coords="474,121,374,194,305,236,302,231,371,190,471,117"/>
+<area shape="poly" title=" " alt="" coords="557,108,633,118,719,140,763,157,805,179,843,206,877,238,896,271,905,307,908,343,907,373,902,373,903,343,900,308,891,273,873,242,840,210,802,183,761,162,718,145,632,123,556,113"/>
+<area shape="rect" href="Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="471,167,620,192"/>
+<area shape="poly" title=" " alt="" coords="499,117,529,155,525,158,494,121"/>
+<area shape="poly" title=" " alt="" coords="558,190,630,258,681,299,737,336,792,362,845,380,843,385,790,367,735,341,678,304,626,262,555,194"/>
+<area shape="rect" href="Mat3_8hpp.html" title=" " alt="" coords="468,313,623,339"/>
+<area shape="poly" title=" " alt="" coords="548,192,548,300,543,300,543,192"/>
+<area shape="rect" href="Mat4_8hpp.html" title=" " alt="" coords="328,240,483,265"/>
+<area shape="poly" title=" " alt="" coords="524,194,441,236,439,231,522,190"/>
+<area shape="rect" href="MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="681,240,863,265"/>
+<area shape="poly" title=" " alt="" coords="583,189,723,233,722,238,581,195"/>
+<area shape="poly" title=" " alt="" coords="534,341,414,452,410,448,531,337"/>
+<area shape="poly" title=" " alt="" coords="546,339,539,387,531,447,526,446,533,386,541,338"/>
+<area shape="poly" title=" " alt="" coords="603,336,831,381,830,387,602,341"/>
+<area shape="poly" title=" " alt="" coords="624,333,674,351,696,365,714,385,720,403,715,421,703,438,689,453,685,449,699,435,710,419,715,403,710,388,693,370,671,355,622,338"/>
+<area shape="poly" title=" " alt="" coords="624,334,853,364,991,385,999,401,997,418,979,450,975,448,992,417,993,402,988,389,852,369,623,340"/>
+<area shape="poly" title=" " alt="" coords="621,336,680,354,709,368,735,385,762,414,780,446,776,449,758,417,732,389,706,372,678,359,620,341"/>
+<area shape="rect" title=" " alt="" coords="367,387,423,412"/>
+<area shape="poly" title=" " alt="" coords="522,341,433,383,431,378,520,336"/>
+<area shape="rect" title=" " alt="" coords="231,387,342,412"/>
+<area shape="poly" title=" " alt="" coords="505,341,342,386,341,380,503,336"/>
+<area shape="poly" title=" " alt="" coords="328,268,202,291,151,303,126,315,111,339,106,363,111,386,126,410,139,421,157,430,209,445,269,456,326,463,326,469,268,462,207,451,155,435,136,425,122,414,106,388,101,363,106,337,122,311,149,298,201,285,327,263"/>
+<area shape="poly" title=" " alt="" coords="328,266,237,285,199,299,177,315,162,340,157,363,162,386,176,410,276,429,450,457,449,462,275,435,173,414,157,388,151,363,157,338,173,312,197,294,235,280,327,261"/>
+<area shape="poly" title=" " alt="" coords="372,268,312,292,250,327,227,346,212,367,209,388,221,410,249,430,291,442,342,449,399,452,513,453,600,457,616,460,615,465,600,463,513,459,399,458,342,454,290,447,247,434,217,414,204,389,207,365,223,343,247,322,310,287,370,263"/>
+<area shape="poly" title=" " alt="" coords="450,263,737,336,799,342,882,347,961,358,992,369,1014,385,1021,403,1015,421,1003,438,987,453,983,449,999,435,1011,419,1016,403,1010,388,990,374,960,363,882,352,799,348,736,341,449,268"/>
+<area shape="poly" title=" " alt="" coords="429,263,512,305,509,309,427,268"/>
+<area shape="poly" title=" " alt="" coords="407,266,399,373,394,373,402,266"/>
+<area shape="poly" title=" " alt="" coords="398,267,307,378,303,374,394,264"/>
+<area shape="rect" href="Vec4_8hpp.html" title=" " alt="" coords="548,387,700,412"/>
+<area shape="poly" title=" " alt="" coords="412,264,428,300,442,320,458,337,501,363,549,381,547,386,499,368,454,341,437,323,424,303,407,267"/>
+<area shape="poly" title=" " alt="" coords="587,415,441,459,440,453,586,409"/>
+<area shape="poly" title=" " alt="" coords="610,414,554,454,551,450,607,410"/>
+<area shape="poly" title=" " alt="" coords="632,411,650,446,646,449,628,414"/>
+<area shape="poly" title=" " alt="" coords="678,409,904,457,903,463,677,415"/>
+<area shape="poly" title=" " alt="" coords="652,410,750,452,748,457,649,414"/>
+<area shape="rect" title=" " alt="" coords="749,313,827,339"/>
+<area shape="poly" title=" " alt="" coords="777,265,785,300,780,301,772,266"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">

@@ -1,4 +1,3 @@
-#include <Eigen/Core>
 #include <algorithm>
 
 #include "Core/CommonTypes.hpp"
@@ -10,7 +9,6 @@ lin::Vec3 PointLight::getDirectionFromPoint(const lin::Vec3& point) const {
   return (getPosition() - point).normalized();
 }
 
-// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 ColorRGB PointLight::getLightFactor(const lin::Vec3& point, const lin::Vec3& normal) const {
   const double    distance    = (point - getPosition()).length();
   const double    attenuation = getIntensity() / (distance * distance);

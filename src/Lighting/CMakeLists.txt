@@ -6,7 +6,6 @@ add_library(Lighting STATIC
 
 target_include_directories(Lighting PRIVATE
     ${CMAKE_SOURCE_DIR}/include
-    ${CMAKE_SOURCE_DIR}/external/eigen
 )
 
 target_link_libraries(Lighting PRIVATE Core)

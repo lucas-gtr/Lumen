@@ -6,6 +6,9 @@
 #define CORE_COMMONTYPES_HPP
 
 #include <cstdint>
+#include <immintrin.h>
+
+#include "Core/Config.hpp"
 
 /**
  * @struct ImageProperties
@@ -32,7 +35,7 @@ struct ImageProperties {
  * @brief Structure to hold pixel coordinates (x, y) in the framebuffer.
  * @note The coordinates are zero-based, meaning (0, 0) is the top-left corner of the image.
  */
-struct PixelCoord {
+struct alignas(Align8) PixelCoord {
   int x = 0; ///< X coordinate of the pixel.
   int y = 0; ///< Y coordinate of the pixel.
 };
@@ -41,7 +44,7 @@ struct PixelCoord {
  * @struct Resolution
  * @brief Structure to hold the resolution of an image.
  */
-struct Resolution {
+struct alignas(Align8) Resolution {
   int width  = 1; ///< Width of the resolution.
   int height = 1; ///< Height of the resolution.
 };
@@ -51,7 +54,7 @@ struct Resolution {
  * @brief Structure to hold the UV coordinates of a texture.
  * @note The coordinates are normalized, meaning (0, 0) is the top-left corner and (1, 1) is the bottom-right corner.
  */
-struct TextureUV {
+struct alignas(Align16) TextureUV {
   double u = 0.0; ///< U coordinate of the texture.
   double v = 0.0; ///< V coordinate of the texture.
 };
@@ -62,7 +65,7 @@ struct ColorRGBA; ///< Forward declaration for ColorRGBA.
  * @struct ColorRGB
  * @brief Structure to hold RGB color values.
  */
-struct ColorRGB {
+struct alignas(Align32) ColorRGB {
   double r = 0.0; ///< Red component of the color
   double g = 0.0; ///< Green component of the color
   double b = 0.0; ///< Blue component of the color
@@ -85,7 +88,7 @@ struct ColorRGB {
  * @struct ColorRGBA
  * @brief Structure to hold RGBA color values.
  */
-struct ColorRGBA {
+struct alignas(Align32) ColorRGBA {
   double r = 0.0; ///< Red component of the color
   double g = 0.0; ///< Green component of the color
   double b = 0.0; ///< Blue component of the color

@@ -3,10 +3,7 @@
 #include "Scene/Scene.hpp"
 #include "Geometry/CubeMeshBuilder.hpp"
 
-#include <Eigen/Core>
 #include <limits>
-
-constexpr double EPSILON = 1e-8;
 
 TEST(RayIntersectionTest, ValidIntersection) {
     Ray ray = Ray::FromPoint({0, 0, -1}, {0, 0, 1});

@@ -8,10 +8,6 @@ var searchData=
   ['renderer_5',['Renderer',['../classRenderer.html',1,'']]],
   ['renderexporter_6',['RenderExporter',['../classRenderExporter.html',1,'']]],
   ['rendersettings_7',['RenderSettings',['../classRenderSettings.html',1,'']]],
-<<<<<<< HEAD
   ['renderstrategy_8',['RenderStrategy',['../classRenderStrategy.html',1,'']]],
   ['resolution_9',['Resolution',['../structResolution.html',1,'']]]
-=======
-  ['resolution_8',['Resolution',['../structResolution.html',1,'']]]
->>>>>>> main
 ];

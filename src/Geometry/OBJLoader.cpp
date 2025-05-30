@@ -82,7 +82,6 @@ void parseUVLine(const std::string& line, std::vector<TextureUV>& uvs) {
   uvs.push_back(uv);
 }
 
-// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 Face parseFaceLine(const std::string& line, const std::vector<lin::Vec3>& positions,
                    const std::vector<lin::Vec3>& normals, const std::vector<TextureUV>& uvs,
                    std::vector<Vertex>& vertices, std::unordered_map<std::string, int>& vertexMap) {

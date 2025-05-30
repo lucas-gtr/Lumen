@@ -5,7 +5,6 @@
 #include "Geometry/Mesh.hpp"
 #include "Geometry/PlaneMeshBuilder.hpp"
 
-// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 PlaneMeshBuilder::PlaneMeshBuilder(double width, double length) : width(width), length(length) {}
 
 Mesh PlaneMeshBuilder::build() const {

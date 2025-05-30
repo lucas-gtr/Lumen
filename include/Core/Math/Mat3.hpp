@@ -1,81 +1,90 @@
 #ifndef CORE_MATH_MAT3_HPP
 #define CORE_MATH_MAT3_HPP
 
+#include <array>
+#include <cmath>
+#include <immintrin.h>
+#include <initializer_list>
+#include <iostream>
+#include <stdexcept>
+
+#include "Core/Config.hpp"
 #include "Core/Math/Vec3.hpp"
 
 namespace lin {
 
-struct Mat3 {
-  double m[3][3];
+struct alignas(Align32) Mat3 {
+  std::array<std::array<double, 3>, 3> m{};
 
-  Mat3() {
-    for(int i = 0; i < 3; ++i) {
-      for(int j = 0; j < 3; ++j) {
-        m[i][j] = (i == j) ? 1.0 : 0.0; // Identity matrix
-      }
-    }
-  }
+  constexpr Mat3() noexcept : m{{{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {0.0, 0.0, 1.0}}} {}
 
-  Mat3(double value) {
-    for(int i = 0; i < 3; ++i) {
-      for(int j = 0; j < 3; ++j) {
-        m[i][j] = value;
-      }
-    }
-  }
-
-  Mat3(double values[3][3]) {
-    for(int i = 0; i < 3; ++i) {
-      for(int j = 0; j < 3; ++j) {
-        m[i][j] = values[i][j];
-      }
-    }
-  }
+  explicit constexpr Mat3(double value) noexcept
+      : m{{{value, value, value}, {value, value, value}, {value, value, value}}} {}
 
   Mat3(std::initializer_list<std::initializer_list<double>> list) {
+    if(list.size() != 3) {
+      throw std::invalid_argument("Initializer list must have 3 rows.");
+    }
     int i = 0;
-    for(auto row : list) {
+    for(const auto& row : list) {
+      if(row.size() != 3) {
+        throw std::invalid_argument("Each row must have 3 elements.");
+      }
       int j = 0;
-      for(auto value : row) {
-        m[i][j++] = value;
+      for(const auto& value : row) {
+        m[i][j] = value;
+        ++j;
       }
       ++i;
     }
   }
 
-  double& operator()(int row, int col) { return m[row][col]; }
+  constexpr double& operator()(int row, int col) noexcept { return m[row][col]; }
+  constexpr double  operator()(int row, int col) const noexcept { return m[row][col]; }
 
-  Mat3 transpose() const {
-    Mat3 result;
+  constexpr double& operator[](int index) noexcept { return m[index / 3][index % 3]; }
+
+  constexpr double operator[](int index) const noexcept { return m[index / 3][index % 3]; }
+
+  bool operator==(const Mat3& other) const noexcept {
     for(int i = 0; i < 3; ++i) {
       for(int j = 0; j < 3; ++j) {
-        result.m[j][i] = m[i][j];
+        if(m[i][j] != other.m[i][j]) {
+          return false;
+        }
       }
     }
+    return true;
+  }
+  bool operator!=(const Mat3& other) const noexcept { return !(*this == other); }
+
+  Mat3 transposed() const noexcept {
+    Mat3 result;
+    result.m[0][0] = m[0][0];
+    result.m[0][1] = m[1][0];
+    result.m[0][2] = m[2][0];
+    result.m[1][0] = m[0][1];
+    result.m[1][1] = m[1][1];
+    result.m[1][2] = m[2][1];
+    result.m[2][0] = m[0][2];
+    result.m[2][1] = m[1][2];
+    result.m[2][2] = m[2][2];
     return result;
   }
 
-  Mat3 operator*(const Mat3& other) const {
-    Mat3 result;
-    for(int i = 0; i < 3; ++i) {
-      for(int j = 0; j < 3; ++j) {
-        result.m[i][j] = m[i][0] * other.m[0][j] + m[i][1] * other.m[1][j] + m[i][2] * other.m[2][j];
-      }
-    }
-    return result;
+  double determinant() const noexcept {
+    return m[0][0] * (m[1][1] * m[2][2] - m[1][2] * m[2][1]) - m[0][1] * (m[1][0] * m[2][2] - m[1][2] * m[2][0]) +
+           m[0][2] * (m[1][0] * m[2][1] - m[1][1] * m[2][0]);
   }
 
   Mat3 inverse() const {
-    double det = m[0][0] * (m[1][1] * m[2][2] - m[1][2] * m[2][1]) - m[0][1] * (m[1][0] * m[2][2] - m[1][2] * m[2][0]) +
-                 m[0][2] * (m[1][0] * m[2][1] - m[1][1] * m[2][0]);
-
-    if(det == 0.0)
-      throw std::runtime_error("Matrix is singular and cannot be inverted.");
-
-    double invDet = 1.0 / det;
+    const double det = determinant();
+    if(std::abs(det) < EPSILON) {
+      return Mat3{};
+    }
+    const double invDet = 1.0 / det;
 
     Mat3 inv;
-
     inv.m[0][0] = (m[1][1] * m[2][2] - m[1][2] * m[2][1]) * invDet;
     inv.m[0][1] = -(m[0][1] * m[2][2] - m[0][2] * m[2][1]) * invDet;
     inv.m[0][2] = (m[0][1] * m[1][2] - m[0][2] * m[1][1]) * invDet;
@@ -91,44 +100,51 @@ struct Mat3 {
     return inv;
   }
 
-  static Mat3 Identity() {
-    Mat3 identity;
+  Mat3 operator*(const Mat3& other) const noexcept {
+    Mat3 result;
     for(int i = 0; i < 3; ++i) {
+      const auto& row = m[i];
       for(int j = 0; j < 3; ++j) {
-        identity.m[i][j] = (i == j) ? 1.0 : 0.0;
+        result.m[i][j] = row[0] * other.m[0][j] + row[1] * other.m[1][j] + row[2] * other.m[2][j];
       }
     }
-    return identity;
+    return result;
+  }
+  Mat3& operator*=(const Mat3& other) noexcept {
+    *this = *this * other;
+    return *this;
   }
 
+  bool isApprox(const Mat3& other, double epsilon) const {
+    for(int i = 0; i < 3; ++i) {
+      for(int j = 0; j < 3; ++j) {
+        if(std::abs(m[i][j] - other.m[i][j]) > epsilon) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  static constexpr Mat3 Identity() noexcept { return Mat3{}; }
+
   static Mat3 FromRows(const Vec3& row1, const Vec3& row2, const Vec3& row3) {
-    Mat3 result;
-    result.m[0][0] = row1.x;
-    result.m[0][1] = row1.y;
-    result.m[0][2] = row1.z;
-    result.m[1][0] = row2.x;
-    result.m[1][1] = row2.y;
-    result.m[1][2] = row2.z;
-    result.m[2][0] = row3.x;
-    result.m[2][1] = row3.y;
-    result.m[2][2] = row3.z;
-    return result;
+    return Mat3{{{row1.x, row1.y, row1.z}, {row2.x, row2.y, row2.z}, {row3.x, row3.y, row3.z}}};
   }
 
   static Mat3 FromColumns(const Vec3& col1, const Vec3& col2, const Vec3& col3) {
-    Mat3 result;
-    result.m[0][0] = col1.x;
-    result.m[0][1] = col2.x;
-    result.m[0][2] = col3.x;
-    result.m[1][0] = col1.y;
-    result.m[1][1] = col2.y;
-    result.m[1][2] = col3.y;
-    result.m[2][0] = col1.z;
-    result.m[2][1] = col2.z;
-    result.m[2][2] = col3.z;
-    return result;
+    return Mat3{{{col1.x, col2.x, col3.x}, {col1.y, col2.y, col3.y}, {col1.z, col2.z, col3.z}}};
   }
 };
+
+inline std::ostream& operator<<(std::ostream& os, const Mat3& mat) {
+  return os << "Mat3(\n"
+            << "  [" << mat.m[0][0] << ", " << mat.m[0][1] << ", " << mat.m[0][2] << "]\n"
+            << "  [" << mat.m[1][0] << ", " << mat.m[1][1] << ", " << mat.m[1][2] << "]\n"
+            << "  [" << mat.m[2][0] << ", " << mat.m[2][1] << ", " << mat.m[2][2] << "]\n"
+            << ")";
+}
+
 } // namespace lin
 
 #endif // CORE_MATH_MAT3_HPP

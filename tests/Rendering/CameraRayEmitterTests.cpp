@@ -1,6 +1,5 @@
 #include "Rendering/CameraRayEmitter.hpp"
 
-#include <Eigen/Dense>
 #include <gtest/gtest.h>
 
 TEST(CameraRayEmitterTest, InitializeViewport) {
@@ -28,7 +27,10 @@ TEST(CameraRayEmitterTest, InitializeViewportRotation) {
   parameters.focusDistance = 1.0;
   parameters.focalLength = 0.05;
   parameters.cameraPosition = lin::Vec3(0.0, 0.0, 0.0);
-  parameters.cameraRotationMatrix = {{  0.0,  0.0,  1.0 }, {  0.0,  1.0,  0.0 }, { -1.0,  0.0,  0.0 }};
+  parameters.cameraRotationMatrix = lin::Mat3({
+    {  0.0,  0.0,  1.0 }, 
+    {  0.0,  1.0,  0.0 }, 
+    { -1.0,  0.0,  0.0 }});
   parameters.lensRadius = 0;
   
   CameraRayEmitter emitter;

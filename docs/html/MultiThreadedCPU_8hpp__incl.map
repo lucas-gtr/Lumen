@@ -1,27 +1,32 @@
 <map id="/home/lucasgtr/lumen/include/Rendering/MultiThreadedCPU.hpp" name="/home/lucasgtr/lumen/include/Rendering/MultiThreadedCPU.hpp">
-<area shape="rect" id="Node000001" title="Header file for the MultiThreadedCPU class." alt="" coords="293,5,534,60"/>
+<area shape="rect" id="Node000001" title="Header file for the MultiThreadedCPU class." alt="" coords="219,5,461,60"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,115,72,141"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="293,59,191,81,85,111,78,113,76,108,83,105,189,76,292,53"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="434,203,497,229"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="425,59,441,107,462,189,457,190,436,109,420,61"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,63,85,111,78,113,77,108,83,105,239,58"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="402,203,465,229"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="353,59,393,147,420,190,415,193,388,149,348,61"/>
 <area shape="rect" id="Node000004" href="$CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="97,115,277,141"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="351,63,228,113,226,108,349,58"/>
-<area shape="rect" id="Node000006" href="$Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="301,115,427,141"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="402,62,379,104,374,101,397,59"/>
-<area shape="rect" id="Node000008" href="$Parameters_8hpp.html" title="Header file for the Parameters class." alt="" coords="501,108,701,148"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="467,58,552,100,550,104,465,62"/>
-<area shape="rect" id="Node000012" href="$RenderExecution_8hpp.html" title="Header file for the RenderExecution class." alt="" coords="725,115,955,141"/>
-<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="534,57,775,110,774,115,533,63"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="153,203,220,229"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="189,141,189,189,184,189,184,141"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="313,203,410,229"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="366,141,365,189,359,189,361,141"/>
-<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="573,150,496,198,494,194,570,146"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="521,203,599,229"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="595,149,574,192,569,190,590,147"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="675,284,733,309"/>
-<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="613,147,664,235,689,272,685,275,659,237,609,150"/>
-<area shape="rect" id="Node000011" href="$ParameterValue_8hpp.html" title="Header file for the ParameterValue class." alt="" coords="673,196,873,236"/>
-<area shape="poly" id="edge11_Node000008_Node000011" title=" " alt="" coords="640,146,725,187,722,192,638,150"/>
-<area shape="poly" id="edge12_Node000011_Node000010" title=" " alt="" coords="759,238,726,275,722,272,755,234"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="298,62,218,111,216,106,296,58"/>
+<area shape="rect" id="Node000007" href="$Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="252,203,377,229"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="339,61,321,190,316,189,334,60"/>
+<area shape="rect" id="Node000010" href="$Parameters_8hpp.html" title="Header file for the Parameters class." alt="" coords="403,108,603,148"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="387,58,459,99,456,103,384,62"/>
+<area shape="rect" id="Node000014" href="$RenderExecution_8hpp.html" title="Header file for the RenderExecution class." alt="" coords="627,115,856,141"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="453,57,680,110,679,115,452,63"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="39,203,105,229"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="173,143,100,197,97,193,170,139"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="129,203,228,229"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="188,141,184,190,178,189,183,141"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="205,139,287,193,284,198,202,143"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="329,284,399,309"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="324,227,352,271,347,274,320,230"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="207,284,305,309"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="308,230,275,274,271,271,304,227"/>
+<area shape="poly" id="edge13_Node000010_Node000003" title=" " alt="" coords="489,150,453,194,449,191,485,147"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="764,203,841,229"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="581,146,753,193,761,196,759,201,751,199,579,151"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="541,284,600,309"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="508,148,515,189,530,235,554,272,550,275,526,237,510,190,502,149"/>
+<area shape="rect" id="Node000013" href="$ParameterValue_8hpp.html" title="Header file for the ParameterValue class." alt="" coords="540,196,740,236"/>
+<area shape="poly" id="edge14_Node000010_Node000013" title=" " alt="" coords="534,146,599,186,597,191,531,150"/>
+<area shape="poly" id="edge15_Node000013_Node000012" title=" " alt="" coords="625,238,592,275,588,272,621,234"/>
 </map>

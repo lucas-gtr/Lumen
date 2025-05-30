@@ -8,13 +8,13 @@
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="467,54,501,91,497,95,463,57"/>
 <area shape="rect" id="Node000006" href="$Renderer_8cpp.html" title=" " alt="" coords="259,189,463,229"/>
 <area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="414,57,390,94,374,145,366,189,361,188,369,143,386,92,410,54"/>
-<area shape="rect" id="Node000007" href="$SingleThreadedStrategy_8cpp.html" title=" " alt="" coords="726,181,946,236"/>
-<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="532,47,590,66,647,91,673,110,699,131,783,179,781,184,696,136,670,115,644,96,588,71,531,52"/>
+<area shape="rect" id="Node000007" href="$SingleThreaded_8cpp.html" title=" " alt="" coords="726,189,973,229"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="532,47,590,66,647,91,673,111,699,131,754,161,806,186,804,191,751,166,696,136,670,115,644,96,588,71,531,52"/>
 <area shape="rect" id="Node000008" href="$Framebuffer_8cpp.html" title=" " alt="" coords="709,93,897,133"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="532,46,724,91,722,96,531,51"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="131,147,128,189,123,188,126,147"/>
-<area shape="rect" id="Node000005" href="$MultiThreadedCPUStrategy_8cpp.html" title=" " alt="" coords="488,181,701,236"/>
+<area shape="rect" id="Node000005" href="$MultiThreadedCPU_8cpp.html" title=" " alt="" coords="488,181,701,236"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="543,142,575,180,570,183,539,146"/>
 <area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="474,143,394,191,391,186,472,138"/>
-<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="595,135,747,179,745,184,593,140"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="597,134,783,186,781,191,596,140"/>
 </map>

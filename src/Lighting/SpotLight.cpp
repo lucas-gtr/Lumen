@@ -1,4 +1,3 @@
-#include <Eigen/Core>
 #include <algorithm>
 #include <cmath>
 
@@ -12,7 +11,6 @@ lin::Vec3 SpotLight::getDirectionFromPoint(const lin::Vec3& point) const {
   return (getPosition() - point).normalized();
 }
 
-// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 ColorRGB SpotLight::getLightFactor(const lin::Vec3& point, const lin::Vec3& normal) const {
   const double distance    = (getPosition() - point).length();
   const double attenuation = getIntensity() / (distance * distance);

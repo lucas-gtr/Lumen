@@ -58,7 +58,6 @@ bool MultiThreadedCPU::render() {
   return true;
 }
 
-// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 void MultiThreadedCPU::generateBlocks(int width, int height, int samples_per_pixel) {
   m_blocks.clear();
 
@@ -78,7 +77,6 @@ void MultiThreadedCPU::generateBlocks(int width, int height, int samples_per_pix
   }
 }
 
-// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 void MultiThreadedCPU::threadWorker(int thread_id, double sample_weight, double cell_size) {
   Framebuffer::setThreadId(thread_id);
   while(true) {

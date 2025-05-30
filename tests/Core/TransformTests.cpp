@@ -128,15 +128,15 @@ TEST(TransformTest, RotationMatrixTest) {
     double ry = rotation.y * M_PI / 180.0;
     double rz = rotation.z * M_PI / 180.0;
 
-    rotationX = {{1, 0, 0},
+    rotationX = lin::Mat3({{1, 0, 0},
                   {0, cos(rx), -sin(rx)},
-                  {0, sin(rx), cos(rx)}};
-    rotationY = {{cos(ry), 0, sin(ry)},
+                  {0, sin(rx), cos(rx)}});
+    rotationY = lin::Mat3({{cos(ry), 0, sin(ry)},
                   {0, 1, 0},
-                  {-sin(ry), 0, cos(ry)}};
-    rotationZ = {{cos(rz), -sin(rz), 0},
+                  {-sin(ry), 0, cos(ry)}});
+    rotationZ = lin::Mat3({{cos(rz), -sin(rz), 0},
                   {sin(rz), cos(rz), 0},
-                  {0, 0, 1}};
+                  {0, 0, 1}});
 
     lin::Mat3 expectedRotationMatrix = rotationZ * rotationY * rotationX;
     lin::Mat4 expectedTransformationMatrix(expectedRotationMatrix);
@@ -169,15 +169,15 @@ TEST(TransformTest, CombinedTransformationMatrixTest) {
     double ry = rotation.y * M_PI / 180.0;
     double rz = rotation.z * M_PI / 180.0;
 
-    rotationX = {{1, 0, 0},
+    rotationX = lin::Mat3({{1, 0, 0},
                   {0, cos(rx), -sin(rx)},
-                  {0, sin(rx), cos(rx)}};
-    rotationY = {{cos(ry), 0, sin(ry)},
+                  {0, sin(rx), cos(rx)}});
+    rotationY = lin::Mat3({{cos(ry), 0, sin(ry)},
                   {0, 1, 0},
-                  {-sin(ry), 0, cos(ry)}};
-    rotationZ = {{cos(rz), -sin(rz), 0},
+                  {-sin(ry), 0, cos(ry)}});
+    rotationZ = lin::Mat3({{cos(rz), -sin(rz), 0},
                   {sin(rz), cos(rz), 0},
-                  {0, 0, 1}};
+                  {0, 0, 1}});
 
     lin::Mat3 rotationMatrix = rotationZ * rotationY * rotationX;
     lin::Mat4 expectedTransformationMatrix(rotationMatrix);

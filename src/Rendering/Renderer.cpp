@@ -90,9 +90,7 @@ ColorRGBA Renderer::getPixelColor(const PixelCoord& pixel, double dx, double dy,
   return traceRay(ray);
 }
 
-// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 void Renderer::renderSample(const PixelCoord& pixel_start, const PixelCoord& pixel_end, double sample_weight,
-                            // NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
                             const PixelCoord& subpixel_grid_pos, double cell_size) {
   const double dx = m_render_settings->getDx();
   const double dy = m_render_settings->getDy();
@@ -120,9 +118,9 @@ ColorRGBA Renderer::traceRay(const Ray& ray) const {
 
   ColorRGB light_factor = {0.0, 0.0, 0.0};
   for(const auto& light : m_scene->getLightList()) {
-    const lin::Vec3 light_direction = light->getDirectionFromPoint(hit_info.hitPoint);
-    const Ray       shadow_ray      = Ray::FromDirection(
-        hit_info.hitPoint + shadow_ray.direction * RayIntersection::RAY_OFFSET_FACTOR, light_direction.normalized());
+    const lin::Vec3 light_direction = light->getDirectionFromPoint(hit_info.hitPoint).normalized();
+    const Ray       shadow_ray =
+        Ray::FromDirection(hit_info.hitPoint + light_direction * RayIntersection::RAY_OFFSET_FACTOR, light_direction);
 
     const RayHitInfo shadow_hit = RayIntersection::getSceneIntersection(shadow_ray, m_scene);
     if(isValidHit(shadow_hit)) {

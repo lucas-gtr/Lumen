@@ -8,7 +8,6 @@ add_library(Geometry STATIC
 
 target_include_directories(Geometry PRIVATE
     ${CMAKE_SOURCE_DIR}/include
-    ${CMAKE_SOURCE_DIR}/external/eigen
 )
 
 target_link_libraries(Geometry PRIVATE Core BVH)

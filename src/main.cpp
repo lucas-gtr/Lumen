@@ -256,8 +256,8 @@ void renderOBJExample() {
   scene.setSkybox(skybox_texture);
 
   RenderSettings render_settings;
-  render_settings.setWidth(800);
-  render_settings.setHeight(600);
+  render_settings.setWidth(1920);
+  render_settings.setHeight(1080);
   render_settings.setChannelCount(4);
   render_settings.setSamplesPerPixel(4);
   render_settings.setExecutionMode(RenderExecutionMode::MULTI_THREADED_CPU);

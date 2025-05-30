@@ -121,7 +121,7 @@ void updateNormalWithTangentSpace(RayHitInfo& hit_info) {
     return;
   }
 
-  lin::Mat3 tangent_space = lin::Mat3::FromColumns(hit_info.tangent, hit_info.bitangent, hit_info.normal);
+  const lin::Mat3 tangent_space = lin::Mat3::FromColumns(hit_info.tangent, hit_info.bitangent, hit_info.normal);
 
   const ColorRGB normal_color     = hit_info.material->getNormal(hit_info.uvCoordinates);
   lin::Vec3      normal_direction = {normal_color.r, normal_color.g, normal_color.b};
@@ -131,7 +131,7 @@ void updateNormalWithTangentSpace(RayHitInfo& hit_info) {
 }
 
 Ray transformRayToObjectSpace(const Ray& ray, const Object3D* object) {
-  lin::Mat4 inv_matrix = object->getInverseMatrix();
+  const lin::Mat4 inv_matrix = object->getInverseMatrix();
 
   const lin::Vec3 origin    = lin::toVec3((inv_matrix * lin::toVec4(ray.origin)));
   const lin::Vec3 direction = (inv_matrix.topLeft3x3() * ray.direction).normalized();
@@ -167,7 +167,6 @@ RayHitInfo getObjectIntersection(const Ray& ray, const Object3D* object) {
   return hit_info;
 }
 
-// NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
 bool getAABBIntersection(const Ray& ray, const lin::Vec3& min_bound, const lin::Vec3& max_bound, double& hit_distance) {
   const lin::Vec3 inv_dir = ray.direction.cwiseInverse();
   const lin::Vec3 t0      = lin::cwiseProduct((min_bound - ray.origin), inv_dir);

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['tangent_0',['tangent',['../structRayHitInfo.html#a69b1c50b816231ef99fae1cec04c3ce5',1,'RayHitInfo::tangent'],['../structVertex.html#a94aefe9861eca6190e781fcb20c99e3b',1,'Vertex::tangent']]],
+  ['tangent_0',['tangent',['../structRayHitInfo.html#a4afd7a90e80f9517a5bb15aef0c793e5',1,'RayHitInfo::tangent'],['../structVertex.html#aa2727edec3512fce8f852c43c6992301',1,'Vertex::tangent']]],
   ['texture_1',['texture',['../classTexture.html',1,'Texture'],['../classTexture.html#ac8308fa71341874fceaa3df93d3676ef',1,'Texture::Texture(double value)'],['../classTexture.html#a20989413de6db654c2f598dc42410f91',1,'Texture::Texture(const ColorRGB &amp;color)'],['../classTexture.html#a0f138dd2ac5a9397d121aa37df8b0ce6',1,'Texture::Texture(const ColorRGBA &amp;color)'],['../classTexture.html#a397492c1da4b76dd375f10a189c94662',1,'Texture::Texture(const unsigned char *image_data, ImageProperties texture_properties)'],['../classTexture.html#a8db9c30f914f0847cdeae2603a381bbc',1,'Texture::Texture(const double *image_data, ImageProperties texture_properties)'],['../classTexture.html#a39525b14ee2b04ccc6828fab78ea9638',1,'Texture::Texture(const Texture &amp;)'],['../classTexture.html#ac362f908326873d9ec8613f775da57d8',1,'Texture::Texture(Texture &amp;&amp;) noexcept']]],
   ['texture_2ecpp_2',['Texture.cpp',['../Texture_8cpp.html',1,'']]],
   ['texture_2ehpp_3',['Texture.hpp',['../Texture_8hpp.html',1,'']]],
@@ -15,15 +15,19 @@ var searchData=
   ['texturewrapping_12',['TextureWrapping',['../namespaceTextureSampling.html#a6a2dbd44cfe757630af60a4d5107c1d9',1,'TextureSampling']]],
   ['texturewrapping_2ecpp_13',['TextureWrapping.cpp',['../TextureWrapping_8cpp.html',1,'']]],
   ['texturewrapping_2ehpp_14',['TextureWrapping.hpp',['../TextureWrapping_8hpp.html',1,'']]],
-  ['tograyscale_15',['tograyscale',['../ColorUtils_8hpp.html#a69d68bacebaa26b0d422c6169d28a157',1,'toGrayscale(const ColorRGBA &amp;color):&#160;ColorUtils.hpp'],['../ColorUtils_8hpp.html#a333094e8badc884a0b728592eaf56116',1,'toGrayscale(const ColorRGB &amp;color):&#160;ColorUtils.hpp']]],
+  ['tograyscale_15',['tograyscale',['../ColorUtils_8hpp.html#a333094e8badc884a0b728592eaf56116',1,'toGrayscale(const ColorRGB &amp;color):&#160;ColorUtils.hpp'],['../ColorUtils_8hpp.html#a69d68bacebaa26b0d422c6169d28a157',1,'toGrayscale(const ColorRGBA &amp;color):&#160;ColorUtils.hpp']]],
   ['tonemapping_16',['ToneMapping',['../RenderExporter_8hpp.html#a864b9093408eb25e8a8f0e9bf1aa8efb',1,'RenderExporter.hpp']]],
   ['tonemapping_2ehpp_17',['ToneMapping.hpp',['../ToneMapping_8hpp.html',1,'']]],
-  ['tonemappingstrategy_18',['tonemappingstrategy',['../classToneMappingStrategy.html#a5d732338384bcc5caf62b02aa8a9c2b7',1,'ToneMappingStrategy::ToneMappingStrategy()=default'],['../classToneMappingStrategy.html#a9d70c6a26c589fc386046a261e4aff9c',1,'ToneMappingStrategy::ToneMappingStrategy(const ToneMappingStrategy &amp;)=delete'],['../classToneMappingStrategy.html#af4048790861ece44b168154ebdd9a43c',1,'ToneMappingStrategy::ToneMappingStrategy(ToneMappingStrategy &amp;&amp;)=delete'],['../classToneMappingStrategy.html',1,'ToneMappingStrategy']]],
-  ['torgb_19',['torgb',['../ColorUtils_8hpp.html#ae9ebb8c8d7afc139f8a4035d264e9fb2',1,'toRGB(const ColorRGBA &amp;color):&#160;ColorUtils.hpp'],['../ColorUtils_8hpp.html#ace3d0933c0fc79b89bf019f90887b27d',1,'toRGB(double grayscale):&#160;ColorUtils.hpp']]],
-  ['torgba_20',['torgba',['../ColorUtils_8hpp.html#a35ae8717664015d61d356b2d11a6b0a0',1,'toRGBA(double grayscale):&#160;ColorUtils.hpp'],['../ColorUtils_8hpp.html#a68e867a76050ca89dfa1eabdc91fbd9a',1,'toRGBA(const ColorRGB &amp;color):&#160;ColorUtils.hpp']]],
-  ['transform_21',['transform',['../classTransform.html#a9631ea5e6a9a45e16ce2967f5d15f597',1,'Transform::Transform(Transform &amp;&amp;)=default'],['../classTransform.html#a623c9e3c9502f6bb11ced37807ce0339',1,'Transform::Transform(const Transform &amp;)=default'],['../classTransform.html#a7bf7de7ceb3d2463fc7a5cfe0e9cc372',1,'Transform::Transform(const Eigen::Vector3d &amp;position, const Eigen::Vector3d &amp;rotation, const Eigen::Vector3d &amp;scale)'],['../classTransform.html#aa08ca4266efabc768973cdeea51945ab',1,'Transform::Transform()'],['../classTransform.html',1,'Transform']]],
-  ['transform_2ecpp_22',['Transform.cpp',['../Transform_8cpp.html',1,'']]],
-  ['transform_2ehpp_23',['Transform.hpp',['../Transform_8hpp.html',1,'']]],
-  ['transformhitinfotoworldspace_24',['transformHitInfoToWorldSpace',['../namespaceRayIntersection.html#a50261cf0e3ca183ae3b0ea427df5ad91',1,'RayIntersection']]],
-  ['transformraytoobjectspace_25',['transformRayToObjectSpace',['../namespaceRayIntersection.html#aa8250133de9c2e677707dded1c46fd6f',1,'RayIntersection']]]
+  ['tonemappingstrategy_18',['tonemappingstrategy',['../classToneMappingStrategy.html',1,'ToneMappingStrategy'],['../classToneMappingStrategy.html#a5d732338384bcc5caf62b02aa8a9c2b7',1,'ToneMappingStrategy::ToneMappingStrategy()=default'],['../classToneMappingStrategy.html#a9d70c6a26c589fc386046a261e4aff9c',1,'ToneMappingStrategy::ToneMappingStrategy(const ToneMappingStrategy &amp;)=delete'],['../classToneMappingStrategy.html#af4048790861ece44b168154ebdd9a43c',1,'ToneMappingStrategy::ToneMappingStrategy(ToneMappingStrategy &amp;&amp;)=delete']]],
+  ['topleft3x3_19',['topLeft3x3',['../structlin_1_1Mat4.html#aaf2d9a2da23af612d86dc10afe2976ee',1,'lin::Mat4']]],
+  ['torgb_20',['torgb',['../ColorUtils_8hpp.html#ace3d0933c0fc79b89bf019f90887b27d',1,'toRGB(double grayscale):&#160;ColorUtils.hpp'],['../ColorUtils_8hpp.html#ae9ebb8c8d7afc139f8a4035d264e9fb2',1,'toRGB(const ColorRGBA &amp;color):&#160;ColorUtils.hpp']]],
+  ['torgba_21',['torgba',['../ColorUtils_8hpp.html#a35ae8717664015d61d356b2d11a6b0a0',1,'toRGBA(double grayscale):&#160;ColorUtils.hpp'],['../ColorUtils_8hpp.html#a68e867a76050ca89dfa1eabdc91fbd9a',1,'toRGBA(const ColorRGB &amp;color):&#160;ColorUtils.hpp']]],
+  ['tovec3_22',['toVec3',['../namespacelin.html#acb472d991aa357073c4d492d98c9b57b',1,'lin']]],
+  ['tovec4_23',['toVec4',['../namespacelin.html#abd49915b3621035ebd8028c001b15290',1,'lin']]],
+  ['transform_24',['transform',['../classTransform.html#a9631ea5e6a9a45e16ce2967f5d15f597',1,'Transform::Transform(Transform &amp;&amp;)=default'],['../classTransform.html#a623c9e3c9502f6bb11ced37807ce0339',1,'Transform::Transform(const Transform &amp;)=default'],['../classTransform.html#a79a16b579c9836f9ca64ea333f4ddbc1',1,'Transform::Transform(const lin::Vec3 &amp;position, const lin::Vec3 &amp;rotation, const lin::Vec3 &amp;scale)'],['../classTransform.html#aa08ca4266efabc768973cdeea51945ab',1,'Transform::Transform()'],['../classTransform.html',1,'Transform']]],
+  ['transform_2ecpp_25',['Transform.cpp',['../Transform_8cpp.html',1,'']]],
+  ['transform_2ehpp_26',['Transform.hpp',['../Transform_8hpp.html',1,'']]],
+  ['transformhitinfotoworldspace_27',['transformHitInfoToWorldSpace',['../namespaceRayIntersection.html#a50261cf0e3ca183ae3b0ea427df5ad91',1,'RayIntersection']]],
+  ['transformraytoobjectspace_28',['transformRayToObjectSpace',['../namespaceRayIntersection.html#aa8250133de9c2e677707dded1c46fd6f',1,'RayIntersection']]],
+  ['transposed_29',['transposed',['../structlin_1_1Mat4.html#a695b6c4860eb35dbccf494df2a429ab2',1,'lin::Mat4::transposed()'],['../structlin_1_1Mat3.html#a591131ae6d88d64ea64a313f964a4459',1,'lin::Mat3::transposed()']]]
 ];
