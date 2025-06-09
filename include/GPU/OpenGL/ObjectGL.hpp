@@ -69,7 +69,7 @@ public:
   /**
    * @brief Unbinds the Vertex Array Object.
    */
-  void unbind() const;
+  static void unbind();
 
   /**
    * @brief Releases the OpenGL resources used by the buffer.

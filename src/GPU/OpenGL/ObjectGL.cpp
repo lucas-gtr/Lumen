@@ -68,7 +68,7 @@ void ObjectGL::bindVAO() const { glBindVertexArray(m_VAO); }
 
 void ObjectGL::bindMaterial() const { m_material->bind(); }
 
-void ObjectGL::unbind() const {
+void ObjectGL::unbind() {
   glBindVertexArray(0);
   MaterialGL::unbind();
 }
