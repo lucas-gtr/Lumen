@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies for clang-format and clang-tidy
         run: |
           sudo apt-get update
-          sudo apt-get install -y clang-format clang-tidy libglew-dev libgl1-mesa-dev libxrandr-dev
+          sudo apt-get install -y clang-format clang-tidy libglew-dev libgl1-mesa-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libglfw3-dev
 
       - name: Check code format and lint
         run: |
