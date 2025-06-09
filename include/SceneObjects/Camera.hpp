@@ -29,6 +29,9 @@ private:
   double m_sensor_width; // in mm
   double m_lens_radius;  // in mm
 
+  double m_near_plane = DEFAULT_CAMERA_NEAR_PLANE; // in meters
+  double m_far_plane  = DEFAULT_CAMERA_FAR_PLANE;  // in meters
+
   double getUpdatedLensRadius() const;
   double getUpdatedSensorWidth() const;
   double getUpdatedFov() const;
@@ -57,13 +60,13 @@ public:
    * @brief Gets the current field of view in degrees.
    * @return The current field of view in degrees.
    */
-  double getFov() const { return m_horizontal_fov; }
+  double getFovX() const { return m_horizontal_fov; }
 
   /**
-   * @brief Sets the field of view.
-   * @param fov The field of view in degrees.
+   * @brief Sets the horizontal field of view.
+   * @param fov The horizontal field of view in degrees.
    */
-  void setFov(double fov);
+  void setHorizontalFov(double fov);
 
   /**
    * @brief Gets the current sensor width in millimeters.
@@ -134,6 +137,30 @@ public:
    * @return The lens radius in millimeters.
    */
   double getLensRadius() const { return m_lens_radius * MM_TO_M; }
+
+  /**
+   * @brief Gets the near clipping plane distance in meters.
+   * @return The near clipping plane distance in meters.
+   */
+  double getNearPlane() const { return m_near_plane; }
+
+  /**
+   * @brief Sets the near clipping plane distance.
+   * @param nearPlane The near clipping plane distance in meters.
+   */
+  void setNearPlane(double nearPlane) { m_near_plane = std::clamp(nearPlane, MIN_CAMERA_PLANE, m_far_plane); }
+
+  /**
+   * @brief Gets the far clipping plane distance in meters.
+   * @return The far clipping plane distance in meters.
+   */
+  double getFarPlane() const { return m_far_plane; }
+
+  /**
+   * @brief Sets the far clipping plane distance.
+   * @param farPlane The far clipping plane distance in meters.
+   */
+  void setFarPlane(double farPlane) { m_far_plane = std::clamp(farPlane, m_near_plane, MAX_CAMERA_PLANE); }
 
   ~Camera() = default; ///< Default destructor.
 };

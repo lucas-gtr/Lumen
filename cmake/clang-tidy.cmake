@@ -10,11 +10,11 @@ function(run_clang_tidy)
     
     if(FILES_TO_CHECK)
         if(FILES_TO_CHECK STREQUAL "all")
-            file(GLOB_RECURSE SOURCE_FILES "${CMAKE_SOURCE_DIR}/src/*.cpp" "${CMAKE_SOURCE_DIR}/include/*.hpp")
+            file(GLOB_RECURSE SOURCE_FILES "${CMAKE_SOURCE_DIR}/src/*.cpp")
             list(REMOVE_ITEM SOURCE_FILES "${CMAKE_SOURCE_DIR}/src/main.cpp")
         else()
             foreach(file IN LISTS FILES_TO_CHECK)
-                if(file MATCHES ".*\\.cpp$" OR file MATCHES ".*\\.hpp$")
+                if(file MATCHES ".*\\.cpp$" )
                     list(APPEND SOURCE_FILES ${file})
                 endif()
             endforeach()
@@ -30,6 +30,7 @@ function(run_clang_tidy)
         --quiet
         ${SOURCE_FILES} 
         -p=${CMAKE_BINARY_DIR}
+        -header-filter=${CMAKE_SOURCE_DIR}/include/.*
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
         COMMENT "Running Clang-Tidy"
         VERBATIM

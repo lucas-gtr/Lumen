@@ -27,16 +27,16 @@ void Mesh::computeTangentsAndBitangents() {
     const Vertex& v1 = m_vertices[face.vertexIndices[1]];
     const Vertex& v2 = m_vertices[face.vertexIndices[2]];
 
-    const lin::Vec3 edge1 = v1.position - v0.position;
-    const lin::Vec3 edge2 = v2.position - v0.position;
+    const lin::Vec3d edge1 = v1.position - v0.position;
+    const lin::Vec3d edge2 = v2.position - v0.position;
 
-    const lin::Vec2 deltaUV1 = {v1.uvCoord.u - v0.uvCoord.u, v1.uvCoord.v - v0.uvCoord.v};
-    const lin::Vec2 deltaUV2 = {v2.uvCoord.u - v0.uvCoord.u, v2.uvCoord.v - v0.uvCoord.v};
+    const lin::Vec2d deltaUV1 = {v1.uvCoord.u - v0.uvCoord.u, v1.uvCoord.v - v0.uvCoord.v};
+    const lin::Vec2d deltaUV2 = {v2.uvCoord.u - v0.uvCoord.u, v2.uvCoord.v - v0.uvCoord.v};
 
     const double f = 1.0 / (deltaUV1.x * deltaUV2.y - deltaUV2.x * deltaUV1.y);
 
-    const lin::Vec3 tangent   = f * (deltaUV2.y * edge1 - deltaUV1.y * edge2);
-    const lin::Vec3 bitangent = f * (-deltaUV2.x * edge1 + deltaUV1.x * edge2);
+    const lin::Vec3d tangent   = f * (deltaUV2.y * edge1 - deltaUV1.y * edge2);
+    const lin::Vec3d bitangent = f * (-deltaUV2.x * edge1 + deltaUV1.x * edge2);
 
     m_vertices[face.vertexIndices[0]].tangent += tangent;
     m_vertices[face.vertexIndices[1]].tangent += tangent;
@@ -65,8 +65,8 @@ void Mesh::buildBVH() {
     const auto& v1   = m_vertices[face.vertexIndices[1]].position;
     const auto& v2   = m_vertices[face.vertexIndices[2]].position;
 
-    const lin::Vec3 min_bound = lin::cwiseMin(v0, lin::cwiseMin(v1, v2));
-    const lin::Vec3 max_bound = lin::cwiseMax(v0, lin::cwiseMax(v1, v2));
+    const lin::Vec3d min_bound = lin::cwiseMin(v0, lin::cwiseMin(v1, v2));
+    const lin::Vec3d max_bound = lin::cwiseMax(v0, lin::cwiseMax(v1, v2));
 
     bvh_leaves.emplace_back(std::make_shared<BVHNode>(min_bound, max_bound, static_cast<int>(i)));
   }

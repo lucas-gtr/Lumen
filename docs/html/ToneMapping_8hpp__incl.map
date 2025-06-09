@@ -1,14 +1,16 @@
 <map id="/home/lucasgtr/lumen/include/PostProcessing/ToneMapping/ToneMapping.hpp" name="/home/lucasgtr/lumen/include/PostProcessing/ToneMapping/ToneMapping.hpp">
-<area shape="rect" id="Node000001" title="Header file for the ToneMappingStrategy class." alt="" coords="39,5,270,60"/>
-<area shape="rect" id="Node000002" href="$Parameters_8hpp.html" title="Header file for the Parameters class." alt="" coords="55,108,255,148"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,60,157,94,152,94,152,60"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,203,83,229"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="132,150,72,197,69,192,128,146"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="203,284,261,309"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="150,149,141,190,141,213,148,235,167,258,192,275,189,280,163,262,143,237,136,214,135,190,144,148"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="158,203,221,229"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="165,147,182,189,177,191,160,149"/>
-<area shape="rect" id="Node000006" href="$ParameterValue_8hpp.html" title="Header file for the ParameterValue class." alt="" coords="244,196,444,236"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="197,146,291,188,289,193,195,150"/>
-<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="318,238,261,278,258,274,315,234"/>
+<area shape="rect" id="Node000001" title="Header file for the ToneMappingStrategy class." alt="" coords="5,5,236,60"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="9,115,75,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,62,63,106,59,103,96,59"/>
+<area shape="rect" id="Node000003" href="$Parameters_8hpp.html" title="Header file for the Parameters class." alt="" coords="99,108,299,148"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="145,59,177,96,173,99,141,62"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="50,203,127,229"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="176,150,117,197,113,192,173,146"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="247,284,306,309"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="194,149,185,190,186,213,192,235,211,258,236,275,233,280,208,262,188,237,180,214,180,190,189,148"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="203,203,265,229"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="209,147,227,189,222,191,205,149"/>
+<area shape="rect" id="Node000007" href="$ParameterValue_8hpp.html" title="Header file for the ParameterValue class." alt="" coords="289,196,489,236"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="242,146,336,188,334,193,240,150"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="363,238,306,278,303,274,360,234"/>
 </map>

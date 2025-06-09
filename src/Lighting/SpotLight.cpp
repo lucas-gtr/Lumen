@@ -7,16 +7,18 @@
 #include "Core/MathConstants.hpp"
 #include "Lighting/SpotLight.hpp"
 
-lin::Vec3 SpotLight::getDirectionFromPoint(const lin::Vec3& point) const {
+void SpotLight::setDirection(const lin::Vec3d& direction) { m_direction = direction.normalized(); }
+
+lin::Vec3d SpotLight::getDirectionFromPoint(const lin::Vec3d& point) const {
   return (getPosition() - point).normalized();
 }
 
-ColorRGB SpotLight::getLightFactor(const lin::Vec3& point, const lin::Vec3& normal) const {
+ColorRGB SpotLight::getLightFactor(const lin::Vec3d& point, const lin::Vec3d& normal) const {
   const double distance    = (getPosition() - point).length();
   const double attenuation = getIntensity() / (distance * distance);
 
-  const lin::Vec3 light_dir   = (getPosition() - point).normalized();
-  const double    dot_product = dot(normal, light_dir);
+  const lin::Vec3d light_dir   = (getPosition() - point).normalized();
+  const double     dot_product = dot(normal, light_dir);
 
   const double cosine_angle = lin::dot(-light_dir, m_direction.normalized());
   const double inner_cutoff = std::cos(m_inner_angle * DEG_TO_RAD);

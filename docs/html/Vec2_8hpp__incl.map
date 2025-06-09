@@ -1,5 +1,5 @@
 <map id="/home/lucasgtr/lumen/include/Core/Math/Vec2.hpp" name="/home/lucasgtr/lumen/include/Core/Math/Vec2.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="152,5,359,45"/>
+<area shape="rect" id="Node000001" title="Header file for the Vec2 class, representing a 2D vector." alt="" coords="152,5,359,45"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,93,68,119"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,48,82,91,80,86,202,43"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="93,93,191,119"/>
@@ -8,10 +8,8 @@
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="258,46,258,79,253,79,253,46"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="320,93,407,119"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="283,43,337,83,334,87,280,48"/>
-<area shape="rect" id="Node000006" href="$Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="431,93,557,119"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="313,43,447,87,445,92,312,48"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="404,167,475,192"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="487,121,459,157,454,154,483,117"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="499,167,596,192"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="505,117,533,154,528,157,501,121"/>
+<area shape="rect" id="Node000006" href="$Alignment_8hpp.html" title="Defines alignment constants for vector and matrix types." alt="" coords="431,93,619,119"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="321,43,473,87,472,92,319,48"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="489,167,560,192"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="527,119,527,153,522,153,522,119"/>
 </map>

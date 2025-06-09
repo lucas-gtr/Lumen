@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies for clang-format and clang-tidy
         run: |
           sudo apt-get update
-          sudo apt-get install -y clang-format clang-tidy
+          sudo apt-get install -y clang-format clang-tidy libglew-dev libgl1-mesa-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libglfw3-dev
 
       - name: Check code format and lint
         run: |
@@ -34,6 +34,12 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: true
+
+      - name: Install dependencies for tests
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libglew-dev libgl1-mesa-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libglfw3-dev
+
 
       - name: Run tests
         run: |

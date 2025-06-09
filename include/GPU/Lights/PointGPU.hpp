@@ -1,0 +1,59 @@
+/**
+ * @file PointGPU.hpp
+ * @brief Header file for the PointLightGPU class, which represents a point light for GPU memory.
+ */
+#ifndef GPU_LIGHTS_POINTGPU_HPP
+#define GPU_LIGHTS_POINTGPU_HPP
+
+#include "Core/Math/Vec3.hpp"
+#include "Lighting/PointLight.hpp"
+
+/**
+ * @class PointLightGPU
+ * @brief Represents a point light in GPU memory.
+ *
+ * This class is designed to hold the properties of a point light,
+ * such as its position and color, for efficient access in GPU rendering.
+ */
+class PointLightGPU {
+private:
+  const PointLight* m_light = nullptr;
+
+  lin::Vec3f m_position;
+  lin::Vec3f m_color;
+
+protected:
+  const PointLight* light() const { return m_light; }
+
+public:
+  /**
+   * @brief Constructor for PointLightGPU.
+   * @param light Pointer to the PointLight object to be represented in GPU memory.
+   */
+  explicit PointLightGPU(const PointLight& light);
+
+  PointLightGPU(const PointLightGPU&)            = delete;
+  PointLightGPU& operator=(const PointLightGPU&) = delete;
+  PointLightGPU(PointLightGPU&&)                 = delete;
+  PointLightGPU& operator=(PointLightGPU&&)      = delete;
+
+  /**
+   * @brief Gets the position of the light.
+   * @return The position vector of the light.
+   */
+  lin::Vec3f getPosition() const {
+    return m_position; ///< Gets the direction of the light.
+  }
+
+  /**
+   * @brief Gets the color of the light multiplied by the intensity.
+   * @return The color vector of the light multiplied by the intensity.
+   */
+  lin::Vec3f getColor() const {
+    return m_color; ///< Gets the color of the light.
+  }
+
+  ~PointLightGPU() = default; ///< Default destructor for PointLightGPU.
+};
+
+#endif // GPU_LIGHTS_POINTGPU_HPP

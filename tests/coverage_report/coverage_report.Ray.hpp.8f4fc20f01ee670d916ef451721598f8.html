@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-05-30 12:20:17</td>
+      <td>2025-06-09 10:46:40</td>
     </tr>
   </table>
 </div>
@@ -73,9 +73,9 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l23">Ray::FromDirection(lin::Vec3 const&amp;, lin::Vec3 const&amp;) (line 23)</a></td><td>called 39 times, returned 39 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l21">Ray::FromPoint(lin::Vec3 const&amp;, lin::Vec3 const&amp;) (line 21)</a></td><td>called 90 times, returned 90 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l26">Ray::Ray(lin::Vec3 const&amp;, lin::Vec3 const&amp;) (line 26)</a></td><td>called 129 times, returned 129 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l35">Ray::FromDirection(lin::Vec3&lt;double&gt; const&amp;, lin::Vec3&lt;double&gt; const&amp;) (line 35)</a></td><td>called 283 times, returned 283 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l27">Ray::FromPoint(lin::Vec3&lt;double&gt; const&amp;, lin::Vec3&lt;double&gt; const&amp;) (line 27)</a></td><td>called 660 times, returned 660 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l38">Ray::Ray(lin::Vec3&lt;double&gt; const&amp;, lin::Vec3&lt;double&gt; const&amp;) (line 38)</a></td><td>called 943 times, returned 943 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -214,14 +214,14 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="w"> </span><span class="n">origin</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span></td>
+      <td class="src "><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="n">origin</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l19" href="#l19">19</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">};</span></td>
+      <td class="src "><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="n">direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">};</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l20" href="#l20">20</a></td>
@@ -234,50 +234,50 @@
       <td class="lineno"><a id="l21" href="#l21">21</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">90</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="n">Ray</span><span class="w"> </span><span class="nf">FromPoint</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">from</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">to</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Ray</span><span class="p">{</span><span class="n">from</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">to</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">from</span><span class="p">).</span><span class="n">normalized</span><span class="p">()};</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l22" href="#l22">22</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">   * @brief Constructs a Ray from two points.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l23" href="#l23">23</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">39</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="n">Ray</span><span class="w"> </span><span class="nf">FromDirection</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">origin</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">dir</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Ray</span><span class="p">{</span><span class="n">origin</span><span class="p">,</span><span class="w"> </span><span class="n">dir</span><span class="p">.</span><span class="n">normalized</span><span class="p">()};</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   * @param from The starting point of the ray.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l24" href="#l24">24</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">   * @param to The ending point of the ray.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l25" href="#l25">25</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="k">private</span><span class="o">:</span></td>
+      <td class="src "><span class="cm">   * @return A Ray object with the origin at &#39;from&#39; and direction normalized from &#39;from&#39; to &#39;to&#39;.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l26" href="#l26">26</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">129</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">Ray</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">origin</span><span class="p">(</span><span class="n">o</span><span class="p">),</span><span class="w"> </span><span class="n">direction</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l27" href="#l27">27</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="p">};</span></td>
+      <td class="linecount coveredLine">660</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="n">Ray</span><span class="w"> </span><span class="nf">FromPoint</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">from</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">to</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Ray</span><span class="p">{</span><span class="n">from</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">to</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">from</span><span class="p">).</span><span class="n">normalized</span><span class="p">()};</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l28" href="#l28">28</a></td>
@@ -291,10 +291,94 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#endif </span><span class="c1">// CORE_RAY_HPP</span></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l30" href="#l30">30</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   * @brief Constructs a Ray from an origin and a direction vector.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l31" href="#l31">31</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   * @param origin The origin point of the ray.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l32" href="#l32">32</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   * @param dir The direction vector of the ray, which will be normalized.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l33" href="#l33">33</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   * @return A Ray object with the specified origin and normalized direction.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l34" href="#l34">34</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   */</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l35" href="#l35">35</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">283</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="n">Ray</span><span class="w"> </span><span class="nf">FromDirection</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">origin</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">dir</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Ray</span><span class="p">{</span><span class="n">origin</span><span class="p">,</span><span class="w"> </span><span class="n">dir</span><span class="p">.</span><span class="n">normalized</span><span class="p">()};</span><span class="w"> </span><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l36" href="#l36">36</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l37" href="#l37">37</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="k">private</span><span class="o">:</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l38" href="#l38">38</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">943</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">Ray</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">o</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">origin</span><span class="p">(</span><span class="n">o</span><span class="p">),</span><span class="w"> </span><span class="n">direction</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l39" href="#l39">39</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">};</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l40" href="#l40">40</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l41" href="#l41">41</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#endif </span><span class="c1">// CORE_RAY_HPP</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l42" href="#l42">42</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>

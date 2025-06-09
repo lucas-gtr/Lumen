@@ -13,30 +13,30 @@ void CameraRayEmitter::initializeViewport(const RayEmitterParameters& parameters
 
   m_viewportTopLeftCorner = generateCorner(-m_parameters.sensorWidth * HALF, sensor_height * HALF);
 
-  const lin::Vec3 viewportTopRightCorner   = generateCorner(m_parameters.sensorWidth * HALF, sensor_height * HALF);
-  const lin::Vec3 viewportBottomLeftCorner = generateCorner(-m_parameters.sensorWidth * HALF, -sensor_height * HALF);
+  const lin::Vec3d viewportTopRightCorner   = generateCorner(m_parameters.sensorWidth * HALF, sensor_height * HALF);
+  const lin::Vec3d viewportBottomLeftCorner = generateCorner(-m_parameters.sensorWidth * HALF, -sensor_height * HALF);
 
   m_horizontalVector = viewportTopRightCorner - m_viewportTopLeftCorner;
   m_verticalVector   = viewportBottomLeftCorner - m_viewportTopLeftCorner;
 }
 
-lin::Vec3 CameraRayEmitter::generateCorner(double x, double y) const {
-  return m_parameters.cameraRotationMatrix * lin::Vec3(x, y, -m_parameters.focalLength) * m_parameters.focusDistance /
+lin::Vec3d CameraRayEmitter::generateCorner(double x, double y) const {
+  return m_parameters.cameraRotationMatrix * lin::Vec3d(x, y, -m_parameters.focalLength) * m_parameters.focusDistance /
              m_parameters.focalLength +
          m_parameters.cameraPosition;
 }
 
-lin::Vec3 CameraRayEmitter::getFocusPoint(double u, double v) const {
+lin::Vec3d CameraRayEmitter::getFocusPoint(double u, double v) const {
   return m_viewportTopLeftCorner + u * m_horizontalVector + v * m_verticalVector;
 }
 
-lin::Vec3 CameraRayEmitter::getRayOrigin() const {
-  const lin::Vec2 offset = randomPointInUnitDisk() * m_parameters.lensRadius;
-  return lin::Vec3(offset.x, offset.y, 0.0) + m_parameters.cameraPosition;
+lin::Vec3d CameraRayEmitter::getRayOrigin() const {
+  const lin::Vec2d offset = randomPointInUnitDisk() * m_parameters.lensRadius;
+  return lin::Vec3d(offset.x, offset.y, 0.0) + m_parameters.cameraPosition;
 }
 
 Ray CameraRayEmitter::generateRay(double u, double v) const {
-  const lin::Vec3 origin      = getRayOrigin();
-  const lin::Vec3 focus_point = getFocusPoint(u, v);
+  const lin::Vec3d origin      = getRayOrigin();
+  const lin::Vec3d focus_point = getFocusPoint(u, v);
   return Ray::FromPoint(origin, focus_point);
 }

@@ -7,7 +7,7 @@
 
 #include <cmath>
 
-#include "CommonTypes.hpp"
+#include "Core/CommonTypes.hpp"
 
 static constexpr double NORMALIZED_TO_COLOR8 = 255.999;
 static constexpr int    COLOR8_MAX_VALUE     = 255;

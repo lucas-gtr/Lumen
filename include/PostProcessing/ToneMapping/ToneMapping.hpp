@@ -5,7 +5,14 @@
 #ifndef POSTPROCESSING_TONEMAPPING_TONEMAPPING_HPP
 #define POSTPROCESSING_TONEMAPPING_TONEMAPPING_HPP
 
+#include <cstdint>
+
 #include "ImplementationParameters/Parameters.hpp"
+
+/**
+ * @brief Enumeration for different tone mapping strategies.
+ */
+enum class ToneMapping : std::uint8_t { NONE, REINHARD, EXPOSURE };
 
 /**
  * @class ToneMappingStrategy

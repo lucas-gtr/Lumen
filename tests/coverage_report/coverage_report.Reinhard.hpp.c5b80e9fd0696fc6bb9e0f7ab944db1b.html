@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-05-30 12:20:17</td>
+      <td>2025-06-09 10:46:40</td>
     </tr>
   </table>
 </div>
@@ -73,8 +73,8 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l19">ReinhardToneMapping::ReinhardToneMapping() (line 19)</a></td><td>called 22 times, returned 22 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l30">ReinhardToneMapping::apply(double&amp;) const (line 30)</a></td><td>called 15840066 times, returned 15840066 times</td><td>90.0%</td></tr>
+    <tr><td><a href="#l19">ReinhardToneMapping::ReinhardToneMapping() (line 19)</a></td><td>called 44 times, returned 44 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l30">ReinhardToneMapping::apply(double&amp;) const (line 30)</a></td><td>called 31680132 times, returned 31680132 times</td><td>90.0%</td></tr>
   </table>
 </details>
 
@@ -219,7 +219,7 @@
       <td class="lineno"><a id="l19" href="#l19">19</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">22</td>
+      <td class="linecount coveredLine">44</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">ReinhardToneMapping</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default constructor.</span></td>
     </tr>
     <tr class="source-line">
@@ -298,14 +298,14 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/4</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 15840033 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 33 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 31680066 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 66 times.</div>
           <div class="notTakenBranch">&cross; Branch 5 not taken.</div>
-          <div class="takenBranch">&check; Branch 6 taken 33 times.</div>
+          <div class="takenBranch">&check; Branch 6 taken 66 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount partialCoveredLine">15840066</td>
+      <td class="linecount partialCoveredLine">31680132</td>
       <td class="src partialCoveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mf">1.0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">value</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">

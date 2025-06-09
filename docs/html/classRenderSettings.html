@@ -124,18 +124,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abd3787be9a2ff6cbb9cf60627dfd1b58" id="r_abd3787be9a2ff6cbb9cf60627dfd1b58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderSettings.html#abd3787be9a2ff6cbb9cf60627dfd1b58">setChannelCount</a> (int channels)</td></tr>
 <tr class="memdesc:abd3787be9a2ff6cbb9cf60627dfd1b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of color channels. The channel count will be clamped to a valid range between MIN_CHANNEL_COUNT and MAX_CHANNEL_COUNT.  <br /></td></tr>
 <tr class="separator:abd3787be9a2ff6cbb9cf60627dfd1b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e0c92c9e29fa4ef643ba0ff74287cae" id="r_a0e0c92c9e29fa4ef643ba0ff74287cae"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderSettings.html#a0e0c92c9e29fa4ef643ba0ff74287cae">getNearPlane</a> () const</td></tr>
-<tr class="memdesc:a0e0c92c9e29fa4ef643ba0ff74287cae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the near clipping plane value.  <br /></td></tr>
-<tr class="separator:a0e0c92c9e29fa4ef643ba0ff74287cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a061baf2f11cf90daad1d8bcedfb1c034" id="r_a061baf2f11cf90daad1d8bcedfb1c034"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderSettings.html#a061baf2f11cf90daad1d8bcedfb1c034">setNearPlane</a> (double near_plane)</td></tr>
-<tr class="memdesc:a061baf2f11cf90daad1d8bcedfb1c034"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the near clipping plane value. The near plane will be clamped to a valid range between MIN_NEAR_PLANE and MAX_NEAR_PLANE.  <br /></td></tr>
-<tr class="separator:a061baf2f11cf90daad1d8bcedfb1c034"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8264d7d85601cb0cd6d6ba585e67d7fa" id="r_a8264d7d85601cb0cd6d6ba585e67d7fa"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderSettings.html#a8264d7d85601cb0cd6d6ba585e67d7fa">getFarPlane</a> () const</td></tr>
-<tr class="memdesc:a8264d7d85601cb0cd6d6ba585e67d7fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the far clipping plane value.  <br /></td></tr>
-<tr class="separator:a8264d7d85601cb0cd6d6ba585e67d7fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c0966fd76939bfe99d85bea6eef5ea8" id="r_a4c0966fd76939bfe99d85bea6eef5ea8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderSettings.html#a4c0966fd76939bfe99d85bea6eef5ea8">setFarPlane</a> (double far_plane)</td></tr>
-<tr class="memdesc:a4c0966fd76939bfe99d85bea6eef5ea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the far clipping plane value. The far plane will be clamped to a valid range between MIN_FAR_PLANE and MAX_FAR_PLANE.  <br /></td></tr>
-<tr class="separator:a4c0966fd76939bfe99d85bea6eef5ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac69bce7532b022864f9fedcdd3a14ff8" id="r_ac69bce7532b022864f9fedcdd3a14ff8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderSettings.html#ac69bce7532b022864f9fedcdd3a14ff8">getMaxBounces</a> () const</td></tr>
 <tr class="memdesc:ac69bce7532b022864f9fedcdd3a14ff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum number of bounces for ray tracing.  <br /></td></tr>
 <tr class="separator:ac69bce7532b022864f9fedcdd3a14ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,7 +154,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to manage the settings for rendering, including resolution, clipping planes, and other related parameters. </p>
-<p>This class provides getter and setter methods for each rendering setting, with bounds checking to ensure valid values are used. The class supports image resolution, number of color channels, near and far clipping planes, maximum bounces for ray tracing, samples per pixel, and background color. </p>
+<p>This class provides getter and setter methods for each rendering setting, with bounds checking to ensure valid values are used. The class supports image resolution, number of color channels, maximum bounces for ray tracing, samples per pixel, and background color. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a02aac1dbe21f11bf78db9408b14bb6d9" name="a02aac1dbe21f11bf78db9408b14bb6d9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a02aac1dbe21f11bf78db9408b14bb6d9">&#9670;&#160;</a></span>RenderSettings() <span class="overload">[1/3]</span></h2>
@@ -377,34 +365,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8264d7d85601cb0cd6d6ba585e67d7fa" name="a8264d7d85601cb0cd6d6ba585e67d7fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8264d7d85601cb0cd6d6ba585e67d7fa">&#9670;&#160;</a></span>getFarPlane()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double RenderSettings::getFarPlane </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the far clipping plane value. </p>
-<dl class="section return"><dt>Returns</dt><dd>The far clipping plane value. </dd></dl>
-
-</div>
-</div>
 <a id="a7f769eea3e006d4949f19df0ffa86920" name="a7f769eea3e006d4949f19df0ffa86920"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7f769eea3e006d4949f19df0ffa86920">&#9670;&#160;</a></span>getHeight()</h2>
 
@@ -458,34 +418,6 @@ Public Member Functions</h2></td></tr>
 
 <p>Get the maximum number of bounces for ray tracing. </p>
 <dl class="section return"><dt>Returns</dt><dd>The maximum number of bounces. </dd></dl>
-
-</div>
-</div>
-<a id="a0e0c92c9e29fa4ef643ba0ff74287cae" name="a0e0c92c9e29fa4ef643ba0ff74287cae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e0c92c9e29fa4ef643ba0ff74287cae">&#9670;&#160;</a></span>getNearPlane()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double RenderSettings::getNearPlane </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the near clipping plane value. </p>
-<dl class="section return"><dt>Returns</dt><dd>The near clipping plane value. </dd></dl>
 
 </div>
 </div>
@@ -693,40 +625,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4c0966fd76939bfe99d85bea6eef5ea8" name="a4c0966fd76939bfe99d85bea6eef5ea8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c0966fd76939bfe99d85bea6eef5ea8">&#9670;&#160;</a></span>setFarPlane()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RenderSettings::setFarPlane </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>far_plane</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Set the far clipping plane value. The far plane will be clamped to a valid range between MIN_FAR_PLANE and MAX_FAR_PLANE. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">far_plane</td><td>The far clipping plane value. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="addb62b249973c48b82279ee60cb66f6d" name="addb62b249973c48b82279ee60cb66f6d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#addb62b249973c48b82279ee60cb66f6d">&#9670;&#160;</a></span>setHeight()</h2>
 
@@ -789,40 +687,6 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">max_bounces</td><td>The maximum number of bounces. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a061baf2f11cf90daad1d8bcedfb1c034" name="a061baf2f11cf90daad1d8bcedfb1c034"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a061baf2f11cf90daad1d8bcedfb1c034">&#9670;&#160;</a></span>setNearPlane()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RenderSettings::setNearPlane </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>near_plane</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Set the near clipping plane value. The near plane will be clamped to a valid range between MIN_NEAR_PLANE and MAX_NEAR_PLANE. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">near_plane</td><td>The near clipping plane value. </td></tr>
   </table>
   </dd>
 </dl>

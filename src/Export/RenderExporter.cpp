@@ -12,6 +12,7 @@
 #include "PostProcessing/ToneMapping/Exposure.hpp"
 #include "PostProcessing/ToneMapping/None.hpp"
 #include "PostProcessing/ToneMapping/Reinhard.hpp"
+#include "PostProcessing/ToneMapping/ToneMapping.hpp"
 
 RenderExporter::RenderExporter(Framebuffer* framebuffer)
     : m_framebuffer(framebuffer), m_output_format(nullptr), m_tone_mapping(nullptr) {

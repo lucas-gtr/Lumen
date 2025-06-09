@@ -21,8 +21,6 @@ protected:
     settings.setHeight(2);
     settings.setChannelCount(3);
     settings.setSamplesPerPixel(1);
-    settings.setNearPlane(0.1);
-    settings.setFarPlane(100.0);
   }
 };
 
@@ -82,7 +80,7 @@ TEST_F(RendererTest, FramebufferUpdatesWhenRenderSettingsChange) {
 
 TEST_F(RendererTest, RenderInfluencedByLight) {
   auto light = std::make_unique<DirectionalLight>();
-  light->setDirection(lin::Vec3(0.0, 0.0, -1.0));
+  light->setDirection(lin::Vec3d(0.0, 0.0, -1.0));
   light->setColor({0.9, 0.0, 0.0});
   light->setIntensity(1.0);
   scene.addLight(std::move(light));
@@ -90,17 +88,17 @@ TEST_F(RendererTest, RenderInfluencedByLight) {
   CubeMeshBuilder cube_builder(5.0);
   auto cube_mesh = cube_builder.build();
   auto cube_object = std::make_unique<Object3D>(cube_mesh);
-  cube_object->setPosition(lin::Vec3(0.0, 0.0, -7.0));
+  cube_object->setPosition(lin::Vec3d(0.0, 0.0, -7.0));
   
   auto texture = std::make_shared<Texture>(ColorRGB(0.5, 0.3, 0.9));
-  auto material = std::make_shared<Material>();
-  material->setAlbedoTexture(texture);
-  cube_object->setMaterial(material);
+  auto material = Material();
+  material.setAlbedoTexture(texture);
+  cube_object->setMaterial(&material);
   scene.addObject(std::move(cube_object));
 
-  camera.setPosition(lin::Vec3(0.0, 0.0, 0.0));
-  camera.setRotation(lin::Vec3(0.0, 0.0, 0.0));
-  camera.setFov(10.0);
+  camera.setPosition(lin::Vec3d(0.0, 0.0, 0.0));
+  camera.setRotation(lin::Vec3d(0.0, 0.0, 0.0));
+  camera.setHorizontalFov(10.0);
 
   settings.setWidth(1);
   settings.setHeight(1);
@@ -119,7 +117,7 @@ TEST_F(RendererTest, RenderInfluencedByLight) {
 
 TEST_F(RendererTest, ShadowRayBlockedByObject) {
   auto light = std::make_unique<DirectionalLight>();
-  light->setDirection(lin::Vec3(0.0, 0.0, -1.0));
+  light->setDirection(lin::Vec3d(0.0, 0.0, -1.0));
   light->setColor({0.9, 0.0, 0.0});
   light->setIntensity(1.0);
   scene.addLight(std::move(light));
@@ -127,24 +125,26 @@ TEST_F(RendererTest, ShadowRayBlockedByObject) {
   CubeMeshBuilder cube_builder(5.0);
   auto cube_mesh = cube_builder.build();
   auto cube_object = std::make_unique<Object3D>(cube_mesh);
-  cube_object->setPosition(lin::Vec3(0.0, 0.0, -7.0));
+  cube_object->setPosition(lin::Vec3d(0.0, 0.0, -7.0));
 
   CubeMeshBuilder cube_builder2(6.0);
   auto cube_mesh2 = cube_builder2.build();
   auto cube_object2 = std::make_unique<Object3D>(cube_mesh2);
-  cube_object2->setPosition(lin::Vec3(0.0, 0.0, 6.5));
+  cube_object2->setPosition(lin::Vec3d(0.0, 0.0, 6.5));
   
   auto texture = std::make_shared<Texture>(ColorRGB(0.5, 0.3, 0.9));
-  auto material = std::make_shared<Material>();
-  material->setAlbedoTexture(texture);
-  cube_object->setMaterial(material);
+  auto material = Material();
+  material.setAlbedoTexture(texture);
+  
+  cube_object->setMaterial(&material);
+  cube_object2->setMaterial(&material);
 
   scene.addObject(std::move(cube_object));
   scene.addObject(std::move(cube_object2));
 
-  camera.setPosition(lin::Vec3(0.0, 0.0, 0.0));
-  camera.setRotation(lin::Vec3(0.0, 0.0, 0.0));
-  camera.setFov(10.0);
+  camera.setPosition(lin::Vec3d(0.0, 0.0, 0.0));
+  camera.setRotation(lin::Vec3d(0.0, 0.0, 0.0));
+  camera.setHorizontalFov(10.0);
 
   settings.setWidth(1);
   settings.setHeight(1);

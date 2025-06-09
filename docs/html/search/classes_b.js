@@ -9,5 +9,6 @@ var searchData=
   ['renderexporter_6',['RenderExporter',['../classRenderExporter.html',1,'']]],
   ['rendersettings_7',['RenderSettings',['../classRenderSettings.html',1,'']]],
   ['renderstrategy_8',['RenderStrategy',['../classRenderStrategy.html',1,'']]],
-  ['resolution_9',['Resolution',['../structResolution.html',1,'']]]
+  ['resolution_9',['Resolution',['../structResolution.html',1,'']]],
+  ['resourcemanagergl_10',['ResourceManagerGL',['../classResourceManagerGL.html',1,'']]]
 ];

@@ -75,10 +75,10 @@ public:
    */
   Texture(const double* image_data, ImageProperties texture_properties);
 
-  Texture(const Texture&);                ///< Copy constructor.
-  Texture(Texture&&) noexcept;            ///< Move constructor.
-  Texture& operator=(const Texture&);     ///< Copy assignment operator.
-  Texture& operator=(Texture&&) noexcept; ///< Move assignment operator.
+  Texture(const Texture& other);                ///< Copy constructor.
+  Texture(Texture&& other) noexcept;            ///< Move constructor.
+  Texture& operator=(const Texture& other);     ///< Copy assignment operator.
+  Texture& operator=(Texture&& other) noexcept; ///< Move assignment operator.
 
   /**
    * @brief Sets the value of the texture.
@@ -110,11 +110,15 @@ public:
    */
   void setFilteringMode(TextureSampling::TextureFiltering filteringMode) { m_filtering_mode = filteringMode; }
 
+  TextureSampling::TextureFiltering getFilteringMode() const { return m_filtering_mode; }
+
   /**
    * @brief Sets the wrapping mode of the texture.
    * @param wrappingMode The new wrapping mode for the texture.
    */
   void setWrappingMode(TextureSampling::TextureWrapping wrappingMode) { m_wrapping_mode = wrappingMode; }
+
+  TextureSampling::TextureWrapping getWrappingMode() const { return m_wrapping_mode; }
 
   /**
    * @brief Sets the border color (RGBA) of the texture.
@@ -133,6 +137,8 @@ public:
    * @param value The new grayscale value for the border color.
    */
   void setBorderColor(double value) { m_border_color = {value, value, value, 1.0}; }
+
+  ColorRGBA getBorderColor() const { return m_border_color; }
 
   /**
    * @brief Sets the image data of the texture.
@@ -175,6 +181,8 @@ public:
    * @return The color RGBA of the texture.
    */
   ColorRGBA getValue4d(TextureUV uv_coord) const;
+
+  double* getImageData() const { return m_image_data; }
 
   ~Texture(); ///< Destructor.
 };

@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$structImageProperties.html" title="Structure to hold image properties such as width, height, and number of channels." alt="" coords="5,5,135,31"/>
+<area shape="rect" id="Node000000" href="$classDirectionalLightGPU.html" title="Represents a directional light in GPU memory." alt="" coords="5,5,159,31"/>
+<area shape="rect" id="Node000001" href="$classDirectionalLightGL.html" title="A class that represents a directional light in OpenGL, inheriting from DirectionalLightGPU." alt="" coords="207,5,349,31"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="173,15,206,15,206,21,173,21"/>
 </map>

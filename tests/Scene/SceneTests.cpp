@@ -23,11 +23,25 @@ TEST(SceneTest, SetCamera) {
   EXPECT_NE(scene.getCamera(), nullptr);
 }
 
+TEST(SceneTest, GetCamera) {
+  Scene scene;
+  std::unique_ptr<Camera> camera = std::make_unique<Camera>();
+  scene.setCamera(std::move(camera));
+  EXPECT_NE(scene.getCamera(), nullptr);
+}
+
+TEST(SceneTest, GetSkybox) {
+  Scene scene;
+  std::shared_ptr<Texture> texture = std::make_shared<Texture>(ColorRGB(0.5, 0.5, 0.5));
+  scene.setSkybox(texture);
+  EXPECT_NE(scene.getSkybox(), nullptr);
+}
+
 TEST(SceneTest, GetSkyboxColor) {
   Scene scene;
   std::shared_ptr<Texture> texture = std::make_shared<Texture>(ColorRGB(1.0, 0.0, 0.0));
   scene.setSkybox(texture);
-  lin::Vec3 direction(1.0, 0.0, 0.0);
+  lin::Vec3d direction(1.0, 0.0, 0.0);
   ColorRGBA color = scene.getSkyboxColor(direction);
   EXPECT_EQ(color, ColorRGBA(1.0, 0.0, 0.0, 1.0)); // Assuming default color is white
 }

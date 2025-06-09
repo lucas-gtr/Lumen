@@ -15,13 +15,13 @@ Mesh PlaneMeshBuilder::build() const {
   std::vector<Vertex> vertices(4);
   std::vector<Face>   faces;
 
-  vertices[0].position = lin::Vec3(-width * HALF, 0, -length * HALF);
-  vertices[1].position = lin::Vec3(width * HALF, 0, -length * HALF);
-  vertices[2].position = lin::Vec3(width * HALF, 0, length * HALF);
-  vertices[3].position = lin::Vec3(-width * HALF, 0, length * HALF);
+  vertices[0].position = lin::Vec3d(-width * HALF, 0, -length * HALF);
+  vertices[1].position = lin::Vec3d(width * HALF, 0, -length * HALF);
+  vertices[2].position = lin::Vec3d(width * HALF, 0, length * HALF);
+  vertices[3].position = lin::Vec3d(-width * HALF, 0, length * HALF);
 
   for(auto& vertex : vertices) {
-    vertex.normal  = lin::Vec3(0.0, 1.0, 0.0);
+    vertex.normal  = lin::Vec3d(0.0, 1.0, 0.0);
     vertex.uvCoord = {vertex.position.x / width + HALF, vertex.position.z / length + HALF};
   }
 

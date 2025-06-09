@@ -140,6 +140,9 @@ TEST(TextureTest, SetBorderColor) {
   texture_4d.setWrappingMode(TextureSampling::TextureWrapping::CLAMP_TO_BORDER);
   texture_4d.setBorderColor(borderColor_4d);
   ColorRGBA value = texture_4d.getValue4d({-1.0, -1.0});
+
+  EXPECT_EQ(texture_4d.getBorderColor(), borderColor_4d);
+
   EXPECT_EQ(value.r, 1.0);
   EXPECT_EQ(value.g, 0.5);
   EXPECT_EQ(value.b, 0.5);
@@ -259,3 +262,30 @@ TEST(TextureTest, FlipVertically) {
   EXPECT_NEAR(value4, 0.1, 1e-9);
 }
 
+TEST(TextureTest, GetWrappingMode) {
+  Texture texture(0.0);
+  EXPECT_EQ(texture.getWrappingMode(), TextureSampling::TextureWrapping::MIRRORED_REPEAT);
+
+  texture.setWrappingMode(TextureSampling::TextureWrapping::CLAMP_TO_BORDER);
+  EXPECT_EQ(texture.getWrappingMode(), TextureSampling::TextureWrapping::CLAMP_TO_BORDER);
+}
+
+TEST(TextureTest, GetFilteringMode) {
+  Texture texture(0.0);
+  EXPECT_EQ(texture.getFilteringMode(), TextureSampling::TextureFiltering::BILINEAR);
+
+  texture.setFilteringMode(TextureSampling::TextureFiltering::NEAREST);
+  EXPECT_EQ(texture.getFilteringMode(), TextureSampling::TextureFiltering::NEAREST);
+}
+
+TEST(TextureTest, GetRawPointer) {
+  ImageProperties properties = {2, 2, 1};
+  double imageData[4] = {0.0, 0.1, 0.2, 0.3};
+  Texture texture(imageData, properties);
+  
+  const double* raw_data = texture.getImageData();
+  EXPECT_EQ(raw_data[0], 0.0);
+  EXPECT_EQ(raw_data[1], 0.1);
+  EXPECT_EQ(raw_data[2], 0.2);
+  EXPECT_EQ(raw_data[3], 0.3);
+}

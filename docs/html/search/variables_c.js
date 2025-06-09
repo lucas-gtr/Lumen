@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['origin_0',['origin',['../structRay.html#a9adc8da6ed16314f8fe5c2d3f33f5104',1,'Ray']]]
+  ['origin_0',['origin',['../structRay.html#ad499367377a8f3dfa6dce4f87b7a51ad',1,'Ray']]]
 ];

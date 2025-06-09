@@ -47,13 +47,13 @@ TEST_F(OBJLoaderTest, LoadOBJFileWithCommentsAndNoise) {
   const Vertex& v1 = mesh.getVertices()[1];
   const Vertex& v2 = mesh.getVertices()[2];
 
-  EXPECT_EQ(v0.position, lin::Vec3(1.0, 0.0, 0.0));
-  EXPECT_EQ(v1.position, lin::Vec3(0.0, 1.0, 0.0));
-  EXPECT_EQ(v2.position, lin::Vec3(0.0, 0.0, 1.0));
+  EXPECT_EQ(v0.position, lin::Vec3d(1.0, 0.0, 0.0));
+  EXPECT_EQ(v1.position, lin::Vec3d(0.0, 1.0, 0.0));
+  EXPECT_EQ(v2.position, lin::Vec3d(0.0, 0.0, 1.0));
 
-  EXPECT_EQ(v0.normal, lin::Vec3(0.0, 0.0, 1.0));
-  EXPECT_EQ(v1.normal, lin::Vec3(0.0, 1.0, 0.0));
-  EXPECT_EQ(v2.normal, lin::Vec3(1.0, 0.0, 0.0));
+  EXPECT_EQ(v0.normal, lin::Vec3d(0.0, 0.0, 1.0));
+  EXPECT_EQ(v1.normal, lin::Vec3d(0.0, 1.0, 0.0));
+  EXPECT_EQ(v2.normal, lin::Vec3d(1.0, 0.0, 0.0));
 
   EXPECT_FLOAT_EQ(v0.uvCoord.u, 0.1f);
   EXPECT_FLOAT_EQ(v0.uvCoord.v, 0.2f);

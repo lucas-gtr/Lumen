@@ -11,9 +11,9 @@
 <area shape="rect" id="Node000008" href="$ParameterTypes_8hpp.html" title="Header file for ParameterTypes used in the implementation parameters." alt="" coords="369,196,569,236"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="405,58,427,80,446,107,461,145,469,182,464,183,456,146,442,109,423,84,401,62"/>
 <area shape="rect" id="Node000011" href="$Parameters_8hpp.html" title="Header file for the Parameters class." alt="" coords="593,196,793,236"/>
-<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="415,58,569,146,646,187,643,192,567,150,413,63"/>
-<area shape="rect" id="Node000014" href="$ToneMapping_8hpp.html" title="Header file for the ToneMappingStrategy class." alt="" coords="580,108,791,148"/>
-<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="459,58,609,102,608,107,457,63"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="417,58,649,187,646,191,415,62"/>
+<area shape="rect" id="Node000014" href="$ToneMapping_8hpp.html" title="Header file for the ToneMappingStrategy class." alt="" coords="588,108,799,148"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="461,57,615,102,614,107,460,63"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="153,203,223,229"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="346,143,226,200,224,195,344,138"/>
 <area shape="rect" id="Node000007" title=" " alt="" coords="247,203,345,229"/>
@@ -29,5 +29,7 @@
 <area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="704,235,723,277,719,279,699,237"/>
 <area shape="rect" id="Node000013" title=" " alt="" coords="795,291,858,317"/>
 <area shape="poly" id="edge14_Node000011_Node000013" title=" " alt="" coords="724,234,799,282,796,286,721,239"/>
-<area shape="poly" id="edge17_Node000014_Node000011" title=" " alt="" coords="690,148,693,182,688,183,684,149"/>
+<area shape="poly" id="edge18_Node000014_Node000011" title=" " alt="" coords="696,148,696,182,691,182,691,148"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="817,203,884,229"/>
+<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="729,146,819,194,816,199,727,150"/>
 </map>

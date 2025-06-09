@@ -7,7 +7,7 @@
 
 #include <cmath>
 
-Transform::Transform(const lin::Vec3& position, const lin::Vec3& rotation, const lin::Vec3& scale)
+Transform::Transform(const lin::Vec3d& position, const lin::Vec3d& rotation, const lin::Vec3d& scale)
     : m_position(position), m_rotation(rotation), m_scale(scale) {
 
   updateTranslationMatrix();
@@ -16,7 +16,7 @@ Transform::Transform(const lin::Vec3& position, const lin::Vec3& rotation, const
   updateTransformationMatrix();
 }
 
-void Transform::setPosition(const lin::Vec3& pos) {
+void Transform::setPosition(const lin::Vec3d& pos) {
   m_position = pos;
   updateTranslationMatrix();
 }
@@ -43,7 +43,7 @@ void Transform::updateTranslationMatrix() {
   updateTransformationMatrix();
 }
 
-void Transform::setRotation(const lin::Vec3& rot) {
+void Transform::setRotation(const lin::Vec3d& rot) {
   m_rotation = rot;
   updateRotationMatrix();
 }
@@ -69,13 +69,13 @@ void Transform::updateRotationMatrix() {
   updateTransformationMatrix();
 }
 
-void Transform::setScale(const lin::Vec3& scale) {
+void Transform::setScale(const lin::Vec3d& scale) {
   m_scale = scale;
   updateScaleMatrix();
 }
 
 void Transform::setScale(double scale) {
-  m_scale = lin::Vec3(scale, scale, scale);
+  m_scale = lin::Vec3d(scale, scale, scale);
   updateScaleMatrix();
 }
 
@@ -102,9 +102,9 @@ void Transform::updateScaleMatrix() {
 }
 
 void Transform::updateTransformationMatrix() {
-  const lin::Mat4 rotationMatrix4d(m_rotationMatrix);
+  const lin::Mat4d rotationMatrix4d(m_rotationMatrix);
 
-  const lin::Mat4 scaleMatrix4d(m_scaleMatrix);
+  const lin::Mat4d scaleMatrix4d(m_scaleMatrix);
 
   m_transformationMatrix = m_translationMatrix * scaleMatrix4d * rotationMatrix4d;
   updateInverseMatrix();

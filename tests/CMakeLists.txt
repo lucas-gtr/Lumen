@@ -22,6 +22,16 @@ target_sources(Tests PRIVATE
     Geometry/OBJLoaderTests.cpp
     Geometry/PlaneMeshBuilderTests.cpp
     Geometry/SphereMeshBuilderTests.cpp
+    GPU/IObjectGPUTests.cpp
+    GPU/ITextureGPUTests.cpp
+    GPU/IEngineGPUTests.cpp
+    GPU/IResourceManagerGPUTests.cpp
+    GPU/Lights/DirectionalGPUTests.cpp
+    GPU/Lights/PointGPUTests.cpp
+    GPU/Lights/SpotGPUTests.cpp
+    GPU/OpenGL/DirectionalGLTests.cpp
+    GPU/OpenGL/PointGLTests.cpp
+    GPU/OpenGL/SpotGLTests.cpp
     ImplementationParameters/ParameterTypesTests.cpp
     ImplementationParameters/ParametersTests.cpp
     Lighting/DirectionalLightTests.cpp
@@ -56,7 +66,9 @@ target_link_libraries(Tests PRIVATE
     Lighting
     Scene
     Rendering
-    Export   
+    Export
+    GPU
+    OpenGL
     gtest
     gmock)
 
