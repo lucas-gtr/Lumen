@@ -12,11 +12,11 @@
 #include <vector>
 
 namespace {
-void parseVertexLine(const std::string& line, std::vector<lin::Vec3>& positions);
-void parseNormalLine(const std::string& line, std::vector<lin::Vec3>& normals);
+void parseVertexLine(const std::string& line, std::vector<lin::Vec3d>& positions);
+void parseNormalLine(const std::string& line, std::vector<lin::Vec3d>& normals);
 void parseUVLine(const std::string& line, std::vector<TextureUV>& uvs);
-Face parseFaceLine(const std::string& line, const std::vector<lin::Vec3>& positions,
-                   const std::vector<lin::Vec3>& normals, const std::vector<TextureUV>& uvs,
+Face parseFaceLine(const std::string& line, const std::vector<lin::Vec3d>& positions,
+                   const std::vector<lin::Vec3d>& normals, const std::vector<TextureUV>& uvs,
                    std::vector<Vertex>& vertices, std::unordered_map<std::string, int>& vertexMap);
 
 } // namespace
@@ -28,8 +28,8 @@ Mesh OBJLoader::load(const std::string& filename) {
     return {};
   }
 
-  std::vector<lin::Vec3>               positions;
-  std::vector<lin::Vec3>               normals;
+  std::vector<lin::Vec3d>              positions;
+  std::vector<lin::Vec3d>              normals;
   std::vector<TextureUV>               uvs;
   std::vector<Vertex>                  vertices;
   std::vector<Face>                    faces;
@@ -61,16 +61,16 @@ Mesh OBJLoader::load(const std::string& filename) {
 }
 
 namespace {
-void parseVertexLine(const std::string& line, std::vector<lin::Vec3>& positions) {
+void parseVertexLine(const std::string& line, std::vector<lin::Vec3d>& positions) {
   std::istringstream iss(line.substr(2));
-  lin::Vec3          pos;
+  lin::Vec3d         pos;
   iss >> pos.x >> pos.y >> pos.z;
   positions.push_back(pos);
 }
 
-void parseNormalLine(const std::string& line, std::vector<lin::Vec3>& normals) {
+void parseNormalLine(const std::string& line, std::vector<lin::Vec3d>& normals) {
   std::istringstream iss(line.substr(3));
-  lin::Vec3          normal;
+  lin::Vec3d         normal;
   iss >> normal.x >> normal.y >> normal.z;
   normals.push_back(normal);
 }
@@ -82,8 +82,8 @@ void parseUVLine(const std::string& line, std::vector<TextureUV>& uvs) {
   uvs.push_back(uv);
 }
 
-Face parseFaceLine(const std::string& line, const std::vector<lin::Vec3>& positions,
-                   const std::vector<lin::Vec3>& normals, const std::vector<TextureUV>& uvs,
+Face parseFaceLine(const std::string& line, const std::vector<lin::Vec3d>& positions,
+                   const std::vector<lin::Vec3d>& normals, const std::vector<TextureUV>& uvs,
                    std::vector<Vertex>& vertices, std::unordered_map<std::string, int>& vertexMap) {
   std::istringstream iss(line);
   std::string        prefix;

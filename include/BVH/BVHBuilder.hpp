@@ -21,7 +21,7 @@ namespace BVH {
  * @param extent The extent vector representing the size in each axis (x, y, z).
  * @return The index of the largest axis (0 for x, 1 for y, 2 for z).
  */
-int getLargestAxis(const lin::Vec3& extent);
+int getLargestAxis(const lin::Vec3d& extent);
 
 /**
  * @brief Builds a BVH node (left and right child) from a list of objects.

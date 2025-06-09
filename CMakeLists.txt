@@ -20,12 +20,14 @@ add_subdirectory(src/Lighting)
 add_subdirectory(src/Scene)
 add_subdirectory(src/Rendering)
 add_subdirectory(src/Export)
+add_subdirectory(src/GPU)
 
 
 add_executable(Lumen src/main.cpp)
 
 target_include_directories(Lumen PRIVATE
     ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/external/glfw/include
 )
 
 target_link_libraries(Lumen
@@ -39,7 +41,9 @@ target_link_libraries(Lumen
         Lighting
         Scene
         Rendering
-        Export        
+        Export      
+        GPU
+        OpenGL  
 )
 
 option(ENABLE_COMPILE_WARNINGS "Enable Compiler Warnings" ON)

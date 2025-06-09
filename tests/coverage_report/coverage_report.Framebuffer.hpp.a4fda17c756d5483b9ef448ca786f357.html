@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-05-30 12:20:17</td>
+      <td>2025-06-09 10:46:40</td>
     </tr>
   </table>
 </div>
@@ -73,12 +73,12 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l57">Framebuffer::getChannelCount() const (line 57)</a></td><td>called 77 times, returned 77 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l81">Framebuffer::getFramebuffer() const (line 81)</a></td><td>called 176 times, returned 176 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l51">Framebuffer::getHeight() const (line 51)</a></td><td>called 10560099 times, returned 10560099 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l63">Framebuffer::getSize() const (line 63)</a></td><td>called 693 times, returned 693 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l45">Framebuffer::getWidth() const (line 45)</a></td><td>called 10560099 times, returned 10560099 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l108">Framebuffer::setThreadId(int) (line 108)</a></td><td>called 253 times, returned 253 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l57">Framebuffer::getChannelCount() const (line 57)</a></td><td>called 154 times, returned 154 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l81">Framebuffer::getFramebuffer() const (line 81)</a></td><td>called 352 times, returned 352 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l51">Framebuffer::getHeight() const (line 51)</a></td><td>called 21120198 times, returned 21120198 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l63">Framebuffer::getSize() const (line 63)</a></td><td>called 1386 times, returned 1386 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l45">Framebuffer::getWidth() const (line 45)</a></td><td>called 21120198 times, returned 21120198 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l108">Framebuffer::setThreadId(int) (line 108)</a></td><td>called 506 times, returned 506 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -405,7 +405,7 @@
       <td class="lineno"><a id="l45" href="#l45">45</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">10560099</td>
+      <td class="linecount coveredLine">21120198</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">getWidth</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">width</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -447,7 +447,7 @@
       <td class="lineno"><a id="l51" href="#l51">51</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">10560099</td>
+      <td class="linecount coveredLine">21120198</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">getHeight</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">height</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -489,7 +489,7 @@
       <td class="lineno"><a id="l57" href="#l57">57</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">77</td>
+      <td class="linecount coveredLine">154</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">getChannelCount</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">channels</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -531,7 +531,7 @@
       <td class="lineno"><a id="l63" href="#l63">63</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">693</td>
+      <td class="linecount coveredLine">1386</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="nf">getSize</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">bufferSize</span><span class="p">();</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -657,7 +657,7 @@
       <td class="lineno"><a id="l81" href="#l81">81</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">176</td>
+      <td class="linecount coveredLine">352</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="nf">getFramebuffer</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_framebuffer</span><span class="p">;</span><span class="w"> </span><span class="p">};</span></td>
     </tr>
     <tr class="source-line">
@@ -846,7 +846,7 @@
       <td class="lineno"><a id="l108" href="#l108">108</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">253</td>
+      <td class="linecount coveredLine">506</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setThreadId</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">thread_id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_thread_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">thread_id</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">

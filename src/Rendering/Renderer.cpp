@@ -105,7 +105,7 @@ void Renderer::renderSample(const PixelCoord& pixel_start, const PixelCoord& pix
 
 bool Renderer::isValidHit(const RayHitInfo& hit_info) const {
   const double distance = hit_info.distance;
-  return distance >= m_render_settings->getNearPlane() && distance <= m_render_settings->getFarPlane();
+  return distance >= m_scene->getCamera()->getNearPlane() && distance <= m_scene->getCamera()->getFarPlane();
 }
 
 ColorRGBA Renderer::traceRay(const Ray& ray) const {
@@ -118,8 +118,8 @@ ColorRGBA Renderer::traceRay(const Ray& ray) const {
 
   ColorRGB light_factor = {0.0, 0.0, 0.0};
   for(const auto& light : m_scene->getLightList()) {
-    const lin::Vec3 light_direction = light->getDirectionFromPoint(hit_info.hitPoint).normalized();
-    const Ray       shadow_ray =
+    const lin::Vec3d light_direction = light->getDirectionFromPoint(hit_info.hitPoint).normalized();
+    const Ray        shadow_ray =
         Ray::FromDirection(hit_info.hitPoint + light_direction * RayIntersection::RAY_OFFSET_FACTOR, light_direction);
 
     const RayHitInfo shadow_hit = RayIntersection::getSceneIntersection(shadow_ray, m_scene);

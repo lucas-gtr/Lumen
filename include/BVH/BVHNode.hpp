@@ -23,9 +23,9 @@ private:
 
   int m_leaf_index = -1;
 
-  lin::Vec3 m_min_bound = lin::Vec3(0.0);
-  lin::Vec3 m_max_bound = lin::Vec3(0.0);
-  lin::Vec3 m_center    = lin::Vec3(0.0);
+  lin::Vec3d m_min_bound = lin::Vec3d(0.0);
+  lin::Vec3d m_max_bound = lin::Vec3d(0.0);
+  lin::Vec3d m_center    = lin::Vec3d(0.0);
 
 public:
   BVHNode() = default; ///< Default constructor.
@@ -41,7 +41,7 @@ public:
    * @param min_bound The minimum bound of the bounding box.
    * @param max_bound The maximum bound of the bounding box.
    */
-  BVHNode(const lin::Vec3& min_bound, const lin::Vec3& max_bound);
+  BVHNode(const lin::Vec3d& min_bound, const lin::Vec3d& max_bound);
 
   /**
    * @brief Constructs a BVHNode with specified minimum and maximum bounds and a leaf index.
@@ -50,28 +50,28 @@ public:
    * @param max_bound The maximum bound of the bounding box.
    * @param leaf_index The index of the leaf node, or -1 if this is not a leaf node.
    */
-  BVHNode(const lin::Vec3& min_bound, const lin::Vec3& max_bound, int leaf_index);
+  BVHNode(const lin::Vec3d& min_bound, const lin::Vec3d& max_bound, int leaf_index);
 
   /**
    * @brief Gets the minimum bound of the bounding box.
    *
-   * @return The minimum bound as an lin::Vec3.
+   * @return The minimum bound as an lin::Vec3d.
    */
-  const lin::Vec3& getMinBound() const { return m_min_bound; }
+  const lin::Vec3d& getMinBound() const { return m_min_bound; }
 
   /**
    * @brief Gets the maximum bound of the bounding box.
    *
-   * @return The maximum bound as an lin::Vec3.
+   * @return The maximum bound as an lin::Vec3d.
    */
-  const lin::Vec3& getMaxBound() const { return m_max_bound; }
+  const lin::Vec3d& getMaxBound() const { return m_max_bound; }
 
   /**
    * @brief Gets the center of the bounding box.
    *
-   * @return The center as an lin::Vec3.
+   * @return The center as an lin::Vec3d.
    */
-  const lin::Vec3& getCenter() const { return m_center; }
+  const lin::Vec3d& getCenter() const { return m_center; }
 
   /**
    * @brief Gets the leaf index of the BVH node.

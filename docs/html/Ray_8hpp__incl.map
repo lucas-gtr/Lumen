@@ -1,6 +1,6 @@
 <map id="/home/lucasgtr/lumen/include/Core/Ray.hpp" name="/home/lucasgtr/lumen/include/Core/Ray.hpp">
 <area shape="rect" id="Node000001" title="Header file for the Ray structure." alt="" coords="173,5,337,45"/>
-<area shape="rect" id="Node000002" href="$Vec3_8hpp.html" title=" " alt="" coords="179,93,331,119"/>
+<area shape="rect" id="Node000002" href="$Vec3_8hpp.html" title="Header file for the Vec3 class, representing a 3D vector." alt="" coords="179,93,331,119"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="258,46,258,79,253,79,253,46"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,167,68,192"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="221,121,82,166,80,161,219,116"/>
@@ -10,10 +10,8 @@
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="258,119,258,153,253,153,253,119"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="320,167,407,192"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="274,116,336,157,333,161,271,121"/>
-<area shape="rect" id="Node000007" href="$Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="431,167,557,192"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="294,116,443,160,441,165,293,121"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="404,240,475,265"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="487,194,459,231,454,228,483,191"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="499,240,596,265"/>
-<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="505,191,533,228,528,231,501,194"/>
+<area shape="rect" id="Node000007" href="$Alignment_8hpp.html" title="Defines alignment constants for vector and matrix types." alt="" coords="431,167,619,192"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="299,116,469,161,467,166,298,121"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="489,240,560,265"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="527,192,527,226,522,226,522,192"/>
 </map>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Lumen: lin::Mat4 Struct Reference</title>
+<title>Lumen: lin::Mat4&lt; T &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -85,73 +85,125 @@ $(function() {
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structlin_1_1Mat4-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">lin::Mat4 Struct Reference</div></div>
+  <div class="headertitle"><div class="title">lin::Mat4&lt; T &gt; Struct Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Generic 4x4 matrix class (row-major).  
+ <a href="structlin_1_1Mat4.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Mat4_8hpp_source.html">Mat4.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac5b3ad185efbb280a3edcbe86d54dcb2" id="r_ac5b3ad185efbb280a3edcbe86d54dcb2"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#ac5b3ad185efbb280a3edcbe86d54dcb2">Mat4</a> ()</td></tr>
-<tr class="separator:ac5b3ad185efbb280a3edcbe86d54dcb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93f69aec6f4237d296eba1dd20a3b23f" id="r_a93f69aec6f4237d296eba1dd20a3b23f"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a93f69aec6f4237d296eba1dd20a3b23f">Mat4</a> (double value)</td></tr>
-<tr class="separator:a93f69aec6f4237d296eba1dd20a3b23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03e0ecd21838dfe70ba66100722bd4df" id="r_a03e0ecd21838dfe70ba66100722bd4df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a03e0ecd21838dfe70ba66100722bd4df">Mat4</a> (std::initializer_list&lt; std::initializer_list&lt; double &gt; &gt; list)</td></tr>
-<tr class="separator:a03e0ecd21838dfe70ba66100722bd4df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd60417ab6cad799bfd1acf9bf75547e" id="r_acd60417ab6cad799bfd1acf9bf75547e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#acd60417ab6cad799bfd1acf9bf75547e">Mat4</a> (const <a class="el" href="structlin_1_1Mat3.html">Mat3</a> &amp;mat)</td></tr>
-<tr class="separator:acd60417ab6cad799bfd1acf9bf75547e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0b458465e13d3b7feae5c08bc01eb23" id="r_aa0b458465e13d3b7feae5c08bc01eb23"><td class="memItemLeft" align="right" valign="top">constexpr double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#aa0b458465e13d3b7feae5c08bc01eb23">operator()</a> (int row, int col) noexcept</td></tr>
-<tr class="separator:aa0b458465e13d3b7feae5c08bc01eb23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84542774e5e3eda8e702a57c288aeaf2" id="r_a84542774e5e3eda8e702a57c288aeaf2"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a84542774e5e3eda8e702a57c288aeaf2">operator()</a> (int row, int col) const noexcept</td></tr>
-<tr class="separator:a84542774e5e3eda8e702a57c288aeaf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2465bf0de5b3d6cc742f782a83458286" id="r_a2465bf0de5b3d6cc742f782a83458286"><td class="memItemLeft" align="right" valign="top">constexpr double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a2465bf0de5b3d6cc742f782a83458286">operator[]</a> (int index) noexcept</td></tr>
-<tr class="separator:a2465bf0de5b3d6cc742f782a83458286"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afeddbc5c11bc4b4aeae6dbd07f382b76" id="r_afeddbc5c11bc4b4aeae6dbd07f382b76"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#afeddbc5c11bc4b4aeae6dbd07f382b76">operator[]</a> (int index) const noexcept</td></tr>
-<tr class="separator:afeddbc5c11bc4b4aeae6dbd07f382b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab44beb56c35ab6b9fdcd4483b7ab38af" id="r_ab44beb56c35ab6b9fdcd4483b7ab38af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#ab44beb56c35ab6b9fdcd4483b7ab38af">operator==</a> (const <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;other) const</td></tr>
-<tr class="separator:ab44beb56c35ab6b9fdcd4483b7ab38af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37a29ecdafdeb85348364912838fc3ab" id="r_a37a29ecdafdeb85348364912838fc3ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a37a29ecdafdeb85348364912838fc3ab">operator!=</a> (const <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;other) const</td></tr>
-<tr class="separator:a37a29ecdafdeb85348364912838fc3ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a695b6c4860eb35dbccf494df2a429ab2" id="r_a695b6c4860eb35dbccf494df2a429ab2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a695b6c4860eb35dbccf494df2a429ab2">transposed</a> () const</td></tr>
-<tr class="separator:a695b6c4860eb35dbccf494df2a429ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff960d081f0e4032a983cbb7d6399806" id="r_aff960d081f0e4032a983cbb7d6399806"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#aff960d081f0e4032a983cbb7d6399806">operator*</a> (const <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;other) const</td></tr>
-<tr class="separator:aff960d081f0e4032a983cbb7d6399806"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3e03f1faff7399a30fc97d97d0c4b88" id="r_ad3e03f1faff7399a30fc97d97d0c4b88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#ad3e03f1faff7399a30fc97d97d0c4b88">operator*=</a> (const <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;other)</td></tr>
-<tr class="separator:ad3e03f1faff7399a30fc97d97d0c4b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa769db77b7185187380590dbd6525143" id="r_aa769db77b7185187380590dbd6525143"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#aa769db77b7185187380590dbd6525143">inverse</a> () const</td></tr>
-<tr class="separator:aa769db77b7185187380590dbd6525143"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf2d9a2da23af612d86dc10afe2976ee" id="r_aaf2d9a2da23af612d86dc10afe2976ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">Mat3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#aaf2d9a2da23af612d86dc10afe2976ee">topLeft3x3</a> () const</td></tr>
-<tr class="separator:aaf2d9a2da23af612d86dc10afe2976ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1fdf46afa52d5fada8a725ce1869a15" id="r_ab1fdf46afa52d5fada8a725ce1869a15"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#ab1fdf46afa52d5fada8a725ce1869a15">isApprox</a> (const <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;other, double epsilon) const</td></tr>
-<tr class="separator:ab1fdf46afa52d5fada8a725ce1869a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad899f9705c3ac6db2d6bee2ebb3cc2bf" id="r_ad899f9705c3ac6db2d6bee2ebb3cc2bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#ad899f9705c3ac6db2d6bee2ebb3cc2bf">Mat4</a> ()</td></tr>
+<tr class="memdesc:ad899f9705c3ac6db2d6bee2ebb3cc2bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor initializes the matrix to the identity matrix.  <br /></td></tr>
+<tr class="separator:ad899f9705c3ac6db2d6bee2ebb3cc2bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2b97db61fa73c1c60ba5dd2f1150019" id="r_ae2b97db61fa73c1c60ba5dd2f1150019"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">constexpr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#ae2b97db61fa73c1c60ba5dd2f1150019">Mat4</a> (<a class="el" href="structlin_1_1Mat3.html">T</a> value)</td></tr>
+<tr class="memdesc:ae2b97db61fa73c1c60ba5dd2f1150019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that initializes the matrix with a specific value.  <br /></td></tr>
+<tr class="separator:ae2b97db61fa73c1c60ba5dd2f1150019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a8679787e3c6adcd90d9fd5bbb14a65" id="r_a8a8679787e3c6adcd90d9fd5bbb14a65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a8a8679787e3c6adcd90d9fd5bbb14a65">Mat4</a> (std::initializer_list&lt; std::initializer_list&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &gt; <a class="el" href="structlin_1_1Mat3.html">list</a>)</td></tr>
+<tr class="memdesc:a8a8679787e3c6adcd90d9fd5bbb14a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that initializes the matrix with an initializer list.  <br /></td></tr>
+<tr class="separator:a8a8679787e3c6adcd90d9fd5bbb14a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aa9061392edb0cb554d7d6a32a5d109" id="r_a5aa9061392edb0cb554d7d6a32a5d109"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a5aa9061392edb0cb554d7d6a32a5d109">Mat4</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat3.html">Mat3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">mat</a>)</td></tr>
+<tr class="memdesc:a5aa9061392edb0cb554d7d6a32a5d109"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that initializes the matrix from a <a class="el" href="structlin_1_1Mat3.html" title="Generic 3x3 matrix class (row-major).">Mat3</a>.  <br /></td></tr>
+<tr class="separator:a5aa9061392edb0cb554d7d6a32a5d109"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9ca486c7fad1e1adcf00ffbbfc549cb" id="r_ac9ca486c7fad1e1adcf00ffbbfc549cb"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">U</a> &gt; </td></tr>
+<tr class="memitem:ac9ca486c7fad1e1adcf00ffbbfc549cb"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#ac9ca486c7fad1e1adcf00ffbbfc549cb">Mat4</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">U</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">other</a>) <a class="el" href="structlin_1_1Mat3.html">noexcept</a></td></tr>
+<tr class="memdesc:ac9ca486c7fad1e1adcf00ffbbfc549cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <br /></td></tr>
+<tr class="separator:ac9ca486c7fad1e1adcf00ffbbfc549cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea4240f6e0e5d12a66a20ae3685470fb" id="r_aea4240f6e0e5d12a66a20ae3685470fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat3.html">T</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#aea4240f6e0e5d12a66a20ae3685470fb">data</a> () <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat3.html">noexcept</a></td></tr>
+<tr class="memdesc:aea4240f6e0e5d12a66a20ae3685470fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the underlying data of the matrix.  <br /></td></tr>
+<tr class="separator:aea4240f6e0e5d12a66a20ae3685470fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b4ce6fe510b9f3bb8d5853a556f88a4" id="r_a0b4ce6fe510b9f3bb8d5853a556f88a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">constexpr</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a0b4ce6fe510b9f3bb8d5853a556f88a4">operator()</a> (<a class="el" href="structlin_1_1Mat3.html">int</a> <a class="el" href="structlin_1_1Mat3.html">row</a>, <a class="el" href="structlin_1_1Mat3.html">int</a> <a class="el" href="structlin_1_1Mat3.html">col</a>) <a class="el" href="structlin_1_1Mat3.html">noexcept</a></td></tr>
+<tr class="memdesc:a0b4ce6fe510b9f3bb8d5853a556f88a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the element at the specified row and column.  <br /></td></tr>
+<tr class="separator:a0b4ce6fe510b9f3bb8d5853a556f88a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a797b6d63672cbce3d6019544216c1d92" id="r_a797b6d63672cbce3d6019544216c1d92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">constexpr</a> <a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a797b6d63672cbce3d6019544216c1d92">operator()</a> (<a class="el" href="structlin_1_1Mat3.html">int</a> <a class="el" href="structlin_1_1Mat3.html">row</a>, <a class="el" href="structlin_1_1Mat3.html">int</a> <a class="el" href="structlin_1_1Mat3.html">col</a>) <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat3.html">noexcept</a></td></tr>
+<tr class="memdesc:a797b6d63672cbce3d6019544216c1d92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a copy of the element at the specified row and column.  <br /></td></tr>
+<tr class="separator:a797b6d63672cbce3d6019544216c1d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4711f3266150461f11f3413eaea193ef" id="r_a4711f3266150461f11f3413eaea193ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">constexpr</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a4711f3266150461f11f3413eaea193ef">operator[]</a> (<a class="el" href="structlin_1_1Mat3.html">int</a> <a class="el" href="structlin_1_1Mat3.html">index</a>) <a class="el" href="structlin_1_1Mat3.html">noexcept</a></td></tr>
+<tr class="memdesc:a4711f3266150461f11f3413eaea193ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the element at the specified index (0-15).  <br /></td></tr>
+<tr class="separator:a4711f3266150461f11f3413eaea193ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fb23dcf75e49e5f7be428390ab89588" id="r_a9fb23dcf75e49e5f7be428390ab89588"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">constexpr</a> <a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a9fb23dcf75e49e5f7be428390ab89588">operator[]</a> (<a class="el" href="structlin_1_1Mat3.html">int</a> <a class="el" href="structlin_1_1Mat3.html">index</a>) <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat3.html">noexcept</a></td></tr>
+<tr class="memdesc:a9fb23dcf75e49e5f7be428390ab89588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a copy of the element at the specified index (0-15).  <br /></td></tr>
+<tr class="separator:a9fb23dcf75e49e5f7be428390ab89588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dbbcb9e5368a0bcccb516a03916a0fc" id="r_a0dbbcb9e5368a0bcccb516a03916a0fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a0dbbcb9e5368a0bcccb516a03916a0fc">operator==</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;<a class="el" href="structlin_1_1Mat3.html">other</a>) <a class="el" href="structlin_1_1Mat3.html">const</a></td></tr>
+<tr class="memdesc:a0dbbcb9e5368a0bcccb516a03916a0fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if two matrices are equal.  <br /></td></tr>
+<tr class="separator:a0dbbcb9e5368a0bcccb516a03916a0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8f05cedcfa2c46a125411be050db9b1" id="r_ab8f05cedcfa2c46a125411be050db9b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#ab8f05cedcfa2c46a125411be050db9b1">operator!=</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;<a class="el" href="structlin_1_1Mat3.html">other</a>) <a class="el" href="structlin_1_1Mat3.html">const</a></td></tr>
+<tr class="memdesc:ab8f05cedcfa2c46a125411be050db9b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if two matrices are not equal.  <br /></td></tr>
+<tr class="separator:ab8f05cedcfa2c46a125411be050db9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a968ef1c415d28ff3101511f5bf500685" id="r_a968ef1c415d28ff3101511f5bf500685"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a968ef1c415d28ff3101511f5bf500685">transposed</a> () <a class="el" href="structlin_1_1Mat3.html">const</a></td></tr>
+<tr class="memdesc:a968ef1c415d28ff3101511f5bf500685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a transposed version of the matrix.  <br /></td></tr>
+<tr class="separator:a968ef1c415d28ff3101511f5bf500685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad77d1bdca662b19202fdd332c6434588" id="r_ad77d1bdca662b19202fdd332c6434588"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#ad77d1bdca662b19202fdd332c6434588">inverse</a> () <a class="el" href="structlin_1_1Mat3.html">const</a></td></tr>
+<tr class="memdesc:ad77d1bdca662b19202fdd332c6434588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the inverse of the matrix.  <br /></td></tr>
+<tr class="separator:ad77d1bdca662b19202fdd332c6434588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa09573f68d532acffa9fedac5aec8025" id="r_aa09573f68d532acffa9fedac5aec8025"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#aa09573f68d532acffa9fedac5aec8025">operator*</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;<a class="el" href="structlin_1_1Mat3.html">other</a>) <a class="el" href="structlin_1_1Mat3.html">const</a></td></tr>
+<tr class="memdesc:aa09573f68d532acffa9fedac5aec8025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies this matrix by another matrix.  <br /></td></tr>
+<tr class="separator:aa09573f68d532acffa9fedac5aec8025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40e53a58487298279437f0b2ec9568e6" id="r_a40e53a58487298279437f0b2ec9568e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a40e53a58487298279437f0b2ec9568e6">operator*=</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;<a class="el" href="structlin_1_1Mat3.html">other</a>)</td></tr>
+<tr class="memdesc:a40e53a58487298279437f0b2ec9568e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies this matrix by another matrix and assigns the result to this matrix.  <br /></td></tr>
+<tr class="separator:a40e53a58487298279437f0b2ec9568e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4925353161f2a63aeeb0e68d4a545c0b" id="r_a4925353161f2a63aeeb0e68d4a545c0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">Mat3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a4925353161f2a63aeeb0e68d4a545c0b">topLeft3x3</a> () <a class="el" href="structlin_1_1Mat3.html">const</a></td></tr>
+<tr class="memdesc:a4925353161f2a63aeeb0e68d4a545c0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a 3x3 matrix containing the top-left 3x3 submatrix of this 4x4 matrix.  <br /></td></tr>
+<tr class="separator:a4925353161f2a63aeeb0e68d4a545c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a8e1c861e1ca8ab7e8e0fbaa6bb18e6" id="r_a6a8e1c861e1ca8ab7e8e0fbaa6bb18e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a6a8e1c861e1ca8ab7e8e0fbaa6bb18e6">isApprox</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;<a class="el" href="structlin_1_1Mat3.html">other</a>, <a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">epsilon</a>) <a class="el" href="structlin_1_1Mat3.html">const</a></td></tr>
+<tr class="memdesc:a6a8e1c861e1ca8ab7e8e0fbaa6bb18e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if this matrix is approximately equal to another matrix within a given epsilon.  <br /></td></tr>
+<tr class="separator:a6a8e1c861e1ca8ab7e8e0fbaa6bb18e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ad0e872c6b6ce5e660301f8aefeef40b9" id="r_ad0e872c6b6ce5e660301f8aefeef40b9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#ad0e872c6b6ce5e660301f8aefeef40b9">Identity</a> ()</td></tr>
-<tr class="separator:ad0e872c6b6ce5e660301f8aefeef40b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5c5f18b6d26bc2bb388ccf914eb884e" id="r_ac5c5f18b6d26bc2bb388ccf914eb884e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#ac5c5f18b6d26bc2bb388ccf914eb884e">FromRows</a> (const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;row0, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;row1, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;row2, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;row3)</td></tr>
-<tr class="separator:ac5c5f18b6d26bc2bb388ccf914eb884e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e0e1acaed685530c99896bef971502f" id="r_a2e0e1acaed685530c99896bef971502f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a2e0e1acaed685530c99896bef971502f">FromColumns</a> (const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;col0, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;col1, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;col2, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;col3)</td></tr>
-<tr class="separator:a2e0e1acaed685530c99896bef971502f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86e5076ce54f3a0e1497aa34785d5934" id="r_a86e5076ce54f3a0e1497aa34785d5934"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">static</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a86e5076ce54f3a0e1497aa34785d5934">Identity</a> ()</td></tr>
+<tr class="memdesc:a86e5076ce54f3a0e1497aa34785d5934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the identity matrix.  <br /></td></tr>
+<tr class="separator:a86e5076ce54f3a0e1497aa34785d5934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14ba67202aa55dea9a8eea6e72819aa2" id="r_a14ba67202aa55dea9a8eea6e72819aa2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">static</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a14ba67202aa55dea9a8eea6e72819aa2">LookAt</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">eye</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">center</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">up</a>)</td></tr>
+<tr class="memdesc:a14ba67202aa55dea9a8eea6e72819aa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a view matrix that transforms coordinates from world space to camera space.  <br /></td></tr>
+<tr class="separator:a14ba67202aa55dea9a8eea6e72819aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab993ee913b04fb49aebbb6bbddf9c87d" id="r_ab993ee913b04fb49aebbb6bbddf9c87d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">static</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#ab993ee913b04fb49aebbb6bbddf9c87d">LookAt</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">eye</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">center</a>)</td></tr>
+<tr class="memdesc:ab993ee913b04fb49aebbb6bbddf9c87d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a view matrix that transforms coordinates from world space to camera space.  <br /></td></tr>
+<tr class="separator:ab993ee913b04fb49aebbb6bbddf9c87d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88b769e18afec162fae463887869c841" id="r_a88b769e18afec162fae463887869c841"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">static</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a88b769e18afec162fae463887869c841">Orthographic</a> (<a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">left</a>, <a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">right</a>, <a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">bottom</a>, <a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">top</a>, <a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">near</a>, <a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">far</a>)</td></tr>
+<tr class="memdesc:a88b769e18afec162fae463887869c841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an orthographic projection matrix.  <br /></td></tr>
+<tr class="separator:a88b769e18afec162fae463887869c841"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fa63d02d90a44d75cd50b8038c770d3" id="r_a4fa63d02d90a44d75cd50b8038c770d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">static</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a4fa63d02d90a44d75cd50b8038c770d3">Perspective</a> (<a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">fovY</a>, <a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">aspect</a>, <a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">near</a>, <a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">far</a>)</td></tr>
+<tr class="memdesc:a4fa63d02d90a44d75cd50b8038c770d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a perspective projection matrix.  <br /></td></tr>
+<tr class="separator:a4fa63d02d90a44d75cd50b8038c770d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a483d77d2f27335d25e6536c1a9a47502" id="r_a483d77d2f27335d25e6536c1a9a47502"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">static</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a483d77d2f27335d25e6536c1a9a47502">FromRows</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">row0</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">row1</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">row2</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">row3</a>)</td></tr>
+<tr class="memdesc:a483d77d2f27335d25e6536c1a9a47502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> from four <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> rows.  <br /></td></tr>
+<tr class="separator:a483d77d2f27335d25e6536c1a9a47502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09d366dab4732be7a4a03f2f2a7f8a7c" id="r_a09d366dab4732be7a4a03f2f2a7f8a7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">static</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#a09d366dab4732be7a4a03f2f2a7f8a7c">FromColumns</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">col0</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">col1</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">col2</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">col3</a>)</td></tr>
+<tr class="memdesc:a09d366dab4732be7a4a03f2f2a7f8a7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> from four <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> columns.  <br /></td></tr>
+<tr class="separator:a09d366dab4732be7a4a03f2f2a7f8a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ac3e75312da36c2a93b478bdd0aecb8b7" id="r_ac3e75312da36c2a93b478bdd0aecb8b7"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::array&lt; double, 4 &gt;, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#ac3e75312da36c2a93b478bdd0aecb8b7">m</a> {}</td></tr>
-<tr class="separator:ac3e75312da36c2a93b478bdd0aecb8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad094b5d8a59cd60c29453e34b7f5dfe5" id="r_ad094b5d8a59cd60c29453e34b7f5dfe5"><td class="memItemLeft" align="right" valign="top">std::array&lt; std::array&lt; <a class="el" href="structlin_1_1Mat3.html">T</a>, 4 &gt;, 4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html#ad094b5d8a59cd60c29453e34b7f5dfe5">m</a> {}</td></tr>
+<tr class="separator:ad094b5d8a59cd60c29453e34b7f5dfe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac5b3ad185efbb280a3edcbe86d54dcb2" name="ac5b3ad185efbb280a3edcbe86d54dcb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5b3ad185efbb280a3edcbe86d54dcb2">&#9670;&#160;</a></span>Mat4() <span class="overload">[1/4]</span></h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a>&gt;<br />
+struct lin::Mat4&lt; T &gt;</div><p>Generic 4x4 matrix class (row-major). </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the elements in the matrix (e.g., float, double). </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad899f9705c3ac6db2d6bee2ebb3cc2bf" name="ad899f9705c3ac6db2d6bee2ebb3cc2bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad899f9705c3ac6db2d6bee2ebb3cc2bf">&#9670;&#160;</a></span>Mat4() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr lin::Mat4::Mat4 </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">constexpr</a> <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::Mat4 </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -164,21 +216,25 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Default constructor initializes the matrix to the identity matrix. </p>
+
 </div>
 </div>
-<a id="a93f69aec6f4237d296eba1dd20a3b23f" name="a93f69aec6f4237d296eba1dd20a3b23f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93f69aec6f4237d296eba1dd20a3b23f">&#9670;&#160;</a></span>Mat4() <span class="overload">[2/4]</span></h2>
+<a id="ae2b97db61fa73c1c60ba5dd2f1150019" name="ae2b97db61fa73c1c60ba5dd2f1150019"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2b97db61fa73c1c60ba5dd2f1150019">&#9670;&#160;</a></span>Mat4() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr lin::Mat4::Mat4 </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">constexpr</a> <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::Mat4 </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -190,21 +246,31 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor that initializes the matrix with a specific value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value to initialize all elements of the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a03e0ecd21838dfe70ba66100722bd4df" name="a03e0ecd21838dfe70ba66100722bd4df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03e0ecd21838dfe70ba66100722bd4df">&#9670;&#160;</a></span>Mat4() <span class="overload">[3/4]</span></h2>
+<a id="a8a8679787e3c6adcd90d9fd5bbb14a65" name="a8a8679787e3c6adcd90d9fd5bbb14a65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a8679787e3c6adcd90d9fd5bbb14a65">&#9670;&#160;</a></span>Mat4() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">lin::Mat4::Mat4 </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::Mat4 </td>
           <td>(</td>
-          <td class="paramtype">std::initializer_list&lt; std::initializer_list&lt; double &gt; &gt;&#160;</td>
+          <td class="paramtype">std::initializer_list&lt; std::initializer_list&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &gt;&#160;</td>
           <td class="paramname"><em>list</em></td><td>)</td>
           <td></td>
         </tr>
@@ -216,21 +282,31 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor that initializes the matrix with an initializer list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>An initializer list containing the rows of the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="acd60417ab6cad799bfd1acf9bf75547e" name="acd60417ab6cad799bfd1acf9bf75547e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd60417ab6cad799bfd1acf9bf75547e">&#9670;&#160;</a></span>Mat4() <span class="overload">[4/4]</span></h2>
+<a id="a5aa9061392edb0cb554d7d6a32a5d109" name="a5aa9061392edb0cb554d7d6a32a5d109"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5aa9061392edb0cb554d7d6a32a5d109">&#9670;&#160;</a></span>Mat4() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">lin::Mat4::Mat4 </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::Mat4 </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Mat3.html">Mat3</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat3.html">Mat3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>mat</em></td><td>)</td>
           <td></td>
         </tr>
@@ -242,40 +318,118 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Constructor that initializes the matrix from a <a class="el" href="structlin_1_1Mat3.html" title="Generic 3x3 matrix class (row-major).">Mat3</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td>The <a class="el" href="structlin_1_1Mat3.html" title="Generic 3x3 matrix class (row-major).">Mat3</a> to convert to a <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2e0e1acaed685530c99896bef971502f" name="a2e0e1acaed685530c99896bef971502f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e0e1acaed685530c99896bef971502f">&#9670;&#160;</a></span>FromColumns()</h2>
+<a id="ac9ca486c7fad1e1adcf00ffbbfc549cb" name="ac9ca486c7fad1e1adcf00ffbbfc549cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9ca486c7fad1e1adcf00ffbbfc549cb">&#9670;&#160;</a></span>Mat4() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">U</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="structlin_1_1Mat4.html">Mat4</a> lin::Mat4::FromColumns </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::Mat4 </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">U</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The matrix to copy from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aea4240f6e0e5d12a66a20ae3685470fb" name="aea4240f6e0e5d12a66a20ae3685470fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea4240f6e0e5d12a66a20ae3685470fb">&#9670;&#160;</a></span>data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat3.html">T</a> * <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a pointer to the underlying data of the matrix. </p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the first element of the matrix. </dd></dl>
+
+</div>
+</div>
+<a id="a09d366dab4732be7a4a03f2f2a7f8a7c" name="a09d366dab4732be7a4a03f2f2a7f8a7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09d366dab4732be7a4a03f2f2a7f8a7c">&#9670;&#160;</a></span>FromColumns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">static</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a> <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::FromColumns </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>col0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>col1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>col2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>col3</em>&#160;</td>
         </tr>
         <tr>
@@ -291,39 +445,59 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates a <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> from four <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> columns. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">col0</td><td>The first column of the matrix. </td></tr>
+    <tr><td class="paramname">col1</td><td>The second column of the matrix. </td></tr>
+    <tr><td class="paramname">col2</td><td>The third column of the matrix. </td></tr>
+    <tr><td class="paramname">col3</td><td>The fourth column of the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> object constructed from the provided columns. </dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the elements in the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="ac5c5f18b6d26bc2bb388ccf914eb884e" name="ac5c5f18b6d26bc2bb388ccf914eb884e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5c5f18b6d26bc2bb388ccf914eb884e">&#9670;&#160;</a></span>FromRows()</h2>
+<a id="a483d77d2f27335d25e6536c1a9a47502" name="a483d77d2f27335d25e6536c1a9a47502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a483d77d2f27335d25e6536c1a9a47502">&#9670;&#160;</a></span>FromRows()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="structlin_1_1Mat4.html">Mat4</a> lin::Mat4::FromRows </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">static</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a> <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::FromRows </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>row0</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>row1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>row2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>row3</em>&#160;</td>
         </tr>
         <tr>
@@ -339,19 +513,39 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates a <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> from four <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> rows. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row0</td><td>The first row of the matrix. </td></tr>
+    <tr><td class="paramname">row1</td><td>The second row of the matrix. </td></tr>
+    <tr><td class="paramname">row2</td><td>The third row of the matrix. </td></tr>
+    <tr><td class="paramname">row3</td><td>The fourth row of the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> object constructed from the provided rows. </dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the elements in the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="ad0e872c6b6ce5e660301f8aefeef40b9" name="ad0e872c6b6ce5e660301f8aefeef40b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0e872c6b6ce5e660301f8aefeef40b9">&#9670;&#160;</a></span>Identity()</h2>
+<a id="a86e5076ce54f3a0e1497aa34785d5934" name="a86e5076ce54f3a0e1497aa34785d5934"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86e5076ce54f3a0e1497aa34785d5934">&#9670;&#160;</a></span>Identity()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="structlin_1_1Mat4.html">Mat4</a> lin::Mat4::Identity </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">static</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a> <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::Identity </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -364,19 +558,24 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the identity matrix. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> object representing the identity matrix. </dd></dl>
+
 </div>
 </div>
-<a id="aa769db77b7185187380590dbd6525143" name="aa769db77b7185187380590dbd6525143"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa769db77b7185187380590dbd6525143">&#9670;&#160;</a></span>inverse()</h2>
+<a id="ad77d1bdca662b19202fdd332c6434588" name="ad77d1bdca662b19202fdd332c6434588"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad77d1bdca662b19202fdd332c6434588">&#9670;&#160;</a></span>inverse()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Mat4.html">Mat4</a> lin::Mat4::inverse </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat4.html">Mat4</a> <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::inverse </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -389,27 +588,32 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the inverse of the matrix. </p>
+<dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> object that is the inverse of this matrix. If the determinant is zero, returns an identity matrix. </dd></dl>
+
 </div>
 </div>
-<a id="ab1fdf46afa52d5fada8a725ce1869a15" name="ab1fdf46afa52d5fada8a725ce1869a15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1fdf46afa52d5fada8a725ce1869a15">&#9670;&#160;</a></span>isApprox()</h2>
+<a id="a6a8e1c861e1ca8ab7e8e0fbaa6bb18e6" name="a6a8e1c861e1ca8ab7e8e0fbaa6bb18e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a8e1c861e1ca8ab7e8e0fbaa6bb18e6">&#9670;&#160;</a></span>isApprox()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool lin::Mat4::isApprox </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">bool</a> <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::isApprox </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>other</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
           <td class="paramname"><em>epsilon</em>&#160;</td>
         </tr>
         <tr>
@@ -425,21 +629,154 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Checks if this matrix is approximately equal to another matrix within a given epsilon. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The matrix to compare with. </td></tr>
+    <tr><td class="paramname">epsilon</td><td>The tolerance for comparison. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the matrices are approximately equal, false otherwise. </dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the elements in the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a37a29ecdafdeb85348364912838fc3ab" name="a37a29ecdafdeb85348364912838fc3ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37a29ecdafdeb85348364912838fc3ab">&#9670;&#160;</a></span>operator!=()</h2>
+<a id="ab993ee913b04fb49aebbb6bbddf9c87d" name="ab993ee913b04fb49aebbb6bbddf9c87d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab993ee913b04fb49aebbb6bbddf9c87d">&#9670;&#160;</a></span>LookAt() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool lin::Mat4::operator!= </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">static</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a> <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::LookAt </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>eye</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>center</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a view matrix that transforms coordinates from world space to camera space. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eye</td><td>The position of the camera in world space. </td></tr>
+    <tr><td class="paramname">center</td><td>The point in world space that the camera is looking at. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> object representing the view matrix. </dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the elements in the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a14ba67202aa55dea9a8eea6e72819aa2" name="a14ba67202aa55dea9a8eea6e72819aa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14ba67202aa55dea9a8eea6e72819aa2">&#9670;&#160;</a></span>LookAt() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">static</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a> <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::LookAt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>eye</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>center</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>up</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a view matrix that transforms coordinates from world space to camera space. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eye</td><td>The position of the camera in world space. </td></tr>
+    <tr><td class="paramname">center</td><td>The point in world space that the camera is looking at. </td></tr>
+    <tr><td class="paramname">up</td><td>The up direction in world space. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> object representing the view matrix. </dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the elements in the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab8f05cedcfa2c46a125411be050db9b1" name="ab8f05cedcfa2c46a125411be050db9b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8f05cedcfa2c46a125411be050db9b1">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">bool</a> <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -451,27 +788,38 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Checks if two matrices are not equal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The matrix to compare with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the matrices are not equal, false otherwise. </dd></dl>
+
 </div>
 </div>
-<a id="a84542774e5e3eda8e702a57c288aeaf2" name="a84542774e5e3eda8e702a57c288aeaf2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84542774e5e3eda8e702a57c288aeaf2">&#9670;&#160;</a></span>operator()() <span class="overload">[1/2]</span></h2>
+<a id="a797b6d63672cbce3d6019544216c1d92" name="a797b6d63672cbce3d6019544216c1d92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a797b6d63672cbce3d6019544216c1d92">&#9670;&#160;</a></span>operator()() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr double lin::Mat4::operator() </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">constexpr</a> <a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">int</a>&#160;</td>
           <td class="paramname"><em>row</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">int</a>&#160;</td>
           <td class="paramname"><em>col</em>&#160;</td>
         </tr>
         <tr>
@@ -487,27 +835,39 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns a copy of the element at the specified row and column. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>The row index (0, 1, 2, or 3). </td></tr>
+    <tr><td class="paramname">col</td><td>The column index (0, 1, 2, or 3). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A copy of the element at the specified position. </dd></dl>
+
 </div>
 </div>
-<a id="aa0b458465e13d3b7feae5c08bc01eb23" name="aa0b458465e13d3b7feae5c08bc01eb23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0b458465e13d3b7feae5c08bc01eb23">&#9670;&#160;</a></span>operator()() <span class="overload">[2/2]</span></h2>
+<a id="a0b4ce6fe510b9f3bb8d5853a556f88a4" name="a0b4ce6fe510b9f3bb8d5853a556f88a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b4ce6fe510b9f3bb8d5853a556f88a4">&#9670;&#160;</a></span>operator()() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr double &amp; lin::Mat4::operator() </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">constexpr</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &amp; <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">int</a>&#160;</td>
           <td class="paramname"><em>row</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">int</a>&#160;</td>
           <td class="paramname"><em>col</em>&#160;</td>
         </tr>
         <tr>
@@ -523,21 +883,33 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns a reference to the element at the specified row and column. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">row</td><td>The row index (0, 1, 2, or 3). </td></tr>
+    <tr><td class="paramname">col</td><td>The column index (0, 1, 2, or 3). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the element at the specified position. </dd></dl>
+
 </div>
 </div>
-<a id="aff960d081f0e4032a983cbb7d6399806" name="aff960d081f0e4032a983cbb7d6399806"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff960d081f0e4032a983cbb7d6399806">&#9670;&#160;</a></span>operator*()</h2>
+<a id="aa09573f68d532acffa9fedac5aec8025" name="aa09573f68d532acffa9fedac5aec8025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa09573f68d532acffa9fedac5aec8025">&#9670;&#160;</a></span>operator*()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Mat4.html">Mat4</a> lin::Mat4::operator* </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat4.html">Mat4</a> <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::operator* </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -549,21 +921,32 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Multiplies this matrix by another matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The matrix to multiply with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> object that is the result of the multiplication. </dd></dl>
+
 </div>
 </div>
-<a id="ad3e03f1faff7399a30fc97d97d0c4b88" name="ad3e03f1faff7399a30fc97d97d0c4b88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3e03f1faff7399a30fc97d97d0c4b88">&#9670;&#160;</a></span>operator*=()</h2>
+<a id="a40e53a58487298279437f0b2ec9568e6" name="a40e53a58487298279437f0b2ec9568e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40e53a58487298279437f0b2ec9568e6">&#9670;&#160;</a></span>operator*=()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp; lin::Mat4::operator*= </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp; <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::operator*= </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
           <td></td>
         </tr>
@@ -575,21 +958,32 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Multiplies this matrix by another matrix and assigns the result to this matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The matrix to multiply with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to this matrix after the multiplication. </dd></dl>
+
 </div>
 </div>
-<a id="ab44beb56c35ab6b9fdcd4483b7ab38af" name="ab44beb56c35ab6b9fdcd4483b7ab38af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab44beb56c35ab6b9fdcd4483b7ab38af">&#9670;&#160;</a></span>operator==()</h2>
+<a id="a0dbbcb9e5368a0bcccb516a03916a0fc" name="a0dbbcb9e5368a0bcccb516a03916a0fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dbbcb9e5368a0bcccb516a03916a0fc">&#9670;&#160;</a></span>operator==()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool lin::Mat4::operator== </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">bool</a> <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::operator== </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -601,21 +995,32 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Checks if two matrices are equal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>The matrix to compare with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the matrices are equal, false otherwise. </dd></dl>
+
 </div>
 </div>
-<a id="afeddbc5c11bc4b4aeae6dbd07f382b76" name="afeddbc5c11bc4b4aeae6dbd07f382b76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afeddbc5c11bc4b4aeae6dbd07f382b76">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+<a id="a9fb23dcf75e49e5f7be428390ab89588" name="a9fb23dcf75e49e5f7be428390ab89588"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fb23dcf75e49e5f7be428390ab89588">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr double lin::Mat4::operator[] </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">constexpr</a> <a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">int</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -627,21 +1032,32 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns a copy of the element at the specified index (0-15). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index of the element (0-15). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A copy of the element at the specified index. </dd></dl>
+
 </div>
 </div>
-<a id="a2465bf0de5b3d6cc742f782a83458286" name="a2465bf0de5b3d6cc742f782a83458286"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2465bf0de5b3d6cc742f782a83458286">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+<a id="a4711f3266150461f11f3413eaea193ef" name="a4711f3266150461f11f3413eaea193ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4711f3266150461f11f3413eaea193ef">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr double &amp; lin::Mat4::operator[] </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">constexpr</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &amp; <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">int</a>&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td></td>
         </tr>
@@ -653,19 +1069,180 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns a reference to the element at the specified index (0-15). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index of the element (0-15). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the element at the specified index. </dd></dl>
+
 </div>
 </div>
-<a id="aaf2d9a2da23af612d86dc10afe2976ee" name="aaf2d9a2da23af612d86dc10afe2976ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf2d9a2da23af612d86dc10afe2976ee">&#9670;&#160;</a></span>topLeft3x3()</h2>
+<a id="a88b769e18afec162fae463887869c841" name="a88b769e18afec162fae463887869c841"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b769e18afec162fae463887869c841">&#9670;&#160;</a></span>Orthographic()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">Mat3</a> lin::Mat4::topLeft3x3 </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">static</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a> <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::Orthographic </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
+          <td class="paramname"><em>right</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
+          <td class="paramname"><em>bottom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
+          <td class="paramname"><em>top</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
+          <td class="paramname"><em>near</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
+          <td class="paramname"><em>far</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an orthographic projection matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">left</td><td>The left clipping plane. </td></tr>
+    <tr><td class="paramname">right</td><td>The right clipping plane. </td></tr>
+    <tr><td class="paramname">bottom</td><td>The bottom clipping plane. </td></tr>
+    <tr><td class="paramname">top</td><td>The top clipping plane. </td></tr>
+    <tr><td class="paramname">near</td><td>The near clipping plane. </td></tr>
+    <tr><td class="paramname">far</td><td>The far clipping plane. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> object representing the orthographic projection matrix. </dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the elements in the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4fa63d02d90a44d75cd50b8038c770d3" name="a4fa63d02d90a44d75cd50b8038c770d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fa63d02d90a44d75cd50b8038c770d3">&#9670;&#160;</a></span>Perspective()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">static</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a> <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::Perspective </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
+          <td class="paramname"><em>fovY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
+          <td class="paramname"><em>aspect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
+          <td class="paramname"><em>near</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
+          <td class="paramname"><em>far</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a perspective projection matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fovY</td><td>The vertical field of view in radians. </td></tr>
+    <tr><td class="paramname">aspect</td><td>The aspect ratio (width/height). </td></tr>
+    <tr><td class="paramname">near</td><td>The near clipping plane. </td></tr>
+    <tr><td class="paramname">far</td><td>The far clipping plane. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> object representing the perspective projection matrix. </dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the elements in the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4925353161f2a63aeeb0e68d4a545c0b" name="a4925353161f2a63aeeb0e68d4a545c0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4925353161f2a63aeeb0e68d4a545c0b">&#9670;&#160;</a></span>topLeft3x3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">Mat3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::topLeft3x3 </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -678,19 +1255,24 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns a 3x3 matrix containing the top-left 3x3 submatrix of this 4x4 matrix. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Mat3.html" title="Generic 3x3 matrix class (row-major).">Mat3</a> object representing the top-left 3x3 submatrix. </dd></dl>
+
 </div>
 </div>
-<a id="a695b6c4860eb35dbccf494df2a429ab2" name="a695b6c4860eb35dbccf494df2a429ab2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a695b6c4860eb35dbccf494df2a429ab2">&#9670;&#160;</a></span>transposed()</h2>
+<a id="a968ef1c415d28ff3101511f5bf500685" name="a968ef1c415d28ff3101511f5bf500685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a968ef1c415d28ff3101511f5bf500685">&#9670;&#160;</a></span>transposed()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Mat4.html">Mat4</a> lin::Mat4::transposed </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat4.html">Mat4</a> <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::transposed </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -702,18 +1284,23 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns a transposed version of the matrix. </p>
+<dl class="section return"><dt>Returns</dt><dd>A new <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> object that is the transposed version of this matrix. </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ac3e75312da36c2a93b478bdd0aecb8b7" name="ac3e75312da36c2a93b478bdd0aecb8b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3e75312da36c2a93b478bdd0aecb8b7">&#9670;&#160;</a></span>m</h2>
+<a id="ad094b5d8a59cd60c29453e34b7f5dfe5" name="ad094b5d8a59cd60c29453e34b7f5dfe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad094b5d8a59cd60c29453e34b7f5dfe5">&#9670;&#160;</a></span>m</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;std::array&lt;double, 4&gt;, 4&gt; lin::Mat4::m {}</td>
+          <td class="memname">std::array&lt;std::array&lt;<a class="el" href="structlin_1_1Mat3.html">T</a>, 4&gt;, 4&gt; <a class="el" href="structlin_1_1Mat4.html">lin::Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;::m {}</td>
         </tr>
       </table>
 </div><div class="memdoc">

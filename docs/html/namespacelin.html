@@ -78,97 +78,359 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">lin Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Namespace for linear algebra utility functions and classes.  
+<a href="namespacelin.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat3.html">Mat3</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic 3x3 matrix class (row-major).  <a href="structlin_1_1Mat3.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Mat4.html">Mat4</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic 4x4 matrix class (row-major).  <a href="structlin_1_1Mat4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1MatAlignment.html">MatAlignment</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides alignment constants for matrix types.  <a href="structlin_1_1MatAlignment.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1MatAlignment_3_01double_00_013_01_4.html">MatAlignment&lt; double, 3 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1MatAlignment_3_01double_00_014_01_4.html">MatAlignment&lt; double, 4 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="structlin_1_1MatAlignment.html" title="Provides alignment constants for matrix types.">MatAlignment</a> for double type with 4 rows/columns.  <a href="structlin_1_1MatAlignment_3_01double_00_014_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1MatAlignment_3_01float_00_013_01_4.html">MatAlignment&lt; float, 3 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="structlin_1_1MatAlignment.html" title="Provides alignment constants for matrix types.">MatAlignment</a> for float type with 2 rows/columns.  <a href="structlin_1_1MatAlignment_3_01float_00_013_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1MatAlignment_3_01float_00_014_01_4.html">MatAlignment&lt; float, 4 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="structlin_1_1MatAlignment.html" title="Provides alignment constants for matrix types.">MatAlignment</a> for float type with 4 rows/columns.  <a href="structlin_1_1MatAlignment_3_01float_00_014_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Vec2.html">Vec2</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic 2D vector class (<a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a>).  <a href="structlin_1_1Vec2.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Vec3.html">Vec3</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic 3D vector class (<a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a>).  <a href="structlin_1_1Vec3.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1Vec4.html">Vec4</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic 4D vector class (<a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a>).  <a href="structlin_1_1Vec4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1VecAlignment.html">VecAlignment</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides alignment constants for vector types.  <a href="structlin_1_1VecAlignment.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1VecAlignment_3_01double_00_012_01_4.html">VecAlignment&lt; double, 2 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="structlin_1_1VecAlignment.html" title="Provides alignment constants for vector types.">VecAlignment</a> for double type with 2 elements.  <a href="structlin_1_1VecAlignment_3_01double_00_012_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1VecAlignment_3_01double_00_013_01_4.html">VecAlignment&lt; double, 3 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="structlin_1_1VecAlignment.html" title="Provides alignment constants for vector types.">VecAlignment</a> for double type with 3 elements.  <a href="structlin_1_1VecAlignment_3_01double_00_013_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1VecAlignment_3_01double_00_014_01_4.html">VecAlignment&lt; double, 4 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="structlin_1_1VecAlignment.html" title="Provides alignment constants for vector types.">VecAlignment</a> for double type with 4 elements.  <a href="structlin_1_1VecAlignment_3_01double_00_014_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1VecAlignment_3_01float_00_012_01_4.html">VecAlignment&lt; float, 2 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="structlin_1_1VecAlignment.html" title="Provides alignment constants for vector types.">VecAlignment</a> for float type with 2 elements.  <a href="structlin_1_1VecAlignment_3_01float_00_012_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1VecAlignment_3_01float_00_013_01_4.html">VecAlignment&lt; float, 3 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="structlin_1_1VecAlignment.html" title="Provides alignment constants for vector types.">VecAlignment</a> for float type with 3 elements.  <a href="structlin_1_1VecAlignment_3_01float_00_013_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlin_1_1VecAlignment_3_01float_00_014_01_4.html">VecAlignment&lt; float, 4 &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="structlin_1_1VecAlignment.html" title="Provides alignment constants for vector types.">VecAlignment</a> for float type with 4 elements.  <a href="structlin_1_1VecAlignment_3_01float_00_014_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a81e051310c12a0bdf8f91a5cdc33f747" id="r_a81e051310c12a0bdf8f91a5cdc33f747"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a81e051310c12a0bdf8f91a5cdc33f747">Mat3f</a> = <a class="el" href="structlin_1_1Mat3.html">Mat3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">float</a> &gt;</td></tr>
+<tr class="separator:a81e051310c12a0bdf8f91a5cdc33f747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae52f6f1f34b5742ec862ac00358bb0f3" id="r_ae52f6f1f34b5742ec862ac00358bb0f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#ae52f6f1f34b5742ec862ac00358bb0f3">Mat3d</a> = <a class="el" href="structlin_1_1Mat3.html">Mat3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">double</a> &gt;</td></tr>
+<tr class="separator:ae52f6f1f34b5742ec862ac00358bb0f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eede96c3b96937903cc393dcb45c688" id="r_a8eede96c3b96937903cc393dcb45c688"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a8eede96c3b96937903cc393dcb45c688">Mat4d</a> = <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">double</a> &gt;</td></tr>
+<tr class="separator:a8eede96c3b96937903cc393dcb45c688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b4030bdf97cee6d28d61924a0f254be" id="r_a1b4030bdf97cee6d28d61924a0f254be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a1b4030bdf97cee6d28d61924a0f254be">Mat4f</a> = <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">float</a> &gt;</td></tr>
+<tr class="separator:a1b4030bdf97cee6d28d61924a0f254be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeebf89c062e2f6c1ca71ac8d0430b5a" id="r_abeebf89c062e2f6c1ca71ac8d0430b5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#abeebf89c062e2f6c1ca71ac8d0430b5a">Vec2f</a> = <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">float</a> &gt;</td></tr>
+<tr class="separator:abeebf89c062e2f6c1ca71ac8d0430b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad29737a9c7e8f3539c575f0eabaee789" id="r_ad29737a9c7e8f3539c575f0eabaee789"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#ad29737a9c7e8f3539c575f0eabaee789">Vec2d</a> = <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">double</a> &gt;</td></tr>
+<tr class="separator:ad29737a9c7e8f3539c575f0eabaee789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d5e66820f5d22c2832eee2951df9cca" id="r_a6d5e66820f5d22c2832eee2951df9cca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a6d5e66820f5d22c2832eee2951df9cca">Vec3f</a> = <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">float</a> &gt;</td></tr>
+<tr class="separator:a6d5e66820f5d22c2832eee2951df9cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb4f22af3a3d53d7b834f8533a027a8e" id="r_adb4f22af3a3d53d7b834f8533a027a8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#adb4f22af3a3d53d7b834f8533a027a8e">Vec3d</a> = <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">double</a> &gt;</td></tr>
+<tr class="separator:adb4f22af3a3d53d7b834f8533a027a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5099e6f346ff794ae52c248005ce51f" id="r_ab5099e6f346ff794ae52c248005ce51f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#ab5099e6f346ff794ae52c248005ce51f">Vec4f</a> = <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">float</a> &gt;</td></tr>
+<tr class="separator:ab5099e6f346ff794ae52c248005ce51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af76cc4b91110db46c860726732e3cba2" id="r_af76cc4b91110db46c860726732e3cba2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#af76cc4b91110db46c860726732e3cba2">Vec4d</a> = <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">double</a> &gt;</td></tr>
+<tr class="separator:af76cc4b91110db46c860726732e3cba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acb472d991aa357073c4d492d98c9b57b" id="r_acb472d991aa357073c4d492d98c9b57b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#acb472d991aa357073c4d492d98c9b57b">toVec3</a> (const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;vec)</td></tr>
-<tr class="separator:acb472d991aa357073c4d492d98c9b57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd49915b3621035ebd8028c001b15290" id="r_abd49915b3621035ebd8028c001b15290"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#abd49915b3621035ebd8028c001b15290">toVec4</a> (const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;vec)</td></tr>
-<tr class="separator:abd49915b3621035ebd8028c001b15290"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad676d874ae355da7bd3a8626610e7d0b" id="r_ad676d874ae355da7bd3a8626610e7d0b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#ad676d874ae355da7bd3a8626610e7d0b">dot</a> (const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;a, const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;b)</td></tr>
-<tr class="separator:ad676d874ae355da7bd3a8626610e7d0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac075837ae06dc9c26c2fae3fa5715b96" id="r_ac075837ae06dc9c26c2fae3fa5715b96"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#ac075837ae06dc9c26c2fae3fa5715b96">dot</a> (const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;a, const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;b)</td></tr>
-<tr class="separator:ac075837ae06dc9c26c2fae3fa5715b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec3620ae00a246fa17fe88f00010d9f3" id="r_aec3620ae00a246fa17fe88f00010d9f3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#aec3620ae00a246fa17fe88f00010d9f3">dot</a> (const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;a, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;b)</td></tr>
-<tr class="separator:aec3620ae00a246fa17fe88f00010d9f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e04bbcd0c256025afed9d575768b995" id="r_a8e04bbcd0c256025afed9d575768b995"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a8e04bbcd0c256025afed9d575768b995">cwiseMin</a> (const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;a, const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;b)</td></tr>
-<tr class="separator:a8e04bbcd0c256025afed9d575768b995"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ad7a74379cabfcf2c43b94c9f6fabed" id="r_a8ad7a74379cabfcf2c43b94c9f6fabed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a8ad7a74379cabfcf2c43b94c9f6fabed">cwiseMin</a> (const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;a, const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;b)</td></tr>
-<tr class="separator:a8ad7a74379cabfcf2c43b94c9f6fabed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae074cfa8b2f7ddd30ebbc84cdb2251a3" id="r_ae074cfa8b2f7ddd30ebbc84cdb2251a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#ae074cfa8b2f7ddd30ebbc84cdb2251a3">cwiseMin</a> (const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;a, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;b)</td></tr>
-<tr class="separator:ae074cfa8b2f7ddd30ebbc84cdb2251a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a652800f040aa7707a3b41ba6a63d902f" id="r_a652800f040aa7707a3b41ba6a63d902f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a652800f040aa7707a3b41ba6a63d902f">cwiseMax</a> (const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;a, const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;b)</td></tr>
-<tr class="separator:a652800f040aa7707a3b41ba6a63d902f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1dd3835c378b970eb8ef43814299e28" id="r_ac1dd3835c378b970eb8ef43814299e28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#ac1dd3835c378b970eb8ef43814299e28">cwiseMax</a> (const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;a, const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;b)</td></tr>
-<tr class="separator:ac1dd3835c378b970eb8ef43814299e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb7f64fc35a28d0f507d860dbf8c998e" id="r_adb7f64fc35a28d0f507d860dbf8c998e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#adb7f64fc35a28d0f507d860dbf8c998e">cwiseMax</a> (const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;a, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;b)</td></tr>
-<tr class="separator:adb7f64fc35a28d0f507d860dbf8c998e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac811f860594b1952a749d8879923714a" id="r_ac811f860594b1952a749d8879923714a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#ac811f860594b1952a749d8879923714a">cwiseProduct</a> (const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;a, const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;b)</td></tr>
-<tr class="separator:ac811f860594b1952a749d8879923714a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b87349faaa033e42ddae02784c27bc0" id="r_a4b87349faaa033e42ddae02784c27bc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a4b87349faaa033e42ddae02784c27bc0">cwiseProduct</a> (const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;a, const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;b)</td></tr>
-<tr class="separator:a4b87349faaa033e42ddae02784c27bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a223b85c1ef771cc05fc6aaf0fbe7a759" id="r_a223b85c1ef771cc05fc6aaf0fbe7a759"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a223b85c1ef771cc05fc6aaf0fbe7a759">cwiseProduct</a> (const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;a, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;b)</td></tr>
-<tr class="separator:a223b85c1ef771cc05fc6aaf0fbe7a759"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9e3a0602405a3d35c240a12d59c3d72" id="r_aa9e3a0602405a3d35c240a12d59c3d72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#aa9e3a0602405a3d35c240a12d59c3d72">operator*</a> (double scalar, const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;vec)</td></tr>
-<tr class="separator:aa9e3a0602405a3d35c240a12d59c3d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e36b6e9fbb3c8e2e42a22db65657ba0" id="r_a3e36b6e9fbb3c8e2e42a22db65657ba0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a3e36b6e9fbb3c8e2e42a22db65657ba0">operator*</a> (double scalar, const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;vec)</td></tr>
-<tr class="separator:a3e36b6e9fbb3c8e2e42a22db65657ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dabc534e73440440b3ef5a4d2bd471d" id="r_a1dabc534e73440440b3ef5a4d2bd471d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a1dabc534e73440440b3ef5a4d2bd471d">operator*</a> (double scalar, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;vec)</td></tr>
-<tr class="separator:a1dabc534e73440440b3ef5a4d2bd471d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd4637554633656de95656e673949a75" id="r_abd4637554633656de95656e673949a75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#abd4637554633656de95656e673949a75">operator*</a> (const <a class="el" href="structlin_1_1Mat3.html">Mat3</a> &amp;mat, const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;vec)</td></tr>
-<tr class="separator:abd4637554633656de95656e673949a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7804b396ab2119b343f70ca408f912d7" id="r_a7804b396ab2119b343f70ca408f912d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a7804b396ab2119b343f70ca408f912d7">operator*</a> (const <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;mat, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;vec)</td></tr>
-<tr class="separator:a7804b396ab2119b343f70ca408f912d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae101af03801f58c67f5d354c1d13f15f" id="r_ae101af03801f58c67f5d354c1d13f15f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">Mat3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#ae101af03801f58c67f5d354c1d13f15f">getRotationMatrix</a> (double x_angle, double y_angle, double z_angle)</td></tr>
-<tr class="separator:ae101af03801f58c67f5d354c1d13f15f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f26d0c8b2df5cfc898e4c3a87a81ee3" id="r_a3f26d0c8b2df5cfc898e4c3a87a81ee3"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a3f26d0c8b2df5cfc898e4c3a87a81ee3">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structlin_1_1Mat3.html">Mat3</a> &amp;mat)</td></tr>
-<tr class="separator:a3f26d0c8b2df5cfc898e4c3a87a81ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a174131b4962b9e4b28b234547acd2dc0" id="r_a174131b4962b9e4b28b234547acd2dc0"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a174131b4962b9e4b28b234547acd2dc0">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;mat)</td></tr>
-<tr class="separator:a174131b4962b9e4b28b234547acd2dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80f71dbcfa442ebd9bcfaf062426ad27" id="r_a80f71dbcfa442ebd9bcfaf062426ad27"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a80f71dbcfa442ebd9bcfaf062426ad27">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;v)</td></tr>
-<tr class="separator:a80f71dbcfa442ebd9bcfaf062426ad27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef3e912d689dc131700c3f2b3b85c238" id="r_aef3e912d689dc131700c3f2b3b85c238"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#aef3e912d689dc131700c3f2b3b85c238">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;v)</td></tr>
-<tr class="separator:aef3e912d689dc131700c3f2b3b85c238"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c661a960eb769fde8305c486f2e33c2" id="r_a5c661a960eb769fde8305c486f2e33c2"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a5c661a960eb769fde8305c486f2e33c2">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;v)</td></tr>
-<tr class="separator:a5c661a960eb769fde8305c486f2e33c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad812c22b70f03b9b7afcaa4ba84e8ad6" id="r_ad812c22b70f03b9b7afcaa4ba84e8ad6"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:ad812c22b70f03b9b7afcaa4ba84e8ad6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#ad812c22b70f03b9b7afcaa4ba84e8ad6">toVec3</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">vec</a>)</td></tr>
+<tr class="memdesc:ad812c22b70f03b9b7afcaa4ba84e8ad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> to a <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a>.  <br /></td></tr>
+<tr class="separator:ad812c22b70f03b9b7afcaa4ba84e8ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79a2db24d1210626f769acaec7eac11e" id="r_a79a2db24d1210626f769acaec7eac11e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a79a2db24d1210626f769acaec7eac11e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a79a2db24d1210626f769acaec7eac11e">toVec4</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">vec</a>)</td></tr>
+<tr class="memdesc:a79a2db24d1210626f769acaec7eac11e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> to a <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> with w set to 1.  <br /></td></tr>
+<tr class="separator:a79a2db24d1210626f769acaec7eac11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3748bd4a6e4bbf1b42a705b37308d9d" id="r_ae3748bd4a6e4bbf1b42a705b37308d9d"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:ae3748bd4a6e4bbf1b42a705b37308d9d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#ae3748bd4a6e4bbf1b42a705b37308d9d">dot</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:ae3748bd4a6e4bbf1b42a705b37308d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a dot product between two <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vectors.  <br /></td></tr>
+<tr class="separator:ae3748bd4a6e4bbf1b42a705b37308d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4731f249aa7452f1632867d49e67edca" id="r_a4731f249aa7452f1632867d49e67edca"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a4731f249aa7452f1632867d49e67edca"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a4731f249aa7452f1632867d49e67edca">dot</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:a4731f249aa7452f1632867d49e67edca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a dot product between two <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vectors.  <br /></td></tr>
+<tr class="separator:a4731f249aa7452f1632867d49e67edca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45a641f88e72e104c9dbd2bf1f28308e" id="r_a45a641f88e72e104c9dbd2bf1f28308e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a45a641f88e72e104c9dbd2bf1f28308e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a45a641f88e72e104c9dbd2bf1f28308e">dot</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:a45a641f88e72e104c9dbd2bf1f28308e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a dot product between two <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vectors.  <br /></td></tr>
+<tr class="separator:a45a641f88e72e104c9dbd2bf1f28308e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6882492e6781848d185cf5ee15f3cd0e" id="r_a6882492e6781848d185cf5ee15f3cd0e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a6882492e6781848d185cf5ee15f3cd0e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a6882492e6781848d185cf5ee15f3cd0e">cwiseMin</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:a6882492e6781848d185cf5ee15f3cd0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum value of two <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vectors element-wise.  <br /></td></tr>
+<tr class="separator:a6882492e6781848d185cf5ee15f3cd0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f75088c17996c5e7d726887e53ff01b" id="r_a0f75088c17996c5e7d726887e53ff01b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a0f75088c17996c5e7d726887e53ff01b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a0f75088c17996c5e7d726887e53ff01b">cwiseMin</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:a0f75088c17996c5e7d726887e53ff01b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum value of two <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vectors element-wise.  <br /></td></tr>
+<tr class="separator:a0f75088c17996c5e7d726887e53ff01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc31b80710fd5a587c0a7a3e91f7bc30" id="r_acc31b80710fd5a587c0a7a3e91f7bc30"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:acc31b80710fd5a587c0a7a3e91f7bc30"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#acc31b80710fd5a587c0a7a3e91f7bc30">cwiseMin</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:acc31b80710fd5a587c0a7a3e91f7bc30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum value of two <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vectors element-wise.  <br /></td></tr>
+<tr class="separator:acc31b80710fd5a587c0a7a3e91f7bc30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e94ac410ef6bc1752ae67168155c59" id="r_a34e94ac410ef6bc1752ae67168155c59"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a34e94ac410ef6bc1752ae67168155c59"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a34e94ac410ef6bc1752ae67168155c59">cwiseMax</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:a34e94ac410ef6bc1752ae67168155c59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum value of two <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vectors element-wise.  <br /></td></tr>
+<tr class="separator:a34e94ac410ef6bc1752ae67168155c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa37bb6bdf16554687b0f24dc9da2634f" id="r_aa37bb6bdf16554687b0f24dc9da2634f"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:aa37bb6bdf16554687b0f24dc9da2634f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#aa37bb6bdf16554687b0f24dc9da2634f">cwiseMax</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:aa37bb6bdf16554687b0f24dc9da2634f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum value of two <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vectors element-wise.  <br /></td></tr>
+<tr class="separator:aa37bb6bdf16554687b0f24dc9da2634f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0545e363fbefa63512094843c1bfb14" id="r_ae0545e363fbefa63512094843c1bfb14"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:ae0545e363fbefa63512094843c1bfb14"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#ae0545e363fbefa63512094843c1bfb14">cwiseMax</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:ae0545e363fbefa63512094843c1bfb14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum value of two <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vectors element-wise.  <br /></td></tr>
+<tr class="separator:ae0545e363fbefa63512094843c1bfb14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad31a10371f0774ebd1daf93168ec42f2" id="r_ad31a10371f0774ebd1daf93168ec42f2"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:ad31a10371f0774ebd1daf93168ec42f2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#ad31a10371f0774ebd1daf93168ec42f2">cwiseProduct</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:ad31a10371f0774ebd1daf93168ec42f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the element-wise product of two <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vectors.  <br /></td></tr>
+<tr class="separator:ad31a10371f0774ebd1daf93168ec42f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab80bc0f752bc9571a4ab2c4cad4d4cd4" id="r_ab80bc0f752bc9571a4ab2c4cad4d4cd4"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:ab80bc0f752bc9571a4ab2c4cad4d4cd4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#ab80bc0f752bc9571a4ab2c4cad4d4cd4">cwiseProduct</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:ab80bc0f752bc9571a4ab2c4cad4d4cd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the element-wise product of two <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vectors.  <br /></td></tr>
+<tr class="separator:ab80bc0f752bc9571a4ab2c4cad4d4cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fb1c08002f522b7b93325581ead10e1" id="r_a5fb1c08002f522b7b93325581ead10e1"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a5fb1c08002f522b7b93325581ead10e1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a5fb1c08002f522b7b93325581ead10e1">cwiseProduct</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:a5fb1c08002f522b7b93325581ead10e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the element-wise product of two <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vectors.  <br /></td></tr>
+<tr class="separator:a5fb1c08002f522b7b93325581ead10e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a28cfc93999695b7e7dd7b408094022" id="r_a2a28cfc93999695b7e7dd7b408094022"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a2a28cfc93999695b7e7dd7b408094022"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a2a28cfc93999695b7e7dd7b408094022">operator*</a> (<a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">scalar</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">vec</a>)</td></tr>
+<tr class="memdesc:a2a28cfc93999695b7e7dd7b408094022"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the product of a <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vector and a scalar.  <br /></td></tr>
+<tr class="separator:a2a28cfc93999695b7e7dd7b408094022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7cb3fc14eb7831ecc003084f93334b6" id="r_af7cb3fc14eb7831ecc003084f93334b6"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:af7cb3fc14eb7831ecc003084f93334b6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#af7cb3fc14eb7831ecc003084f93334b6">operator*</a> (<a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">scalar</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">vec</a>)</td></tr>
+<tr class="memdesc:af7cb3fc14eb7831ecc003084f93334b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the product of a <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector and a scalar.  <br /></td></tr>
+<tr class="separator:af7cb3fc14eb7831ecc003084f93334b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c1b3e465ad1e8141989e9f6a194a47c" id="r_a5c1b3e465ad1e8141989e9f6a194a47c"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a5c1b3e465ad1e8141989e9f6a194a47c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a5c1b3e465ad1e8141989e9f6a194a47c">operator*</a> (<a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">scalar</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">vec</a>)</td></tr>
+<tr class="memdesc:a5c1b3e465ad1e8141989e9f6a194a47c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the product of a <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector and a scalar.  <br /></td></tr>
+<tr class="separator:a5c1b3e465ad1e8141989e9f6a194a47c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82f1b94df86d8d9348fd6eb562d624d1" id="r_a82f1b94df86d8d9348fd6eb562d624d1"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a82f1b94df86d8d9348fd6eb562d624d1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a82f1b94df86d8d9348fd6eb562d624d1">operator*</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat3.html">Mat3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">mat</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">vec</a>)</td></tr>
+<tr class="memdesc:a82f1b94df86d8d9348fd6eb562d624d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies a <a class="el" href="structlin_1_1Mat3.html" title="Generic 3x3 matrix class (row-major).">Mat3</a> matrix vy a <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector.  <br /></td></tr>
+<tr class="separator:a82f1b94df86d8d9348fd6eb562d624d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb58de3fa001fec291612bd253c63237" id="r_aeb58de3fa001fec291612bd253c63237"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:aeb58de3fa001fec291612bd253c63237"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#aeb58de3fa001fec291612bd253c63237">operator*</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">mat</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">vec</a>)</td></tr>
+<tr class="memdesc:aeb58de3fa001fec291612bd253c63237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies a <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> matrix by a <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector.  <br /></td></tr>
+<tr class="separator:aeb58de3fa001fec291612bd253c63237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9573139e3a64729fe580dbe4ac37bdc" id="r_ad9573139e3a64729fe580dbe4ac37bdc"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:ad9573139e3a64729fe580dbe4ac37bdc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">Mat3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#ad9573139e3a64729fe580dbe4ac37bdc">getRotationMatrix</a> (<a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">x_angle</a>, <a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">y_angle</a>, <a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">z_angle</a>)</td></tr>
+<tr class="memdesc:ad9573139e3a64729fe580dbe4ac37bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a rotation matrix for the given angles around the x, y, and z axes.  <br /></td></tr>
+<tr class="separator:ad9573139e3a64729fe580dbe4ac37bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4126cf56af5db4aaef1c6bc8eebe3e39" id="r_a4126cf56af5db4aaef1c6bc8eebe3e39"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a4126cf56af5db4aaef1c6bc8eebe3e39"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a4126cf56af5db4aaef1c6bc8eebe3e39">operator&lt;&lt;</a> (std::ostream &amp;<a class="el" href="structlin_1_1Mat3.html">os</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat3.html">Mat3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">mat</a>)</td></tr>
+<tr class="memdesc:a4126cf56af5db4aaef1c6bc8eebe3e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloads the output stream operator for <a class="el" href="structlin_1_1Mat3.html" title="Generic 3x3 matrix class (row-major).">Mat3</a>.  <br /></td></tr>
+<tr class="separator:a4126cf56af5db4aaef1c6bc8eebe3e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30a16a4bc10c0ced6055907013a8039f" id="r_a30a16a4bc10c0ced6055907013a8039f"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a30a16a4bc10c0ced6055907013a8039f"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a30a16a4bc10c0ced6055907013a8039f">operator&lt;&lt;</a> (std::ostream &amp;<a class="el" href="structlin_1_1Mat3.html">os</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">mat</a>)</td></tr>
+<tr class="memdesc:a30a16a4bc10c0ced6055907013a8039f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded output operator for <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a>.  <br /></td></tr>
+<tr class="separator:a30a16a4bc10c0ced6055907013a8039f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7ffe3456438fde0754258678afbfb0a" id="r_ab7ffe3456438fde0754258678afbfb0a"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:ab7ffe3456438fde0754258678afbfb0a"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#ab7ffe3456438fde0754258678afbfb0a">operator&lt;&lt;</a> (std::ostream &amp;<a class="el" href="structlin_1_1Mat3.html">os</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;v)</td></tr>
+<tr class="memdesc:ab7ffe3456438fde0754258678afbfb0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded output operator for <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a>.  <br /></td></tr>
+<tr class="separator:ab7ffe3456438fde0754258678afbfb0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92058ff13cde0dc887cdc00468152023" id="r_a92058ff13cde0dc887cdc00468152023"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a92058ff13cde0dc887cdc00468152023"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a92058ff13cde0dc887cdc00468152023">operator&lt;&lt;</a> (std::ostream &amp;<a class="el" href="structlin_1_1Mat3.html">os</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;v)</td></tr>
+<tr class="memdesc:a92058ff13cde0dc887cdc00468152023"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloads the output stream operator for <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a>.  <br /></td></tr>
+<tr class="separator:a92058ff13cde0dc887cdc00468152023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eb09c1e8ab223e094fffd98702a8930" id="r_a3eb09c1e8ab223e094fffd98702a8930"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a3eb09c1e8ab223e094fffd98702a8930"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a3eb09c1e8ab223e094fffd98702a8930">operator&lt;&lt;</a> (std::ostream &amp;<a class="el" href="structlin_1_1Mat3.html">os</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;v)</td></tr>
+<tr class="memdesc:a3eb09c1e8ab223e094fffd98702a8930"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloads the output stream operator for <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a>.  <br /></td></tr>
+<tr class="separator:a3eb09c1e8ab223e094fffd98702a8930"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Namespace for linear algebra utility functions and classes. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="ae52f6f1f34b5742ec862ac00358bb0f3" name="ae52f6f1f34b5742ec862ac00358bb0f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae52f6f1f34b5742ec862ac00358bb0f3">&#9670;&#160;</a></span>Mat3d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">using</a> <a class="el" href="namespacelin.html#ae52f6f1f34b5742ec862ac00358bb0f3">lin::Mat3d</a> = <a class="el" href="structlin_1_1Mat3.html">typedef</a> <a class="el" href="structlin_1_1Mat3.html">Mat3</a>&lt;<a class="el" href="structlin_1_1Mat3.html">double</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a81e051310c12a0bdf8f91a5cdc33f747" name="a81e051310c12a0bdf8f91a5cdc33f747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81e051310c12a0bdf8f91a5cdc33f747">&#9670;&#160;</a></span>Mat3f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">using</a> <a class="el" href="namespacelin.html#a81e051310c12a0bdf8f91a5cdc33f747">lin::Mat3f</a> = <a class="el" href="structlin_1_1Mat3.html">typedef</a> <a class="el" href="structlin_1_1Mat3.html">Mat3</a>&lt;<a class="el" href="structlin_1_1Mat3.html">float</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8eede96c3b96937903cc393dcb45c688" name="a8eede96c3b96937903cc393dcb45c688"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eede96c3b96937903cc393dcb45c688">&#9670;&#160;</a></span>Mat4d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">using</a> <a class="el" href="namespacelin.html#a8eede96c3b96937903cc393dcb45c688">lin::Mat4d</a> = <a class="el" href="structlin_1_1Mat3.html">typedef</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&lt;<a class="el" href="structlin_1_1Mat3.html">double</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1b4030bdf97cee6d28d61924a0f254be" name="a1b4030bdf97cee6d28d61924a0f254be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b4030bdf97cee6d28d61924a0f254be">&#9670;&#160;</a></span>Mat4f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">using</a> <a class="el" href="namespacelin.html#a1b4030bdf97cee6d28d61924a0f254be">lin::Mat4f</a> = <a class="el" href="structlin_1_1Mat3.html">typedef</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&lt;<a class="el" href="structlin_1_1Mat3.html">float</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad29737a9c7e8f3539c575f0eabaee789" name="ad29737a9c7e8f3539c575f0eabaee789"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad29737a9c7e8f3539c575f0eabaee789">&#9670;&#160;</a></span>Vec2d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">using</a> <a class="el" href="namespacelin.html#ad29737a9c7e8f3539c575f0eabaee789">lin::Vec2d</a> = <a class="el" href="structlin_1_1Mat3.html">typedef</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt;<a class="el" href="structlin_1_1Mat3.html">double</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abeebf89c062e2f6c1ca71ac8d0430b5a" name="abeebf89c062e2f6c1ca71ac8d0430b5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeebf89c062e2f6c1ca71ac8d0430b5a">&#9670;&#160;</a></span>Vec2f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">using</a> <a class="el" href="namespacelin.html#abeebf89c062e2f6c1ca71ac8d0430b5a">lin::Vec2f</a> = <a class="el" href="structlin_1_1Mat3.html">typedef</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt;<a class="el" href="structlin_1_1Mat3.html">float</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb4f22af3a3d53d7b834f8533a027a8e" name="adb4f22af3a3d53d7b834f8533a027a8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb4f22af3a3d53d7b834f8533a027a8e">&#9670;&#160;</a></span>Vec3d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">using</a> <a class="el" href="namespacelin.html#adb4f22af3a3d53d7b834f8533a027a8e">lin::Vec3d</a> = <a class="el" href="structlin_1_1Mat3.html">typedef</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt;<a class="el" href="structlin_1_1Mat3.html">double</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6d5e66820f5d22c2832eee2951df9cca" name="a6d5e66820f5d22c2832eee2951df9cca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d5e66820f5d22c2832eee2951df9cca">&#9670;&#160;</a></span>Vec3f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">using</a> <a class="el" href="namespacelin.html#a6d5e66820f5d22c2832eee2951df9cca">lin::Vec3f</a> = <a class="el" href="structlin_1_1Mat3.html">typedef</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt;<a class="el" href="structlin_1_1Mat3.html">float</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af76cc4b91110db46c860726732e3cba2" name="af76cc4b91110db46c860726732e3cba2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af76cc4b91110db46c860726732e3cba2">&#9670;&#160;</a></span>Vec4d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">using</a> <a class="el" href="namespacelin.html#af76cc4b91110db46c860726732e3cba2">lin::Vec4d</a> = <a class="el" href="structlin_1_1Mat3.html">typedef</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt;<a class="el" href="structlin_1_1Mat3.html">double</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab5099e6f346ff794ae52c248005ce51f" name="ab5099e6f346ff794ae52c248005ce51f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5099e6f346ff794ae52c248005ce51f">&#9670;&#160;</a></span>Vec4f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">using</a> <a class="el" href="namespacelin.html#ab5099e6f346ff794ae52c248005ce51f">lin::Vec4f</a> = <a class="el" href="structlin_1_1Mat3.html">typedef</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt;<a class="el" href="structlin_1_1Mat3.html">float</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a652800f040aa7707a3b41ba6a63d902f" name="a652800f040aa7707a3b41ba6a63d902f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a652800f040aa7707a3b41ba6a63d902f">&#9670;&#160;</a></span>cwiseMax() <span class="overload">[1/3]</span></h2>
+<a id="a34e94ac410ef6bc1752ae67168155c59" name="a34e94ac410ef6bc1752ae67168155c59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34e94ac410ef6bc1752ae67168155c59">&#9670;&#160;</a></span>cwiseMax() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Vec2.html">Vec2</a> lin::cwiseMax </td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; lin::cwiseMax </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -184,27 +446,39 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the maximum value of two <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vectors element-wise. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The first <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vector. </td></tr>
+    <tr><td class="paramname">b</td><td>The second <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vector containing the maximum values of each component. </dd></dl>
+
 </div>
 </div>
-<a id="ac1dd3835c378b970eb8ef43814299e28" name="ac1dd3835c378b970eb8ef43814299e28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1dd3835c378b970eb8ef43814299e28">&#9670;&#160;</a></span>cwiseMax() <span class="overload">[2/3]</span></h2>
+<a id="aa37bb6bdf16554687b0f24dc9da2634f" name="aa37bb6bdf16554687b0f24dc9da2634f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa37bb6bdf16554687b0f24dc9da2634f">&#9670;&#160;</a></span>cwiseMax() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Vec3.html">Vec3</a> lin::cwiseMax </td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; lin::cwiseMax </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -220,27 +494,39 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the maximum value of two <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vectors element-wise. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The first <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector. </td></tr>
+    <tr><td class="paramname">b</td><td>The second <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector containing the maximum values of each component. </dd></dl>
+
 </div>
 </div>
-<a id="adb7f64fc35a28d0f507d860dbf8c998e" name="adb7f64fc35a28d0f507d860dbf8c998e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb7f64fc35a28d0f507d860dbf8c998e">&#9670;&#160;</a></span>cwiseMax() <span class="overload">[3/3]</span></h2>
+<a id="ae0545e363fbefa63512094843c1bfb14" name="ae0545e363fbefa63512094843c1bfb14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0545e363fbefa63512094843c1bfb14">&#9670;&#160;</a></span>cwiseMax() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Vec4.html">Vec4</a> lin::cwiseMax </td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; lin::cwiseMax </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -256,27 +542,39 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the maximum value of two <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vectors element-wise. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The first <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector. </td></tr>
+    <tr><td class="paramname">b</td><td>The second <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector containing the maximum values of each component. </dd></dl>
+
 </div>
 </div>
-<a id="a8e04bbcd0c256025afed9d575768b995" name="a8e04bbcd0c256025afed9d575768b995"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e04bbcd0c256025afed9d575768b995">&#9670;&#160;</a></span>cwiseMin() <span class="overload">[1/3]</span></h2>
+<a id="a6882492e6781848d185cf5ee15f3cd0e" name="a6882492e6781848d185cf5ee15f3cd0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6882492e6781848d185cf5ee15f3cd0e">&#9670;&#160;</a></span>cwiseMin() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Vec2.html">Vec2</a> lin::cwiseMin </td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; lin::cwiseMin </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -292,27 +590,39 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the minimum value of two <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vectors element-wise. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The first <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vector. </td></tr>
+    <tr><td class="paramname">b</td><td>The second <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vector containing the minimum values of each component. </dd></dl>
+
 </div>
 </div>
-<a id="a8ad7a74379cabfcf2c43b94c9f6fabed" name="a8ad7a74379cabfcf2c43b94c9f6fabed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ad7a74379cabfcf2c43b94c9f6fabed">&#9670;&#160;</a></span>cwiseMin() <span class="overload">[2/3]</span></h2>
+<a id="a0f75088c17996c5e7d726887e53ff01b" name="a0f75088c17996c5e7d726887e53ff01b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f75088c17996c5e7d726887e53ff01b">&#9670;&#160;</a></span>cwiseMin() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Vec3.html">Vec3</a> lin::cwiseMin </td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; lin::cwiseMin </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -328,27 +638,39 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the minimum value of two <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vectors element-wise. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The first <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector. </td></tr>
+    <tr><td class="paramname">b</td><td>The second <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector containing the minimum values of each component. </dd></dl>
+
 </div>
 </div>
-<a id="ae074cfa8b2f7ddd30ebbc84cdb2251a3" name="ae074cfa8b2f7ddd30ebbc84cdb2251a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae074cfa8b2f7ddd30ebbc84cdb2251a3">&#9670;&#160;</a></span>cwiseMin() <span class="overload">[3/3]</span></h2>
+<a id="acc31b80710fd5a587c0a7a3e91f7bc30" name="acc31b80710fd5a587c0a7a3e91f7bc30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc31b80710fd5a587c0a7a3e91f7bc30">&#9670;&#160;</a></span>cwiseMin() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Vec4.html">Vec4</a> lin::cwiseMin </td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; lin::cwiseMin </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -364,27 +686,39 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the minimum value of two <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vectors element-wise. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The first <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector. </td></tr>
+    <tr><td class="paramname">b</td><td>The second <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector containing the minimum values of each component. </dd></dl>
+
 </div>
 </div>
-<a id="ac811f860594b1952a749d8879923714a" name="ac811f860594b1952a749d8879923714a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac811f860594b1952a749d8879923714a">&#9670;&#160;</a></span>cwiseProduct() <span class="overload">[1/3]</span></h2>
+<a id="ad31a10371f0774ebd1daf93168ec42f2" name="ad31a10371f0774ebd1daf93168ec42f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad31a10371f0774ebd1daf93168ec42f2">&#9670;&#160;</a></span>cwiseProduct() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Vec2.html">Vec2</a> lin::cwiseProduct </td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; lin::cwiseProduct </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -400,27 +734,39 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the element-wise product of two <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vectors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The first <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vector. </td></tr>
+    <tr><td class="paramname">b</td><td>The second <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vector containing the product of each component. </dd></dl>
+
 </div>
 </div>
-<a id="a4b87349faaa033e42ddae02784c27bc0" name="a4b87349faaa033e42ddae02784c27bc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b87349faaa033e42ddae02784c27bc0">&#9670;&#160;</a></span>cwiseProduct() <span class="overload">[2/3]</span></h2>
+<a id="ab80bc0f752bc9571a4ab2c4cad4d4cd4" name="ab80bc0f752bc9571a4ab2c4cad4d4cd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab80bc0f752bc9571a4ab2c4cad4d4cd4">&#9670;&#160;</a></span>cwiseProduct() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Vec3.html">Vec3</a> lin::cwiseProduct </td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; lin::cwiseProduct </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -436,27 +782,39 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the element-wise product of two <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vectors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The first <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector. </td></tr>
+    <tr><td class="paramname">b</td><td>The second <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector containing the product of each component. </dd></dl>
+
 </div>
 </div>
-<a id="a223b85c1ef771cc05fc6aaf0fbe7a759" name="a223b85c1ef771cc05fc6aaf0fbe7a759"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a223b85c1ef771cc05fc6aaf0fbe7a759">&#9670;&#160;</a></span>cwiseProduct() <span class="overload">[3/3]</span></h2>
+<a id="a5fb1c08002f522b7b93325581ead10e1" name="a5fb1c08002f522b7b93325581ead10e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fb1c08002f522b7b93325581ead10e1">&#9670;&#160;</a></span>cwiseProduct() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Vec4.html">Vec4</a> lin::cwiseProduct </td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; lin::cwiseProduct </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -472,27 +830,39 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the element-wise product of two <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vectors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The first <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector. </td></tr>
+    <tr><td class="paramname">b</td><td>The second <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector containing the product of each component. </dd></dl>
+
 </div>
 </div>
-<a id="ad676d874ae355da7bd3a8626610e7d0b" name="ad676d874ae355da7bd3a8626610e7d0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad676d874ae355da7bd3a8626610e7d0b">&#9670;&#160;</a></span>dot() <span class="overload">[1/3]</span></h2>
+<a id="ae3748bd4a6e4bbf1b42a705b37308d9d" name="ae3748bd4a6e4bbf1b42a705b37308d9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3748bd4a6e4bbf1b42a705b37308d9d">&#9670;&#160;</a></span>dot() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double lin::dot </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">T</a> lin::dot </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -508,27 +878,39 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Performs a dot product between two <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vectors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The first <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vector. </td></tr>
+    <tr><td class="paramname">b</td><td>The second <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The dot product of the two <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vectors. </dd></dl>
+
 </div>
 </div>
-<a id="ac075837ae06dc9c26c2fae3fa5715b96" name="ac075837ae06dc9c26c2fae3fa5715b96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac075837ae06dc9c26c2fae3fa5715b96">&#9670;&#160;</a></span>dot() <span class="overload">[2/3]</span></h2>
+<a id="a4731f249aa7452f1632867d49e67edca" name="a4731f249aa7452f1632867d49e67edca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4731f249aa7452f1632867d49e67edca">&#9670;&#160;</a></span>dot() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double lin::dot </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">T</a> lin::dot </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -544,27 +926,39 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Performs a dot product between two <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vectors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The first <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector. </td></tr>
+    <tr><td class="paramname">b</td><td>The second <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The dot product of the two <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vectors. </dd></dl>
+
 </div>
 </div>
-<a id="aec3620ae00a246fa17fe88f00010d9f3" name="aec3620ae00a246fa17fe88f00010d9f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec3620ae00a246fa17fe88f00010d9f3">&#9670;&#160;</a></span>dot() <span class="overload">[3/3]</span></h2>
+<a id="a45a641f88e72e104c9dbd2bf1f28308e" name="a45a641f88e72e104c9dbd2bf1f28308e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45a641f88e72e104c9dbd2bf1f28308e">&#9670;&#160;</a></span>dot() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double lin::dot </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">T</a> lin::dot </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -580,33 +974,45 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Performs a dot product between two <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vectors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The first <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector. </td></tr>
+    <tr><td class="paramname">b</td><td>The second <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The dot product of the two <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vectors. </dd></dl>
+
 </div>
 </div>
-<a id="ae101af03801f58c67f5d354c1d13f15f" name="ae101af03801f58c67f5d354c1d13f15f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae101af03801f58c67f5d354c1d13f15f">&#9670;&#160;</a></span>getRotationMatrix()</h2>
+<a id="ad9573139e3a64729fe580dbe4ac37bdc" name="ad9573139e3a64729fe580dbe4ac37bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9573139e3a64729fe580dbe4ac37bdc">&#9670;&#160;</a></span>getRotationMatrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">Mat3</a> lin::getRotationMatrix </td>
+          <td class="memname"><a class="el" href="structlin_1_1Mat3.html">Mat3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; lin::getRotationMatrix </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
           <td class="paramname"><em>x_angle</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
           <td class="paramname"><em>y_angle</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
           <td class="paramname"><em>z_angle</em>&#160;</td>
         </tr>
         <tr>
@@ -622,27 +1028,40 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns a rotation matrix for the given angles around the x, y, and z axes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x_angle</td><td>The angle in radians to rotate around the x-axis. </td></tr>
+    <tr><td class="paramname">y_angle</td><td>The angle in radians to rotate around the y-axis. </td></tr>
+    <tr><td class="paramname">z_angle</td><td>The angle in radians to rotate around the z-axis. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Mat3.html" title="Generic 3x3 matrix class (row-major).">Mat3</a> representing the combined rotation. </dd></dl>
+
 </div>
 </div>
-<a id="abd4637554633656de95656e673949a75" name="abd4637554633656de95656e673949a75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd4637554633656de95656e673949a75">&#9670;&#160;</a></span>operator*() <span class="overload">[1/5]</span></h2>
+<a id="a82f1b94df86d8d9348fd6eb562d624d1" name="a82f1b94df86d8d9348fd6eb562d624d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82f1b94df86d8d9348fd6eb562d624d1">&#9670;&#160;</a></span>operator*() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Vec3.html">Vec3</a> lin::operator* </td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; <a class="el" href="structlin_1_1Mat3.html">lin::operator</a>* </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Mat3.html">Mat3</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat3.html">Mat3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>mat</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>vec</em>&#160;</td>
         </tr>
         <tr>
@@ -658,27 +1077,39 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Multiplies a <a class="el" href="structlin_1_1Mat3.html" title="Generic 3x3 matrix class (row-major).">Mat3</a> matrix vy a <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td>The <a class="el" href="structlin_1_1Mat3.html" title="Generic 3x3 matrix class (row-major).">Mat3</a> matrix to multiply with. </td></tr>
+    <tr><td class="paramname">vec</td><td>The <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector to multiply. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector resulting from the multiplication. </dd></dl>
+
 </div>
 </div>
-<a id="a7804b396ab2119b343f70ca408f912d7" name="a7804b396ab2119b343f70ca408f912d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7804b396ab2119b343f70ca408f912d7">&#9670;&#160;</a></span>operator*() <span class="overload">[2/5]</span></h2>
+<a id="aeb58de3fa001fec291612bd253c63237" name="aeb58de3fa001fec291612bd253c63237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb58de3fa001fec291612bd253c63237">&#9670;&#160;</a></span>operator*() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Vec4.html">Vec4</a> lin::operator* </td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; <a class="el" href="structlin_1_1Mat3.html">lin::operator</a>* </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>mat</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>vec</em>&#160;</td>
         </tr>
         <tr>
@@ -694,27 +1125,39 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Multiplies a <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> matrix by a <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mat</td><td>The <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> matrix to multiply with. </td></tr>
+    <tr><td class="paramname">vec</td><td>The <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector to multiply. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector resulting from the multiplication. </dd></dl>
+
 </div>
 </div>
-<a id="aa9e3a0602405a3d35c240a12d59c3d72" name="aa9e3a0602405a3d35c240a12d59c3d72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9e3a0602405a3d35c240a12d59c3d72">&#9670;&#160;</a></span>operator*() <span class="overload">[3/5]</span></h2>
+<a id="a2a28cfc93999695b7e7dd7b408094022" name="a2a28cfc93999695b7e7dd7b408094022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a28cfc93999695b7e7dd7b408094022">&#9670;&#160;</a></span>operator*() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Vec2.html">Vec2</a> lin::operator* </td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; <a class="el" href="structlin_1_1Mat3.html">lin::operator</a>* </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
           <td class="paramname"><em>scalar</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>vec</em>&#160;</td>
         </tr>
         <tr>
@@ -730,27 +1173,39 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the product of a <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vector and a scalar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td>The scalar value to multiply with. </td></tr>
+    <tr><td class="paramname">vec</td><td>The <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vector to multiply. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vector containing the product of each component with the scalar. </dd></dl>
+
 </div>
 </div>
-<a id="a3e36b6e9fbb3c8e2e42a22db65657ba0" name="a3e36b6e9fbb3c8e2e42a22db65657ba0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e36b6e9fbb3c8e2e42a22db65657ba0">&#9670;&#160;</a></span>operator*() <span class="overload">[4/5]</span></h2>
+<a id="af7cb3fc14eb7831ecc003084f93334b6" name="af7cb3fc14eb7831ecc003084f93334b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7cb3fc14eb7831ecc003084f93334b6">&#9670;&#160;</a></span>operator*() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Vec3.html">Vec3</a> lin::operator* </td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; <a class="el" href="structlin_1_1Mat3.html">lin::operator</a>* </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
           <td class="paramname"><em>scalar</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>vec</em>&#160;</td>
         </tr>
         <tr>
@@ -766,27 +1221,39 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the product of a <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector and a scalar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td>The scalar value to multiply with. </td></tr>
+    <tr><td class="paramname">vec</td><td>The <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector to multiply. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector containing the product of each component with the scalar. </dd></dl>
+
 </div>
 </div>
-<a id="a1dabc534e73440440b3ef5a4d2bd471d" name="a1dabc534e73440440b3ef5a4d2bd471d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1dabc534e73440440b3ef5a4d2bd471d">&#9670;&#160;</a></span>operator*() <span class="overload">[5/5]</span></h2>
+<a id="a5c1b3e465ad1e8141989e9f6a194a47c" name="a5c1b3e465ad1e8141989e9f6a194a47c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c1b3e465ad1e8141989e9f6a194a47c">&#9670;&#160;</a></span>operator*() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Vec4.html">Vec4</a> lin::operator* </td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; <a class="el" href="structlin_1_1Mat3.html">lin::operator</a>* </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td>
           <td class="paramname"><em>scalar</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>vec</em>&#160;</td>
         </tr>
         <tr>
@@ -802,19 +1269,31 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the product of a <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector and a scalar. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td>The scalar value to multiply with. </td></tr>
+    <tr><td class="paramname">vec</td><td>The <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector to multiply. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector containing the product of each component with the scalar. </dd></dl>
+
 </div>
 </div>
-<a id="a3f26d0c8b2df5cfc898e4c3a87a81ee3" name="a3f26d0c8b2df5cfc898e4c3a87a81ee3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f26d0c8b2df5cfc898e4c3a87a81ee3">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[1/5]</span></h2>
+<a id="a4126cf56af5db4aaef1c6bc8eebe3e39" name="a4126cf56af5db4aaef1c6bc8eebe3e39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4126cf56af5db4aaef1c6bc8eebe3e39">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream &amp; lin::operator&lt;&lt; </td>
+          <td class="memname">std::ostream &amp; <a class="el" href="structlin_1_1Mat3.html">lin::operator</a>&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>os</em>, </td>
@@ -822,7 +1301,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Mat3.html">Mat3</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat3.html">Mat3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>mat</em>&#160;</td>
         </tr>
         <tr>
@@ -838,19 +1317,37 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Overloads the output stream operator for <a class="el" href="structlin_1_1Mat3.html" title="Generic 3x3 matrix class (row-major).">Mat3</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>The output stream. </td></tr>
+    <tr><td class="paramname">mat</td><td>The <a class="el" href="structlin_1_1Mat3.html" title="Generic 3x3 matrix class (row-major).">Mat3</a> object to print. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The output stream after printing the matrix. </dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the elements in the matrix. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a174131b4962b9e4b28b234547acd2dc0" name="a174131b4962b9e4b28b234547acd2dc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a174131b4962b9e4b28b234547acd2dc0">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[2/5]</span></h2>
+<a id="a30a16a4bc10c0ced6055907013a8039f" name="a30a16a4bc10c0ced6055907013a8039f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30a16a4bc10c0ced6055907013a8039f">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream &amp; lin::operator&lt;&lt; </td>
+          <td class="memname">std::ostream &amp; <a class="el" href="structlin_1_1Mat3.html">lin::operator</a>&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>os</em>, </td>
@@ -858,7 +1355,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>mat</em>&#160;</td>
         </tr>
         <tr>
@@ -874,19 +1371,31 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Overloaded output operator for <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>The output stream. </td></tr>
+    <tr><td class="paramname">mat</td><td>The <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> object to output. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The output stream after writing the <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> object. </dd></dl>
+
 </div>
 </div>
-<a id="a80f71dbcfa442ebd9bcfaf062426ad27" name="a80f71dbcfa442ebd9bcfaf062426ad27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80f71dbcfa442ebd9bcfaf062426ad27">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[3/5]</span></h2>
+<a id="ab7ffe3456438fde0754258678afbfb0a" name="ab7ffe3456438fde0754258678afbfb0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7ffe3456438fde0754258678afbfb0a">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream &amp; lin::operator&lt;&lt; </td>
+          <td class="memname">std::ostream &amp; <a class="el" href="structlin_1_1Mat3.html">lin::operator</a>&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>os</em>, </td>
@@ -894,7 +1403,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>v</em>&#160;</td>
         </tr>
         <tr>
@@ -910,19 +1419,37 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Overloaded output operator for <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>The output stream. </td></tr>
+    <tr><td class="paramname">v</td><td>The <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> object to print. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The output stream after printing the vector. </dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the elements in the vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="aef3e912d689dc131700c3f2b3b85c238" name="aef3e912d689dc131700c3f2b3b85c238"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef3e912d689dc131700c3f2b3b85c238">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[4/5]</span></h2>
+<a id="a92058ff13cde0dc887cdc00468152023" name="a92058ff13cde0dc887cdc00468152023"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92058ff13cde0dc887cdc00468152023">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[4/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream &amp; lin::operator&lt;&lt; </td>
+          <td class="memname">std::ostream &amp; <a class="el" href="structlin_1_1Mat3.html">lin::operator</a>&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>os</em>, </td>
@@ -930,7 +1457,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>v</em>&#160;</td>
         </tr>
         <tr>
@@ -946,19 +1473,37 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Overloads the output stream operator for <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>The output stream. </td></tr>
+    <tr><td class="paramname">v</td><td>The <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> object to print. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The output stream after printing the vector. </dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the elements in the vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a5c661a960eb769fde8305c486f2e33c2" name="a5c661a960eb769fde8305c486f2e33c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c661a960eb769fde8305c486f2e33c2">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[5/5]</span></h2>
+<a id="a3eb09c1e8ab223e094fffd98702a8930" name="a3eb09c1e8ab223e094fffd98702a8930"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3eb09c1e8ab223e094fffd98702a8930">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::ostream &amp; lin::operator&lt;&lt; </td>
+          <td class="memname">std::ostream &amp; <a class="el" href="structlin_1_1Mat3.html">lin::operator</a>&lt;&lt; </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>os</em>, </td>
@@ -966,7 +1511,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>v</em>&#160;</td>
         </tr>
         <tr>
@@ -982,21 +1527,39 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Overloads the output stream operator for <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>The output stream. </td></tr>
+    <tr><td class="paramname">v</td><td>The <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> object to print. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The output stream after printing the vector. </dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the elements in the vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="acb472d991aa357073c4d492d98c9b57b" name="acb472d991aa357073c4d492d98c9b57b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb472d991aa357073c4d492d98c9b57b">&#9670;&#160;</a></span>toVec3()</h2>
+<a id="ad812c22b70f03b9b7afcaa4ba84e8ad6" name="ad812c22b70f03b9b7afcaa4ba84e8ad6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad812c22b70f03b9b7afcaa4ba84e8ad6">&#9670;&#160;</a></span>toVec3()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Vec3.html">Vec3</a> lin::toVec3 </td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; lin::toVec3 </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>vec</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1008,21 +1571,32 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Converts a <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> to a <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec</td><td>The <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> with the x, y, and z components of the <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a>. </dd></dl>
+
 </div>
 </div>
-<a id="abd49915b3621035ebd8028c001b15290" name="abd49915b3621035ebd8028c001b15290"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd49915b3621035ebd8028c001b15290">&#9670;&#160;</a></span>toVec4()</h2>
+<a id="a79a2db24d1210626f769acaec7eac11e" name="a79a2db24d1210626f769acaec7eac11e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79a2db24d1210626f769acaec7eac11e">&#9670;&#160;</a></span>toVec4()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structlin_1_1Vec4.html">Vec4</a> lin::toVec4 </td>
+          <td class="memname"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; lin::toVec4 </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>vec</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1033,6 +1607,15 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Converts a <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> to a <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> with w set to 1. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec</td><td>The <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> with the x, y, and z components of the <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> and w set to 1. </dd></dl>
 
 </div>
 </div>

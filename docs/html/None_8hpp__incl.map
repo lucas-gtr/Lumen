@@ -4,15 +4,17 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,62,70,107,66,103,107,59"/>
 <area shape="rect" id="Node000003" href="$ToneMapping_8hpp.html" title="Header file for the ToneMappingStrategy class." alt="" coords="115,108,325,148"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="160,58,195,96,191,100,156,62"/>
-<area shape="rect" id="Node000004" href="$Parameters_8hpp.html" title="Header file for the Parameters class." alt="" coords="120,196,320,236"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="223,148,223,182,217,182,217,148"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="71,291,148,317"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="197,238,137,285,134,280,194,234"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="268,372,327,397"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="215,237,206,278,206,301,213,323,232,346,257,363,254,368,229,350,208,325,201,302,201,278,210,236"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="223,291,286,317"/>
-<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="230,235,247,277,242,279,225,237"/>
-<area shape="rect" id="Node000008" href="$ParameterValue_8hpp.html" title="Header file for the ParameterValue class." alt="" coords="309,284,509,324"/>
-<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="263,234,357,276,354,281,260,238"/>
-<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="384,326,327,366,324,362,381,322"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="108,203,175,229"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="205,150,163,195,160,191,201,146"/>
+<area shape="rect" id="Node000005" href="$Parameters_8hpp.html" title="Header file for the Parameters class." alt="" coords="199,196,399,236"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="239,146,274,184,270,188,235,150"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="149,291,227,317"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="276,238,216,285,213,280,272,234"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="347,372,405,397"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="294,237,285,278,285,301,292,323,311,346,336,363,333,368,307,350,287,325,280,302,279,278,288,236"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="302,291,365,317"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="309,235,326,277,321,279,304,237"/>
+<area shape="rect" id="Node000009" href="$ParameterValue_8hpp.html" title="Header file for the ParameterValue class." alt="" coords="388,284,588,324"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="341,234,435,276,433,281,339,238"/>
+<area shape="poly" id="edge9_Node000009_Node000007" title=" " alt="" coords="462,326,405,366,402,362,459,322"/>
 </map>

@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$structlin_1_1Vec3.html" title=" " alt="" coords="5,5,83,31"/>
+<area shape="rect" id="Node000000" href="$classIEngineGPU.html" title="Interface for the GPU engine, defining methods for rendering and camera control." alt="" coords="5,5,104,31"/>
+<area shape="rect" id="Node000001" href="$classEngineGL.html" title="Implements the OpenGL rendering engine, handling rendering of 3D scenes with support for shadows,..." alt="" coords="152,5,235,31"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="118,15,152,15,152,21,118,21"/>
 </map>

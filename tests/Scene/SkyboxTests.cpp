@@ -8,7 +8,7 @@
 TEST(SkyboxTest, DefaultConstructorUsesDefaultColor) {
   Skybox skybox;
 
-  lin::Vec3 direction(1.0, 0.0, 0.0);
+  lin::Vec3d direction(1.0, 0.0, 0.0);
   ColorRGBA color = skybox.getColor(direction);
 
   double r = 0.65;
@@ -27,7 +27,7 @@ TEST(SkyboxTest, DefaultConstructorUsesDefaultColor) {
 TEST(SkyboxTest, SetTextureWithSingleColorReturnsCorrectColor) {
   Skybox skybox;
 
-  lin::Vec3 direction(0.0, 1.0, 0.0);
+  lin::Vec3d direction(0.0, 1.0, 0.0);
   ColorRGB color_rgb(0.2, 0.4, 0.6);
   auto texture = std::make_shared<Texture>(color_rgb);
   skybox.setTexture(texture);
@@ -48,34 +48,34 @@ TEST(SkyboxTest, GetUVCoordinatesIsCorrectlyComputed) {
   Skybox skybox;
   TextureUV uv;
 
-  lin::Vec3 direction1(0.0, 0.0, -1.0);
+  lin::Vec3d direction1(0.0, 0.0, -1.0);
   uv = skybox.getUVCoordinates(direction1);
 
   EXPECT_NEAR(uv.u, 0.25, 1e-6);
   EXPECT_NEAR(uv.v, 0.5, 1e-6);
 
-  lin::Vec3 direction2(0.0, 0.0, 1.0);
+  lin::Vec3d direction2(0.0, 0.0, 1.0);
   uv = skybox.getUVCoordinates(direction2);
   
   EXPECT_NEAR(uv.u, 0.75, 1e-6);
   EXPECT_NEAR(uv.v, 0.5, 1e-6);
 
-  lin::Vec3 direction3(1.0, 0.0, 0.0);
+  lin::Vec3d direction3(1.0, 0.0, 0.0);
   uv = skybox.getUVCoordinates(direction3);
   EXPECT_NEAR(uv.u, 0.5, 1e-6);
   EXPECT_NEAR(uv.v, 0.5, 1e-6);
 
-  lin::Vec3 direction4(-1.0, 0.0, 0.0);
+  lin::Vec3d direction4(-1.0, 0.0, 0.0);
   uv = skybox.getUVCoordinates(direction4);
   EXPECT_NEAR(uv.u, 1.0, 1e-6);
   EXPECT_NEAR(uv.v, 0.5, 1e-6);
 
-  lin::Vec3 direction5(0.0, 1.0, 0.0);
+  lin::Vec3d direction5(0.0, 1.0, 0.0);
   uv = skybox.getUVCoordinates(direction5);
   EXPECT_NEAR(uv.u, 0.5, 1e-6);
   EXPECT_NEAR(uv.v, 0.0, 1e-6);
 
-  lin::Vec3 direction6(0.0, -1.0, 0.0);
+  lin::Vec3d direction6(0.0, -1.0, 0.0);
   uv = skybox.getUVCoordinates(direction6);
   EXPECT_NEAR(uv.u, 0.5, 1e-6);
   EXPECT_NEAR(uv.v, 1.0, 1e-6);
@@ -97,11 +97,23 @@ TEST(SkyboxTest, ReturnsDefaultColorAfterTextureIsResetToNull) {
   double b = 0.3;
   convertToLinearSpace(b);
 
-  lin::Vec3 direction(0.0, 0.0, 1.0);
+  lin::Vec3d direction(0.0, 0.0, 1.0);
   ColorRGBA color = skybox.getColor(direction);
 
   EXPECT_DOUBLE_EQ(color.r, r);
   EXPECT_DOUBLE_EQ(color.g, g);
   EXPECT_DOUBLE_EQ(color.b, b);
   EXPECT_DOUBLE_EQ(color.a, 1.0);
+}
+
+TEST(SkyboxTest, GetTexture) {
+  Skybox skybox;
+
+  auto texture = std::make_shared<Texture>(ColorRGB(0.5, 0.5, 0.5));
+
+  EXPECT_NE(skybox.getTexture(), nullptr);
+  skybox.setTexture(texture);
+
+  const Texture* retrieved_texture = skybox.getTexture();
+  EXPECT_NE(retrieved_texture, nullptr);
 }

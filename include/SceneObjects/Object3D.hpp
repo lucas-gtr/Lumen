@@ -6,8 +6,6 @@
 #ifndef SCENEOBJECTS_OBJECT3D_HPP
 #define SCENEOBJECTS_OBJECT3D_HPP
 
-#include <memory>
-
 #include "Core/Math/Vec3.hpp"
 #include "Core/Transform.hpp"
 #include "Geometry/Mesh.hpp"
@@ -22,8 +20,8 @@
  */
 class Object3D : public Transform {
 private:
-  Mesh                      m_mesh;
-  std::shared_ptr<Material> m_material;
+  Mesh            m_mesh;
+  const Material* m_material;
 
 public:
   Object3D(); ///< Default constructor.
@@ -49,7 +47,7 @@ public:
    * @brief Sets the material for this 3D object.
    * @param material The material to set.
    */
-  void setMaterial(const std::shared_ptr<Material>& material) { this->m_material = material; }
+  void setMaterial(const Material* material) { this->m_material = material; }
 
   /**
    * @brief Gets the mesh associated with this 3D object.
@@ -67,10 +65,10 @@ public:
    * @brief Gets the material associated with this 3D object.
    * @return The material of the 3D object.
    */
-  std::shared_ptr<Material> getMaterial() const { return m_material; }
+  const Material& getMaterial() const;
 
-  lin::Vec3 getMinBound() const;
-  lin::Vec3 getMaxBound() const;
+  lin::Vec3d getMinBound() const;
+  lin::Vec3d getMaxBound() const;
 
   ~Object3D() = default; ///< Default destructor.
 };

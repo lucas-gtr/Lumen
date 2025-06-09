@@ -19,7 +19,7 @@
  *
  * @return A 2D vector representing the random point in the unit disk.
  */
-lin::Vec2 randomPointInUnitDisk();
+lin::Vec2d randomPointInUnitDisk();
 
 /**
  * @brief Generates a random number uniformly distributed in the range [0, 1).

@@ -1,5 +1,5 @@
 /**
- * @file MultiThreadedCPU.hpp
+ * @file SingleThreaded.hpp
  * @brief Header file for the SingleThreaded class.
  */
 #ifndef RENDERING_SINGLETHREADED_HPP

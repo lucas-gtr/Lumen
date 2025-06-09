@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-05-30 12:20:17</td>
+      <td>2025-06-09 10:46:40</td>
     </tr>
   </table>
 </div>
@@ -41,14 +41,14 @@
     </tr>
     <tr>
       <th scope="row">Lines:</th>
-      <td>15</td>
-      <td>15</td>
+      <td>17</td>
+      <td>17</td>
       <td class="coverage-high">100.0%</td>
     </tr>
     <tr>
       <th scope="row">Functions:</th>
-      <td>11</td>
-      <td>11</td>
+      <td>12</td>
+      <td>12</td>
       <td class="coverage-high">100.0%</td>
     </tr>
     <tr>
@@ -73,17 +73,18 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l50">Face::operator==(Face const&amp;) const (line 50)</a></td><td>called 21 times, returned 21 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l69">Mesh::Mesh() (line 69)</a></td><td>called 30 times, returned 30 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l78">Mesh::Mesh(Mesh const&amp;) (line 78)</a></td><td>called 60 times, returned 60 times</td><td>88.0%</td></tr>
-    <tr><td><a href="#l118">Mesh::getBVHRoot() const (line 118)</a></td><td>called 66 times, returned 66 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l100">Mesh::getFaces() const (line 100)</a></td><td>called 126 times, returned 126 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l94">Mesh::getVertex(int) const (line 94)</a></td><td>called 300 times, returned 300 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l87">Mesh::getVertices() const (line 87)</a></td><td>called 117 times, returned 117 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l79">Mesh::operator=(Mesh const&amp;) (line 79)</a></td><td>called 6 times, returned 6 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l107">Mesh::operator==(Mesh const&amp;) const (line 107)</a></td><td>called 24 times, returned 24 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l120">Mesh::~Mesh() (line 120)</a></td><td>called 228 times, returned 228 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l32">Vertex::operator==(Vertex const&amp;) const (line 32)</a></td><td>called 45 times, returned 45 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l59">Face::operator==(Face const&amp;) const (line 59)</a></td><td>called 154 times, returned 154 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l78">Mesh::Mesh() (line 78)</a></td><td>called 277 times, returned 277 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l87">Mesh::Mesh(Mesh const&amp;) (line 87)</a></td><td>called 462 times, returned 462 times</td><td>88.0%</td></tr>
+    <tr><td><a href="#l127">Mesh::getBVHRoot() const (line 127)</a></td><td>called 478 times, returned 478 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l109">Mesh::getFaces() const (line 109)</a></td><td>called 1044 times, returned 1044 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l103">Mesh::getVertex(int) const (line 103)</a></td><td>called 2182 times, returned 2182 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l96">Mesh::getVertices() const (line 96)</a></td><td>called 1026 times, returned 1026 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l88">Mesh::operator=(Mesh const&amp;) (line 88)</a></td><td>called 82 times, returned 82 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l116">Mesh::operator==(Mesh const&amp;) const (line 116)</a></td><td>called 176 times, returned 176 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l129">Mesh::~Mesh() (line 129)</a></td><td>called 1815 times, returned 1815 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l33">Vertex::operator==(Vertex const&amp;) const (line 33)</a></td><td>called 330 times, returned 330 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l42">Vertex::valuePerVertex() (line 42)</a></td><td>called 105 times, returned 105 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -159,214 +160,214 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstddef&gt;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l10" href="#l10">10</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l11" href="#l11">11</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l12" href="#l12">12</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;BVH/BVHNode.hpp&quot;</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l13" href="#l13">13</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Core/CommonTypes.hpp&quot;</span></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;BVH/BVHNode.hpp&quot;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l14" href="#l14">14</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Core/Math/Vec3.hpp&quot;</span></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Core/CommonTypes.hpp&quot;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l15" href="#l15">15</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Core/Math/Vec3.hpp&quot;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l16" href="#l16">16</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l17" href="#l17">17</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @struct Vertex</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l18" href="#l18">18</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Structure representing a vertex in a 3D mesh.</span></td>
+      <td class="src "><span class="cm"> * @struct Vertex</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l19" href="#l19">19</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm"> * @brief Structure representing a vertex in a 3D mesh.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l20" href="#l20">20</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">Vertex</span><span class="w"> </span><span class="p">{</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l21" href="#l21">21</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="w"> </span><span class="n">position</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">};</span><span class="w"> </span><span class="c1">///&lt; Position of the vertex in 3D space.</span></td>
+      <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">Vertex</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l22" href="#l22">22</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="w"> </span><span class="n">normal</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">};</span><span class="w"> </span><span class="c1">///&lt; Normal vector at the vertex.</span></td>
+      <td class="src "><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="n">position</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">};</span><span class="w"> </span><span class="c1">///&lt; Position of the vertex in 3D space.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l23" href="#l23">23</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">TextureUV</span><span class="w"> </span><span class="n">uvCoord</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span><span class="w">          </span><span class="c1">///&lt; Texture coordinates of the vertex.</span></td>
+      <td class="src "><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="n">normal</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">};</span><span class="w"> </span><span class="c1">///&lt; Normal vector at the vertex.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l24" href="#l24">24</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="w"> </span><span class="n">tangent</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">};</span><span class="w"> </span><span class="c1">///&lt; Tangent vector at the vertex.</span></td>
+      <td class="src "><span class="w">  </span><span class="n">TextureUV</span><span class="w">  </span><span class="n">uvCoord</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span><span class="w">          </span><span class="c1">///&lt; Texture coordinates of the vertex.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l25" href="#l25">25</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="w"> </span><span class="n">bitangent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">};</span><span class="w"> </span><span class="c1">///&lt; Bitangent vector at the vertex.</span></td>
+      <td class="src "><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="n">tangent</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">};</span><span class="w"> </span><span class="c1">///&lt; Tangent vector at the vertex.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l26" href="#l26">26</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="n">bitangent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">};</span><span class="w"> </span><span class="c1">///&lt; Bitangent vector at the vertex.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l27" href="#l27">27</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l28" href="#l28">28</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Equality operator for comparing two vertices.</span></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l29" href="#l29">29</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param other The vertex to compare with.</span></td>
+      <td class="src "><span class="cm">   * @brief Equality operator for comparing two vertices.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l30" href="#l30">30</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @return True if the vertices are equal, false otherwise.</span></td>
+      <td class="src "><span class="cm">   * @param other The vertex to compare with.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l31" href="#l31">31</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   */</span></td>
+      <td class="src "><span class="cm">   * @return True if the vertices are equal, false otherwise.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l32" href="#l32">32</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">45</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vertex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l33" href="#l33">33</a></td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">6/6</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 7 taken 33 times.</div>
-          <div class="takenBranch">&check; Branch 8 taken 12 times.</div>
-          <div class="takenBranch">&check; Branch 20 taken 30 times.</div>
-          <div class="takenBranch">&check; Branch 21 taken 3 times.</div>
-          <div class="takenBranch">&check; Branch 26 taken 27 times.</div>
-          <div class="takenBranch">&check; Branch 27 taken 3 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">72</td>
-      <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">position</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">normal</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">normal</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">uvCoord</span><span class="p">.</span><span class="n">u</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">uvCoord</span><span class="p">.</span><span class="n">u</span><span class="w"> </span><span class="o">&amp;&amp;</span></td>
+      <td class="linecount coveredLine">330</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vertex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l34" href="#l34">34</a></td>
       <td class="linebranch">
         <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/2</summary>
+        <summary class="linebranchSummary">6/6</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 4 taken 27 times.</div>
-          <div class="notTakenBranch">&cross; Branch 5 not taken.</div>
+          <div class="takenBranch">&check; Branch 7 taken 242 times.</div>
+          <div class="takenBranch">&check; Branch 8 taken 88 times.</div>
+          <div class="takenBranch">&check; Branch 20 taken 220 times.</div>
+          <div class="takenBranch">&check; Branch 21 taken 22 times.</div>
+          <div class="takenBranch">&check; Branch 26 taken 198 times.</div>
+          <div class="takenBranch">&check; Branch 27 taken 22 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount partialCoveredLine">72</td>
-      <td class="src partialCoveredLine"><span class="w">           </span><span class="n">uvCoord</span><span class="p">.</span><span class="n">v</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">uvCoord</span><span class="p">.</span><span class="n">v</span><span class="p">;</span></td>
+      <td class="linecount coveredLine">528</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">position</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">normal</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">normal</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">uvCoord</span><span class="p">.</span><span class="n">u</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">uvCoord</span><span class="p">.</span><span class="n">u</span><span class="w"> </span><span class="o">&amp;&amp;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l35" href="#l35">35</a></td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 4 taken 198 times.</div>
+          <div class="notTakenBranch">&cross; Branch 5 not taken.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="p">}</span></td>
+      <td class="linecount partialCoveredLine">528</td>
+      <td class="src partialCoveredLine"><span class="w">           </span><span class="n">uvCoord</span><span class="p">.</span><span class="n">v</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">uvCoord</span><span class="p">.</span><span class="n">v</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l36" href="#l36">36</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">};</span></td>
+      <td class="src "><span class="w">  </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l37" href="#l37">37</a></td>
@@ -380,198 +381,198 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l39" href="#l39">39</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @struct Face</span></td>
+      <td class="src "><span class="cm">   * @brief Returns the size of a vertex in terms of the number of values it contains.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l40" href="#l40">40</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Structure representing a face in a 3D mesh, defined by three vertices.</span></td>
+      <td class="src "><span class="cm">   * @return The number of values in a vertex.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l41" href="#l41">41</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="cm">   */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l42" href="#l42">42</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">Face</span><span class="w"> </span><span class="p">{</span></td>
+      <td class="linecount coveredLine">105</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">valuePerVertex</span><span class="p">()</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l43" href="#l43">43</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vertexIndices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="c1">///&lt; Indices of the vertices making up the face.</span></td>
+      <td class="linecount coveredLine">105</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// position (3), normal (3), uvCoord (2), tangent (3), bitangent (3)</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l44" href="#l44">44</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="w">  </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l45" href="#l45">45</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
+      <td class="src "><span class="p">};</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l46" href="#l46">46</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Equality operator for comparing two faces.</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l47" href="#l47">47</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param other The face to compare with.</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l48" href="#l48">48</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @return True if the faces are equal, false otherwise.</span></td>
+      <td class="src "><span class="cm"> * @struct Face</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l49" href="#l49">49</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   */</span></td>
+      <td class="src "><span class="cm"> * @brief Structure representing a face in a 3D mesh, defined by three vertices.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l50" href="#l50">50</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">21</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Face</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
-    </tr>
-    <tr class="source-line">
-      <td class="lineno"><a id="l51" href="#l51">51</a></td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">4/4</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 10 taken 12 times.</div>
-          <div class="takenBranch">&check; Branch 11 taken 9 times.</div>
-          <div class="takenBranch">&check; Branch 22 taken 9 times.</div>
-          <div class="takenBranch">&check; Branch 23 taken 3 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">30</td>
-      <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span></td>
-    </tr>
-    <tr class="source-line">
-      <td class="lineno"><a id="l52" href="#l52">52</a></td>
-      <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">2/2</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 10 taken 6 times.</div>
-          <div class="takenBranch">&check; Branch 11 taken 3 times.</div>
-        </div>
-        </details>
-      </td>
-      <td class="linecount coveredLine">30</td>
-      <td class="src coveredLine"><span class="w">           </span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span></td>
-    </tr>
-    <tr class="source-line">
-      <td class="lineno"><a id="l53" href="#l53">53</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="p">}</span></td>
-    </tr>
-    <tr class="source-line">
-      <td class="lineno"><a id="l54" href="#l54">54</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="p">};</span></td>
-    </tr>
-    <tr class="source-line">
-      <td class="lineno"><a id="l55" href="#l55">55</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
-    </tr>
-    <tr class="source-line">
-      <td class="lineno"><a id="l56" href="#l56">56</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
-    </tr>
-    <tr class="source-line">
-      <td class="lineno"><a id="l57" href="#l57">57</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @class Mesh</span></td>
-    </tr>
-    <tr class="source-line">
-      <td class="lineno"><a id="l58" href="#l58">58</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Class representing a 3D mesh, containing vertices and faces.</span></td>
-    </tr>
-    <tr class="source-line">
-      <td class="lineno"><a id="l59" href="#l59">59</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
       <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
-      <td class="lineno"><a id="l60" href="#l60">60</a></td>
+      <td class="lineno"><a id="l51" href="#l51">51</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="k">class</span><span class="w"> </span><span class="nc">Mesh</span><span class="w"> </span><span class="p">{</span></td>
+      <td class="src "><span class="k">struct</span><span class="w"> </span><span class="nc">Face</span><span class="w"> </span><span class="p">{</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l52" href="#l52">52</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vertexIndices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="c1">///&lt; Indices of the vertices making up the face.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l53" href="#l53">53</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l54" href="#l54">54</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l55" href="#l55">55</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   * @brief Equality operator for comparing two faces.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l56" href="#l56">56</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   * @param other The face to compare with.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l57" href="#l57">57</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   * @return True if the faces are equal, false otherwise.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l58" href="#l58">58</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   */</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l59" href="#l59">59</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">154</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Face</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l60" href="#l60">60</a></td>
+      <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">4/4</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 10 taken 88 times.</div>
+          <div class="takenBranch">&check; Branch 11 taken 66 times.</div>
+          <div class="takenBranch">&check; Branch 22 taken 66 times.</div>
+          <div class="takenBranch">&check; Branch 23 taken 22 times.</div>
+        </div>
+        </details>
+      </td>
+      <td class="linecount coveredLine">220</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l61" href="#l61">61</a></td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">2/2</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 10 taken 44 times.</div>
+          <div class="takenBranch">&check; Branch 11 taken 22 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="k">private</span><span class="o">:</span></td>
+      <td class="linecount coveredLine">220</td>
+      <td class="src coveredLine"><span class="w">           </span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l62" href="#l62">62</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_vertices</span><span class="p">;</span></td>
+      <td class="src "><span class="w">  </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l63" href="#l63">63</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Face</span><span class="o">&gt;</span><span class="w">   </span><span class="n">m_faces</span><span class="p">;</span></td>
+      <td class="src "><span class="p">};</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l64" href="#l64">64</a></td>
@@ -585,414 +586,414 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">BVHNode</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_bvh_root</span><span class="p">;</span></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l66" href="#l66">66</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm"> * @class Mesh</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l67" href="#l67">67</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">computeTangentsAndBitangents</span><span class="p">();</span><span class="w"> </span><span class="c1">///&lt; Computes tangents and bitangents for the mesh.</span></td>
+      <td class="src "><span class="cm"> * @brief Class representing a 3D mesh, containing vertices and faces.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l68" href="#l68">68</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="k">public</span><span class="o">:</span></td>
+      <td class="src "><span class="cm"> */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l69" href="#l69">69</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">30</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">Mesh</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default constructor.</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="k">class</span><span class="w"> </span><span class="nc">Mesh</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l70" href="#l70">70</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="k">private</span><span class="o">:</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l71" href="#l71">71</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
+      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_vertices</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l72" href="#l72">72</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Constructor to initialize a Mesh with a set of vertices and faces.</span></td>
+      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Face</span><span class="o">&gt;</span><span class="w">   </span><span class="n">m_faces</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l73" href="#l73">73</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param vertices A vector containing the vertices of the mesh.</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l74" href="#l74">74</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param faces A vector containing the faces of the mesh.</span></td>
+      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">BVHNode</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_bvh_root</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l75" href="#l75">75</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   */</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l76" href="#l76">76</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">Mesh</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">vertices</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Face</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">faces</span><span class="p">);</span></td>
+      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">computeTangentsAndBitangents</span><span class="p">();</span><span class="w"> </span><span class="c1">///&lt; Computes tangents and bitangents for the mesh.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l77" href="#l77">77</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="k">public</span><span class="o">:</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l78" href="#l78">78</a></td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">1/1</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 12 taken 60 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">60</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">Mesh</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="p">)</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default copy constructor.</span></td>
+      <td class="linecount coveredLine">277</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">Mesh</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default constructor.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l79" href="#l79">79</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">6</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default copy assignment operator.</span></td>
+      <td class="linecount "></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l80" href="#l80">80</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">Mesh</span><span class="p">(</span><span class="n">Mesh</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default move constructor.</span></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l81" href="#l81">81</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Mesh</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default move assignment operator.</span></td>
+      <td class="src "><span class="cm">   * @brief Constructor to initialize a Mesh with a set of vertices and faces.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l82" href="#l82">82</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">   * @param vertices A vector containing the vertices of the mesh.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l83" href="#l83">83</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
+      <td class="src "><span class="cm">   * @param faces A vector containing the faces of the mesh.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l84" href="#l84">84</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Retrieves the list of vertices in the mesh.</span></td>
+      <td class="src "><span class="cm">   */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l85" href="#l85">85</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @return A const reference to the list of vertices.</span></td>
+      <td class="src "><span class="w">  </span><span class="n">Mesh</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">vertices</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Face</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">faces</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l86" href="#l86">86</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   */</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l87" href="#l87">87</a></td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">1/1</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 12 taken 462 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">117</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">getVertices</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_vertices</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount coveredLine">462</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">Mesh</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="p">)</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default copy constructor.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l88" href="#l88">88</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount coveredLine">82</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default copy assignment operator.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l89" href="#l89">89</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
+      <td class="src "><span class="w">  </span><span class="n">Mesh</span><span class="p">(</span><span class="n">Mesh</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default move constructor.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l90" href="#l90">90</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Retrieves a specific vertex by index.</span></td>
+      <td class="src "><span class="w">  </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Mesh</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default move assignment operator.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l91" href="#l91">91</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param index The index of the vertex.</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l92" href="#l92">92</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @return A const reference to the vertex at the given index.</span></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l93" href="#l93">93</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   */</span></td>
+      <td class="src "><span class="cm">   * @brief Retrieves the list of vertices in the mesh.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l94" href="#l94">94</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">300</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Vertex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">getVertex</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_vertices</span><span class="p">[</span><span class="n">index</span><span class="p">];</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   * @return A const reference to the list of vertices.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l95" href="#l95">95</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">   */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l96" href="#l96">96</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
+      <td class="linecount coveredLine">1026</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">getVertices</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_vertices</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l97" href="#l97">97</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Retrieves the list of faces in the mesh.</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l98" href="#l98">98</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @return A const reference to the list of faces.</span></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l99" href="#l99">99</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   */</span></td>
+      <td class="src "><span class="cm">   * @brief Retrieves a specific vertex by index.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l100" href="#l100">100</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">126</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Face</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">getFaces</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_faces</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   * @param index The index of the vertex.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l101" href="#l101">101</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">   * @return A const reference to the vertex at the given index.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l102" href="#l102">102</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
+      <td class="src "><span class="cm">   */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l103" href="#l103">103</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Equality operator for comparing two meshes.</span></td>
+      <td class="linecount coveredLine">2182</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Vertex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">getVertex</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_vertices</span><span class="p">[</span><span class="n">index</span><span class="p">];</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l104" href="#l104">104</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param other The mesh to compare with.</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l105" href="#l105">105</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @return True if the meshes are equal, false otherwise.</span></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l106" href="#l106">106</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   */</span></td>
+      <td class="src "><span class="cm">   * @brief Retrieves the list of faces in the mesh.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l107" href="#l107">107</a></td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">4/4</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 7 taken 18 times.</div>
-          <div class="takenBranch">&check; Branch 8 taken 6 times.</div>
-          <div class="takenBranch">&check; Branch 20 taken 15 times.</div>
-          <div class="takenBranch">&check; Branch 21 taken 3 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">24</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_vertices</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">m_vertices</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">m_faces</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">m_faces</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   * @return A const reference to the list of faces.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l108" href="#l108">108</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">   */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l109" href="#l109">109</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
+      <td class="linecount coveredLine">1044</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Face</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">getFaces</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_faces</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l110" href="#l110">110</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Builds the bounding volume hierarchy (BVH) for the mesh.</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l111" href="#l111">111</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   */</span></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l112" href="#l112">112</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">buildBVH</span><span class="p">();</span></td>
+      <td class="src "><span class="cm">   * @brief Equality operator for comparing two meshes.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l113" href="#l113">113</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">   * @param other The mesh to compare with.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l114" href="#l114">114</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
+      <td class="src "><span class="cm">   * @return True if the meshes are equal, false otherwise.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l115" href="#l115">115</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Retrieves the bounding volume hierarchy (BVH) root node of the mesh.</span></td>
+      <td class="src "><span class="cm">   */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l116" href="#l116">116</a></td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">4/4</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 7 taken 132 times.</div>
+          <div class="takenBranch">&check; Branch 8 taken 44 times.</div>
+          <div class="takenBranch">&check; Branch 20 taken 110 times.</div>
+          <div class="takenBranch">&check; Branch 21 taken 22 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @return A shared pointer to the BVH root node.</span></td>
+      <td class="linecount coveredLine">176</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_vertices</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">m_vertices</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">m_faces</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">m_faces</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l117" href="#l117">117</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   */</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l118" href="#l118">118</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">66</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">BVHNode</span><span class="o">*</span><span class="w"> </span><span class="nf">getBVHRoot</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_bvh_root</span><span class="p">.</span><span class="n">get</span><span class="p">();</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l119" href="#l119">119</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">   * @brief Builds the bounding volume hierarchy (BVH) for the mesh.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l120" href="#l120">120</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">228</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="o">~</span><span class="n">Mesh</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default destructor.</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l121" href="#l121">121</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">};</span></td>
+      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">buildBVH</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l122" href="#l122">122</a></td>
@@ -1006,10 +1007,73 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#endif </span><span class="c1">// GEOMETRY_MESH_HPP</span></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l124" href="#l124">124</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   * @brief Retrieves the bounding volume hierarchy (BVH) root node of the mesh.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l125" href="#l125">125</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   * @return A shared pointer to the BVH root node.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l126" href="#l126">126</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   */</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l127" href="#l127">127</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">478</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">BVHNode</span><span class="o">*</span><span class="w"> </span><span class="nf">getBVHRoot</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_bvh_root</span><span class="p">.</span><span class="n">get</span><span class="p">();</span><span class="w"> </span><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l128" href="#l128">128</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l129" href="#l129">129</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">1815</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="o">~</span><span class="n">Mesh</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default destructor.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l130" href="#l130">130</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">};</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l131" href="#l131">131</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l132" href="#l132">132</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#endif </span><span class="c1">// GEOMETRY_MESH_HPP</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l133" href="#l133">133</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>

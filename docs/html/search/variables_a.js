@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['m_0',['m',['../structlin_1_1Mat3.html#a9e92c0eea4ef455fb11521e134dd5ecd',1,'lin::Mat3::m'],['../structlin_1_1Mat4.html#ac3e75312da36c2a93b478bdd0aecb8b7',1,'lin::Mat4::m']]],
-  ['material_1',['material',['../structRayHitInfo.html#a64833bbb2a2536372d9d03d7a94eb412',1,'RayHitInfo']]]
+  ['m_0',['m',['../structlin_1_1Mat3.html#a54fb00201a8cc2d779673f0066653f7f',1,'lin::Mat3::m'],['../structlin_1_1Mat4.html#ad094b5d8a59cd60c29453e34b7f5dfe5',1,'lin::Mat4::m']]],
+  ['material_1',['material',['../structRayHitInfo.html#a60e243074df0df25744353eaa114b3d1',1,'RayHitInfo']]]
 ];

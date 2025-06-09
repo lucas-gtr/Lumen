@@ -78,7 +78,7 @@ public:
    *
    * @return A pointer to the Camera object.
    */
-  const Camera* getCamera() const { return m_current_camera.get(); }
+  Camera* getCamera() const { return m_current_camera.get(); }
 
   /**
    * @brief Gets the color of the skybox based on a given direction.
@@ -86,7 +86,7 @@ public:
    * @param direction The direction vector for which to get the skybox color.
    * @return The color of the skybox.
    */
-  ColorRGBA getSkyboxColor(const lin::Vec3& direction) const { return m_skybox->getColor(direction); }
+  ColorRGBA getSkyboxColor(const lin::Vec3d& direction) const { return m_skybox->getColor(direction); }
 
   /**
    * @brief Sets the skybox texture for the scene.
@@ -94,6 +94,8 @@ public:
    * @param skybox_texture A shared pointer to the Texture to be used as the skybox.
    */
   void setSkybox(const std::shared_ptr<Texture>& skybox_texture) { m_skybox->setTexture(skybox_texture); }
+
+  const Skybox* getSkybox() const { return m_skybox.get(); }
 
   /**
    * @brief Builds the bounding volume hierarchy (BVH) for the objects in the scene.

@@ -5,15 +5,15 @@
 
 TEST(TransformTest, DefaultConstructorTest) {
     Transform t;
-    EXPECT_EQ(t.getPosition(), lin::Vec3(0.0));
-    EXPECT_EQ(t.getRotation(), lin::Vec3(0.0));
-    EXPECT_EQ(t.getScale(), lin::Vec3(1.0));
+    EXPECT_EQ(t.getPosition(), lin::Vec3d(0.0));
+    EXPECT_EQ(t.getRotation(), lin::Vec3d(0.0));
+    EXPECT_EQ(t.getScale(), lin::Vec3d(1.0));
 }
 
 TEST(TransformTest, ParameterizedConstructorTest) {
-    lin::Vec3 position(1.0, 2.0, 3.0);
-    lin::Vec3 rotation(30.0, 45.0, 60.0);
-    lin::Vec3 scale(2.0, 2.0, 2.0);
+    lin::Vec3d position(1.0, 2.0, 3.0);
+    lin::Vec3d rotation(30.0, 45.0, 60.0);
+    lin::Vec3d scale(2.0, 2.0, 2.0);
     
     Transform t(position, rotation, scale);
 
@@ -24,7 +24,7 @@ TEST(TransformTest, ParameterizedConstructorTest) {
 
 TEST(TransformTest, SetPositionTest) {
     Transform t;
-    lin::Vec3 newPosition(10.0, 20.0, 30.0);
+    lin::Vec3d newPosition(10.0, 20.0, 30.0);
     
     t.setPosition(newPosition);
     
@@ -33,7 +33,7 @@ TEST(TransformTest, SetPositionTest) {
 
 TEST(TransformTest, SetRotationTest) {
     Transform t;
-    lin::Vec3 newRotation(45.0, 90.0, 135.0);
+    lin::Vec3d newRotation(45.0, 90.0, 135.0);
     
     t.setRotation(newRotation);
     
@@ -42,75 +42,75 @@ TEST(TransformTest, SetRotationTest) {
 
 TEST(TransformTest, SetScaleTest) {
     Transform t;
-    lin::Vec3 newScale(2.0, 3.0, 4.0);
+    lin::Vec3d newScale(2.0, 3.0, 4.0);
     
     t.setScale(newScale);
     
     EXPECT_EQ(t.getScale(), newScale);
 
     t.setScale(2.0);
-    EXPECT_EQ(t.getScale(), lin::Vec3(2.0, 2.0, 2.0));
+    EXPECT_EQ(t.getScale(), lin::Vec3d(2.0, 2.0, 2.0));
 }
 
 TEST(TransformTest, SetPositionXTest) {
     Transform t;
     t.setPositionX(5.0);
-    EXPECT_EQ(t.getPosition(), lin::Vec3(5.0, 0.0, 0.0));
+    EXPECT_EQ(t.getPosition(), lin::Vec3d(5.0, 0.0, 0.0));
 }
 
 TEST(TransformTest, SetPositionYTest) {
     Transform t;
     t.setPositionY(10.0);
-    EXPECT_EQ(t.getPosition(), lin::Vec3(0.0, 10.0, 0.0));
+    EXPECT_EQ(t.getPosition(), lin::Vec3d(0.0, 10.0, 0.0));
 }
 
 TEST(TransformTest, SetPositionZTest) {
     Transform t;
     t.setPositionZ(15.0);
-    EXPECT_EQ(t.getPosition(), lin::Vec3(0.0, 0.0, 15.0));
+    EXPECT_EQ(t.getPosition(), lin::Vec3d(0.0, 0.0, 15.0));
 }
 
 TEST(TransformTest, SetRotationXTest) {
     Transform t;
     t.setRotationX(90.0);
-    EXPECT_EQ(t.getRotation(), lin::Vec3(90.0 * M_PI / 180.0, 0.0, 0.0));
+    EXPECT_EQ(t.getRotation(), lin::Vec3d(90.0 * M_PI / 180.0, 0.0, 0.0));
 }
 
 TEST(TransformTest, SetRotationYTest) {
     Transform t;
     t.setRotationY(180.0);
-    EXPECT_EQ(t.getRotation(), lin::Vec3(0.0, 180.0 * M_PI / 180.0, 0.0));
+    EXPECT_EQ(t.getRotation(), lin::Vec3d(0.0, 180.0 * M_PI / 180.0, 0.0));
 }
 
 TEST(TransformTest, SetRotationZTest) {
     Transform t;
     t.setRotationZ(270.0);
-    EXPECT_EQ(t.getRotation(), lin::Vec3(0.0, 0.0, 270.0 * M_PI / 180.0));
+    EXPECT_EQ(t.getRotation(), lin::Vec3d(0.0, 0.0, 270.0 * M_PI / 180.0));
 }
 
 TEST(TransformTest, SetScaleXTest) {
     Transform t;
     t.setScaleX(2.5);
-    EXPECT_EQ(t.getScale(), lin::Vec3(2.5, 1.0, 1.0));
+    EXPECT_EQ(t.getScale(), lin::Vec3d(2.5, 1.0, 1.0));
 }
 
 TEST(TransformTest, SetScaleYTest) {
     Transform t;
     t.setScaleY(3.5);
-    EXPECT_EQ(t.getScale(), lin::Vec3(1.0, 3.5, 1.0));
+    EXPECT_EQ(t.getScale(), lin::Vec3d(1.0, 3.5, 1.0));
 }
 
 TEST(TransformTest, SetScaleZTest) {
     Transform t;
     t.setScaleZ(4.5);
-    EXPECT_EQ(t.getScale(), lin::Vec3(1.0, 1.0, 4.5));
+    EXPECT_EQ(t.getScale(), lin::Vec3d(1.0, 1.0, 4.5));
 }
 TEST(TransformTest, TranslationMatrixTest) {
-    lin::Vec3 position(5.0, 10.0, 15.0);
+    lin::Vec3d position(5.0, 10.0, 15.0);
     Transform t;
     t.setPosition(position);
 
-    lin::Mat4 expectedTranslationMatrix = lin::Mat4::Identity();
+    lin::Mat4d expectedTranslationMatrix = lin::Mat4d::Identity();
     expectedTranslationMatrix.m[0][3] = position.x;
     expectedTranslationMatrix.m[1][3] = position.y;
     expectedTranslationMatrix.m[2][3] = position.z;
@@ -119,37 +119,37 @@ TEST(TransformTest, TranslationMatrixTest) {
 }
 
 TEST(TransformTest, RotationMatrixTest) {
-    lin::Vec3 rotation(45.0, 90.0, 30.0);
+    lin::Vec3d rotation(45.0, 90.0, 30.0);
     Transform t;
     t.setRotation(rotation);
 
-    lin::Mat3 rotationX, rotationY, rotationZ;
+    lin::Mat3d rotationX, rotationY, rotationZ;
     double rx = rotation.x * M_PI / 180.0;
     double ry = rotation.y * M_PI / 180.0;
     double rz = rotation.z * M_PI / 180.0;
 
-    rotationX = lin::Mat3({{1, 0, 0},
+    rotationX = lin::Mat3d({{1, 0, 0},
                   {0, cos(rx), -sin(rx)},
                   {0, sin(rx), cos(rx)}});
-    rotationY = lin::Mat3({{cos(ry), 0, sin(ry)},
+    rotationY = lin::Mat3d({{cos(ry), 0, sin(ry)},
                   {0, 1, 0},
                   {-sin(ry), 0, cos(ry)}});
-    rotationZ = lin::Mat3({{cos(rz), -sin(rz), 0},
+    rotationZ = lin::Mat3d({{cos(rz), -sin(rz), 0},
                   {sin(rz), cos(rz), 0},
                   {0, 0, 1}});
 
-    lin::Mat3 expectedRotationMatrix = rotationZ * rotationY * rotationX;
-    lin::Mat4 expectedTransformationMatrix(expectedRotationMatrix);
+    lin::Mat3d expectedRotationMatrix = rotationZ * rotationY * rotationX;
+    lin::Mat4d expectedTransformationMatrix(expectedRotationMatrix);
 
     EXPECT_TRUE(t.getTransformationMatrix().isApprox(expectedTransformationMatrix, 1e-9));
 }
 
 TEST(TransformTest, ScaleMatrixTest) {
-    lin::Vec3 scale(2.0, 3.0, 4.0);
+    lin::Vec3d scale(2.0, 3.0, 4.0);
     Transform t;
     t.setScale(scale);
 
-    lin::Mat4 expectedScaleMatrix = lin::Mat4::Identity();
+    lin::Mat4d expectedScaleMatrix = lin::Mat4d::Identity();
     expectedScaleMatrix(0, 0) = scale.x;
     expectedScaleMatrix(1, 1) = scale.y;
     expectedScaleMatrix(2, 2) = scale.z;
@@ -158,29 +158,29 @@ TEST(TransformTest, ScaleMatrixTest) {
 }
 
 TEST(TransformTest, CombinedTransformationMatrixTest) {
-    lin::Vec3 position(5.0, 10.0, 15.0);
-    lin::Vec3 rotation(45.0, 90.0, 30.0);
-    lin::Vec3 scale(2.0, 3.0, 4.0);
+    lin::Vec3d position(5.0, 10.0, 15.0);
+    lin::Vec3d rotation(45.0, 90.0, 30.0);
+    lin::Vec3d scale(2.0, 3.0, 4.0);
 
     Transform t(position, rotation, scale);
 
-    lin::Mat3 rotationX, rotationY, rotationZ;
+    lin::Mat3d rotationX, rotationY, rotationZ;
     double rx = rotation.x * M_PI / 180.0;
     double ry = rotation.y * M_PI / 180.0;
     double rz = rotation.z * M_PI / 180.0;
 
-    rotationX = lin::Mat3({{1, 0, 0},
+    rotationX = lin::Mat3d({{1, 0, 0},
                   {0, cos(rx), -sin(rx)},
                   {0, sin(rx), cos(rx)}});
-    rotationY = lin::Mat3({{cos(ry), 0, sin(ry)},
+    rotationY = lin::Mat3d({{cos(ry), 0, sin(ry)},
                   {0, 1, 0},
                   {-sin(ry), 0, cos(ry)}});
-    rotationZ = lin::Mat3({{cos(rz), -sin(rz), 0},
+    rotationZ = lin::Mat3d({{cos(rz), -sin(rz), 0},
                   {sin(rz), cos(rz), 0},
                   {0, 0, 1}});
 
-    lin::Mat3 rotationMatrix = rotationZ * rotationY * rotationX;
-    lin::Mat4 expectedTransformationMatrix(rotationMatrix);
+    lin::Mat3d rotationMatrix = rotationZ * rotationY * rotationX;
+    lin::Mat4d expectedTransformationMatrix(rotationMatrix);
 
     expectedTransformationMatrix.m[0][3] = position.x;
     expectedTransformationMatrix.m[1][3] = position.y;

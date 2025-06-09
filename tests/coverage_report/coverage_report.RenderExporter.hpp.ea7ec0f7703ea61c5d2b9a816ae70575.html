@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-05-30 12:20:17</td>
+      <td>2025-06-09 10:46:40</td>
     </tr>
   </table>
 </div>
@@ -73,14 +73,14 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l53">RenderExporter::getFilename[abi:cxx11]() const (line 53)</a></td><td>called 33 times, returned 33 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l89">RenderExporter::getFramebuffer() const (line 89)</a></td><td>called 77 times, returned 77 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l95">RenderExporter::getParameters() const (line 95)</a></td><td>called 22 times, returned 22 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l65">RenderExporter::getPath[abi:cxx11]() const (line 65)</a></td><td>called 44 times, returned 44 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l59">RenderExporter::setFilename(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;) (line 59)</a></td><td>called 44 times, returned 44 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l109">RenderExporter::setParameter(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, double) (line 109)</a></td><td>called 11 times, returned 11 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l71">RenderExporter::setPath(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;) (line 71)</a></td><td>called 55 times, returned 55 times</td><td>86.0%</td></tr>
-    <tr><td><a href="#l118">RenderExporter::~RenderExporter() (line 118)</a></td><td>called 55 times, returned 55 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l47">RenderExporter::getFilename[abi:cxx11]() const (line 47)</a></td><td>called 66 times, returned 66 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l83">RenderExporter::getFramebuffer() const (line 83)</a></td><td>called 154 times, returned 154 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l89">RenderExporter::getParameters() const (line 89)</a></td><td>called 44 times, returned 44 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l59">RenderExporter::getPath[abi:cxx11]() const (line 59)</a></td><td>called 88 times, returned 88 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l53">RenderExporter::setFilename(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;) (line 53)</a></td><td>called 88 times, returned 88 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l103">RenderExporter::setParameter(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, double) (line 103)</a></td><td>called 22 times, returned 22 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l65">RenderExporter::setPath(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;) (line 65)</a></td><td>called 110 times, returned 110 times</td><td>86.0%</td></tr>
+    <tr><td><a href="#l112">RenderExporter::~RenderExporter() (line 112)</a></td><td>called 110 times, returned 110 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -149,84 +149,84 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdint&gt;</span></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l9" href="#l9">9</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;memory&gt;</span></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l10" href="#l10">10</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l11" href="#l11">11</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Core/Config.hpp&quot;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l12" href="#l12">12</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Core/Config.hpp&quot;</span></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Core/Framebuffer.hpp&quot;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l13" href="#l13">13</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Core/Framebuffer.hpp&quot;</span></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Export/OutputFormat.hpp&quot;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l14" href="#l14">14</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;Export/OutputFormat.hpp&quot;</span></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ImplementationParameters/Parameters.hpp&quot;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l15" href="#l15">15</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;ImplementationParameters/Parameters.hpp&quot;</span></td>
+      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;PostProcessing/ToneMapping/ToneMapping.hpp&quot;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l16" href="#l16">16</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;PostProcessing/ToneMapping/ToneMapping.hpp&quot;</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l17" href="#l17">17</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l18" href="#l18">18</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="cm"> * @class RenderExporter</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l19" href="#l19">19</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Enumeration for different tone mapping strategies.</span></td>
+      <td class="src "><span class="cm"> * @brief Abstract base class for exporting rendered frames.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l20" href="#l20">20</a></td>
@@ -240,189 +240,189 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">ToneMapping</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">NONE</span><span class="p">,</span><span class="w"> </span><span class="n">REINHARD</span><span class="p">,</span><span class="w"> </span><span class="n">EXPOSURE</span><span class="w"> </span><span class="p">};</span></td>
+      <td class="src "><span class="k">class</span><span class="w"> </span><span class="nc">RenderExporter</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l22" href="#l22">22</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="k">private</span><span class="o">:</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l23" href="#l23">23</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">/**</span></td>
+      <td class="src "><span class="w">  </span><span class="n">Framebuffer</span><span class="o">*</span><span class="w">                  </span><span class="n">m_framebuffer</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l24" href="#l24">24</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @class RenderExporter</span></td>
+      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w">                   </span><span class="n">m_path</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">DEFAULT_FILE_PATH</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l25" href="#l25">25</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> * @brief Abstract base class for exporting rendered frames.</span></td>
+      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w">                   </span><span class="n">m_filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">DEFAULT_FILE_NAME</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l26" href="#l26">26</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm"> */</span></td>
+      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">OutputFormat</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_output_format</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l27" href="#l27">27</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="k">class</span><span class="w"> </span><span class="nc">RenderExporter</span><span class="w"> </span><span class="p">{</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l28" href="#l28">28</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="k">private</span><span class="o">:</span></td>
+      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Parameters</span><span class="o">&gt;</span><span class="w">          </span><span class="n">m_tonemapping_parameters</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l29" href="#l29">29</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">Framebuffer</span><span class="o">*</span><span class="w">                  </span><span class="n">m_framebuffer</span><span class="p">;</span></td>
+      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">ToneMappingStrategy</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_tone_mapping</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l30" href="#l30">30</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w">                   </span><span class="n">m_path</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">DEFAULT_FILE_PATH</span><span class="p">);</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l31" href="#l31">31</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w">                   </span><span class="n">m_filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">DEFAULT_FILE_NAME</span><span class="p">);</span></td>
+      <td class="src "><span class="k">public</span><span class="o">:</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l32" href="#l32">32</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">OutputFormat</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_output_format</span><span class="p">;</span></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l33" href="#l33">33</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">   * @brief Constructs a RenderExporter instance.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l34" href="#l34">34</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Parameters</span><span class="o">&gt;</span><span class="w">          </span><span class="n">m_tonemapping_parameters</span><span class="p">;</span></td>
+      <td class="src "><span class="cm">   * @param framebuffer Pointer to the framebuffer that holds the rendered image.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l35" href="#l35">35</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">ToneMappingStrategy</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_tone_mapping</span><span class="p">;</span></td>
+      <td class="src "><span class="cm">   */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l36" href="#l36">36</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">RenderExporter</span><span class="p">(</span><span class="n">Framebuffer</span><span class="o">*</span><span class="w"> </span><span class="n">framebuffer</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l37" href="#l37">37</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="k">public</span><span class="o">:</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l38" href="#l38">38</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
+      <td class="src "><span class="w">  </span><span class="n">RenderExporter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">RenderExporter</span><span class="o">&amp;</span><span class="p">)</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l39" href="#l39">39</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Constructs a RenderExporter instance.</span></td>
+      <td class="src "><span class="w">  </span><span class="n">RenderExporter</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">RenderExporter</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l40" href="#l40">40</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param framebuffer Pointer to the framebuffer that holds the rendered image.</span></td>
+      <td class="src "><span class="w">  </span><span class="n">RenderExporter</span><span class="p">(</span><span class="n">RenderExporter</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l41" href="#l41">41</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   */</span></td>
+      <td class="src "><span class="w">  </span><span class="n">RenderExporter</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">RenderExporter</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l42" href="#l42">42</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">RenderExporter</span><span class="p">(</span><span class="n">Framebuffer</span><span class="o">*</span><span class="w"> </span><span class="n">framebuffer</span><span class="p">);</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l43" href="#l43">43</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l44" href="#l44">44</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">RenderExporter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">RenderExporter</span><span class="o">&amp;</span><span class="p">)</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span></td>
+      <td class="src "><span class="cm">   * @brief Retrieves the filename.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l45" href="#l45">45</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">RenderExporter</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">RenderExporter</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span></td>
+      <td class="src "><span class="cm">   * @return The filename of the exported render.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l46" href="#l46">46</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">RenderExporter</span><span class="p">(</span><span class="n">RenderExporter</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span></td>
+      <td class="src "><span class="cm">   */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l47" href="#l47">47</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">RenderExporter</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">RenderExporter</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span></td>
+      <td class="linecount coveredLine">66</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">getFilename</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_filename</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l48" href="#l48">48</a></td>
@@ -443,14 +443,14 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Retrieves the filename.</span></td>
+      <td class="src "><span class="cm">   * @brief Sets the filename.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l51" href="#l51">51</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @return The filename of the exported render.</span></td>
+      <td class="src "><span class="cm">   * @param filename The new filename for the exported render.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l52" href="#l52">52</a></td>
@@ -463,8 +463,8 @@
       <td class="lineno"><a id="l53" href="#l53">53</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">33</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">getFilename</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_filename</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount coveredLine">88</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setFilename</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">filename</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">filename</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l54" href="#l54">54</a></td>
@@ -485,14 +485,14 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Sets the filename.</span></td>
+      <td class="src "><span class="cm">   * @brief Retrieves the directory path.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l57" href="#l57">57</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param filename The new filename for the exported render.</span></td>
+      <td class="src "><span class="cm">   * @return The directory path where the render will be exported.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l58" href="#l58">58</a></td>
@@ -505,8 +505,8 @@
       <td class="lineno"><a id="l59" href="#l59">59</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">44</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setFilename</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">filename</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">filename</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount coveredLine">88</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">getPath</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_path</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l60" href="#l60">60</a></td>
@@ -527,14 +527,14 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Retrieves the directory path.</span></td>
+      <td class="src "><span class="cm">   * @brief Sets the directory path.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l63" href="#l63">63</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @return The directory path where the render will be exported.</span></td>
+      <td class="src "><span class="cm">   * @param path The new directory path for the exported render.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l64" href="#l64">64</a></td>
@@ -546,9 +546,19 @@
     <tr class="source-line">
       <td class="lineno"><a id="l65" href="#l65">65</a></td>
       <td class="linebranch">
+        <details class="linebranchDetails">
+        <summary class="linebranchSummary">5/5</summary>
+        <div class="linebranchContents">
+          <div class="takenBranch">&check; Branch 4 taken 22 times.</div>
+          <div class="takenBranch">&check; Branch 5 taken 88 times.</div>
+          <div class="takenBranch">&check; Branch 8 taken 22 times.</div>
+          <div class="takenBranch">&check; Branch 12 taken 88 times.</div>
+          <div class="takenBranch">&check; Branch 19 taken 110 times.</div>
+        </div>
+        </details>
       </td>
-      <td class="linecount coveredLine">44</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">getPath</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_path</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount coveredLine">110</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setPath</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">path</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path</span><span class="p">.</span><span class="n">back</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;/&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;/&#39;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l66" href="#l66">66</a></td>
@@ -569,14 +579,14 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Sets the directory path.</span></td>
+      <td class="src "><span class="cm">   * @brief Sets the output format for the render.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l69" href="#l69">69</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param path The new directory path for the exported render.</span></td>
+      <td class="src "><span class="cm">   * @param output_format Pointer to the OutputFormat object that defines the export format.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l70" href="#l70">70</a></td>
@@ -588,19 +598,9 @@
     <tr class="source-line">
       <td class="lineno"><a id="l71" href="#l71">71</a></td>
       <td class="linebranch">
-        <details class="linebranchDetails">
-        <summary class="linebranchSummary">5/5</summary>
-        <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 4 taken 11 times.</div>
-          <div class="takenBranch">&check; Branch 5 taken 44 times.</div>
-          <div class="takenBranch">&check; Branch 8 taken 11 times.</div>
-          <div class="takenBranch">&check; Branch 12 taken 44 times.</div>
-          <div class="takenBranch">&check; Branch 19 taken 55 times.</div>
-        </div>
-        </details>
       </td>
-      <td class="linecount coveredLine">55</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setPath</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">path</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path</span><span class="p">.</span><span class="n">back</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;/&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;/&#39;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setOutputFormat</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">OutputFormat</span><span class="o">&gt;</span><span class="w"> </span><span class="n">output_format</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l72" href="#l72">72</a></td>
@@ -621,14 +621,14 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Sets the output format for the render.</span></td>
+      <td class="src "><span class="cm">   * @brief Sets the tone mapping strategy for the render.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l75" href="#l75">75</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param output_format Pointer to the OutputFormat object that defines the export format.</span></td>
+      <td class="src "><span class="cm">   * @param tone_mapping Pointer to the ToneMappingStrategy object that defines the tone mapping.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l76" href="#l76">76</a></td>
@@ -642,7 +642,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setOutputFormat</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">OutputFormat</span><span class="o">&gt;</span><span class="w"> </span><span class="n">output_format</span><span class="p">);</span></td>
+      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setToneMapping</span><span class="p">(</span><span class="n">ToneMapping</span><span class="w"> </span><span class="n">tone_mapping</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l78" href="#l78">78</a></td>
@@ -663,14 +663,14 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Sets the tone mapping strategy for the render.</span></td>
+      <td class="src "><span class="cm">   * @brief Retrieves the framebuffer.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l81" href="#l81">81</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param tone_mapping Pointer to the ToneMappingStrategy object that defines the tone mapping.</span></td>
+      <td class="src "><span class="cm">   * @return Pointer to the framebuffer containing the rendered image.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l82" href="#l82">82</a></td>
@@ -683,8 +683,8 @@
       <td class="lineno"><a id="l83" href="#l83">83</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setToneMapping</span><span class="p">(</span><span class="n">ToneMapping</span><span class="w"> </span><span class="n">tone_mapping</span><span class="p">);</span></td>
+      <td class="linecount coveredLine">154</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">Framebuffer</span><span class="o">*</span><span class="w"> </span><span class="nf">getFramebuffer</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_framebuffer</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l84" href="#l84">84</a></td>
@@ -705,14 +705,14 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Retrieves the framebuffer.</span></td>
+      <td class="src "><span class="cm">   * @brief Retrieves the parameters for tone mapping.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l87" href="#l87">87</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @return Pointer to the framebuffer containing the rendered image.</span></td>
+      <td class="src "><span class="cm">   * @return Pointer to the Parameters object containing tone mapping parameters.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l88" href="#l88">88</a></td>
@@ -725,8 +725,8 @@
       <td class="lineno"><a id="l89" href="#l89">89</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">77</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">Framebuffer</span><span class="o">*</span><span class="w"> </span><span class="nf">getFramebuffer</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_framebuffer</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount coveredLine">44</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">Parameters</span><span class="o">*</span><span class="w"> </span><span class="nf">getParameters</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_tonemapping_parameters</span><span class="p">.</span><span class="n">get</span><span class="p">();</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l90" href="#l90">90</a></td>
@@ -747,213 +747,171 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Retrieves the parameters for tone mapping.</span></td>
+      <td class="src "><span class="cm">   * @brief Sets a parameter (an integer) for exporting.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l93" href="#l93">93</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @return Pointer to the Parameters object containing tone mapping parameters.</span></td>
+      <td class="src "><span class="cm">   * @param name  The name of the parameter to set.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l94" href="#l94">94</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   */</span></td>
+      <td class="src "><span class="cm">   * @param value The value of the parameter to set.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l95" href="#l95">95</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">22</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">Parameters</span><span class="o">*</span><span class="w"> </span><span class="nf">getParameters</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_tonemapping_parameters</span><span class="p">.</span><span class="n">get</span><span class="p">();</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l96" href="#l96">96</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setParameter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_tonemapping_parameters</span><span class="o">-&gt;</span><span class="n">setParameter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l97" href="#l97">97</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l98" href="#l98">98</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Sets a parameter (an integer) for exporting.</span></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l99" href="#l99">99</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param name  The name of the parameter to set.</span></td>
+      <td class="src "><span class="cm">   * @brief Sets a parameter (a double) for exporting.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l100" href="#l100">100</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param value The value of the parameter to set.</span></td>
+      <td class="src "><span class="cm">   * @param name  The name of the parameter to set.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l101" href="#l101">101</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   */</span></td>
+      <td class="src "><span class="cm">   * @param value The value of the parameter to set.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l102" href="#l102">102</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setParameter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_tonemapping_parameters</span><span class="o">-&gt;</span><span class="n">setParameter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="src "><span class="cm">   */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l103" href="#l103">103</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="linecount coveredLine">22</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setParameter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_tonemapping_parameters</span><span class="o">-&gt;</span><span class="n">setParameter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l104" href="#l104">104</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l105" href="#l105">105</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Sets a parameter (a double) for exporting.</span></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l106" href="#l106">106</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param name  The name of the parameter to set.</span></td>
+      <td class="src "><span class="cm">   * @brief Exports the render to the specified location.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l107" href="#l107">107</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param value The value of the parameter to set.</span></td>
+      <td class="src "><span class="cm">   *</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l108" href="#l108">108</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   */</span></td>
+      <td class="src "><span class="cm">   * This method must be implemented by derived classes to define the actual export behavior.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l109" href="#l109">109</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">11</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setParameter</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_tonemapping_parameters</span><span class="o">-&gt;</span><span class="n">setParameter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l110" href="#l110">110</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">exportRender</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l111" href="#l111">111</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l112" href="#l112">112</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Exports the render to the specified location.</span></td>
+      <td class="linecount coveredLine">110</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="o">~</span><span class="n">RenderExporter</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default destructor.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l113" href="#l113">113</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   *</span></td>
+      <td class="src "><span class="p">};</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l114" href="#l114">114</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * This method must be implemented by derived classes to define the actual export behavior.</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l115" href="#l115">115</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   */</span></td>
-    </tr>
-    <tr class="source-line">
-      <td class="lineno"><a id="l116" href="#l116">116</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">exportRender</span><span class="p">();</span></td>
-    </tr>
-    <tr class="source-line">
-      <td class="lineno"><a id="l117" href="#l117">117</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
-    </tr>
-    <tr class="source-line">
-      <td class="lineno"><a id="l118" href="#l118">118</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount coveredLine">55</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="o">~</span><span class="n">RenderExporter</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default destructor.</span></td>
-    </tr>
-    <tr class="source-line">
-      <td class="lineno"><a id="l119" href="#l119">119</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="p">};</span></td>
-    </tr>
-    <tr class="source-line">
-      <td class="lineno"><a id="l120" href="#l120">120</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
-      <td class="src "></td>
-    </tr>
-    <tr class="source-line">
-      <td class="lineno"><a id="l121" href="#l121">121</a></td>
-      <td class="linebranch">
-      </td>
-      <td class="linecount "></td>
       <td class="src "><span class="cp">#endif </span><span class="c1">// EXPORT_RENDEREXPORTER_HPP</span></td>
     </tr>
     <tr class="source-line">
-      <td class="lineno"><a id="l122" href="#l122">122</a></td>
+      <td class="lineno"><a id="l116" href="#l116">116</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>

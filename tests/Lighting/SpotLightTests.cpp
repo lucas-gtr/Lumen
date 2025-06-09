@@ -6,8 +6,8 @@ protected:
     SpotLight light;
 
     void SetUp() override {
-        light.setPosition(lin::Vec3(0.0, 0.0, 0.0));
-        light.setDirection(lin::Vec3(0.0, 0.0, -1.0)); 
+        light.setPosition(lin::Vec3d(0.0, 0.0, 0.0));
+        light.setDirection(lin::Vec3d(0.0, 0.0, -1.0)); 
         light.setOuterAngle(30.0); 
         light.setInnerAngle(15.0); 
     }
@@ -17,19 +17,37 @@ TEST_F(SpotLightTest, ConstructorSetsTypeCorrectly) {
     EXPECT_EQ(light.getType(), LightType::Spot);
 }
 
-TEST_F(SpotLightTest, GetDirectionFromPointReturnsNormalizedVector) {
-    lin::Vec3 point(0.0, 0.0, -5.0);
-    lin::Vec3 direction = light.getDirectionFromPoint(point);
+TEST_F(SpotLightTest, GetDirection) {
+    light.setDirection(lin::Vec3d(1.0, 0.0, 0.0));
+    lin::Vec3d direction = light.getDirection();
+    EXPECT_DOUBLE_EQ(direction.x, 1.0);
+    EXPECT_DOUBLE_EQ(direction.y, 0.0);
+    EXPECT_DOUBLE_EQ(direction.z, 0.0);
+}
 
-    lin::Vec3 expectedDirection = (light.getPosition() - point).normalized();
+TEST_F(SpotLightTest, GetInnerAngle) {
+    light.setInnerAngle(15.0);
+    EXPECT_DOUBLE_EQ(light.getInnerAngle(), 15.0 * M_PI / 180.0); 
+}
+
+TEST_F(SpotLightTest, GetOuterAngle) {
+    light.setOuterAngle(30.0);
+    EXPECT_DOUBLE_EQ(light.getOuterAngle(), 30.0 * M_PI / 180.0); 
+}
+
+TEST_F(SpotLightTest, GetDirectionFromPointReturnsNormalizedVector) {
+    lin::Vec3d point(0.0, 0.0, -5.0);
+    lin::Vec3d direction = light.getDirectionFromPoint(point);
+
+    lin::Vec3d expectedDirection = (light.getPosition() - point).normalized();
     EXPECT_NEAR(direction.x, expectedDirection.x, 1e-9);
     EXPECT_NEAR(direction.y, expectedDirection.y, 1e-9);
     EXPECT_NEAR(direction.z, expectedDirection.z, 1e-9);
 }
 
 TEST_F(SpotLightTest, LightFactorIsMaxInsideInnerCone) {
-    lin::Vec3 point(0.0, 0.0, -1.0);
-    lin::Vec3 normal(0.0, 0.0, 1.0);
+    lin::Vec3d point(0.0, 0.0, -1.0);
+    lin::Vec3d normal(0.0, 0.0, 1.0);
 
     ColorRGB factor = light.getLightFactor(point, normal);
 
@@ -48,8 +66,8 @@ TEST_F(SpotLightTest, LightFactorIsHalfwayBasedOnCosine) {
 
   float radius = std::tan(angle);
 
-  lin::Vec3 point(radius, 0.0, -1.0);
-  lin::Vec3 normal(0.0, 0.0, 1.0);
+  lin::Vec3d point(radius, 0.0, -1.0);
+  lin::Vec3d normal(0.0, 0.0, 1.0);
 
   ColorRGB factor = light.getLightFactor(point, normal);
 
@@ -67,8 +85,8 @@ TEST_F(SpotLightTest, LightFactorIsZeroOutsideOuterCone) {
     double radians = angle * M_PI / 180.0;
     double offsetX = sin(radians);
     double offsetZ = -cos(radians);
-    lin::Vec3 point(offsetX * 5.0, 0.0, offsetZ * 5.0);
-    lin::Vec3 normal(0.0, 0.0, 1.0);
+    lin::Vec3d point(offsetX * 5.0, 0.0, offsetZ * 5.0);
+    lin::Vec3d normal(0.0, 0.0, 1.0);
 
     ColorRGB factor = light.getLightFactor(point, normal);
 
@@ -78,12 +96,12 @@ TEST_F(SpotLightTest, LightFactorIsZeroOutsideOuterCone) {
 }
 
 TEST_F(SpotLightTest, LightFactorDependsOnNormalDirection) {
-    lin::Vec3 point(0.0, 0.0, -5.0);
+    lin::Vec3d point(0.0, 0.0, -5.0);
 
-    lin::Vec3 normalFacingLight(0.0, 0.0, 1.0);
+    lin::Vec3d normalFacingLight(0.0, 0.0, 1.0);
     ColorRGB factorFacing = light.getLightFactor(point, normalFacingLight);
 
-    lin::Vec3 normalOppositeToLight(0.0, 0.0, -1.0);
+    lin::Vec3d normalOppositeToLight(0.0, 0.0, -1.0);
     ColorRGB factorOpposite = light.getLightFactor(point, normalOppositeToLight);
 
     EXPECT_GT(factorFacing.r, factorOpposite.r);

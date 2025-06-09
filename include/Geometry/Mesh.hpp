@@ -6,6 +6,7 @@
 #define GEOMETRY_MESH_HPP
 
 #include <array>
+#include <cstddef>
 #include <memory>
 #include <vector>
 
@@ -18,11 +19,11 @@
  * @brief Structure representing a vertex in a 3D mesh.
  */
 struct Vertex {
-  lin::Vec3 position  = {0.0, 0.0, 0.0}; ///< Position of the vertex in 3D space.
-  lin::Vec3 normal    = {0.0, 0.0, 0.0}; ///< Normal vector at the vertex.
-  TextureUV uvCoord   = {0, 0};          ///< Texture coordinates of the vertex.
-  lin::Vec3 tangent   = {0.0, 0.0, 0.0}; ///< Tangent vector at the vertex.
-  lin::Vec3 bitangent = {0.0, 0.0, 0.0}; ///< Bitangent vector at the vertex.
+  lin::Vec3d position  = {0.0, 0.0, 0.0}; ///< Position of the vertex in 3D space.
+  lin::Vec3d normal    = {0.0, 0.0, 0.0}; ///< Normal vector at the vertex.
+  TextureUV  uvCoord   = {0, 0};          ///< Texture coordinates of the vertex.
+  lin::Vec3d tangent   = {0.0, 0.0, 0.0}; ///< Tangent vector at the vertex.
+  lin::Vec3d bitangent = {0.0, 0.0, 0.0}; ///< Bitangent vector at the vertex.
 
   /**
    * @brief Equality operator for comparing two vertices.
@@ -32,6 +33,14 @@ struct Vertex {
   bool operator==(const Vertex& other) const {
     return position == other.position && normal == other.normal && uvCoord.u == other.uvCoord.u &&
            uvCoord.v == other.uvCoord.v;
+  }
+
+  /**
+   * @brief Returns the size of a vertex in terms of the number of values it contains.
+   * @return The number of values in a vertex.
+   */
+  static constexpr size_t valuePerVertex() {
+    return 3 + 3 + 2 + 3 + 3; // position (3), normal (3), uvCoord (2), tangent (3), bitangent (3)
   }
 };
 

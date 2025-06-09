@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-05-30 12:20:17</td>
+      <td>2025-06-09 10:46:40</td>
     </tr>
   </table>
 </div>
@@ -41,14 +41,14 @@
     </tr>
     <tr>
       <th scope="row">Lines:</th>
-      <td>9</td>
-      <td>9</td>
+      <td>11</td>
+      <td>11</td>
       <td class="coverage-high">100.0%</td>
     </tr>
     <tr>
       <th scope="row">Functions:</th>
-      <td>5</td>
-      <td>5</td>
+      <td>7</td>
+      <td>7</td>
       <td class="coverage-high">100.0%</td>
     </tr>
     <tr>
@@ -73,11 +73,13 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l29">SpotLight::SpotLight() (line 29)</a></td><td>called 18 times, returned 18 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l45">SpotLight::setDirection(lin::Vec3 const&amp;) (line 45)</a></td><td>called 18 times, returned 18 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l57">SpotLight::setInnerAngle(double) (line 57)</a></td><td>called 18 times, returned 18 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l71">SpotLight::setOuterAngle(double) (line 71)</a></td><td>called 18 times, returned 18 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l90">SpotLight::~SpotLight() (line 90)</a></td><td>called 18 times, returned 18 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l29">SpotLight::SpotLight() (line 29)</a></td><td>called 158 times, returned 158 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l39">SpotLight::getDirection() const (line 39)</a></td><td>called 78 times, returned 78 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l51">SpotLight::getInnerAngle() const (line 51)</a></td><td>called 78 times, returned 78 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l65">SpotLight::getOuterAngle() const (line 65)</a></td><td>called 105 times, returned 105 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l57">SpotLight::setInnerAngle(double) (line 57)</a></td><td>called 119 times, returned 119 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l71">SpotLight::setOuterAngle(double) (line 71)</a></td><td>called 119 times, returned 119 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l90">SpotLight::~SpotLight() (line 90)</a></td><td>called 158 times, returned 158 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -258,21 +260,21 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="w"> </span><span class="n">m_direction</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0</span><span class="p">};</span></td>
+      <td class="src "><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="n">m_direction</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">-1.0</span><span class="p">};</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l25" href="#l25">25</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="kt">double</span><span class="w">    </span><span class="n">m_inner_angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DEFAULT_SPOT_LIGHT_INNER_ANGLE</span><span class="p">;</span></td>
+      <td class="src "><span class="w">  </span><span class="kt">double</span><span class="w">     </span><span class="n">m_inner_angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DEFAULT_SPOT_LIGHT_INNER_ANGLE</span><span class="p">;</span><span class="w"> </span><span class="c1">// in degrees</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l26" href="#l26">26</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="kt">double</span><span class="w">    </span><span class="n">m_outer_angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DEFAULT_SPOT_LIGHT_OUTER_ANGLE</span><span class="p">;</span></td>
+      <td class="src "><span class="w">  </span><span class="kt">double</span><span class="w">     </span><span class="n">m_outer_angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DEFAULT_SPOT_LIGHT_OUTER_ANGLE</span><span class="p">;</span><span class="w"> </span><span class="c1">// in degrees</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l27" href="#l27">27</a></td>
@@ -292,7 +294,7 @@
       <td class="lineno"><a id="l29" href="#l29">29</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">158</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">SpotLight</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Light</span><span class="p">(</span><span class="n">LightType</span><span class="o">::</span><span class="n">Spot</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w">           </span><span class="c1">///&lt; Constructor with light type.</span></td>
     </tr>
     <tr class="source-line">
@@ -362,8 +364,8 @@
       <td class="lineno"><a id="l39" href="#l39">39</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="w"> </span><span class="nf">getDirection</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_direction</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount coveredLine">78</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="nf">getDirection</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_direction</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l40" href="#l40">40</a></td>
@@ -404,8 +406,8 @@
       <td class="lineno"><a id="l45" href="#l45">45</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setDirection</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">direction</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">direction</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setDirection</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">direction</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l46" href="#l46">46</a></td>
@@ -446,8 +448,8 @@
       <td class="lineno"><a id="l51" href="#l51">51</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getInnerAngle</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_inner_angle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">DEG_TO_RAD</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount coveredLine">78</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getInnerAngle</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_inner_angle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">DEG_TO_RAD</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l52" href="#l52">52</a></td>
@@ -488,21 +490,21 @@
       <td class="lineno"><a id="l57" href="#l57">57</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">119</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setInnerAngle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">inner_angle</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l58" href="#l58">58</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">119</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">m_inner_angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">inner_angle</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_SPOT_LIGHT_ANGLE</span><span class="p">,</span><span class="w"> </span><span class="n">m_outer_angle</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l59" href="#l59">59</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">119</td>
       <td class="src coveredLine"><span class="w">  </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -544,8 +546,8 @@
       <td class="lineno"><a id="l65" href="#l65">65</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getOuterAngle</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_outer_angle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">DEG_TO_RAD</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount coveredLine">105</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getOuterAngle</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_outer_angle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">DEG_TO_RAD</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l66" href="#l66">66</a></td>
@@ -586,21 +588,21 @@
       <td class="lineno"><a id="l71" href="#l71">71</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">119</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setOuterAngle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">outer_angle</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l72" href="#l72">72</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">119</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">m_outer_angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">clamp</span><span class="p">(</span><span class="n">outer_angle</span><span class="p">,</span><span class="w"> </span><span class="n">m_inner_angle</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_SPOT_LIGHT_ANGLE</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l73" href="#l73">73</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">119</td>
       <td class="src coveredLine"><span class="w">  </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -650,7 +652,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="w"> </span><span class="nf">getDirectionFromPoint</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">point</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="p">;</span></td>
+      <td class="src "><span class="w">  </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="nf">getDirectionFromPoint</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">point</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l81" href="#l81">81</a></td>
@@ -706,7 +708,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">ColorRGB</span><span class="w"> </span><span class="nf">getLightFactor</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">point</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">normal</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="p">;</span></td>
+      <td class="src "><span class="w">  </span><span class="n">ColorRGB</span><span class="w"> </span><span class="nf">getLightFactor</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">point</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">lin</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">normal</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l89" href="#l89">89</a></td>
@@ -719,7 +721,7 @@
       <td class="lineno"><a id="l90" href="#l90">90</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">36</td>
+      <td class="linecount coveredLine">316</td>
       <td class="src coveredLine"><span class="w">  </span><span class="o">~</span><span class="n">SpotLight</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default destructor.</span></td>
     </tr>
     <tr class="source-line">

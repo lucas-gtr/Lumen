@@ -18,27 +18,27 @@
 
 namespace RayIntersection {
 
-bool getTriangleIntersection(const Ray& ray, const lin::Vec3& p0, const lin::Vec3& p1, const lin::Vec3& p2,
-                             double& hit_distance, lin::Vec3& bary_coords) {
-  const lin::Vec3 edge1 = p1 - p0;
-  const lin::Vec3 edge2 = p2 - p0;
-  const lin::Vec3 h     = ray.direction.cross(edge2);
-  const double    a     = lin::dot(edge1, h);
+bool getTriangleIntersection(const Ray& ray, const lin::Vec3d& p0, const lin::Vec3d& p1, const lin::Vec3d& p2,
+                             double& hit_distance, lin::Vec3d& bary_coords) {
+  const lin::Vec3d edge1 = p1 - p0;
+  const lin::Vec3d edge2 = p2 - p0;
+  const lin::Vec3d h     = ray.direction.cross(edge2);
+  const double     a     = lin::dot(edge1, h);
 
   if(std::abs(a) < EPSILON) {
     return false;
   }
 
-  const double    f = 1.0 / a;
-  const lin::Vec3 s = ray.origin - p0;
-  const double    u = f * lin::dot(s, h);
+  const double     f = 1.0 / a;
+  const lin::Vec3d s = ray.origin - p0;
+  const double     u = f * lin::dot(s, h);
 
   if(u < 0.0 || u > 1.0) {
     return false;
   }
 
-  const lin::Vec3 q = s.cross(edge1);
-  const double    v = f * lin::dot(ray.direction, q);
+  const lin::Vec3d q = s.cross(edge1);
+  const double     v = f * lin::dot(ray.direction, q);
 
   if(v < 0.0 || u + v > 1.0) {
     return false;
@@ -59,8 +59,8 @@ void processFaceIntersection(const Ray& ray, const Mesh& mesh, const Face& face,
   const Vertex& v1 = mesh.getVertex(face.vertexIndices[1]);
   const Vertex& v2 = mesh.getVertex(face.vertexIndices[2]);
 
-  double    hit_distance = std::numeric_limits<double>::max();
-  lin::Vec3 bary_coords;
+  double     hit_distance = std::numeric_limits<double>::max();
+  lin::Vec3d bary_coords;
 
   if(!getTriangleIntersection(ray, v0.position, v1.position, v2.position, hit_distance, bary_coords)) {
     return;
@@ -71,7 +71,7 @@ void processFaceIntersection(const Ray& ray, const Mesh& mesh, const Face& face,
   }
 }
 
-void updateHitInfoFromBarycentric(RayHitInfo& hit_info, double distance, const lin::Vec3& bary, const Vertex& v0,
+void updateHitInfoFromBarycentric(RayHitInfo& hit_info, double distance, const lin::Vec3d& bary, const Vertex& v0,
                                   const Vertex& v1, const Vertex& v2) {
   hit_info.distance        = distance;
   hit_info.uvCoordinates.u = bary.x * v0.uvCoord.u + bary.y * v1.uvCoord.u + bary.z * v2.uvCoord.u;
@@ -121,20 +121,20 @@ void updateNormalWithTangentSpace(RayHitInfo& hit_info) {
     return;
   }
 
-  const lin::Mat3 tangent_space = lin::Mat3::FromColumns(hit_info.tangent, hit_info.bitangent, hit_info.normal);
+  const lin::Mat3d tangent_space = lin::Mat3d::FromColumns(hit_info.tangent, hit_info.bitangent, hit_info.normal);
 
   const ColorRGB normal_color     = hit_info.material->getNormal(hit_info.uvCoordinates);
-  lin::Vec3      normal_direction = {normal_color.r, normal_color.g, normal_color.b};
-  normal_direction                = (normal_direction * 2) - lin::Vec3(1.0, 1.0, 1.0);
+  lin::Vec3d     normal_direction = {normal_color.r, normal_color.g, normal_color.b};
+  normal_direction                = (normal_direction * 2) - lin::Vec3d(1.0, 1.0, 1.0);
 
   hit_info.normal = (tangent_space * normal_direction).normalized();
 }
 
 Ray transformRayToObjectSpace(const Ray& ray, const Object3D* object) {
-  const lin::Mat4 inv_matrix = object->getInverseMatrix();
+  const lin::Mat4d inv_matrix = object->getInverseMatrix();
 
-  const lin::Vec3 origin    = lin::toVec3((inv_matrix * lin::toVec4(ray.origin)));
-  const lin::Vec3 direction = (inv_matrix.topLeft3x3() * ray.direction).normalized();
+  const lin::Vec3d origin    = lin::toVec3((inv_matrix * lin::toVec4(ray.origin)));
+  const lin::Vec3d direction = (inv_matrix.topLeft3x3() * ray.direction).normalized();
 
   Ray local_ray = Ray::FromDirection(origin, direction);
 
@@ -143,17 +143,17 @@ Ray transformRayToObjectSpace(const Ray& ray, const Object3D* object) {
 
 void transformHitInfoToWorldSpace(RayHitInfo& hit_info, const Ray& local_ray, const Ray& original_ray,
                                   const Object3D* object) {
-  const lin::Vec3 hit_local = local_ray.origin + hit_info.distance * local_ray.direction;
-  const lin::Vec3 hit_world = lin::toVec3((object->getTransformationMatrix() * lin::toVec4(hit_local)));
+  const lin::Vec3d hit_local = local_ray.origin + hit_info.distance * local_ray.direction;
+  const lin::Vec3d hit_world = lin::toVec3((object->getTransformationMatrix() * lin::toVec4(hit_local)));
 
   hit_info.distance = (hit_world - original_ray.origin).length();
   hit_info.hitPoint = hit_world;
-  hit_info.material = object->getMaterial().get();
+  hit_info.material = &object->getMaterial();
 
-  const lin::Mat3 normal_matrix = object->getNormalMatrix();
-  hit_info.normal               = (normal_matrix * hit_info.normal).normalized();
-  hit_info.tangent              = (normal_matrix * hit_info.tangent).normalized();
-  hit_info.bitangent            = (normal_matrix * hit_info.bitangent).normalized();
+  const lin::Mat3d normal_matrix = object->getNormalMatrix();
+  hit_info.normal                = (normal_matrix * hit_info.normal).normalized();
+  hit_info.tangent               = (normal_matrix * hit_info.tangent).normalized();
+  hit_info.bitangent             = (normal_matrix * hit_info.bitangent).normalized();
 }
 
 RayHitInfo getObjectIntersection(const Ray& ray, const Object3D* object) {
@@ -167,13 +167,14 @@ RayHitInfo getObjectIntersection(const Ray& ray, const Object3D* object) {
   return hit_info;
 }
 
-bool getAABBIntersection(const Ray& ray, const lin::Vec3& min_bound, const lin::Vec3& max_bound, double& hit_distance) {
-  const lin::Vec3 inv_dir = ray.direction.cwiseInverse();
-  const lin::Vec3 t0      = lin::cwiseProduct((min_bound - ray.origin), inv_dir);
-  const lin::Vec3 t1      = lin::cwiseProduct((max_bound - ray.origin), inv_dir);
+bool getAABBIntersection(const Ray& ray, const lin::Vec3d& min_bound, const lin::Vec3d& max_bound,
+                         double& hit_distance) {
+  const lin::Vec3d inv_dir = ray.direction.cwiseInverse();
+  const lin::Vec3d t0      = lin::cwiseProduct((min_bound - ray.origin), inv_dir);
+  const lin::Vec3d t1      = lin::cwiseProduct((max_bound - ray.origin), inv_dir);
 
-  const lin::Vec3 t_min = lin::cwiseMin(t0, t1);
-  const lin::Vec3 t_max = lin::cwiseMax(t0, t1);
+  const lin::Vec3d t_min = lin::cwiseMin(t0, t1);
+  const lin::Vec3d t_max = lin::cwiseMax(t0, t1);
 
   const double t_entry = t_min.maxValue();
   const double t_exit  = t_max.minValue();

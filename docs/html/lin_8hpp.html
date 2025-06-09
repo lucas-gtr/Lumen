@@ -86,6 +86,9 @@ $(function() {
   <div class="headertitle"><div class="title">lin.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Linear algebra utility functions for vectors and matrices.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;cmath&gt;</code><br />
 <code>#include &quot;<a class="el" href="Mat3_8hpp_source.html">Core/Math/Mat3.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Mat4_8hpp_source.html">Core/Math/Mat4.hpp</a>&quot;</code><br />
@@ -97,60 +100,67 @@ Include dependency graph for lin.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="lin_8hpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Core_2Math_2lin_8hpp" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2include_2Core_2Math_2lin_8hpp" id="a_2home_2lucasgtr_2lumen_2include_2Core_2Math_2lin_8hpp">
-<area shape="rect" title=" " alt="" coords="176,5,368,45"/>
-<area shape="rect" title=" " alt="" coords="30,313,92,339"/>
-<area shape="poly" title=" " alt="" coords="232,48,178,77,116,120,56,175,31,207,11,241,9,257,13,273,37,303,33,306,9,276,3,258,6,239,27,204,52,171,112,116,175,73,229,43"/>
-<area shape="rect" href="Mat3_8hpp.html" title=" " alt="" coords="546,167,701,192"/>
-<area shape="poly" title=" " alt="" coords="339,43,404,64,473,91,539,124,595,157,592,161,537,129,471,96,402,69,337,48"/>
-<area shape="rect" href="Vec3_8hpp.html" title=" " alt="" coords="409,240,561,265"/>
-<area shape="poly" title=" " alt="" coords="291,44,466,228,463,232,287,47"/>
-<area shape="rect" href="Mat4_8hpp.html" title=" " alt="" coords="688,93,842,119"/>
-<area shape="poly" title=" " alt="" coords="368,39,680,89,679,94,367,45"/>
-<area shape="rect" href="Vec4_8hpp.html" title=" " alt="" coords="233,240,385,265"/>
-<area shape="poly" title=" " alt="" coords="277,45,307,226,302,227,272,46"/>
-<area shape="rect" href="Vec2_8hpp.html" title=" " alt="" coords="57,240,209,265"/>
-<area shape="poly" title=" " alt="" coords="262,47,150,229,145,227,258,44"/>
-<area shape="poly" title=" " alt="" coords="546,185,406,191,244,202,105,219,58,230,34,242,27,255,28,270,44,301,39,303,23,271,22,254,30,238,56,224,104,213,244,197,406,186,546,180"/>
-<area shape="rect" title=" " alt="" coords="737,240,793,265"/>
-<area shape="poly" title=" " alt="" coords="647,190,731,231,729,236,645,194"/>
-<area shape="rect" title=" " alt="" coords="572,313,670,339"/>
-<area shape="poly" title=" " alt="" coords="639,191,664,223,672,244,670,266,659,287,646,305,641,302,655,284,665,265,666,245,659,226,634,194"/>
-<area shape="rect" title=" " alt="" coords="818,240,928,265"/>
-<area shape="poly" title=" " alt="" coords="664,189,820,234,819,239,663,195"/>
-<area shape="rect" title=" " alt="" coords="318,313,398,339"/>
-<area shape="poly" title=" " alt="" coords="622,194,606,230,592,250,574,268,511,290,413,315,411,309,509,284,572,263,588,247,601,227,617,191"/>
-<area shape="rect" title=" " alt="" coords="148,313,235,339"/>
-<area shape="poly" title=" " alt="" coords="546,186,409,192,252,202,116,219,71,230,47,242,40,253,40,264,47,273,59,283,94,299,135,311,134,316,92,304,56,287,43,277,35,265,35,252,43,238,69,225,115,214,251,197,409,186,546,180"/>
-<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="422,313,548,339"/>
-<area shape="poly" title=" " alt="" coords="629,192,631,227,628,248,619,267,591,294,556,311,553,306,588,289,615,264,623,246,626,227,623,192"/>
-<area shape="poly" title=" " alt="" coords="603,194,521,236,519,231,600,190"/>
-<area shape="rect" title=" " alt="" coords="395,387,466,412"/>
-<area shape="poly" title=" " alt="" coords="478,341,450,377,445,374,474,337"/>
-<area shape="rect" title=" " alt="" coords="490,387,587,412"/>
-<area shape="poly" title=" " alt="" coords="496,337,524,374,519,377,492,341"/>
-<area shape="poly" title=" " alt="" coords="417,268,107,320,106,315,416,263"/>
-<area shape="poly" title=" " alt="" coords="508,263,588,305,586,309,506,268"/>
-<area shape="poly" title=" " alt="" coords="466,268,392,309,390,304,463,263"/>
-<area shape="poly" title=" " alt="" coords="438,268,249,314,248,308,437,263"/>
-<area shape="poly" title=" " alt="" coords="488,266,488,300,482,300,482,266"/>
-<area shape="poly" title=" " alt="" coords="687,112,522,120,320,141,223,158,136,180,67,208,41,224,22,242,16,256,19,271,40,302,36,305,14,273,11,255,17,238,38,220,64,203,134,175,222,153,320,136,521,115,687,106"/>
-<area shape="poly" title=" " alt="" coords="743,121,660,163,658,158,741,116"/>
-<area shape="poly" title=" " alt="" coords="768,119,768,226,762,226,762,119"/>
-<area shape="poly" title=" " alt="" coords="843,111,900,118,957,129,1006,144,1025,154,1038,165,1054,191,1059,216,1054,242,1038,267,1013,285,977,299,933,309,883,317,777,326,684,328,684,323,777,320,882,312,932,304,976,294,1011,280,1034,264,1049,240,1054,216,1049,193,1034,168,1022,158,1004,149,956,134,899,124,842,116"/>
-<area shape="poly" title=" " alt="" coords="776,118,858,227,854,230,772,121"/>
-<area shape="poly" title=" " alt="" coords="797,116,855,141,915,177,938,197,953,220,956,243,943,267,931,275,912,282,857,292,700,304,412,316,412,311,699,299,856,286,911,276,929,270,939,264,950,242,948,222,934,201,912,181,853,146,795,121"/>
-<area shape="poly" title=" " alt="" coords="843,116,929,135,964,148,987,165,1003,191,1009,217,1003,242,987,267,973,279,955,289,910,303,854,311,793,314,667,314,561,316,561,311,667,309,793,309,854,305,908,298,953,284,970,275,983,264,999,240,1003,217,998,193,983,168,962,153,928,140,842,121"/>
-<area shape="poly" title=" " alt="" coords="715,121,630,142,535,169,435,204,350,237,348,232,433,199,533,164,629,137,713,116"/>
-<area shape="poly" title=" " alt="" coords="270,268,106,315,105,309,268,263"/>
-<area shape="poly" title=" " alt="" coords="360,263,559,308,558,313,358,268"/>
-<area shape="poly" title=" " alt="" coords="319,264,345,301,340,304,315,267"/>
-<area shape="poly" title=" " alt="" coords="291,268,224,308,221,304,289,263"/>
-<area shape="poly" title=" " alt="" coords="338,263,444,306,442,310,336,268"/>
-<area shape="poly" title=" " alt="" coords="123,268,84,306,81,302,119,264"/>
-<area shape="poly" title=" " alt="" coords="210,262,558,311,557,316,209,267"/>
-<area shape="poly" title=" " alt="" coords="170,263,310,307,308,312,168,268"/>
-<area shape="poly" title=" " alt="" coords="145,264,176,301,171,305,141,267"/>
-<area shape="poly" title=" " alt="" coords="190,263,415,308,414,313,189,268"/>
+<area shape="rect" title="Linear algebra utility functions for vectors and matrices." alt="" coords="177,5,369,45"/>
+<area shape="rect" title=" " alt="" coords="15,313,78,339"/>
+<area shape="poly" title=" " alt="" coords="232,48,178,78,116,120,56,175,31,207,11,241,8,256,11,272,28,301,23,304,6,274,3,256,6,239,27,204,52,171,112,116,175,73,230,43"/>
+<area shape="rect" href="Mat3_8hpp.html" title="Header file for the Mat3 class, representing a 3x3 matrix." alt="" coords="637,167,792,192"/>
+<area shape="poly" title=" " alt="" coords="328,43,669,160,667,165,327,48"/>
+<area shape="rect" href="Vec3_8hpp.html" title="Header file for the Vec3 class, representing a 3D vector." alt="" coords="410,240,562,265"/>
+<area shape="poly" title=" " alt="" coords="293,44,468,228,464,232,289,47"/>
+<area shape="rect" href="Mat4_8hpp.html" title="Header file for the Mat3 class, representing a 3x3 matrix." alt="" coords="729,93,884,119"/>
+<area shape="poly" title=" " alt="" coords="370,38,716,89,715,94,369,43"/>
+<area shape="rect" href="Vec4_8hpp.html" title="Header file for the Vec4 class, representing a 4D vector." alt="" coords="234,240,386,265"/>
+<area shape="poly" title=" " alt="" coords="279,45,309,226,303,227,273,46"/>
+<area shape="rect" href="Vec2_8hpp.html" title="Header file for the Vec2 class, representing a 2D vector." alt="" coords="58,240,210,265"/>
+<area shape="poly" title=" " alt="" coords="264,47,151,229,146,227,259,44"/>
+<area shape="poly" title=" " alt="" coords="637,184,477,189,287,198,122,216,65,228,47,235,36,242,29,254,28,269,36,300,31,302,23,270,24,253,32,238,44,230,64,223,121,210,287,193,476,183,637,179"/>
+<area shape="rect" title=" " alt="" coords="938,240,994,265"/>
+<area shape="poly" title=" " alt="" coords="756,189,926,237,924,242,754,195"/>
+<area shape="rect" title=" " alt="" coords="605,313,704,339"/>
+<area shape="poly" title=" " alt="" coords="721,192,727,226,727,246,722,266,707,289,687,307,684,303,703,286,717,264,722,246,722,226,716,193"/>
+<area shape="rect" title=" " alt="" coords="1019,240,1130,265"/>
+<area shape="poly" title=" " alt="" coords="773,189,1005,235,1004,240,772,195"/>
+<area shape="rect" title=" " alt="" coords="288,313,368,339"/>
+<area shape="poly" title=" " alt="" coords="707,194,671,231,647,251,619,268,558,292,505,302,451,306,382,316,381,310,450,301,505,296,556,287,617,263,644,247,668,227,703,190"/>
+<area shape="rect" title=" " alt="" coords="134,313,220,339"/>
+<area shape="poly" title=" " alt="" coords="637,184,479,189,294,199,132,216,77,228,48,242,42,252,42,262,47,271,56,279,86,295,121,308,119,313,84,300,53,284,43,274,36,263,37,251,44,238,75,223,131,211,293,193,479,184,637,179"/>
+<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="789,240,914,265"/>
+<area shape="poly" title=" " alt="" coords="738,190,818,231,816,236,735,194"/>
+<area shape="rect" href="Alignment_8hpp.html" title="Defines alignment constants for vector and matrix types." alt="" coords="392,313,580,339"/>
+<area shape="poly" title=" " alt="" coords="714,193,699,229,687,250,671,267,626,295,577,313,575,307,623,290,667,263,682,247,694,227,709,191"/>
+<area shape="poly" title=" " alt="" coords="678,195,537,238,536,233,677,189"/>
+<area shape="rect" title=" " alt="" coords="639,387,710,412"/>
+<area shape="poly" title=" " alt="" coords="856,266,855,302,849,322,839,340,814,363,784,379,753,389,724,396,723,391,752,384,782,374,811,358,835,337,844,320,849,301,850,266"/>
+<area shape="rect" title=" " alt="" coords="728,313,826,339"/>
+<area shape="poly" title=" " alt="" coords="841,267,801,306,797,302,838,263"/>
+<area shape="poly" title=" " alt="" coords="517,336,632,379,630,384,515,341"/>
+<area shape="poly" title=" " alt="" coords="416,268,91,320,90,315,415,263"/>
+<area shape="poly" title=" " alt="" coords="514,263,615,305,613,310,512,268"/>
+<area shape="poly" title=" " alt="" coords="462,268,367,310,365,305,460,263"/>
+<area shape="poly" title=" " alt="" coords="437,268,234,314,233,309,436,263"/>
+<area shape="poly" title=" " alt="" coords="489,266,489,300,484,300,484,266"/>
+<area shape="poly" title=" " alt="" coords="729,111,555,118,450,126,342,138,238,155,145,177,71,206,43,223,23,242,17,255,18,270,31,301,27,303,12,271,12,254,19,238,40,219,69,201,143,172,237,150,341,133,449,121,555,113,729,106"/>
+<area shape="poly" title=" " alt="" coords="793,121,742,160,738,156,790,117"/>
+<area shape="poly" title=" " alt="" coords="821,117,945,229,942,233,818,121"/>
+<area shape="poly" title=" " alt="" coords="884,105,968,109,1058,119,1138,137,1168,149,1188,165,1205,191,1211,216,1205,242,1188,267,1173,280,1153,291,1102,306,1041,313,973,316,833,314,717,316,717,311,833,309,972,310,1040,308,1101,300,1151,286,1170,276,1184,264,1200,240,1205,216,1200,193,1184,168,1165,154,1136,142,1058,124,967,115,883,111"/>
+<area shape="poly" title=" " alt="" coords="829,117,1042,231,1040,236,826,121"/>
+<area shape="poly" title=" " alt="" coords="730,121,676,139,650,152,627,169,616,180,609,192,603,217,596,243,588,255,576,268,502,288,382,316,381,310,500,283,573,263,584,252,591,241,597,216,604,190,611,177,623,165,647,148,674,134,729,116"/>
+<area shape="poly" title=" " alt="" coords="884,114,987,132,1041,145,1090,162,1129,182,1154,206,1160,220,1161,235,1155,251,1143,267,1131,275,1111,282,1054,293,891,306,594,316,594,311,891,301,1053,287,1110,277,1128,270,1139,263,1150,248,1156,234,1155,221,1150,209,1126,186,1088,166,1040,150,986,137,883,119"/>
+<area shape="poly" title=" " alt="" coords="761,121,582,169,359,238,357,233,580,164,760,116"/>
+<area shape="rect" href="MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="1256,167,1439,192"/>
+<area shape="poly" title=" " alt="" coords="884,115,1247,162,1247,168,883,120"/>
+<area shape="poly" title=" " alt="" coords="268,268,92,315,90,310,267,263"/>
+<area shape="poly" title=" " alt="" coords="366,263,592,309,591,314,365,268"/>
+<area shape="poly" title=" " alt="" coords="316,265,324,300,319,301,310,266"/>
+<area shape="poly" title=" " alt="" coords="290,268,212,309,209,304,288,263"/>
+<area shape="poly" title=" " alt="" coords="339,263,446,306,444,310,338,268"/>
+<area shape="rect" title=" " alt="" coords="1308,240,1387,265"/>
+<area shape="poly" title=" " alt="" coords="1350,192,1350,226,1345,226,1345,192"/>
+<area shape="poly" title=" " alt="" coords="122,267,73,307,70,302,118,263"/>
+<area shape="poly" title=" " alt="" coords="211,261,592,311,591,316,210,266"/>
+<area shape="poly" title=" " alt="" coords="166,263,284,306,282,311,164,268"/>
+<area shape="poly" title=" " alt="" coords="144,264,165,300,161,303,139,267"/>
+<area shape="poly" title=" " alt="" coords="191,263,417,308,416,313,190,268"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -158,25 +168,27 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="lin_8hpp__dep__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Core_2Math_2lin_8hppdep" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2include_2Core_2Math_2lin_8hppdep" id="a_2home_2lucasgtr_2lumen_2include_2Core_2Math_2lin_8hppdep">
-<area shape="rect" title=" " alt="" coords="876,5,1068,45"/>
+<area shape="rect" title="Linear algebra utility functions for vectors and matrices." alt="" coords="1011,5,1203,45"/>
 <area shape="rect" href="BVHBuilder_8cpp.html" title=" " alt="" coords="5,93,187,133"/>
-<area shape="poly" title=" " alt="" coords="862,36,563,57,381,75,199,96,188,98,187,92,198,91,380,69,562,52,862,30"/>
+<area shape="poly" title=" " alt="" coords="997,34,641,54,420,72,199,96,188,98,187,92,198,91,420,67,641,49,997,28"/>
 <area shape="rect" href="Transform_8cpp.html" title=" " alt="" coords="211,93,386,133"/>
-<area shape="poly" title=" " alt="" coords="862,40,647,63,398,96,387,98,386,92,397,91,646,58,862,34"/>
-<area shape="rect" href="Mesh_8cpp.html" title=" " alt="" coords="410,93,590,133"/>
-<area shape="poly" title=" " alt="" coords="863,49,603,96,591,98,590,93,602,91,862,44"/>
-<area shape="rect" href="DirectionalLight_8cpp.html" title=" " alt="" coords="615,93,849,133"/>
-<area shape="poly" title=" " alt="" coords="908,52,785,96,784,91,906,47"/>
-<area shape="rect" href="PointLight_8cpp.html" title=" " alt="" coords="873,93,1071,133"/>
-<area shape="poly" title=" " alt="" coords="975,59,975,93,969,93,969,59"/>
-<area shape="rect" href="SpotLight_8cpp.html" title=" " alt="" coords="1095,93,1289,133"/>
-<area shape="poly" title=" " alt="" coords="1034,48,1145,91,1143,96,1032,53"/>
-<area shape="rect" href="CameraRayEmitter_8cpp.html" title=" " alt="" coords="1313,93,1583,133"/>
-<area shape="poly" title=" " alt="" coords="1082,44,1344,91,1343,96,1081,49"/>
-<area shape="rect" href="RayIntersection_8cpp.html" title=" " alt="" coords="1607,93,1855,133"/>
-<area shape="poly" title=" " alt="" coords="1082,35,1595,91,1607,92,1606,97,1594,96,1081,40"/>
-<area shape="rect" href="Object3D_8cpp.html" title=" " alt="" coords="1879,93,2107,133"/>
-<area shape="poly" title=" " alt="" coords="1082,30,1432,52,1649,69,1867,91,1879,92,1879,97,1866,96,1648,75,1431,57,1081,35"/>
+<area shape="poly" title=" " alt="" coords="997,36,724,59,561,75,398,96,387,98,386,92,397,91,560,70,724,53,997,31"/>
+<area shape="rect" href="CameraGL_8cpp.html" title=" " alt="" coords="410,93,641,133"/>
+<area shape="poly" title=" " alt="" coords="998,45,652,96,641,98,641,92,652,91,997,40"/>
+<area shape="rect" href="Mesh_8cpp.html" title=" " alt="" coords="665,93,845,133"/>
+<area shape="poly" title=" " alt="" coords="1017,51,832,96,831,91,1016,46"/>
+<area shape="rect" href="DirectionalLight_8cpp.html" title=" " alt="" coords="869,93,1104,133"/>
+<area shape="poly" title=" " alt="" coords="1070,56,1015,95,1012,91,1067,51"/>
+<area shape="rect" href="PointLight_8cpp.html" title=" " alt="" coords="1128,93,1325,133"/>
+<area shape="poly" title=" " alt="" coords="1146,51,1202,91,1199,95,1143,56"/>
+<area shape="rect" href="SpotLight_8cpp.html" title=" " alt="" coords="1350,93,1543,133"/>
+<area shape="poly" title=" " alt="" coords="1195,46,1373,91,1372,96,1194,51"/>
+<area shape="rect" href="CameraRayEmitter_8cpp.html" title=" " alt="" coords="1568,93,1837,133"/>
+<area shape="poly" title=" " alt="" coords="1217,40,1572,91,1572,96,1216,45"/>
+<area shape="rect" href="RayIntersection_8cpp.html" title=" " alt="" coords="1861,93,2109,133"/>
+<area shape="poly" title=" " alt="" coords="1217,32,1504,56,1850,91,1862,92,1861,97,1849,96,1503,61,1216,38"/>
+<area shape="rect" href="Object3D_8cpp.html" title=" " alt="" coords="2134,93,2362,133"/>
+<area shape="poly" title=" " alt="" coords="1216,28,1616,49,1868,67,2122,91,2134,92,2133,97,2121,96,1867,73,1615,55,1216,34"/>
 </map>
 </div>
 </div>
@@ -185,52 +197,95 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacelin" id="r_namespacelin"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html">lin</a></td></tr>
+<tr class="memdesc:namespacelin"><td class="mdescLeft">&#160;</td><td class="mdescRight">Namespace for linear algebra utility functions and classes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acb472d991aa357073c4d492d98c9b57b" id="r_acb472d991aa357073c4d492d98c9b57b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#acb472d991aa357073c4d492d98c9b57b">lin::toVec3</a> (const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;vec)</td></tr>
-<tr class="separator:acb472d991aa357073c4d492d98c9b57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd49915b3621035ebd8028c001b15290" id="r_abd49915b3621035ebd8028c001b15290"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#abd49915b3621035ebd8028c001b15290">lin::toVec4</a> (const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;vec)</td></tr>
-<tr class="separator:abd49915b3621035ebd8028c001b15290"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad676d874ae355da7bd3a8626610e7d0b" id="r_ad676d874ae355da7bd3a8626610e7d0b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#ad676d874ae355da7bd3a8626610e7d0b">lin::dot</a> (const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;a, const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;b)</td></tr>
-<tr class="separator:ad676d874ae355da7bd3a8626610e7d0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac075837ae06dc9c26c2fae3fa5715b96" id="r_ac075837ae06dc9c26c2fae3fa5715b96"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#ac075837ae06dc9c26c2fae3fa5715b96">lin::dot</a> (const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;a, const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;b)</td></tr>
-<tr class="separator:ac075837ae06dc9c26c2fae3fa5715b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec3620ae00a246fa17fe88f00010d9f3" id="r_aec3620ae00a246fa17fe88f00010d9f3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#aec3620ae00a246fa17fe88f00010d9f3">lin::dot</a> (const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;a, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;b)</td></tr>
-<tr class="separator:aec3620ae00a246fa17fe88f00010d9f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e04bbcd0c256025afed9d575768b995" id="r_a8e04bbcd0c256025afed9d575768b995"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a8e04bbcd0c256025afed9d575768b995">lin::cwiseMin</a> (const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;a, const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;b)</td></tr>
-<tr class="separator:a8e04bbcd0c256025afed9d575768b995"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ad7a74379cabfcf2c43b94c9f6fabed" id="r_a8ad7a74379cabfcf2c43b94c9f6fabed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a8ad7a74379cabfcf2c43b94c9f6fabed">lin::cwiseMin</a> (const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;a, const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;b)</td></tr>
-<tr class="separator:a8ad7a74379cabfcf2c43b94c9f6fabed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae074cfa8b2f7ddd30ebbc84cdb2251a3" id="r_ae074cfa8b2f7ddd30ebbc84cdb2251a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#ae074cfa8b2f7ddd30ebbc84cdb2251a3">lin::cwiseMin</a> (const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;a, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;b)</td></tr>
-<tr class="separator:ae074cfa8b2f7ddd30ebbc84cdb2251a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a652800f040aa7707a3b41ba6a63d902f" id="r_a652800f040aa7707a3b41ba6a63d902f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a652800f040aa7707a3b41ba6a63d902f">lin::cwiseMax</a> (const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;a, const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;b)</td></tr>
-<tr class="separator:a652800f040aa7707a3b41ba6a63d902f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1dd3835c378b970eb8ef43814299e28" id="r_ac1dd3835c378b970eb8ef43814299e28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#ac1dd3835c378b970eb8ef43814299e28">lin::cwiseMax</a> (const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;a, const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;b)</td></tr>
-<tr class="separator:ac1dd3835c378b970eb8ef43814299e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb7f64fc35a28d0f507d860dbf8c998e" id="r_adb7f64fc35a28d0f507d860dbf8c998e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#adb7f64fc35a28d0f507d860dbf8c998e">lin::cwiseMax</a> (const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;a, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;b)</td></tr>
-<tr class="separator:adb7f64fc35a28d0f507d860dbf8c998e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac811f860594b1952a749d8879923714a" id="r_ac811f860594b1952a749d8879923714a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#ac811f860594b1952a749d8879923714a">lin::cwiseProduct</a> (const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;a, const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;b)</td></tr>
-<tr class="separator:ac811f860594b1952a749d8879923714a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b87349faaa033e42ddae02784c27bc0" id="r_a4b87349faaa033e42ddae02784c27bc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a4b87349faaa033e42ddae02784c27bc0">lin::cwiseProduct</a> (const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;a, const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;b)</td></tr>
-<tr class="separator:a4b87349faaa033e42ddae02784c27bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a223b85c1ef771cc05fc6aaf0fbe7a759" id="r_a223b85c1ef771cc05fc6aaf0fbe7a759"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a223b85c1ef771cc05fc6aaf0fbe7a759">lin::cwiseProduct</a> (const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;a, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;b)</td></tr>
-<tr class="separator:a223b85c1ef771cc05fc6aaf0fbe7a759"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9e3a0602405a3d35c240a12d59c3d72" id="r_aa9e3a0602405a3d35c240a12d59c3d72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#aa9e3a0602405a3d35c240a12d59c3d72">lin::operator*</a> (double scalar, const <a class="el" href="structlin_1_1Vec2.html">Vec2</a> &amp;vec)</td></tr>
-<tr class="separator:aa9e3a0602405a3d35c240a12d59c3d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e36b6e9fbb3c8e2e42a22db65657ba0" id="r_a3e36b6e9fbb3c8e2e42a22db65657ba0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a3e36b6e9fbb3c8e2e42a22db65657ba0">lin::operator*</a> (double scalar, const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;vec)</td></tr>
-<tr class="separator:a3e36b6e9fbb3c8e2e42a22db65657ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dabc534e73440440b3ef5a4d2bd471d" id="r_a1dabc534e73440440b3ef5a4d2bd471d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a1dabc534e73440440b3ef5a4d2bd471d">lin::operator*</a> (double scalar, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;vec)</td></tr>
-<tr class="separator:a1dabc534e73440440b3ef5a4d2bd471d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd4637554633656de95656e673949a75" id="r_abd4637554633656de95656e673949a75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#abd4637554633656de95656e673949a75">lin::operator*</a> (const <a class="el" href="structlin_1_1Mat3.html">Mat3</a> &amp;mat, const <a class="el" href="structlin_1_1Vec3.html">Vec3</a> &amp;vec)</td></tr>
-<tr class="separator:abd4637554633656de95656e673949a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7804b396ab2119b343f70ca408f912d7" id="r_a7804b396ab2119b343f70ca408f912d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#a7804b396ab2119b343f70ca408f912d7">lin::operator*</a> (const <a class="el" href="structlin_1_1Mat4.html">Mat4</a> &amp;mat, const <a class="el" href="structlin_1_1Vec4.html">Vec4</a> &amp;vec)</td></tr>
-<tr class="separator:a7804b396ab2119b343f70ca408f912d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae101af03801f58c67f5d354c1d13f15f" id="r_ae101af03801f58c67f5d354c1d13f15f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">Mat3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelin.html#ae101af03801f58c67f5d354c1d13f15f">lin::getRotationMatrix</a> (double x_angle, double y_angle, double z_angle)</td></tr>
-<tr class="separator:ae101af03801f58c67f5d354c1d13f15f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad812c22b70f03b9b7afcaa4ba84e8ad6" id="r_ad812c22b70f03b9b7afcaa4ba84e8ad6"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:ad812c22b70f03b9b7afcaa4ba84e8ad6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#ad812c22b70f03b9b7afcaa4ba84e8ad6">lin::toVec3</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">vec</a>)</td></tr>
+<tr class="memdesc:ad812c22b70f03b9b7afcaa4ba84e8ad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> to a <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a>.  <br /></td></tr>
+<tr class="separator:ad812c22b70f03b9b7afcaa4ba84e8ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79a2db24d1210626f769acaec7eac11e" id="r_a79a2db24d1210626f769acaec7eac11e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a79a2db24d1210626f769acaec7eac11e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a79a2db24d1210626f769acaec7eac11e">lin::toVec4</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">vec</a>)</td></tr>
+<tr class="memdesc:a79a2db24d1210626f769acaec7eac11e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> to a <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> with w set to 1.  <br /></td></tr>
+<tr class="separator:a79a2db24d1210626f769acaec7eac11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3748bd4a6e4bbf1b42a705b37308d9d" id="r_ae3748bd4a6e4bbf1b42a705b37308d9d"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:ae3748bd4a6e4bbf1b42a705b37308d9d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#ae3748bd4a6e4bbf1b42a705b37308d9d">lin::dot</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:ae3748bd4a6e4bbf1b42a705b37308d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a dot product between two <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vectors.  <br /></td></tr>
+<tr class="separator:ae3748bd4a6e4bbf1b42a705b37308d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4731f249aa7452f1632867d49e67edca" id="r_a4731f249aa7452f1632867d49e67edca"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a4731f249aa7452f1632867d49e67edca"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a4731f249aa7452f1632867d49e67edca">lin::dot</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:a4731f249aa7452f1632867d49e67edca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a dot product between two <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vectors.  <br /></td></tr>
+<tr class="separator:a4731f249aa7452f1632867d49e67edca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45a641f88e72e104c9dbd2bf1f28308e" id="r_a45a641f88e72e104c9dbd2bf1f28308e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a45a641f88e72e104c9dbd2bf1f28308e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">T</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a45a641f88e72e104c9dbd2bf1f28308e">lin::dot</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:a45a641f88e72e104c9dbd2bf1f28308e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs a dot product between two <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vectors.  <br /></td></tr>
+<tr class="separator:a45a641f88e72e104c9dbd2bf1f28308e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6882492e6781848d185cf5ee15f3cd0e" id="r_a6882492e6781848d185cf5ee15f3cd0e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a6882492e6781848d185cf5ee15f3cd0e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a6882492e6781848d185cf5ee15f3cd0e">lin::cwiseMin</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:a6882492e6781848d185cf5ee15f3cd0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum value of two <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vectors element-wise.  <br /></td></tr>
+<tr class="separator:a6882492e6781848d185cf5ee15f3cd0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f75088c17996c5e7d726887e53ff01b" id="r_a0f75088c17996c5e7d726887e53ff01b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a0f75088c17996c5e7d726887e53ff01b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a0f75088c17996c5e7d726887e53ff01b">lin::cwiseMin</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:a0f75088c17996c5e7d726887e53ff01b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum value of two <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vectors element-wise.  <br /></td></tr>
+<tr class="separator:a0f75088c17996c5e7d726887e53ff01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc31b80710fd5a587c0a7a3e91f7bc30" id="r_acc31b80710fd5a587c0a7a3e91f7bc30"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:acc31b80710fd5a587c0a7a3e91f7bc30"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#acc31b80710fd5a587c0a7a3e91f7bc30">lin::cwiseMin</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:acc31b80710fd5a587c0a7a3e91f7bc30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum value of two <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vectors element-wise.  <br /></td></tr>
+<tr class="separator:acc31b80710fd5a587c0a7a3e91f7bc30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e94ac410ef6bc1752ae67168155c59" id="r_a34e94ac410ef6bc1752ae67168155c59"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a34e94ac410ef6bc1752ae67168155c59"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a34e94ac410ef6bc1752ae67168155c59">lin::cwiseMax</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:a34e94ac410ef6bc1752ae67168155c59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum value of two <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vectors element-wise.  <br /></td></tr>
+<tr class="separator:a34e94ac410ef6bc1752ae67168155c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa37bb6bdf16554687b0f24dc9da2634f" id="r_aa37bb6bdf16554687b0f24dc9da2634f"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:aa37bb6bdf16554687b0f24dc9da2634f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#aa37bb6bdf16554687b0f24dc9da2634f">lin::cwiseMax</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:aa37bb6bdf16554687b0f24dc9da2634f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum value of two <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vectors element-wise.  <br /></td></tr>
+<tr class="separator:aa37bb6bdf16554687b0f24dc9da2634f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0545e363fbefa63512094843c1bfb14" id="r_ae0545e363fbefa63512094843c1bfb14"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:ae0545e363fbefa63512094843c1bfb14"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#ae0545e363fbefa63512094843c1bfb14">lin::cwiseMax</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:ae0545e363fbefa63512094843c1bfb14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum value of two <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vectors element-wise.  <br /></td></tr>
+<tr class="separator:ae0545e363fbefa63512094843c1bfb14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad31a10371f0774ebd1daf93168ec42f2" id="r_ad31a10371f0774ebd1daf93168ec42f2"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:ad31a10371f0774ebd1daf93168ec42f2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#ad31a10371f0774ebd1daf93168ec42f2">lin::cwiseProduct</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:ad31a10371f0774ebd1daf93168ec42f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the element-wise product of two <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vectors.  <br /></td></tr>
+<tr class="separator:ad31a10371f0774ebd1daf93168ec42f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab80bc0f752bc9571a4ab2c4cad4d4cd4" id="r_ab80bc0f752bc9571a4ab2c4cad4d4cd4"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:ab80bc0f752bc9571a4ab2c4cad4d4cd4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#ab80bc0f752bc9571a4ab2c4cad4d4cd4">lin::cwiseProduct</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:ab80bc0f752bc9571a4ab2c4cad4d4cd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the element-wise product of two <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vectors.  <br /></td></tr>
+<tr class="separator:ab80bc0f752bc9571a4ab2c4cad4d4cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fb1c08002f522b7b93325581ead10e1" id="r_a5fb1c08002f522b7b93325581ead10e1"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a5fb1c08002f522b7b93325581ead10e1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a5fb1c08002f522b7b93325581ead10e1">lin::cwiseProduct</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;a, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;b)</td></tr>
+<tr class="memdesc:a5fb1c08002f522b7b93325581ead10e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the element-wise product of two <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vectors.  <br /></td></tr>
+<tr class="separator:a5fb1c08002f522b7b93325581ead10e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a28cfc93999695b7e7dd7b408094022" id="r_a2a28cfc93999695b7e7dd7b408094022"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a2a28cfc93999695b7e7dd7b408094022"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a2a28cfc93999695b7e7dd7b408094022">lin::operator*</a> (<a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">scalar</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec2.html">Vec2</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">vec</a>)</td></tr>
+<tr class="memdesc:a2a28cfc93999695b7e7dd7b408094022"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the product of a <a class="el" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2).">Vec2</a> vector and a scalar.  <br /></td></tr>
+<tr class="separator:a2a28cfc93999695b7e7dd7b408094022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7cb3fc14eb7831ecc003084f93334b6" id="r_af7cb3fc14eb7831ecc003084f93334b6"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:af7cb3fc14eb7831ecc003084f93334b6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#af7cb3fc14eb7831ecc003084f93334b6">lin::operator*</a> (<a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">scalar</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">vec</a>)</td></tr>
+<tr class="memdesc:af7cb3fc14eb7831ecc003084f93334b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the product of a <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector and a scalar.  <br /></td></tr>
+<tr class="separator:af7cb3fc14eb7831ecc003084f93334b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c1b3e465ad1e8141989e9f6a194a47c" id="r_a5c1b3e465ad1e8141989e9f6a194a47c"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a5c1b3e465ad1e8141989e9f6a194a47c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a5c1b3e465ad1e8141989e9f6a194a47c">lin::operator*</a> (<a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">scalar</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">vec</a>)</td></tr>
+<tr class="memdesc:a5c1b3e465ad1e8141989e9f6a194a47c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the product of a <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector and a scalar.  <br /></td></tr>
+<tr class="separator:a5c1b3e465ad1e8141989e9f6a194a47c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82f1b94df86d8d9348fd6eb562d624d1" id="r_a82f1b94df86d8d9348fd6eb562d624d1"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:a82f1b94df86d8d9348fd6eb562d624d1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#a82f1b94df86d8d9348fd6eb562d624d1">lin::operator*</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat3.html">Mat3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">mat</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec3.html">Vec3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">vec</a>)</td></tr>
+<tr class="memdesc:a82f1b94df86d8d9348fd6eb562d624d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies a <a class="el" href="structlin_1_1Mat3.html" title="Generic 3x3 matrix class (row-major).">Mat3</a> matrix vy a <a class="el" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3).">Vec3</a> vector.  <br /></td></tr>
+<tr class="separator:a82f1b94df86d8d9348fd6eb562d624d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb58de3fa001fec291612bd253c63237" id="r_aeb58de3fa001fec291612bd253c63237"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:aeb58de3fa001fec291612bd253c63237"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#aeb58de3fa001fec291612bd253c63237">lin::operator*</a> (<a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Mat4.html">Mat4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">mat</a>, <a class="el" href="structlin_1_1Mat3.html">const</a> <a class="el" href="structlin_1_1Vec4.html">Vec4</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; &amp;<a class="el" href="structlin_1_1Mat3.html">vec</a>)</td></tr>
+<tr class="memdesc:aeb58de3fa001fec291612bd253c63237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies a <a class="el" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row-major).">Mat4</a> matrix by a <a class="el" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4).">Vec4</a> vector.  <br /></td></tr>
+<tr class="separator:aeb58de3fa001fec291612bd253c63237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9573139e3a64729fe580dbe4ac37bdc" id="r_ad9573139e3a64729fe580dbe4ac37bdc"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="structlin_1_1Mat3.html">typename</a> <a class="el" href="structlin_1_1Mat3.html">T</a> &gt; </td></tr>
+<tr class="memitem:ad9573139e3a64729fe580dbe4ac37bdc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structlin_1_1Mat3.html">Mat3</a>&lt; <a class="el" href="structlin_1_1Mat3.html">T</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacelin.html#ad9573139e3a64729fe580dbe4ac37bdc">lin::getRotationMatrix</a> (<a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">x_angle</a>, <a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">y_angle</a>, <a class="el" href="structlin_1_1Mat3.html">T</a> <a class="el" href="structlin_1_1Mat3.html">z_angle</a>)</td></tr>
+<tr class="memdesc:ad9573139e3a64729fe580dbe4ac37bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a rotation matrix for the given angles around the x, y, and z axes.  <br /></td></tr>
+<tr class="separator:ad9573139e3a64729fe580dbe4ac37bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Linear algebra utility functions for vectors and matrices. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8

@@ -18,7 +18,7 @@
  */
 class DirectionalLight : public Light {
 private:
-  lin::Vec3 m_direction = {0.0, 0.0, -1.0}; ///< Direction vector of the light.
+  lin::Vec3d m_direction = {0.0, 0.0, -1.0}; ///< Direction vector of the light.
 
 public:
   DirectionalLight() : Light(LightType::Directional) {}           ///< Constructor with light type.
@@ -31,13 +31,13 @@ public:
    * @brief Gets the direction of the directional light.
    * @return The direction vector of the light.
    */
-  lin::Vec3 getDirection() const;
+  lin::Vec3d getDirection() const;
 
   /**
    * @brief Sets the direction of the directional light.
    * @param direction The new direction vector of the light.
    */
-  void setDirection(const lin::Vec3& direction);
+  void setDirection(const lin::Vec3d& direction);
 
   /**
    * @brief Gets the direction of the light from a given point.
@@ -46,7 +46,7 @@ public:
    * This function always returns the same direction vector,
    * as the light is directional and does not depend on the point.
    */
-  lin::Vec3 getDirectionFromPoint(const lin::Vec3& point) const override;
+  lin::Vec3d getDirectionFromPoint(const lin::Vec3d& point) const override;
 
   /**
    * @brief Gets the light factor at a given point and normal.
@@ -54,7 +54,7 @@ public:
    * @param normal The normal vector at the point.
    * @return The light factor at the given point and normal.
    */
-  ColorRGB getLightFactor(const lin::Vec3& point, const lin::Vec3& normal) const override;
+  ColorRGB getLightFactor(const lin::Vec3d& point, const lin::Vec3d& normal) const override;
 
   ~DirectionalLight() override = default; ///< Default destructor.
 };

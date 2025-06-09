@@ -34,6 +34,10 @@ public:
    */
   void setAlbedoTexture(const std::shared_ptr<Texture>& texture) { m_albedoTexture = texture; }
 
+  const Texture& getAlbedoTexture() const; ///< Gets the albedo texture of this material.
+
+  const Texture& getNormalTexture() const; ///< Gets the normal texture of this material.
+
   /**
    * @brief Sets the normal texture for this material.
    * @param texture The texture to set as the normal texture.

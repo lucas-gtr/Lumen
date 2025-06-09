@@ -18,12 +18,12 @@ Mesh CubeMeshBuilder::build() const {
   std::vector<Vertex> vertices(TOTAL_VERTICES);
   std::vector<Face>   faces;
 
-  const std::vector<lin::Vec3> normals = {{0, 0, 1}, {0, 0, -1}, {0, 1, 0}, {0, -1, 0}, {1, 0, 0}, {-1, 0, 0}};
+  const std::vector<lin::Vec3d> normals = {{0, 0, 1}, {0, 0, -1}, {0, 1, 0}, {0, -1, 0}, {1, 0, 0}, {-1, 0, 0}};
 
   const std::vector<TextureUV> uvs = {{0, 0}, {1, 0}, {1, 1}, {0, 1}};
 
-  const std::vector<lin::Vec3> positions = {{-h, -h, h},  {h, -h, h},  {h, h, h},  {-h, h, h},
-                                            {-h, -h, -h}, {h, -h, -h}, {h, h, -h}, {-h, h, -h}};
+  const std::vector<lin::Vec3d> positions = {{-h, -h, h},  {h, -h, h},  {h, h, h},  {-h, h, h},
+                                             {-h, -h, -h}, {h, -h, -h}, {h, h, -h}, {-h, h, -h}};
 
   const std::vector<std::vector<int>> faceIndices = {
       {0, 1, 2, 3}, // front
@@ -35,7 +35,7 @@ Mesh CubeMeshBuilder::build() const {
   };
 
   for(int i = 0; i < TOTAL_FACES; ++i) {
-    const lin::Vec3& n = normals[i];
+    const lin::Vec3d& n = normals[i];
     for(int j = 0; j < VERTICES_PER_FACE; ++j) {
       Vertex v;
       v.position                          = positions[faceIndices[i][j]];

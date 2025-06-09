@@ -5,7 +5,6 @@
 #ifndef EXPORT_RENDEREXPORTER_HPP
 #define EXPORT_RENDEREXPORTER_HPP
 
-#include <cstdint>
 #include <memory>
 #include <string>
 
@@ -14,11 +13,6 @@
 #include "Export/OutputFormat.hpp"
 #include "ImplementationParameters/Parameters.hpp"
 #include "PostProcessing/ToneMapping/ToneMapping.hpp"
-
-/**
- * @brief Enumeration for different tone mapping strategies.
- */
-enum class ToneMapping : std::uint8_t { NONE, REINHARD, EXPOSURE };
 
 /**
  * @class RenderExporter

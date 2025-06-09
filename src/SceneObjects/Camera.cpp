@@ -17,7 +17,7 @@ double Camera::getMinSensorWidth() const { return 2 * m_focal_length * tan((MIN_
 
 double Camera::getMaxSensorWidth() const { return 2 * m_focal_length * tan((MAX_HORIZONTAL_FOV * HALF) * DEG_TO_RAD); }
 
-void Camera::setFov(double fov) {
+void Camera::setHorizontalFov(double fov) {
   m_horizontal_fov = std::clamp(fov, MIN_HORIZONTAL_FOV, MAX_HORIZONTAL_FOV);
   m_sensor_width   = getUpdatedSensorWidth();
 }
