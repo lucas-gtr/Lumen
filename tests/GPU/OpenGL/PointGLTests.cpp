@@ -7,7 +7,7 @@ TEST(PointGLTest, Initialization) {
     light.setColor({1.0f, 1.0f, 1.0f});
     light.setIntensity(2.0f);
 
-    PointLightGL gpu_light(light);
+    PointLightGL gpu_light(&light);
 
     EXPECT_EQ(gpu_light.getPosition(), lin::Vec3f(1.0f, 2.0f, 3.0f));
     EXPECT_EQ(gpu_light.getColor(), lin::Vec3f(1.0f, 1.0f, 1.0f) * 2.0);
@@ -18,7 +18,7 @@ TEST(PointLightGLTest, UpdateLightSpaceMatrixUpdatesFarPlaneAndMatrix) {
     light.setPosition({1.0f, 2.0f, 3.0f});
     light.setIntensity(9.0f);
 
-    PointLightGL lightGL(light);
+    PointLightGL lightGL(&light);
     lightGL.updateLightSpaceMatrices();
 
     float expectedFarPlane = std::sqrt(9.0f / MIN_LIGHT_INTENSITY_FAR_PLANE);

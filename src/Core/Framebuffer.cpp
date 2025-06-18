@@ -42,7 +42,7 @@ void Framebuffer::convertToSRGBColorSpace() {
 }
 
 void Framebuffer::initThreadBuffers(unsigned int num_threads) {
-  num_threads = std::clamp(num_threads, 1U, std::thread::hardware_concurrency() - 2);
+  num_threads = std::clamp(num_threads, 1U, std::thread::hardware_concurrency() - 4);
   m_thread_buffers.resize(num_threads);
   for(auto& buffer : m_thread_buffers) {
     buffer.resize(m_framebuffer_properties.bufferSize(), 0.0);
@@ -61,9 +61,20 @@ void Framebuffer::reduceThreadBuffers() {
                                              std::plus<>(), [=](const auto& buffer) { return buffer[index]; });
     m_framebuffer[index] = sum;
   });
-
-  m_thread_buffers.clear();
 }
+
+void Framebuffer::scaleBufferValues(double factor) {
+  if(factor <= 0.0) {
+    std::cerr << "Factor must be greater than zero. No changes applied.\n";
+    return;
+  }
+
+  for(std::uint64_t i = 0; i < m_framebuffer_properties.bufferSize(); ++i) {
+    m_framebuffer[i] *= factor;
+  }
+}
+
+void Framebuffer::clearThreadBuffers() { m_thread_buffers = std::vector<std::vector<double>>(); }
 
 void Framebuffer::setPixelColor(const PixelCoord& pixel_coord, const ColorRGBA& color, double weight) {
   if(pixel_coord.x < 0 || pixel_coord.x >= m_framebuffer_properties.width || pixel_coord.y < 0 ||

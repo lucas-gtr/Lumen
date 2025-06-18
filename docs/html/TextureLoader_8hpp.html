@@ -90,38 +90,32 @@ $(function() {
 <p>Header file for the <a class="el" href="namespaceTextureLoader.html" title="Namespace for loading textures from files.">TextureLoader</a> namespace.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;memory&gt;</code><br />
-<code>#include &quot;<a class="el" href="Texture_8hpp_source.html">Surface/Texture.hpp</a>&quot;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="CommonTypes_8hpp_source.html">Core/CommonTypes.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for TextureLoader.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="TextureLoader_8hpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Surface_2TextureLoader_8hpp" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2include_2Surface_2TextureLoader_8hpp" id="a_2home_2lucasgtr_2lumen_2include_2Surface_2TextureLoader_8hpp">
-<area shape="rect" title="Header file for the TextureLoader namespace." alt="" coords="53,5,303,45"/>
-<area shape="rect" title=" " alt="" coords="70,93,147,119"/>
-<area shape="poly" title=" " alt="" coords="163,47,130,84,126,81,159,44"/>
-<area shape="rect" href="Texture_8hpp.html" title="Header file for the Texture class." alt="" coords="172,93,323,119"/>
-<area shape="poly" title=" " alt="" coords="197,44,230,81,226,84,193,47"/>
-<area shape="rect" title=" " alt="" coords="143,313,210,339"/>
-<area shape="poly" title=" " alt="" coords="172,119,80,138,42,152,19,168,9,188,11,208,21,228,39,246,87,280,137,305,135,310,84,285,35,250,17,231,6,210,4,187,15,165,39,147,78,133,171,114"/>
-<area shape="rect" href="CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="267,240,447,265"/>
-<area shape="poly" title=" " alt="" coords="323,114,419,133,460,147,485,165,492,177,492,190,477,210,450,226,417,238,415,233,447,221,474,206,487,188,487,179,481,168,457,152,418,138,322,119"/>
-<area shape="rect" href="TextureFiltering_8hpp.html" title="Header file for texture filtering functions." alt="" coords="29,167,233,192"/>
-<area shape="poly" title=" " alt="" coords="230,121,163,162,161,157,227,116"/>
-<area shape="rect" href="TextureWrapping_8hpp.html" title="Header file for texture wrapping modes and functions." alt="" coords="258,167,471,192"/>
-<area shape="poly" title=" " alt="" coords="268,116,335,157,332,162,265,121"/>
-<area shape="poly" title=" " alt="" coords="329,268,220,311,218,306,327,263"/>
-<area shape="rect" title=" " alt="" coords="413,313,511,339"/>
-<area shape="poly" title=" " alt="" coords="375,263,435,303,432,308,372,268"/>
-<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="263,313,389,339"/>
-<area shape="poly" title=" " alt="" coords="354,267,339,302,334,300,349,265"/>
-<area shape="rect" title=" " alt="" coords="237,387,308,412"/>
-<area shape="poly" title=" " alt="" coords="319,341,292,377,287,374,315,337"/>
-<area shape="rect" title=" " alt="" coords="332,387,429,412"/>
-<area shape="poly" title=" " alt="" coords="337,337,366,374,361,377,333,341"/>
-<area shape="poly" title=" " alt="" coords="138,192,171,299,166,301,133,193"/>
-<area shape="poly" title=" " alt="" coords="168,189,308,233,306,238,167,195"/>
-<area shape="poly" title=" " alt="" coords="339,194,298,215,256,242,222,273,196,304,192,301,219,269,252,238,296,210,336,190"/>
-<area shape="poly" title=" " alt="" coords="366,193,362,227,357,226,361,192"/>
+<area shape="rect" title="Header file for the TextureLoader namespace." alt="" coords="14,5,263,45"/>
+<area shape="rect" title=" " alt="" coords="5,93,83,119"/>
+<area shape="poly" title=" " alt="" coords="117,48,71,86,67,82,114,43"/>
+<area shape="rect" title=" " alt="" coords="107,93,170,119"/>
+<area shape="poly" title=" " alt="" coords="141,46,141,79,136,79,136,46"/>
+<area shape="rect" href="CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="194,93,374,119"/>
+<area shape="poly" title=" " alt="" coords="175,43,252,84,249,89,172,48"/>
+<area shape="rect" title=" " alt="" coords="87,167,153,192"/>
+<area shape="poly" title=" " alt="" coords="259,121,160,164,158,159,257,116"/>
+<area shape="rect" title=" " alt="" coords="177,167,276,192"/>
+<area shape="poly" title=" " alt="" coords="277,121,247,158,243,154,272,117"/>
+<area shape="rect" title=" " alt="" coords="300,167,380,192"/>
+<area shape="poly" title=" " alt="" coords="295,117,325,154,320,157,291,121"/>
+<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="404,167,529,192"/>
+<area shape="poly" title=" " alt="" coords="314,116,425,159,423,164,312,121"/>
+<area shape="rect" title=" " alt="" coords="377,240,447,265"/>
+<area shape="poly" title=" " alt="" coords="460,194,431,231,427,228,456,191"/>
+<area shape="rect" title=" " alt="" coords="471,240,569,265"/>
+<area shape="poly" title=" " alt="" coords="478,191,505,228,501,231,473,194"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -129,11 +123,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="TextureLoader_8hpp__dep__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Surface_2TextureLoader_8hppdep" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2include_2Surface_2TextureLoader_8hppdep" id="a_2home_2lucasgtr_2lumen_2include_2Surface_2TextureLoader_8hppdep">
-<area shape="rect" title="Header file for the TextureLoader namespace." alt="" coords="116,5,365,45"/>
-<area shape="rect" href="TextureLoader_8cpp.html" title=" " alt="" coords="5,93,225,133"/>
-<area shape="poly" title=" " alt="" coords="203,56,145,95,142,91,200,51"/>
-<area shape="rect" href="TextureManager_8cpp.html" title=" " alt="" coords="249,93,483,133"/>
-<area shape="poly" title=" " alt="" coords="281,51,340,91,337,95,278,56"/>
+<area shape="rect" title="Header file for the TextureLoader namespace." alt="" coords="80,5,329,45"/>
+<area shape="rect" href="Texture_8cpp.html" title=" " alt="" coords="5,93,183,133"/>
+<area shape="poly" title=" " alt="" coords="171,56,120,95,117,91,168,52"/>
+<area shape="rect" href="TextureLoader_8cpp.html" title=" " alt="" coords="207,93,427,133"/>
+<area shape="poly" title=" " alt="" coords="242,52,293,91,290,95,239,56"/>
 </map>
 </div>
 </div>
@@ -147,9 +141,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a87140fe173e9fb564d84fa78625b4ef4" id="r_a87140fe173e9fb564d84fa78625b4ef4"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classTexture.html">Texture</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTextureLoader.html#a87140fe173e9fb564d84fa78625b4ef4">TextureLoader::load</a> (const char *filename)</td></tr>
-<tr class="memdesc:a87140fe173e9fb564d84fa78625b4ef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a texture from a file.  <br /></td></tr>
-<tr class="separator:a87140fe173e9fb564d84fa78625b4ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62f68b81caf9abfc157d4dc1e95e073a" id="r_a62f68b81caf9abfc157d4dc1e95e073a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTextureLoader.html#a62f68b81caf9abfc157d4dc1e95e073a">TextureLoader::load</a> (const char *filename, std::vector&lt; double &gt; &amp;image_data, <a class="el" href="structImageProperties.html">ImageProperties</a> &amp;texture_properties)</td></tr>
+<tr class="memdesc:a62f68b81caf9abfc157d4dc1e95e073a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a texture from a file.  <br /></td></tr>
+<tr class="separator:a62f68b81caf9abfc157d4dc1e95e073a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header file for the <a class="el" href="namespaceTextureLoader.html" title="Namespace for loading textures from files.">TextureLoader</a> namespace. </p>

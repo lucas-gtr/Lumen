@@ -9,7 +9,17 @@
 #include "GPU/OpenGL/Lights/PointGL.hpp"
 #include "Lighting/PointLight.hpp"
 
-PointLightGL::PointLightGL(const PointLight& light) : PointLightGPU(light) { updateLightSpaceMatrices(); }
+PointLightGL::PointLightGL(PointLight* light) : PointLightGPU(light) {
+  updateLightSpaceMatrices();
+  light->getTransformationChangedObserver().add([this]() {
+    retrieveData();
+    updateLightSpaceMatrices();
+  });
+  light->getLightChangedObserver().add([this]() {
+    retrieveData();
+    updateLightSpaceMatrices();
+  });
+}
 
 void PointLightGL::updateLightSpaceMatrices() {
   static constexpr std::array<lin::Vec3f, CUBE_MAP_FACE_COUNT> faceDirections = {{{1.0F, 0.0F, 0.0F},

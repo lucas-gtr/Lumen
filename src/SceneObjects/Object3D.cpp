@@ -6,9 +6,19 @@
 #include "Geometry/Mesh.hpp"
 #include "SceneObjects/Object3D.hpp"
 #include "Surface/Material.hpp"
+#include "Surface/MaterialManager.hpp"
 
-Object3D::Object3D() : m_material(nullptr) {}
-Object3D::Object3D(const Mesh& mesh) : m_mesh(mesh), m_material(nullptr) {}
+Object3D::Object3D() : m_material(MaterialManager::defaultMaterial()) {}
+
+Object3D::Object3D(const Mesh& mesh) : m_mesh(mesh), m_material(MaterialManager::defaultMaterial()) {}
+
+void Object3D::setMaterial(Material* material) {
+  if(material == nullptr) {
+    material = MaterialManager::defaultMaterial();
+  }
+  m_material = material;
+  m_material_changed_observer.notify(this);
+}
 
 lin::Vec3d Object3D::getMinBound() const {
   const auto& vertices = m_mesh.getVertices();
@@ -42,9 +52,9 @@ lin::Vec3d Object3D::getMaxBound() const {
   return transformed;
 }
 
-const Material& Object3D::getMaterial() const {
+Material* Object3D::getMaterial() const {
   if(m_material == nullptr) {
     throw std::runtime_error("Material is not set for this Object3D.");
   }
-  return *m_material;
+  return m_material;
 }

@@ -16,27 +16,27 @@
  */
 class ITextureGPU {
 private:
-  const Texture* m_texture;
+  Texture* m_texture;
 
 public:
   /**
    * @brief Constructor for ITextureGPU.
    * @param texture The Texture to be represented in GPU memory.
    */
-  explicit ITextureGPU(const Texture& texture);
+  explicit ITextureGPU(Texture* texture);
 
-  ITextureGPU(const ITextureGPU&)            = delete; ///< Delete copy constructor.
-  ITextureGPU& operator=(const ITextureGPU&) = delete; ///< Delete copy assignment operator.
-  ITextureGPU(ITextureGPU&&)                 = delete; ///< Delete move constructor.
-  ITextureGPU& operator=(ITextureGPU&&)      = delete; ///< Delete move assignment operator.
+  ITextureGPU(const ITextureGPU&)            = delete;
+  ITextureGPU& operator=(const ITextureGPU&) = delete;
+  ITextureGPU(ITextureGPU&&)                 = delete;
+  ITextureGPU& operator=(ITextureGPU&&)      = delete;
 
   /**
    * @brief Gets the texture source.
    * @return A pointer to the Texture object.
    */
-  const Texture* getSource() const { return m_texture; }
+  Texture* getSource() const { return m_texture; }
 
-  virtual void uploadToGPU() const = 0; ///< Pure virtual function to upload texture data to the GPU.
+  virtual void uploadToGPU() = 0; ///< Pure virtual function to upload texture data to the GPU.
 
   virtual void release() = 0; ///< Pure virtual function to release GPU resources.
 

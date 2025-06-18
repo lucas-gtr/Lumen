@@ -1,4 +1,3 @@
-#include "ImplementationParameters/ParameterTypes.hpp"
 #include "Rendering/RenderSettings.hpp"
 
 #include <gtest/gtest.h>
@@ -6,11 +5,11 @@
 TEST(RenderSettingsTest, DefaultValues) {
   RenderSettings settings;
 
-  EXPECT_EQ(settings.getWidth(), 800);
-  EXPECT_EQ(settings.getHeight(), 600);
+  EXPECT_EQ(settings.getWidth(), 1920);
+  EXPECT_EQ(settings.getHeight(), 1080);
   EXPECT_EQ(settings.getChannelCount(), 3);
   EXPECT_EQ(settings.getMaxBounces(), 5);
-  EXPECT_EQ(settings.getSamplesPerPixel(), 1);
+  EXPECT_EQ(settings.getSamplesPerPixel(), 4);
 }
 
 TEST(RenderSettingsTest, SetAndGetWidth) {
@@ -62,30 +61,15 @@ TEST(RenderSettingsTest, SamplesPerPixels) {
 TEST(RendererSettingsTest, DefaultExecutionModeIsSingleThreaded) {
   RenderSettings settings;
 
-  EXPECT_EQ(settings.getExecutionMode(), RenderExecutionMode::SINGLE_THREADED);
+  EXPECT_EQ(settings.getRenderMode(), RenderMode::SINGLE_THREADED);
 }
 
 TEST(RendererSettingsTest, SetAndGetExecutionMode) {
   RenderSettings settings;
 
-  settings.setExecutionMode(RenderExecutionMode::MULTI_THREADED_CPU);
-  EXPECT_EQ(settings.getExecutionMode(), RenderExecutionMode::MULTI_THREADED_CPU);
+  settings.setRenderMode(RenderMode::MULTI_THREADED_CPU);
+  EXPECT_EQ(settings.getRenderMode(), RenderMode::MULTI_THREADED_CPU);
 
-  settings.setExecutionMode(RenderExecutionMode::SINGLE_THREADED);
-  EXPECT_EQ(settings.getExecutionMode(), RenderExecutionMode::SINGLE_THREADED);
-}
-
-TEST(RendererSettingsTest, SetAndGetRendererParameter) {
-  RenderSettings settings;
-
-  Parameters* params = settings.getRendererParameters();
-  ASSERT_NE(params, nullptr);
-
-  settings.setParameter("samples", 64);
-  const IntParam* samples_param = params->get<IntParam>("samples");
-  EXPECT_EQ(samples_param->getValue(), 64);
-
-  settings.setParameter("max_depth", 5);
-  const IntParam* max_depth_param = params->get<IntParam>("max_depth");
-  EXPECT_EQ(max_depth_param->getValue(), 5);
+  settings.setRenderMode(RenderMode::SINGLE_THREADED);
+  EXPECT_EQ(settings.getRenderMode(), RenderMode::SINGLE_THREADED);
 }

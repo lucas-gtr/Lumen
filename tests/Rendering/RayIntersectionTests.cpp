@@ -189,7 +189,7 @@ TEST(RayIntersectionTest, RayIntersectionScene) {
     object->setMaterial(&material);
 
     Scene scene;
-    scene.addObject(std::move(object));
+    scene.addObject("1", std::move(object));
 
     RayHitInfo hit = RayIntersection::getSceneIntersection(ray, &scene);
     EXPECT_EQ(hit.distance, std::numeric_limits<double>::max());
@@ -270,8 +270,8 @@ TEST(RayIntersectionTest, RayIntersectionSceneWithBVHEarlyExit) {
     object2->setMaterial(&material);
 
     Scene scene;
-    scene.addObject(std::move(object1));
-    scene.addObject(std::move(object2));
+    scene.addObject("1", std::move(object1));
+    scene.addObject("2", std::move(object2));
     scene.buildBVH();
 
     RayHitInfo hit = RayIntersection::getSceneIntersection(ray, &scene);
@@ -288,9 +288,10 @@ TEST(RayIntersectionTest, UpdateNormalWithTangentSpace) {
     hit.tangent = tangent;
     hit.bitangent = bitangent;
 
-    std::unique_ptr<Texture> normal_texture = std::make_unique<Texture>(ColorRGB(0.75, 1.0, 0.5));
+    std::unique_ptr<Texture> normal_texture = std::make_unique<Texture>();
+    normal_texture->setValue(ColorRGB(0.75, 1.0, 0.5));
     std::unique_ptr<Material> material = std::make_unique<Material>();
-    material->setNormalTexture(std::move(normal_texture));
+    material->setNormalTexture(normal_texture.get());
     hit.material = material.get();
 
     RayIntersection::updateNormalWithTangentSpace(hit);

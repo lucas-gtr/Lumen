@@ -1,4 +1,3 @@
-#include <chrono>
 #include <cmath>
 #include <iostream>
 #include <memory>
@@ -12,33 +11,35 @@
 #include "Rendering/MultiThreadedCPU.hpp"
 #include "Rendering/RayIntersection.hpp"
 #include "Rendering/RenderSettings.hpp"
+#include "Rendering/RenderTime.hpp"
 #include "Rendering/Renderer.hpp"
 #include "Rendering/SingleThreaded.hpp"
 #include "Scene/Scene.hpp"
 #include "Surface/Material.hpp"
 
-Renderer::Renderer(const RenderSettings* render_settings, Scene* scene)
-    : m_render_settings(render_settings), m_scene(scene),
-      m_framebuffer(new Framebuffer(
-          {render_settings->getWidth(), render_settings->getHeight(), render_settings->getChannelCount()})) {
-  switch(render_settings->getExecutionMode()) {
-  case RenderExecutionMode::SINGLE_THREADED:
+Renderer::Renderer(Scene* scene, RenderSettings* render_settings)
+    : m_scene(scene), m_render_time(std::make_unique<RenderTime>()), m_framebuffer(new Framebuffer({1, 1, 1})),
+      m_render_settings(render_settings) {}
+
+void Renderer::updateRenderMode() {
+  const ImageProperties properties = m_render_settings->getImageProperties();
+  m_framebuffer->setFramebufferProperties(properties);
+
+  switch(m_render_settings->getRenderMode()) {
+  case RenderMode::SINGLE_THREADED:
     m_render_strategy = std::make_unique<SingleThreaded>();
     break;
-  case RenderExecutionMode::MULTI_THREADED_CPU:
-    m_render_strategy = std::make_unique<MultiThreadedCPU>(render_settings->getRendererParameters());
+  case RenderMode::MULTI_THREADED_CPU: {
+    const int          chunk_size   = m_render_settings->getChunkSize();
+    const unsigned int thread_count = m_render_settings->getThreadCount();
+    m_render_strategy               = std::make_unique<MultiThreadedCPU>(chunk_size, thread_count);
     break;
+  }
   default:
-    std::cerr << "Unknown render execution mode. Using single-threaded strategy by default." << '\n';
+    std::cerr << "Unknown render mode. Using single-threaded strategy by default." << '\n';
     m_render_strategy = std::make_unique<SingleThreaded>();
   }
   m_render_strategy->setRenderer(this);
-}
-
-void Renderer::setRenderSettings(const RenderSettings* settings) {
-  m_render_settings                = settings;
-  const ImageProperties properties = {settings->getWidth(), settings->getHeight(), settings->getChannelCount()};
-  m_framebuffer->setFramebufferProperties(properties);
 }
 
 bool Renderer::isReadyToRender() const {
@@ -49,11 +50,15 @@ bool Renderer::isReadyToRender() const {
   return true;
 }
 
+void Renderer::cancelRendering() { m_framebuffer->clearThreadBuffers(); }
+
 bool Renderer::renderFrame() {
   if(!isReadyToRender()) {
     return false;
   }
+  updateRenderMode();
 
+  m_stop_requested.store(false);
   const RayEmitterParameters emitter_parameters = {m_scene->getCamera()->getPosition(),
                                                    m_scene->getCamera()->getRotationMatrix(),
                                                    m_scene->getCamera()->getSensorWidth(),
@@ -62,23 +67,21 @@ bool Renderer::renderFrame() {
                                                    m_scene->getCamera()->getLensRadius(),
                                                    static_cast<double>(m_render_settings->getWidth()) /
                                                        static_cast<double>(m_render_settings->getHeight())};
-  m_cameraRayEmitter.initializeViewport(emitter_parameters);
-
-  const auto start_time = std::chrono::high_resolution_clock::now();
+  m_camera_ray_emitter.initializeViewport(emitter_parameters);
 
   m_scene->buildBVH();
 
+  std::cout << "Rendering scene with " << m_scene->getObjectList().size() << " objects and "
+            << m_scene->getLightList().size() << " lights." << '\n';
   const bool render_successed = m_render_strategy->render();
   if(!render_successed) {
-    std::cerr << "Rendering failed." << '\n';
+    cancelRendering();
     return false;
   }
 
   m_framebuffer->convertToSRGBColorSpace();
-  const auto                          end_time        = std::chrono::high_resolution_clock::now();
-  const std::chrono::duration<double> render_duration = end_time - start_time;
 
-  std::cout << "Render time: " << render_duration.count() << " seconds.\n";
+  std::cout << "Rendering completed successfully." << '\n';
   return true;
 }
 
@@ -86,7 +89,7 @@ ColorRGBA Renderer::getPixelColor(const PixelCoord& pixel, double dx, double dy,
                                   double cell_size) const {
   const double v   = (static_cast<double>(pixel.y) + (subpixel_grid_pos.y + randomUniform01()) * cell_size) * dy;
   const double u   = (static_cast<double>(pixel.x) + (subpixel_grid_pos.x + randomUniform01()) * cell_size) * dx;
-  const Ray    ray = m_cameraRayEmitter.generateRay(u, v);
+  const Ray    ray = m_camera_ray_emitter.generateRay(u, v);
   return traceRay(ray);
 }
 
@@ -103,9 +106,17 @@ void Renderer::renderSample(const PixelCoord& pixel_start, const PixelCoord& pix
   }
 }
 
+const double* Renderer::getPreviewImage(double factor) {
+  m_framebuffer->reduceThreadBuffers();
+  m_framebuffer->scaleBufferValues(factor);
+  m_framebuffer->convertToSRGBColorSpace();
+
+  return m_framebuffer->getFramebuffer();
+}
+
 bool Renderer::isValidHit(const RayHitInfo& hit_info) const {
   const double distance = hit_info.distance;
-  return distance >= m_scene->getCamera()->getNearPlane() && distance <= m_scene->getCamera()->getFarPlane();
+  return distance > 0.0 && distance <= m_scene->getCamera()->getFarPlane();
 }
 
 ColorRGBA Renderer::traceRay(const Ray& ray) const {
@@ -114,13 +125,12 @@ ColorRGBA Renderer::traceRay(const Ray& ray) const {
     return m_scene->getSkyboxColor(ray.direction);
   }
 
-  const ColorRGBA diffuse_color = hit_info.material->getAlbedo(hit_info.uvCoordinates);
+  const ColorRGBA diffuse_color = hit_info.material->getDiffuse(hit_info.uvCoordinates);
 
   ColorRGB light_factor = {0.0, 0.0, 0.0};
   for(const auto& light : m_scene->getLightList()) {
     const lin::Vec3d light_direction = light->getDirectionFromPoint(hit_info.hitPoint).normalized();
-    const Ray        shadow_ray =
-        Ray::FromDirection(hit_info.hitPoint + light_direction * RayIntersection::RAY_OFFSET_FACTOR, light_direction);
+    const Ray        shadow_ray      = Ray::FromDirection(hit_info.hitPoint, light_direction);
 
     const RayHitInfo shadow_hit = RayIntersection::getSceneIntersection(shadow_ray, m_scene);
     if(isValidHit(shadow_hit)) {

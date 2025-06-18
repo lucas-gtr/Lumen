@@ -1,141 +1,183 @@
 // GCOVR_EXCL_START
-#include "GPU/OpenGL/ResourceManagerGL.hpp"
+#include <iostream>
+#include <memory>
+#include <utility>
+
 #include "GPU/OpenGL/CameraGL.hpp"
 #include "GPU/OpenGL/Lights/DirectionalGL.hpp"
 #include "GPU/OpenGL/Lights/PointGL.hpp"
 #include "GPU/OpenGL/Lights/SpotGL.hpp"
 #include "GPU/OpenGL/MaterialGL.hpp"
 #include "GPU/OpenGL/ObjectGL.hpp"
+#include "GPU/OpenGL/ResourceManagerGL.hpp"
+#include "GPU/OpenGL/SkyboxGL.hpp"
 #include "GPU/OpenGL/TextureGL.hpp"
 #include "Lighting/DirectionalLight.hpp"
 #include "Lighting/Light.hpp"
 #include "Lighting/PointLight.hpp"
 #include "Lighting/SpotLight.hpp"
+#include "Qt/OpenGLContext.hpp"
 #include "Scene/Scene.hpp"
 #include "SceneObjects/Camera.hpp"
 #include "SceneObjects/Object3D.hpp"
 #include "Surface/Material.hpp"
 #include "Surface/Texture.hpp"
 
-#include <iostream>
-#include <memory>
-#include <utility>
+ResourceManagerGL::ResourceManagerGL(int viewport_width, int viewport_height, Scene* scene) {
+  loadScene(viewport_width, viewport_height, scene);
 
-ResourceManagerGL::ResourceManagerGL(int viewportWidth, int viewportHeight, const Scene& scene) {
-  loadScene(viewportWidth, viewportHeight, scene);
+  scene->getObjectAddedObserver().add([this](Object3D* object) { this->addObject3D(object); });
+  scene->getLightAddedObserver().add([this](Light* light) { this->addLight(light); });
 }
 
-void ResourceManagerGL::loadScene(int viewportWidth, int viewportHeight, const Scene& scene) {
-  if(scene.getCamera() != nullptr) {
-    ResourceManagerGL::setCamera(scene.getCamera(), viewportWidth, viewportHeight);
+void ResourceManagerGL::loadScene(int viewport_width, int viewport_height, Scene* scene) {
+  if(scene->getCamera() != nullptr) {
+    ResourceManagerGL::setCamera(scene->getCamera(), viewport_width, viewport_height);
   }
 
-  if(scene.getSkybox() != nullptr && scene.getSkybox()->getTexture() != nullptr) {
-    ResourceManagerGL::setSkyboxTexture(*scene.getSkybox()->getTexture());
+  if(scene->getSkybox() != nullptr && scene->getSkybox()->getTexture() != nullptr) {
+    ResourceManagerGL::setSkybox(scene->getSkybox());
   }
 
-  for(const auto& object : scene.getObjectList()) {
-    ResourceManagerGL::addObject3D(*object);
+  for(const auto& object : scene->getObjectList()) {
+    ResourceManagerGL::addObject3D(object);
   }
 
-  for(const auto& light : scene.getLightList()) {
-    switch(light->getType()) {
-    case LightType::Directional:
-      if(const auto* directional = dynamic_cast<const DirectionalLight*>(light.get())) {
-        ResourceManagerGL::addLight(*directional);
-      } else {
-        std::cerr << "Failed to cast to DirectionalLight\n";
-      }
-      break;
-    case LightType::Point:
-      if(const auto* point = dynamic_cast<const PointLight*>(light.get())) {
-        ResourceManagerGL::addLight(*point);
-      } else {
-        std::cerr << "Failed to cast to PointLight\n";
-      }
-      break;
-    case LightType::Spot:
-      if(const auto* spot = dynamic_cast<const SpotLight*>(light.get())) {
-        ResourceManagerGL::addLight(*spot);
-      } else {
-        std::cerr << "Failed to cast to SpotLight\n";
-      }
-      break;
-    default:
-      std::cerr << "Unknown light type encountered in OpenGLResourceManager initialization.\n";
-      break;
-    }
+  for(const auto& light : scene->getLightList()) {
+    ResourceManagerGL::addLight(light);
   }
 }
 
-void ResourceManagerGL::addObject3D(const Object3D& object) {
-  const auto&       material    = object.getMaterial();
-  const MaterialGL* gl_material = addMaterial(material);
+void ResourceManagerGL::addObject3D(Object3D* object) {
+  Material*   material    = object->getMaterial();
+  MaterialGL* gl_material = addMaterial(material);
 
-  auto dataBuffer = std::make_unique<ObjectGL>(object, gl_material);
-  dataBuffer->uploadToGPU();
-  m_dataBuffers.push_back(std::move(dataBuffer));
+  OpenGLContext::instance().makeContextCurrent();
+  auto object_gl = std::make_unique<ObjectGL>(object, gl_material);
+  object_gl->uploadToGPU();
+  m_object_list.push_back(std::move(object_gl));
+  OpenGLContext::instance().doneContext();
+
+  object->getMaterialChangedObserver().add([this](const Object3D* obj) { this->onObjectMaterialChanged(obj); });
 }
 
-void ResourceManagerGL::setCamera(Camera* camera, int viewportWidth, int viewportHeight) {
-  m_viewport_camera = std::make_unique<CameraGL>(*camera, viewportWidth, viewportHeight);
+void ResourceManagerGL::setCamera(Camera* camera, int viewport_width, int viewport_height) {
+  m_viewport_camera = std::make_unique<CameraGL>(*camera, viewport_width, viewport_height);
 }
 
-const TextureGL* ResourceManagerGL::addTexture(const Texture& texture) {
-  for(const auto& existingTexture : m_textures) {
-    if(existingTexture->getSource() == &texture) {
-      return existingTexture.get();
+void ResourceManagerGL::setSkybox(Skybox* skybox) { m_skybox = std::make_unique<SkyboxGL>(skybox); }
+
+TextureGL* ResourceManagerGL::addTexture(Texture* texture) {
+  for(const auto& existing_texture : m_textures) {
+    if(existing_texture->getSource() == texture) {
+      return existing_texture.get();
     }
   }
 
-  auto newTexture = std::make_unique<TextureGL>(texture);
-  newTexture->uploadToGPU();
-  m_textures.push_back(std::move(newTexture));
+  OpenGLContext::instance().makeContextCurrent();
+  auto new_texture = std::make_unique<TextureGL>(texture);
+  new_texture->uploadToGPU();
+  m_textures.push_back(std::move(new_texture));
+  OpenGLContext::instance().doneContext();
   return m_textures.back().get();
 }
 
-const MaterialGL* ResourceManagerGL::addMaterial(const Material& material) {
-  for(const auto& existingMaterial : m_materials) {
-    if(existingMaterial->getSource() == &material) {
-      return existingMaterial.get();
+MaterialGL* ResourceManagerGL::addMaterial(Material* material) {
+  for(const auto& existing_material : m_materials) {
+    if(existing_material->getSource() == material) {
+      return existing_material.get();
     }
   }
 
-  const TextureGL* albedoTexture = ResourceManagerGL::addTexture(material.getAlbedoTexture());
-  const TextureGL* normalTexture = ResourceManagerGL::addTexture(material.getNormalTexture());
+  TextureGL* diffuse_texture = ResourceManagerGL::addTexture(material->getDiffuseTexture());
+  TextureGL* normal_texture  = ResourceManagerGL::addTexture(material->getNormalTexture());
 
-  auto newMaterial = std::make_unique<MaterialGL>(material, albedoTexture, normalTexture);
-  m_materials.push_back(std::move(newMaterial));
+  OpenGLContext::instance().makeContextCurrent();
+  auto new_material = std::make_unique<MaterialGL>(material, diffuse_texture, normal_texture);
+  m_materials.push_back(std::move(new_material));
+  material->getMaterialChangedObserver().add(
+      [this](const Material* material) { this->onMaterialTextureChanged(material); });
+  OpenGLContext::instance().doneContext();
   return m_materials.back().get();
 }
 
-void ResourceManagerGL::addLight(const DirectionalLight& light) {
-  m_directionalLights.push_back(std::make_unique<DirectionalLightGL>(light));
+void ResourceManagerGL::addLight(Light* light) {
+  switch(light->getType()) {
+  case LightType::Directional:
+    if(auto* directional = dynamic_cast<DirectionalLight*>(light)) {
+      ResourceManagerGL::addLight(directional);
+    } else {
+      std::cerr << "Failed to cast to DirectionalLight\n";
+    }
+    break;
+  case LightType::Point:
+    if(auto* point = dynamic_cast<PointLight*>(light)) {
+      ResourceManagerGL::addLight(point);
+    } else {
+      std::cerr << "Failed to cast to PointLight\n";
+    }
+    break;
+  case LightType::Spot:
+    if(auto* spot = dynamic_cast<SpotLight*>(light)) {
+      ResourceManagerGL::addLight(spot);
+    } else {
+      std::cerr << "Failed to cast to SpotLight\n";
+    }
+    break;
+  default:
+    std::cerr << "Unknown light type encountered in OpenGLResourceManager initialization.\n";
+    break;
+  }
 }
 
-void ResourceManagerGL::addLight(const PointLight& light) {
-  m_pointLights.push_back(std::make_unique<PointLightGL>(light));
+void ResourceManagerGL::addLight(DirectionalLight* light) {
+  m_directional_lights.push_back(std::make_unique<DirectionalLightGL>(light));
 }
 
-void ResourceManagerGL::addLight(const SpotLight& light) {
-  m_spotLights.push_back(std::make_unique<SpotLightGL>(light));
+void ResourceManagerGL::addLight(PointLight* light) { m_point_lights.push_back(std::make_unique<PointLightGL>(light)); }
+
+void ResourceManagerGL::addLight(SpotLight* light) { m_spot_lights.push_back(std::make_unique<SpotLightGL>(light)); }
+
+void ResourceManagerGL::setSelectedObject(Object3D* object) {
+  for(auto& object_gl : m_object_list) {
+    if(object_gl->getSource() == object) {
+      object_gl->setSelected(true);
+    } else {
+      object_gl->setSelected(false);
+    }
+  }
 }
 
-void ResourceManagerGL::setSkyboxTexture(const Texture& texture) {
-  m_skyboxTexture = std::make_unique<TextureGL>(texture);
-  m_skyboxTexture->uploadToGPU();
+void ResourceManagerGL::onObjectMaterialChanged(const Object3D* object) {
+  for(auto& object_gl : m_object_list) {
+    if(object_gl->getSource() == object) {
+      Material*   material    = object->getMaterial();
+      MaterialGL* gl_material = addMaterial(material);
+      object_gl->setMaterial(gl_material);
+      return;
+    }
+  }
 }
 
-void ResourceManagerGL::deleteSkyboxTexture() { m_skyboxTexture = nullptr; }
+void ResourceManagerGL::onMaterialTextureChanged(const Material* material) {
+  for(auto& gl_material : m_materials) {
+    if(gl_material->getSource() == material) {
+      TextureGL* diffuse_texture = ResourceManagerGL::addTexture(material->getDiffuseTexture());
+      gl_material->setDiffuseTexture(diffuse_texture);
+
+      TextureGL* normal_texture = ResourceManagerGL::addTexture(material->getNormalTexture());
+      gl_material->setNormalTexture(normal_texture);
+    }
+  }
+}
 
 void ResourceManagerGL::clearAllRessources() {
-  m_dataBuffers.clear();
+  m_object_list.clear();
   m_textures.clear();
   m_materials.clear();
-  m_directionalLights.clear();
-  m_pointLights.clear();
-  m_spotLights.clear();
-  m_skyboxTexture.reset();
+  m_directional_lights.clear();
+  m_point_lights.clear();
+  m_spot_lights.clear();
   m_viewport_camera.reset();
 }
 

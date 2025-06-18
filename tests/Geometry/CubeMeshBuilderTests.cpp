@@ -47,14 +47,14 @@ TEST(CubeMeshBuilderTest, CorrectUVCoordinates) {
   Mesh mesh = builder.build();
   const auto& vertices = mesh.getVertices();
 
-  EXPECT_EQ(vertices[0].uvCoord.u, 0.0);
-  EXPECT_EQ(vertices[0].uvCoord.v, 0.0);
-  EXPECT_EQ(vertices[1].uvCoord.u, 1.0);
-  EXPECT_EQ(vertices[1].uvCoord.v, 0.0);
-  EXPECT_EQ(vertices[2].uvCoord.u, 1.0);
-  EXPECT_EQ(vertices[2].uvCoord.v, 1.0);
-  EXPECT_EQ(vertices[3].uvCoord.u, 0.0);
-  EXPECT_EQ(vertices[3].uvCoord.v, 1.0);
+  EXPECT_EQ(vertices[0].uv_coord.u, 0.0);
+  EXPECT_EQ(vertices[0].uv_coord.v, 0.0);
+  EXPECT_EQ(vertices[1].uv_coord.u, 1.0);
+  EXPECT_EQ(vertices[1].uv_coord.v, 0.0);
+  EXPECT_EQ(vertices[2].uv_coord.u, 1.0);
+  EXPECT_EQ(vertices[2].uv_coord.v, 1.0);
+  EXPECT_EQ(vertices[3].uv_coord.u, 0.0);
+  EXPECT_EQ(vertices[3].uv_coord.v, 1.0);
 }
 
 TEST(CubeMeshBuilderTest, BuildWithNegativeSize) {

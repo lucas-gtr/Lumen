@@ -5,7 +5,7 @@
 #ifndef RENDERING_SINGLETHREADED_HPP
 #define RENDERING_SINGLETHREADED_HPP
 
-#include "Rendering/RenderExecution.hpp"
+#include "Rendering/RenderStrategy.hpp"
 
 /**
  * @class SingleThreaded

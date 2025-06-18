@@ -7,7 +7,7 @@ TEST(DirectionalGLTest, Initialization) {
     light.setColor({1.0f, 1.0f, 1.0f});
     light.setIntensity(1.0f);
 
-    DirectionalLightGL gpu_light(light);
+    DirectionalLightGL gpu_light(&light);
 
     EXPECT_EQ(gpu_light.getDirection(), lin::Vec3f(1.0f, -1.0f, 0.0f).normalized());
     EXPECT_EQ(gpu_light.getColor(), lin::Vec3f(1.0f, 1.0f, 1.0f));
@@ -19,7 +19,7 @@ TEST(DirectionalGLTest, LightSpaceMatrix) {
     light.setColor({1.0f, 1.0f, 1.0f});
     light.setIntensity(1.0f);
 
-    DirectionalLightGL gpu_light(light);
+    DirectionalLightGL gpu_light(&light);
     gpu_light.updateLightSpaceMatrix();
 
     const float* matrixData = gpu_light.getLightSpaceMatrix();

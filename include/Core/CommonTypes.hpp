@@ -7,6 +7,7 @@
 
 #include <cstdint>
 #include <immintrin.h>
+#include <iostream>
 
 #include "Core/Config.hpp"
 
@@ -82,6 +83,10 @@ struct alignas(Align32) ColorRGB {
   bool operator==(const ColorRGB& other) const;
 
   friend ColorRGB operator*(double scalar, const ColorRGB& color);
+
+  friend std::ostream& operator<<(std::ostream& os, const ColorRGB& color) {
+    return os << "ColorRGB(" << color.r << ", " << color.g << ", " << color.b << ")";
+  }
 };
 
 /**
@@ -107,6 +112,10 @@ struct alignas(Align32) ColorRGBA {
   bool operator==(const ColorRGBA& other) const;
 
   friend ColorRGBA operator*(double scalar, const ColorRGBA& color);
+
+  friend std::ostream& operator<<(std::ostream& os, const ColorRGBA& color) {
+    return os << "ColorRGBA(" << color.r << ", " << color.g << ", " << color.b << ", " << color.a << ")";
+  }
 };
 
 #endif // CORE_COMMONTYPES_HPP

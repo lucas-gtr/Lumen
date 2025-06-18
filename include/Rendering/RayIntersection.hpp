@@ -47,7 +47,7 @@ struct RayBVHHitInfo {
   double distance;
 };
 
-constexpr double RAY_OFFSET_FACTOR = 0.0001;
+constexpr double RAY_OFFSET_FACTOR = 1e-9;
 constexpr double EPSILON           = 1e-6;
 
 /**
@@ -137,6 +137,14 @@ bool getAABBIntersection(const Ray& ray, const lin::Vec3d& min_bound, const lin:
  * @return A vector of RayBVHHitInfo containing the intersection information for each object in the BVH node.
  */
 std::vector<RayBVHHitInfo> getBVHIntersection(const Ray& ray, const BVHNode* bvh_node);
+
+/**
+ * @brief Gets the name of the object that a ray intersects with in the scene.
+ * @param ray The ray to check for intersection.
+ * @param scene The scene containing the objects.
+ * @return The name of the object that the ray intersects with, or an empty string if no intersection occurs.
+ */
+std::string getObjectNameFromHit(const Ray& ray, const Scene* scene);
 
 /**
  * @brief Processes the intersection of a ray with a face in a mesh.

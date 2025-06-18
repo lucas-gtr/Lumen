@@ -81,22 +81,23 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">OutputFormat.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Header file for the <a class="el" href="classOutputFormat.html" title="Abstract base class for different image output formats.">OutputFormat</a> class.  
-<a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for OutputFormat.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="OutputFormat_8hpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Export_2OutputFormat_8hpp" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2include_2Export_2OutputFormat_8hpp" id="a_2home_2lucasgtr_2lumen_2include_2Export_2OutputFormat_8hpp">
-<area shape="rect" title="Header file for the OutputFormat class." alt="" coords="5,5,247,45"/>
-<area shape="rect" title=" " alt="" coords="97,93,155,119"/>
-<area shape="poly" title=" " alt="" coords="129,46,129,79,123,79,123,46"/>
+<area shape="rect" title=" " alt="" coords="5,5,247,45"/>
+<area shape="rect" title=" " alt="" coords="50,93,117,119"/>
+<area shape="poly" title=" " alt="" coords="118,47,98,83,94,80,113,44"/>
+<area shape="rect" title=" " alt="" coords="141,93,199,119"/>
+<area shape="poly" title=" " alt="" coords="139,44,159,80,154,83,134,47"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -104,16 +105,64 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="OutputFormat_8hpp__dep__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2Export_2OutputFormat_8hppdep" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2include_2Export_2OutputFormat_8hppdep" id="a_2home_2lucasgtr_2lumen_2include_2Export_2OutputFormat_8hppdep">
-<area shape="rect" title="Header file for the OutputFormat class." alt="" coords="259,5,500,45"/>
-<area shape="rect" href="OutputFormatPng_8hpp.html" title="Header file for the OutputFormatPng class." alt="" coords="17,93,230,148"/>
-<area shape="poly" title=" " alt="" coords="315,53,196,96,195,91,314,48"/>
-<area shape="rect" href="RenderExporter_8hpp.html" title="Header file for the RenderExporter class." alt="" coords="254,101,505,141"/>
-<area shape="poly" title=" " alt="" coords="382,59,382,101,377,101,377,59"/>
-<area shape="rect" href="RenderExporter_8cpp.html" title=" " alt="" coords="349,196,572,236"/>
-<area shape="poly" title=" " alt="" coords="468,49,496,67,519,92,526,107,527,120,519,149,504,176,485,197,481,194,500,173,514,147,522,120,521,108,514,95,493,71,465,53"/>
-<area shape="rect" href="OutputFormatPng_8cpp.html" title=" " alt="" coords="5,196,241,236"/>
-<area shape="poly" title=" " alt="" coords="126,162,126,196,121,196,121,162"/>
-<area shape="poly" title=" " alt="" coords="407,149,446,194,442,198,403,153"/>
+<area shape="rect" title=" " alt="" coords="927,5,1169,45"/>
+<area shape="rect" href="OutputFormatBmp_8hpp.html" title="Header file for the OutputFormatBmp class." alt="" coords="251,93,464,148"/>
+<area shape="poly" title=" " alt="" coords="914,41,707,63,476,96,465,98,464,93,476,91,707,58,913,36"/>
+<area shape="rect" href="RenderExporter_8cpp.html" title=" " alt="" coords="795,203,1018,243"/>
+<area shape="poly" title=" " alt="" coords="1029,58,923,205,918,201,1024,55"/>
+<area shape="rect" href="OutputFormatHdr_8hpp.html" title="Header file for the OutputFormatHdr class." alt="" coords="488,93,701,148"/>
+<area shape="poly" title=" " alt="" coords="939,51,714,96,702,98,701,93,713,91,938,45"/>
+<area shape="rect" href="OutputFormatJpeg_8hpp.html" title="Header file for the OutputFormatJpeg class." alt="" coords="725,93,939,148"/>
+<area shape="poly" title=" " alt="" coords="993,53,894,96,892,91,991,48"/>
+<area shape="rect" href="OutputFormatPng_8hpp.html" title="Header file for the OutputFormatPng class." alt="" coords="1013,93,1227,148"/>
+<area shape="poly" title=" " alt="" coords="1073,55,1102,92,1098,95,1069,58"/>
+<area shape="rect" href="OutputFormatTga_8hpp.html" title="Header file for the OutputFormatTga class." alt="" coords="1251,93,1464,148"/>
+<area shape="poly" title=" " alt="" coords="1125,47,1271,91,1269,96,1123,52"/>
+<area shape="rect" href="RenderExporter_8hpp.html" title="Header file for the RenderExporter class." alt="" coords="1488,101,1739,141"/>
+<area shape="poly" title=" " alt="" coords="1183,44,1476,91,1517,98,1516,103,1476,96,1182,49"/>
+<area shape="rect" href="ExportController_8cpp.html" title=" " alt="" coords="1919,306,2187,346"/>
+<area shape="poly" title=" " alt="" coords="1183,31,1493,53,1643,70,1751,91,1814,110,1862,128,1906,154,1958,194,1986,221,2010,251,2045,304,2041,307,2006,254,1982,225,1954,198,1903,159,1860,133,1812,115,1750,96,1642,76,1493,59,1183,36"/>
+<area shape="rect" href="OutputFormatBmp_8cpp.html" title=" " alt="" coords="5,203,248,243"/>
+<area shape="poly" title=" " alt="" coords="286,156,171,206,169,201,284,151"/>
+<area shape="poly" title=" " alt="" coords="478,146,632,170,783,193,821,201,820,206,782,199,632,175,477,151"/>
+<area shape="poly" title=" " alt="" coords="690,150,849,201,847,206,688,155"/>
+<area shape="rect" href="OutputFormatHdr_8cpp.html" title=" " alt="" coords="272,203,507,243"/>
+<area shape="poly" title=" " alt="" coords="530,156,429,205,427,201,528,152"/>
+<area shape="poly" title=" " alt="" coords="862,158,895,201,890,204,858,161"/>
+<area shape="rect" href="OutputFormatJpeg_8cpp.html" title=" " alt="" coords="531,203,771,243"/>
+<area shape="poly" title=" " alt="" coords="774,157,686,205,684,201,772,152"/>
+<area shape="poly" title=" " alt="" coords="1053,156,948,206,946,201,1051,151"/>
+<area shape="rect" href="OutputFormatPng_8cpp.html" title=" " alt="" coords="1042,203,1278,243"/>
+<area shape="poly" title=" " alt="" coords="1138,160,1155,202,1150,204,1133,162"/>
+<area shape="poly" title=" " alt="" coords="1238,151,991,206,990,201,1237,146"/>
+<area shape="rect" href="OutputFormatTga_8cpp.html" title=" " alt="" coords="1302,203,1538,243"/>
+<area shape="poly" title=" " alt="" coords="1383,158,1410,201,1406,204,1379,161"/>
+<area shape="poly" title=" " alt="" coords="1507,146,1476,151,1351,166,1253,174,1155,182,1030,199,990,206,989,201,1029,193,1154,177,1252,169,1350,161,1476,145,1506,140"/>
+<area shape="rect" href="ExportController_8hpp.html" title=" " alt="" coords="1723,196,1887,251"/>
+<area shape="poly" title=" " alt="" coords="1663,145,1756,194,1754,198,1660,150"/>
+<area shape="rect" href="RenderController_8hpp.html" title=" " alt="" coords="1493,401,1657,456"/>
+<area shape="poly" title=" " alt="" coords="1612,155,1581,401,1575,401,1607,154"/>
+<area shape="poly" title=" " alt="" coords="1748,141,1825,162,1901,194,1943,219,1981,249,2038,304,2035,308,1978,253,1940,224,1899,198,1824,167,1747,146"/>
+<area shape="rect" href="RenderWindowView_8hpp.html" title=" " alt="" coords="1613,299,1843,353"/>
+<area shape="poly" title=" " alt="" coords="1779,263,1750,300,1746,297,1775,260"/>
+<area shape="rect" href="RenderWindowView_8cpp.html" title=" " alt="" coords="1758,409,2018,449"/>
+<area shape="poly" title=" " alt="" coords="1837,260,1858,298,1878,357,1888,408,1883,409,1873,358,1854,300,1832,263"/>
+<area shape="poly" title=" " alt="" coords="1883,253,2008,303,2006,308,1881,258"/>
+<area shape="poly" title=" " alt="" coords="1678,363,1616,403,1613,399,1675,359"/>
+<area shape="rect" href="RenderController_8cpp.html" title=" " alt="" coords="1596,504,1868,544"/>
+<area shape="poly" title=" " alt="" coords="1731,367,1734,504,1729,504,1726,367"/>
+<area shape="poly" title=" " alt="" coords="1782,358,1859,406,1856,411,1780,363"/>
+<area shape="rect" href="MainWindow_8hpp.html" title="Header file for the MainWindow class, which serves as the main application window." alt="" coords="1297,504,1503,544"/>
+<area shape="poly" title=" " alt="" coords="1515,465,1437,506,1434,501,1512,460"/>
+<area shape="rect" href="MainWindow_8cpp.html" title=" " alt="" coords="1488,592,1667,632"/>
+<area shape="poly" title=" " alt="" coords="1578,470,1580,592,1574,592,1573,470"/>
+<area shape="poly" title=" " alt="" coords="1632,461,1701,502,1699,506,1629,465"/>
+<area shape="rect" href="Application_8hpp.html" title="Header file for the Application class, which manages the Qt application lifecycle." alt="" coords="1267,592,1464,632"/>
+<area shape="poly" title=" " alt="" coords="1390,558,1375,593,1371,591,1385,556"/>
+<area shape="rect" href="Application_8cpp.html" title=" " alt="" coords="1213,680,1381,720"/>
+<area shape="poly" title=" " alt="" coords="1308,552,1279,569,1257,593,1251,615,1256,637,1267,659,1282,678,1277,682,1263,662,1251,639,1246,615,1252,591,1276,565,1305,547"/>
+<area shape="poly" title=" " alt="" coords="1452,548,1540,590,1537,594,1450,552"/>
+<area shape="poly" title=" " alt="" coords="1344,645,1314,681,1310,678,1340,641"/>
 </map>
 </div>
 </div>
@@ -121,13 +170,54 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOutputFormat.html">OutputFormat</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract base class for different image output formats.  <a href="classOutputFormat.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOutputFormatStrategy.html">OutputFormatStrategy</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract base class for different image output formats.  <a href="classOutputFormatStrategy.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a98dc27a624eda851a90dea794d0e715b" id="r_a98dc27a624eda851a90dea794d0e715b"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="OutputFormat_8hpp.html#a98dc27a624eda851a90dea794d0e715b">OutputFormat</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="OutputFormat_8hpp.html#a98dc27a624eda851a90dea794d0e715ba55505ba281b015ec31f03ccb151b2a34">PNG</a>
+, <a class="el" href="OutputFormat_8hpp.html#a98dc27a624eda851a90dea794d0e715ba907e06a16862d82ca6907a28a68d0ad6">JPEG</a>
+, <a class="el" href="OutputFormat_8hpp.html#a98dc27a624eda851a90dea794d0e715baa5d5ca1447586e23dc011f8c0cc0a6db">BMP</a>
+, <a class="el" href="OutputFormat_8hpp.html#a98dc27a624eda851a90dea794d0e715ba64efd9bcf7b83f22fe9796967255e103">TGA</a>
+, <br />
+&#160;&#160;<a class="el" href="OutputFormat_8hpp.html#a98dc27a624eda851a90dea794d0e715ba6cad826248cd3f4e93da71e7b49928e3">HDR</a>
+<br />
+ }</td></tr>
+<tr class="separator:a98dc27a624eda851a90dea794d0e715b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Header file for the <a class="el" href="classOutputFormat.html" title="Abstract base class for different image output formats.">OutputFormat</a> class. </p>
-</div></div><!-- contents -->
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a98dc27a624eda851a90dea794d0e715b" name="a98dc27a624eda851a90dea794d0e715b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98dc27a624eda851a90dea794d0e715b">&#9670;&#160;</a></span>OutputFormat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="OutputFormat_8hpp.html#a98dc27a624eda851a90dea794d0e715b">OutputFormat</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a98dc27a624eda851a90dea794d0e715ba55505ba281b015ec31f03ccb151b2a34" name="a98dc27a624eda851a90dea794d0e715ba55505ba281b015ec31f03ccb151b2a34"></a>PNG&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a98dc27a624eda851a90dea794d0e715ba907e06a16862d82ca6907a28a68d0ad6" name="a98dc27a624eda851a90dea794d0e715ba907e06a16862d82ca6907a28a68d0ad6"></a>JPEG&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a98dc27a624eda851a90dea794d0e715baa5d5ca1447586e23dc011f8c0cc0a6db" name="a98dc27a624eda851a90dea794d0e715baa5d5ca1447586e23dc011f8c0cc0a6db"></a>BMP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a98dc27a624eda851a90dea794d0e715ba64efd9bcf7b83f22fe9796967255e103" name="a98dc27a624eda851a90dea794d0e715ba64efd9bcf7b83f22fe9796967255e103"></a>TGA&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a98dc27a624eda851a90dea794d0e715ba6cad826248cd3f4e93da71e7b49928e3" name="a98dc27a624eda851a90dea794d0e715ba6cad826248cd3f4e93da71e7b49928e3"></a>HDR&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8

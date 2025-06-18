@@ -29,14 +29,14 @@ TEST(SkyboxTest, SetTextureWithSingleColorReturnsCorrectColor) {
 
   lin::Vec3d direction(0.0, 1.0, 0.0);
   ColorRGB color_rgb(0.2, 0.4, 0.6);
-  auto texture = std::make_shared<Texture>(color_rgb);
-  skybox.setTexture(texture);
+  Texture texture;
+  texture.setValue(color_rgb);
+  texture.setColorSpace(ColorSpace::Linear);
+  skybox.setTexture(&texture);
 
   ColorRGBA color = skybox.getColor(direction);
 
-  convertToLinearSpace(color_rgb.r);
-  convertToLinearSpace(color_rgb.g);
-  convertToLinearSpace(color_rgb.b);
+  convertToLinearSpace(color_rgb);
 
   EXPECT_DOUBLE_EQ(color.r, color_rgb.r);
   EXPECT_DOUBLE_EQ(color.g, color_rgb.g);
@@ -85,8 +85,10 @@ TEST(SkyboxTest, GetUVCoordinatesIsCorrectlyComputed) {
 TEST(SkyboxTest, ReturnsDefaultColorAfterTextureIsResetToNull) {
   Skybox skybox;
 
-  auto texture = std::make_shared<Texture>(ColorRGBA(0.1, 0.2, 0.3, 1.0));
-  skybox.setTexture(texture);
+  Texture texture;
+  texture.setValue(ColorRGB(0.1, 0.2, 0.3));
+  texture.setColorSpace(ColorSpace::Linear);
+  skybox.setTexture(&texture);
 
   skybox.setTexture(nullptr);
 
@@ -109,10 +111,10 @@ TEST(SkyboxTest, ReturnsDefaultColorAfterTextureIsResetToNull) {
 TEST(SkyboxTest, GetTexture) {
   Skybox skybox;
 
-  auto texture = std::make_shared<Texture>(ColorRGB(0.5, 0.5, 0.5));
+  Texture texture;
 
   EXPECT_NE(skybox.getTexture(), nullptr);
-  skybox.setTexture(texture);
+  skybox.setTexture(&texture);
 
   const Texture* retrieved_texture = skybox.getTexture();
   EXPECT_NE(retrieved_texture, nullptr);

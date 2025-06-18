@@ -21,7 +21,7 @@
 struct Vertex {
   lin::Vec3d position  = {0.0, 0.0, 0.0}; ///< Position of the vertex in 3D space.
   lin::Vec3d normal    = {0.0, 0.0, 0.0}; ///< Normal vector at the vertex.
-  TextureUV  uvCoord   = {0, 0};          ///< Texture coordinates of the vertex.
+  TextureUV  uv_coord  = {0, 0};          ///< Texture coordinates of the vertex.
   lin::Vec3d tangent   = {0.0, 0.0, 0.0}; ///< Tangent vector at the vertex.
   lin::Vec3d bitangent = {0.0, 0.0, 0.0}; ///< Bitangent vector at the vertex.
 
@@ -31,8 +31,8 @@ struct Vertex {
    * @return True if the vertices are equal, false otherwise.
    */
   bool operator==(const Vertex& other) const {
-    return position == other.position && normal == other.normal && uvCoord.u == other.uvCoord.u &&
-           uvCoord.v == other.uvCoord.v;
+    return position == other.position && normal == other.normal && uv_coord.u == other.uv_coord.u &&
+           uv_coord.v == other.uv_coord.v;
   }
 
   /**
@@ -40,7 +40,7 @@ struct Vertex {
    * @return The number of values in a vertex.
    */
   static constexpr size_t valuePerVertex() {
-    return 3 + 3 + 2 + 3 + 3; // position (3), normal (3), uvCoord (2), tangent (3), bitangent (3)
+    return 3 + 3 + 2 + 3 + 3; // position (3), normal (3), uv_coord (2), tangent (3), bitangent (3)
   }
 };
 
@@ -73,7 +73,8 @@ private:
 
   std::shared_ptr<BVHNode> m_bvh_root;
 
-  void computeTangentsAndBitangents(); ///< Computes tangents and bitangents for the mesh.
+  void computeTangentsAndBitangents();
+
 public:
   Mesh() = default; ///< Default constructor.
 

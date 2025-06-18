@@ -6,8 +6,10 @@
 #define SURFACE_TEXTURE_HPP
 
 #include <cstdint>
+#include <vector>
 
 #include "Core/CommonTypes.hpp"
+#include "Core/Observer.hpp"
 #include "Surface/TextureFiltering.hpp"
 #include "Surface/TextureWrapping.hpp"
 
@@ -19,7 +21,9 @@
  * The RGB mode is used for standard RGB color representation, while sRGB is used for
  * standard RGB color representation with gamma correction.
  */
-enum class ColorSpace : std::uint8_t { RGB, sRGB };
+enum class ColorSpace : std::uint8_t { Linear, sRGB };
+
+enum class TextureType : std::uint8_t { IMAGE_TEXTURE, COLOR_TEXTURE };
 
 /**
  * @class Texture
@@ -32,9 +36,16 @@ enum class ColorSpace : std::uint8_t { RGB, sRGB };
  */
 class Texture {
 private:
-  double* m_image_data;
+  std::vector<double>        m_image_data;
+  std::vector<unsigned char> m_texture_preview;
+
+  TextureType m_texture_type = TextureType::IMAGE_TEXTURE;
 
   ImageProperties m_texture_properties;
+  ImageProperties m_preview_properties;
+
+  std::string m_texture_path;
+  bool        m_flipped_vertically = false;
 
   ColorSpace                        m_color_space    = ColorSpace::sRGB;
   TextureSampling::TextureFiltering m_filtering_mode = TextureSampling::TextureFiltering::BILINEAR;
@@ -42,43 +53,69 @@ private:
 
   ColorRGBA m_border_color;
 
+  Observer<> m_texture_data_observer;
+  Observer<> m_texture_parameters_observer;
+
+  std::pair<int, int> computePreviewSize() const;
+  void                appendPixelFromSource(int src_x, int src_y, int channels, int original_width);
+  void                generateRescaledImage(int new_width, int new_height);
+
+  void flipVertically();
+
+  void generateTexture(const ImageProperties& properties, const std::vector<double>& image_data);
+  void finalizeTexture();
+
 public:
   /**
    * @brief Default constructor for the Texture class.
-   * @param value The initial value for the texture.
    */
-  explicit Texture(double value);
+  Texture();
+
+  Texture(const Texture& other)                = delete;
+  Texture(Texture&& other) noexcept            = delete;
+  Texture& operator=(const Texture& other)     = delete;
+  Texture& operator=(Texture&& other) noexcept = delete;
 
   /**
-   * @brief Constructor for the Texture class with color.
-   * @param color The initial color for the texture.
+   * @brief Gets the observer that notifies when texture data changes.
+   * @return A reference to the observer that notifies about texture data changes.
    */
-  explicit Texture(const ColorRGB& color);
+  Observer<>& getTextureDataObserver() { return m_texture_data_observer; }
 
   /**
-   * @brief Constructor for the Texture class with RGBA color.
-   * @param color The initial RGBA color for the texture.
+   * @brief Gets the observer that notifies when texture parameters change.
+   * @return A reference to the observer that notifies about texture parameter changes.
    */
-  explicit Texture(const ColorRGBA& color);
+  Observer<>& getTextureParametersObserver() { return m_texture_parameters_observer; }
 
   /**
-   * @brief Constructor for the Texture class with image data (as unsigned char).
-   * @param image_data Pointer to the image data.
-   * @param texture_properties The properties of the image (width, height, and channel count).
+   * @brief Sets the texture type.
+   * @param type The new texture type to set.
    */
-  Texture(const unsigned char* image_data, ImageProperties texture_properties);
+  void setTextureType(TextureType type);
 
   /**
-   * @brief Constructor for the Texture class with image data (as double).
-   * @param image_data Pointer to the image data.
-   * @param texture_properties The properties of the image (width, height, and channel count).
+   * @brief Gets the texture type.
+   * @return The current texture type.
    */
-  Texture(const double* image_data, ImageProperties texture_properties);
+  const TextureType& getTextureType() const { return m_texture_type; }
 
-  Texture(const Texture& other);                ///< Copy constructor.
-  Texture(Texture&& other) noexcept;            ///< Move constructor.
-  Texture& operator=(const Texture& other);     ///< Copy assignment operator.
-  Texture& operator=(Texture&& other) noexcept; ///< Move assignment operator.
+  /**
+   * @brief Generates preview data for the texture.
+   */
+  void generatePreviewData();
+
+  /**
+   * @brief Loads texture data from a file.
+   * @param filename The path to the texture file to load.
+   */
+  void loadFromFile(const char* filename);
+
+  /**
+   * @brief Gets the path of the texture file.
+   * @return The path of the texture file.
+   */
+  const std::string& getTexturePath() const { return m_texture_path; }
 
   /**
    * @brief Sets the value of the texture.
@@ -105,58 +142,82 @@ public:
   void setColorSpace(ColorSpace colorSpace);
 
   /**
+   * @brief Gets the color space of the texture.
+   * @return The color space of the texture.
+   */
+  const ColorSpace& getColorSpace() const { return m_color_space; }
+
+  /**
    * @brief Sets the filtering mode of the texture.
    * @param filteringMode The new filtering mode for the texture.
    */
-  void setFilteringMode(TextureSampling::TextureFiltering filteringMode) { m_filtering_mode = filteringMode; }
+  void setFilteringMode(TextureSampling::TextureFiltering filteringMode);
 
-  TextureSampling::TextureFiltering getFilteringMode() const { return m_filtering_mode; }
+  /**
+   * @brief Gets the filtering mode of the texture.
+   * @return The filtering mode of the texture.
+   */
+  const TextureSampling::TextureFiltering& getFilteringMode() const { return m_filtering_mode; }
 
   /**
    * @brief Sets the wrapping mode of the texture.
    * @param wrappingMode The new wrapping mode for the texture.
    */
-  void setWrappingMode(TextureSampling::TextureWrapping wrappingMode) { m_wrapping_mode = wrappingMode; }
+  void setWrappingMode(TextureSampling::TextureWrapping wrappingMode);
 
-  TextureSampling::TextureWrapping getWrappingMode() const { return m_wrapping_mode; }
+  /**
+   * @brief Gets the wrapping mode of the texture.
+   * @return The wrapping mode of the texture.
+   */
+  const TextureSampling::TextureWrapping& getWrappingMode() const { return m_wrapping_mode; }
 
   /**
    * @brief Sets the border color (RGBA) of the texture.
    * @param color The new border color for the texture.
    */
-  void setBorderColor(const ColorRGBA& color) { m_border_color = color; }
+  void setBorderColor(const ColorRGBA& color);
 
   /**
    * @brief Sets the border color (RGB) of the texture.
    * @param color The new border color for the texture.
    */
-  void setBorderColor(const ColorRGB& color) { m_border_color = ColorRGBA(color, 1.0); }
+  void setBorderColor(const ColorRGB& color);
 
   /**
    * @brief Sets the border color (grayscale) of the texture.
    * @param value The new grayscale value for the border color.
    */
-  void setBorderColor(double value) { m_border_color = {value, value, value, 1.0}; }
-
-  ColorRGBA getBorderColor() const { return m_border_color; }
+  void setBorderColor(double value);
 
   /**
-   * @brief Sets the image data of the texture.
-   * @param image_data Pointer to the new image data.
-   * @param texture_properties The properties of the image (width, height, and channel count).
+   * @brief Gets the border color of the texture.
+   * @return The border color of the texture.
    */
-  void setImageData(const double* image_data, ImageProperties texture_properties);
+  const ColorRGBA& getBorderColor() const { return m_border_color; }
 
   /**
-   * @brief Flips the texture vertically.
+   * @brief Sets whether the texture is flipped vertically.
+   * @param flipped True if the texture should be flipped vertically, false otherwise.
    */
-  void flipVertically();
+  void setFlippedVertically(bool flipped);
+
+  /**
+   * @brief Checks if the texture is flipped vertically.
+   * @return True if the texture is flipped vertically, false otherwise.
+   */
+  bool isFlippedVertically() const { return m_flipped_vertically; }
 
   /**
    * @brief Gets the properties of the texture.
    * @return The properties of the texture.
    */
   const ImageProperties& getProperties() const { return m_texture_properties; }
+
+  /**
+   * @brief Gets the properties of the texture preview.
+   * @return The properties of the texture preview.
+   */
+  const ImageProperties& getPreviewProperties() const { return m_preview_properties; }
 
   /**
    * @brief Gets the value of the texture.
@@ -182,9 +243,19 @@ public:
    */
   ColorRGBA getValue4d(TextureUV uv_coord) const;
 
-  double* getImageData() const { return m_image_data; }
+  /**
+   * @brief Gets the image data of the texture.
+   * @return A pointer to the image data of the texture.
+   */
+  const double* getImageData() const { return m_image_data.data(); }
 
-  ~Texture(); ///< Destructor.
+  /**
+   * @brief Gets the preview data of the texture.
+   * @return A pointer to the preview data of the texture.
+   */
+  const unsigned char* getPreviewData() const { return m_texture_preview.data(); }
+
+  ~Texture() = default; ///< Default destructor for the Texture class.
 };
 
 #endif // SURFACE_TEXTURE_HPP

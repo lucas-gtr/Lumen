@@ -41,7 +41,7 @@ TEST(MeshTest, InvalidConstructorTest) {
 }
 
 TEST(MeshTest, VertexSize) {
-    EXPECT_EQ(Vertex::valuePerVertex(), 14); // position (3) + normal (3) + uvCoord (2) + tangent (3) + bitangent (3)
+    EXPECT_EQ(Vertex::valuePerVertex(), 14); // position (3) + normal (3) + uv_coord (2) + tangent (3) + bitangent (3)
 }
 
 TEST(MeshTest, GetVertexTest) {

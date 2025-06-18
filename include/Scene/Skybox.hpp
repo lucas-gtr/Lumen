@@ -9,6 +9,7 @@
 
 #include "Core/CommonTypes.hpp"
 #include "Core/Math/Vec3.hpp"
+#include "Core/Observer.hpp"
 #include "Surface/Texture.hpp"
 
 /**
@@ -20,7 +21,9 @@
  */
 class Skybox {
 private:
-  std::shared_ptr<Texture> m_texture;
+  Texture* m_texture;
+
+  Observer<> m_texture_observer;
 
 public:
   Skybox(); ///< Default constructor.
@@ -31,10 +34,16 @@ public:
   Skybox& operator=(Skybox&&)      = delete;
 
   /**
+   * @brief Gets the observer for texture changes.
+   * @return A reference to the observer that notifies about texture changes.
+   */
+  Observer<>& getTextureObserver() { return m_texture_observer; }
+
+  /**
    * @brief Sets the texture for the skybox.
    * @param texture The texture to be set for the skybox.
    */
-  void setTexture(const std::shared_ptr<Texture>& texture);
+  void setTexture(Texture* texture);
 
   /**
    * @brief Gets the UV coordinates based on the given direction.
@@ -50,9 +59,11 @@ public:
    */
   ColorRGBA getColor(const lin::Vec3d& direction) const;
 
-  const Texture* getTexture() const {
-    return m_texture ? m_texture.get() : nullptr; ///< Returns the texture if it exists, otherwise returns nullptr.
-  }
+  /**
+   * @brief Gets the texture associated with the skybox.
+   * @return A pointer to the Texture used for the skybox.
+   */
+  Texture* getTexture() const { return m_texture; }
 
   ~Skybox() = default; ///< Default destructor.
 };

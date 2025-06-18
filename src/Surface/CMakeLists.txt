@@ -4,6 +4,8 @@ add_library(Surface STATIC
     TextureWrapping.cpp
     Material.cpp
     TextureLoader.cpp
+    TextureManager.cpp
+    MaterialManager.cpp
 )
 
 target_include_directories(Surface PRIVATE

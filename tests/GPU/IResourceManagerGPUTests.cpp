@@ -7,23 +7,21 @@ public:
 
     void setCamera(Camera* camera, int viewportWidth, int viewportHeight) override {}
 
-    const ITextureGPU* addTexture(const Texture& texture) override {
+    const ITextureGPU* addTexture(Texture* texture) override {
         return nullptr;
     }
 
-    void addObject3D(const Object3D& object) override {}
+    void addObject3D(Object3D* object) override {}
 
-    void addLight(const DirectionalLight& light) override {}
+    void addLight(DirectionalLight* light) override {}
 
-    void addLight(const PointLight& light) override {}
+    void addLight(PointLight* light) override {}
 
-    void addLight(const SpotLight& light) override {}
+    void addLight(SpotLight* light) override {}
 
     void clearAllRessources() override {}
 
-    void setSkyboxTexture(const Texture& texture) override {}
-
-    void deleteSkyboxTexture() override {}
+    void setSkybox(Skybox* skybox) override {}
 };
 
 TEST(IResourceManagerGPUTest, AddObject3D) {
@@ -32,5 +30,5 @@ TEST(IResourceManagerGPUTest, AddObject3D) {
     object.setPosition(lin::Vec3d(1.0, 2.0, 3.0));
     object.setRotation(lin::Vec3d(45.0, 90.0, 180.0));
 
-    EXPECT_NO_THROW(resourceManager.addObject3D(object));
+    EXPECT_NO_THROW(resourceManager.addObject3D(&object));
 }

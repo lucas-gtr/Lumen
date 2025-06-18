@@ -9,11 +9,13 @@
 
 #include "Core/CommonTypes.hpp"
 #include "Core/Framebuffer.hpp"
+#include "Core/Observer.hpp"
 #include "Core/Ray.hpp"
 #include "Rendering/CameraRayEmitter.hpp"
 #include "Rendering/RayIntersection.hpp"
-#include "Rendering/RenderExecution.hpp"
 #include "Rendering/RenderSettings.hpp"
+#include "Rendering/RenderStrategy.hpp"
+#include "Rendering/RenderTime.hpp"
 #include "Scene/Scene.hpp"
 
 /**
@@ -30,10 +32,19 @@ private:
   Framebuffer*          m_framebuffer;
 
   std::unique_ptr<RenderStrategy> m_render_strategy;
-  CameraRayEmitter                m_cameraRayEmitter;
+  CameraRayEmitter                m_camera_ray_emitter;
+
+  std::unique_ptr<RenderTime> m_render_time;
+
+  std::atomic<bool> m_stop_requested = false;
+
+  Observer<double> m_renderProgressObserver;
 
   ColorRGBA traceRay(const Ray& ray) const;
   bool      isValidHit(const RayHitInfo& hit_info) const;
+  void      cancelRendering();
+
+  void updateRenderMode();
 
 public:
   /**
@@ -44,7 +55,7 @@ public:
    * @param render_settings The render settings to be used for rendering.
    * @param scene The scene to be rendered.
    */
-  Renderer(const RenderSettings* render_settings, Scene* scene);
+  Renderer(Scene* scene, RenderSettings* render_settings);
 
   Renderer(const Renderer&)            = delete;
   Renderer& operator=(const Renderer&) = delete;
@@ -52,13 +63,12 @@ public:
   Renderer& operator=(Renderer&&)      = delete;
 
   /**
-   * @brief Sets the render settings for the renderer.
-   *
-   * This method allows changing the render settings after the Renderer object has been created.
-   *
-   * @param settings The new render settings to apply.
+   * @brief Gets the observer for render progress updates.
+   * @return A reference to the observer that notifies about render progress.
    */
-  void setRenderSettings(const RenderSettings* settings);
+  Observer<double>& getRenderProgressObserver() { return m_renderProgressObserver; }
+
+  RenderTime* getRenderTime() const { return m_render_time.get(); }
 
   /**
    * @brief Sets the scene to be rendered.
@@ -91,13 +101,34 @@ public:
   Framebuffer* getFramebuffer() const { return m_framebuffer; }
 
   /**
+   * @brief Gets the data of the framebuffer.
+   * @return A pointer to the framebuffer data.
+   */
+  const double* getFramebufferData() const { return m_framebuffer->getFramebuffer(); }
+
+  /**
+   * @brief Gets the preview image of the rendered scene.
+   * @param factor The scaling factor for the preview image.
+   * @return A pointer to the scaled framebuffer data.
+   */
+  const double* getPreviewImage(double factor);
+
+  /**
    * @brief Checks if the renderer is ready to render.
-   *
-   * This method checks if all necessary components (such as scene and settings) are properly initialized.
-   *
    * @return True if the renderer is ready to render, false otherwise.
    */
   bool isReadyToRender() const;
+
+  /**
+   * @brief Cancels the current rendering process.
+   */
+  void requestStop() { m_stop_requested.store(true); }
+
+  /**
+   * @brief Checks if a stop has been requested for the rendering process.
+   * @return True if a stop has been requested, false otherwise.
+   */
+  bool isStopRequested() const { return m_stop_requested.load(); }
 
   /**
    * @brief Gets the color of a pixel at a specific subpixel grid position.

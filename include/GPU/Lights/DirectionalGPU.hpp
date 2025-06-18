@@ -27,7 +27,7 @@ public:
    * @brief Constructor for DirectionalLightGPU.
    * @param light Pointer to the DirectionalLight object to be represented in GPU memory.
    */
-  explicit DirectionalLightGPU(const DirectionalLight& light);
+  explicit DirectionalLightGPU(const DirectionalLight* light);
 
   DirectionalLightGPU(const DirectionalLightGPU&)            = delete;
   DirectionalLightGPU& operator=(const DirectionalLightGPU&) = delete;
@@ -35,20 +35,21 @@ public:
   DirectionalLightGPU& operator=(DirectionalLightGPU&&)      = delete;
 
   /**
+   * @brief Retrieves the direction and color of the light.
+   */
+  void retrieveData();
+
+  /**
    * @brief Returns the direction of the light.
    * @return The direction vector of the light.
    */
-  lin::Vec3f getDirection() const {
-    return m_direction; ///< Gets the direction of the light.
-  }
+  lin::Vec3f getDirection() const { return m_direction; }
 
   /**
    * @brief Returns the color of the light multiplied by the intensity.
    * @return The color vector of the light multiplied by the intensity.
    */
-  lin::Vec3f getColor() const {
-    return m_color; ///< Gets the color of the light.
-  }
+  lin::Vec3f getColor() const { return m_color; }
 
   ~DirectionalLightGPU() = default; ///< Default destructor.
 };

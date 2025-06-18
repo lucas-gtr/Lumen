@@ -9,6 +9,7 @@
 
 #include "Core/Math/Mat4.hpp"
 #include "Core/Math/Vec3.hpp"
+#include "Core/Ray.hpp"
 #include "GPU/OpenGL/UniformBufferGL.hpp"
 #include "SceneObjects/Camera.hpp"
 
@@ -22,10 +23,10 @@
  * @note The matrices are stored in column-major order, which is the default for OpenGL.
  */
 struct CameraUBO {
-  lin::Mat4f view                   = lin::Mat4f::Identity();
-  lin::Mat4f viewWithoutTranslation = lin::Mat4f::Identity();
-  lin::Mat4f projection             = lin::Mat4f::Identity();
-  lin::Vec3f position               = lin::Vec3f(0.0F);
+  lin::Mat4f view_transposed                     = lin::Mat4f::Identity();
+  lin::Mat4f view_without_translation_transposed = lin::Mat4f::Identity();
+  lin::Mat4f projection_transposed               = lin::Mat4f::Identity();
+  lin::Vec3f position                            = lin::Vec3f(0.0F);
   float      padding1{};
 };
 
@@ -45,14 +46,14 @@ private:
   lin::Vec3f m_right;
   lin::Vec3f m_up;
 
-  CameraUBO       m_cameraUBO;
-  UniformBufferGL m_glCameraUBO;
+  CameraUBO       m_camera_UBO;
+  UniformBufferGL m_gl_camera_UBO;
 
   float m_yaw   = 0.0;
   float m_pitch = 0.0;
 
-  int m_viewportWidth;
-  int m_viewportHeight;
+  int m_viewport_width;
+  int m_viewport_height;
 
   void updateAxisVectors();
 
@@ -78,6 +79,11 @@ public:
   void updateRenderCamera();
 
   /**
+   * @brief Updates the viewport camera based on the current render camera position and rotation.
+   */
+  void updateViewportCamera();
+
+  /**
    * @brief Updates the view matrix based on the current camera position and orientation.
    */
   void updateViewMatrix();
@@ -91,7 +97,7 @@ public:
    * @brief Gets ID of the OpenGL Uniform Buffer Object (UBO) used for the camera.
    * @return The OpenGL ID of the camera UBO.
    */
-  unsigned int getUBO() const { return m_glCameraUBO.getID(); }
+  unsigned int getUBO() const { return m_gl_camera_UBO.getID(); }
 
   /**
    * @brief Moves the camera forward by a specified distance.
@@ -117,6 +123,8 @@ public:
    * @param deltaPitch The change in pitch angle (in radians).
    */
   void rotate(float deltaYaw, float deltaPitch);
+
+  Ray getRayFromMousePosition(int mouse_x, int mouse_y) const;
 };
 
 // GCOVR_EXCL_STOP

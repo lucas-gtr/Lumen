@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['focallength_0',['focalLength',['../structRayEmitterParameters.html#ab0ffad5fc5dec801116a55a4a01ed99c',1,'RayEmitterParameters']]],
-  ['focusdistance_1',['focusDistance',['../structRayEmitterParameters.html#a18c9041bbb5556d2c6b643b50dbb2f41',1,'RayEmitterParameters']]]
+  ['focal_5flength_0',['focal_length',['../structRayEmitterParameters.html#a8bfbcd485c94a05f773e642303e7c15d',1,'RayEmitterParameters']]],
+  ['focus_5fdistance_1',['focus_distance',['../structRayEmitterParameters.html#a0f83773efd9027c1a5b11677e9a08018',1,'RayEmitterParameters']]]
 ];

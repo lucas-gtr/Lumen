@@ -7,6 +7,7 @@
 #define SCENEOBJECTS_OBJECT3D_HPP
 
 #include "Core/Math/Vec3.hpp"
+#include "Core/Observer.hpp"
 #include "Core/Transform.hpp"
 #include "Geometry/Mesh.hpp"
 #include "Surface/Material.hpp"
@@ -20,8 +21,10 @@
  */
 class Object3D : public Transform {
 private:
-  Mesh            m_mesh;
-  const Material* m_material;
+  Mesh      m_mesh;
+  Material* m_material;
+
+  Observer<const Object3D*> m_material_changed_observer;
 
 public:
   Object3D(); ///< Default constructor.
@@ -32,10 +35,16 @@ public:
    */
   explicit Object3D(const Mesh& mesh);
 
-  Object3D(const Object3D&)            = default; ///< Default copy constructor.
-  Object3D& operator=(const Object3D&) = default; ///< Default copy assignment operator.
-  Object3D(Object3D&&)                 = default; ///< Default move constructor.
-  Object3D& operator=(Object3D&&)      = default; ///< Default move assignment operator.
+  Object3D(const Object3D&)            = delete;
+  Object3D& operator=(const Object3D&) = delete;
+  Object3D(Object3D&&)                 = delete;
+  Object3D& operator=(Object3D&&)      = delete;
+
+  /**
+   * @brief Gets the observer that notifies when the material changes.
+   * @return A reference to the observer that notifies about material changes.
+   */
+  Observer<const Object3D*>& getMaterialChangedObserver() { return m_material_changed_observer; }
 
   /**
    * @brief Sets the mesh for this 3D object.
@@ -47,7 +56,7 @@ public:
    * @brief Sets the material for this 3D object.
    * @param material The material to set.
    */
-  void setMaterial(const Material* material) { this->m_material = material; }
+  void setMaterial(Material* material);
 
   /**
    * @brief Gets the mesh associated with this 3D object.
@@ -65,9 +74,18 @@ public:
    * @brief Gets the material associated with this 3D object.
    * @return The material of the 3D object.
    */
-  const Material& getMaterial() const;
+  Material* getMaterial() const;
 
+  /**
+   * @brief Gets the minimum bounding box corner of the object.
+   * @return The minimum bounding box corner as a Vec3d.
+   */
   lin::Vec3d getMinBound() const;
+
+  /**
+   * @brief Gets the maximum bounding box corner of the object.
+   * @return The maximum bounding box corner as a Vec3d.
+   */
   lin::Vec3d getMaxBound() const;
 
   ~Object3D() = default; ///< Default destructor.

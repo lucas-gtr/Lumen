@@ -1,5 +1,7 @@
 <map id="/home/lucasgtr/lumen/include/Export/OutputFormat.hpp" name="/home/lucasgtr/lumen/include/Export/OutputFormat.hpp">
-<area shape="rect" id="Node000001" title="Header file for the OutputFormat class." alt="" coords="5,5,247,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="97,93,155,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,46,129,79,123,79,123,46"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,247,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="50,93,117,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,47,98,83,94,80,113,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="141,93,199,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,44,159,80,154,83,134,47"/>
 </map>

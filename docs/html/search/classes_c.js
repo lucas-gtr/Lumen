@@ -1,12 +1,21 @@
 var searchData=
 [
-  ['scene_0',['Scene',['../classScene.html',1,'']]],
-  ['shadersgl_1',['ShadersGL',['../classShadersGL.html',1,'']]],
-  ['shadowmapgl_2',['ShadowMapGL',['../classShadowMapGL.html',1,'']]],
-  ['singlethreaded_3',['SingleThreaded',['../classSingleThreaded.html',1,'']]],
-  ['skybox_4',['Skybox',['../classSkybox.html',1,'']]],
-  ['spheremeshbuilder_5',['SphereMeshBuilder',['../classSphereMeshBuilder.html',1,'']]],
-  ['spotlight_6',['SpotLight',['../classSpotLight.html',1,'']]],
-  ['spotlightgl_7',['SpotLightGL',['../classSpotLightGL.html',1,'']]],
-  ['spotlightgpu_8',['SpotLightGPU',['../classSpotLightGPU.html',1,'']]]
+  ['ray_0',['Ray',['../structRay.html',1,'']]],
+  ['raybvhhitinfo_1',['RayBVHHitInfo',['../structRayIntersection_1_1RayBVHHitInfo.html',1,'RayIntersection']]],
+  ['rayemitterparameters_2',['RayEmitterParameters',['../structRayEmitterParameters.html',1,'']]],
+  ['rayhitinfo_3',['RayHitInfo',['../structRayHitInfo.html',1,'']]],
+  ['realtimecontroller_4',['RealtimeController',['../classRealtimeController.html',1,'']]],
+  ['realtimeview_5',['RealtimeView',['../classRealtimeView.html',1,'']]],
+  ['reinhardtonemapping_6',['ReinhardToneMapping',['../classReinhardToneMapping.html',1,'']]],
+  ['rendercontroller_7',['RenderController',['../classRenderController.html',1,'']]],
+  ['renderer_8',['Renderer',['../classRenderer.html',1,'']]],
+  ['renderexporter_9',['RenderExporter',['../classRenderExporter.html',1,'']]],
+  ['rendersettings_10',['RenderSettings',['../classRenderSettings.html',1,'']]],
+  ['renderstats_11',['RenderStats',['../structRenderStats.html',1,'']]],
+  ['renderstrategy_12',['RenderStrategy',['../classRenderStrategy.html',1,'']]],
+  ['rendertime_13',['RenderTime',['../classRenderTime.html',1,'']]],
+  ['renderview_14',['RenderView',['../classRenderView.html',1,'']]],
+  ['renderwindowview_15',['RenderWindowView',['../classRenderWindowView.html',1,'']]],
+  ['resolution_16',['Resolution',['../structResolution.html',1,'']]],
+  ['resourcemanagergl_17',['ResourceManagerGL',['../classResourceManagerGL.html',1,'']]]
 ];

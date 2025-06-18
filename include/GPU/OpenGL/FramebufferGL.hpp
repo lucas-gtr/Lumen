@@ -7,8 +7,8 @@
 
 // GCOVR_EXCL_START
 
-#include <GL/glew.h>
 #include <cstddef>
+#include <qopenglfunctions_3_3_core.h>
 #include <vector>
 
 /**
@@ -18,7 +18,7 @@
  * This class provides methods to create, bind, resize, and manage framebuffers with multiple color attachments
  * and an optional depth attachment. It supports multisampling for improved rendering quality.
  */
-class FramebufferGL {
+class FramebufferGL : protected QOpenGLFunctions_3_3_Core {
 private:
   GLuint              m_framebufferID = 0;
   std::vector<GLuint> m_colorAttachments;
@@ -31,8 +31,8 @@ private:
 
   void createFramebuffer();
 
-  void createTexture2D(GLuint textureID) const;
-  void createMultisampleTexture(GLuint textureID) const;
+  void createTexture2D(GLuint textureID);
+  void createMultisampleTexture(GLuint textureID);
   void createColorAttachments();
 
   void createDepthAttachment();
@@ -48,7 +48,7 @@ public:
    * @param numColorAttachments The number of color attachments.
    * @param multisampleCount The number of samples for multisampling (default is 1).
    */
-  FramebufferGL(int width, int height, int numColorAttachments, int multisampleCount = 1);
+  FramebufferGL(int width, int height, int numColorAttachments, int multisampleCount);
 
   FramebufferGL(const FramebufferGL&)            = delete;
   FramebufferGL& operator=(const FramebufferGL&) = delete;
@@ -58,7 +58,7 @@ public:
   /**
    * @brief Binds the framebuffer for rendering.
    */
-  void bind() const;
+  void bind();
 
   /**
    * @brief Resizes the framebuffer to the specified width and height.
@@ -83,9 +83,8 @@ public:
 
   /**
    * @brief Destructor for FramebufferGL.
-   * Cleans up the OpenGL resources associated with the framebuffer.
    */
-  ~FramebufferGL();
+  ~FramebufferGL() override;
 };
 
 // GCOVR_EXCL_STOP

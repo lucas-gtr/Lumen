@@ -10,12 +10,12 @@
 #include <cstdint>
 #include <memory>
 #include <string>
+#include <thread>
 
 #include "Core/CommonTypes.hpp"
 #include "Core/Config.hpp"
-#include "ImplementationParameters/Parameters.hpp"
 
-enum class RenderExecutionMode : std::uint8_t { SINGLE_THREADED, MULTI_THREADED_CPU, GPU_CUDA };
+enum class RenderMode : std::uint8_t { SINGLE_THREADED, MULTI_THREADED_CPU, GPU_CUDA };
 
 /**
  * @class RenderSettings
@@ -30,22 +30,26 @@ class RenderSettings {
 private:
   ImageProperties m_properties = {DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_CHANNEL_COUNT};
 
-  double dx = 1.0 / static_cast<double>(m_properties.width);
-  double dy = 1.0 / static_cast<double>(m_properties.height);
-
   int m_max_bounces        = DEFAULT_MAX_BOUNCES;
   int m_samples_per_pixels = DEFAULT_SAMPLES_PER_PIXEL;
 
-  RenderExecutionMode m_execution_mode = RenderExecutionMode::SINGLE_THREADED;
+  RenderMode m_render_mode = RenderMode::SINGLE_THREADED;
 
-  std::unique_ptr<Parameters> m_renderer_parameters;
+  int          m_chunk_size   = DEFAULT_CHUNK_SIZE;
+  unsigned int m_thread_count = std::max(1U, std::thread::hardware_concurrency() - 4);
+
+  double dx = 1.0 / static_cast<double>(m_properties.width);
+  double dy = 1.0 / static_cast<double>(m_properties.height);
 
 public:
-  RenderSettings();
+  RenderSettings() = default; ///< Default constructor initializes with default settings.
+
   RenderSettings(const RenderSettings&)            = delete;
   RenderSettings& operator=(const RenderSettings&) = delete;
   RenderSettings(RenderSettings&&)                 = delete;
   RenderSettings& operator=(RenderSettings&&)      = delete;
+
+  ImageProperties getImageProperties() const { return m_properties; }
 
   /**
    * @brief Get the width of the rendered image.
@@ -61,11 +65,11 @@ public:
 
   /**
    * @brief Set the width of the rendered image.
-   * The width will be clamped to a valid range between MIN_WIDTH and MAX_WIDTH.
+   * The width will be clamped to a valid range between MIN_WIDTH and MAX_IMAGE_WIDTH.
    * @param width The width of the image in pixels.
    */
   void setWidth(int width) {
-    m_properties.width = std::clamp(width, MIN_WIDTH, MAX_WIDTH);
+    m_properties.width = std::clamp(width, MIN_WIDTH, MAX_IMAGE_WIDTH);
     dx                 = 1.0 / static_cast<double>(width);
   }
 
@@ -83,11 +87,11 @@ public:
 
   /**
    * @brief Set the height of the rendered image.
-   * The height will be clamped to a valid range between MIN_HEIGHT and MAX_HEIGHT.
+   * The height will be clamped to a valid range between MIN_HEIGHT and MAX_IMAGE_HEIGHT.
    * @param height The height of the image in pixels.
    */
   void setHeight(int height) {
-    m_properties.height = std::clamp(height, MIN_HEIGHT, MAX_HEIGHT);
+    m_properties.height = std::clamp(height, MIN_HEIGHT, MAX_IMAGE_HEIGHT);
     dy                  = 1.0 / static_cast<double>(height);
   }
 
@@ -114,10 +118,10 @@ public:
 
   /**
    * @brief Set the maximum number of bounces for ray tracing.
-   * The number of bounces will be clamped to a valid range between MIN_MAX_BOUNCES and MAX_MAX_BOUNCES.
+   * The number of bounces will be clamped to a valid range between MIN_MAX_BOUNCES and MAX_BOUNCES.
    * @param max_bounces The maximum number of bounces.
    */
-  void setMaxBounces(int max_bounces) { m_max_bounces = std::clamp(max_bounces, MIN_MAX_BOUNCES, MAX_MAX_BOUNCES); }
+  void setMaxBounces(int max_bounces) { m_max_bounces = std::clamp(max_bounces, MIN_MAX_BOUNCES, MAX_BOUNCES); }
 
   /**
    * @brief Get the number of samples per pixel for anti-aliasing.
@@ -134,29 +138,40 @@ public:
   void setSamplesPerPixel(int samples_per_pixels);
 
   /**
-   * @brief Get the execution mode for rendering.
-   * @return The current render execution mode.
+   * @brief Get the mode for rendering.
+   * @return The current render mode.
    */
-  RenderExecutionMode getExecutionMode() const { return m_execution_mode; }
+  RenderMode getRenderMode() const { return m_render_mode; }
 
   /**
-   * @brief Set the execution mode for rendering.
-   * @param mode The desired render execution mode.
+   * @brief Set the mode for rendering.
+   * @param mode The desired render mode.
    */
-  void setExecutionMode(RenderExecutionMode mode) { m_execution_mode = mode; }
+  void setRenderMode(RenderMode mode) { m_render_mode = mode; }
 
   /**
-   * @brief Get the parameters for the renderer strategies.
-   * @return A pointer to the Parameters object containing renderer parameters.
+   * @brief Set the chunk size for multi-threaded rendering.
+   * @param chunk_size The size of the chunk to be used in multi-threaded rendering.
    */
-  Parameters* getRendererParameters() const { return m_renderer_parameters.get(); }
+  void setChunkSize(int chunk_size);
 
   /**
-   * @brief Set a parameter for the renderer.
-   * @param name  The name of the parameter to set.
-   * @param value The value of the parameter to set.
+   * @brief Get the chunk size for multi-threaded rendering.
+   * @return The size of the chunk used in multi-threaded rendering.
    */
-  void setParameter(const std::string& name, int value) { m_renderer_parameters->setParameter(name, value); }
+  int getChunkSize() const { return m_chunk_size; }
+
+  /**
+   * @brief Set the number of threads to be used for multi-threaded rendering.
+   * @param thread_count The number of threads to be used for rendering.
+   */
+  void setThreadCount(unsigned int thread_count);
+
+  /**
+   * @brief Get the number of threads used for multi-threaded rendering.
+   * @return The number of threads available for rendering.
+   */
+  unsigned int getThreadCount() const { return m_thread_count; }
 
   ~RenderSettings() = default; ///< Default destructor.
 };

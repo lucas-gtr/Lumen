@@ -12,11 +12,8 @@ class RendererTest : public ::testing::Test {
 protected:
   Scene scene;
   RenderSettings settings;
-  Camera camera;
 
   void SetUp() override {
-    scene.setCamera(std::make_unique<Camera>());
-
     settings.setWidth(2);
     settings.setHeight(2);
     settings.setChannelCount(3);
@@ -25,7 +22,7 @@ protected:
 };
 
 TEST_F(RendererTest, ConstructorInitializesCorrectly) {
-  Renderer renderer(&settings, &scene);
+  Renderer renderer(&scene, &settings);
 
   EXPECT_EQ(&renderer.getRenderSettings(), &settings);
   EXPECT_EQ(&renderer.getScene(), &scene);
@@ -33,27 +30,14 @@ TEST_F(RendererTest, ConstructorInitializesCorrectly) {
 }
 
 TEST_F(RendererTest, IsReadyToRenderReturnsTrueWithCamera) {
-  Renderer renderer(&settings, &scene);
+  Renderer renderer(&scene, &settings);
   EXPECT_TRUE(renderer.isReadyToRender());
-}
-
-TEST_F(RendererTest, IsReadyToRenderReturnsFalseWithoutCamera) {
-  scene.setCamera(nullptr);
-  Renderer renderer(&settings, &scene);
-  EXPECT_FALSE(renderer.isReadyToRender());
-
-  const double* image_before = renderer.getFramebuffer()->getFramebuffer();
-  renderer.renderFrame();
-  const double* image_after = renderer.getFramebuffer()->getFramebuffer();
-  for(int i = 0; i < settings.getWidth() * settings.getHeight() * settings.getChannelCount(); ++i) {
-    EXPECT_EQ(image_before[i], image_after[i]);
-  }
 }
 
 TEST_F(RendererTest, RenderFrameRendersSomething) {
   settings.setWidth(1);
   settings.setHeight(1);
-  Renderer renderer(&settings, &scene);
+  Renderer renderer(&scene, &settings);
 
   renderer.renderFrame();
 
@@ -65,14 +49,15 @@ TEST_F(RendererTest, RenderFrameRendersSomething) {
 }
 
 TEST_F(RendererTest, FramebufferUpdatesWhenRenderSettingsChange) {
-  Renderer renderer(&settings, &scene);
+  Renderer renderer(&scene, &settings);
 
+  renderer.renderFrame();
   EXPECT_EQ(renderer.getFramebuffer()->getWidth(), settings.getWidth());
   EXPECT_EQ(renderer.getFramebuffer()->getHeight(), settings.getHeight());
 
   settings.setWidth(4);
   settings.setHeight(4);
-  renderer.setRenderSettings(&settings);
+  renderer.renderFrame();
 
   EXPECT_EQ(renderer.getFramebuffer()->getWidth(), 4);
   EXPECT_EQ(renderer.getFramebuffer()->getHeight(), 4);
@@ -83,26 +68,27 @@ TEST_F(RendererTest, RenderInfluencedByLight) {
   light->setDirection(lin::Vec3d(0.0, 0.0, -1.0));
   light->setColor({0.9, 0.0, 0.0});
   light->setIntensity(1.0);
-  scene.addLight(std::move(light));
+  scene.addLight("light", std::move(light));
 
   CubeMeshBuilder cube_builder(5.0);
   auto cube_mesh = cube_builder.build();
   auto cube_object = std::make_unique<Object3D>(cube_mesh);
   cube_object->setPosition(lin::Vec3d(0.0, 0.0, -7.0));
   
-  auto texture = std::make_shared<Texture>(ColorRGB(0.5, 0.3, 0.9));
+  Texture texture;
+  texture.setValue(ColorRGB(0.5, 0.3, 0.9));
   auto material = Material();
-  material.setAlbedoTexture(texture);
+  material.setDiffuseTexture(&texture);
   cube_object->setMaterial(&material);
-  scene.addObject(std::move(cube_object));
+  scene.addObject("1", std::move(cube_object));
 
-  camera.setPosition(lin::Vec3d(0.0, 0.0, 0.0));
-  camera.setRotation(lin::Vec3d(0.0, 0.0, 0.0));
-  camera.setHorizontalFov(10.0);
+  scene.getCamera()->setPosition(lin::Vec3d(0.0, 0.0, 0.0));
+  scene.getCamera()->setRotation(lin::Vec3d(0.0, 0.0, 0.0));
+  scene.getCamera()->setHorizontalFov(10.0);
 
   settings.setWidth(1);
   settings.setHeight(1);
-  Renderer renderer(&settings, &scene);
+  Renderer renderer(&scene, &settings);
 
   renderer.renderFrame();
 
@@ -120,7 +106,7 @@ TEST_F(RendererTest, ShadowRayBlockedByObject) {
   light->setDirection(lin::Vec3d(0.0, 0.0, -1.0));
   light->setColor({0.9, 0.0, 0.0});
   light->setIntensity(1.0);
-  scene.addLight(std::move(light));
+  scene.addLight("light", std::move(light));
 
   CubeMeshBuilder cube_builder(5.0);
   auto cube_mesh = cube_builder.build();
@@ -132,23 +118,24 @@ TEST_F(RendererTest, ShadowRayBlockedByObject) {
   auto cube_object2 = std::make_unique<Object3D>(cube_mesh2);
   cube_object2->setPosition(lin::Vec3d(0.0, 0.0, 6.5));
   
-  auto texture = std::make_shared<Texture>(ColorRGB(0.5, 0.3, 0.9));
+  Texture texture;
+  texture.setValue(ColorRGB(0.5, 0.3, 0.9));
   auto material = Material();
-  material.setAlbedoTexture(texture);
+  material.setDiffuseTexture(&texture);
   
   cube_object->setMaterial(&material);
   cube_object2->setMaterial(&material);
 
-  scene.addObject(std::move(cube_object));
-  scene.addObject(std::move(cube_object2));
+  scene.addObject("1", std::move(cube_object));
+  scene.addObject("2", std::move(cube_object2));
 
-  camera.setPosition(lin::Vec3d(0.0, 0.0, 0.0));
-  camera.setRotation(lin::Vec3d(0.0, 0.0, 0.0));
-  camera.setHorizontalFov(10.0);
+  scene.getCamera()->setPosition(lin::Vec3d(0.0, 0.0, 0.0));
+  scene.getCamera()->setRotation(lin::Vec3d(0.0, 0.0, 0.0));
+  scene.getCamera()->setHorizontalFov(10.0);
 
   settings.setWidth(1);
   settings.setHeight(1);
-  Renderer renderer(&settings, &scene);
+  Renderer renderer(&scene, &settings);
 
   renderer.renderFrame();
 

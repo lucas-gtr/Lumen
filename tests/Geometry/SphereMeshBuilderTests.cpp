@@ -49,8 +49,8 @@ TEST(SphereMeshBuilderTest, TestUVCoord) {
     const auto& vertices = mesh.getVertices();
     const Vertex& vertex = vertices[0];
 
-    ASSERT_NEAR(vertex.uvCoord.u, 0.0, 1e-6);
-    ASSERT_NEAR(vertex.uvCoord.v, 0.0, 1e-6);
+    ASSERT_NEAR(vertex.uv_coord.u, 0.0, 1e-6);
+    ASSERT_NEAR(vertex.uv_coord.v, 0.0, 1e-6);
 }
 
 TEST(SphereMeshBuilderTest, TestMeshFaceCount) {

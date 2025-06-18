@@ -1,5 +1,6 @@
 // GCOVR_EXCL_START
-#include <GL/glew.h>
+#include <GL/gl.h>
+#include <GL/glext.h>
 #include <cstddef>
 #include <stdexcept>
 #include <vector>
@@ -9,6 +10,7 @@
 FramebufferGL::FramebufferGL(int width, int height, int numColorAttachments, int multisampleCount)
     : m_width(width), m_height(height), m_numColorAttachments(numColorAttachments),
       m_multisampleCount(multisampleCount) {
+  initializeOpenGLFunctions();
   createFramebuffer();
 }
 
@@ -19,7 +21,7 @@ void FramebufferGL::resize(int newWidth, int newHeight) {
   createFramebuffer();
 }
 
-void FramebufferGL::bind() const {
+void FramebufferGL::bind() {
   glBindFramebuffer(GL_FRAMEBUFFER, m_framebufferID);
   glViewport(0, 0, m_width, m_height);
 }
@@ -28,7 +30,6 @@ void FramebufferGL::setTextureUnit(size_t index, int textureUnit) {
   if(index >= m_colorAttachments.size()) {
     throw std::out_of_range("Color attachment index out of range");
   }
-
   glActiveTexture(GL_TEXTURE0 + textureUnit);
   const GLenum target = (m_multisampleCount > 1) ? GL_TEXTURE_2D_MULTISAMPLE : GL_TEXTURE_2D;
   glBindTexture(target, m_colorAttachments[index]);
@@ -56,14 +57,14 @@ void FramebufferGL::createFramebuffer() {
   glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
-void FramebufferGL::createTexture2D(GLuint textureID) const {
+void FramebufferGL::createTexture2D(GLuint textureID) {
   glBindTexture(GL_TEXTURE_2D, textureID);
   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA16F, m_width, m_height, 0, GL_RGBA, GL_FLOAT, nullptr);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 }
 
-void FramebufferGL::createMultisampleTexture(GLuint textureID) const {
+void FramebufferGL::createMultisampleTexture(GLuint textureID) {
   glBindTexture(GL_TEXTURE_2D_MULTISAMPLE, textureID);
   glTexImage2DMultisample(GL_TEXTURE_2D_MULTISAMPLE, m_multisampleCount, GL_RGBA16F, m_width, m_height, GL_TRUE);
 }
@@ -71,7 +72,6 @@ void FramebufferGL::createMultisampleTexture(GLuint textureID) const {
 void FramebufferGL::createColorAttachments() {
   m_colorAttachments.resize(m_numColorAttachments);
   glGenTextures(m_numColorAttachments, m_colorAttachments.data());
-
   for(int i = 0; i < m_numColorAttachments; ++i) {
     if(m_multisampleCount > 1) {
       createMultisampleTexture(m_colorAttachments[i]);

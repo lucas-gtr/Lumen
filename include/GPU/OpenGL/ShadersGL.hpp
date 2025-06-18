@@ -7,7 +7,7 @@
 
 // GCOVR_EXCL_START
 
-#include <GL/glew.h>
+#include <qopenglfunctions_3_3_core.h>
 #include <string>
 #include <unordered_map>
 #include <utility>
@@ -21,20 +21,23 @@
  * It also provides methods to set uniform variables in the shader program.
  * It caches uniform locations to avoid redundant lookups.
  */
-class ShadersGL {
+class ShadersGL : protected QOpenGLFunctions_3_3_Core {
 private:
   unsigned int                         m_program = 0U;
   std::unordered_map<const char*, int> m_uniformLocationCache;
 
-  static unsigned int compileShader(const std::string& source, unsigned int type);
-  static int          checkCompileErrorsShader(unsigned int shader);
-  static int          checkCompileErrorsProgram(unsigned int program);
-  static std::string  readShaderFromFile(const char* filePath);
+  unsigned int       compileShader(const std::string& source, unsigned int type);
+  int                checkCompileErrorsShader(unsigned int shader);
+  int                checkCompileErrorsProgram(unsigned int program);
+  static std::string readShaderFromFile(const char* filePath);
 
   void compileShadersFromSources(const std::vector<std::pair<GLenum, const char*>>& shaders);
 
 public:
-  ShadersGL() = default; ///< Default constructor for ShadersGL.
+  /**
+   * @brief Default constructor for ShadersGL.
+   */
+  ShadersGL();
 
   ShadersGL(const ShadersGL&)            = delete;
   ShadersGL& operator=(const ShadersGL&) = delete;
@@ -59,14 +62,14 @@ public:
   /**
    * @brief Binds the shader program for use in rendering.
    */
-  void bind() const;
+  void bind();
 
   /**
    * @brief Binds a uniform block to a specified binding point.
    * @param blockName The name of the uniform block.
    * @param bindingPoint The binding point to which the block should be bound.
    */
-  void bindUniformBlock(const char* blockName, unsigned int bindingPoint) const;
+  void bindUniformBlock(const char* blockName, unsigned int bindingPoint);
 
   /**
    * @brief Gets the location of a uniform variable in the shader program.
@@ -136,7 +139,7 @@ public:
    * @brief Destructor for ShadersGL.
    * Cleans up any resources used by the shader program.
    */
-  ~ShadersGL();
+  ~ShadersGL() override;
 };
 
 // GCOVR_EXCL_STOP

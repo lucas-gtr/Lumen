@@ -1,10 +1,35 @@
-.PHONY: run format lint format-and-lint configure-tests run-tests coverage update-readme generate-doc configure build clean
+.PHONY: configure build run \
+		configure-debug build-debug run-debug \
+		configure-tests run-tests coverage \
+	  format lint format-and-lint \
+		update-readme generate-doc \
+	  clean
 
 MAKEFLAGS += --no-print-directory
+
+configure:
+	@echo "Configuring development build environment..."
+	@cmake -S . -B build-dev -DENABLE_LTO=ON
+	
+build: 
+	@echo "Building project..."
+	@cmake --build build-dev
 
 run: build
 	@echo "Launching Lumen executable..."
 	@./build-dev/Lumen
+
+configure-debug:
+	@echo "Configuring debug build environment..."
+	@cmake -S . -B build-debug -DENABLE_LTO=OFF -DENABLE_COMPILER_OPTIMIZATIONS=OFF -DENABLE_DEBUG_COMPILE=ON
+
+build-debug:
+	@echo "Building project in debug mode..."
+	@cmake --build build-debug
+
+run-debug: build-debug
+	@echo "Launching Lumen executable in debug mode..."
+	@./build-debug/Lumen
 
 format:
 	@echo "Running clang-format on codebase..."
@@ -51,14 +76,6 @@ generate-doc:
 	@echo "Building project documentation..."
 	@cmake -S . -B build-dev -DENABLE_DOXYGEN=ON
 	@cmake --build build-dev --target generate-doc
-
-configure:
-	@echo "Configuring development build environment..."
-	@cmake -S . -B build-dev -DENABLE_LTO=ON
-
-build: 
-	@echo "Building project..."
-	@cmake --build build-dev
 
 clean:
 	@echo "Cleaning all build artifacts..."

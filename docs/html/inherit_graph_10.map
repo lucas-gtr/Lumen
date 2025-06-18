@@ -1,3 +1,29 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classFramebufferGL.html" title="A class that manages OpenGL framebuffers, including color and depth attachments." alt="" coords="5,5,124,31"/>
+<area shape="rect" id="Node000000" href="$classIEngineGPU.html" title="Interface for the GPU engine, defining methods for rendering and camera control." alt="" coords="36,5,135,31"/>
+<area shape="rect" id="Node000001" href="$classEngineGL.html" title="Implements the OpenGL rendering engine, handling rendering of 3D scenes with support for shadows,..." alt="" coords="237,5,320,31"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="148,15,237,15,237,21,148,21"/>
+<area shape="rect" id="Node000006" href="$classIObjectGPU.html" title="Interface for GPU objects, defining methods for uploading and releasing GPU resources." alt="" coords="37,55,133,80"/>
+<area shape="rect" id="Node000005" href="$classObjectGL.html" title="Represents a 3D object in OpenGL, encapsulating its vertex data and material." alt="" coords="238,55,319,80"/>
+<area shape="poly" id="edge3_Node000006_Node000005" title=" " alt="" coords="147,65,238,65,238,70,147,70"/>
+<area shape="rect" id="Node000012" href="$classITextureGPU.html" title="Interface for GPU textures, defining methods for uploading and releasing texture resources." alt="" coords="34,104,137,129"/>
+<area shape="rect" id="Node000011" href="$classTextureGL.html" title="Class representing a texture in OpenGL." alt="" coords="235,104,322,129"/>
+<area shape="poly" id="edge4_Node000012_Node000011" title=" " alt="" coords="150,114,235,114,235,119,150,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,195,165,235"/>
+<area shape="poly" id="edge5_Node000002_Node000001" title=" " alt="" coords="121,184,163,139,177,112,184,88,192,64,212,40,236,25,239,30,215,44,197,67,189,90,182,114,168,142,124,188"/>
+<area shape="poly" id="edge8_Node000002_Node000005" title=" " alt="" coords="116,184,163,139,186,112,212,89,237,77,239,81,215,94,190,116,167,142,120,188"/>
+<area shape="poly" id="edge12_Node000002_Node000011" title=" " alt="" coords="128,185,212,138,239,127,241,132,215,143,131,190"/>
+<area shape="rect" id="Node000003" href="$classFramebufferGL.html" title="A class that manages OpenGL framebuffers, including color and depth attachments." alt="" coords="219,252,338,277"/>
+<area shape="poly" id="edge6_Node000002_Node000003" title=" " alt="" coords="178,236,229,249,228,255,177,241"/>
+<area shape="rect" id="Node000004" href="$classMaterialGL.html" title="A class that represents a material in OpenGL, encapsulating its properties and textures." alt="" coords="232,301,325,327"/>
+<area shape="poly" id="edge7_Node000002_Node000004" title=" " alt="" coords="131,240,215,286,243,299,241,304,212,291,129,245"/>
+<area shape="rect" id="Node000007" href="$classRealtimeView.html" title=" " alt="" coords="222,400,335,425"/>
+<area shape="poly" id="edge9_Node000002_Node000007" title=" " alt="" coords="105,246,149,317,179,354,215,387,234,398,232,402,212,391,176,358,145,320,100,249"/>
+<area shape="rect" id="Node000009" href="$classShadersGL.html" title="A class that manages OpenGL shaders, including loading, compiling, and linking." alt="" coords="233,351,324,376"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="113,244,158,291,215,337,237,348,235,353,212,342,154,295,109,248"/>
+<area shape="rect" id="Node000010" href="$classShadowMapGL.html" title="A class that manages shadow mapping in OpenGL." alt="" coords="219,153,338,179"/>
+<area shape="poly" id="edge11_Node000002_Node000010" title=" " alt="" coords="177,189,228,176,229,181,178,194"/>
+<area shape="rect" id="Node000013" href="$classUniformBufferGL.html" title="A class that manages OpenGL uniform buffers for storing uniform data." alt="" coords="213,203,344,228"/>
+<area shape="poly" id="edge13_Node000002_Node000013" title=" " alt="" coords="179,213,213,213,213,218,179,218"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="21,400,149,425"/>
+<area shape="poly" id="edge14_Node000008_Node000007" title=" " alt="" coords="164,410,221,410,221,415,164,415"/>
 </map>

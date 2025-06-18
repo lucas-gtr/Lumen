@@ -6,20 +6,23 @@
 #define SURFACE_TEXTURELOADER_HPP
 
 #include <memory>
+#include <vector>
 
-#include "Surface/Texture.hpp"
+#include "Core/CommonTypes.hpp"
 
 /**
  * @namespace TextureLoader
  * @brief Namespace for loading textures from files.
  */
 namespace TextureLoader {
+
 /**
  * @brief Loads a texture from a file.
  * @param filename The name of the file to load the texture from.
- * @return A shared pointer to the loaded texture.
+ * @param image_data A vector to store the loaded image data.
+ * @param texture_properties A reference to an ImageProperties object to store the texture properties.
  */
-std::shared_ptr<Texture> load(const char* filename);
+void load(const char* filename, std::vector<double>& image_data, ImageProperties& texture_properties);
 } // namespace TextureLoader
 
 #endif // SURFACE_TEXTURELOADER_HPP

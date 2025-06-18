@@ -101,6 +101,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7f344e5274c73c1145ce7380f7f2feab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f922576357fe6c6e6e483ea2e74a376" id="r_a6f922576357fe6c6e6e483ea2e74a376"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRenderExporter.html">RenderExporter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a6f922576357fe6c6e6e483ea2e74a376">operator=</a> (<a class="el" href="classRenderExporter.html">RenderExporter</a> &amp;&amp;)=delete</td></tr>
 <tr class="separator:a6f922576357fe6c6e6e483ea2e74a376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc77db0405943044ba90465fcc1b34e5" id="r_afc77db0405943044ba90465fcc1b34e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#afc77db0405943044ba90465fcc1b34e5">updateImageToExport</a> ()</td></tr>
+<tr class="memdesc:afc77db0405943044ba90465fcc1b34e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the image to export based on the current framebuffer.  <br /></td></tr>
+<tr class="separator:afc77db0405943044ba90465fcc1b34e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4553cf6c027db82c74406189b0efa9db" id="r_a4553cf6c027db82c74406189b0efa9db"><td class="memItemLeft" align="right" valign="top">const unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a4553cf6c027db82c74406189b0efa9db">getImageToExport</a> ()</td></tr>
+<tr class="memdesc:a4553cf6c027db82c74406189b0efa9db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the image data to be exported.  <br /></td></tr>
+<tr class="separator:a4553cf6c027db82c74406189b0efa9db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81e44cd218b079ac821d413cc7a5fad4" id="r_a81e44cd218b079ac821d413cc7a5fad4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a81e44cd218b079ac821d413cc7a5fad4">getFilename</a> () const</td></tr>
 <tr class="memdesc:a81e44cd218b079ac821d413cc7a5fad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the filename.  <br /></td></tr>
 <tr class="separator:a81e44cd218b079ac821d413cc7a5fad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -113,24 +119,33 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0dba329c3ef63136012cff5294611fc3" id="r_a0dba329c3ef63136012cff5294611fc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a0dba329c3ef63136012cff5294611fc3">setPath</a> (const std::string &amp;path)</td></tr>
 <tr class="memdesc:a0dba329c3ef63136012cff5294611fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the directory path.  <br /></td></tr>
 <tr class="separator:a0dba329c3ef63136012cff5294611fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e94d52e3ca11aeb9d0e5f97475afb3e" id="r_a5e94d52e3ca11aeb9d0e5f97475afb3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a5e94d52e3ca11aeb9d0e5f97475afb3e">setOutputFormat</a> (std::unique_ptr&lt; <a class="el" href="classOutputFormat.html">OutputFormat</a> &gt; output_format)</td></tr>
-<tr class="memdesc:a5e94d52e3ca11aeb9d0e5f97475afb3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the output format for the render.  <br /></td></tr>
-<tr class="separator:a5e94d52e3ca11aeb9d0e5f97475afb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcf5aa5632747a3c6f128d5e05859de9" id="r_abcf5aa5632747a3c6f128d5e05859de9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#abcf5aa5632747a3c6f128d5e05859de9">setOutputFormat</a> (<a class="el" href="OutputFormat_8hpp.html#a98dc27a624eda851a90dea794d0e715b">OutputFormat</a> output_format)</td></tr>
+<tr class="memdesc:abcf5aa5632747a3c6f128d5e05859de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the output format for the render.  <br /></td></tr>
+<tr class="separator:abcf5aa5632747a3c6f128d5e05859de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37dbf5c8366f74dc3cbc0dd8c5f02416" id="r_a37dbf5c8366f74dc3cbc0dd8c5f02416"><td class="memItemLeft" align="right" valign="top"><a class="el" href="OutputFormat_8hpp.html#a98dc27a624eda851a90dea794d0e715b">OutputFormat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a37dbf5c8366f74dc3cbc0dd8c5f02416">getOutputFormat</a> () const</td></tr>
+<tr class="memdesc:a37dbf5c8366f74dc3cbc0dd8c5f02416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current output format.  <br /></td></tr>
+<tr class="separator:a37dbf5c8366f74dc3cbc0dd8c5f02416"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9f5c022178f8df6b10c486fc0394245" id="r_ae9f5c022178f8df6b10c486fc0394245"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#ae9f5c022178f8df6b10c486fc0394245">setToneMapping</a> (<a class="el" href="ToneMapping_8hpp.html#a864b9093408eb25e8a8f0e9bf1aa8efb">ToneMapping</a> tone_mapping)</td></tr>
 <tr class="memdesc:ae9f5c022178f8df6b10c486fc0394245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the tone mapping strategy for the render.  <br /></td></tr>
 <tr class="separator:ae9f5c022178f8df6b10c486fc0394245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2012f10d5be19d542d71b8181e8bed40" id="r_a2012f10d5be19d542d71b8181e8bed40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ToneMapping_8hpp.html#a864b9093408eb25e8a8f0e9bf1aa8efb">ToneMapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a2012f10d5be19d542d71b8181e8bed40">getToneMapping</a> () const</td></tr>
+<tr class="memdesc:a2012f10d5be19d542d71b8181e8bed40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current tone mapping strategy.  <br /></td></tr>
+<tr class="separator:a2012f10d5be19d542d71b8181e8bed40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c3f47c195f38222e06c840f76895aa5" id="r_a5c3f47c195f38222e06c840f76895aa5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a5c3f47c195f38222e06c840f76895aa5">setExposure</a> (double exposure)</td></tr>
+<tr class="memdesc:a5c3f47c195f38222e06c840f76895aa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the exposure value for the render, for exposure-based tone mapping.  <br /></td></tr>
+<tr class="separator:a5c3f47c195f38222e06c840f76895aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ddf1ebd400d956075226f403431c473" id="r_a2ddf1ebd400d956075226f403431c473"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a2ddf1ebd400d956075226f403431c473">getExposure</a> () const</td></tr>
+<tr class="memdesc:a2ddf1ebd400d956075226f403431c473"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current exposure value.  <br /></td></tr>
+<tr class="separator:a2ddf1ebd400d956075226f403431c473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339207569cf985ecd077a7ff31506774" id="r_a339207569cf985ecd077a7ff31506774"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a339207569cf985ecd077a7ff31506774">setJpegQuality</a> (int quality)</td></tr>
+<tr class="memdesc:a339207569cf985ecd077a7ff31506774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the JPEG quality for the render.  <br /></td></tr>
+<tr class="separator:a339207569cf985ecd077a7ff31506774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f071ec8c70d63d57eddf361df28ed5f" id="r_a3f071ec8c70d63d57eddf361df28ed5f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a3f071ec8c70d63d57eddf361df28ed5f">getJpegQuality</a> () const</td></tr>
+<tr class="memdesc:a3f071ec8c70d63d57eddf361df28ed5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current JPEG quality.  <br /></td></tr>
+<tr class="separator:a3f071ec8c70d63d57eddf361df28ed5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6472d225e326fd0bb9f1756856091b45" id="r_a6472d225e326fd0bb9f1756856091b45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFramebuffer.html">Framebuffer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a6472d225e326fd0bb9f1756856091b45">getFramebuffer</a> () const</td></tr>
 <tr class="memdesc:a6472d225e326fd0bb9f1756856091b45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the framebuffer.  <br /></td></tr>
 <tr class="separator:a6472d225e326fd0bb9f1756856091b45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a396568743dff4a6e34269d3da5707e" id="r_a0a396568743dff4a6e34269d3da5707e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classParameters.html">Parameters</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a0a396568743dff4a6e34269d3da5707e">getParameters</a> () const</td></tr>
-<tr class="memdesc:a0a396568743dff4a6e34269d3da5707e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the parameters for tone mapping.  <br /></td></tr>
-<tr class="separator:a0a396568743dff4a6e34269d3da5707e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a826bf90e6fd2b3cbf484c93ae62c2e72" id="r_a826bf90e6fd2b3cbf484c93ae62c2e72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a826bf90e6fd2b3cbf484c93ae62c2e72">setParameter</a> (const std::string &amp;name, int value)</td></tr>
-<tr class="memdesc:a826bf90e6fd2b3cbf484c93ae62c2e72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a parameter (an integer) for exporting.  <br /></td></tr>
-<tr class="separator:a826bf90e6fd2b3cbf484c93ae62c2e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acac2566fb9f18d82b88d6d95db0ec590" id="r_acac2566fb9f18d82b88d6d95db0ec590"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#acac2566fb9f18d82b88d6d95db0ec590">setParameter</a> (const std::string &amp;name, double value)</td></tr>
-<tr class="memdesc:acac2566fb9f18d82b88d6d95db0ec590"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a parameter (a double) for exporting.  <br /></td></tr>
-<tr class="separator:acac2566fb9f18d82b88d6d95db0ec590"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac31afadecf9af40171e1620d593bcdff" id="r_ac31afadecf9af40171e1620d593bcdff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#ac31afadecf9af40171e1620d593bcdff">exportRender</a> ()</td></tr>
 <tr class="memdesc:ac31afadecf9af40171e1620d593bcdff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports the render to the specified location.  <br /></td></tr>
 <tr class="separator:ac31afadecf9af40171e1620d593bcdff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -275,6 +290,34 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a2ddf1ebd400d956075226f403431c473" name="a2ddf1ebd400d956075226f403431c473"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ddf1ebd400d956075226f403431c473">&#9670;&#160;</a></span>getExposure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RenderExporter::getExposure </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the current exposure value. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current exposure value used for tone mapping. </dd></dl>
+
+</div>
+</div>
 <a id="a81e44cd218b079ac821d413cc7a5fad4" name="a81e44cd218b079ac821d413cc7a5fad4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a81e44cd218b079ac821d413cc7a5fad4">&#9670;&#160;</a></span>getFilename()</h2>
 
@@ -331,8 +374,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0a396568743dff4a6e34269d3da5707e" name="a0a396568743dff4a6e34269d3da5707e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a396568743dff4a6e34269d3da5707e">&#9670;&#160;</a></span>getParameters()</h2>
+<a id="a4553cf6c027db82c74406189b0efa9db" name="a4553cf6c027db82c74406189b0efa9db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4553cf6c027db82c74406189b0efa9db">&#9670;&#160;</a></span>getImageToExport()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -341,7 +384,35 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classParameters.html">Parameters</a> * RenderExporter::getParameters </td>
+          <td class="memname">const unsigned char * RenderExporter::getImageToExport </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the image data to be exported. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the image data (unsigned char array). </dd></dl>
+
+</div>
+</div>
+<a id="a3f071ec8c70d63d57eddf361df28ed5f" name="a3f071ec8c70d63d57eddf361df28ed5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f071ec8c70d63d57eddf361df28ed5f">&#9670;&#160;</a></span>getJpegQuality()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int RenderExporter::getJpegQuality </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -354,8 +425,36 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Retrieves the parameters for tone mapping. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the <a class="el" href="classParameters.html" title="Holds implementation-specific parameters for classes derived from abstract interfaces.">Parameters</a> object containing tone mapping parameters. </dd></dl>
+<p>Retrieves the current JPEG quality. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current JPEG quality level. </dd></dl>
+
+</div>
+</div>
+<a id="a37dbf5c8366f74dc3cbc0dd8c5f02416" name="a37dbf5c8366f74dc3cbc0dd8c5f02416"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37dbf5c8366f74dc3cbc0dd8c5f02416">&#9670;&#160;</a></span>getOutputFormat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="OutputFormat_8hpp.html#a98dc27a624eda851a90dea794d0e715b">OutputFormat</a> RenderExporter::getOutputFormat </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the current output format. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current output format of the render. </dd></dl>
 
 </div>
 </div>
@@ -384,6 +483,34 @@ Public Member Functions</h2></td></tr>
 
 <p>Retrieves the directory path. </p>
 <dl class="section return"><dt>Returns</dt><dd>The directory path where the render will be exported. </dd></dl>
+
+</div>
+</div>
+<a id="a2012f10d5be19d542d71b8181e8bed40" name="a2012f10d5be19d542d71b8181e8bed40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2012f10d5be19d542d71b8181e8bed40">&#9670;&#160;</a></span>getToneMapping()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ToneMapping_8hpp.html#a864b9093408eb25e8a8f0e9bf1aa8efb">ToneMapping</a> RenderExporter::getToneMapping </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the current tone mapping strategy. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current tone mapping strategy used for the render. </dd></dl>
 
 </div>
 </div>
@@ -439,6 +566,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a5c3f47c195f38222e06c840f76895aa5" name="a5c3f47c195f38222e06c840f76895aa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c3f47c195f38222e06c840f76895aa5">&#9670;&#160;</a></span>setExposure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderExporter::setExposure </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>exposure</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the exposure value for the render, for exposure-based tone mapping. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exposure</td><td>The exposure value to be set for the render. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a1919d59009b85ec04c1d7fa833983229" name="a1919d59009b85ec04c1d7fa833983229"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1919d59009b85ec04c1d7fa833983229">&#9670;&#160;</a></span>setFilename()</h2>
 
@@ -473,8 +626,34 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5e94d52e3ca11aeb9d0e5f97475afb3e" name="a5e94d52e3ca11aeb9d0e5f97475afb3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e94d52e3ca11aeb9d0e5f97475afb3e">&#9670;&#160;</a></span>setOutputFormat()</h2>
+<a id="a339207569cf985ecd077a7ff31506774" name="a339207569cf985ecd077a7ff31506774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a339207569cf985ecd077a7ff31506774">&#9670;&#160;</a></span>setJpegQuality()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderExporter::setJpegQuality </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>quality</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the JPEG quality for the render. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">quality</td><td>The JPEG quality level (0-100). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abcf5aa5632747a3c6f128d5e05859de9" name="abcf5aa5632747a3c6f128d5e05859de9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcf5aa5632747a3c6f128d5e05859de9">&#9670;&#160;</a></span>setOutputFormat()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -482,7 +661,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void RenderExporter::setOutputFormat </td>
           <td>(</td>
-          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classOutputFormat.html">OutputFormat</a> &gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="OutputFormat_8hpp.html#a98dc27a624eda851a90dea794d0e715b">OutputFormat</a>&#160;</td>
           <td class="paramname"><em>output_format</em></td><td>)</td>
           <td></td>
         </tr>
@@ -492,97 +671,7 @@ Public Member Functions</h2></td></tr>
 <p>Sets the output format for the render. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">output_format</td><td>Pointer to the <a class="el" href="classOutputFormat.html" title="Abstract base class for different image output formats.">OutputFormat</a> object that defines the export format. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="acac2566fb9f18d82b88d6d95db0ec590" name="acac2566fb9f18d82b88d6d95db0ec590"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acac2566fb9f18d82b88d6d95db0ec590">&#9670;&#160;</a></span>setParameter() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RenderExporter::setParameter </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets a parameter (a double) for exporting. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>The name of the parameter to set. </td></tr>
-    <tr><td class="paramname">value</td><td>The value of the parameter to set. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a826bf90e6fd2b3cbf484c93ae62c2e72" name="a826bf90e6fd2b3cbf484c93ae62c2e72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a826bf90e6fd2b3cbf484c93ae62c2e72">&#9670;&#160;</a></span>setParameter() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RenderExporter::setParameter </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets a parameter (an integer) for exporting. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">name</td><td>The name of the parameter to set. </td></tr>
-    <tr><td class="paramname">value</td><td>The value of the parameter to set. </td></tr>
+    <tr><td class="paramname">output_format</td><td>Pointer to the OutputFormat object that defines the export format. </td></tr>
   </table>
   </dd>
 </dl>
@@ -646,6 +735,25 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="afc77db0405943044ba90465fcc1b34e5" name="afc77db0405943044ba90465fcc1b34e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc77db0405943044ba90465fcc1b34e5">&#9670;&#160;</a></span>updateImageToExport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderExporter::updateImageToExport </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the image to export based on the current framebuffer. </p>
 
 </div>
 </div>

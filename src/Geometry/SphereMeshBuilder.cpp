@@ -36,8 +36,8 @@ Mesh SphereMeshBuilder::build() const {
       vertex.normal.y = vertex.position.y / radius;
       vertex.normal.z = vertex.position.z / radius;
 
-      vertex.uvCoord.u = static_cast<double>(j) / segments;
-      vertex.uvCoord.v = static_cast<double>(i) / rings;
+      vertex.uv_coord.u = static_cast<double>(j) / segments;
+      vertex.uv_coord.v = static_cast<double>(i) / rings;
 
       vertices.push_back(vertex);
     }
@@ -48,8 +48,8 @@ Mesh SphereMeshBuilder::build() const {
       int first  = (i * (segments + 1)) + j;
       int second = first + segments + 1;
 
-      faces.push_back({{first, second, first + 1}});
-      faces.push_back({{second, second + 1, first + 1}});
+      faces.push_back({{first + 1, second, first}});
+      faces.push_back({{first + 1, second + 1, second}});
     }
   }
 

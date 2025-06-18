@@ -25,34 +25,7 @@ TEST(Object3DTest, SetMaterialTest) {
     auto material = Material();
     obj.setMaterial(&material);
 
-    EXPECT_EQ(&obj.getMaterial(), &material);
-}
-
-TEST(Object3DTest, CopyConstructorTest) {
-    Mesh mesh;
-    Object3D obj1(mesh);
-    auto material = Material();
-    obj1.setMaterial(&material);
-
-    Object3D obj2 = obj1;
-
-    Mesh meshTest1 = obj1.getMesh();
-    Mesh meshTest2 = obj2.getMesh();
-
-    EXPECT_EQ(obj1.getMesh(), obj2.getMesh());
-    EXPECT_NE(&meshTest1, &meshTest2);
-    EXPECT_EQ(&obj1.getMaterial(), &obj2.getMaterial());
-}
-
-TEST(Object3DTest, AssignmentOperatorTest) {
-    Mesh mesh1;
-    Mesh mesh2;
-
-    Object3D obj1(mesh1);
-    Object3D obj2(mesh2);
-    obj1 = obj2;
-
-    EXPECT_EQ(obj1.getMesh(), obj2.getMesh());
+    EXPECT_EQ(obj.getMaterial(), &material);
 }
 
 TEST(Object3DTest, BoundsTestZero) {
@@ -91,11 +64,4 @@ TEST(Object3DTest, BoundsTransformationTest) {
 
     lin::Vec3d expectedMinBound(1.0 - std::sqrt(8.0), 1.0, 3.0 - std::sqrt(8.0));
     lin::Vec3d expectedMaxBound(1.0 + std::sqrt(8.0), 3.0, 3.0 + std::sqrt(8.0));
-}
-
-TEST(Object3DTest, NoMaterial) {
-    Mesh mesh = CubeMeshBuilder(1.0).build();
-    Object3D obj(mesh);
-
-    EXPECT_THROW(obj.getMaterial(), std::runtime_error);
 }

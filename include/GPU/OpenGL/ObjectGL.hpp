@@ -8,6 +8,8 @@
 
 // GCOVR_EXCL_START
 
+#include <qopenglfunctions_3_3_core.h>
+
 #include "GPU/IObjectGPU.hpp"
 #include "GPU/OpenGL/MaterialGL.hpp"
 #include "SceneObjects/Object3D.hpp"
@@ -20,17 +22,19 @@
  * and Element Buffer Object (EBO) for rendering a 3D object. It also handles the binding
  * of the material textures to the appropriate texture units.
  */
-class ObjectGL : public IObjectGPU {
+class ObjectGL : public IObjectGPU, protected QOpenGLFunctions_3_3_Core {
 private:
   unsigned int m_VAO = 0;
   unsigned int m_VBO = 0;
   unsigned int m_EBO = 0;
 
-  const MaterialGL* m_material;
+  MaterialGL* m_material;
 
-  void        uploadVertices() const;
-  void        uploadIndices() const;
-  static void setupVertexAttributes();
+  void uploadVertices();
+  void uploadIndices();
+  void setupVertexAttributes();
+
+  bool m_is_selected = false;
 
 public:
   /**
@@ -38,7 +42,7 @@ public:
    * @param object The Object3D to be represented in OpenGL.
    * @param material Pointer to the MaterialGL associated with this object.
    */
-  ObjectGL(const Object3D& object, const MaterialGL* material);
+  ObjectGL(Object3D* object, MaterialGL* material);
 
   ObjectGL(const ObjectGL&)            = delete;
   ObjectGL& operator=(const ObjectGL&) = delete;
@@ -46,9 +50,15 @@ public:
   ObjectGL& operator=(ObjectGL&&)      = delete;
 
   /**
+   * @brief Sets the material for this OpenGL object.
+   * @param material Pointer to the MaterialGL to set.
+   */
+  void setMaterial(MaterialGL* material);
+
+  /**
    * @brief Uploads the data to the GPU using OpenGL.
    */
-  void uploadToGPU() const override;
+  void uploadToGPU() override;
 
   /**
    * @brief Gets the Vertex Array Object ID.
@@ -57,19 +67,31 @@ public:
   unsigned int getVAO() const { return m_VAO; }
 
   /**
+   * @brief Sets the selection state of the object.
+   * @param selected True if the object is selected, false otherwise.
+   */
+  void setSelected(bool selected) { m_is_selected = selected; }
+
+  /**
+   * @brief Checks if the object is selected.
+   * @return True if the object is selected, false otherwise.
+   */
+  bool isSelected() const { return m_is_selected; }
+
+  /**
    * @brief Binds the Vertex Array Object for rendering.
    */
-  void bindVAO() const;
+  void bindVAO();
 
   /**
    * @brief Binds the textures of the material to the appropriate texture units.
    */
-  void bindMaterial() const;
+  void bindMaterial();
 
   /**
    * @brief Unbinds the Vertex Array Object.
    */
-  static void unbind();
+  void unbind();
 
   /**
    * @brief Releases the OpenGL resources used by the buffer.

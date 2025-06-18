@@ -5,6 +5,7 @@ add_library(Rendering STATIC
     CameraRayEmitter.cpp
     RayIntersection.cpp
     RenderSettings.cpp
+    RenderTime.cpp
 )
 
 target_include_directories(Rendering PRIVATE

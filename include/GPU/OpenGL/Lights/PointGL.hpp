@@ -30,7 +30,7 @@ public:
    * @brief Constructor for PointLightGL.
    * @param light The PointLight object to initialize this PointLightGL with.
    */
-  explicit PointLightGL(const PointLight& light);
+  explicit PointLightGL(PointLight* light);
 
   PointLightGL(const PointLightGL&)            = delete;
   PointLightGL& operator=(const PointLightGL&) = delete;

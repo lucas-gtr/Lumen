@@ -18,14 +18,15 @@
  */
 class DirectionalLight : public Light {
 private:
-  lin::Vec3d m_direction = {0.0, 0.0, -1.0}; ///< Direction vector of the light.
+  lin::Vec3d m_direction = {0.0, 0.0, -1.0};
 
 public:
-  DirectionalLight() : Light(LightType::Directional) {}           ///< Constructor with light type.
-  DirectionalLight(const DirectionalLight&)            = default; ///< Default copy constructor.
-  DirectionalLight& operator=(const DirectionalLight&) = default; ///< Default copy assignment operator.
-  DirectionalLight(DirectionalLight&&)                 = default; ///< Default move constructor.
-  DirectionalLight& operator=(DirectionalLight&&)      = default; ///< Default move assignment operator.
+  DirectionalLight() : Light(LightType::Directional) {} ///< Constructor with light type.
+
+  DirectionalLight(const DirectionalLight&)            = delete;
+  DirectionalLight& operator=(const DirectionalLight&) = delete;
+  DirectionalLight(DirectionalLight&&)                 = delete;
+  DirectionalLight& operator=(DirectionalLight&&)      = delete;
 
   /**
    * @brief Gets the direction of the directional light.

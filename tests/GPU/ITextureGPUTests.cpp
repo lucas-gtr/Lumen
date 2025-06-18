@@ -5,17 +5,19 @@
 // Implémentation minimale pour permettre le test
 class TestTextureGPU : public ITextureGPU {
 public:
-  explicit TestTextureGPU(const Texture& texture) : ITextureGPU(texture) {}
+  explicit TestTextureGPU(Texture* texture) : ITextureGPU(texture) {}
 
-  void uploadToGPU() const override {  }
+  void uploadToGPU() override {  }
 
   void release() override {  }
 };
 
 // Tests
 TEST(ITextureGPUTest, ConstructorStoresTexturePointer) {
-  Texture texture({1.0});
-  TestTextureGPU gpuTexture(texture);
+  Texture texture;
+  texture.setValue(1.0);
+
+  TestTextureGPU gpuTexture(&texture);
 
   EXPECT_EQ(gpuTexture.getSource(), &texture);
 }

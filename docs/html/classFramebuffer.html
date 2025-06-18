@@ -95,16 +95,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a03db0c1b3c5e641dba0c38be25ec0d92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classFramebuffer.html" title="A class representing a framebuffer for storing image data.">Framebuffer</a> class.  <br /></td></tr>
 <tr class="separator:a03db0c1b3c5e641dba0c38be25ec0d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad023fa43b1bc49f4e0b227a77cc9756c" id="r_ad023fa43b1bc49f4e0b227a77cc9756c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#ad023fa43b1bc49f4e0b227a77cc9756c">Framebuffer</a> (const <a class="el" href="classFramebuffer.html">Framebuffer</a> &amp;)=delete</td></tr>
-<tr class="memdesc:ad023fa43b1bc49f4e0b227a77cc9756c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy constructor.  <br /></td></tr>
 <tr class="separator:ad023fa43b1bc49f4e0b227a77cc9756c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae33f5a97f542d7723618d54b493606a" id="r_aae33f5a97f542d7723618d54b493606a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFramebuffer.html">Framebuffer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#aae33f5a97f542d7723618d54b493606a">operator=</a> (const <a class="el" href="classFramebuffer.html">Framebuffer</a> &amp;)=delete</td></tr>
-<tr class="memdesc:aae33f5a97f542d7723618d54b493606a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted copy assignment operator.  <br /></td></tr>
 <tr class="separator:aae33f5a97f542d7723618d54b493606a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f22d58d068b65f86ee0818e65afaff3" id="r_a4f22d58d068b65f86ee0818e65afaff3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a4f22d58d068b65f86ee0818e65afaff3">Framebuffer</a> (<a class="el" href="classFramebuffer.html">Framebuffer</a> &amp;&amp;)=delete</td></tr>
-<tr class="memdesc:a4f22d58d068b65f86ee0818e65afaff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted move constructor.  <br /></td></tr>
 <tr class="separator:a4f22d58d068b65f86ee0818e65afaff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d31c4dd7d5a88567d7d88832f67dacc" id="r_a3d31c4dd7d5a88567d7d88832f67dacc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFramebuffer.html">Framebuffer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a3d31c4dd7d5a88567d7d88832f67dacc">operator=</a> (<a class="el" href="classFramebuffer.html">Framebuffer</a> &amp;&amp;)=delete</td></tr>
-<tr class="memdesc:a3d31c4dd7d5a88567d7d88832f67dacc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleted move assignment operator.  <br /></td></tr>
 <tr class="separator:a3d31c4dd7d5a88567d7d88832f67dacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22b9f4bcbf98acad1b578e556e8e855e" id="r_a22b9f4bcbf98acad1b578e556e8e855e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a22b9f4bcbf98acad1b578e556e8e855e">getWidth</a> () const</td></tr>
 <tr class="memdesc:a22b9f4bcbf98acad1b578e556e8e855e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the width of the framebuffer.  <br /></td></tr>
@@ -136,15 +132,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9459390281bcfe599af640209d64fdf6" id="r_a9459390281bcfe599af640209d64fdf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a9459390281bcfe599af640209d64fdf6">reduceThreadBuffers</a> ()</td></tr>
 <tr class="memdesc:a9459390281bcfe599af640209d64fdf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduces the thread buffers into the main framebuffer. This method aggregates the pixel data from all thread buffers into the main framebuffer.  <br /></td></tr>
 <tr class="separator:a9459390281bcfe599af640209d64fdf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78be7e9c94b6e67d093e8bf9b8e6e395" id="r_a78be7e9c94b6e67d093e8bf9b8e6e395"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a78be7e9c94b6e67d093e8bf9b8e6e395">scaleBufferValues</a> (double factor)</td></tr>
+<tr class="memdesc:a78be7e9c94b6e67d093e8bf9b8e6e395"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scales the values in the framebuffer by a given factor.  <br /></td></tr>
+<tr class="separator:a78be7e9c94b6e67d093e8bf9b8e6e395"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4801cb738df7474b0aac52e8bfa551dc" id="r_a4801cb738df7474b0aac52e8bfa551dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a4801cb738df7474b0aac52e8bfa551dc">clearThreadBuffers</a> ()</td></tr>
+<tr class="memdesc:a4801cb738df7474b0aac52e8bfa551dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the thread buffers.  <br /></td></tr>
+<tr class="separator:a4801cb738df7474b0aac52e8bfa551dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a959967cc7f18f5c75c06ae33958799a3" id="r_a959967cc7f18f5c75c06ae33958799a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a959967cc7f18f5c75c06ae33958799a3">setPixelColor</a> (const <a class="el" href="structPixelCoord.html">PixelCoord</a> &amp;pixel_coord, const <a class="el" href="structColorRGBA.html">ColorRGBA</a> &amp;color, double weight)</td></tr>
 <tr class="memdesc:a959967cc7f18f5c75c06ae33958799a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color of a specific pixel in the framebuffer.  <br /></td></tr>
 <tr class="separator:a959967cc7f18f5c75c06ae33958799a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a037bf3e17455354d5d907ceea00313dd" id="r_a037bf3e17455354d5d907ceea00313dd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a037bf3e17455354d5d907ceea00313dd">~Framebuffer</a> ()</td></tr>
+<tr class="memdesc:a037bf3e17455354d5d907ceea00313dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor to clean up the framebuffer resources.  <br /></td></tr>
 <tr class="separator:a037bf3e17455354d5d907ceea00313dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a220b4cc0fd31264b4facf09a0c684855" id="r_a220b4cc0fd31264b4facf09a0c684855"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFramebuffer.html#a220b4cc0fd31264b4facf09a0c684855">setThreadId</a> (int thread_id)</td></tr>
+<tr class="memdesc:a220b4cc0fd31264b4facf09a0c684855"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the thread ID for the current thread.  <br /></td></tr>
 <tr class="separator:a220b4cc0fd31264b4facf09a0c684855"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -209,8 +213,6 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Deleted copy constructor. </p>
-
 </div>
 </div>
 <a id="a4f22d58d068b65f86ee0818e65afaff3" name="a4f22d58d068b65f86ee0818e65afaff3"></a>
@@ -237,8 +239,6 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Deleted move constructor. </p>
-
 </div>
 </div>
 <a id="a037bf3e17455354d5d907ceea00313dd" name="a037bf3e17455354d5d907ceea00313dd"></a>
@@ -256,9 +256,30 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Destructor to clean up the framebuffer resources. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4801cb738df7474b0aac52e8bfa551dc" name="a4801cb738df7474b0aac52e8bfa551dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4801cb738df7474b0aac52e8bfa551dc">&#9670;&#160;</a></span>clearThreadBuffers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Framebuffer::clearThreadBuffers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clears the thread buffers. </p>
+
+</div>
+</div>
 <a id="a9b36fad645b911130ce13b4871c47a6a" name="a9b36fad645b911130ce13b4871c47a6a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b36fad645b911130ce13b4871c47a6a">&#9670;&#160;</a></span>convertToSRGBColorSpace()</h2>
 
@@ -468,8 +489,6 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Deleted copy assignment operator. </p>
-
 </div>
 </div>
 <a id="a3d31c4dd7d5a88567d7d88832f67dacc" name="a3d31c4dd7d5a88567d7d88832f67dacc"></a>
@@ -496,8 +515,6 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Deleted move assignment operator. </p>
-
 </div>
 </div>
 <a id="a9459390281bcfe599af640209d64fdf6" name="a9459390281bcfe599af640209d64fdf6"></a>
@@ -516,6 +533,32 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reduces the thread buffers into the main framebuffer. This method aggregates the pixel data from all thread buffers into the main framebuffer. </p>
+
+</div>
+</div>
+<a id="a78be7e9c94b6e67d093e8bf9b8e6e395" name="a78be7e9c94b6e67d093e8bf9b8e6e395"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78be7e9c94b6e67d093e8bf9b8e6e395">&#9670;&#160;</a></span>scaleBufferValues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Framebuffer::scaleBufferValues </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>factor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scales the values in the framebuffer by a given factor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">factor</td><td>The factor by which to scale the framebuffer values. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -613,6 +656,14 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sets the thread ID for the current thread. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">thread_id</td><td>The ID of the thread. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

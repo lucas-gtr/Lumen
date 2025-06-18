@@ -40,7 +40,7 @@ Mesh CubeMeshBuilder::build() const {
       Vertex v;
       v.position                          = positions[faceIndices[i][j]];
       v.normal                            = n;
-      v.uvCoord                           = uvs[j];
+      v.uv_coord                          = uvs[j];
       vertices[i * VERTICES_PER_FACE + j] = v;
     }
 

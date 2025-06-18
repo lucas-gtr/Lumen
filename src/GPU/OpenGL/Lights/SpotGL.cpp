@@ -6,7 +6,17 @@
 #include "GPU/OpenGL/Lights/SpotGL.hpp"
 #include "Lighting/SpotLight.hpp"
 
-SpotLightGL::SpotLightGL(const SpotLight& light) : SpotLightGPU(light) { updateLightSpaceMatrix(); }
+SpotLightGL::SpotLightGL(SpotLight* light) : SpotLightGPU(light) {
+  updateLightSpaceMatrix();
+  light->getTransformationChangedObserver().add([this]() {
+    retrieveData();
+    updateLightSpaceMatrix();
+  });
+  light->getLightChangedObserver().add([this]() {
+    retrieveData();
+    updateLightSpaceMatrix();
+  });
+}
 
 void SpotLightGL::updateLightSpaceMatrix() {
   m_far_plane = static_cast<float>(std::sqrt(light()->getIntensity() / MIN_LIGHT_INTENSITY_FAR_PLANE));

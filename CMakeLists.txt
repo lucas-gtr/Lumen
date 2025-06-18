@@ -11,7 +11,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS YES)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 add_subdirectory(src/Core)
-add_subdirectory(src/ImplementationParameters)
 add_subdirectory(src/BVH)
 add_subdirectory(src/Surface)
 add_subdirectory(src/Geometry)
@@ -21,7 +20,7 @@ add_subdirectory(src/Scene)
 add_subdirectory(src/Rendering)
 add_subdirectory(src/Export)
 add_subdirectory(src/GPU)
-
+add_subdirectory(src/Qt)
 
 add_executable(Lumen src/main.cpp)
 
@@ -33,7 +32,6 @@ target_include_directories(Lumen PRIVATE
 target_link_libraries(Lumen
     PRIVATE
         Core
-        ImplementationParameters
         BVH
         Geometry
         Surface
@@ -43,10 +41,12 @@ target_link_libraries(Lumen
         Rendering
         Export      
         GPU
-        OpenGL  
+        RenderingGL  
+        QtInterface
 )
 
 option(ENABLE_COMPILE_WARNINGS "Enable Compiler Warnings" ON)
+option(ENABLE_DEBUG_COMPILE "Enable Debug Compile" ON)
 option(ENABLE_SANITIZERS "Enable Sanitizers" ON)
 option(ENABLE_COMPILER_OPTIMIZATIONS "Enable Compiler Optimizations" ON)
 option(ENABLE_LTO "Enable Link Time Optimization" OFF)
@@ -60,6 +60,10 @@ set(FILES_TO_CHECK "" CACHE STRING "Files to check with Clang-Tidy and Clang-For
 
 if(ENABLE_COMPILER_OPTIMIZATIONS)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -march=native" CACHE STRING "Compiler flags for optimization" FORCE)
+endif()
+
+if(ENABLE_DEBUG_COMPILE)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0" CACHE STRING "Compiler flags for debug" FORCE)
 endif()
 
 if(ENABLE_CLANG_FORMAT)

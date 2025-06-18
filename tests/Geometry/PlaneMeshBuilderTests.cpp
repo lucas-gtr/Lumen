@@ -30,12 +30,12 @@ TEST(PlaneMeshBuilderTest, BuildFaceIndices) {
     EXPECT_EQ(mesh.getFaces().size(), 2);
     
     EXPECT_EQ(mesh.getFaces()[0].vertexIndices[0], 0);
-    EXPECT_EQ(mesh.getFaces()[0].vertexIndices[1], 1);
-    EXPECT_EQ(mesh.getFaces()[0].vertexIndices[2], 2);
+    EXPECT_EQ(mesh.getFaces()[0].vertexIndices[1], 2);
+    EXPECT_EQ(mesh.getFaces()[0].vertexIndices[2], 1);
 
     EXPECT_EQ(mesh.getFaces()[1].vertexIndices[0], 0);
-    EXPECT_EQ(mesh.getFaces()[1].vertexIndices[1], 2);
-    EXPECT_EQ(mesh.getFaces()[1].vertexIndices[2], 3);
+    EXPECT_EQ(mesh.getFaces()[1].vertexIndices[1], 3);
+    EXPECT_EQ(mesh.getFaces()[1].vertexIndices[2], 2);
 }
 
 TEST(PlaneMeshBuilderTest, BuildVertexNormals) {
@@ -53,17 +53,17 @@ TEST(PlaneMeshBuilderTest, BuildVertexUVs) {
     PlaneMeshBuilder builder(10.0, 20.0);
     Mesh mesh = builder.build();
 
-    EXPECT_DOUBLE_EQ(mesh.getVertex(0).uvCoord.u, 0.0);
-    EXPECT_DOUBLE_EQ(mesh.getVertex(0).uvCoord.v, 0.0);
+    EXPECT_DOUBLE_EQ(mesh.getVertex(0).uv_coord.u, 0.0);
+    EXPECT_DOUBLE_EQ(mesh.getVertex(0).uv_coord.v, 0.0);
 
-    EXPECT_DOUBLE_EQ(mesh.getVertex(1).uvCoord.u, 1.0);
-    EXPECT_DOUBLE_EQ(mesh.getVertex(1).uvCoord.v, 0.0);
+    EXPECT_DOUBLE_EQ(mesh.getVertex(1).uv_coord.u, 1.0);
+    EXPECT_DOUBLE_EQ(mesh.getVertex(1).uv_coord.v, 0.0);
 
-    EXPECT_DOUBLE_EQ(mesh.getVertex(2).uvCoord.u, 1.0);
-    EXPECT_DOUBLE_EQ(mesh.getVertex(2).uvCoord.v, 1.0);
+    EXPECT_DOUBLE_EQ(mesh.getVertex(2).uv_coord.u, 1.0);
+    EXPECT_DOUBLE_EQ(mesh.getVertex(2).uv_coord.v, 1.0);
 
-    EXPECT_DOUBLE_EQ(mesh.getVertex(3).uvCoord.u, 0.0);
-    EXPECT_DOUBLE_EQ(mesh.getVertex(3).uvCoord.v, 1.0);
+    EXPECT_DOUBLE_EQ(mesh.getVertex(3).uv_coord.u, 0.0);
+    EXPECT_DOUBLE_EQ(mesh.getVertex(3).uv_coord.v, 1.0);
 }
 
 TEST(PlaneMeshBuilderTest, BuildInvalidSize) {

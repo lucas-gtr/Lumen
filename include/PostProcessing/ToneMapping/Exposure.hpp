@@ -10,8 +10,6 @@
 #include <iostream>
 
 #include "Core/Config.hpp"
-#include "ImplementationParameters/ParameterTypes.hpp"
-#include "ImplementationParameters/Parameters.hpp"
 #include "PostProcessing/ToneMapping/ToneMapping.hpp"
 
 /**
@@ -28,26 +26,9 @@ private:
 public:
   /**
    * @brief Constructor for the ExposureToneMapping class.
-   * @param parameters Pointer to the parameters object.
-   *
-   * This constructor initializes the exposure parameter with a default value.
+   * @param double exposure The exposure value to be used in the tone mapping algorithm.
    */
-  explicit ExposureToneMapping(Parameters* parameters) {
-    parameters->setDefaultParameter("exposure", DEFAULT_TONE_MAPPING_EXPOSURE);
-  }
-
-  /**
-   * @brief Updates the exposure parameter.
-   * @param parameters Pointer to the parameters object.
-   */
-  void updateParameters(Parameters* parameters) override {
-    const DoubleParam* exposure_param = parameters->get<DoubleParam>("exposure");
-    if(exposure_param == nullptr) {
-      std::cerr << "Exposure parameter not found. Using default value." << '\n';
-      return;
-    }
-    m_exposure = std::clamp(exposure_param->getValue(), MIN_TONE_MAPPING_EXPOSURE, MAX_TONE_MAPPING_EXPOSURE);
-  }
+  explicit ExposureToneMapping(double exposure) : m_exposure(exposure) {}
 
   /**
    * @brief Applies the exposure tone mapping algorithm to a given value.

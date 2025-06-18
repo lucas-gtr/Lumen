@@ -5,50 +5,44 @@
 
 TEST(SceneTest, AddObject) {
   Scene scene;
-  scene.addObject(std::make_unique<Object3D>(Mesh()));
+  scene.addObject("1", std::make_unique<Object3D>(Mesh()));
   EXPECT_EQ(scene.getObjectList().size(), 1);
-  EXPECT_NE(scene.getObjectList()[0].get(), nullptr);
+  EXPECT_NE(scene.getObjectList()[0], nullptr);
 }
 
 TEST(SceneTest, AddLight) {
   Scene scene;
-  scene.addLight(std::make_unique<DirectionalLight>());
+  scene.addLight("light", std::make_unique<DirectionalLight>());
   EXPECT_EQ(scene.getLightList().size(), 1);
-  EXPECT_NE(scene.getLightList()[0].get(), nullptr);
-}
-
-TEST(SceneTest, SetCamera) {
-  Scene scene;
-  scene.setCamera(std::make_unique<Camera>());
-  EXPECT_NE(scene.getCamera(), nullptr);
+  EXPECT_NE(scene.getLightList()[0], nullptr);
 }
 
 TEST(SceneTest, GetCamera) {
   Scene scene;
-  std::unique_ptr<Camera> camera = std::make_unique<Camera>();
-  scene.setCamera(std::move(camera));
   EXPECT_NE(scene.getCamera(), nullptr);
 }
 
 TEST(SceneTest, GetSkybox) {
   Scene scene;
-  std::shared_ptr<Texture> texture = std::make_shared<Texture>(ColorRGB(0.5, 0.5, 0.5));
-  scene.setSkybox(texture);
+  Texture texture;
+  texture.setValue(ColorRGB(0.5, 0.5, 0.5));
+  scene.setSkybox(&texture);
   EXPECT_NE(scene.getSkybox(), nullptr);
 }
 
 TEST(SceneTest, GetSkyboxColor) {
   Scene scene;
-  std::shared_ptr<Texture> texture = std::make_shared<Texture>(ColorRGB(1.0, 0.0, 0.0));
-  scene.setSkybox(texture);
+  Texture texture;
+  texture.setValue(ColorRGB(1.0, 0.0, 0.0));
+  scene.setSkybox(&texture);
   lin::Vec3d direction(1.0, 0.0, 0.0);
   ColorRGBA color = scene.getSkyboxColor(direction);
-  EXPECT_EQ(color, ColorRGBA(1.0, 0.0, 0.0, 1.0)); // Assuming default color is white
+  EXPECT_EQ(color, ColorRGBA(1.0, 0.0, 0.0, 1.0)); 
 }
 
 TEST(SceneTest, BuildBVH) {
   Scene scene;
-  scene.addObject(std::make_unique<Object3D>(Mesh()));
+  scene.addObject("1", std::make_unique<Object3D>(Mesh()));
   scene.buildBVH();
   EXPECT_NE(scene.getBVHRoot(), nullptr);
   EXPECT_EQ(scene.getBVHRoot()->getLeafIndex(), 0);

@@ -20,7 +20,7 @@
  */
 class IObjectGPU {
 private:
-  const Object3D* m_object = nullptr;
+  Object3D* m_object = nullptr;
 
   std::vector<float>        m_vertices;
   std::vector<unsigned int> m_indices;
@@ -44,12 +44,18 @@ public:
    * @brief Constructor for IObjectGPU.
    * @param object The Object3D to be represented in GPU memory.
    */
-  explicit IObjectGPU(const Object3D& object);
+  explicit IObjectGPU(Object3D* object);
 
   IObjectGPU(const IObjectGPU&)            = delete;
   IObjectGPU& operator=(const IObjectGPU&) = delete;
   IObjectGPU(IObjectGPU&&)                 = delete;
   IObjectGPU& operator=(IObjectGPU&&)      = delete;
+
+  /**
+   * @brief Gets the source Object3D associated with this GPU object.
+   * @return A pointer to the Object3D source.
+   */
+  Object3D* getSource() const { return m_object; }
 
   /**
    * @brief Gets the number of indices in the index buffer.
@@ -69,7 +75,12 @@ public:
    */
   const float* getNormalMatrix() { return m_normal_matrix.data(); }
 
-  virtual void uploadToGPU() const = 0; ///< Pure virtual function to upload the object data to the GPU.
+  /**
+   * @brief Updates the model and normal matrices based on the object's transformation.
+   */
+  void updateMatrices();
+
+  virtual void uploadToGPU() = 0; ///< Pure virtual function to upload the object data to the GPU.
 
   virtual void release() = 0; ///< Pure virtual function to release GPU resources associated with the object.
 

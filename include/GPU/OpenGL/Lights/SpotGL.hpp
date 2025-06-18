@@ -28,7 +28,7 @@ public:
    * @brief Constructor for SpotLightGL.
    * @param light The SpotLight object to initialize this SpotLightGL with.
    */
-  explicit SpotLightGL(const SpotLight& light);
+  explicit SpotLightGL(SpotLight* light);
 
   SpotLightGL(const SpotLightGL&)            = delete;
   SpotLightGL& operator=(const SpotLightGL&) = delete;

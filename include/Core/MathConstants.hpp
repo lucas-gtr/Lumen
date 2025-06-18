@@ -21,4 +21,6 @@ static constexpr double M_TO_MM = 1000.0;
 
 static constexpr double HALF = 0.5;
 
+static constexpr int SECOND_IN_MILLISECONDS = 1000;
+
 #endif // CORE_MATHCONSTANTS_HPP

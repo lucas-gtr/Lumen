@@ -7,8 +7,8 @@
 
 // GCOVR_EXCL_START
 
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include <memory>
+#include <qopenglfunctions_3_3_core.h>
 #include <string>
 
 #include "GPU/IEngineGPU.hpp"
@@ -16,7 +16,6 @@
 #include "GPU/OpenGL/Lights/ShadowMapGL.hpp"
 #include "GPU/OpenGL/ResourceManagerGL.hpp"
 #include "GPU/OpenGL/ShadersGL.hpp"
-#include "GPU/OpenGL/WindowGL.hpp"
 #include "PostProcessing/ToneMapping/ToneMapping.hpp"
 #include "Scene/Scene.hpp"
 
@@ -28,75 +27,68 @@
  * This class manages the OpenGL context, handles input, and performs rendering operations such as
  * drawing shadow maps, scene passes, skyboxes, and applying post-processing effects.
  */
-class EngineGL : public IEngineGPU {
+class EngineGL : public IEngineGPU, protected QOpenGLFunctions_3_3_Core {
 private:
-  WindowGL          m_window;
-  ResourceManagerGL m_resource_manager;
+  std::unique_ptr<ResourceManagerGL> m_resource_manager = nullptr;
 
-  FramebufferGL m_scenePassFramebuffer;
-  FramebufferGL m_resolveFramebuffer;
+  std::unique_ptr<FramebufferGL> m_scene_pass_framebuffer = nullptr;
+  std::unique_ptr<FramebufferGL> m_resolve_framebuffer    = nullptr;
 
-  ShadersGL m_shadowMap2DProgram;
-  ShadersGL m_shadowMapCubeProgram;
-  ShadersGL m_scenePassProgram;
-  ShadersGL m_skyboxProgram;
-  ShadersGL m_postProcessingProgram;
+  ShadersGL m_shadow_map_2D_program;
+  ShadersGL m_shadow_map_cube_program;
+  ShadersGL m_scene_pass_program;
+  ShadersGL m_outline_program;
+  ShadersGL m_skybox_program;
+  ShadersGL m_viewport_grid_program;
+  ShadersGL m_post_processing_program;
 
-  int         m_shadowMapsSize = DEFAULT_SHADOW_MAP_SIZE;
-  ShadowMapGL m_shadowMap2D;
-  ShadowMapGL m_shadowMapCube;
+  int                          m_shadow_map_size = DEFAULT_SHADOW_MAP_SIZE;
+  std::unique_ptr<ShadowMapGL> m_shadow_map_2D   = nullptr;
+  std::unique_ptr<ShadowMapGL> m_shadow_map_cube = nullptr;
 
-  GLuint m_quadVAO = 0U;
+  GLuint m_quad_VAO = 0U;
 
   int m_viewport_width  = 0;
   int m_viewport_height = 0;
 
-  float m_exposure = 1.0F;
+  bool m_draw_skybox = false;
 
-  void        setupGLFWCallbacks();
-  void        loadShaderPrograms();
-  static void configureOpenGLStates();
-  void        initQuadVAO();
+  bool m_dynamic_lighting   = false;
+  bool m_dynamic_shadow_map = false;
 
-  void processInput();
+  ToneMapping m_toneMapping = ToneMapping::NONE;
+  float       m_exposure    = 1.0F;
 
-  void setupLights();
-
-  void setShadowMapSize(int size);
-  void setViewportSize(int width, int height);
+  void loadShaderPrograms();
+  void configureOpenGLStates();
+  void initQuadVAO();
 
   void drawShadowMap2D();
   void drawShadowMapCube();
   void drawLightShadowMap2D(const float* lightSpaceMatrix, int indexX, int indexY);
   void drawPointShadowMap(const PointLightGL* light);
 
-  void uploadDirectionalLightData();
-  void uploadSpotLightData();
-  void uploadPointLightData();
+  void uploadLightsData();
+  void uploadDirectionalLightsData();
+  void uploadSpotLightsData();
+  void uploadPointLightsData();
 
   void configureShadersAndUniforms();
-  void renderFrame();
   void blitSceneToResolveFramebuffer();
 
   void renderScenePass();
+  void drawOutline();
   void drawSkybox();
+  void drawViewportGrid();
   void applyPostProcessing();
-
-  void displayFPS(float interval);
-
-  static void framebufferSizeCallback(GLFWwindow* window, int width, int height);
-  static void scrollCallback(GLFWwindow* window, double xOffset, double yOffset);
-  static void cursorPositionCallback(GLFWwindow* window, double xpos, double ypos);
 
 public:
   /**
    * @brief Constructor for the EngineGL class.
    * @param width The width of the OpenGL window.
    * @param height The height of the OpenGL window.
-   * @param title The title of the OpenGL window.
-   * @param scene The Scene object containing the initial objects and lights to be rendered.
    */
-  EngineGL(int width, int height, const std::string& title, Scene& scene);
+  EngineGL(int width, int height);
 
   EngineGL(const EngineGL&)            = delete;
   EngineGL& operator=(const EngineGL&) = delete;
@@ -104,10 +96,69 @@ public:
   EngineGL& operator=(EngineGL&&)      = delete;
 
   /**
+   * @brief Initializes the OpenGL context and prepares the engine for rendering.
+   */
+  void initialize(Scene* scene);
+
+  /**
    * @brief Gets the ResourceManagerGL instance.
    * @return A reference to the ResourceManagerGL instance managing OpenGL resources.
    */
-  ResourceManagerGL& getResourceManager() { return m_resource_manager; }
+  ResourceManagerGL* getResourceManager() { return m_resource_manager.get(); }
+
+  /**
+   * @brief Sets the size of the shadow maps used for rendering shadows.
+   * @param size The size of the shadow maps in pixels (squared).
+   */
+  void setShadowMapSize(int size);
+
+  /**
+   * @brief Enables or disables the skybox rendering in the scene.
+   */
+  void setDrawSkybox(bool enabled) { m_draw_skybox = enabled; }
+
+  /**
+   * @brief Checks if the skybox rendering is enabled.
+   * @return True if the skybox is enabled, false otherwise.
+   */
+  bool isSkyboxEnabled() const { return m_draw_skybox; }
+
+  /**
+   * @brief Gets the size of the shadow maps used for rendering shadows.
+   * @return The size of the shadow maps in pixels.
+   */
+  int getShadowMapSize() const { return m_shadow_map_size; }
+
+  /**
+   * @brief Sets the viewport size for rendering.
+   * @param width The width of the viewport.
+   * @param height The height of the viewport.
+   */
+  void setViewportSize(int width, int height);
+
+  /**
+   * @brief Enables or disables dynamic lighting in the scene.
+   * @param enabled True to enable dynamic lighting, false to disable it.
+   */
+  void setDynamicLighting(bool enabled);
+
+  /**
+   * @brief Checks if dynamic lighting is enabled in the scene.
+   * @return True if dynamic lighting is enabled, false otherwise.
+   */
+  bool isDynamicLightingEnabled() const { return m_dynamic_lighting; }
+
+  /**
+   * @brief Enables or disables dynamic shadow mapping in the scene.
+   * @param enabled True to enable dynamic shadow mapping, false to disable it.
+   */
+  void setDynamicShadowMap(bool enabled);
+
+  /**
+   * @brief Checks if dynamic shadow mapping is enabled in the scene.
+   * @return True if dynamic shadow mapping is enabled, false otherwise.
+   */
+  bool isDynamicShadowMapEnabled() const { return m_dynamic_shadow_map; }
 
   /**
    * @brief Sets the tone mapping algorithm for post-processing.
@@ -116,15 +167,37 @@ public:
   void setToneMapping(ToneMapping toneMapping);
 
   /**
+   * @brief Gets the current tone mapping algorithm used for post-processing.
+   * @return A constant reference to the ToneMapping enum value representing the current tone mapping algorithm.
+   */
+  const ToneMapping& getToneMapping() const { return m_toneMapping; }
+
+  /**
    * @brief Sets the exposure for post-processing effects.
    * @param exposure The exposure value to set, typically in the range [0.1, 10.0].
    */
   void setExposure(float exposure);
 
   /**
-   * @brief Renders the scene using OpenGL.
+   * @brief Gets the current exposure value used for post-processing effects.
+   * @return The current exposure value
    */
-  void render() override;
+  float getExposure() const { return m_exposure; }
+
+  /**
+   * @brief Bakes the lights in the scene, preparing them for rendering.
+   */
+  void bakeLights();
+
+  /**
+   * @brief Sets up the OpenGL rendering context and prepares the engine for rendering.
+   */
+  void setupRendering();
+
+  /**
+   * @brief Renders a single frame of the scene.
+   */
+  void renderFrame(unsigned int default_ramebuffer);
 
   /**
    * @brief Destructor for the EngineGL class.
