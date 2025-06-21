@@ -42,7 +42,7 @@ void Framebuffer::convertToSRGBColorSpace() {
 }
 
 void Framebuffer::initThreadBuffers(unsigned int num_threads) {
-  num_threads = std::clamp(num_threads, 1U, std::thread::hardware_concurrency() - 4);
+  num_threads = std::max(1U, num_threads);
   std::cout << "Initializing thread buffers for " << num_threads << " threads.\n";
   m_thread_buffers.resize(num_threads);
   for(auto& buffer : m_thread_buffers) {
