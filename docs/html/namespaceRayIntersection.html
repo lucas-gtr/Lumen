@@ -137,13 +137,16 @@ Functions</h2></td></tr>
 <tr class="memitem:a75b1c51d765624cf2a95df70b572d13b" id="r_a75b1c51d765624cf2a95df70b572d13b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRayHitInfo.html">RayHitInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a75b1c51d765624cf2a95df70b572d13b">getSceneIntersectionWithoutBVH</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const <a class="el" href="classScene.html">Scene</a> *scene)</td></tr>
 <tr class="memdesc:a75b1c51d765624cf2a95df70b572d13b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the intersection information of a ray with the scene, without using <a class="el" href="namespaceBVH.html" title="Namespace for Bounding Volume Hierarchy (BVH) related functions.">BVH</a>.  <br /></td></tr>
 <tr class="separator:a75b1c51d765624cf2a95df70b572d13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add44274d667b6ad7f5ab6757160c6802" id="r_add44274d667b6ad7f5ab6757160c6802"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#add44274d667b6ad7f5ab6757160c6802">getObjectNameFromHit</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const <a class="el" href="classScene.html">Scene</a> *scene)</td></tr>
+<tr class="memdesc:add44274d667b6ad7f5ab6757160c6802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the object that a ray intersects with in the scene.  <br /></td></tr>
+<tr class="separator:add44274d667b6ad7f5ab6757160c6802"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69407475c8a132dd692f8efc8276dfdf" id="r_a69407475c8a132dd692f8efc8276dfdf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRayHitInfo.html">RayHitInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a69407475c8a132dd692f8efc8276dfdf">getSceneIntersection</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const <a class="el" href="classScene.html">Scene</a> *scene)</td></tr>
 <tr class="memdesc:a69407475c8a132dd692f8efc8276dfdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the intersection information of a ray with the scene.  <br /></td></tr>
 <tr class="separator:a69407475c8a132dd692f8efc8276dfdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a01f175394047bff6b7d05b0130f4d39e" id="r_a01f175394047bff6b7d05b0130f4d39e"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a01f175394047bff6b7d05b0130f4d39e">RAY_OFFSET_FACTOR</a> = 0.0001</td></tr>
+<tr class="memitem:a01f175394047bff6b7d05b0130f4d39e" id="r_a01f175394047bff6b7d05b0130f4d39e"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a01f175394047bff6b7d05b0130f4d39e">RAY_OFFSET_FACTOR</a> = 1e-9</td></tr>
 <tr class="separator:a01f175394047bff6b7d05b0130f4d39e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39243e3dc92c97cff6cee02760a9bdac" id="r_a39243e3dc92c97cff6cee02760a9bdac"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a39243e3dc92c97cff6cee02760a9bdac">EPSILON</a> = 1e-6</td></tr>
 <tr class="separator:a39243e3dc92c97cff6cee02760a9bdac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -390,6 +393,44 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structRayHitInfo.html" title="Structure that holds information about a ray intersection.">RayHitInfo</a> containing the intersection information if an intersection occurs, otherwise an empty <a class="el" href="structRayHitInfo.html" title="Structure that holds information about a ray intersection.">RayHitInfo</a>. </dd></dl>
+
+</div>
+</div>
+<a id="add44274d667b6ad7f5ab6757160c6802" name="add44274d667b6ad7f5ab6757160c6802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add44274d667b6ad7f5ab6757160c6802">&#9670;&#160;</a></span>getObjectNameFromHit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string RayIntersection::getObjectNameFromHit </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structRay.html">Ray</a> &amp;&#160;</td>
+          <td class="paramname"><em>ray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classScene.html">Scene</a> *&#160;</td>
+          <td class="paramname"><em>scene</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the name of the object that a ray intersects with in the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ray</td><td>The ray to check for intersection. </td></tr>
+    <tr><td class="paramname">scene</td><td>The scene containing the objects. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The name of the object that the ray intersects with, or an empty string if no intersection occurs. </dd></dl>
 
 </div>
 </div>
@@ -837,7 +878,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr double RayIntersection::RAY_OFFSET_FACTOR = 0.0001</td>
+          <td class="memname">constexpr double RayIntersection::RAY_OFFSET_FACTOR = 1e-9</td>
         </tr>
       </table>
   </td>

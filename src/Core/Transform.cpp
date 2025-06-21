@@ -37,9 +37,9 @@ void Transform::setPositionZ(double z) {
 }
 
 void Transform::updateTranslationMatrix() {
-  m_translationMatrix(0, 3) = m_position.x;
-  m_translationMatrix(1, 3) = m_position.y;
-  m_translationMatrix(2, 3) = m_position.z;
+  m_translation_matrix(0, 3) = m_position.x;
+  m_translation_matrix(1, 3) = m_position.y;
+  m_translation_matrix(2, 3) = m_position.z;
   updateTransformationMatrix();
 }
 
@@ -64,7 +64,7 @@ void Transform::setRotationZ(double z) {
 }
 
 void Transform::updateRotationMatrix() {
-  m_rotationMatrix =
+  m_rotation_matrix =
       lin::getRotationMatrix(m_rotation.x * DEG_TO_RAD, m_rotation.y * DEG_TO_RAD, m_rotation.z * DEG_TO_RAD);
   updateTransformationMatrix();
 }
@@ -95,22 +95,24 @@ void Transform::setScaleZ(double z) {
 }
 
 void Transform::updateScaleMatrix() {
-  m_scaleMatrix(0, 0) = m_scale.x;
-  m_scaleMatrix(1, 1) = m_scale.y;
-  m_scaleMatrix(2, 2) = m_scale.z;
+  m_scale_matrix(0, 0) = m_scale.x;
+  m_scale_matrix(1, 1) = m_scale.y;
+  m_scale_matrix(2, 2) = m_scale.z;
   updateTransformationMatrix();
 }
 
 void Transform::updateTransformationMatrix() {
-  const lin::Mat4d rotationMatrix4d(m_rotationMatrix);
+  const lin::Mat4d rotationMatrix4d(m_rotation_matrix);
 
-  const lin::Mat4d scaleMatrix4d(m_scaleMatrix);
+  const lin::Mat4d scaleMatrix4d(m_scale_matrix);
 
-  m_transformationMatrix = m_translationMatrix * scaleMatrix4d * rotationMatrix4d;
+  m_transformation_matrix = m_translation_matrix * scaleMatrix4d * rotationMatrix4d;
   updateInverseMatrix();
   updateNormalMatrix();
+
+  m_transformation_changed_observer.notify();
 }
 
-void Transform::updateInverseMatrix() { m_inverseMatrix = m_transformationMatrix.inverse(); }
+void Transform::updateInverseMatrix() { m_inverse_matrix = m_transformation_matrix.inverse(); }
 
-void Transform::updateNormalMatrix() { m_normalMatrix = m_transformationMatrix.topLeft3x3().inverse().transposed(); }
+void Transform::updateNormalMatrix() { m_normal_matrix = m_transformation_matrix.topLeft3x3().inverse().transposed(); }

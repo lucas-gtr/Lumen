@@ -5,7 +5,7 @@
 
 TEST(OutputFormatPngTests, WritesPngFile) {
   OutputFormatPng output_format;
-  const std::string file_path = "/tmp/test_image";
+  const std::string file_path = "/tmp/test_image.png";
   const int width = 2;
   const int height = 2;
   const int channel_count = 3;
@@ -16,9 +16,9 @@ TEST(OutputFormatPngTests, WritesPngFile) {
 
   output_format.write_image(file_path, width, height, channel_count, image);
 
-  std::ifstream file(file_path + ".png");
+  std::ifstream file(file_path);
   ASSERT_TRUE(file.good());
   file.close();
 
-  std::remove((file_path + ".png").c_str());
+  std::remove((file_path).c_str());
 }

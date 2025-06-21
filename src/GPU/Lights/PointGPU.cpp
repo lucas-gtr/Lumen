@@ -3,9 +3,11 @@
 #include "Core/Math/Vec3.hpp"
 #include "Lighting/PointLight.hpp"
 
-PointLightGPU::PointLightGPU(const PointLight& light) : m_light(&light), m_position(lin::Vec3f(light.getPosition())) {
+PointLightGPU::PointLightGPU(const PointLight* light) : m_light(light) { retrieveData(); }
 
-  const ColorRGB color = light.getColor();
+void PointLightGPU::retrieveData() {
+  m_position           = lin::Vec3f(m_light->getPosition());
+  const ColorRGB color = m_light->getColor();
   m_color = lin::Vec3f(static_cast<float>(color.r), static_cast<float>(color.g), static_cast<float>(color.b)) *
-            static_cast<float>(light.getIntensity());
+            static_cast<float>(m_light->getIntensity());
 }

@@ -87,25 +87,41 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a87140fe173e9fb564d84fa78625b4ef4" id="r_a87140fe173e9fb564d84fa78625b4ef4"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classTexture.html">Texture</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTextureLoader.html#a87140fe173e9fb564d84fa78625b4ef4">load</a> (const char *filename)</td></tr>
-<tr class="memdesc:a87140fe173e9fb564d84fa78625b4ef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a texture from a file.  <br /></td></tr>
-<tr class="separator:a87140fe173e9fb564d84fa78625b4ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62f68b81caf9abfc157d4dc1e95e073a" id="r_a62f68b81caf9abfc157d4dc1e95e073a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTextureLoader.html#a62f68b81caf9abfc157d4dc1e95e073a">load</a> (const char *filename, std::vector&lt; double &gt; &amp;image_data, <a class="el" href="structImageProperties.html">ImageProperties</a> &amp;texture_properties)</td></tr>
+<tr class="memdesc:a62f68b81caf9abfc157d4dc1e95e073a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a texture from a file.  <br /></td></tr>
+<tr class="separator:a62f68b81caf9abfc157d4dc1e95e073a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Namespace for loading textures from files. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a87140fe173e9fb564d84fa78625b4ef4" name="a87140fe173e9fb564d84fa78625b4ef4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87140fe173e9fb564d84fa78625b4ef4">&#9670;&#160;</a></span>load()</h2>
+<a id="a62f68b81caf9abfc157d4dc1e95e073a" name="a62f68b81caf9abfc157d4dc1e95e073a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62f68b81caf9abfc157d4dc1e95e073a">&#9670;&#160;</a></span>load()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classTexture.html">Texture</a> &gt; TextureLoader::load </td>
+          <td class="memname">void TextureLoader::load </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::vector&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>image_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structImageProperties.html">ImageProperties</a> &amp;&#160;</td>
+          <td class="paramname"><em>texture_properties</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -114,10 +130,11 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>The name of the file to load the texture from. </td></tr>
+    <tr><td class="paramname">image_data</td><td>A vector to store the loaded image data. </td></tr>
+    <tr><td class="paramname">texture_properties</td><td>A reference to an <a class="el" href="structImageProperties.html" title="Structure to hold image properties such as width, height, and number of channels.">ImageProperties</a> object to store the texture properties. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A shared pointer to the loaded texture. </dd></dl>
 
 </div>
 </div>

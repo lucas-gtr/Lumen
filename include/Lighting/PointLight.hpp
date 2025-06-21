@@ -19,11 +19,12 @@
  */
 class PointLight : public Light {
 public:
-  PointLight() : Light(LightType::Point) {}           ///< Constructor with light type.
-  PointLight(const PointLight&)            = default; ///< Default copy constructor.
-  PointLight& operator=(const PointLight&) = default; ///< Default copy assignment operator.
-  PointLight(PointLight&&)                 = default; ///< Default move constructor.
-  PointLight& operator=(PointLight&&)      = default; ///< Default move assignment operator.
+  PointLight() : Light(LightType::Point) {} ///< Constructor with light type.
+
+  PointLight(const PointLight&)            = delete;
+  PointLight& operator=(const PointLight&) = delete;
+  PointLight(PointLight&&)                 = delete;
+  PointLight& operator=(PointLight&&)      = delete;
 
   /**
    * @brief Gets the direction of the light from a given point.

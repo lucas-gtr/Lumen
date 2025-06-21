@@ -78,6 +78,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classRenderStrategy-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">RenderStrategy Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
@@ -86,7 +87,7 @@ $(function() {
 <p>Abstract base class for rendering strategies.  
  <a href="classRenderStrategy.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="RenderExecution_8hpp_source.html">RenderExecution.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="RenderStrategy_8hpp_source.html">RenderStrategy.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for RenderStrategy:</div>
 <div class="dyncontent">
@@ -120,14 +121,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a481a2232cac6382514212953adbc0013" id="r_a481a2232cac6382514212953adbc0013"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderStrategy.html#a481a2232cac6382514212953adbc0013">render</a> ()=0</td></tr>
 <tr class="memdesc:a481a2232cac6382514212953adbc0013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the scene using the specified rendering strategy.  <br /></td></tr>
 <tr class="separator:a481a2232cac6382514212953adbc0013"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a077eaa5bd7631682068f87093e285baf" id="r_a077eaa5bd7631682068f87093e285baf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderStrategy.html#a077eaa5bd7631682068f87093e285baf">setRenderer</a> (<a class="el" href="classRenderer.html">Renderer</a> *renderer)</td></tr>
+<tr class="memitem:a077eaa5bd7631682068f87093e285baf" id="r_a077eaa5bd7631682068f87093e285baf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderStrategy.html#a077eaa5bd7631682068f87093e285baf">setRenderer</a> (<a class="el" href="classRenderer.html">Renderer</a> *<a class="el" href="classRenderStrategy.html#ad03888fc10ac3d0d52000615db774fc3">renderer</a>)</td></tr>
 <tr class="memdesc:a077eaa5bd7631682068f87093e285baf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the renderer for this rendering strategy.  <br /></td></tr>
 <tr class="separator:a077eaa5bd7631682068f87093e285baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a519db9677dc5af25b9ae95d8ee474bf7" id="r_a519db9677dc5af25b9ae95d8ee474bf7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRenderer.html">Renderer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderStrategy.html#a519db9677dc5af25b9ae95d8ee474bf7">getRenderer</a> () const</td></tr>
-<tr class="separator:a519db9677dc5af25b9ae95d8ee474bf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a7755700320d5ea62bf19e4b0db6183" id="r_a4a7755700320d5ea62bf19e4b0db6183"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderStrategy.html#a4a7755700320d5ea62bf19e4b0db6183">~RenderStrategy</a> ()=default</td></tr>
 <tr class="memdesc:a4a7755700320d5ea62bf19e4b0db6183"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for proper cleanup of derived classes.  <br /></td></tr>
 <tr class="separator:a4a7755700320d5ea62bf19e4b0db6183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ad03888fc10ac3d0d52000615db774fc3" id="r_ad03888fc10ac3d0d52000615db774fc3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRenderer.html">Renderer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderStrategy.html#ad03888fc10ac3d0d52000615db774fc3">renderer</a> () const</td></tr>
+<tr class="separator:ad03888fc10ac3d0d52000615db774fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class for rendering strategies. </p>
@@ -244,31 +248,6 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a519db9677dc5af25b9ae95d8ee474bf7" name="a519db9677dc5af25b9ae95d8ee474bf7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a519db9677dc5af25b9ae95d8ee474bf7">&#9670;&#160;</a></span>getRenderer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classRenderer.html">Renderer</a> * RenderStrategy::getRenderer </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a5528568afde46a4a62b559d63ed035f6" name="a5528568afde46a4a62b559d63ed035f6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5528568afde46a4a62b559d63ed035f6">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
@@ -355,6 +334,31 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad03888fc10ac3d0d52000615db774fc3" name="ad03888fc10ac3d0d52000615db774fc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad03888fc10ac3d0d52000615db774fc3">&#9670;&#160;</a></span>renderer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRenderer.html">Renderer</a> * RenderStrategy::renderer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a077eaa5bd7631682068f87093e285baf" name="a077eaa5bd7631682068f87093e285baf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a077eaa5bd7631682068f87093e285baf">&#9670;&#160;</a></span>setRenderer()</h2>
 
@@ -390,7 +394,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/lucasgtr/lumen/include/Rendering/<a class="el" href="RenderExecution_8hpp_source.html">RenderExecution.hpp</a></li>
+<li>/home/lucasgtr/lumen/include/Rendering/<a class="el" href="RenderStrategy_8hpp_source.html">RenderStrategy.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

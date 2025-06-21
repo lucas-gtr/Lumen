@@ -1,12 +1,14 @@
 // GCOVR_EXCL_START
-#include <GL/glew.h>
+#include <GL/gl.h>
+#include <GL/glext.h>
+#include <algorithm>
 #include <array>
 #include <stdexcept>
 
 #include "Core/Config.hpp"
 #include "GPU/OpenGL/Lights/ShadowMapGL.hpp"
 
-ShadowMapGL::ShadowMapGL(int size) : m_size(size) {}
+ShadowMapGL::ShadowMapGL(int size) : m_size(size) { initializeOpenGLFunctions(); }
 
 void ShadowMapGL::createFramebuffer() {
   glGenFramebuffers(1, &m_depthMapFBO);
@@ -46,7 +48,7 @@ void ShadowMapGL::createDepthTextureCube() {
   glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
 }
 
-void ShadowMapGL::attachDepthTexture(GLenum target) const {
+void ShadowMapGL::attachDepthTexture(GLenum target) {
   if(target == GL_TEXTURE_CUBE_MAP) {
     glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, m_depthMap, 0);
   } else {
@@ -81,9 +83,20 @@ void ShadowMapGL::initializeCubeMap() {
   validateFramebuffer();
 }
 
-void ShadowMapGL::bindFramebuffer() const { glBindFramebuffer(GL_FRAMEBUFFER, m_depthMapFBO); }
+void ShadowMapGL::resize(int newSize) {
+  cleanup();
+  m_size = std::clamp(newSize, MIN_SHADOW_MAP_SIZE, MAX_SHADOW_MAP_SIZE);
+  if(m_depthMapType == GL_TEXTURE_2D) {
+    initialize2DMap();
 
-void ShadowMapGL::bindTexture(unsigned int textureUnit) const {
+  } else {
+    initializeCubeMap();
+  }
+}
+
+void ShadowMapGL::bindFramebuffer() { glBindFramebuffer(GL_FRAMEBUFFER, m_depthMapFBO); }
+
+void ShadowMapGL::bindTexture(unsigned int textureUnit) {
   glActiveTexture(GL_TEXTURE0 + textureUnit);
   glBindTexture(m_depthMapType, m_depthMap);
 }

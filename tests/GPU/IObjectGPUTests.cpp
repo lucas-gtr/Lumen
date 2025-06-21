@@ -7,8 +7,8 @@
 
 class TestObjectGPU : public IObjectGPU {
 public:
-    explicit TestObjectGPU(const Object3D& object) : IObjectGPU(object) {}
-    void uploadToGPU() const override {}
+    explicit TestObjectGPU(Object3D* object) : IObjectGPU(object) {}
+    void uploadToGPU() override { }
     void release() override {}
 
     using IObjectGPU::vertices;
@@ -45,7 +45,7 @@ TEST_F(IObjectGPUTest, InitializationTest) {
     object.setPosition({1.0, 2.0, 3.0});
     object.setRotation({45.0, 90.0, 180.0});
 
-    TestObjectGPU gpuObject(object);
+    TestObjectGPU gpuObject(&object);
 
     EXPECT_EQ(gpuObject.getIndexCount(), 3u);
 
@@ -63,7 +63,7 @@ TEST_F(IObjectGPUTest, InitializationTest) {
 }
 
 TEST_F(IObjectGPUTest, VertexAndIndexDataTest) {
-    TestObjectGPU gpuObject(object);
+    TestObjectGPU gpuObject(&object);
 
     const std::vector<float>& vertices = gpuObject.vertices();
     const std::vector<unsigned int>& indices = gpuObject.indices();

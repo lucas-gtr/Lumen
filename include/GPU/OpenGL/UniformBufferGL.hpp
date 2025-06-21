@@ -7,6 +7,7 @@
 
 // GCOVR_EXCL_START
 #include <cstddef>
+#include <qopenglfunctions_3_3_core.h>
 
 /**
  * @class UniformBufferGL
@@ -16,7 +17,7 @@
  * It allows for efficient data transfer to the GPU, particularly useful for storing camera matrices,
  * lighting information, and other uniform data that needs to be accessed by shaders.
  */
-class UniformBufferGL {
+class UniformBufferGL : protected QOpenGLFunctions_3_3_Core {
 private:
   unsigned int m_UBO  = 0;
   size_t       m_size = 0;
@@ -40,7 +41,7 @@ public:
    * @param size Size of the data in bytes.
    * @param offset Offset in the buffer where the data should be written.
    */
-  void updateData(const void* data, size_t size, size_t offset = 0) const;
+  void updateData(const void* data, size_t size, size_t offset);
 
   /**
    * @brief Gets the ID of the uniform buffer object.
@@ -52,7 +53,7 @@ public:
    * @brief Destructor for UniformBufferGL.
    * Cleans up the OpenGL resources associated with the uniform buffer.
    */
-  ~UniformBufferGL();
+  ~UniformBufferGL() override;
 };
 
 // GCOVR_EXCL_STOP

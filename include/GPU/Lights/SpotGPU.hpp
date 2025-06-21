@@ -20,11 +20,11 @@ class SpotLightGPU {
 private:
   const SpotLight* m_light = nullptr;
 
-  lin::Vec3f m_position;
-  lin::Vec3f m_direction;
-  float      m_cos_inner_cutoff;
-  float      m_cos_outer_cutoff;
-  lin::Vec3f m_color;
+  lin::Vec3f m_position         = lin::Vec3f(0.0F);
+  lin::Vec3f m_direction        = lin::Vec3f(0.0F, 0.0F, -1.0F);
+  float      m_cos_inner_cutoff = 0.0F;
+  float      m_cos_outer_cutoff = 0.0F;
+  lin::Vec3f m_color            = lin::Vec3f(1.0F);
 
 protected:
   const SpotLight* light() const { return m_light; }
@@ -34,12 +34,17 @@ public:
    * @brief Constructor for SpotLightGPU.
    * @param light Pointer to the SpotLight object to be represented in GPU memory.
    */
-  explicit SpotLightGPU(const SpotLight& light);
+  explicit SpotLightGPU(const SpotLight* light);
 
   SpotLightGPU(const SpotLightGPU&)            = delete;
   SpotLightGPU& operator=(const SpotLightGPU&) = delete;
   SpotLightGPU(SpotLightGPU&&)                 = delete;
   SpotLightGPU& operator=(SpotLightGPU&&)      = delete;
+
+  /**
+   * @brief Retrieves the position, direction, inner and outer cutoffs, and color of the light.
+   */
+  void retrieveData();
 
   /**
    * @brief Gets the position of the spot light.

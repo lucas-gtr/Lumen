@@ -3,3 +3,5 @@ build*/
 RenderImages/
 tests/coverage_report/
 docs/*
+Resources/Textures/*
+Resources/obj/*

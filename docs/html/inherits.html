@@ -82,29 +82,29 @@ $(function() {
 <div class="textblock">
 <p><a href="hierarchy.html">Go to the textual class hierarchy</a></p>
 </div><table border="0" cellspacing="10" cellpadding="0">
-<tr><td><img src="inherit_graph_0.png" border="0" usemap="#aBlock" alt=""/>
-<map name="aBlock" id="aBlock">
-<area shape="rect" href="structBlock.html" title="Represents a block of pixels for rendering." alt="" coords="5,5,64,31"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_1.png" border="0" usemap="#aBVHNode" alt=""/>
+<tr><td><img src="inherit_graph_0.png" border="0" usemap="#aBVHNode" alt=""/>
 <map name="aBVHNode" id="aBVHNode">
 <area shape="rect" href="classBVHNode.html" title="Class representing a node in a Bounding Volume Hierarchy (BVH)." alt="" coords="5,5,89,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_2.png" border="0" usemap="#aCameraGL" alt=""/>
+<tr><td><img src="inherit_graph_1.png" border="0" usemap="#aCameraGL" alt=""/>
 <map name="aCameraGL" id="aCameraGL">
 <area shape="rect" href="classCameraGL.html" title="Class that manages camera operations in OpenGL." alt="" coords="5,5,96,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_3.png" border="0" usemap="#aCameraRayEmitter" alt=""/>
+<tr><td><img src="inherit_graph_2.png" border="0" usemap="#aCameraRayEmitter" alt=""/>
 <map name="aCameraRayEmitter" id="aCameraRayEmitter">
 <area shape="rect" href="classCameraRayEmitter.html" title="Class to generate rays from the camera." alt="" coords="5,5,152,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_4.png" border="0" usemap="#aCameraUBO" alt=""/>
+<tr><td><img src="inherit_graph_3.png" border="0" usemap="#aCameraUBO" alt=""/>
 <map name="aCameraUBO" id="aCameraUBO">
 <area shape="rect" href="structCameraUBO.html" title="Structure representing the camera&#39;s Uniform Buffer Object (UBO) data." alt="" coords="5,5,108,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_4.png" border="0" usemap="#aChunk" alt=""/>
+<map name="aChunk" id="aChunk">
+<area shape="rect" href="structChunk.html" title="Represents a chunk of pixels for rendering." alt="" coords="5,5,68,31"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_5.png" border="0" usemap="#aColorRGB" alt=""/>
@@ -134,145 +134,150 @@ $(function() {
 <area shape="rect" href="classFramebuffer.html" title="A class representing a framebuffer for storing image data." alt="" coords="5,5,107,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_10.png" border="0" usemap="#aFramebufferGL" alt=""/>
-<map name="aFramebufferGL" id="aFramebufferGL">
-<area shape="rect" href="classFramebufferGL.html" title="A class that manages OpenGL framebuffers, including color and depth attachments." alt="" coords="5,5,124,31"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_11.png" border="0" usemap="#aIEngineGPU" alt=""/>
+<tr><td><img src="inherit_graph_10.png" border="0" usemap="#aIEngineGPU" alt=""/>
 <map name="aIEngineGPU" id="aIEngineGPU">
-<area shape="rect" href="classIEngineGPU.html" title="Interface for the GPU engine, defining methods for rendering and camera control." alt="" coords="5,5,104,31"/>
-<area shape="rect" href="classEngineGL.html" title="Implements the OpenGL rendering engine, handling rendering of 3D scenes with support for shadows,..." alt="" coords="152,5,235,31"/>
-<area shape="poly" title=" " alt="" coords="118,15,152,15,152,21,118,21"/>
+<area shape="rect" href="classIEngineGPU.html" title="Interface for the GPU engine, defining methods for rendering and camera control." alt="" coords="36,5,135,31"/>
+<area shape="rect" href="classEngineGL.html" title="Implements the OpenGL rendering engine, handling rendering of 3D scenes with support for shadows,..." alt="" coords="237,5,320,31"/>
+<area shape="poly" title=" " alt="" coords="148,15,237,15,237,21,148,21"/>
+<area shape="rect" href="classIObjectGPU.html" title="Interface for GPU objects, defining methods for uploading and releasing GPU resources." alt="" coords="37,55,133,80"/>
+<area shape="rect" href="classObjectGL.html" title="Represents a 3D object in OpenGL, encapsulating its vertex data and material." alt="" coords="238,55,319,80"/>
+<area shape="poly" title=" " alt="" coords="147,65,238,65,238,70,147,70"/>
+<area shape="rect" href="classITextureGPU.html" title="Interface for GPU textures, defining methods for uploading and releasing texture resources." alt="" coords="34,104,137,129"/>
+<area shape="rect" href="classTextureGL.html" title="Class representing a texture in OpenGL." alt="" coords="235,104,322,129"/>
+<area shape="poly" title=" " alt="" coords="150,114,235,114,235,119,150,119"/>
+<area shape="rect" title=" " alt="" coords="5,195,165,235"/>
+<area shape="poly" title=" " alt="" coords="121,184,163,139,177,112,184,88,192,64,212,40,236,25,239,30,215,44,197,67,189,90,182,114,168,142,124,188"/>
+<area shape="poly" title=" " alt="" coords="116,184,163,139,186,112,212,89,237,77,239,81,215,94,190,116,167,142,120,188"/>
+<area shape="poly" title=" " alt="" coords="128,185,212,138,239,127,241,132,215,143,131,190"/>
+<area shape="rect" href="classFramebufferGL.html" title="A class that manages OpenGL framebuffers, including color and depth attachments." alt="" coords="219,252,338,277"/>
+<area shape="poly" title=" " alt="" coords="178,236,229,249,228,255,177,241"/>
+<area shape="rect" href="classMaterialGL.html" title="A class that represents a material in OpenGL, encapsulating its properties and textures." alt="" coords="232,301,325,327"/>
+<area shape="poly" title=" " alt="" coords="131,240,215,286,243,299,241,304,212,291,129,245"/>
+<area shape="rect" href="classRealtimeView.html" title=" " alt="" coords="222,400,335,425"/>
+<area shape="poly" title=" " alt="" coords="105,246,149,317,179,354,215,387,234,398,232,402,212,391,176,358,145,320,100,249"/>
+<area shape="rect" href="classShadersGL.html" title="A class that manages OpenGL shaders, including loading, compiling, and linking." alt="" coords="233,351,324,376"/>
+<area shape="poly" title=" " alt="" coords="113,244,158,291,215,337,237,348,235,353,212,342,154,295,109,248"/>
+<area shape="rect" href="classShadowMapGL.html" title="A class that manages shadow mapping in OpenGL." alt="" coords="219,153,338,179"/>
+<area shape="poly" title=" " alt="" coords="177,189,228,176,229,181,178,194"/>
+<area shape="rect" href="classUniformBufferGL.html" title="A class that manages OpenGL uniform buffers for storing uniform data." alt="" coords="213,203,344,228"/>
+<area shape="poly" title=" " alt="" coords="179,213,213,213,213,218,179,218"/>
+<area shape="rect" title=" " alt="" coords="21,400,149,425"/>
+<area shape="poly" title=" " alt="" coords="164,410,221,410,221,415,164,415"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_12.png" border="0" usemap="#aImageProperties" alt=""/>
+<tr><td><img src="inherit_graph_11.png" border="0" usemap="#aImageProperties" alt=""/>
 <map name="aImageProperties" id="aImageProperties">
 <area shape="rect" href="structImageProperties.html" title="Structure to hold image properties such as width, height, and number of channels." alt="" coords="5,5,135,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_13.png" border="0" usemap="#aIObjectGPU" alt=""/>
-<map name="aIObjectGPU" id="aIObjectGPU">
-<area shape="rect" href="classIObjectGPU.html" title="Interface for GPU objects, defining methods for uploading and releasing GPU resources." alt="" coords="5,5,101,31"/>
-<area shape="rect" href="classObjectGL.html" title="Represents a 3D object in OpenGL, encapsulating its vertex data and material." alt="" coords="149,5,231,31"/>
-<area shape="poly" title=" " alt="" coords="115,15,149,15,149,21,115,21"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_14.png" border="0" usemap="#aIResourceManagerGPU" alt=""/>
+<tr><td><img src="inherit_graph_12.png" border="0" usemap="#aIResourceManagerGPU" alt=""/>
 <map name="aIResourceManagerGPU" id="aIResourceManagerGPU">
 <area shape="rect" href="classIResourceManagerGPU.html" title="Interface for managing GPU resources such as textures, lights, and 3D objects." alt="" coords="5,5,176,31"/>
 <area shape="rect" href="classResourceManagerGL.html" title="Manages OpenGL resources such as textures, materials, lights, and 3D objects." alt="" coords="224,5,380,31"/>
 <area shape="poly" title=" " alt="" coords="190,15,224,15,224,21,190,21"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_15.png" border="0" usemap="#aITextureGPU" alt=""/>
-<map name="aITextureGPU" id="aITextureGPU">
-<area shape="rect" href="classITextureGPU.html" title="Interface for GPU textures, defining methods for uploading and releasing texture resources." alt="" coords="5,5,108,31"/>
-<area shape="rect" href="classTextureGL.html" title="Class representing a texture in OpenGL." alt="" coords="156,5,243,31"/>
-<area shape="poly" title=" " alt="" coords="122,15,156,15,156,21,122,21"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_16.png" border="0" usemap="#alin_1_1Mat3_3_01T_01_4" alt=""/>
+<tr><td><img src="inherit_graph_13.png" border="0" usemap="#alin_1_1Mat3_3_01T_01_4" alt=""/>
 <map name="alin_1_1Mat3_3_01T_01_4" id="alin_1_1Mat3_3_01T_01_4">
 <area shape="rect" href="structlin_1_1Mat3.html" title="Generic 3x3 matrix class (row&#45;major)." alt="" coords="5,5,123,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_17.png" border="0" usemap="#alin_1_1Mat4_3_01T_01_4" alt=""/>
+<tr><td><img src="inherit_graph_14.png" border="0" usemap="#alin_1_1Mat4_3_01T_01_4" alt=""/>
 <map name="alin_1_1Mat4_3_01T_01_4" id="alin_1_1Mat4_3_01T_01_4">
 <area shape="rect" href="structlin_1_1Mat4.html" title="Generic 4x4 matrix class (row&#45;major)." alt="" coords="5,5,123,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_18.png" border="0" usemap="#alin_1_1MatAlignment_3_01double_00_013_01_4" alt=""/>
+<tr><td><img src="inherit_graph_15.png" border="0" usemap="#alin_1_1MatAlignment_3_01double_00_013_01_4" alt=""/>
 <map name="alin_1_1MatAlignment_3_01double_00_013_01_4" id="alin_1_1MatAlignment_3_01double_00_013_01_4">
 <area shape="rect" href="structlin_1_1MatAlignment_3_01double_00_013_01_4.html" title=" " alt="" coords="5,5,155,45"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_19.png" border="0" usemap="#alin_1_1MatAlignment_3_01double_00_014_01_4" alt=""/>
+<tr><td><img src="inherit_graph_16.png" border="0" usemap="#alin_1_1MatAlignment_3_01double_00_014_01_4" alt=""/>
 <map name="alin_1_1MatAlignment_3_01double_00_014_01_4" id="alin_1_1MatAlignment_3_01double_00_014_01_4">
 <area shape="rect" href="structlin_1_1MatAlignment_3_01double_00_014_01_4.html" title="Specialization of MatAlignment for double type with 4 rows/columns." alt="" coords="5,5,155,45"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_20.png" border="0" usemap="#alin_1_1MatAlignment_3_01float_00_013_01_4" alt=""/>
+<tr><td><img src="inherit_graph_17.png" border="0" usemap="#alin_1_1MatAlignment_3_01float_00_013_01_4" alt=""/>
 <map name="alin_1_1MatAlignment_3_01float_00_013_01_4" id="alin_1_1MatAlignment_3_01float_00_013_01_4">
 <area shape="rect" href="structlin_1_1MatAlignment_3_01float_00_013_01_4.html" title="Specialization of MatAlignment for float type with 2 rows/columns." alt="" coords="5,5,155,45"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_21.png" border="0" usemap="#alin_1_1MatAlignment_3_01float_00_014_01_4" alt=""/>
+<tr><td><img src="inherit_graph_18.png" border="0" usemap="#alin_1_1MatAlignment_3_01float_00_014_01_4" alt=""/>
 <map name="alin_1_1MatAlignment_3_01float_00_014_01_4" id="alin_1_1MatAlignment_3_01float_00_014_01_4">
 <area shape="rect" href="structlin_1_1MatAlignment_3_01float_00_014_01_4.html" title="Specialization of MatAlignment for float type with 4 rows/columns." alt="" coords="5,5,155,45"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_22.png" border="0" usemap="#alin_1_1MatAlignment_3_01T_00_01N_01_4" alt=""/>
+<tr><td><img src="inherit_graph_19.png" border="0" usemap="#alin_1_1MatAlignment_3_01T_00_01N_01_4" alt=""/>
 <map name="alin_1_1MatAlignment_3_01T_00_01N_01_4" id="alin_1_1MatAlignment_3_01T_00_01N_01_4">
 <area shape="rect" href="structlin_1_1MatAlignment.html" title="Provides alignment constants for matrix types." alt="" coords="5,5,155,45"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_23.png" border="0" usemap="#alin_1_1Vec2_3_01T_01_4" alt=""/>
+<tr><td><img src="inherit_graph_20.png" border="0" usemap="#alin_1_1Vec2_3_01T_01_4" alt=""/>
 <map name="alin_1_1Vec2_3_01T_01_4" id="alin_1_1Vec2_3_01T_01_4">
 <area shape="rect" href="structlin_1_1Vec2.html" title="Generic 2D vector class (Vec2)." alt="" coords="5,5,120,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_24.png" border="0" usemap="#alin_1_1Vec3_3_01T_01_4" alt=""/>
+<tr><td><img src="inherit_graph_21.png" border="0" usemap="#alin_1_1Vec3_3_01T_01_4" alt=""/>
 <map name="alin_1_1Vec3_3_01T_01_4" id="alin_1_1Vec3_3_01T_01_4">
 <area shape="rect" href="structlin_1_1Vec3.html" title="Generic 3D vector class (Vec3)." alt="" coords="5,5,120,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_25.png" border="0" usemap="#alin_1_1Vec4_3_01T_01_4" alt=""/>
+<tr><td><img src="inherit_graph_22.png" border="0" usemap="#alin_1_1Vec4_3_01T_01_4" alt=""/>
 <map name="alin_1_1Vec4_3_01T_01_4" id="alin_1_1Vec4_3_01T_01_4">
 <area shape="rect" href="structlin_1_1Vec4.html" title="Generic 4D vector class (Vec4)." alt="" coords="5,5,120,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_26.png" border="0" usemap="#alin_1_1VecAlignment_3_01double_00_012_01_4" alt=""/>
+<tr><td><img src="inherit_graph_23.png" border="0" usemap="#alin_1_1VecAlignment_3_01double_00_012_01_4" alt=""/>
 <map name="alin_1_1VecAlignment_3_01double_00_012_01_4" id="alin_1_1VecAlignment_3_01double_00_012_01_4">
 <area shape="rect" href="structlin_1_1VecAlignment_3_01double_00_012_01_4.html" title="Specialization of VecAlignment for double type with 2 elements." alt="" coords="5,5,152,45"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_27.png" border="0" usemap="#alin_1_1VecAlignment_3_01double_00_013_01_4" alt=""/>
+<tr><td><img src="inherit_graph_24.png" border="0" usemap="#alin_1_1VecAlignment_3_01double_00_013_01_4" alt=""/>
 <map name="alin_1_1VecAlignment_3_01double_00_013_01_4" id="alin_1_1VecAlignment_3_01double_00_013_01_4">
 <area shape="rect" href="structlin_1_1VecAlignment_3_01double_00_013_01_4.html" title="Specialization of VecAlignment for double type with 3 elements." alt="" coords="5,5,152,45"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_28.png" border="0" usemap="#alin_1_1VecAlignment_3_01double_00_014_01_4" alt=""/>
+<tr><td><img src="inherit_graph_25.png" border="0" usemap="#alin_1_1VecAlignment_3_01double_00_014_01_4" alt=""/>
 <map name="alin_1_1VecAlignment_3_01double_00_014_01_4" id="alin_1_1VecAlignment_3_01double_00_014_01_4">
 <area shape="rect" href="structlin_1_1VecAlignment_3_01double_00_014_01_4.html" title="Specialization of VecAlignment for double type with 4 elements." alt="" coords="5,5,152,45"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_29.png" border="0" usemap="#alin_1_1VecAlignment_3_01float_00_012_01_4" alt=""/>
+<tr><td><img src="inherit_graph_26.png" border="0" usemap="#alin_1_1VecAlignment_3_01float_00_012_01_4" alt=""/>
 <map name="alin_1_1VecAlignment_3_01float_00_012_01_4" id="alin_1_1VecAlignment_3_01float_00_012_01_4">
 <area shape="rect" href="structlin_1_1VecAlignment_3_01float_00_012_01_4.html" title="Specialization of VecAlignment for float type with 2 elements." alt="" coords="5,5,152,45"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_30.png" border="0" usemap="#alin_1_1VecAlignment_3_01float_00_013_01_4" alt=""/>
+<tr><td><img src="inherit_graph_27.png" border="0" usemap="#alin_1_1VecAlignment_3_01float_00_013_01_4" alt=""/>
 <map name="alin_1_1VecAlignment_3_01float_00_013_01_4" id="alin_1_1VecAlignment_3_01float_00_013_01_4">
 <area shape="rect" href="structlin_1_1VecAlignment_3_01float_00_013_01_4.html" title="Specialization of VecAlignment for float type with 3 elements." alt="" coords="5,5,152,45"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_31.png" border="0" usemap="#alin_1_1VecAlignment_3_01float_00_014_01_4" alt=""/>
+<tr><td><img src="inherit_graph_28.png" border="0" usemap="#alin_1_1VecAlignment_3_01float_00_014_01_4" alt=""/>
 <map name="alin_1_1VecAlignment_3_01float_00_014_01_4" id="alin_1_1VecAlignment_3_01float_00_014_01_4">
 <area shape="rect" href="structlin_1_1VecAlignment_3_01float_00_014_01_4.html" title="Specialization of VecAlignment for float type with 4 elements." alt="" coords="5,5,152,45"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_32.png" border="0" usemap="#alin_1_1VecAlignment_3_01T_00_01N_01_4" alt=""/>
+<tr><td><img src="inherit_graph_29.png" border="0" usemap="#alin_1_1VecAlignment_3_01T_00_01N_01_4" alt=""/>
 <map name="alin_1_1VecAlignment_3_01T_00_01N_01_4" id="alin_1_1VecAlignment_3_01T_00_01N_01_4">
 <area shape="rect" href="structlin_1_1VecAlignment.html" title="Provides alignment constants for vector types." alt="" coords="5,5,152,45"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_33.png" border="0" usemap="#aMaterial" alt=""/>
+<tr><td><img src="inherit_graph_30.png" border="0" usemap="#aMaterial" alt=""/>
 <map name="aMaterial" id="aMaterial">
 <area shape="rect" href="classMaterial.html" title="Class representing a material with albedo and normal textures." alt="" coords="5,5,81,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_34.png" border="0" usemap="#aMaterialGL" alt=""/>
-<map name="aMaterialGL" id="aMaterialGL">
-<area shape="rect" href="classMaterialGL.html" title="A class that represents a material in OpenGL, encapsulating its properties and textures." alt="" coords="5,5,99,31"/>
+<tr><td><img src="inherit_graph_31.png" border="0" usemap="#aMaterialManager" alt=""/>
+<map name="aMaterialManager" id="aMaterialManager">
+<area shape="rect" href="classMaterialManager.html" title="Manages materials in the application." alt="" coords="5,5,139,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_35.png" border="0" usemap="#aMesh" alt=""/>
+<tr><td><img src="inherit_graph_32.png" border="0" usemap="#aMesh" alt=""/>
 <map name="aMesh" id="aMesh">
 <area shape="rect" href="classMesh.html" title="Class representing a 3D mesh, containing vertices and faces." alt="" coords="5,5,63,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_36.png" border="0" usemap="#aMeshBuilder" alt=""/>
+<tr><td><img src="inherit_graph_33.png" border="0" usemap="#aMeshBuilder" alt=""/>
 <map name="aMeshBuilder" id="aMeshBuilder">
 <area shape="rect" href="classMeshBuilder.html" title="Abstract base class for building meshes." alt="" coords="5,55,108,80"/>
 <area shape="rect" href="classCubeMeshBuilder.html" title="A class for building a cube mesh." alt="" coords="162,5,298,31"/>
@@ -283,75 +288,236 @@ $(function() {
 <area shape="poly" title=" " alt="" coords="116,81,185,101,184,106,114,86"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_37.png" border="0" usemap="#aOutputFormat" alt=""/>
-<map name="aOutputFormat" id="aOutputFormat">
-<area shape="rect" href="classOutputFormat.html" title="Abstract base class for different image output formats." alt="" coords="5,5,117,31"/>
-<area shape="rect" href="classOutputFormatPng.html" title="Class for exporting images in PNG format." alt="" coords="165,5,301,31"/>
-<area shape="poly" title=" " alt="" coords="131,15,165,15,165,21,131,21"/>
+<tr><td><img src="inherit_graph_34.png" border="0" usemap="#aObserver_3_01Args_01_4" alt=""/>
+<map name="aObserver_3_01Args_01_4" id="aObserver_3_01Args_01_4">
+<area shape="rect" href="classObserver.html" title="A class that implements the observer pattern." alt="" coords="5,5,145,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_38.png" border="0" usemap="#aParameters" alt=""/>
-<map name="aParameters" id="aParameters">
-<area shape="rect" href="classParameters.html" title="Holds implementation&#45;specific parameters for classes derived from abstract interfaces." alt="" coords="5,5,101,31"/>
+<tr><td><img src="inherit_graph_35.png" border="0" usemap="#aObserver_3_01const_01Material_01_5_01_4" alt=""/>
+<map name="aObserver_3_01const_01Material_01_5_01_4" id="aObserver_3_01const_01Material_01_5_01_4">
+<area shape="rect" href="classObserver.html" title=" " alt="" coords="5,5,220,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_39.png" border="0" usemap="#aParameterValue" alt=""/>
-<map name="aParameterValue" id="aParameterValue">
-<area shape="rect" href="classParameterValue.html" title="Base class for parameter values." alt="" coords="5,31,131,56"/>
-<area shape="rect" href="classDoubleParam.html" title="Represents a double parameter value." alt="" coords="179,5,288,31"/>
-<area shape="poly" title=" " alt="" coords="144,29,178,24,179,29,145,34"/>
-<area shape="rect" href="classIntParam.html" title="Represents an integer parameter value." alt="" coords="193,55,273,80"/>
-<area shape="poly" title=" " alt="" coords="145,52,193,59,193,64,144,57"/>
+<tr><td><img src="inherit_graph_36.png" border="0" usemap="#aObserver_3_01const_01Object3D_01_5_01_4" alt=""/>
+<map name="aObserver_3_01const_01Object3D_01_5_01_4" id="aObserver_3_01const_01Object3D_01_5_01_4">
+<area shape="rect" href="classObserver.html" title=" " alt="" coords="5,5,227,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_40.png" border="0" usemap="#aPixelCoord" alt=""/>
+<tr><td><img src="inherit_graph_37.png" border="0" usemap="#aObserver_3_01const_01std_1_1string_01_6_01_4" alt=""/>
+<map name="aObserver_3_01const_01std_1_1string_01_6_01_4" id="aObserver_3_01const_01std_1_1string_01_6_01_4">
+<area shape="rect" href="classObserver.html" title=" " alt="" coords="5,5,160,45"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_38.png" border="0" usemap="#aObserver_3_01double_01_4" alt=""/>
+<map name="aObserver_3_01double_01_4" id="aObserver_3_01double_01_4">
+<area shape="rect" href="classObserver.html" title=" " alt="" coords="5,5,160,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_39.png" border="0" usemap="#aObserver_3_01Light_01_5_01_4" alt=""/>
+<map name="aObserver_3_01Light_01_5_01_4" id="aObserver_3_01Light_01_5_01_4">
+<area shape="rect" href="classObserver.html" title=" " alt="" coords="5,5,160,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_40.png" border="0" usemap="#aObserver_3_01Object3D_01_5_01_4" alt=""/>
+<map name="aObserver_3_01Object3D_01_5_01_4" id="aObserver_3_01Object3D_01_5_01_4">
+<area shape="rect" href="classObserver.html" title=" " alt="" coords="5,5,188,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_41.png" border="0" usemap="#aObserver_3_01std_1_1string_01_4" alt=""/>
+<map name="aObserver_3_01std_1_1string_01_4" id="aObserver_3_01std_1_1string_01_4">
+<area shape="rect" href="classObserver.html" title=" " alt="" coords="5,5,181,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_42.png" border="0" usemap="#aObserver_3_01std_1_1string_00_01std_1_1string_01_4" alt=""/>
+<map name="aObserver_3_01std_1_1string_00_01std_1_1string_01_4" id="aObserver_3_01std_1_1string_00_01std_1_1string_01_4">
+<area shape="rect" href="classObserver.html" title=" " alt="" coords="5,5,171,45"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_43.png" border="0" usemap="#aOpenGLContext" alt=""/>
+<map name="aOpenGLContext" id="aOpenGLContext">
+<area shape="rect" href="classOpenGLContext.html" title="Singleton class to manage the OpenGL context in a Qt application." alt="" coords="5,5,129,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_44.png" border="0" usemap="#aOutputFormatStrategy" alt=""/>
+<map name="aOutputFormatStrategy" id="aOutputFormatStrategy">
+<area shape="rect" href="classOutputFormatStrategy.html" title="Abstract base class for different image output formats." alt="" coords="5,104,172,129"/>
+<area shape="rect" href="classOutputFormatBmp.html" title="Class for exporting images in BMP format." alt="" coords="220,5,363,31"/>
+<area shape="poly" title=" " alt="" coords="120,94,166,67,219,40,248,28,250,33,221,44,168,72,122,99"/>
+<area shape="rect" href="classOutputFormatHdr.html" title="Class for exporting images in HDR format." alt="" coords="224,55,359,80"/>
+<area shape="poly" title=" " alt="" coords="154,98,238,77,239,83,155,103"/>
+<area shape="rect" href="classOutputFormatJpeg.html" title="Class for exporting images in JPEG format." alt="" coords="221,104,361,129"/>
+<area shape="poly" title=" " alt="" coords="186,114,221,114,221,119,186,119"/>
+<area shape="rect" href="classOutputFormatPng.html" title="Class for exporting images in PNG format." alt="" coords="223,153,359,179"/>
+<area shape="poly" title=" " alt="" coords="155,130,239,151,238,156,154,135"/>
+<area shape="rect" href="classOutputFormatTga.html" title="Class for exporting images in TGA format." alt="" coords="223,203,359,228"/>
+<area shape="poly" title=" " alt="" coords="123,134,221,188,252,200,250,205,219,192,121,139"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_45.png" border="0" usemap="#aPixelCoord" alt=""/>
 <map name="aPixelCoord" id="aPixelCoord">
 <area shape="rect" href="structPixelCoord.html" title="Structure to hold pixel coordinates (x, y) in the framebuffer." alt="" coords="5,5,96,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_41.png" border="0" usemap="#aPointLightGPU" alt=""/>
+<tr><td><img src="inherit_graph_46.png" border="0" usemap="#aPointLightGPU" alt=""/>
 <map name="aPointLightGPU" id="aPointLightGPU">
 <area shape="rect" href="classPointLightGPU.html" title="Represents a point light in GPU memory." alt="" coords="5,5,120,31"/>
 <area shape="rect" href="classPointLightGL.html" title="A class that represents a point light in OpenGL, inheriting from PointLightGPU." alt="" coords="168,5,272,31"/>
 <area shape="poly" title=" " alt="" coords="134,15,168,15,168,21,134,21"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_42.png" border="0" usemap="#aRay" alt=""/>
+<tr><td><img src="inherit_graph_47.png" border="0" usemap="#aQApplication" alt=""/>
+<map name="aQApplication" id="aQApplication">
+<area shape="rect" title=" " alt="" coords="5,5,111,31"/>
+<area shape="rect" href="classApplication.html" title="The main application class that initializes and runs the Qt application." alt="" coords="159,5,253,31"/>
+<area shape="poly" title=" " alt="" coords="124,15,159,15,159,21,124,21"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_48.png" border="0" usemap="#aQDialog" alt=""/>
+<map name="aQDialog" id="aQDialog">
+<area shape="rect" title=" " alt="" coords="5,55,80,80"/>
+<area shape="rect" href="classMeshBuilderDialog.html" title="A dialog for building meshes with a form layout." alt="" coords="128,55,273,80"/>
+<area shape="poly" title=" " alt="" coords="94,65,127,65,127,70,94,70"/>
+<area shape="rect" href="classCubeMeshBuilderDialog.html" title="A dialog for building cube meshes." alt="" coords="327,5,506,31"/>
+<area shape="poly" title=" " alt="" coords="269,49,360,28,361,33,271,54"/>
+<area shape="rect" href="classPlaneMeshBuilderDialog.html" title="A dialog for building plane meshes." alt="" coords="326,55,507,80"/>
+<area shape="poly" title=" " alt="" coords="287,65,326,65,326,70,287,70"/>
+<area shape="rect" href="classSphereMeshBuilderDialog.html" title="A dialog for building sphere meshes." alt="" coords="321,104,512,129"/>
+<area shape="poly" title=" " alt="" coords="271,80,361,101,360,107,269,86"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_49.png" border="0" usemap="#aQMainWindow" alt=""/>
+<map name="aQMainWindow" id="aQMainWindow">
+<area shape="rect" title=" " alt="" coords="5,5,121,31"/>
+<area shape="rect" href="classMainWindow.html" title="The main application window that contains various views and controllers for managing the scene." alt="" coords="169,5,276,31"/>
+<area shape="poly" title=" " alt="" coords="135,15,169,15,169,21,135,21"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_50.png" border="0" usemap="#aQMenuBar" alt=""/>
+<map name="aQMenuBar" id="aQMenuBar">
+<area shape="rect" title=" " alt="" coords="5,5,96,31"/>
+<area shape="rect" href="classMenuView.html" title=" " alt="" coords="144,5,235,31"/>
+<area shape="poly" title=" " alt="" coords="110,15,144,15,144,21,110,21"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_51.png" border="0" usemap="#aQObject" alt=""/>
+<map name="aQObject" id="aQObject">
+<area shape="rect" title=" " alt="" coords="5,301,80,327"/>
+<area shape="rect" href="classCameraController.html" title=" " alt="" coords="135,5,272,31"/>
+<area shape="poly" title=" " alt="" coords="42,287,46,236,59,170,84,101,103,69,126,40,142,29,145,33,130,44,107,72,89,103,64,171,52,237,47,288"/>
+<area shape="rect" href="classExportController.html" title=" " alt="" coords="139,55,267,80"/>
+<area shape="poly" title=" " alt="" coords="44,287,51,244,66,191,90,137,106,112,126,89,143,78,146,82,130,93,111,115,95,139,71,193,57,245,49,288"/>
+<area shape="rect" href="classLightController.html" title=" " alt="" coords="144,104,263,129"/>
+<area shape="poly" title=" " alt="" coords="47,287,57,253,73,214,96,173,126,139,144,127,147,132,130,143,100,177,78,216,62,255,52,289"/>
+<area shape="rect" href="classMaterialController.html" title=" " alt="" coords="133,153,273,179"/>
+<area shape="poly" title=" " alt="" coords="53,287,81,237,102,211,126,188,147,176,149,181,130,192,106,214,86,240,57,290"/>
+<area shape="rect" href="classMenuController.html" title=" " alt="" coords="142,203,265,228"/>
+<area shape="poly" title=" " alt="" coords="63,289,92,262,127,237,152,226,154,230,129,242,95,266,66,293"/>
+<area shape="rect" href="classObjectController.html" title=" " alt="" coords="139,252,267,277"/>
+<area shape="poly" title=" " alt="" coords="92,296,160,275,162,280,94,301"/>
+<area shape="rect" href="classRealtimeController.html" title=" " alt="" coords="131,301,276,327"/>
+<area shape="poly" title=" " alt="" coords="94,311,130,311,130,317,94,317"/>
+<area shape="rect" href="classRenderController.html" title=" " alt="" coords="137,351,269,376"/>
+<area shape="poly" title=" " alt="" coords="94,327,162,348,160,353,92,332"/>
+<area shape="rect" href="classSceneController.html" title=" " alt="" coords="141,400,266,425"/>
+<area shape="poly" title=" " alt="" coords="67,335,95,361,129,385,157,398,155,402,127,390,92,365,63,339"/>
+<area shape="rect" href="classSkyboxController.html" title=" " alt="" coords="137,449,270,475"/>
+<area shape="poly" title=" " alt="" coords="57,338,86,387,106,412,130,435,152,447,149,452,126,439,102,416,82,390,53,340"/>
+<area shape="rect" href="classTextureController.html" title=" " alt="" coords="136,499,271,524"/>
+<area shape="poly" title=" " alt="" coords="52,339,63,372,78,411,100,450,130,484,150,496,147,501,126,488,96,453,73,413,57,374,47,341"/>
+<area shape="rect" href="classTransformController.html" title=" " alt="" coords="128,548,279,573"/>
+<area shape="poly" title=" " alt="" coords="49,340,57,382,71,434,95,487,111,512,130,533,148,546,145,550,126,537,107,515,90,490,66,436,52,384,44,341"/>
+<area shape="rect" href="classViewportController.html" title=" " alt="" coords="131,597,275,623"/>
+<area shape="poly" title=" " alt="" coords="47,340,52,391,64,457,89,525,107,556,130,584,145,595,142,599,126,588,103,559,84,527,59,458,46,392,42,341"/>
+<area shape="rect" href="classDirectionalLightController.html" title=" " alt="" coords="327,55,516,80"/>
+<area shape="poly" title=" " alt="" coords="273,98,364,77,365,83,274,104"/>
+<area shape="rect" href="classPointLightController.html" title=" " alt="" coords="346,104,497,129"/>
+<area shape="poly" title=" " alt="" coords="276,114,346,114,346,119,276,119"/>
+<area shape="rect" href="classSpotLightController.html" title=" " alt="" coords="348,153,495,179"/>
+<area shape="poly" title=" " alt="" coords="274,130,365,151,364,156,273,135"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_52.png" border="0" usemap="#aQWidget" alt=""/>
+<map name="aQWidget" id="aQWidget">
+<area shape="rect" title=" " alt="" coords="5,351,84,376"/>
+<area shape="rect" href="classCameraView.html" title="Widget for viewing and editing camera parameters (MVC View)." alt="" coords="167,5,272,31"/>
+<area shape="poly" title=" " alt="" coords="42,337,44,276,55,197,66,155,81,113,103,74,130,40,147,28,166,21,168,26,149,33,134,44,107,77,86,115,71,156,60,198,49,277,48,337"/>
+<area shape="rect" href="classExportView.html" title="Widget for configuring export settings." alt="" coords="171,55,267,80"/>
+<area shape="poly" title=" " alt="" coords="44,336,48,285,61,218,72,183,87,149,106,117,130,89,149,77,170,69,172,74,152,81,134,93,111,121,92,152,77,185,67,220,54,285,49,337"/>
+<area shape="rect" href="classLightView.html" title=" " alt="" coords="176,104,263,129"/>
+<area shape="poly" title=" " alt="" coords="46,336,53,293,68,240,93,186,110,161,130,139,151,125,175,118,176,123,154,130,134,143,114,164,98,188,73,242,59,294,51,337"/>
+<area shape="rect" href="classMaterialSelectorWidget.html" title="A widget for selecting materials from a dropdown list." alt="" coords="132,153,307,179"/>
+<area shape="poly" title=" " alt="" coords="49,337,59,303,76,263,99,222,130,188,149,177,152,181,134,192,103,226,80,265,64,305,54,338"/>
+<area shape="rect" href="classMaterialView.html" title=" " alt="" coords="165,203,273,228"/>
+<area shape="poly" title=" " alt="" coords="55,337,84,286,105,260,131,237,164,222,166,226,133,242,109,263,88,289,59,340"/>
+<area shape="rect" href="classObjectView.html" title=" " alt="" coords="171,252,267,277"/>
+<area shape="poly" title=" " alt="" coords="65,338,95,311,131,286,170,271,172,276,133,291,98,315,69,342"/>
+<area shape="rect" href="classRenderView.html" title="Widget for configuring render parameters." alt="" coords="169,301,269,327"/>
+<area shape="poly" title=" " alt="" coords="96,346,131,335,171,324,173,329,133,341,98,351"/>
+<area shape="rect" href="classRenderWindowView.html" title=" " alt="" coords="143,351,295,376"/>
+<area shape="poly" title=" " alt="" coords="98,361,143,361,143,366,98,366"/>
+<area shape="rect" href="classSceneView.html" title=" " alt="" coords="173,400,266,425"/>
+<area shape="poly" title=" " alt="" coords="98,375,174,397,173,402,96,381"/>
+<area shape="rect" href="classSkyboxView.html" title=" " alt="" coords="169,449,270,475"/>
+<area shape="poly" title=" " alt="" coords="69,384,98,410,133,434,169,449,167,454,131,439,95,414,65,388"/>
+<area shape="rect" href="classTexturePreviewWidget.html" title="A widget that displays a texture preview image." alt="" coords="135,499,303,524"/>
+<area shape="poly" title=" " alt="" coords="60,387,89,437,109,462,134,484,157,496,155,501,130,488,105,466,84,440,55,390"/>
+<area shape="rect" href="classTextureSelectorWidget.html" title="A widget for selecting textures from a TextureManager." alt="" coords="135,548,304,573"/>
+<area shape="poly" title=" " alt="" coords="55,389,65,422,81,461,104,500,134,533,154,546,152,550,130,537,99,503,76,463,60,424,49,390"/>
+<area shape="rect" href="classTextureView.html" title=" " alt="" coords="168,597,271,623"/>
+<area shape="poly" title=" " alt="" coords="51,390,59,432,74,484,98,537,114,561,134,583,150,594,169,601,167,606,147,598,130,587,110,565,93,540,69,486,54,433,46,391"/>
+<area shape="rect" href="classTransformView.html" title=" " alt="" coords="160,647,279,672"/>
+<area shape="poly" title=" " alt="" coords="49,389,54,441,67,506,78,540,92,574,111,605,134,632,161,648,158,653,130,636,106,608,88,576,73,542,62,507,49,441,44,390"/>
+<area shape="rect" href="classViewportView.html" title=" " alt="" coords="163,696,275,721"/>
+<area shape="poly" title=" " alt="" coords="48,390,49,450,60,529,71,571,86,611,107,649,134,683,148,693,164,700,162,705,145,698,130,687,103,652,81,614,66,572,55,530,44,450,42,390"/>
+<area shape="rect" href="classDirectionalLightView.html" title=" " alt="" coords="355,55,512,80"/>
+<area shape="poly" title=" " alt="" coords="276,101,377,77,378,83,277,106"/>
+<area shape="rect" href="classPointLightView.html" title=" " alt="" coords="374,104,493,129"/>
+<area shape="poly" title=" " alt="" coords="277,114,374,114,374,119,277,119"/>
+<area shape="rect" href="classSpotLightView.html" title=" " alt="" coords="376,153,491,179"/>
+<area shape="poly" title=" " alt="" coords="277,127,378,151,377,156,276,132"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_53.png" border="0" usemap="#aRay" alt=""/>
 <map name="aRay" id="aRay">
 <area shape="rect" href="structRay.html" title="A structure representing a ray in 3D space." alt="" coords="5,5,52,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_43.png" border="0" usemap="#aRayEmitterParameters" alt=""/>
+<tr><td><img src="inherit_graph_54.png" border="0" usemap="#aRayEmitterParameters" alt=""/>
 <map name="aRayEmitterParameters" id="aRayEmitterParameters">
 <area shape="rect" href="structRayEmitterParameters.html" title="Struct to hold parameters for ray emitter configuration." alt="" coords="5,5,175,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_44.png" border="0" usemap="#aRayHitInfo" alt=""/>
+<tr><td><img src="inherit_graph_55.png" border="0" usemap="#aRayHitInfo" alt=""/>
 <map name="aRayHitInfo" id="aRayHitInfo">
 <area shape="rect" href="structRayHitInfo.html" title="Structure that holds information about a ray intersection." alt="" coords="5,5,96,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_45.png" border="0" usemap="#aRayIntersection_1_1RayBVHHitInfo" alt=""/>
+<tr><td><img src="inherit_graph_56.png" border="0" usemap="#aRayIntersection_1_1RayBVHHitInfo" alt=""/>
 <map name="aRayIntersection_1_1RayBVHHitInfo" id="aRayIntersection_1_1RayBVHHitInfo">
 <area shape="rect" href="structRayIntersection_1_1RayBVHHitInfo.html" title="Structure that holds information about a ray intersection with a BVH node." alt="" coords="5,5,235,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_46.png" border="0" usemap="#aRenderer" alt=""/>
+<tr><td><img src="inherit_graph_57.png" border="0" usemap="#aRenderer" alt=""/>
 <map name="aRenderer" id="aRenderer">
 <area shape="rect" href="classRenderer.html" title="The Renderer class is responsible for rendering a scene using the given render settings and camera se..." alt="" coords="5,5,87,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_47.png" border="0" usemap="#aRenderExporter" alt=""/>
+<tr><td><img src="inherit_graph_58.png" border="0" usemap="#aRenderExporter" alt=""/>
 <map name="aRenderExporter" id="aRenderExporter">
 <area shape="rect" href="classRenderExporter.html" title="Abstract base class for exporting rendered frames." alt="" coords="5,5,128,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_48.png" border="0" usemap="#aRenderSettings" alt=""/>
+<tr><td><img src="inherit_graph_59.png" border="0" usemap="#aRenderSettings" alt=""/>
 <map name="aRenderSettings" id="aRenderSettings">
 <area shape="rect" href="classRenderSettings.html" title="Class to manage the settings for rendering, including resolution, clipping planes,..." alt="" coords="5,5,127,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_49.png" border="0" usemap="#aRenderStrategy" alt=""/>
+<tr><td><img src="inherit_graph_60.png" border="0" usemap="#aRenderStats" alt=""/>
+<map name="aRenderStats" id="aRenderStats">
+<area shape="rect" href="structRenderStats.html" title=" " alt="" coords="5,5,107,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_61.png" border="0" usemap="#aRenderStrategy" alt=""/>
 <map name="aRenderStrategy" id="aRenderStrategy">
 <area shape="rect" href="classRenderStrategy.html" title="Abstract base class for rendering strategies." alt="" coords="5,31,128,56"/>
 <area shape="rect" href="classMultiThreadedCPU.html" title="A rendering strategy that uses multiple threads to render the scene on the CPU." alt="" coords="176,5,319,31"/>
@@ -360,59 +526,59 @@ $(function() {
 <area shape="poly" title=" " alt="" coords="142,51,186,57,185,62,141,56"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_50.png" border="0" usemap="#aResolution" alt=""/>
+<tr><td><img src="inherit_graph_62.png" border="0" usemap="#aRenderTime" alt=""/>
+<map name="aRenderTime" id="aRenderTime">
+<area shape="rect" href="classRenderTime.html" title=" " alt="" coords="5,5,107,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_63.png" border="0" usemap="#aResolution" alt=""/>
 <map name="aResolution" id="aResolution">
 <area shape="rect" href="structResolution.html" title="Structure to hold the resolution of an image." alt="" coords="5,5,96,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_51.png" border="0" usemap="#aScene" alt=""/>
+<tr><td><img src="inherit_graph_64.png" border="0" usemap="#aScene" alt=""/>
 <map name="aScene" id="aScene">
 <area shape="rect" href="classScene.html" title="Represents a 3D scene that holds objects and a camera." alt="" coords="5,5,67,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_52.png" border="0" usemap="#aShadersGL" alt=""/>
-<map name="aShadersGL" id="aShadersGL">
-<area shape="rect" href="classShadersGL.html" title="A class that manages OpenGL shaders, including loading, compiling, and linking." alt="" coords="5,5,96,31"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_53.png" border="0" usemap="#aShadowMapGL" alt=""/>
-<map name="aShadowMapGL" id="aShadowMapGL">
-<area shape="rect" href="classShadowMapGL.html" title="A class that manages shadow mapping in OpenGL." alt="" coords="5,5,124,31"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_54.png" border="0" usemap="#aSkybox" alt=""/>
+<tr><td><img src="inherit_graph_65.png" border="0" usemap="#aSkybox" alt=""/>
 <map name="aSkybox" id="aSkybox">
 <area shape="rect" href="classSkybox.html" title="Class representing a skybox in a 3D scene." alt="" coords="5,5,75,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_55.png" border="0" usemap="#aSpotLightGPU" alt=""/>
+<tr><td><img src="inherit_graph_66.png" border="0" usemap="#aSkyboxGL" alt=""/>
+<map name="aSkyboxGL" id="aSkyboxGL">
+<area shape="rect" href="classSkyboxGL.html" title="Represents a skybox in OpenGL, managing the skybox texture and rendering." alt="" coords="5,5,92,31"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_67.png" border="0" usemap="#aSpotLightGPU" alt=""/>
 <map name="aSpotLightGPU" id="aSpotLightGPU">
 <area shape="rect" href="classSpotLightGPU.html" title="Represents a spot light in GPU memory." alt="" coords="5,5,116,31"/>
 <area shape="rect" href="classSpotLightGL.html" title="A class that represents a spot light in OpenGL, inheriting from SpotLightGPU." alt="" coords="164,5,264,31"/>
 <area shape="poly" title=" " alt="" coords="130,15,164,15,164,21,130,21"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_56.png" border="0" usemap="#aTexture" alt=""/>
+<tr><td><img src="inherit_graph_68.png" border="0" usemap="#aTexture" alt=""/>
 <map name="aTexture" id="aTexture">
 <area shape="rect" href="classTexture.html" title="Class representing a texture for 3D rendering." alt="" coords="5,5,76,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_57.png" border="0" usemap="#aTextureManager" alt=""/>
+<tr><td><img src="inherit_graph_69.png" border="0" usemap="#aTextureManager" alt=""/>
 <map name="aTextureManager" id="aTextureManager">
 <area shape="rect" href="classTextureManager.html" title="Manages textures in the application." alt="" coords="5,5,132,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_58.png" border="0" usemap="#aTextureSampling_1_1BilinearSampleInfo" alt=""/>
+<tr><td><img src="inherit_graph_70.png" border="0" usemap="#aTextureSampling_1_1BilinearSampleInfo" alt=""/>
 <map name="aTextureSampling_1_1BilinearSampleInfo" id="aTextureSampling_1_1BilinearSampleInfo">
 <area shape="rect" href="structTextureSampling_1_1BilinearSampleInfo.html" title="Structure to hold bilinear sampling information." alt="" coords="5,5,195,45"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_59.png" border="0" usemap="#aTextureUV" alt=""/>
+<tr><td><img src="inherit_graph_71.png" border="0" usemap="#aTextureUV" alt=""/>
 <map name="aTextureUV" id="aTextureUV">
 <area shape="rect" href="structTextureUV.html" title="Structure to hold the UV coordinates of a texture." alt="" coords="5,5,95,31"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_60.png" border="0" usemap="#aToneMappingStrategy" alt=""/>
+<tr><td><img src="inherit_graph_72.png" border="0" usemap="#aToneMappingStrategy" alt=""/>
 <map name="aToneMappingStrategy" id="aToneMappingStrategy">
 <area shape="rect" href="classToneMappingStrategy.html" title="Abstract base class for tone mapping strategies." alt="" coords="5,55,168,80"/>
 <area shape="rect" href="classExposureToneMapping.html" title="Class implementing the exposure tone mapping algorithm." alt="" coords="216,5,384,31"/>
@@ -423,7 +589,7 @@ $(function() {
 <area shape="poly" title=" " alt="" coords="156,81,245,101,244,107,155,86"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_61.png" border="0" usemap="#aTransform" alt=""/>
+<tr><td><img src="inherit_graph_73.png" border="0" usemap="#aTransform" alt=""/>
 <map name="aTransform" id="aTransform">
 <area shape="rect" href="classTransform.html" title="Represents a 3D transformation consisting of position, rotation, and scale." alt="" coords="5,55,92,80"/>
 <area shape="rect" href="classCamera.html" title="Class representing a camera with adjustable parameters such as field of view, focal length,..." alt="" coords="145,5,218,31"/>
@@ -440,19 +606,9 @@ $(function() {
 <area shape="poly" title=" " alt="" coords="222,78,294,101,293,106,221,83"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_62.png" border="0" usemap="#aUniformBufferGL" alt=""/>
-<map name="aUniformBufferGL" id="aUniformBufferGL">
-<area shape="rect" href="classUniformBufferGL.html" title="A class that manages OpenGL uniform buffers for storing uniform data." alt="" coords="5,5,136,31"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_63.png" border="0" usemap="#aVertex" alt=""/>
+<tr><td><img src="inherit_graph_74.png" border="0" usemap="#aVertex" alt=""/>
 <map name="aVertex" id="aVertex">
 <area shape="rect" href="structVertex.html" title="Structure representing a vertex in a 3D mesh." alt="" coords="5,5,69,31"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_64.png" border="0" usemap="#aWindowGL" alt=""/>
-<map name="aWindowGL" id="aWindowGL">
-<area shape="rect" href="classWindowGL.html" title="Class representing an OpenGL window using GLFW." alt="" coords="5,5,96,31"/>
 </map>
 </td></tr>
 </table>

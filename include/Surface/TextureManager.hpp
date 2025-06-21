@@ -9,6 +9,7 @@
 #include <string>
 #include <unordered_map>
 
+#include "Core/Observer.hpp"
 #include "Surface/Texture.hpp"
 
 /**
@@ -16,11 +17,18 @@
  * @brief Manages textures in the application.
  *
  * The TextureManager class is responsible for loading, retrieving, and managing textures.
- * It uses a hash map to store textures by their file paths or names.
  */
 class TextureManager {
 private:
-  std::unordered_map<std::string, std::shared_ptr<Texture>> m_textures;
+  std::unordered_map<std::string, std::unique_ptr<Texture>> m_texture_map;
+
+  static std::unique_ptr<Texture> s_default_skybox_texture;
+  static std::unique_ptr<Texture> s_default_diffuse_texture;
+  static std::unique_ptr<Texture> s_default_normal_texture;
+
+  Observer<std::string>              m_texture_added_observer;
+  Observer<std::string>              m_texture_removed_observer;
+  Observer<std::string, std::string> m_texture_renamed_observer;
 
 public:
   /**
@@ -33,25 +41,68 @@ public:
   TextureManager(TextureManager&&)                 = delete;
   TextureManager& operator=(TextureManager&&)      = delete;
 
-  /**
-   * @brief Loads a texture from a file and stores it in the manager.
-   * @param file_path The path to the texture file.
-   * @param texture_name Optional name for the texture. If not provided, the file path will be used as the name.
-   */
-  void loadTexture(const std::string& file_path, const std::string& texture_name = "");
+  Observer<std::string>&              getTextureAddedObserver() { return m_texture_added_observer; }
+  Observer<std::string>&              getTextureRemovedObserver() { return m_texture_removed_observer; }
+  Observer<std::string, std::string>& getTextureRenamedObserver() { return m_texture_renamed_observer; }
 
   /**
-   * @brief Retrieves a texture by its name.
-   * @param texture_name The name of the texture to retrieve.
-   * @return A weak pointer to the texture if it exists, otherwise an empty weak pointer.
+   * @brief Adds a texture to the manager.
+   * @param texture_name The name of the texture to add.
    */
-  std::weak_ptr<Texture> getTexture(const std::string& texture_name) const;
+  void addTexture(const std::string& texture_name);
+
+  /**
+   * @brief Gets a unique name for a texture, ensuring it is not already in use.
+   * @param name The base name for the texture.
+   * @return A unique name for the texture that is not already in use.
+   */
+  std::string getAvailableTextureName(const std::string& name) const;
+
+  /**
+   * @brief Renames a texture in the manager.
+   * @param texture The texture to rename.
+   * @param new_name The new name for the texture.
+   * @return True if the texture was successfully renamed, false if the new name is already in use.
+   */
+  bool renameTexture(const Texture* texture, const std::string& new_name);
+
+  /**
+   * @brief Gets a texture by its name.
+   * @param texture_name The name of the texture to retrieve.
+   * @return A pointer to the Texture object, or nullptr if not found.
+   */
+  Texture* getTexture(const std::string& texture_name) const;
+
+  /**
+   * @brief Gets the name of a texture.
+   * @param texture The texture to get the name for.
+   * @return The name of the texture.
+   */
+  std::string getTextureName(const Texture* texture) const;
 
   /**
    * @brief Removes a texture from the manager by its name.
    * @param texture_name The name of the texture to remove.
    */
   void removeTexture(const std::string& texture_name);
+
+  /**
+   * @brief Gets the default skybox texture.
+   * @return A pointer to the default skybox texture.
+   */
+  static Texture* defaultSkyboxTexture();
+
+  /**
+   * @brief Gets the default diffuse texture.
+   * @return A pointer to the default diffuse texture.
+   */
+  static Texture* defaultDiffuseTexture();
+
+  /**
+   * @brief Gets the default normal texture.
+   * @return A pointer to the default normal texture.
+   */
+  static Texture* defaultNormalTexture();
 
   ~TextureManager() = default; ///< Default destructor for the TextureManager class.
 };

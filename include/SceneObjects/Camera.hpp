@@ -7,6 +7,7 @@
 
 #include "Core/Config.hpp"
 #include "Core/MathConstants.hpp"
+#include "Core/Observer.hpp"
 #include "Core/Transform.hpp"
 
 #include <algorithm>
@@ -36,13 +37,21 @@ private:
   double getUpdatedSensorWidth() const;
   double getUpdatedFov() const;
 
+  Observer<> m_camera_changed_observer;
+
 public:
   Camera(); ///< Default constructor.
 
-  Camera(const Camera&)            = default; ///< Default copy constructor.
-  Camera& operator=(const Camera&) = default; ///< Default copy assignment operator.
-  Camera(Camera&&)                 = default; ///< Default move constructor.
-  Camera& operator=(Camera&&)      = default; ///< Default move assignment operator.
+  Camera(const Camera&)            = delete;
+  Camera& operator=(const Camera&) = delete;
+  Camera(Camera&&)                 = delete;
+  Camera& operator=(Camera&&)      = delete;
+
+  /**
+   * @brief Gets the observer for camera changes.
+   * @return A reference to the observer that notifies when camera parameters change.
+   */
+  Observer<>& getCameraChangedObserver() { return m_camera_changed_observer; }
 
   /**
    * @brief Gets the minimum sensor width in millimeters.
@@ -114,9 +123,7 @@ public:
    * @brief Sets the shutter speed.
    * @param shutterSpeed The shutter speed in seconds.
    */
-  void setShutterSpeed(double shutterSpeed) {
-    m_shutter_speed = std::clamp(shutterSpeed, MIN_SHUTTER_SPEED, MAX_SHUTTER_SPEED);
-  }
+  void setShutterSpeed(double shutterSpeed);
 
   /**
    * @brief Gets the current focus distance in meters.
@@ -126,12 +133,9 @@ public:
 
   /**
    * @brief Sets the focus distance.
-   * @param focusDistance The focus distance in meters.
+   * @param focus_distance The focus distance in meters.
    */
-  void setFocusDistance(double focusDistance) {
-    m_focus_distance = std::clamp(focusDistance, MIN_FOCUS_DISTANCE, MAX_FOCUS_DISTANCE);
-  }
-
+  void setFocusDistance(double focus_distance);
   /**
    * @brief Gets the lens radius in millimeters.
    * @return The lens radius in millimeters.
@@ -148,7 +152,7 @@ public:
    * @brief Sets the near clipping plane distance.
    * @param nearPlane The near clipping plane distance in meters.
    */
-  void setNearPlane(double nearPlane) { m_near_plane = std::clamp(nearPlane, MIN_CAMERA_PLANE, m_far_plane); }
+  void setNearPlane(double nearPlane);
 
   /**
    * @brief Gets the far clipping plane distance in meters.
@@ -160,7 +164,7 @@ public:
    * @brief Sets the far clipping plane distance.
    * @param farPlane The far clipping plane distance in meters.
    */
-  void setFarPlane(double farPlane) { m_far_plane = std::clamp(farPlane, m_near_plane, MAX_CAMERA_PLANE); }
+  void setFarPlane(double farPlane);
 
   ~Camera() = default; ///< Default destructor.
 };

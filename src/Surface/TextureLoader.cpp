@@ -1,31 +1,37 @@
+#include <cstdint>
 #include <iostream>
-#include <memory>
+#include <vector>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
+#include "Core/ColorUtils.hpp"
 #include "Core/CommonTypes.hpp"
-#include "Surface/Texture.hpp"
 #include "Surface/TextureLoader.hpp"
 
 namespace TextureLoader {
 
-std::shared_ptr<Texture> load(const char* filename) {
-  int            width    = 1;
-  int            height   = 1;
-  int            channels = 1;
+void load(const char* filename, std::vector<double>& image_data, ImageProperties& texture_properties) {
+  int            width    = 0;
+  int            height   = 0;
+  int            channels = 0;
   unsigned char* data     = stbi_load(filename, &width, &height, &channels, 0);
-
   if(data == nullptr) {
-    std::cerr << "Failed to load texture: " << filename << '\n';
-    return std::make_shared<Texture>(ColorRGBA(1.0, 0.0, 1.0, 1.0)); // Return a default texture if loading fails
+    std::cerr << "Error loading texture: " << stbi_failure_reason() << '\n';
+    texture_properties = {1, 1, 3};
+    image_data.resize(3);
+    image_data = {1.0, 0.0, 1.0};
+    return;
   }
-  const ImageProperties texture_properties = {width, height, channels};
-  auto                  texture            = std::make_shared<Texture>(data, texture_properties);
+  texture_properties = {width, height, channels};
+  image_data.resize(texture_properties.bufferSize());
+
+  for(std::uint64_t i = 0; i < texture_properties.bufferSize(); ++i) {
+    // NOLINTNEXTLINE(clang-analyzer-core.UndefinedBinaryOperatorResult)
+    image_data[i] = static_cast<double>(data[i]) * COLOR8_TO_NORMALIZED;
+  }
 
   stbi_image_free(data);
-
-  return texture;
 }
 
 }; // namespace TextureLoader

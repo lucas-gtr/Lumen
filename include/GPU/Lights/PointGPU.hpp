@@ -30,12 +30,17 @@ public:
    * @brief Constructor for PointLightGPU.
    * @param light Pointer to the PointLight object to be represented in GPU memory.
    */
-  explicit PointLightGPU(const PointLight& light);
+  explicit PointLightGPU(const PointLight* light);
 
   PointLightGPU(const PointLightGPU&)            = delete;
   PointLightGPU& operator=(const PointLightGPU&) = delete;
   PointLightGPU(PointLightGPU&&)                 = delete;
   PointLightGPU& operator=(PointLightGPU&&)      = delete;
+
+  /**
+   * @brief Retrieves the position and color of the light.
+   */
+  void retrieveData();
 
   /**
    * @brief Gets the position of the light.

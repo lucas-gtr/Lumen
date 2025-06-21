@@ -110,7 +110,7 @@ Face parseFaceLine(const std::string& line, const std::vector<lin::Vec3d>& posit
       Vertex vertex;
       vertex.position = positions[vIndex];
       if(vtIndex >= 0) {
-        vertex.uvCoord = uvs[vtIndex];
+        vertex.uv_coord = uvs[vtIndex];
       }
       if(vnIndex >= 0) {
         vertex.normal = normals[vnIndex];

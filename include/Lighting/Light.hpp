@@ -9,6 +9,7 @@
 
 #include "Core/CommonTypes.hpp"
 #include "Core/Math/Vec3.hpp"
+#include "Core/Observer.hpp"
 #include "Core/Transform.hpp"
 
 enum class LightType : std::uint8_t { Point, Directional, Spot };
@@ -29,19 +30,54 @@ private:
   ColorRGB m_color     = {1.0, 1.0, 1.0};
   double   m_intensity = 1.0;
 
+  Observer<> m_light_changed_observer;
+
 public:
-  explicit Light(LightType light_type) : m_type(light_type) {} ///< Constructor with light type.
+  /**
+   * @brief Default constructor that initializes the light with a point light type.
+   * @param light_type The type of the light.
+   */
+  explicit Light(LightType light_type) : m_type(light_type) {}
 
-  Light(const Light&)            = default; ///< Default copy constructor.
-  Light& operator=(const Light&) = default; ///< Default copy assignment operator.
-  Light(Light&&)                 = default; ///< Default move constructor.
-  Light& operator=(Light&&)      = default; ///< Default move assignment operator.
+  Light(const Light&)            = delete;
+  Light& operator=(const Light&) = delete;
+  Light(Light&&)                 = delete;
+  Light& operator=(Light&&)      = delete;
 
-  void setColor(const ColorRGB& color) { m_color = color; }
-  void setIntensity(double intensity) { m_intensity = intensity; }
+  /**
+   * @brief Gets the observer for light changes.
+   * @return A reference to the observer that notifies when the light properties change.
+   */
+  Observer<>& getLightChangedObserver() { return m_light_changed_observer; }
 
-  ColorRGB  getColor() const { return m_color; }
-  double    getIntensity() const { return m_intensity; }
+  /**
+   * @brief Sets the color of the light.
+   * @param color The color of the light.
+   */
+  void setColor(const ColorRGB& color);
+
+  /**
+   * @brief Sets the intensity of the light.
+   * @param intensity The intensity of the light.
+   */
+  void setIntensity(double intensity);
+
+  /**
+   * @brief Gets the color and intensity of the light.
+   * @return A pair containing the color and intensity of the light.
+   */
+  ColorRGB getColor() const { return m_color; }
+
+  /**
+   * @brief Gets the intensity of the light.
+   * @return The intensity of the light.
+   */
+  double getIntensity() const { return m_intensity; }
+
+  /**
+   * @brief Gets the type of the light.
+   * @return The type of the light as a LightType enum.
+   */
   LightType getType() const { return m_type; }
 
   /**

@@ -8,11 +8,11 @@ TEST(CameraTest, TestDefaultConstructor) {
     EXPECT_DOUBLE_EQ(camera.getFocalLength(), 0.05);
     EXPECT_DOUBLE_EQ(camera.getAperture(), 2.8);
     EXPECT_DOUBLE_EQ(camera.getShutterSpeed(), 1.0 / 60.0);
-    EXPECT_DOUBLE_EQ(camera.getFocusDistance(), 2.0);
+    EXPECT_DOUBLE_EQ(camera.getFocusDistance(), 6.0);
     EXPECT_DOUBLE_EQ(camera.getSensorWidth(), 2 * 0.05 * tan(45.0 * 0.5 * DEG_TO_RAD));
     EXPECT_DOUBLE_EQ(camera.getLensRadius(), 0.05 / 2.8 / 2.0);
     EXPECT_DOUBLE_EQ(camera.getNearPlane(), 0.1);
-    EXPECT_DOUBLE_EQ(camera.getFarPlane(), 100.0);
+    EXPECT_DOUBLE_EQ(camera.getFarPlane(), 500.0);
 }
 
 TEST(CameraTest, TestFovMinMax) {

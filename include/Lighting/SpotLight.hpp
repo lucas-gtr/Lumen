@@ -26,11 +26,12 @@ private:
   double     m_outer_angle = DEFAULT_SPOT_LIGHT_OUTER_ANGLE; // in degrees
 
 public:
-  SpotLight() : Light(LightType::Spot) {}           ///< Constructor with light type.
-  SpotLight(const SpotLight&)            = default; ///< Default copy constructor.
-  SpotLight& operator=(const SpotLight&) = default; ///< Default copy assignment operator.
-  SpotLight(SpotLight&&)                 = default; ///< Default move constructor.
-  SpotLight& operator=(SpotLight&&)      = default; ///< Default move assignment operator.
+  SpotLight() : Light(LightType::Spot) {} ///< Constructor with light type.
+
+  SpotLight(const SpotLight&)            = delete;
+  SpotLight& operator=(const SpotLight&) = delete;
+  SpotLight(SpotLight&&)                 = delete;
+  SpotLight& operator=(SpotLight&&)      = delete;
 
   /**
    * @brief Gets the direction of the spot light.
@@ -54,9 +55,7 @@ public:
    * @brief Sets the inner angle of the spot light.
    * @param inner_angle The new inner angle in degrees.
    */
-  void setInnerAngle(double inner_angle) {
-    m_inner_angle = std::clamp(inner_angle, MIN_SPOT_LIGHT_ANGLE, m_outer_angle);
-  }
+  void setInnerAngle(double inner_angle);
 
   /**
    * @brief Gets the outer angle of the spot light.
@@ -68,9 +67,7 @@ public:
    * @brief Sets the outer angle of the spot light.
    * @param outer_angle The new outer angle in degrees.
    */
-  void setOuterAngle(double outer_angle) {
-    m_outer_angle = std::clamp(outer_angle, m_inner_angle, MAX_SPOT_LIGHT_ANGLE);
-  }
+  void setOuterAngle(double outer_angle);
 
   /**
    * @brief Gets the direction of the light from a given point.

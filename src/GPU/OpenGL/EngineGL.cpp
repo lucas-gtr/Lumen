@@ -1,8 +1,10 @@
 // GCOVR_EXCL_START
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include <GL/gl.h>
+#include <GL/glext.h>
 #include <algorithm>
 #include <array>
+#include <iostream>
+#include <memory>
 #include <string>
 
 #include "Core/Config.hpp"
@@ -10,43 +12,50 @@
 #include "GPU/OpenGL/EngineGL.hpp"
 #include "GPU/OpenGL/FramebufferGL.hpp"
 #include "GPU/OpenGL/Lights/PointGL.hpp"
+#include "GPU/OpenGL/Lights/ShadowMapGL.hpp"
 #include "GPU/OpenGL/ObjectGL.hpp"
+#include "GPU/OpenGL/ResourceManagerGL.hpp"
 #include "GPU/OpenGL/ShadersGL.hpp"
-#include "GPU/OpenGL/WindowGL.hpp"
 #include "PostProcessing/ToneMapping/ToneMapping.hpp"
+#include "Qt/OpenGLContext.hpp"
 #include "Scene/Scene.hpp"
 
-EngineGL::EngineGL(int width, int height, const std::string& title, Scene& scene)
-    : m_window(width, height, title), m_viewport_width(width), m_viewport_height(height),
-      m_resource_manager(width, height, scene), m_scenePassFramebuffer(width, height, 1, 4),
-      m_resolveFramebuffer(width, height, 1, 1), m_shadowMap2D(m_shadowMapsSize), m_shadowMapCube(m_shadowMapsSize) {
-  setupGLFWCallbacks();
+EngineGL::EngineGL(int width, int height) : m_viewport_width(width), m_viewport_height(height) {
+  initializeOpenGLFunctions();
+}
+
+void EngineGL::initialize(Scene* scene) {
+  m_resource_manager       = std::make_unique<ResourceManagerGL>(m_viewport_width, m_viewport_height, scene);
+  m_scene_pass_framebuffer = std::make_unique<FramebufferGL>(m_viewport_width, m_viewport_height, 1, 4);
+  m_resolve_framebuffer    = std::make_unique<FramebufferGL>(m_viewport_width, m_viewport_height, 1, 1);
+  m_shadow_map_2D          = std::make_unique<ShadowMapGL>(m_shadow_map_size);
+  m_shadow_map_cube        = std::make_unique<ShadowMapGL>(m_shadow_map_size);
+
   loadShaderPrograms();
   initQuadVAO();
   configureOpenGLStates();
 }
 
-void EngineGL::setupGLFWCallbacks() {
-  glfwSetWindowUserPointer(m_window.gl_window(), this);
-  glfwSetFramebufferSizeCallback(m_window.gl_window(), framebufferSizeCallback);
-  glfwSetScrollCallback(m_window.gl_window(), scrollCallback);
-  glfwSetCursorPosCallback(m_window.gl_window(), cursorPositionCallback);
-}
-
 void EngineGL::loadShaderPrograms() {
-  m_shadowMap2DProgram.loadShaders("Resources/ShadersGL/ShadowMap2D.vert", "Resources/ShadersGL/ShadowMap2D.frag");
-  m_shadowMapCubeProgram.loadShaders("Resources/ShadersGL/ShadowMapCube.vert", "Resources/ShadersGL/ShadowMapCube.geom",
-                                     "Resources/ShadersGL/ShadowMapCube.frag");
-  m_scenePassProgram.loadShaders("Resources/ShadersGL/ScenePass.vert", "Resources/ShadersGL/ScenePass.frag");
-  m_postProcessingProgram.loadShaders("Resources/ShadersGL/PostProcessing.vert",
-                                      "Resources/ShadersGL/PostProcessing.frag");
-  m_skyboxProgram.loadShaders("Resources/ShadersGL/Skybox.vert", "Resources/ShadersGL/Skybox.frag");
+  m_shadow_map_2D_program.loadShaders("Resources/ShadersGL/ShadowMap2D.vert", "Resources/ShadersGL/ShadowMap2D.frag");
+  m_shadow_map_cube_program.loadShaders("Resources/ShadersGL/ShadowMapCube.vert",
+                                        "Resources/ShadersGL/ShadowMapCube.geom",
+                                        "Resources/ShadersGL/ShadowMapCube.frag");
+  m_scene_pass_program.loadShaders("Resources/ShadersGL/ScenePass.vert", "Resources/ShadersGL/ScenePass.frag");
+  m_outline_program.loadShaders("Resources/ShadersGL/OutlineObject.vert", "Resources/ShadersGL/OutlineObject.frag");
+  m_post_processing_program.loadShaders("Resources/ShadersGL/PostProcessing.vert",
+                                        "Resources/ShadersGL/PostProcessing.frag");
+  m_skybox_program.loadShaders("Resources/ShadersGL/Skybox.vert", "Resources/ShadersGL/Skybox.frag");
+  m_viewport_grid_program.loadShaders("Resources/ShadersGL/ViewportGrid.vert", "Resources/ShadersGL/ViewportGrid.frag");
 }
 
 void EngineGL::configureOpenGLStates() {
   glEnable(GL_DEPTH_TEST);
-  glEnable(GL_CULL_FACE);
+  // glEnable(GL_CULL_FACE);
   glEnable(GL_MULTISAMPLE);
+  glEnable(GL_BLEND);
+  glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
+  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
 void EngineGL::initQuadVAO() {
@@ -56,9 +65,8 @@ void EngineGL::initQuadVAO() {
   };
 
   constexpr std::array<unsigned int, 6> quadIndices = {0, 1, 2, 2, 3, 0};
-
-  glGenVertexArrays(1, &m_quadVAO);
-  glBindVertexArray(m_quadVAO);
+  glGenVertexArrays(1, &m_quad_VAO);
+  glBindVertexArray(m_quad_VAO);
 
   unsigned int VBO = 0U;
   unsigned int EBO = 0U;
@@ -86,336 +94,356 @@ void EngineGL::initQuadVAO() {
   glBindBuffer(GL_ARRAY_BUFFER, 0);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-  // glDeleteBuffers(1, &VBO);
-  // glDeleteBuffers(1, &EBO);
+  std::cout << "EngineGL: Quad VAO " << m_quad_VAO << " created." << '\n';
+  glDeleteBuffers(1, &VBO);
+  glDeleteBuffers(1, &EBO);
 }
 
 void EngineGL::setShadowMapSize(int size) {
-  m_shadowMapsSize = std::clamp(size, MIN_SHADOW_MAP_SIZE, MAX_SHADOW_MAP_SIZE);
+  OpenGLContext::instance().makeContextCurrent();
+  m_shadow_map_size = std::clamp(size, MIN_SHADOW_MAP_SIZE, MAX_SHADOW_MAP_SIZE);
+  m_shadow_map_2D->resize(m_shadow_map_size);
+  m_shadow_map_cube->resize(m_shadow_map_size);
+  drawShadowMap2D();
+  drawShadowMapCube();
+  OpenGLContext::instance().doneContext();
 }
 
 void EngineGL::setViewportSize(int width, int height) {
   m_viewport_width  = width;
   m_viewport_height = height;
 
-  m_resource_manager.getCamera()->setViewportSize(m_viewport_width, m_viewport_height);
-  m_scenePassFramebuffer.resize(m_viewport_width, m_viewport_height);
-  m_resolveFramebuffer.resize(m_viewport_width, m_viewport_height);
-  m_resolveFramebuffer.setTextureUnit(0, SCENE_TEXTURE_UNIT);
+  m_resource_manager->getCamera()->setViewportSize(m_viewport_width, m_viewport_height);
+  m_scene_pass_framebuffer->resize(m_viewport_width, m_viewport_height);
+  m_resolve_framebuffer->resize(m_viewport_width, m_viewport_height);
+  m_resolve_framebuffer->setTextureUnit(0, SCENE_TEXTURE_UNIT);
   glViewport(0, 0, m_viewport_width, m_viewport_height);
 }
 
-void EngineGL::setExposure(float exposure) {
-  m_exposure = exposure;
+void EngineGL::setDynamicLighting(bool enabled) { m_dynamic_lighting = enabled; }
 
-  m_postProcessingProgram.bind();
-  m_postProcessingProgram.setUniform1f("exposure", m_exposure);
+void EngineGL::setDynamicShadowMap(bool enabled) { m_dynamic_shadow_map = enabled; }
+
+void EngineGL::setExposure(float exposure) {
+  m_exposure = static_cast<float>(
+      std::clamp(static_cast<double>(exposure), MIN_TONE_MAPPING_EXPOSURE, MAX_TONE_MAPPING_EXPOSURE));
+
+  m_post_processing_program.bind();
+  m_post_processing_program.setUniform1f("exposure", m_exposure);
 }
 
 void EngineGL::setToneMapping(ToneMapping toneMapping) {
-  m_postProcessingProgram.bind();
-  m_postProcessingProgram.setUniform1i("toneMapping", static_cast<int>(toneMapping));
+  m_toneMapping = toneMapping;
+  m_post_processing_program.bind();
+  m_post_processing_program.setUniform1i("toneMapping", static_cast<int>(toneMapping));
 }
 
 void EngineGL::drawShadowMap2D() {
-  m_shadowMap2D.initialize2DMap();
-  m_shadowMap2D.bindFramebuffer();
+  m_shadow_map_2D->bindFramebuffer();
 
   glClearColor(0.0F, 0.0F, 0.0F, 1.0F);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glEnable(GL_DEPTH_TEST);
 
-  for(int i = 0; i < std::min(static_cast<int>(m_resource_manager.getDirectionalLights().size()), 2); ++i) {
-    drawLightShadowMap2D(m_resource_manager.getDirectionalLights()[i]->getLightSpaceMatrix(), i, 0);
+  for(int i = 0; i < std::min(static_cast<int>(m_resource_manager->getDirectionalLights().size()), 2); ++i) {
+    drawLightShadowMap2D(m_resource_manager->getDirectionalLights()[i]->getLightSpaceMatrix(), i, 0);
   }
 
-  for(int i = 0; i < std::min(static_cast<int>(m_resource_manager.getSpotLights().size()), 2); ++i) {
-    drawLightShadowMap2D(m_resource_manager.getSpotLights()[i]->getLightSpaceMatrix(), i, 1);
+  for(int i = 0; i < std::min(static_cast<int>(m_resource_manager->getSpotLights().size()), 2); ++i) {
+    drawLightShadowMap2D(m_resource_manager->getSpotLights()[i]->getLightSpaceMatrix(), i, 1);
   }
 
-  m_shadowMap2D.bindTexture(SHADOW_2D_MAP_TEXTURE_UNIT);
+  m_shadow_map_2D->bindTexture(SHADOW_2D_MAP_TEXTURE_UNIT);
 }
 
 void EngineGL::drawLightShadowMap2D(const float* lightSpaceMatrix, int indexX, int indexY) {
-  const int tileSize = static_cast<int>(m_shadowMapsSize * HALF);
+  const int tileSize = static_cast<int>(m_shadow_map_size * HALF);
   glViewport(tileSize * indexX, tileSize * indexY, tileSize, tileSize);
 
-  m_shadowMap2DProgram.bind();
-  m_shadowMap2DProgram.setUniformMatrix4fv("lightSpaceMatrix", lightSpaceMatrix);
+  m_shadow_map_2D_program.bind();
+  m_shadow_map_2D_program.setUniformMatrix4fv("lightSpaceMatrix", lightSpaceMatrix);
 
-  for(const auto& dataBuffer : m_resource_manager.getObjectList()) {
+  for(const auto& dataBuffer : m_resource_manager->getObjectList()) {
     dataBuffer->bindVAO();
-    m_shadowMap2DProgram.setUniformMatrix4fv("model", dataBuffer->getModelMatrix());
+    m_shadow_map_2D_program.setUniformMatrix4fv("model", dataBuffer->getModelMatrix());
     glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(dataBuffer->getIndexCount()), GL_UNSIGNED_INT, nullptr);
   }
 }
 
 void EngineGL::drawShadowMapCube() {
-  m_shadowMapCube.initializeCubeMap();
-  m_shadowMapCube.bindFramebuffer();
+  m_shadow_map_cube->bindFramebuffer();
 
   glClearColor(0.0F, 0.0F, 0.0F, 1.0F);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glEnable(GL_DEPTH_TEST);
 
-  if(!m_resource_manager.getPointLights().empty()) {
-    drawPointShadowMap(m_resource_manager.getPointLights()[0].get());
+  if(!m_resource_manager->getPointLights().empty()) {
+    drawPointShadowMap(m_resource_manager->getPointLights()[0].get());
   }
 
-  m_shadowMapCube.bindTexture(SHADOW_CUBE_MAP_TEXTURE_UNIT);
+  m_shadow_map_cube->bindTexture(SHADOW_CUBE_MAP_TEXTURE_UNIT);
 }
 
 void EngineGL::drawPointShadowMap(const PointLightGL* light) {
-  glViewport(0, 0, m_shadowMapsSize, m_shadowMapsSize);
+  glViewport(0, 0, m_shadow_map_size, m_shadow_map_size);
 
-  m_shadowMapCubeProgram.bind();
+  m_shadow_map_cube_program.bind();
   for(int i = 0; i < CUBE_MAP_FACE_COUNT; ++i) {
-    m_shadowMapCubeProgram.setUniformMatrix4fv(("lightSpaceMatrices[" + std::to_string(i) + "]").c_str(),
-                                               light->getLightSpaceMatrix(i));
+    m_shadow_map_cube_program.setUniformMatrix4fv(("lightSpaceMatrices[" + std::to_string(i) + "]").c_str(),
+                                                  light->getLightSpaceMatrix(i));
   }
-  m_shadowMapCubeProgram.setUniform3f("lightPos", light->getPosition().x, light->getPosition().y,
-                                      light->getPosition().z);
-  m_shadowMapCubeProgram.setUniform1f("farPlane", light->getFarPlane());
+  m_shadow_map_cube_program.setUniform3f("lightPos", light->getPosition().x, light->getPosition().y,
+                                         light->getPosition().z);
+  m_shadow_map_cube_program.setUniform1f("farPlane", light->getFarPlane());
 
-  for(const auto& dataBuffer : m_resource_manager.getObjectList()) {
+  for(const auto& dataBuffer : m_resource_manager->getObjectList()) {
     dataBuffer->bindVAO();
-    m_shadowMapCubeProgram.setUniformMatrix4fv("model", dataBuffer->getModelMatrix());
+    m_shadow_map_cube_program.setUniformMatrix4fv("model", dataBuffer->getModelMatrix());
     glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(dataBuffer->getIndexCount()), GL_UNSIGNED_INT, nullptr);
   }
 
-  m_scenePassProgram.bind();
-  m_scenePassProgram.setUniform1f("shadowMapCubeFarPlane", light->getFarPlane());
+  m_scene_pass_program.bind();
+  m_scene_pass_program.setUniform1f("shadowMapCubeFarPlane", light->getFarPlane());
 }
 
-void EngineGL::uploadDirectionalLightData() {
-  for(int i = 0; i < m_resource_manager.getDirectionalLights().size(); ++i) {
-    const auto& light = m_resource_manager.getDirectionalLights()[i];
-    m_scenePassProgram.bind();
-    m_scenePassProgram.setUniform3f(("dirLights[" + std::to_string(i) + "].direction").c_str(), light->getDirection().x,
-                                    light->getDirection().y, light->getDirection().z);
-    m_scenePassProgram.setUniform3f(("dirLights[" + std::to_string(i) + "].color").c_str(), light->getColor().x,
-                                    light->getColor().y, light->getColor().z);
-    m_scenePassProgram.setUniformMatrix4fv(("dirLights[" + std::to_string(i) + "].lightSpaceMatrix").c_str(),
-                                           light->getLightSpaceMatrix());
+void EngineGL::uploadLightsData() {
+  m_scene_pass_program.bind();
+
+  uploadDirectionalLightsData();
+  uploadSpotLightsData();
+  uploadPointLightsData();
+}
+
+void EngineGL::uploadDirectionalLightsData() {
+  m_scene_pass_program.setUniform1i("numDirLights",
+                                    static_cast<int>(m_resource_manager->getDirectionalLights().size()));
+  for(int i = 0; i < m_resource_manager->getDirectionalLights().size(); ++i) {
+    const auto& light = m_resource_manager->getDirectionalLights()[i];
+    m_scene_pass_program.setUniform3f(("dirLights[" + std::to_string(i) + "].direction").c_str(),
+                                      light->getDirection().x, light->getDirection().y, light->getDirection().z);
+    m_scene_pass_program.setUniform3f(("dirLights[" + std::to_string(i) + "].color").c_str(), light->getColor().x,
+                                      light->getColor().y, light->getColor().z);
+    m_scene_pass_program.setUniformMatrix4fv(("dirLights[" + std::to_string(i) + "].lightSpaceMatrix").c_str(),
+                                             light->getLightSpaceMatrix());
   }
 }
 
-void EngineGL::uploadSpotLightData() {
-  for(int i = 0; i < m_resource_manager.getSpotLights().size(); ++i) {
-    const auto& light = m_resource_manager.getSpotLights()[i];
-    m_scenePassProgram.bind();
-    m_scenePassProgram.setUniform3f(("spotLights[" + std::to_string(i) + "].position").c_str(), light->getPosition().x,
-                                    light->getPosition().y, light->getPosition().z);
-    m_scenePassProgram.setUniform3f(("spotLights[" + std::to_string(i) + "].direction").c_str(),
-                                    light->getDirection().x, light->getDirection().y, light->getDirection().z);
-    m_scenePassProgram.setUniform1f(("spotLights[" + std::to_string(i) + "].innerCutOff").c_str(),
-                                    light->getCosInnerCutoff());
-    m_scenePassProgram.setUniform1f(("spotLights[" + std::to_string(i) + "].outerCutOff").c_str(),
-                                    light->getCosOuterCutoff());
-    m_scenePassProgram.setUniform3f(("spotLights[" + std::to_string(i) + "].color").c_str(), light->getColor().x,
-                                    light->getColor().y, light->getColor().z);
-    m_scenePassProgram.setUniformMatrix4fv(("spotLights[" + std::to_string(i) + "].lightSpaceMatrix").c_str(),
-                                           light->getLightSpaceMatrix());
+void EngineGL::uploadSpotLightsData() {
+  m_scene_pass_program.setUniform1i("numPointLights", static_cast<int>(m_resource_manager->getPointLights().size()));
+  for(int i = 0; i < m_resource_manager->getSpotLights().size(); ++i) {
+    const auto& light = m_resource_manager->getSpotLights()[i];
+    m_scene_pass_program.setUniform3f(("spotLights[" + std::to_string(i) + "].position").c_str(),
+                                      light->getPosition().x, light->getPosition().y, light->getPosition().z);
+    m_scene_pass_program.setUniform3f(("spotLights[" + std::to_string(i) + "].direction").c_str(),
+                                      light->getDirection().x, light->getDirection().y, light->getDirection().z);
+    m_scene_pass_program.setUniform1f(("spotLights[" + std::to_string(i) + "].innerCutOff").c_str(),
+                                      light->getCosInnerCutoff());
+    m_scene_pass_program.setUniform1f(("spotLights[" + std::to_string(i) + "].outerCutOff").c_str(),
+                                      light->getCosOuterCutoff());
+    m_scene_pass_program.setUniform3f(("spotLights[" + std::to_string(i) + "].color").c_str(), light->getColor().x,
+                                      light->getColor().y, light->getColor().z);
+    m_scene_pass_program.setUniformMatrix4fv(("spotLights[" + std::to_string(i) + "].lightSpaceMatrix").c_str(),
+                                             light->getLightSpaceMatrix());
   }
 }
 
-void EngineGL::uploadPointLightData() {
-  for(int i = 0; i < m_resource_manager.getPointLights().size(); ++i) {
-    const auto& light = m_resource_manager.getPointLights()[i];
-    m_scenePassProgram.bind();
-    m_scenePassProgram.setUniform3f(("pointLights[" + std::to_string(i) + "].position").c_str(), light->getPosition().x,
-                                    light->getPosition().y, light->getPosition().z);
-    m_scenePassProgram.setUniform3f(("pointLights[" + std::to_string(i) + "].color").c_str(), light->getColor().x,
-                                    light->getColor().y, light->getColor().z);
+void EngineGL::uploadPointLightsData() {
+  m_scene_pass_program.setUniform1i("numSpotLights", static_cast<int>(m_resource_manager->getSpotLights().size()));
+  for(int i = 0; i < m_resource_manager->getPointLights().size(); ++i) {
+    const auto& light = m_resource_manager->getPointLights()[i];
+    m_scene_pass_program.setUniform3f(("pointLights[" + std::to_string(i) + "].position").c_str(),
+                                      light->getPosition().x, light->getPosition().y, light->getPosition().z);
+    m_scene_pass_program.setUniform3f(("pointLights[" + std::to_string(i) + "].color").c_str(), light->getColor().x,
+                                      light->getColor().y, light->getColor().z);
   }
 }
 
-void EngineGL::setupLights() {
-  m_scenePassProgram.bind();
-  m_scenePassProgram.setUniform1i("numDirLights", static_cast<int>(m_resource_manager.getDirectionalLights().size()));
-  m_scenePassProgram.setUniform1i("numPointLights", static_cast<int>(m_resource_manager.getPointLights().size()));
-  m_scenePassProgram.setUniform1i("numSpotLights", static_cast<int>(m_resource_manager.getSpotLights().size()));
-
+void EngineGL::bakeLights() {
   drawShadowMap2D();
   drawShadowMapCube();
 
-  uploadDirectionalLightData();
-  uploadSpotLightData();
-  uploadPointLightData();
+  uploadLightsData();
 }
 
 void EngineGL::configureShadersAndUniforms() {
-  m_resolveFramebuffer.setTextureUnit(0, SCENE_TEXTURE_UNIT);
+  m_resolve_framebuffer->setTextureUnit(0, SCENE_TEXTURE_UNIT);
 
-  m_postProcessingProgram.bind();
-  m_postProcessingProgram.setUniform1i("screenTexture", SCENE_TEXTURE_UNIT);
+  m_post_processing_program.bind();
+  m_post_processing_program.setUniform1i("screenTexture", SCENE_TEXTURE_UNIT);
+  m_post_processing_program.setUniform1f("exposure", m_exposure);
 
-  m_skyboxProgram.bind();
-  m_resource_manager.getSkyboxTexture()->bind(SKYBOX_TEXTURE_UNIT);
-  m_skyboxProgram.setUniform1i("skybox", SKYBOX_TEXTURE_UNIT);
-  m_skyboxProgram.bindUniformBlock("Camera", CAMERA_UBO_BINDING_POINT);
+  m_skybox_program.bind();
+  m_skybox_program.bindUniformBlock("Camera", CAMERA_UBO_BINDING_POINT);
 
-  m_scenePassProgram.bind();
-  m_scenePassProgram.setUniform1i("diffuseTexture", DIFFUSE_TEXTURE_UNIT);
-  m_scenePassProgram.setUniform1i("normalTexture", NORMAL_TEXTURE_UNIT);
-  m_scenePassProgram.setUniform1i("shadowMap2D", SHADOW_2D_MAP_TEXTURE_UNIT);
-  m_scenePassProgram.setUniform1i("shadowMapCube", SHADOW_CUBE_MAP_TEXTURE_UNIT);
-  m_scenePassProgram.bindUniformBlock("Camera", CAMERA_UBO_BINDING_POINT);
+  m_viewport_grid_program.bind();
+  m_viewport_grid_program.bindUniformBlock("Camera", CAMERA_UBO_BINDING_POINT);
+
+  m_outline_program.bind();
+  m_outline_program.bindUniformBlock("Camera", CAMERA_UBO_BINDING_POINT);
+
+  m_scene_pass_program.bind();
+  m_scene_pass_program.setUniform1i("diffuseTexture", DIFFUSE_TEXTURE_UNIT);
+  m_scene_pass_program.setUniform1i("normalTexture", NORMAL_TEXTURE_UNIT);
+  m_scene_pass_program.setUniform1i("shadowMap2D", SHADOW_2D_MAP_TEXTURE_UNIT);
+  m_scene_pass_program.setUniform1i("shadowMapCube", SHADOW_CUBE_MAP_TEXTURE_UNIT);
+  m_scene_pass_program.bindUniformBlock("Camera", CAMERA_UBO_BINDING_POINT);
 }
 
 void EngineGL::renderScenePass() {
-  glClearColor(0.0F, 0.0F, 0.0F, 1.0F);
-  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glEnable(GL_DEPTH_TEST);
+  glClearStencil(0);
+  glEnable(GL_STENCIL_TEST);
+  glStencilMask(FULL_STENCIL_MASK);
+  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+  glDisable(GL_STENCIL_TEST);
 
-  m_scenePassProgram.bind();
-  for(const auto& dataBuffer : m_resource_manager.getObjectList()) {
+  m_scene_pass_program.bind();
+
+  for(const auto& dataBuffer : m_resource_manager->getObjectList()) {
     dataBuffer->bindVAO();
     dataBuffer->bindMaterial();
-    m_scenePassProgram.setUniformMatrix4fv("model", dataBuffer->getModelMatrix());
-    m_scenePassProgram.setUniformMatrix3fv("normalMatrix", dataBuffer->getNormalMatrix());
+    m_scene_pass_program.setUniformMatrix4fv("model", dataBuffer->getModelMatrix());
+    m_scene_pass_program.setUniformMatrix3fv("normalMatrix", dataBuffer->getNormalMatrix());
     glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(dataBuffer->getIndexCount()), GL_UNSIGNED_INT, nullptr);
   }
+
   glBindVertexArray(0);
 }
 
+void EngineGL::drawOutline() {
+  glEnable(GL_STENCIL_TEST);
+  glStencilFunc(GL_ALWAYS, 1, FULL_STENCIL_MASK);
+  glStencilOp(GL_REPLACE, GL_REPLACE, GL_REPLACE);
+  glStencilMask(FULL_STENCIL_MASK);
+
+  glEnable(GL_DEPTH_TEST);
+  glDepthMask(GL_FALSE);
+  glColorMask(GL_FALSE, GL_FALSE, GL_FALSE, GL_FALSE);
+
+  m_outline_program.bind();
+
+  for(const auto& dataBuffer : m_resource_manager->getObjectList()) {
+    if(!dataBuffer->isSelected()) {
+      continue;
+    }
+    dataBuffer->bindVAO();
+    dataBuffer->bindMaterial();
+    m_outline_program.setUniformMatrix4fv("model", dataBuffer->getModelMatrix());
+    m_outline_program.setUniform1f("outline_scale", 1.00F);
+    glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(dataBuffer->getIndexCount()), GL_UNSIGNED_INT, nullptr);
+  }
+
+  glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
+  glDepthFunc(GL_ALWAYS);
+  glDepthMask(GL_TRUE);
+  glStencilFunc(GL_NOTEQUAL, 1, FULL_STENCIL_MASK);
+  glStencilMask(NO_STENCIL_MASK);
+
+  for(const auto& dataBuffer : m_resource_manager->getObjectList()) {
+    if(!dataBuffer->isSelected()) {
+      continue;
+    }
+    dataBuffer->bindVAO();
+    dataBuffer->bindMaterial();
+    m_outline_program.setUniformMatrix4fv("model", dataBuffer->getModelMatrix());
+    m_outline_program.setUniform1f("outline_scale", OUTLINE_SCALE);
+    glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(dataBuffer->getIndexCount()), GL_UNSIGNED_INT, nullptr);
+  }
+
+  glEnable(GL_DEPTH_TEST);
+  glDepthFunc(GL_LESS);
+  glDisable(GL_STENCIL_TEST);
+}
+
 void EngineGL::drawSkybox() {
-  m_skyboxProgram.bind();
+  m_skybox_program.bind();
+  m_skybox_program.setUniform1i("skybox", SKYBOX_TEXTURE_UNIT);
 
   glDepthFunc(GL_LEQUAL); // Set depth function for skybox rendering
 
-  glBindVertexArray(m_quadVAO);
+  glBindVertexArray(m_quad_VAO);
   glDrawElements(GL_TRIANGLES, QUAD_INDICES_COUNT, GL_UNSIGNED_INT, nullptr);
   glBindVertexArray(0);
 
   glDepthFunc(GL_LESS); // Reset depth function
 }
 
+void EngineGL::drawViewportGrid() {
+  m_skybox_program.bind();
+  m_skybox_program.setUniform1i("skybox", 0);
+
+  m_viewport_grid_program.bind();
+
+  glBindVertexArray(m_quad_VAO);
+  glDrawElements(GL_TRIANGLES, QUAD_INDICES_COUNT, GL_UNSIGNED_INT, nullptr);
+  glBindVertexArray(0);
+}
+
 void EngineGL::blitSceneToResolveFramebuffer() {
-  glBindFramebuffer(GL_READ_FRAMEBUFFER, m_scenePassFramebuffer.getFramebufferID());
-  glBindFramebuffer(GL_DRAW_FRAMEBUFFER, m_resolveFramebuffer.getFramebufferID());
+  glBindFramebuffer(GL_READ_FRAMEBUFFER, m_scene_pass_framebuffer->getFramebufferID());
+  glBindFramebuffer(GL_DRAW_FRAMEBUFFER, m_resolve_framebuffer->getFramebufferID());
 
   glBlitFramebuffer(0, 0, m_viewport_width, m_viewport_height, 0, 0, m_viewport_width, m_viewport_height,
                     GL_COLOR_BUFFER_BIT, GL_NEAREST);
 }
 
 void EngineGL::applyPostProcessing() {
-  m_postProcessingProgram.bind();
 
-  glClearColor(1.0F, 1.0F, 1.0F, 1.0F);
+  m_post_processing_program.bind();
+
+  glClearColor(BACKGROUND_COLOR, BACKGROUND_COLOR, BACKGROUND_COLOR, 1.0F);
   glClear(GL_COLOR_BUFFER_BIT);
+
   glDisable(GL_DEPTH_TEST);
 
-  glBindVertexArray(m_quadVAO);
+  glBindVertexArray(m_quad_VAO);
+
   glDrawElements(GL_TRIANGLES, QUAD_INDICES_COUNT, GL_UNSIGNED_INT, nullptr);
+
   glBindVertexArray(0);
 
   glEnable(GL_DEPTH_TEST);
 }
 
-void EngineGL::renderFrame() {
-  glfwPollEvents();
-  processInput();
+void EngineGL::setupRendering() {
+  configureShadersAndUniforms();
+  m_shadow_map_2D->initialize2DMap();
+  m_shadow_map_cube->initializeCubeMap();
+  bakeLights();
 
-  m_scenePassFramebuffer.bind();
+  glViewport(0, 0, m_viewport_width, m_viewport_height);
+}
+
+void EngineGL::renderFrame(unsigned int default_ramebuffer) {
+  if(m_dynamic_lighting) {
+    uploadLightsData();
+  }
+
+  if(m_dynamic_shadow_map) {
+    drawShadowMap2D();
+    drawShadowMapCube();
+  }
+
+  m_scene_pass_framebuffer->bind();
   renderScenePass();
+  drawOutline();
 
-  if(m_resource_manager.getSkyboxTexture() != nullptr) {
+  if(m_draw_skybox) {
     drawSkybox();
+  } else {
+    drawViewportGrid();
   }
 
   blitSceneToResolveFramebuffer();
-  glBindFramebuffer(GL_FRAMEBUFFER, 0); // back to default
+  glBindFramebuffer(GL_FRAMEBUFFER, default_ramebuffer); // back to default
   applyPostProcessing();
-
-  m_window.swapBuffers();
-}
-
-void EngineGL::render() {
-  configureShadersAndUniforms();
-  setupLights();
-
-  glViewport(0, 0, m_viewport_width, m_viewport_height);
-
-  while(!m_window.shouldClose()) {
-    renderFrame();
-    displayFPS(1.0F);
-  }
-}
-
-void EngineGL::displayFPS(float interval) {
-  static double lastTime   = 0.0F;
-  static int    frameCount = 0;
-
-  frameCount++;
-  const double currentTime = glfwGetTime();
-  if(currentTime - lastTime >= interval) {
-    const double      fps   = static_cast<double>(frameCount) / (currentTime - lastTime);
-    const std::string title = "OpenGL Engine - FPS: " + std::to_string(static_cast<int>(fps)) +
-                              " - Window Size: " + std::to_string(m_viewport_width) + "x" +
-                              std::to_string(m_viewport_height);
-    glfwSetWindowTitle(m_window.gl_window(), title.c_str());
-    lastTime   = currentTime;
-    frameCount = 0;
-  }
-}
-
-void EngineGL::processInput() {
-  GLFWwindow* window = m_window.gl_window();
-  if(window != nullptr) {
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
-      m_window.close();
-    }
-  }
-}
-
-void EngineGL::framebufferSizeCallback(GLFWwindow* window, int width, int height) {
-  auto* engine = static_cast<EngineGL*>(glfwGetWindowUserPointer(window));
-  if(engine != nullptr) {
-    engine->setViewportSize(width, height);
-  }
-}
-
-void EngineGL::scrollCallback(GLFWwindow* window, double /*xOffset*/, double yOffset) {
-  auto* engine = static_cast<EngineGL*>(glfwGetWindowUserPointer(window));
-  if(engine != nullptr) {
-    engine->m_resource_manager.getCamera()->moveForward(static_cast<float>(yOffset * engine->cameraZoomSpeed()));
-  }
-}
-
-void EngineGL::cursorPositionCallback(GLFWwindow* window, double xpos, double ypos) {
-  static double lastX = xpos;
-  static double lastY = ypos;
-
-  auto* engine = static_cast<EngineGL*>(glfwGetWindowUserPointer(window));
-  if(engine != nullptr) {
-    GLFWwindow* gl_window = engine->m_window.gl_window();
-    if(gl_window != nullptr) {
-      if(glfwGetMouseButton(gl_window, GLFW_MOUSE_BUTTON_MIDDLE) == GLFW_PRESS) {
-        const auto xOffset = static_cast<float>(lastX - xpos);
-        const auto yOffset = static_cast<float>(ypos - lastY);
-        if(glfwGetKey(gl_window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS) {
-          const float camera_move_speed = engine->cameraMoveSpeed();
-          engine->m_resource_manager.getCamera()->moveRight(xOffset * camera_move_speed);
-          engine->m_resource_manager.getCamera()->moveUp(yOffset * camera_move_speed);
-        } else {
-          const float camera_rotate_speed = engine->cameraRotateSpeed();
-          engine->m_resource_manager.getCamera()->rotate(xOffset * camera_rotate_speed, -yOffset * camera_rotate_speed);
-        }
-      }
-
-      lastX = xpos;
-      lastY = ypos;
-    }
-  }
 }
 
 EngineGL::~EngineGL() {
-  glDeleteVertexArrays(1, &m_quadVAO);
+  glDeleteVertexArrays(1, &m_quad_VAO);
   glBindFramebuffer(GL_FRAMEBUFFER, 0);
   glBindVertexArray(0);
   glUseProgram(0);
-  m_window.close();
 }
 
 // GCOVR_EXCL_STOP

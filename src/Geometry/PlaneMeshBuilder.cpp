@@ -21,12 +21,12 @@ Mesh PlaneMeshBuilder::build() const {
   vertices[3].position = lin::Vec3d(-width * HALF, 0, length * HALF);
 
   for(auto& vertex : vertices) {
-    vertex.normal  = lin::Vec3d(0.0, 1.0, 0.0);
-    vertex.uvCoord = {vertex.position.x / width + HALF, vertex.position.z / length + HALF};
+    vertex.normal   = lin::Vec3d(0.0, 1.0, 0.0);
+    vertex.uv_coord = {vertex.position.x / width + HALF, vertex.position.z / length + HALF};
   }
 
-  faces.push_back({{0, 1, 2}});
-  faces.push_back({{0, 2, 3}});
+  faces.push_back({{0, 2, 1}});
+  faces.push_back({{0, 3, 2}});
 
   return {vertices, faces};
 }

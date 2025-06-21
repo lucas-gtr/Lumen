@@ -1,5 +1,6 @@
 // GCOVR_EXCL_START
-#include <GL/glew.h>
+#include <GL/gl.h>
+#include <GL/glext.h>
 #include <array>
 #include <fstream>
 #include <iostream>
@@ -10,6 +11,8 @@
 
 #include "Core/Config.hpp"
 #include "GPU/OpenGL/ShadersGL.hpp"
+
+ShadersGL::ShadersGL() { initializeOpenGLFunctions(); }
 
 unsigned int ShadersGL::compileShader(const std::string& source, unsigned int type) {
   const unsigned int shader       = glCreateShader(type);
@@ -110,7 +113,7 @@ void ShadersGL::compileShadersFromSources(const std::vector<std::pair<GLenum, co
   std::cout << '\n';
 }
 
-void ShadersGL::bind() const {
+void ShadersGL::bind() {
   if(m_program != 0) {
     glUseProgram(m_program);
   } else {
@@ -118,8 +121,8 @@ void ShadersGL::bind() const {
   }
 }
 
-void ShadersGL::bindUniformBlock(const char* blockName, unsigned int bindingPoint) const {
-  const int blockIndex = glGetUniformBlockIndex(m_program, blockName);
+void ShadersGL::bindUniformBlock(const char* blockName, unsigned int bindingPoint) {
+  const unsigned int blockIndex = glGetUniformBlockIndex(m_program, blockName);
   if(blockIndex == -1) {
     std::cerr << "Warning: uniform block '" << blockName << "' doesn't exist!" << '\n';
     return;

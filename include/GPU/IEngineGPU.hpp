@@ -19,14 +19,9 @@
  */
 class IEngineGPU {
 private:
-  float m_camera_move_speed   = DEFAULT_CAMERA_MOVE_SPEED;
-  float m_camera_rotate_speed = DEFAULT_CAMERA_ROTATE_SPEED;
-  float m_camera_zoom_speed   = DEFAULT_CAMERA_ZOOM_SPEED;
-
-protected:
-  float cameraMoveSpeed() const { return m_camera_move_speed; }
-  float cameraRotateSpeed() const { return m_camera_rotate_speed; }
-  float cameraZoomSpeed() const { return m_camera_zoom_speed; }
+  float m_camera_move_speed     = DEFAULT_CAMERA_MOVE_SPEED;
+  float m_camera_rotation_speed = DEFAULT_CAMERA_ROTATE_SPEED;
+  float m_camera_zoom_speed     = DEFAULT_CAMERA_ZOOM_SPEED;
 
 public:
   IEngineGPU() = default; ///< Default constructor for the GPU engine interface.
@@ -48,8 +43,8 @@ public:
    * @brief Sets the camera rotation speed.
    * @param speed The desired camera rotation speed.
    */
-  void setCameraRotateSpeed(float speed) {
-    m_camera_rotate_speed = std::clamp(speed, MIN_CAMERA_MOVE_SPEED, MAX_CAMERA_MOVE_SPEED);
+  void setCameraRotationSpeed(float speed) {
+    m_camera_rotation_speed = std::clamp(speed, MIN_CAMERA_ROTATION_SPEED, MAX_CAMERA_ROTATION_SPEED);
   }
 
   /**
@@ -57,10 +52,26 @@ public:
    * @param speed The desired camera zoom speed.
    */
   void setCameraZoomSpeed(float speed) {
-    m_camera_zoom_speed = std::clamp(speed, MIN_CAMERA_MOVE_SPEED, MAX_CAMERA_MOVE_SPEED);
+    m_camera_zoom_speed = std::clamp(speed, MIN_CAMERA_ZOOM_SPEED, MAX_CAMERA_ZOOM_SPEED);
   }
 
-  virtual void render() = 0; ///< Pure virtual function to render the scene using the GPU engine.
+  /**
+   * @brief Gets the current camera movement speed.
+   * @return The current camera movement speed.
+   */
+  float cameraMoveSpeed() const { return m_camera_move_speed; }
+
+  /**
+   * @brief Gets the current camera rotation speed.
+   * @return The current camera rotation speed.
+   */
+  float cameraRotationSpeed() const { return m_camera_rotation_speed; }
+
+  /**
+   * @brief Gets the current camera zoom speed.
+   * @return The current camera zoom speed.
+   */
+  float cameraZoomSpeed() const { return m_camera_zoom_speed; }
 
   virtual ~IEngineGPU() = default; ///< Virtual destructor for the GPU engine interface.
 };

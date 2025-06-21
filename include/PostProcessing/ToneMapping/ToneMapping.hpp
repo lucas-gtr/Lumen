@@ -7,8 +7,6 @@
 
 #include <cstdint>
 
-#include "ImplementationParameters/Parameters.hpp"
-
 /**
  * @brief Enumeration for different tone mapping strategies.
  */
@@ -35,12 +33,6 @@ public:
    * @param value The value to be tone-mapped.
    */
   virtual void apply(double& value) const = 0;
-
-  /**
-   * @brief Updates the parameters for the tone mapping algorithm.
-   * @param parameters The parameters to be updated.
-   */
-  virtual void updateParameters(Parameters* parameters) { (void)parameters; }
 
   /**
    * @brief Virtual destructor for the ToneMappingStrategy class.

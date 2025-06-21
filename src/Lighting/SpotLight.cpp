@@ -2,12 +2,26 @@
 #include <cmath>
 
 #include "Core/CommonTypes.hpp"
+#include "Core/Config.hpp"
 #include "Core/Math/Vec3.hpp"
 #include "Core/Math/lin.hpp"
 #include "Core/MathConstants.hpp"
 #include "Lighting/SpotLight.hpp"
 
-void SpotLight::setDirection(const lin::Vec3d& direction) { m_direction = direction.normalized(); }
+void SpotLight::setDirection(const lin::Vec3d& direction) {
+  m_direction = direction.normalized();
+  getLightChangedObserver().notify();
+}
+
+void SpotLight::setInnerAngle(double inner_angle) {
+  m_inner_angle = std::clamp(inner_angle, MIN_SPOT_LIGHT_ANGLE, m_outer_angle);
+  getLightChangedObserver().notify();
+}
+
+void SpotLight::setOuterAngle(double outer_angle) {
+  m_outer_angle = std::clamp(outer_angle, m_inner_angle, MAX_SPOT_LIGHT_ANGLE);
+  getLightChangedObserver().notify();
+}
 
 lin::Vec3d SpotLight::getDirectionFromPoint(const lin::Vec3d& point) const {
   return (getPosition() - point).normalized();

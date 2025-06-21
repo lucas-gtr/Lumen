@@ -9,7 +9,6 @@
 #include "Core/Math/Mat4.hpp"
 #include "Core/Math/Vec3.hpp"
 #include "GPU/Lights/DirectionalGPU.hpp"
-#include "GPU/OpenGL/Lights/ShadowMapGL.hpp"
 #include "Lighting/DirectionalLight.hpp"
 
 /**
@@ -28,7 +27,7 @@ public:
    * @brief Constructor for DirectionalLightGL.
    * @param light The DirectionalLight object to initialize this DirectionalLightGL with.
    */
-  explicit DirectionalLightGL(const DirectionalLight& light);
+  explicit DirectionalLightGL(DirectionalLight* light);
 
   DirectionalLightGL(const DirectionalLightGL&)            = delete;
   DirectionalLightGL& operator=(const DirectionalLightGL&) = delete;

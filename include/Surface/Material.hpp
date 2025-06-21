@@ -8,6 +8,7 @@
 #include <memory>
 
 #include "Core/CommonTypes.hpp"
+#include "Core/Observer.hpp"
 #include "Surface/Texture.hpp"
 
 /**
@@ -18,37 +19,54 @@
  */
 class Material {
 private:
-  std::shared_ptr<Texture> m_albedoTexture;
-  std::shared_ptr<Texture> m_normalTexture;
+  Texture* m_diffuse_texture = nullptr;
+  Texture* m_normal_texture  = nullptr;
+
+  Observer<const Material*> m_material_changed_observer;
 
 public:
-  Material();                                     ///< Default constructor.
-  Material(const Material&)            = default; ///< Default copy constructor
-  Material(Material&&)                 = default; ///< Default move constructor
-  Material& operator=(const Material&) = default; ///< Default copy assignment
-  Material& operator=(Material&&)      = default; ///< Default move assignment
+  Material(); ///< Default constructor.
+
+  Material(const Material&)            = delete;
+  Material(Material&&)                 = delete;
+  Material& operator=(const Material&) = delete;
+  Material& operator=(Material&&)      = delete;
+
+  /**
+   * @brief Gets the observer that notifies when the material changes.
+   * @return A reference to the observer that notifies about material changes.
+   */
+  Observer<const Material*>& getMaterialChangedObserver() { return m_material_changed_observer; }
 
   /**
    * @brief Sets the albedo texture for this material.
    * @param texture The texture to set as the albedo texture.
    */
-  void setAlbedoTexture(const std::shared_ptr<Texture>& texture) { m_albedoTexture = texture; }
+  void setDiffuseTexture(Texture* texture);
 
-  const Texture& getAlbedoTexture() const; ///< Gets the albedo texture of this material.
+  /**
+   * @brief Gets the diffuse texture of this material.
+   * @return The pointer to the diffuse texture.
+   */
+  Texture* getDiffuseTexture() const;
 
-  const Texture& getNormalTexture() const; ///< Gets the normal texture of this material.
+  /**
+   * @brief Gets the normal texture of this material.
+   * @return The pointer to the normal texture.
+   */
+  Texture* getNormalTexture() const;
 
   /**
    * @brief Sets the normal texture for this material.
    * @param texture The texture to set as the normal texture.
    */
-  void setNormalTexture(const std::shared_ptr<Texture>& texture) { m_normalTexture = texture; }
+  void setNormalTexture(Texture* texture);
 
   /**
    * @brief Gets the albedo texture of this material.
    * @return The albedo texture.
    */
-  ColorRGBA getAlbedo(TextureUV uv_coord) const;
+  ColorRGBA getDiffuse(TextureUV uv_coord) const;
   /**
    * @brief Gets the normal texture of this material.
    * @return The normal texture.

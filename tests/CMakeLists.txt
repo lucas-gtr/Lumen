@@ -32,8 +32,6 @@ target_sources(Tests PRIVATE
     GPU/OpenGL/DirectionalGLTests.cpp
     GPU/OpenGL/PointGLTests.cpp
     GPU/OpenGL/SpotGLTests.cpp
-    ImplementationParameters/ParameterTypesTests.cpp
-    ImplementationParameters/ParametersTests.cpp
     Lighting/DirectionalLightTests.cpp
     Lighting/LightTests.cpp
     Lighting/PointLightTests.cpp
@@ -58,7 +56,6 @@ target_sources(Tests PRIVATE
 
 target_link_libraries(Tests PRIVATE 
     Core
-    ImplementationParameters
     BVH
     Geometry
     Surface
@@ -68,7 +65,8 @@ target_link_libraries(Tests PRIVATE
     Rendering
     Export
     GPU
-    OpenGL
+    RenderingGL
+    QtInterface
     gtest
     gmock)
 

@@ -30,8 +30,8 @@ void Mesh::computeTangentsAndBitangents() {
     const lin::Vec3d edge1 = v1.position - v0.position;
     const lin::Vec3d edge2 = v2.position - v0.position;
 
-    const lin::Vec2d deltaUV1 = {v1.uvCoord.u - v0.uvCoord.u, v1.uvCoord.v - v0.uvCoord.v};
-    const lin::Vec2d deltaUV2 = {v2.uvCoord.u - v0.uvCoord.u, v2.uvCoord.v - v0.uvCoord.v};
+    const lin::Vec2d deltaUV1 = {v1.uv_coord.u - v0.uv_coord.u, v1.uv_coord.v - v0.uv_coord.v};
+    const lin::Vec2d deltaUV2 = {v2.uv_coord.u - v0.uv_coord.u, v2.uv_coord.v - v0.uv_coord.v};
 
     const double f = 1.0 / (deltaUV1.x * deltaUV2.y - deltaUV2.x * deltaUV1.y);
 

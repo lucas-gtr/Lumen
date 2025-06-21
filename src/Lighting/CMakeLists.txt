@@ -1,4 +1,5 @@
 add_library(Lighting STATIC
+    Light.cpp
     DirectionalLight.cpp
     PointLight.cpp
     SpotLight.cpp

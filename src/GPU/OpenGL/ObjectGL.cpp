@@ -1,5 +1,6 @@
 // GCOVR_EXCL_START
-#include <GL/glew.h>
+#include <GL/gl.h>
+#include <GL/glext.h>
 #include <iostream>
 
 #include "Core/Config.hpp"
@@ -8,20 +9,31 @@
 #include "GPU/OpenGL/ObjectGL.hpp"
 #include "SceneObjects/Object3D.hpp"
 
-ObjectGL::ObjectGL(const Object3D& object, const MaterialGL* material) : IObjectGPU(object), m_material(material) {
+ObjectGL::ObjectGL(Object3D* object, MaterialGL* material) : IObjectGPU(object), m_material(material) {
+  initializeOpenGLFunctions();
+
   glGenVertexArrays(1, &m_VAO);
   glGenBuffers(1, &m_VBO);
   glGenBuffers(1, &m_EBO);
 
+  // object.getMaterialChangedObserver().add()
+
   std::cout << "ObjectGL: VAO " << m_VAO << " created." << '\n';
 }
 
-void ObjectGL::uploadVertices() const {
+void ObjectGL::setMaterial(MaterialGL* material) {
+  if(m_material != material) {
+    m_material = material;
+    std::cout << "ObjectGL: Material changed for VAO " << m_VAO << "." << '\n';
+  }
+}
+
+void ObjectGL::uploadVertices() {
   glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
   glBufferData(GL_ARRAY_BUFFER, static_cast<GLsizeiptr>(dataSize()), vertices().data(), GL_STATIC_DRAW);
 }
 
-void ObjectGL::uploadIndices() const {
+void ObjectGL::uploadIndices() {
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, static_cast<GLsizeiptr>(indicesSize()), indices().data(), GL_STATIC_DRAW);
 }
@@ -51,26 +63,27 @@ void ObjectGL::setupVertexAttributes() {
 }
 // NOLINTEND(cppcoreguidelines-pro-type-cstyle-cast, google-readability-casting, performance-no-int-to-ptr)
 
-void ObjectGL::uploadToGPU() const {
+void ObjectGL::uploadToGPU() {
   glBindVertexArray(m_VAO);
 
   uploadVertices();
   uploadIndices();
   setupVertexAttributes();
 
-  glBindBuffer(GL_ARRAY_BUFFER, 0);
   glBindVertexArray(0);
+  glBindBuffer(GL_ARRAY_BUFFER, 0);
+  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
   std::cout << "ObjectGL: Data uploaded to GPU to VAO " << m_VAO << "." << '\n';
 }
 
-void ObjectGL::bindVAO() const { glBindVertexArray(m_VAO); }
+void ObjectGL::bindVAO() { glBindVertexArray(m_VAO); }
 
-void ObjectGL::bindMaterial() const { m_material->bind(); }
+void ObjectGL::bindMaterial() { m_material->bind(); }
 
 void ObjectGL::unbind() {
   glBindVertexArray(0);
-  MaterialGL::unbind();
+  m_material->unbind();
 }
 
 void ObjectGL::release() {

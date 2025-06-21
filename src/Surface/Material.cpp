@@ -1,36 +1,44 @@
 #include "Surface/Material.hpp"
 #include "Core/CommonTypes.hpp"
-#include "Core/MathConstants.hpp"
 #include "Surface/Texture.hpp"
+#include "Surface/TextureManager.hpp"
 
-Material::Material() : m_albedoTexture(nullptr), m_normalTexture(nullptr) {}
+Material::Material()
+    : m_diffuse_texture(TextureManager::defaultDiffuseTexture()),
+      m_normal_texture(TextureManager::defaultNormalTexture()) {}
 
-ColorRGBA Material::getAlbedo(TextureUV uv_coord) const {
-  if(m_albedoTexture) {
-    return m_albedoTexture->getValue4d(uv_coord);
+void Material::setDiffuseTexture(Texture* texture) {
+  if(texture != nullptr) {
+    m_diffuse_texture = texture;
+  } else {
+    m_diffuse_texture = TextureManager::defaultDiffuseTexture();
   }
-  return {1.0, 1.0, 1.0, 1.0};
+  m_material_changed_observer.notify(this);
 }
 
-ColorRGB Material::getNormal(TextureUV uv_coord) const {
-  if(m_normalTexture) {
-    return m_normalTexture->getValue3d(uv_coord);
+void Material::setNormalTexture(Texture* texture) {
+  if(texture != nullptr) {
+    m_normal_texture = texture;
+  } else {
+    m_normal_texture = TextureManager::defaultNormalTexture();
   }
-  return {HALF, HALF, 1.0};
+  m_material_changed_observer.notify(this);
 }
 
-const Texture& Material::getAlbedoTexture() const {
-  if(m_albedoTexture) {
-    return *m_albedoTexture;
+ColorRGBA Material::getDiffuse(TextureUV uv_coord) const { return m_diffuse_texture->getValue4d(uv_coord); }
+
+ColorRGB Material::getNormal(TextureUV uv_coord) const { return m_normal_texture->getValue3d(uv_coord); }
+
+Texture* Material::getDiffuseTexture() const {
+  if(m_diffuse_texture == nullptr) {
+    return TextureManager::defaultDiffuseTexture();
   }
-  static const Texture whiteTexture(ColorRGBA{1.0, 1.0, 1.0, 1.0});
-  return whiteTexture;
+  return m_diffuse_texture;
 }
 
-const Texture& Material::getNormalTexture() const {
-  if(m_normalTexture) {
-    return *m_normalTexture;
+Texture* Material::getNormalTexture() const {
+  if(m_normal_texture == nullptr) {
+    return TextureManager::defaultNormalTexture();
   }
-  static const Texture defaultNormalTexture(ColorRGB{HALF, HALF, 1.0});
-  return defaultNormalTexture;
+  return m_normal_texture;
 }

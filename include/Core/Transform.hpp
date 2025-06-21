@@ -9,6 +9,7 @@
 #include "Core/Math/Mat4.hpp"
 #include "Core/Math/Vec3.hpp"
 #include "Core/MathConstants.hpp"
+#include "Core/Observer.hpp"
 
 /**
  * @class Transform
@@ -20,18 +21,20 @@
  */
 class Transform {
 private:
-  lin::Mat4d m_transformationMatrix = lin::Mat4d::Identity();
-  lin::Mat4d m_inverseMatrix        = lin::Mat4d::Identity();
+  lin::Mat4d m_transformation_matrix = lin::Mat4d::Identity();
+  lin::Mat4d m_inverse_matrix        = lin::Mat4d::Identity();
 
-  lin::Mat4d m_translationMatrix = lin::Mat4d::Identity();
-  lin::Mat3d m_rotationMatrix    = lin::Mat3d::Identity();
-  lin::Mat3d m_scaleMatrix       = lin::Mat3d::Identity();
+  lin::Mat4d m_translation_matrix = lin::Mat4d::Identity();
+  lin::Mat3d m_rotation_matrix    = lin::Mat3d::Identity();
+  lin::Mat3d m_scale_matrix       = lin::Mat3d::Identity();
 
-  lin::Mat3d m_normalMatrix = lin::Mat3d::Identity();
+  lin::Mat3d m_normal_matrix = lin::Mat3d::Identity();
 
   lin::Vec3d m_position;
   lin::Vec3d m_rotation;
   lin::Vec3d m_scale;
+
+  Observer<> m_transformation_changed_observer;
 
   void updateTranslationMatrix();
   void updateScaleMatrix();
@@ -55,10 +58,16 @@ public:
    */
   Transform(const lin::Vec3d& position, const lin::Vec3d& rotation, const lin::Vec3d& scale);
 
-  Transform(const Transform&)            = default; ///< Default copy constructor.
-  Transform& operator=(const Transform&) = default; ///< Default copy assignment operator.
-  Transform(Transform&&)                 = default; ///< Default move constructor.
-  Transform& operator=(Transform&&)      = default; ///< Default move assignment operator.
+  Transform(const Transform&)            = delete;
+  Transform& operator=(const Transform&) = delete;
+  Transform(Transform&&)                 = delete;
+  Transform& operator=(Transform&&)      = delete;
+
+  /**
+   * @brief Gets the observer that notifies when the transformation changes.
+   * @return The observer for transformation changes.
+   */
+  Observer<>& getTransformationChangedObserver() { return m_transformation_changed_observer; }
 
   /**
    * @brief Sets the position of the object.
@@ -160,37 +169,37 @@ public:
    * @brief Gets the current translation matrix.
    * @return The translation matrix.
    */
-  lin::Mat4d getTranslationMatrix() const { return m_translationMatrix; }
+  lin::Mat4d getTranslationMatrix() const { return m_translation_matrix; }
 
   /**
    * @brief Gets the current rotation matrix.
    * @return The rotation matrix.
    */
-  lin::Mat3d getRotationMatrix() const { return m_rotationMatrix; }
+  lin::Mat3d getRotationMatrix() const { return m_rotation_matrix; }
 
   /**
    * @brief Gets the current scale matrix.
    * @return The scale matrix.
    */
-  lin::Mat3d getScaleMatrix() const { return m_scaleMatrix; }
+  lin::Mat3d getScaleMatrix() const { return m_scale_matrix; }
 
   /**
    * @brief Gets the final transformation matrix.
    * @return The transformation matrix.
    */
-  lin::Mat4d getTransformationMatrix() const { return m_transformationMatrix; }
+  lin::Mat4d getTransformationMatrix() const { return m_transformation_matrix; }
 
   /**
    * @brief Gets the inverse of the transformation matrix.
    * @return The inverse transformation matrix.
    */
-  lin::Mat4d getInverseMatrix() const { return m_inverseMatrix; }
+  lin::Mat4d getInverseMatrix() const { return m_inverse_matrix; }
 
   /**
    * @brief Gets the normal matrix for transforming normals.
    * @return The normal matrix.
    */
-  lin::Mat3d getNormalMatrix() const { return m_normalMatrix; }
+  lin::Mat3d getNormalMatrix() const { return m_normal_matrix; }
 
   ~Transform() = default; ///< Default destructor.
 };

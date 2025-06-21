@@ -5,8 +5,13 @@
 #include "GPU/Lights/DirectionalGPU.hpp"
 #include "Lighting/DirectionalLight.hpp"
 
-DirectionalLightGL::DirectionalLightGL(const DirectionalLight& light) : DirectionalLightGPU(light) {
+DirectionalLightGL::DirectionalLightGL(DirectionalLight* light) : DirectionalLightGPU(light) {
   updateLightSpaceMatrix();
+  light->getTransformationChangedObserver().add([this]() { updateLightSpaceMatrix(); });
+  light->getLightChangedObserver().add([this]() {
+    retrieveData();
+    updateLightSpaceMatrix();
+  });
 }
 
 void DirectionalLightGL::updateLightSpaceMatrix() {

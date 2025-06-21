@@ -14,13 +14,13 @@
  * @brief Struct to hold parameters for ray emitter configuration.
  */
 struct RayEmitterParameters {
-  lin::Vec3d cameraPosition       = {0.0, 0.0, 0.0};
-  lin::Mat3d cameraRotationMatrix = lin::Mat3d::Identity();
-  double     sensorWidth          = 0.0;
-  double     focalLength          = 0.0;
-  double     focusDistance        = 0.0;
-  double     lensRadius           = 0.0;
-  double     imageAspectRatio     = 0.0;
+  lin::Vec3d camera_position        = {0.0, 0.0, 0.0};
+  lin::Mat3d camera_rotation_matrix = lin::Mat3d::Identity();
+  double     sensor_width           = 0.0;
+  double     focal_length           = 0.0;
+  double     focus_distance         = 0.0;
+  double     lens_radius            = 0.0;
+  double     image_aspect_ratio     = 0.0;
 };
 
 /**
@@ -34,9 +34,9 @@ class CameraRayEmitter {
 private:
   RayEmitterParameters m_parameters;
 
-  lin::Vec3d m_viewportTopLeftCorner;
-  lin::Vec3d m_horizontalVector;
-  lin::Vec3d m_verticalVector;
+  lin::Vec3d m_viewport_top_left_corner;
+  lin::Vec3d m_horizontal_vector;
+  lin::Vec3d m_vertical_vector;
 
   lin::Vec3d generateCorner(double x, double y) const;
   lin::Vec3d getRayOrigin() const;

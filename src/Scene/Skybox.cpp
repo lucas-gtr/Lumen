@@ -1,27 +1,23 @@
 #include <cmath>
 #include <iostream>
-#include <memory>
 
 #include "Core/CommonTypes.hpp"
-#include "Core/Config.hpp"
 #include "Core/Math/Vec3.hpp"
 #include "Core/MathConstants.hpp"
 #include "Scene/Skybox.hpp"
 #include "Surface/Texture.hpp"
+#include "Surface/TextureManager.hpp"
 
-Skybox::Skybox() {
-  m_texture =
-      std::make_shared<Texture>(ColorRGBA(DEFAULT_SKYBOX_COLOR_R, DEFAULT_SKYBOX_COLOR_G, DEFAULT_SKYBOX_COLOR_B, 1.0));
-  m_texture->setColorSpace(ColorSpace::RGB);
-}
+Skybox::Skybox() : m_texture(TextureManager::defaultSkyboxTexture()) {}
 
-void Skybox::setTexture(const std::shared_ptr<Texture>& texture) {
+void Skybox::setTexture(Texture* texture) {
   if(texture == nullptr) {
     std::cerr << "Error: Texture is null." << '\n';
     return;
   }
   m_texture = texture;
-  m_texture->setColorSpace(ColorSpace::RGB);
+
+  m_texture_observer.notify();
 }
 
 TextureUV Skybox::getUVCoordinates(const lin::Vec3d& direction) {

@@ -98,4 +98,25 @@ inline void convertToLinearSpace(double& value) {
   value = (std::pow((value + COLOR_SPACE_ADDENDUM) * SRGB_FACTOR, SRGB_GAMMA));
 }
 
+inline void convertToLinearSpace(float& value) {
+  if(value <= SRGB_THRESHOLD) {
+    value *= static_cast<float>(SRGB_THRESHOLD_FACTOR);
+    return;
+  }
+  value = (std::pow((value + static_cast<float>(COLOR_SPACE_ADDENDUM)) * static_cast<float>(SRGB_FACTOR),
+                    static_cast<float>(SRGB_GAMMA)));
+}
+
+inline void convertToLinearSpace(ColorRGB& color) {
+  convertToLinearSpace(color.r);
+  convertToLinearSpace(color.g);
+  convertToLinearSpace(color.b);
+}
+
+inline void convertToLinearSpace(ColorRGBA& color) {
+  convertToLinearSpace(color.r);
+  convertToLinearSpace(color.g);
+  convertToLinearSpace(color.b);
+}
+
 #endif // CORE_COLORUTILS_HPP

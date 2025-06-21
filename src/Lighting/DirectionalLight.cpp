@@ -5,7 +5,10 @@
 #include "Core/Math/lin.hpp"
 #include "Lighting/DirectionalLight.hpp"
 
-void DirectionalLight::setDirection(const lin::Vec3d& direction) { m_direction = direction.normalized(); }
+void DirectionalLight::setDirection(const lin::Vec3d& direction) {
+  m_direction = direction.normalized();
+  getLightChangedObserver().notify();
+}
 
 lin::Vec3d DirectionalLight::getDirection() const { return m_direction; }
 

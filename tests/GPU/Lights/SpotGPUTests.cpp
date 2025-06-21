@@ -10,7 +10,7 @@ TEST(SpotGPUTest, Initialization) {
     light.setColor({1.0f, 1.0f, 1.0f});
     light.setIntensity(1.0f);
 
-    SpotLightGPU gpu_light(light);
+    SpotLightGPU gpu_light(&light);
 
     EXPECT_EQ(gpu_light.getPosition(), lin::Vec3f(1.0f, 2.0f, 3.0f));
     EXPECT_EQ(gpu_light.getDirection(), lin::Vec3f(0.0f, -1.0f, 0.0f).normalized());
@@ -22,7 +22,7 @@ TEST(SpotGPUTest, Initialization) {
 TEST(SpotGPUTest, Position) {
     SpotLight light;
     light.setPosition({0.0f, 0.0f, -1.0f});
-    SpotLightGPU gpu_light(light);
+    SpotLightGPU gpu_light(&light);
 
     EXPECT_EQ(gpu_light.getPosition(), lin::Vec3f(0.0f, 0.0f, -1.0f));
 }
@@ -30,7 +30,7 @@ TEST(SpotGPUTest, Position) {
 TEST(SpotGPUTest, Direction) {
     SpotLight light;
     light.setDirection({1.0f, -1.0f, 0.0f});
-    SpotLightGPU gpu_light(light);
+    SpotLightGPU gpu_light(&light);
 
     EXPECT_EQ(gpu_light.getDirection(), lin::Vec3f(1.0f, -1.0f, 0.0f).normalized());
 }
@@ -38,7 +38,7 @@ TEST(SpotGPUTest, Direction) {
 TEST(SpotGPUTest, Color) {
     SpotLight light;
     light.setColor({0.5f, 0.5f, 0.5f});
-    SpotLightGPU gpu_light(light);
+    SpotLightGPU gpu_light(&light);
 
     EXPECT_EQ(gpu_light.getColor(), lin::Vec3f(0.5f, 0.5f, 0.5f));
 }
@@ -47,7 +47,7 @@ TEST(SpotGPUTest, Intensity) {
     SpotLight light;
     light.setIntensity(2.0f);
     light.setColor({1.0f, 1.0f, 1.0f});
-    SpotLightGPU gpu_light(light);
+    SpotLightGPU gpu_light(&light);
 
     lin::Vec3f expected_color = lin::Vec3f(1.0f, 1.0f, 1.0f) * 2.0f;
     EXPECT_EQ(gpu_light.getColor(), expected_color);

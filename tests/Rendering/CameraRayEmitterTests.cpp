@@ -4,13 +4,13 @@
 
 TEST(CameraRayEmitterTest, InitializeViewport) {
   RayEmitterParameters parameters;
-  parameters.sensorWidth = 36.0;
-  parameters.imageAspectRatio = 1.5;
-  parameters.focusDistance = 1.0;
-  parameters.focalLength = 0.05;
-  parameters.cameraPosition = lin::Vec3d(0.0, 0.0, 0.0);
-  parameters.cameraRotationMatrix = lin::Mat3d::Identity();
-  parameters.lensRadius = 0;
+  parameters.sensor_width = 36.0;
+  parameters.image_aspect_ratio = 1.5;
+  parameters.focus_distance = 1.0;
+  parameters.focal_length = 0.05;
+  parameters.camera_position = lin::Vec3d(0.0, 0.0, 0.0);
+  parameters.camera_rotation_matrix = lin::Mat3d::Identity();
+  parameters.lens_radius = 0;
   
   CameraRayEmitter emitter;
   emitter.initializeViewport(parameters);
@@ -22,16 +22,16 @@ TEST(CameraRayEmitterTest, InitializeViewport) {
 
 TEST(CameraRayEmitterTest, InitializeViewportRotation) {
   RayEmitterParameters parameters;
-  parameters.sensorWidth = 36.0;
-  parameters.imageAspectRatio = 1.5;
-  parameters.focusDistance = 1.0;
-  parameters.focalLength = 0.05;
-  parameters.cameraPosition = lin::Vec3d(0.0, 0.0, 0.0);
-  parameters.cameraRotationMatrix = lin::Mat3d({
+  parameters.sensor_width = 36.0;
+  parameters.image_aspect_ratio = 1.5;
+  parameters.focus_distance = 1.0;
+  parameters.focal_length = 0.05;
+  parameters.camera_position = lin::Vec3d(0.0, 0.0, 0.0);
+  parameters.camera_rotation_matrix = lin::Mat3d({
     {  0.0,  0.0,  1.0 }, 
     {  0.0,  1.0,  0.0 }, 
     { -1.0,  0.0,  0.0 }});
-  parameters.lensRadius = 0;
+  parameters.lens_radius = 0;
   
   CameraRayEmitter emitter;
   emitter.initializeViewport(parameters);
@@ -44,47 +44,47 @@ TEST(CameraRayEmitterTest, InitializeViewportRotation) {
 
 TEST(CameraRayEmitterTest, RayOriginWithLensRadius) {
   RayEmitterParameters parameters;
-  parameters.sensorWidth = 36.0;
-  parameters.imageAspectRatio = 1.5;
-  parameters.focusDistance = 1.0;
-  parameters.focalLength = 0.05;
-  parameters.cameraPosition = lin::Vec3d(0.0, 0.0, 0.0);
-  parameters.cameraRotationMatrix = lin::Mat3d::Identity();
-  parameters.lensRadius = 0.1;
+  parameters.sensor_width = 36.0;
+  parameters.image_aspect_ratio = 1.5;
+  parameters.focus_distance = 1.0;
+  parameters.focal_length = 0.05;
+  parameters.camera_position = lin::Vec3d(0.0, 0.0, 0.0);
+  parameters.camera_rotation_matrix = lin::Mat3d::Identity();
+  parameters.lens_radius = 0.1;
   
   CameraRayEmitter emitter;
   emitter.initializeViewport(parameters);
   Ray ray = emitter.generateRay(0.5, 0.5);
 
-  EXPECT_NE(ray.origin, parameters.cameraPosition);
+  EXPECT_NE(ray.origin, parameters.camera_position);
 }
 
 TEST(CameraRayEmitterTest, RayOriginWithoutLensRadius) {
   RayEmitterParameters parameters;
-  parameters.sensorWidth = 36.0;
-  parameters.imageAspectRatio = 1.5;
-  parameters.focusDistance = 1.0;
-  parameters.focalLength = 0.05;
-  parameters.cameraPosition = lin::Vec3d(0.0, 0.0, 0.0);
-  parameters.cameraRotationMatrix = lin::Mat3d::Identity();
-  parameters.lensRadius = 0.0;
+  parameters.sensor_width = 36.0;
+  parameters.image_aspect_ratio = 1.5;
+  parameters.focus_distance = 1.0;
+  parameters.focal_length = 0.05;
+  parameters.camera_position = lin::Vec3d(0.0, 0.0, 0.0);
+  parameters.camera_rotation_matrix = lin::Mat3d::Identity();
+  parameters.lens_radius = 0.0;
   
   CameraRayEmitter emitter;
   emitter.initializeViewport(parameters);
   Ray ray = emitter.generateRay(0.5, 0.5);
 
-  EXPECT_EQ(ray.origin, parameters.cameraPosition);
+  EXPECT_EQ(ray.origin, parameters.camera_position);
 }
 
 TEST(CameraRayEmitterTest, GenerateRay) {
   RayEmitterParameters parameters;
-  parameters.sensorWidth = 36.0;
-  parameters.imageAspectRatio = 1.5;
-  parameters.focusDistance = 1.0;
-  parameters.focalLength = 0.05;
-  parameters.cameraPosition = lin::Vec3d(0.0, 0.0, 0.0);
-  parameters.cameraRotationMatrix = lin::Mat3d::Identity();
-  parameters.lensRadius = 0.0;
+  parameters.sensor_width = 36.0;
+  parameters.image_aspect_ratio = 1.5;
+  parameters.focus_distance = 1.0;
+  parameters.focal_length = 0.05;
+  parameters.camera_position = lin::Vec3d(0.0, 0.0, 0.0);
+  parameters.camera_rotation_matrix = lin::Mat3d::Identity();
+  parameters.lens_radius = 0.0;
 
   CameraRayEmitter emitter;
   emitter.initializeViewport(parameters);
@@ -92,7 +92,7 @@ TEST(CameraRayEmitterTest, GenerateRay) {
   double u = 0.5, v = 0.5;
   Ray ray = emitter.generateRay(u, v);
 
-  EXPECT_EQ(ray.origin, parameters.cameraPosition);
+  EXPECT_EQ(ray.origin, parameters.camera_position);
   EXPECT_TRUE(ray.direction.isApprox(lin::Vec3d(0.0, 0.0, -1.0), 1e-6));
 }
 

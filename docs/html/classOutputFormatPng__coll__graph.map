@@ -1,5 +1,5 @@
 <map id="OutputFormatPng" name="OutputFormatPng">
-<area shape="rect" id="Node000001" title="Class for exporting images in PNG format." alt="" coords="5,79,141,104"/>
-<area shape="rect" id="Node000002" href="$classOutputFormat.html" title="Abstract base class for different image output formats." alt="" coords="17,5,129,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,44,76,79,71,79,71,44"/>
+<area shape="rect" id="Node000001" title="Class for exporting images in PNG format." alt="" coords="21,79,157,104"/>
+<area shape="rect" id="Node000002" href="$classOutputFormatStrategy.html" title="Abstract base class for different image output formats." alt="" coords="5,5,172,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,44,91,79,86,79,86,44"/>
 </map>

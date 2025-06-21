@@ -7,9 +7,10 @@
 
 // GCOVR_EXCL_START
 
-#include <GL/glew.h>
+#include <qopenglfunctions_3_3_core.h>
 
 #include "Core/CommonTypes.hpp"
+#include "Core/Observer.hpp"
 #include "GPU/ITextureGPU.hpp"
 #include "Surface/Texture.hpp"
 #include "Surface/TextureFiltering.hpp"
@@ -22,14 +23,17 @@
  * This class encapsulates the functionality of an OpenGL texture, including uploading data to the GPU,
  * binding and unbinding the texture, and configuring its parameters.
  */
-class TextureGL : public ITextureGPU {
+class TextureGL : public ITextureGPU, protected QOpenGLFunctions_3_3_Core {
 private:
   GLuint m_textureID = 0U;
 
-  static void configureParameters(const Texture& texture);
+  Observer<>::CallbackID m_texture_data_observer_id;
+  Observer<>::CallbackID m_texture_parameters_observer_id;
 
-  static void applyWrappingMode(TextureSampling::TextureWrapping wrappingMode, const ColorRGBA& borderColor);
-  static void applyFilteringMode(TextureSampling::TextureFiltering filteringMode);
+  void configureParameters(const Texture* texture);
+
+  void applyWrappingMode(TextureSampling::TextureWrapping wrappingMode, const ColorRGBA& borderColor);
+  void applyFilteringMode(TextureSampling::TextureFiltering filteringMode);
 
   static GLint getGLWrappingMode(TextureSampling::TextureWrapping wrappingMode);
   static GLint getGLFilteringMode(TextureSampling::TextureFiltering filteringMode);
@@ -40,7 +44,7 @@ public:
    * @brief Constructor for TextureGL.
    * @param texture The Texture to be represented in OpenGL.
    */
-  explicit TextureGL(const Texture& texture);
+  explicit TextureGL(Texture* texture);
 
   TextureGL(const TextureGL&)            = delete;
   TextureGL& operator=(const TextureGL&) = delete;
@@ -50,7 +54,7 @@ public:
   /**
    * @brief Uploads the texture data to the GPU.
    */
-  void uploadToGPU() const override;
+  void uploadToGPU() override;
 
   /**
    * @brief Releases the OpenGL texture resources.
@@ -61,13 +65,13 @@ public:
    * @brief Binds the texture to a specified texture unit.
    * @param textureUnit The texture unit to bind the texture to.
    */
-  void bind(int textureUnit) const;
+  void bind(int textureUnit);
 
   /**
    * @brief Unbinds the texture from the current texture unit.
    * @param textureUnit The texture unit to unbind the texture from.
    */
-  static void unbind(int textureUnit);
+  void unbind(int textureUnit);
 
   /**
    * @brief Destructor for TextureGL.

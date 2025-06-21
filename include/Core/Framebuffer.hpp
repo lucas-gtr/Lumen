@@ -33,10 +33,10 @@ public:
    */
   explicit Framebuffer(ImageProperties framebuffer_properties);
 
-  Framebuffer(const Framebuffer&)            = delete; ///< Deleted copy constructor.
-  Framebuffer& operator=(const Framebuffer&) = delete; ///< Deleted copy assignment operator.
-  Framebuffer(Framebuffer&&)                 = delete; ///< Deleted move constructor.
-  Framebuffer& operator=(Framebuffer&&)      = delete; ///< Deleted move assignment operator.
+  Framebuffer(const Framebuffer&)            = delete;
+  Framebuffer& operator=(const Framebuffer&) = delete;
+  Framebuffer(Framebuffer&&)                 = delete;
+  Framebuffer& operator=(Framebuffer&&)      = delete;
 
   /**
    * @brief Gets the width of the framebuffer.
@@ -98,6 +98,17 @@ public:
   void reduceThreadBuffers();
 
   /**
+   * @brief Scales the values in the framebuffer by a given factor.
+   * @param factor The factor by which to scale the framebuffer values.
+   */
+  void scaleBufferValues(double factor);
+
+  /**
+   * @brief Clears the thread buffers.
+   */
+  void clearThreadBuffers();
+
+  /**
    * @brief Sets the color of a specific pixel in the framebuffer.
    * @param pixel_coord The coordinates of the pixel to set.
    * @param color The color to set the pixel to.
@@ -105,9 +116,13 @@ public:
    */
   void setPixelColor(const PixelCoord& pixel_coord, const ColorRGBA& color, double weight);
 
+  /**
+   * @brief Sets the thread ID for the current thread.
+   * @param thread_id The ID of the thread.
+   */
   static void setThreadId(int thread_id) { m_thread_id = thread_id; }
 
-  ~Framebuffer(); /// Default destructor.
+  ~Framebuffer(); ///< Destructor to clean up the framebuffer resources.
 };
 
 #endif // CORE_FRAMEBUFFER_HPP

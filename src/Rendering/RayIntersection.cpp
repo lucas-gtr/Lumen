@@ -2,6 +2,7 @@
 #include <cmath>
 #include <limits>
 #include <stack>
+#include <string>
 #include <vector>
 
 #include "BVH/BVHNode.hpp"
@@ -74,8 +75,8 @@ void processFaceIntersection(const Ray& ray, const Mesh& mesh, const Face& face,
 void updateHitInfoFromBarycentric(RayHitInfo& hit_info, double distance, const lin::Vec3d& bary, const Vertex& v0,
                                   const Vertex& v1, const Vertex& v2) {
   hit_info.distance        = distance;
-  hit_info.uvCoordinates.u = bary.x * v0.uvCoord.u + bary.y * v1.uvCoord.u + bary.z * v2.uvCoord.u;
-  hit_info.uvCoordinates.v = bary.x * v0.uvCoord.v + bary.y * v1.uvCoord.v + bary.z * v2.uvCoord.v;
+  hit_info.uvCoordinates.u = bary.x * v0.uv_coord.u + bary.y * v1.uv_coord.u + bary.z * v2.uv_coord.u;
+  hit_info.uvCoordinates.v = bary.x * v0.uv_coord.v + bary.y * v1.uv_coord.v + bary.z * v2.uv_coord.v;
   hit_info.normal          = (bary.x * v0.normal + bary.y * v1.normal + bary.z * v2.normal).normalized();
   hit_info.tangent         = (bary.x * v0.tangent + bary.y * v1.tangent + bary.z * v2.tangent).normalized();
   hit_info.bitangent       = (bary.x * v0.bitangent + bary.y * v1.bitangent + bary.z * v2.bitangent).normalized();
@@ -148,7 +149,7 @@ void transformHitInfoToWorldSpace(RayHitInfo& hit_info, const Ray& local_ray, co
 
   hit_info.distance = (hit_world - original_ray.origin).length();
   hit_info.hitPoint = hit_world;
-  hit_info.material = &object->getMaterial();
+  hit_info.material = object->getMaterial();
 
   const lin::Mat3d normal_matrix = object->getNormalMatrix();
   hit_info.normal                = (normal_matrix * hit_info.normal).normalized();
@@ -250,7 +251,7 @@ RayHitInfo getSceneIntersectionWithBVH(const Ray& ray, const Scene* scene) {
       updateNormalWithTangentSpace(closest_hit);
       return closest_hit;
     }
-    const Object3D*  object   = scene->getObjectList()[bvh_hit.index_to_check].get();
+    const Object3D*  object   = scene->getObjectList()[bvh_hit.index_to_check];
     const RayHitInfo hit_info = getObjectIntersection(ray, object);
     if(hit_info.distance < closest_hit.distance) {
       closest_hit = hit_info;
@@ -266,7 +267,7 @@ RayHitInfo getSceneIntersectionWithoutBVH(const Ray& ray, const Scene* scene) {
   closest_hit.distance = std::numeric_limits<double>::max();
 
   for(const auto& object : scene->getObjectList()) {
-    const RayHitInfo hit_info = getObjectIntersection(ray, object.get());
+    const RayHitInfo hit_info = getObjectIntersection(ray, object);
     if(hit_info.distance < closest_hit.distance) {
       closest_hit = hit_info;
     }
@@ -274,6 +275,22 @@ RayHitInfo getSceneIntersectionWithoutBVH(const Ray& ray, const Scene* scene) {
 
   updateNormalWithTangentSpace(closest_hit);
   return closest_hit;
+}
+
+std::string getObjectNameFromHit(const Ray& ray, const Scene* scene) {
+  RayHitInfo closest_hit;
+  closest_hit.distance = std::numeric_limits<double>::max();
+
+  Object3D* closest_object = nullptr;
+  for(const auto& object : scene->getObjectList()) {
+    const RayHitInfo hit_info = getObjectIntersection(ray, object);
+    if(hit_info.distance < closest_hit.distance) {
+      closest_hit    = hit_info;
+      closest_object = object;
+    }
+  }
+
+  return scene->getObjectName(closest_object);
 }
 
 RayHitInfo getSceneIntersection(const Ray& ray, const Scene* scene) {

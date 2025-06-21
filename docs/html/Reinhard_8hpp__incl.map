@@ -1,18 +1,7 @@
 <map id="/home/lucasgtr/lumen/include/PostProcessing/ToneMapping/Reinhard.hpp" name="/home/lucasgtr/lumen/include/PostProcessing/ToneMapping/Reinhard.hpp">
-<area shape="rect" id="Node000001" title="Header file for the ReinhardToneMapping class." alt="" coords="16,5,219,60"/>
-<area shape="rect" id="Node000002" href="$ToneMapping_8hpp.html" title="Header file for the ToneMappingStrategy class." alt="" coords="12,108,223,148"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,60,120,94,115,94,115,60"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,203,72,229"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="102,150,61,195,57,191,98,146"/>
-<area shape="rect" id="Node000004" href="$Parameters_8hpp.html" title="Header file for the Parameters class." alt="" coords="96,196,296,236"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="137,146,171,184,168,188,133,150"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="47,291,124,317"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="173,238,113,285,110,280,170,234"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="244,372,303,397"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="191,237,182,278,182,301,189,323,208,346,233,363,230,368,205,350,184,325,177,302,177,278,186,236"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="199,291,262,317"/>
-<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="206,235,223,277,218,279,201,237"/>
-<area shape="rect" id="Node000008" href="$ParameterValue_8hpp.html" title="Header file for the ParameterValue class." alt="" coords="285,284,485,324"/>
-<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="239,234,333,276,330,281,236,238"/>
-<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="360,326,303,366,300,362,357,322"/>
+<area shape="rect" id="Node000001" title="Header file for the ReinhardToneMapping class." alt="" coords="9,5,212,60"/>
+<area shape="rect" id="Node000002" href="$ToneMapping_8hpp.html" title="Header file for the ToneMappingStrategy class." alt="" coords="5,108,216,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,60,113,94,108,94,108,60"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="77,196,144,221"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="113,148,113,182,108,182,108,148"/>
 </map>

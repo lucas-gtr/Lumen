@@ -18,10 +18,12 @@
 #include "GPU/OpenGL/Lights/SpotGL.hpp"
 #include "GPU/OpenGL/MaterialGL.hpp"
 #include "GPU/OpenGL/ObjectGL.hpp"
+#include "GPU/OpenGL/SkyboxGL.hpp"
 #include "GPU/OpenGL/TextureGL.hpp"
 #include "Lighting/DirectionalLight.hpp"
 #include "Lighting/PointLight.hpp"
 #include "Lighting/SpotLight.hpp"
+#include "Qt/OpenGLContext.hpp"
 #include "Scene/Scene.hpp"
 #include "SceneObjects/Camera.hpp"
 #include "SceneObjects/Object3D.hpp"
@@ -38,32 +40,36 @@
  */
 class ResourceManagerGL : public IResourceManagerGPU {
 private:
-  std::vector<std::unique_ptr<ObjectGL>>   m_dataBuffers;
+  std::vector<std::unique_ptr<ObjectGL>>   m_object_list;
   std::vector<std::unique_ptr<TextureGL>>  m_textures;
   std::vector<std::unique_ptr<MaterialGL>> m_materials;
-  std::unique_ptr<TextureGL>               m_skyboxTexture;
+  std::unique_ptr<SkyboxGL>                m_skybox;
 
   std::unique_ptr<CameraGL> m_viewport_camera;
 
-  std::vector<std::unique_ptr<DirectionalLightGL>> m_directionalLights;
-  std::vector<std::unique_ptr<PointLightGL>>       m_pointLights;
-  std::vector<std::unique_ptr<SpotLightGL>>        m_spotLights;
+  std::vector<std::unique_ptr<DirectionalLightGL>> m_directional_lights;
+  std::vector<std::unique_ptr<PointLightGL>>       m_point_lights;
+  std::vector<std::unique_ptr<SpotLightGL>>        m_spot_lights;
 
-  void loadScene(int viewportWidth, int viewportHeight, const Scene& scene);
+  void loadScene(int viewport_width, int viewport_height, Scene* scene);
 
-  const TextureGL*  addTexture(const Texture& texture) override;
-  const MaterialGL* addMaterial(const Material& material);
+  TextureGL*  addTexture(Texture* texture) override;
+  MaterialGL* addMaterial(Material* material);
 
-  void setCamera(Camera* camera, int viewportWidth, int viewportHeight) override;
+  void setCamera(Camera* camera, int viewport_width, int viewport_height) override;
+  void setSkybox(Skybox* skybox) override;
+
+  void onObjectMaterialChanged(const Object3D* object);
+  void onMaterialTextureChanged(const Material* material);
 
 public:
   /**
    * @brief Constructor for ResourceManagerGL.
-   * @param viewportWidth The width of the viewport in pixels.
-   * @param viewportHeight The height of the viewport in pixels.
+   * @param viewport_width The width of the viewport in pixels.
+   * @param viewport_height The height of the viewport in pixels.
    * @param scene The Scene object containing the initial objects and lights.
    */
-  ResourceManagerGL(int viewportWidth, int viewportHeight, const Scene& scene);
+  ResourceManagerGL(int viewport_width, int viewport_height, Scene* scene);
 
   ResourceManagerGL(const ResourceManagerGL&)            = delete;
   ResourceManagerGL& operator=(const ResourceManagerGL&) = delete;
@@ -74,42 +80,43 @@ public:
    * @brief Adds a 3D object to the resource manager.
    * @param object Reference of the Object3D to be added.
    */
-  void addObject3D(const Object3D& object) override;
+  void addObject3D(Object3D* object) override;
+
+  /**
+   * @brief Adds a light to the resource manager.
+   * @param light Pointer to the Light object to be added.
+   */
+  void addLight(Light* light);
 
   /**
    * @brief Adds a directional light to the resource manager.
    * @param light Reference of the DirectionalLight to be added.
    */
-  void addLight(const DirectionalLight& light) override;
+  void addLight(DirectionalLight* light) override;
 
   /**
    * @brief Adds a point light to the resource manager.
    * @param light Reference of the PointLight to be added.
    */
-  void addLight(const PointLight& light) override;
+  void addLight(PointLight* light) override;
 
   /**
    * @brief Adds a spot light to the resource manager.
    * @param light Reference of the SpotLight to be added.
    */
-  void addLight(const SpotLight& light) override;
+  void addLight(SpotLight* light) override;
 
   /**
-   * @brief Sets the skybox texture for the resource manager.
-   * @param texture Reference of the Texture to be set as the skybox texture.
+   * @brief Sets the selected object for the viewport.
+   * @param object Pointer to the Object3D to be set as selected.
    */
-  void setSkyboxTexture(const Texture& texture) override;
-
-  /**
-   * @brief Deletes the skybox texture.
-   */
-  void deleteSkyboxTexture() override;
+  void setSelectedObject(Object3D* object);
 
   /**
    * @brief Gets the list of objects managed by the resource manager.
    * @return A constant reference to the vector of unique pointers to ObjectGL.
    */
-  const std::vector<std::unique_ptr<ObjectGL>>& getObjectList() const { return m_dataBuffers; }
+  const std::vector<std::unique_ptr<ObjectGL>>& getObjectList() const { return m_object_list; }
 
   /**
    * @brief Gets the list of textures managed by the resource manager.
@@ -127,25 +134,25 @@ public:
    * @brief Gets the pointer to the skybox texture.
    * @return A pointer to the TextureGL object representing the skybox texture.
    */
-  const TextureGL* getSkyboxTexture() const { return m_skyboxTexture.get(); }
+  TextureGL* getSkyboxTexture() const { return m_skybox->getTexture(); }
 
   /**
    * @brief Gets the list of directional lights managed by the resource manager.
    * @return A constant reference to the vector of unique pointers to DirectionalLightGL.
    */
-  const std::vector<std::unique_ptr<DirectionalLightGL>>& getDirectionalLights() const { return m_directionalLights; }
+  const std::vector<std::unique_ptr<DirectionalLightGL>>& getDirectionalLights() const { return m_directional_lights; }
 
   /**
    * @brief Gets the list of point lights managed by the resource manager.
    * @return A constant reference to the vector of unique pointers to PointLightGL.
    */
-  const std::vector<std::unique_ptr<PointLightGL>>& getPointLights() const { return m_pointLights; }
+  const std::vector<std::unique_ptr<PointLightGL>>& getPointLights() const { return m_point_lights; }
 
   /**
    * @brief Gets the list of spot lights managed by the resource manager.
    * @return A constant reference to the vector of unique pointers to SpotLightGL.
    */
-  const std::vector<std::unique_ptr<SpotLightGL>>& getSpotLights() const { return m_spotLights; }
+  const std::vector<std::unique_ptr<SpotLightGL>>& getSpotLights() const { return m_spot_lights; }
 
   /**
    * @brief Clears all resources managed by the resource manager.

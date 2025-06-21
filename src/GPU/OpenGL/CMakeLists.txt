@@ -1,5 +1,4 @@
-add_library(OpenGL STATIC
-    WindowGL.cpp
+add_library(RenderingGL STATIC
     UniformBufferGL.cpp
     FramebufferGL.cpp
     ShadersGL.cpp
@@ -7,6 +6,7 @@ add_library(OpenGL STATIC
     MaterialGL.cpp
     CameraGL.cpp
     ObjectGL.cpp
+    SkyboxGL.cpp
     Lights/PointGL.cpp
     Lights/SpotGL.cpp
     Lights/DirectionalGL.cpp
@@ -17,6 +17,7 @@ add_library(OpenGL STATIC
 
 # GLEW 
 find_package(GLEW REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS OpenGL OpenGLWidgets)
 
 # GLFW
 set(GLFW_BUILD_EXAMPLES OFF CACHE INTERNAL "Disable examples")
@@ -30,9 +31,9 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/external/glfw ${CMAKE_BINARY_DIR}/glfw)
 cmake_policy(SET CMP0072 NEW)
 find_package(OpenGL REQUIRED)
 
-target_include_directories(OpenGL PRIVATE
+target_link_libraries(RenderingGL PUBLIC Qt6::OpenGL Qt6::OpenGLWidgets GPU GLEW::GLEW glfw OpenGL::GL Geometry)
+
+target_include_directories(RenderingGL PUBLIC
     ${CMAKE_SOURCE_DIR}/include
     ${CMAKE_SOURCE_DIR}/external/glfw/include
 )
-
-target_link_libraries(OpenGL PRIVATE GPU GLEW::GLEW glfw OpenGL::GL Geometry)

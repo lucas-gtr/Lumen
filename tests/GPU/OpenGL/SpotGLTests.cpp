@@ -10,7 +10,7 @@ TEST(SpotGLTest, Initialization) {
     light.setColor({1.0f, 1.0f, 1.0f});
     light.setIntensity(1.0f);
 
-    SpotLightGL gpu_light(light);
+    SpotLightGL gpu_light(&light);
 
     EXPECT_EQ(gpu_light.getPosition(), lin::Vec3f(1.0f, 2.0f, 3.0f));
     EXPECT_EQ(gpu_light.getDirection(), lin::Vec3f(0.0f, -1.0f, 0.0f).normalized());
@@ -25,7 +25,7 @@ TEST(SpotLightGLTest, UpdateLightSpaceMatrixUpdatesFarPlaneAndMatrix) {
   light.setDirection({0.0f, -1.0f, 0.0f});
   light.setIntensity(9.0f);
 
-  SpotLightGL lightGL(light);
+  SpotLightGL lightGL(&light);
 
   light.setIntensity(9.0f);
   lightGL.updateLightSpaceMatrix();

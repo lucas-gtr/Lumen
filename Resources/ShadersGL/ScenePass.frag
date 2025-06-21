@@ -84,7 +84,7 @@ float getShadowFactor2D(vec3 normal, vec3 lightDir, vec4 fragLightSpacePosition,
 	float bias = max(biasMaxValue * (1.0 - dot(normal, lightDir)), biasMinValue);
 
 	float shadow = 0.0;
-	float radius = 0.001;
+	float radius = 0.0001;
 	for (int i = 0; i < numSampleOffsets; ++i) {
 		vec2 offset = sampleOffsetDirections[i].xy * radius;
 		vec2 sampleUV = uv + offset;

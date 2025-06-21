@@ -6,8 +6,7 @@
 #define GPU_OPENGL_LIGHTS_SHADOWMAPGL_HPP
 
 // GCOVR_EXCL_START
-
-#include <GL/glew.h>
+#include <qopenglfunctions_3_3_core.h>
 
 /**
  * @class ShadowMapGL
@@ -17,7 +16,7 @@
  * initializing 2D and cube map shadow maps, binding the shadow map for rendering,
  * binding the shadow map texture for sampling, and cleaning up resources.
  */
-class ShadowMapGL {
+class ShadowMapGL : protected QOpenGLFunctions_3_3_Core {
 private:
   unsigned int m_depthMapFBO = 0;
   unsigned int m_depthMap    = 0;
@@ -26,11 +25,11 @@ private:
 
   GLenum m_depthMapType = GL_TEXTURE_2D;
 
-  void        createFramebuffer();
-  void        createDepthTexture2D();
-  void        createDepthTextureCube();
-  void        attachDepthTexture(GLenum target) const;
-  static void validateFramebuffer();
+  void createFramebuffer();
+  void createDepthTexture2D();
+  void createDepthTextureCube();
+  void attachDepthTexture(GLenum target);
+  void validateFramebuffer();
 
 public:
   /**
@@ -57,13 +56,15 @@ public:
   /**
    * @brief Binds the shadow map for rendering.
    */
-  void bindFramebuffer() const;
+  void bindFramebuffer();
+
+  void resize(int newSize);
 
   /**
    * @brief Binds the shadow map texture for sampling.
    * @param textureUnit The texture unit to bind the shadow map to.
    */
-  void bindTexture(unsigned int textureUnit) const;
+  void bindTexture(unsigned int textureUnit);
 
   /**
    * @brief Cleans up resources used by the shadow map.
@@ -73,7 +74,7 @@ public:
   /**
    * @brief Destructor for ShadowMapGL.
    */
-  ~ShadowMapGL();
+  ~ShadowMapGL() override;
 };
 
 // GCOVR_EXCL_STOP

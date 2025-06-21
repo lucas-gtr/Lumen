@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-06-09 10:46:40</td>
+      <td>2025-06-17 14:25:33</td>
     </tr>
   </table>
 </div>
@@ -42,14 +42,14 @@
     <tr>
       <th scope="row">Lines:</th>
       <td>17</td>
-      <td>17</td>
-      <td class="coverage-high">100.0%</td>
+      <td>18</td>
+      <td class="coverage-high">94.4%</td>
     </tr>
     <tr>
       <th scope="row">Functions:</th>
       <td>12</td>
-      <td>12</td>
-      <td class="coverage-high">100.0%</td>
+      <td>13</td>
+      <td class="coverage-high">92.3%</td>
     </tr>
     <tr>
       <th scope="row">Branches:</th>
@@ -73,18 +73,19 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l59">Face::operator==(Face const&amp;) const (line 59)</a></td><td>called 154 times, returned 154 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l78">Mesh::Mesh() (line 78)</a></td><td>called 277 times, returned 277 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l87">Mesh::Mesh(Mesh const&amp;) (line 87)</a></td><td>called 462 times, returned 462 times</td><td>88.0%</td></tr>
-    <tr><td><a href="#l127">Mesh::getBVHRoot() const (line 127)</a></td><td>called 478 times, returned 478 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l109">Mesh::getFaces() const (line 109)</a></td><td>called 1044 times, returned 1044 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l103">Mesh::getVertex(int) const (line 103)</a></td><td>called 2182 times, returned 2182 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l96">Mesh::getVertices() const (line 96)</a></td><td>called 1026 times, returned 1026 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l88">Mesh::operator=(Mesh const&amp;) (line 88)</a></td><td>called 82 times, returned 82 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l116">Mesh::operator==(Mesh const&amp;) const (line 116)</a></td><td>called 176 times, returned 176 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l129">Mesh::~Mesh() (line 129)</a></td><td>called 1815 times, returned 1815 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l33">Vertex::operator==(Vertex const&amp;) const (line 33)</a></td><td>called 330 times, returned 330 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l42">Vertex::valuePerVertex() (line 42)</a></td><td>called 105 times, returned 105 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l59">Face::operator==(Face const&amp;) const (line 59)</a></td><td>called 56 times, returned 56 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l78">Mesh::Mesh() (line 78)</a></td><td>called 104 times, returned 104 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l87">Mesh::Mesh(Mesh const&amp;) (line 87)</a></td><td>called 114 times, returned 114 times</td><td>88.0%</td></tr>
+    <tr><td><a href="#l89">Mesh::Mesh(Mesh&amp;&amp;) (line 89)</a></td><td>not called</td><td>0.0%</td></tr>
+    <tr><td><a href="#l127">Mesh::getBVHRoot() const (line 127)</a></td><td>called 176 times, returned 176 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l109">Mesh::getFaces() const (line 109)</a></td><td>called 384 times, returned 384 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l103">Mesh::getVertex(int) const (line 103)</a></td><td>called 800 times, returned 800 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l96">Mesh::getVertices() const (line 96)</a></td><td>called 376 times, returned 376 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l88">Mesh::operator=(Mesh const&amp;) (line 88)</a></td><td>called 24 times, returned 24 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l116">Mesh::operator==(Mesh const&amp;) const (line 116)</a></td><td>called 48 times, returned 48 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l129">Mesh::~Mesh() (line 129)</a></td><td>called 580 times, returned 580 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l33">Vertex::operator==(Vertex const&amp;) const (line 33)</a></td><td>called 120 times, returned 120 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l42">Vertex::valuePerVertex() (line 42)</a></td><td>called 40 times, returned 40 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -265,7 +266,7 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">TextureUV</span><span class="w">  </span><span class="n">uvCoord</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span><span class="w">          </span><span class="c1">///&lt; Texture coordinates of the vertex.</span></td>
+      <td class="src "><span class="w">  </span><span class="n">TextureUV</span><span class="w">  </span><span class="n">uv_coord</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span><span class="w">          </span><span class="c1">///&lt; Texture coordinates of the vertex.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l25" href="#l25">25</a></td>
@@ -327,7 +328,7 @@
       <td class="lineno"><a id="l33" href="#l33">33</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">330</td>
+      <td class="linecount coveredLine">120</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Vertex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -336,17 +337,17 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">6/6</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 7 taken 242 times.</div>
-          <div class="takenBranch">&check; Branch 8 taken 88 times.</div>
-          <div class="takenBranch">&check; Branch 20 taken 220 times.</div>
-          <div class="takenBranch">&check; Branch 21 taken 22 times.</div>
-          <div class="takenBranch">&check; Branch 26 taken 198 times.</div>
-          <div class="takenBranch">&check; Branch 27 taken 22 times.</div>
+          <div class="takenBranch">&check; Branch 7 taken 88 times.</div>
+          <div class="takenBranch">&check; Branch 8 taken 32 times.</div>
+          <div class="takenBranch">&check; Branch 20 taken 80 times.</div>
+          <div class="takenBranch">&check; Branch 21 taken 8 times.</div>
+          <div class="takenBranch">&check; Branch 26 taken 72 times.</div>
+          <div class="takenBranch">&check; Branch 27 taken 8 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">528</td>
-      <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">position</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">normal</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">normal</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">uvCoord</span><span class="p">.</span><span class="n">u</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">uvCoord</span><span class="p">.</span><span class="n">u</span><span class="w"> </span><span class="o">&amp;&amp;</span></td>
+      <td class="linecount coveredLine">192</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">position</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">position</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">normal</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">normal</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">uv_coord</span><span class="p">.</span><span class="n">u</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">uv_coord</span><span class="p">.</span><span class="n">u</span><span class="w"> </span><span class="o">&amp;&amp;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l35" href="#l35">35</a></td>
@@ -354,13 +355,13 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 4 taken 198 times.</div>
+          <div class="takenBranch">&check; Branch 4 taken 72 times.</div>
           <div class="notTakenBranch">&cross; Branch 5 not taken.</div>
         </div>
         </details>
       </td>
-      <td class="linecount partialCoveredLine">528</td>
-      <td class="src partialCoveredLine"><span class="w">           </span><span class="n">uvCoord</span><span class="p">.</span><span class="n">v</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">uvCoord</span><span class="p">.</span><span class="n">v</span><span class="p">;</span></td>
+      <td class="linecount partialCoveredLine">192</td>
+      <td class="src partialCoveredLine"><span class="w">           </span><span class="n">uv_coord</span><span class="p">.</span><span class="n">v</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">uv_coord</span><span class="p">.</span><span class="n">v</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l36" href="#l36">36</a></td>
@@ -408,15 +409,15 @@
       <td class="lineno"><a id="l42" href="#l42">42</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">105</td>
+      <td class="linecount coveredLine">40</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">valuePerVertex</span><span class="p">()</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l43" href="#l43">43</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">105</td>
-      <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// position (3), normal (3), uvCoord (2), tangent (3), bitangent (3)</span></td>
+      <td class="linecount coveredLine">40</td>
+      <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="c1">// position (3), normal (3), uv_coord (2), tangent (3), bitangent (3)</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l44" href="#l44">44</a></td>
@@ -527,7 +528,7 @@
       <td class="lineno"><a id="l59" href="#l59">59</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">154</td>
+      <td class="linecount coveredLine">56</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Face</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -536,14 +537,14 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">4/4</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 10 taken 88 times.</div>
-          <div class="takenBranch">&check; Branch 11 taken 66 times.</div>
-          <div class="takenBranch">&check; Branch 22 taken 66 times.</div>
-          <div class="takenBranch">&check; Branch 23 taken 22 times.</div>
+          <div class="takenBranch">&check; Branch 10 taken 32 times.</div>
+          <div class="takenBranch">&check; Branch 11 taken 24 times.</div>
+          <div class="takenBranch">&check; Branch 22 taken 24 times.</div>
+          <div class="takenBranch">&check; Branch 23 taken 8 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">220</td>
+      <td class="linecount coveredLine">80</td>
       <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span></td>
     </tr>
     <tr class="source-line">
@@ -552,12 +553,12 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 10 taken 44 times.</div>
-          <div class="takenBranch">&check; Branch 11 taken 22 times.</div>
+          <div class="takenBranch">&check; Branch 10 taken 16 times.</div>
+          <div class="takenBranch">&check; Branch 11 taken 8 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">220</td>
+      <td class="linecount coveredLine">80</td>
       <td class="src coveredLine"><span class="w">           </span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">vertexIndices</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span></td>
     </tr>
     <tr class="source-line">
@@ -676,7 +677,7 @@
       <td class="lineno"><a id="l78" href="#l78">78</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">277</td>
+      <td class="linecount coveredLine">104</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">Mesh</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default constructor.</span></td>
     </tr>
     <tr class="source-line">
@@ -741,26 +742,26 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 12 taken 462 times.</div>
+          <div class="takenBranch">&check; Branch 12 taken 114 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">462</td>
+      <td class="linecount coveredLine">114</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">Mesh</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="p">)</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default copy constructor.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l88" href="#l88">88</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">82</td>
+      <td class="linecount coveredLine">24</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default copy assignment operator.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l89" href="#l89">89</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">Mesh</span><span class="p">(</span><span class="n">Mesh</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default move constructor.</span></td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="n">Mesh</span><span class="p">(</span><span class="n">Mesh</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default move constructor.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l90" href="#l90">90</a></td>
@@ -808,7 +809,7 @@
       <td class="lineno"><a id="l96" href="#l96">96</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1026</td>
+      <td class="linecount coveredLine">376</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">getVertices</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_vertices</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -857,7 +858,7 @@
       <td class="lineno"><a id="l103" href="#l103">103</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">2182</td>
+      <td class="linecount coveredLine">800</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Vertex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">getVertex</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_vertices</span><span class="p">[</span><span class="n">index</span><span class="p">];</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -899,7 +900,7 @@
       <td class="lineno"><a id="l109" href="#l109">109</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1044</td>
+      <td class="linecount coveredLine">384</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Face</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">getFaces</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_faces</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -950,14 +951,14 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">4/4</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 7 taken 132 times.</div>
-          <div class="takenBranch">&check; Branch 8 taken 44 times.</div>
-          <div class="takenBranch">&check; Branch 20 taken 110 times.</div>
-          <div class="takenBranch">&check; Branch 21 taken 22 times.</div>
+          <div class="takenBranch">&check; Branch 7 taken 32 times.</div>
+          <div class="takenBranch">&check; Branch 8 taken 16 times.</div>
+          <div class="takenBranch">&check; Branch 20 taken 24 times.</div>
+          <div class="takenBranch">&check; Branch 21 taken 8 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">176</td>
+      <td class="linecount coveredLine">48</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">bool</span><span class="w"> </span><span class="k">operator</span><span class="o">==</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_vertices</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">m_vertices</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">m_faces</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="n">m_faces</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1034,7 +1035,7 @@
       <td class="lineno"><a id="l127" href="#l127">127</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">478</td>
+      <td class="linecount coveredLine">176</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">BVHNode</span><span class="o">*</span><span class="w"> </span><span class="nf">getBVHRoot</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_bvh_root</span><span class="p">.</span><span class="n">get</span><span class="p">();</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1048,7 +1049,7 @@
       <td class="lineno"><a id="l129" href="#l129">129</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1815</td>
+      <td class="linecount coveredLine">580</td>
       <td class="src coveredLine"><span class="w">  </span><span class="o">~</span><span class="n">Mesh</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default destructor.</span></td>
     </tr>
     <tr class="source-line">

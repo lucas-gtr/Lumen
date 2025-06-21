@@ -7,13 +7,14 @@
 #include "SceneObjects/Object3D.hpp"
 
 // NOLINTBEGIN(cppcoreguidelines-avoid-magic-numbers, readability-magic-numbers)
-IObjectGPU::IObjectGPU(const Object3D& object)
-    : m_object(&object), m_model_matrix(lin::Mat4f(object.getTransformationMatrix())),
-      m_normal_matrix(lin::Mat3f(object.getNormalMatrix())),
-      m_indicesCount(static_cast<unsigned int>(object.getMesh().getFaces().size() * 3)),
+IObjectGPU::IObjectGPU(Object3D* object)
+    : m_object(object), m_indicesCount(static_cast<unsigned int>(object->getMesh().getFaces().size() * 3)),
       m_indicesSize(m_indicesCount * sizeof(unsigned int)) {
 
-  const Mesh&  mesh        = object.getMesh();
+  updateMatrices();
+  m_object->getTransformationChangedObserver().add([this]() { updateMatrices(); });
+
+  const Mesh&  mesh        = object->getMesh();
   const size_t vertexCount = mesh.getVertices().size();
   const size_t faceCount   = mesh.getFaces().size();
 
@@ -35,8 +36,8 @@ IObjectGPU::IObjectGPU(const Object3D& object)
     m_vertices[base + 4] = static_cast<float>(v.normal.y);
     m_vertices[base + 5] = static_cast<float>(v.normal.z);
 
-    m_vertices[base + 6] = static_cast<float>(v.uvCoord.u);
-    m_vertices[base + 7] = static_cast<float>(v.uvCoord.v);
+    m_vertices[base + 6] = static_cast<float>(v.uv_coord.u);
+    m_vertices[base + 7] = static_cast<float>(v.uv_coord.v);
 
     m_vertices[base + 8]  = static_cast<float>(v.tangent.x);
     m_vertices[base + 9]  = static_cast<float>(v.tangent.y);
@@ -55,3 +56,10 @@ IObjectGPU::IObjectGPU(const Object3D& object)
   }
 }
 // NOLINTEND(cppcoreguidelines-avoid-magic-numbers, readability-magic-numbers)
+
+void IObjectGPU::updateMatrices() {
+  if(m_object != nullptr) {
+    m_model_matrix  = lin::Mat4f(m_object->getTransformationMatrix());
+    m_normal_matrix = lin::Mat3f(m_object->getNormalMatrix());
+  }
+}

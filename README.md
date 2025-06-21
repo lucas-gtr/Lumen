@@ -28,7 +28,6 @@ The project is structured into distinct modules to ensure maintainability and sc
 - **Scene:** Manages objects, camera, lights, and the skybox
 - **Rendering:** Handles the rendering pipeline and settings
 - **Export:** Manages the export of rendered images
-- **ImplementationParameters:** Handles configurable parameters required by specific rendering strategies. For example, the Exposure tone mapping requires parameters like exposure level, while others like Reinhard do not. This module provides a clean interface for managing such parameters and will integrate well with future UI components
 
 This modular design facilitates independent development and testing of each component, promoting clean code practices and ease of maintenance.
 

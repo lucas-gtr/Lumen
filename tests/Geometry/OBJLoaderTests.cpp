@@ -55,12 +55,12 @@ TEST_F(OBJLoaderTest, LoadOBJFileWithCommentsAndNoise) {
   EXPECT_EQ(v1.normal, lin::Vec3d(0.0, 1.0, 0.0));
   EXPECT_EQ(v2.normal, lin::Vec3d(1.0, 0.0, 0.0));
 
-  EXPECT_FLOAT_EQ(v0.uvCoord.u, 0.1f);
-  EXPECT_FLOAT_EQ(v0.uvCoord.v, 0.2f);
-  EXPECT_FLOAT_EQ(v1.uvCoord.u, 0.3f);
-  EXPECT_FLOAT_EQ(v1.uvCoord.v, 0.4f);
-  EXPECT_FLOAT_EQ(v2.uvCoord.u, 0.1f); 
-  EXPECT_FLOAT_EQ(v2.uvCoord.v, 0.2f);
+  EXPECT_FLOAT_EQ(v0.uv_coord.u, 0.1f);
+  EXPECT_FLOAT_EQ(v0.uv_coord.v, 0.2f);
+  EXPECT_FLOAT_EQ(v1.uv_coord.u, 0.3f);
+  EXPECT_FLOAT_EQ(v1.uv_coord.v, 0.4f);
+  EXPECT_FLOAT_EQ(v2.uv_coord.u, 0.1f); 
+  EXPECT_FLOAT_EQ(v2.uv_coord.v, 0.2f);
 
   const Face& face = mesh.getFaces()[0];
   EXPECT_EQ(face.vertexIndices[0], 0);
