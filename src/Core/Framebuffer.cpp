@@ -5,7 +5,6 @@
 #include <functional>
 #include <iostream>
 #include <numeric>
-#include <thread>
 #include <vector>
 
 #include "Core/ColorUtils.hpp"
