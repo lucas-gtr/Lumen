@@ -1,23 +1,26 @@
 # Lumen
 
-**Lumen** is a modular, modern C++20 3D rendering engine designed to demonstrate advanced software engineering practices and 3D graphics programming.  
-It serves as a testament to my proficiency in building scalable, maintainable, and high-performance rendering systems.
+**Lumen** is a modern C++20 3D rendering engine built from scratch to showcase high-performance rendering, clean architecture, and real-time + offline graphics capabilities.
+It reflects my expertise in computer graphics and professional software engineering, with a modular design, real-time OpenGL viewport, and a custom CPU-based ray tracer.
 
-![OBJ example](Gallery/OBJExampleWithBVH.png)
+![Viewport with some objects](Gallery/ViewportWithObjects.png)
 
 ## ✨ Features
 
 - **Texturing:** Supports albedo and normal mapping, with configurable wrapping (`REPEAT`, `MIRROR_REPEAT`, `CLAMP_TO_EDGE`, `CLAMP_TO_BORDER`) and filtering (`BILINEAR`, `NEAREST`) modes
-- **Modular Architecture:** Clean separation of concerns across modules like `Core`, `Scene`, `Geometry`, `Lighting`, `Rendering`, and `Export`
+- **Modular Architecture:** Clean separation of concerns across different modules
 - **Mesh Generation & Loading:** Procedural generation of cubes, spheres, and planes, along with OBJ file loading capabilities
 - **Advanced Lighting:** Implements directional, point, and spot lights with customizable parameters
 - **Camera System:** Configurable camera with aperture, focus distance, field of view, and transformation controls
+- **OpenGL Rendering View:** Real-time viewport with support for lights, shadows, tone mapping, gamma correction, textured materials, and skybox rendering  
+- **Qt User Interface:** Fully-featured Qt interface following the MVC architecture to control and inspect all scene elements dynamically  
 - **Skybox Integration:** Supports environment mapping using skybox textures
-- **Image Exporting:** Renders can be exported as PNG images with tone mapping and exposure adjustments
+- **Image Exporting:** Renders can be exported as PNG, JPEG, BMP, TGA and HDR images with tone mapping and exposure adjustments
 - **Ray Acceleration:** Ray traversal acceleration with a *Bounding Volume Hierarchy* (BVH)
+- **Ray Tracing Renderer:** High-quality image rendering using a CPU-based ray tracer, with both single-threaded and multi-threaded execution modes  
 - **Comprehensive CI:** Automated formatting, linting and testing via GitHub Actions
 
-## 🧱 Architecture Overview
+## 🧩 Architecture Overview
 
 The project is structured into distinct modules to ensure maintainability and scalability:
 
@@ -27,17 +30,19 @@ The project is structured into distinct modules to ensure maintainability and sc
 - **Lighting:** Defines different light types and their behaviors
 - **Scene:** Manages objects, camera, lights, and the skybox
 - **Rendering:** Handles the rendering pipeline and settings
+- **OpenGL:** Manages the real-time rendering view, shaders, framebuffers, and OpenGL-specific resources  
+- **Qt:** Provides the user interface and interaction logic, built with an MVC architecture for clean separation between UI, data, and control flow  
 - **Export:** Manages the export of rendered images
 
 This modular design facilitates independent development and testing of each component, promoting clean code practices and ease of maintenance.
 
-## 📖 Documentation
+## 📚 Documentation
 
-The project is available with a Doxygen documentation. The documentation has been deployed with GitHub Pages and is avvessible from this link : [https://lucas-gtr.github.io/Lumen/](https://lucas-gtr.github.io/Lumen/).
+The project is available with a Doxygen documentation. The documentation has been deployed with GitHub Pages and is accessible from this link : [https://lucas-gtr.github.io/Lumen/](https://lucas-gtr.github.io/Lumen/).
 
 It includes detailed class references and module overviews.
 
-## 🔬 Rendering Pipeline
+## 🖼️ Rendering Pipeline
 
 - **Ray Sampling**: Rendering uses a Monte Carlo approach. For each pixel, several rays are sampled using stratified sampling within a grid, ensuring uniform stochastic coverage across the pixel area. This improves convergence and reduces noise in the output.
 - **Flexible Sample Count**: The number of rays per pixel (render samples) is configurable, allowing a trade-off between quality and performance
@@ -51,6 +56,10 @@ It includes detailed class references and module overviews.
 
 - C++20 compatible compiler (e.g., GCC 10+, Clang 11+, MSVC 2019+)
 - CMake 3.10 or higher
+- OpenGL 3.3 or higher
+- Qt 6.x with the following modules:
+  - `QtWidgets`
+  - `QtOpenGLWidgets`
 
 ### Building the Project
 
@@ -77,16 +86,15 @@ make
 make run
 ```
 
-This will execute the Lumen application, rendering the scene as defined in `main.cpp` and exporting the resulting image to the Gallery directory.
-
-## 🖼️ Example Usage
-The `main.cpp` file demonstrates how to:
-- Create various meshes (triangle, cube, sphere, plane)
-- Load an OBJ model with associated textures
-- Set up materials with albedo and normal maps
-- Configure a camera with specific parameters
-- Add different types of lights to the scene
-- Render the scene and export the image
+This command will simply launches the Qt application.  
+From the graphical interface, you can then:
+- Create various meshes (cube, sphere, plane)
+- Load OBJ models
+- Add and customize directional, point, and spot lights
+- Set up materials with diffuse texture and normal maps
+- Configure a camera with aperture, focus distance, and field of view
+- Adjust tone mapping, exposure, and post-processing settings in real-time
+- Trigger a ray-traced render (single- or multi-threaded) and export the image
 
 ## ✅ Continuous Integration
 The project employs GitHub Actions for continuous integration, ensuring code quality and reliability through automated workflows:
@@ -107,23 +115,7 @@ To generate a coverage report:
 
 ```bash
 make coverage
-make update-readme
 ```
-
-This will produce a coverage report and inject a summary into the README.md between the designated markers :
-
-### Code Coverage summary
-
-<!-- COVERAGE-START -->
-
-| Metric    | Coverage |
-|-----------|----------|
-| Functions | 98.80% (338/342) |
-| Lines     | 94.70% (1401/1480) |
-
-<!-- COVERAGE-END -->
-
-The full details of the coverage report are available [here](https://html-preview.github.io/?url=https://github.com/lucas-gtr/Lumen/blob/main/tests/coverage_report/coverage_report.html)
 
 ## Commands
 
@@ -148,10 +140,8 @@ These are the available Make targets:
 
 Planned enhancements for future development:
 
-- **Multithreading on CPU** for faster rendering
+- **Auto-generated modular UI**: A powerful and flexible interface system driven by JSON schemas, enabling automatic generation of control panels (e.g., camera, lighting, materials) with customizable widgets, value ranges, and live bindings
 - **GPU acceleration with CUDA** for real-time performance
-- **Qt-based user interface** for scene editing and parameters configuration
-- **OpenGL preview window** for real-time scene visualization
 - Integration of **full rendering equation** and support for **physically-based rendering** (PBR)
 
 ## 🙋 About me
@@ -164,65 +154,17 @@ I'm a software engineer specializing in 3D development and modern C++ practices.
 
 ## 📸 Gallery
 
-### Cube example
+**Default scene when starting the application**
 
-**Cube with 1 directional light and 1 point light, no tone mapping**
+![Lumen default interface](Gallery/LumenInterface.png)
 
-![Cube example](Gallery/CubeExample.png)
+**Export window to visualize and export the rendering**
 
-*Image 800x600 - 12 triangles - 2 lights - 4 samples per pixel* | **Render time**: 03s 01ms
+![Lumen default interface](Gallery/ExportInterface.png)
 
-### Plane example
+*Image 1920x1080 - 34581 triangles - 2 lights - 4 samples per pixel* | **Render time single-threaded**: 2min 11s | **Render time multi-threaded (28 threads)**: 10s
 
-**Plane with 1 directional light and 3 spot lights, no tone mapping**
+![OBJ example](Gallery/RenderTest.png)
 
-![Plane example (no tone mapping)](Gallery/PlaneExampleNoToneMapping.png)
 
-*Image 800x600 - 2 triangles - 4 lights - 4 samples per pixel* | **Render time**: 02s 82ms
-
-**Plane with 1 directional light and 3 spot lights, Reinhard tone mapping**
-
-![Plane example (Reinhard tone mapping)](Gallery/PlaneExampleReinhard.png)
-
-*Image 800x600 - 2 triangles - 4 lights - 4 samples per pixel* | **Render time**: 02s 75ms
-
-**Plane with 1 directional light and 3 spot lights, exposure (0.5) tone mapping**
-
-![Plane example (exposure 0.5 tone mapping)](Gallery/PlaneExampleExposure-05.png)
-
-*Image 800x600 - 2 triangles - 4 lights - 4 samples per pixel* | **Render time**: 02s 80ms
-
-**Plane with 1 directional light and 3 spot lights, exposure (1.0) tone mapping**
-
-![Plane example (exposure 1.0 tone mapping)](Gallery/PlaneExampleExposure-1.png)
-
-*Image 800x600 - 2 triangles - 4 lights - 4 samples per pixel* | **Render time**: 02s 81ms
-
-### Sphere example
-
-**Sphere with 1 directional light, grayscale, without normal map**
-
-![Sphere example (without normal map)](Gallery/SphereExampleWithoutNormal.png)
-
-*Image 800x600 - 1024 triangles - 1 light - 4 samples per pixel* | **Render time**: 9s 57ms
-
-**Sphere with 1 directional light, grayscale,  with normal map**
-
-![Sphere example (with normal map)](Gallery/SphereExampleWithNormal.png)
-
-*Image 800x600 - 1024 triangles - 1 light - 4 samples per pixel* | **Render time**: 8s 75ms
-
-### OBJ example
-
-**Loading OBJ model with 2 directional lights, wtihout BVH**
-
-![OBJ example](Gallery/OBJExampleWithoutBVH.png)
-
-*Image 800x600 - 2492 triangles - 2 lights - 4 samples per pixel* | **Render time**: 1min 05s 26ms
-
-**Loading OBJ model with 2 directional lights, wtih BVH**
-
-![OBJ example](Gallery/OBJExampleWithBVH.png)
-
-*Image 800x600 - 2492 triangles - 2 lights - 4 samples per pixel* | **Render time**: 19s 96ms
 

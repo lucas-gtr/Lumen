@@ -107,5 +107,4 @@ RenderingGL)
 target_include_directories(QtInterface PRIVATE
     ${CMAKE_SOURCE_DIR}/include
     ${Qt6Widgets_INCLUDE_DIRS}
-    ${CMAKE_SOURCE_DIR}/external/glfw/include
 )

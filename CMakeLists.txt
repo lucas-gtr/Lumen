@@ -26,7 +26,6 @@ add_executable(Lumen src/main.cpp)
 
 target_include_directories(Lumen PRIVATE
     ${CMAKE_SOURCE_DIR}/include
-    ${CMAKE_SOURCE_DIR}/external/glfw/include
 )
 
 target_link_libraries(Lumen
