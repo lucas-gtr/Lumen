@@ -7,8 +7,9 @@
 
 #include <vector>
 
-#include "Core/Math/Mat4.hpp"
-#include "Core/Math/Vec3.hpp"
+#include <linalg/Mat4.hpp>
+#include <linalg/Vec3.hpp>
+
 #include "GPU/Lights/PointGPU.hpp"
 #include "Lighting/PointLight.hpp"
 
@@ -21,9 +22,9 @@
  */
 class PointLightGL : public PointLightGPU {
 private:
-  std::vector<lin::Mat4f> m_lightSpaceMatrices;
-  float                   m_near_plane = DEFAULT_LIGHT_NEAR_PLANE;
-  float                   m_far_plane  = DEFAULT_LIGHT_FAR_PLANE;
+  std::vector<linalg::Mat4f> m_light_space_matrices;
+  float                      m_near_plane = DEFAULT_LIGHT_NEAR_PLANE;
+  float                      m_far_plane  = DEFAULT_LIGHT_FAR_PLANE;
 
 public:
   /**
@@ -42,7 +43,7 @@ public:
    * @param index The index of the light space matrix to retrieve.
    * @return A raw pointer to the light space matrix data.
    */
-  const float* getLightSpaceMatrix(int index) const { return m_lightSpaceMatrices[index].data(); }
+  const float* getLightSpaceMatrix(int index) const { return m_light_space_matrices[index].data(); }
 
   /**
    * @brief Gets the far plane distance for the light.

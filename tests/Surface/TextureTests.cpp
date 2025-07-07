@@ -146,7 +146,7 @@ TEST(TextureTest, ColorSpaceDefaultSRGB) {
   double gray = 0.5;
   Texture texture;
   texture.setValue(gray);
-  texture.setColorSpace(ColorSpace::sRGB);
+  texture.setColorSpace(ColorSpace::S_RGB);
   double value = texture.getValue1d({0.0, 0.0});
   EXPECT_EQ(value, 0.5);
 }
@@ -155,7 +155,7 @@ TEST(TextureTest, ColorSpaceConversionSRGBToLinear) {
   double gray = 0.5;
   Texture texture;
   texture.setValue(gray);
-  texture.setColorSpace(ColorSpace::Linear);
+  texture.setColorSpace(ColorSpace::LINEAR);
   double value = texture.getValue1d({0.0, 0.0});
   convertToLinearSpace(gray);
   EXPECT_NEAR(value, gray, 1e-9);
@@ -164,10 +164,10 @@ TEST(TextureTest, ColorSpaceConversionSRGBToLinear) {
 TEST(TextureTest, ColorSpaceConversionLinearToSRGB) {
   Texture texture;
   texture.setValue(0.0);
-  texture.setColorSpace(ColorSpace::Linear);
+  texture.setColorSpace(ColorSpace::LINEAR);
   double gray = 0.5;
   texture.setValue(gray);
-  texture.setColorSpace(ColorSpace::sRGB);
+  texture.setColorSpace(ColorSpace::S_RGB);
 
   double value = texture.getValue1d({0.0, 0.0});
   EXPECT_NEAR(value, gray, 1e-9);

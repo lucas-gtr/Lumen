@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-06-17 14:25:33</td>
+      <td>2025-07-07 16:54:17</td>
     </tr>
   </table>
 </div>
@@ -73,12 +73,12 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l57">Framebuffer::getChannelCount() const (line 57)</a></td><td>called 24 times, returned 24 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l81">Framebuffer::getFramebuffer() const (line 81)</a></td><td>called 96 times, returned 96 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l51">Framebuffer::getHeight() const (line 51)</a></td><td>called 38 times, returned 38 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l63">Framebuffer::getSize() const (line 63)</a></td><td>called 488 times, returned 488 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l45">Framebuffer::getWidth() const (line 45)</a></td><td>called 38 times, returned 38 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l112">Framebuffer::setThreadId(int) (line 112)</a></td><td>called 189 times, returned 189 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l123">Framebuffer::SetThreadId(int) (line 123)</a></td><td>called 25 times, returned 25 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l57">Framebuffer::getChannelCount() const (line 57)</a></td><td>called 3 times, returned 3 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l81">Framebuffer::getFramebuffer() const (line 81)</a></td><td>called 12 times, returned 12 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l51">Framebuffer::getHeight() const (line 51)</a></td><td>called 5 times, returned 5 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l63">Framebuffer::getSize() const (line 63)</a></td><td>called 61 times, returned 61 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l45">Framebuffer::getWidth() const (line 45)</a></td><td>called 5 times, returned 5 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -343,28 +343,28 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">Framebuffer</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Framebuffer</span><span class="o">&amp;</span><span class="p">)</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Deleted copy constructor.</span></td>
+      <td class="src "><span class="w">  </span><span class="n">Framebuffer</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Framebuffer</span><span class="o">&amp;</span><span class="p">)</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l37" href="#l37">37</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">Framebuffer</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Framebuffer</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Deleted copy assignment operator.</span></td>
+      <td class="src "><span class="w">  </span><span class="n">Framebuffer</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Framebuffer</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l38" href="#l38">38</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">Framebuffer</span><span class="p">(</span><span class="n">Framebuffer</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Deleted move constructor.</span></td>
+      <td class="src "><span class="w">  </span><span class="n">Framebuffer</span><span class="p">(</span><span class="n">Framebuffer</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l39" href="#l39">39</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="n">Framebuffer</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Framebuffer</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Deleted move assignment operator.</span></td>
+      <td class="src "><span class="w">  </span><span class="n">Framebuffer</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Framebuffer</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l40" href="#l40">40</a></td>
@@ -405,7 +405,7 @@
       <td class="lineno"><a id="l45" href="#l45">45</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">38</td>
+      <td class="linecount coveredLine">5</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">getWidth</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">width</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -447,7 +447,7 @@
       <td class="lineno"><a id="l51" href="#l51">51</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">38</td>
+      <td class="linecount coveredLine">5</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">getHeight</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">height</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -489,7 +489,7 @@
       <td class="lineno"><a id="l57" href="#l57">57</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">24</td>
+      <td class="linecount coveredLine">3</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">getChannelCount</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">channels</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -531,7 +531,7 @@
       <td class="lineno"><a id="l63" href="#l63">63</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">488</td>
+      <td class="linecount coveredLine">61</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">size_t</span><span class="w"> </span><span class="nf">getSize</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_framebuffer_properties</span><span class="p">.</span><span class="n">bufferSize</span><span class="p">();</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -657,7 +657,7 @@
       <td class="lineno"><a id="l81" href="#l81">81</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">96</td>
+      <td class="linecount coveredLine">12</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="nf">getFramebuffer</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_framebuffer</span><span class="p">;</span><span class="w"> </span><span class="p">};</span></td>
     </tr>
     <tr class="source-line">
@@ -791,129 +791,206 @@
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">applyFactor</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">factor</span><span class="p">);</span></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l101" href="#l101">101</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">   * @brief Scales the values in the framebuffer by a given factor.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l102" href="#l102">102</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">clearThreadBuffers</span><span class="p">();</span></td>
+      <td class="src "><span class="cm">   * @param factor The factor by which to scale the framebuffer values.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l103" href="#l103">103</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">   */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l104" href="#l104">104</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
+      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">scaleBufferValues</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">factor</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l105" href="#l105">105</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @brief Sets the color of a specific pixel in the framebuffer.</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l106" href="#l106">106</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param pixel_coord The coordinates of the pixel to set.</span></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l107" href="#l107">107</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param color The color to set the pixel to.</span></td>
+      <td class="src "><span class="cm">   * @brief Clears the thread buffers.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l108" href="#l108">108</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   * @param weight The weight of the color to apply.</span></td>
+      <td class="src "><span class="cm">   */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l109" href="#l109">109</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cm">   */</span></td>
+      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">clearThreadBuffers</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l110" href="#l110">110</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setPixelColor</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">PixelCoord</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pixel_coord</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ColorRGBA</span><span class="o">&amp;</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span></td>
+      <td class="src "></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l111" href="#l111">111</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l112" href="#l112">112</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">189</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setThreadId</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">thread_id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_thread_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">thread_id</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   * @brief Sets the color of a specific pixel in the framebuffer.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l113" href="#l113">113</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">   * @param pixel_coord The coordinates of the pixel to set.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l114" href="#l114">114</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="w">  </span><span class="o">~</span><span class="n">Framebuffer</span><span class="p">();</span><span class="w"> </span><span class="c1">/// Default destructor.</span></td>
+      <td class="src "><span class="cm">   * @param color The color to set the pixel to.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l115" href="#l115">115</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="p">};</span></td>
+      <td class="src "><span class="cm">   * @param weight The weight of the color to apply.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l116" href="#l116">116</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "></td>
+      <td class="src "><span class="cm">   */</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l117" href="#l117">117</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>
-      <td class="src "><span class="cp">#endif </span><span class="c1">// CORE_FRAMEBUFFER_HPP</span></td>
+      <td class="src "><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setPixelColor</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">PixelCoord</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pixel_coord</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">ColorRGBA</span><span class="o">&amp;</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">weight</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l118" href="#l118">118</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l119" href="#l119">119</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">  </span><span class="cm">/**</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l120" href="#l120">120</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   * @brief Sets the thread ID for the current thread.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l121" href="#l121">121</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   * @param thread_id The ID of the thread.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l122" href="#l122">122</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cm">   */</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l123" href="#l123">123</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount coveredLine">25</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">SetThreadId</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">thread_id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_thread_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">thread_id</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l124" href="#l124">124</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l125" href="#l125">125</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="w">  </span><span class="o">~</span><span class="n">Framebuffer</span><span class="p">();</span><span class="w"> </span><span class="c1">///&lt; Destructor to clean up the framebuffer resources.</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l126" href="#l126">126</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="p">};</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l127" href="#l127">127</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l128" href="#l128">128</a></td>
+      <td class="linebranch">
+      </td>
+      <td class="linecount "></td>
+      <td class="src "><span class="cp">#endif </span><span class="c1">// CORE_FRAMEBUFFER_HPP</span></td>
+    </tr>
+    <tr class="source-line">
+      <td class="lineno"><a id="l129" href="#l129">129</a></td>
       <td class="linebranch">
       </td>
       <td class="linecount "></td>

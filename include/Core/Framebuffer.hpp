@@ -120,7 +120,7 @@ public:
    * @brief Sets the thread ID for the current thread.
    * @param thread_id The ID of the thread.
    */
-  static void setThreadId(int thread_id) { m_thread_id = thread_id; }
+  static void SetThreadId(int thread_id) { m_thread_id = thread_id; }
 
   ~Framebuffer(); ///< Destructor to clean up the framebuffer resources.
 };

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normal_0',['normal',['../structVertex.html#a354326d83d53233120ecfae21b8871a3',1,'Vertex::normal'],['../structRayHitInfo.html#aa95b47266b21e2fee004f579c288905b',1,'RayHitInfo::normal']]]
+  ['normal_0',['normal',['../structVertex.html#ab019a3e6b45f783cab37d984363db584',1,'Vertex::normal'],['../structRayHitInfo.html#a862c8416ff8998d7385bb110ce8ddbff',1,'RayHitInfo::normal']]]
 ];

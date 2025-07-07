@@ -38,8 +38,8 @@ private:
   int          m_chunk_size   = DEFAULT_CHUNK_SIZE;
   unsigned int m_thread_count = std::max(1U, std::thread::hardware_concurrency() - 4);
 
-  double dx = 1.0 / static_cast<double>(m_properties.width);
-  double dy = 1.0 / static_cast<double>(m_properties.height);
+  double m_dx = 1.0 / static_cast<double>(m_properties.width);
+  double m_dy = 1.0 / static_cast<double>(m_properties.height);
 
 public:
   RenderSettings() = default; ///< Default constructor initializes with default settings.
@@ -61,7 +61,7 @@ public:
    * @brief Get the horizontal step size for pixel coordinates.
    * @return The horizontal step size (dx).
    */
-  double getDx() const { return dx; }
+  double getDx() const { return m_dx; }
 
   /**
    * @brief Set the width of the rendered image.
@@ -70,7 +70,7 @@ public:
    */
   void setWidth(int width) {
     m_properties.width = std::clamp(width, MIN_WIDTH, MAX_IMAGE_WIDTH);
-    dx                 = 1.0 / static_cast<double>(width);
+    m_dx               = 1.0 / static_cast<double>(width);
   }
 
   /**
@@ -83,7 +83,7 @@ public:
    * @brief Get the vertical step size for pixel coordinates.
    * @return The vertical step size (dy).
    */
-  double getDy() const { return dy; }
+  double getDy() const { return m_dy; }
 
   /**
    * @brief Set the height of the rendered image.
@@ -92,7 +92,7 @@ public:
    */
   void setHeight(int height) {
     m_properties.height = std::clamp(height, MIN_HEIGHT, MAX_IMAGE_HEIGHT);
-    dy                  = 1.0 / static_cast<double>(height);
+    m_dy                = 1.0 / static_cast<double>(height);
   }
 
   /**

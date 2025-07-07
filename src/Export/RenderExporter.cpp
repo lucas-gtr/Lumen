@@ -21,7 +21,7 @@
 
 RenderExporter::RenderExporter(Framebuffer* framebuffer)
     : m_framebuffer(framebuffer), m_output_format_strategy(std::make_unique<OutputFormatPng>()),
-      tone_mapping_strategy(std::make_unique<NoToneMapping>()) {}
+      m_tone_mapping_strategy(std::make_unique<NoToneMapping>()) {}
 
 void RenderExporter::updateImageToExport() {
   const double* framebuffer = m_framebuffer->getFramebuffer();
@@ -31,7 +31,7 @@ void RenderExporter::updateImageToExport() {
   for(int i = 0; i < m_framebuffer->getWidth() * m_framebuffer->getHeight(); ++i) {
     for(int j = 0; j < std::min(channel_count, 3); j++) {
       double value = framebuffer[i * channel_count + j];
-      tone_mapping_strategy->apply(value);
+      m_tone_mapping_strategy->apply(value);
       m_image_to_export[i * channel_count + j] = static_cast<unsigned char>(value * NORMALIZED_TO_COLOR8);
     }
     if(channel_count == 4) {
@@ -44,7 +44,7 @@ void RenderExporter::updateImageToExport() {
 void RenderExporter::setExposure(double exposure) {
   m_exposure = std::clamp(exposure, MIN_TONE_MAPPING_EXPOSURE, MAX_TONE_MAPPING_EXPOSURE);
   if(m_tone_mapping == ToneMapping::EXPOSURE) {
-    tone_mapping_strategy = std::make_unique<ExposureToneMapping>(m_exposure);
+    m_tone_mapping_strategy = std::make_unique<ExposureToneMapping>(m_exposure);
   }
 }
 
@@ -53,17 +53,17 @@ void RenderExporter::setToneMapping(ToneMapping tone_mapping) {
 
   switch(m_tone_mapping) {
   case ToneMapping::NONE:
-    tone_mapping_strategy = std::make_unique<NoToneMapping>();
+    m_tone_mapping_strategy = std::make_unique<NoToneMapping>();
     break;
   case ToneMapping::REINHARD:
-    tone_mapping_strategy = std::make_unique<ReinhardToneMapping>();
+    m_tone_mapping_strategy = std::make_unique<ReinhardToneMapping>();
     break;
   case ToneMapping::EXPOSURE:
-    tone_mapping_strategy = std::make_unique<ExposureToneMapping>(m_exposure);
+    m_tone_mapping_strategy = std::make_unique<ExposureToneMapping>(m_exposure);
     break;
   default:
     std::cerr << "Unknown tone mapping strategy. Using no tone mapping." << '\n';
-    tone_mapping_strategy = std::make_unique<NoToneMapping>();
+    m_tone_mapping_strategy = std::make_unique<NoToneMapping>();
   }
 }
 
@@ -112,11 +112,11 @@ void RenderExporter::exportRender() {
     for(size_t i = 0; i < framebuffer.size(); ++i) {
       framebuffer[i] = static_cast<float>(m_framebuffer->getFramebuffer()[i]);
     }
-    OutputFormatHdr::write_image_hdr(getPath() + getFilename(), m_framebuffer->getWidth(), m_framebuffer->getHeight(),
-                                     m_framebuffer->getChannelCount(), framebuffer.data());
+    OutputFormatHdr::WriteImageHdr(getPath() + getFilename(), m_framebuffer->getWidth(), m_framebuffer->getHeight(),
+                                   m_framebuffer->getChannelCount(), framebuffer.data());
 
   } else {
-    render_success = m_output_format_strategy->write_image(
+    render_success = m_output_format_strategy->writeImage(
         getPath() + getFilename(), getFramebuffer()->getWidth(), getFramebuffer()->getHeight(),
         getFramebuffer()->getChannelCount(), m_image_to_export.data());
   }

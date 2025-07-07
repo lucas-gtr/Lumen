@@ -24,12 +24,12 @@
 class ShadersGL : protected QOpenGLFunctions_3_3_Core {
 private:
   unsigned int                         m_program = 0U;
-  std::unordered_map<const char*, int> m_uniformLocationCache;
+  std::unordered_map<const char*, int> m_uniform_location_cache;
 
   unsigned int       compileShader(const std::string& source, unsigned int type);
   int                checkCompileErrorsShader(unsigned int shader);
   int                checkCompileErrorsProgram(unsigned int program);
-  static std::string readShaderFromFile(const char* filePath);
+  static std::string ReadShaderFromFile(const char* file_path);
 
   void compileShadersFromSources(const std::vector<std::pair<GLenum, const char*>>& shaders);
 
@@ -46,18 +46,24 @@ public:
 
   /**
    * @brief Loads and compiles shaders from the specified source files.
-   * @param vertexShaderPath Path to the vertex shader source file.
-   * @param fragmentShaderPath Path to the fragment shader source file.
+   * @param vertex_shader_path Path to the vertex shader source file.
+   * @param fragment_shader_path Path to the fragment shader source file.
    */
-  void loadShaders(const char* vertexShaderPath, const char* fragmentShaderPath);
+  void loadShaders(const char* vertex_shader_path, const char* fragment_shader_path);
 
   /**
    * @brief Loads and compiles shaders from the specified source files, including a geometry shader.
-   * @param vertexShaderPath Path to the vertex shader source file.
-   * @param geometryShaderPath Path to the geometry shader source file.
-   * @param fragmentShaderPath Path to the fragment shader source file.
+   * @param vertex_shader_path Path to the vertex shader source file.
+   * @param geometry_shader_path Path to the geometry shader source file.
+   * @param fragment_shader_path Path to the fragment shader source file.
    */
-  void loadShaders(const char* vertexShaderPath, const char* geometryShaderPath, const char* fragmentShaderPath);
+  void loadShaders(const char* vertex_shader_path, const char* geometry_shader_path, const char* fragment_shader_path);
+
+  /**
+   * @brief Gets the OpenGL program ID of the shader.
+   * @return The OpenGL program ID.
+   */
+  unsigned int getID() const { return m_program; }
 
   /**
    * @brief Binds the shader program for use in rendering.
@@ -66,10 +72,10 @@ public:
 
   /**
    * @brief Binds a uniform block to a specified binding point.
-   * @param blockName The name of the uniform block.
-   * @param bindingPoint The binding point to which the block should be bound.
+   * @param block_name The name of the uniform block.
+   * @param binding_point The binding point to which the block should be bound.
    */
-  void bindUniformBlock(const char* blockName, unsigned int bindingPoint);
+  void bindUniformBlock(const char* block_name, unsigned int binding_point);
 
   /**
    * @brief Gets the location of a uniform variable in the shader program.

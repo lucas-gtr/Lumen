@@ -113,68 +113,68 @@ void TransformView::connectSignals() {
   connect(m_scale_z, &QLineEdit::textChanged, this, &TransformView::scaleZChanged);
 }
 
-void TransformView::setLineEditValue(QLineEdit* line_edit, double value) { line_edit->setText(QString::number(value)); }
+void TransformView::SetLineEditValue(QLineEdit* line_edit, double value) { line_edit->setText(QString::number(value)); }
 
 void TransformView::setPositionX(double value) {
   if(m_position_x->isEnabled()) {
     const QSignalBlocker blocker(m_position_x);
-    setLineEditValue(m_position_x, value);
+    SetLineEditValue(m_position_x, value);
   }
 }
 
 void TransformView::setPositionY(double value) {
   if(m_position_y->isEnabled()) {
     const QSignalBlocker blocker(m_position_y);
-    setLineEditValue(m_position_y, value);
+    SetLineEditValue(m_position_y, value);
   }
 }
 
 void TransformView::setPositionZ(double value) {
   if(m_position_z->isEnabled()) {
     const QSignalBlocker blocker(m_position_z);
-    setLineEditValue(m_position_z, value);
+    SetLineEditValue(m_position_z, value);
   }
 }
 
 void TransformView::setRotationX(double value) {
   if(m_rotation_x->isEnabled()) {
     const QSignalBlocker blocker(m_rotation_x);
-    setLineEditValue(m_rotation_x, value);
+    SetLineEditValue(m_rotation_x, value);
   }
 }
 
 void TransformView::setRotationY(double value) {
   if(m_rotation_y->isEnabled()) {
     const QSignalBlocker blocker(m_rotation_y);
-    setLineEditValue(m_rotation_y, value);
+    SetLineEditValue(m_rotation_y, value);
   }
 }
 
 void TransformView::setRotationZ(double value) {
   if(m_rotation_z->isEnabled()) {
     const QSignalBlocker blocker(m_rotation_z);
-    setLineEditValue(m_rotation_z, value);
+    SetLineEditValue(m_rotation_z, value);
   }
 }
 
 void TransformView::setScaleX(double value) {
   if(m_scale_x->isEnabled()) {
     const QSignalBlocker blocker(m_scale_x);
-    setLineEditValue(m_scale_x, value);
+    SetLineEditValue(m_scale_x, value);
   }
 }
 
 void TransformView::setScaleY(double value) {
   if(m_scale_y->isEnabled()) {
     const QSignalBlocker blocker(m_scale_y);
-    setLineEditValue(m_scale_y, value);
+    SetLineEditValue(m_scale_y, value);
   }
 }
 
 void TransformView::setScaleZ(double value) {
   if(m_scale_z->isEnabled()) {
     const QSignalBlocker blocker(m_scale_z);
-    setLineEditValue(m_scale_z, value);
+    SetLineEditValue(m_scale_z, value);
   }
 }
 

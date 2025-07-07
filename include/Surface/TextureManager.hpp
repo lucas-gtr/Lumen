@@ -90,19 +90,19 @@ public:
    * @brief Gets the default skybox texture.
    * @return A pointer to the default skybox texture.
    */
-  static Texture* defaultSkyboxTexture();
+  static Texture* DefaultSkyboxTexture();
 
   /**
    * @brief Gets the default diffuse texture.
    * @return A pointer to the default diffuse texture.
    */
-  static Texture* defaultDiffuseTexture();
+  static Texture* DefaultDiffuseTexture();
 
   /**
    * @brief Gets the default normal texture.
    * @return A pointer to the default normal texture.
    */
-  static Texture* defaultNormalTexture();
+  static Texture* DefaultNormalTexture();
 
   ~TextureManager() = default; ///< Default destructor for the TextureManager class.
 };

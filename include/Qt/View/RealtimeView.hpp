@@ -18,7 +18,7 @@ signals:
   void resized(int width, int height);
   void wheelMoved(float delta);
   void leftMouseClicked(int x, int y);
-  void middleMouseDragged(int dx, int dy, bool shiftPressed);
+  void middleMouseDragged(int dx, int dy, bool shift_pressed);
 
   void updateRequested();
 
@@ -34,7 +34,7 @@ protected:
   void onUpdate();
 
 private:
-  QPoint m_lastMousePos = QPoint(0, 0);
+  QPoint m_last_mouse_pos = QPoint(0, 0);
 
   QTimer* m_refresh_timer = nullptr;
 

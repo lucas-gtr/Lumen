@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
-#include "Core/Math/Mat3.hpp"
-#include "Core/Math/Vec3.hpp"
+#include <linalg/Mat3.hpp>
+#include <linalg/Vec3.hpp>
 
-using namespace lin;
+using namespace linalg;
 
 TEST(Mat3dTest, DefaultConstructorCreatesIdentity) {
   Mat3d m;

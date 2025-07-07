@@ -1,36 +1,23 @@
-function(add_sanitizers)
-  if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-      message(STATUS "Using GCC or Clang compiler: Sanitizers will be enabled.")
-
-      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
-      set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -fsanitize=address")
-
-      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=undefined")
-      set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -fsanitize=undefined")
-
-      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=leak")
-      set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -fsanitize=leak")
-
-      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=signed-integer-overflow")
-      set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -fsanitize=signed-integer-overflow")
-
-      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=float-cast-overflow")
-      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=float-divide-by-zero")
-      set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -fsanitize=float-cast-overflow")
-      set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -fsanitize=float-divide-by-zero")
-
-    elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-      message(STATUS "Using MSVC compiler: Only limited sanitizers supported.")
-
-      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /fsanitize=address")
-      set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} /fsanitize=address")
-
-      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /fsanitize=undefined")
-      set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} /fsanitize=undefined")
-  else()
-      message(WARNING "Unsupported compiler: No sanitizers will be added.")
+function(target_enable_sanitizers TARGET)
+  if(NOT TARGET ${TARGET})
+    message(FATAL_ERROR "target_enable_sanitizers: target '${TARGET}' does not exist")
   endif()
 
-  set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} PARENT_SCOPE)
-  set(CMAKE_LINKER_FLAGS ${CMAKE_LINKER_FLAGS} PARENT_SCOPE)
+  if(CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
+    message(STATUS "Enabling sanitizers for target '${TARGET}' (GCC/Clang)")
+
+    target_compile_options(${TARGET} PRIVATE
+      -fsanitize=address,undefined,leak,float-divide-by-zero
+      -fno-omit-frame-pointer
+    )
+    target_link_options(${TARGET} PRIVATE
+      -fsanitize=address,undefined,leak,float-divide-by-zero
+    )
+
+  elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    message(WARNING "Sanitizers on MSVC are limited or experimental; skipping sanitizers for target '${TARGET}'")
+
+  else()
+    message(WARNING "Unsupported compiler '${CMAKE_CXX_COMPILER_ID}': sanitizers not enabled for target '${TARGET}'")
+  endif()
 endfunction()

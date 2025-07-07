@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
-#include "Core/Math/Vec4.hpp"
+#include <linalg/Vec4.hpp>
 
-using namespace lin;
+using namespace linalg;
 
 TEST(Vec4dTest, DefaultConstructor) {
   Vec4d v;

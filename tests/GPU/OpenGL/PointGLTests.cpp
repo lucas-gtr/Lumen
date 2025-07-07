@@ -9,8 +9,8 @@ TEST(PointGLTest, Initialization) {
 
     PointLightGL gpu_light(&light);
 
-    EXPECT_EQ(gpu_light.getPosition(), lin::Vec3f(1.0f, 2.0f, 3.0f));
-    EXPECT_EQ(gpu_light.getColor(), lin::Vec3f(1.0f, 1.0f, 1.0f) * 2.0);
+    EXPECT_EQ(gpu_light.getPosition(), linalg::Vec3f(1.0f, 2.0f, 3.0f));
+    EXPECT_EQ(gpu_light.getColor(), linalg::Vec3f(1.0f, 1.0f, 1.0f) * 2.0);
 }
 
 TEST(PointLightGLTest, UpdateLightSpaceMatrixUpdatesFarPlaneAndMatrix) {

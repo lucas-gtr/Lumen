@@ -17,10 +17,9 @@ var searchData=
   ['addspotlightrequested_14',['addSpotLightRequested',['../classMenuView.html#aa7dd3c9dccfbf45bcec6762012ed2372',1,'MenuView']]],
   ['addtexture_15',['addTexture',['../classTextureManager.html#ae1f679dc6c0a23ec12517837305e0613',1,'TextureManager']]],
   ['addwidgettolayout_16',['addWidgetToLayout',['../classMeshBuilderDialog.html#a3350f8619e004ad22a85a66767c1e578',1,'MeshBuilderDialog']]],
-  ['alignment_2ehpp_17',['Alignment.hpp',['../Alignment_8hpp.html',1,'']]],
-  ['aperturechanged_18',['apertureChanged',['../classCameraView.html#a8100aa4381ba9c3dff55e5d377d42320',1,'CameraView']]],
-  ['application_19',['application',['../classApplication.html',1,'Application'],['../classApplication.html#a6e443cbe3481a06d8effb4fa8878499c',1,'Application::Application(int &amp;argc, char **argv)'],['../classApplication.html#afaeec66a8591b6d88049b260133d13fc',1,'Application::Application(const Application &amp;)=delete'],['../classApplication.html#a7b5be0a8e4df05ca7ceb2d3d7d275278',1,'Application::Application(Application &amp;&amp;)=delete']]],
-  ['application_2ecpp_20',['Application.cpp',['../Application_8cpp.html',1,'']]],
-  ['application_2ehpp_21',['Application.hpp',['../Application_8hpp.html',1,'']]],
-  ['apply_22',['apply',['../classExposureToneMapping.html#a14469e3c5207bc11172247e051c0e55a',1,'ExposureToneMapping::apply()'],['../classNoToneMapping.html#a60889cb0ba5125f7a48d71500aa23b23',1,'NoToneMapping::apply()'],['../classReinhardToneMapping.html#a33890e5152fa39b53b69fe992f0b802e',1,'ReinhardToneMapping::apply()'],['../classToneMappingStrategy.html#abf1e370121ec24aca9459fbe3582017e',1,'ToneMappingStrategy::apply()']]]
+  ['aperturechanged_17',['apertureChanged',['../classCameraView.html#a8100aa4381ba9c3dff55e5d377d42320',1,'CameraView']]],
+  ['application_18',['application',['../classApplication.html#a6e443cbe3481a06d8effb4fa8878499c',1,'Application::Application(int &amp;argc, char **argv)'],['../classApplication.html#afaeec66a8591b6d88049b260133d13fc',1,'Application::Application(const Application &amp;)=delete'],['../classApplication.html#a7b5be0a8e4df05ca7ceb2d3d7d275278',1,'Application::Application(Application &amp;&amp;)=delete'],['../classApplication.html',1,'Application']]],
+  ['application_2ecpp_19',['Application.cpp',['../Application_8cpp.html',1,'']]],
+  ['application_2ehpp_20',['Application.hpp',['../Application_8hpp.html',1,'']]],
+  ['apply_21',['apply',['../classExposureToneMapping.html#a14469e3c5207bc11172247e051c0e55a',1,'ExposureToneMapping::apply()'],['../classNoToneMapping.html#a60889cb0ba5125f7a48d71500aa23b23',1,'NoToneMapping::apply()'],['../classReinhardToneMapping.html#a33890e5152fa39b53b69fe992f0b802e',1,'ReinhardToneMapping::apply()'],['../classToneMappingStrategy.html#abf1e370121ec24aca9459fbe3582017e',1,'ToneMappingStrategy::apply()']]]
 ];

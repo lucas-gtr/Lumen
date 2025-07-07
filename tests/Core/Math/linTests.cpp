@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
-#include "Core/Math/lin.hpp"
+#include <linalg/linalg.hpp>
 
-using namespace lin;
+using namespace linalg;
 
 TEST(LinConversionTest, ToVec3d) {
     Vec4d v4 = {1.0, 2.0, 3.0, 4.0};

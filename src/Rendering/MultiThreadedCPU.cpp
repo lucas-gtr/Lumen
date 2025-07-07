@@ -71,7 +71,7 @@ void MultiThreadedCPU::generateChunks(int width, int height) {
 }
 
 void MultiThreadedCPU::threadWorker(int thread_id, double sample_weight, double cell_size) {
-  Framebuffer::setThreadId(thread_id);
+  Framebuffer::SetThreadId(thread_id);
   while(true) {
     if(renderer()->isStopRequested()) {
       return;

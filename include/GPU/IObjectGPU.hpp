@@ -6,9 +6,9 @@
 #define GPU_IOBJECTGPU_HPP
 
 #include <cstddef>
+#include <linalg/Mat3.hpp>
+#include <linalg/Mat4.hpp>
 
-#include "Core/Math/Mat3.hpp"
-#include "Core/Math/Mat4.hpp"
 #include "SceneObjects/Object3D.hpp"
 
 /**
@@ -25,18 +25,18 @@ private:
   std::vector<float>        m_vertices;
   std::vector<unsigned int> m_indices;
 
-  lin::Mat4f m_model_matrix  = lin::Mat4f::Identity();
-  lin::Mat3f m_normal_matrix = lin::Mat3f::Identity();
+  linalg::Mat4f m_model_matrix  = linalg::Mat4f::Identity();
+  linalg::Mat3f m_normal_matrix = linalg::Mat3f::Identity();
 
-  size_t       m_dataSize     = 0;
-  unsigned int m_indicesCount = 0;
-  size_t       m_indicesSize  = 0;
+  size_t       m_data_size     = 0;
+  unsigned int m_indices_count = 0;
+  size_t       m_indices_size  = 0;
 
 protected:
-  size_t                    dataSize() const { return m_dataSize; }
+  size_t                    dataSize() const { return m_data_size; }
   const std::vector<float>& vertices() const { return m_vertices; }
 
-  size_t                           indicesSize() const { return m_indicesSize; }
+  size_t                           indicesSize() const { return m_indices_size; }
   const std::vector<unsigned int>& indices() const { return m_indices; }
 
 public:
@@ -61,7 +61,7 @@ public:
    * @brief Gets the number of indices in the index buffer.
    * @return The number of indices.
    */
-  unsigned int getIndexCount() const { return m_indicesCount; }
+  unsigned int getIndexCount() const { return m_indices_count; }
 
   /**
    * @brief Gets the model matrix of the object.

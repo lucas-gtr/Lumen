@@ -19,16 +19,16 @@
  */
 class UniformBufferGL : protected QOpenGLFunctions_3_3_Core {
 private:
-  unsigned int m_UBO  = 0;
+  unsigned int m_ubo  = 0;
   size_t       m_size = 0;
 
 public:
   /**
    * @brief Constructor for UniformBufferGL.
    * @param size The size of the uniform buffer in bytes.
-   * @param bindingPoint The binding point for the uniform buffer.
+   * @param binding_point The binding point for the uniform buffer.
    */
-  UniformBufferGL(size_t size, unsigned int bindingPoint);
+  UniformBufferGL(size_t size, unsigned int binding_point);
 
   UniformBufferGL(const UniformBufferGL&)            = delete;
   UniformBufferGL& operator=(const UniformBufferGL&) = delete;
@@ -47,7 +47,7 @@ public:
    * @brief Gets the ID of the uniform buffer object.
    * @return The OpenGL ID of the uniform buffer.
    */
-  unsigned int getID() const { return m_UBO; }
+  unsigned int getID() const { return m_ubo; }
 
   /**
    * @brief Destructor for UniformBufferGL.

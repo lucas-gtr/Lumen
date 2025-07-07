@@ -18,9 +18,9 @@
  */
 class SphereMeshBuilder : public MeshBuilder {
 private:
-  double radius;
-  int    segments;
-  int    rings;
+  double m_radius;
+  int    m_segments;
+  int    m_rings;
 
 public:
   /**

@@ -94,12 +94,12 @@ void RenderWindowView::onRenderProgress(RenderStats stats) {
   const double progress = static_cast<double>(stats.current_chunk) / stats.total_chunks * 100.0;
   m_progress_bar->setValue(static_cast<int>(progress));
 
-  const QString statusText = QString("Rendering: %1/%2 chunks - Elapsed: %3, Remaining: %4")
-                                 .arg(stats.current_chunk)
-                                 .arg(stats.total_chunks)
-                                 .arg(formatSecondsToString(stats.elapsed_time))
-                                 .arg(formatSecondsToString(stats.remaining_time));
-  m_status_label->setText(statusText);
+  const QString status_text = QString("Rendering: %1/%2 chunks - Elapsed: %3, Remaining: %4")
+                                  .arg(stats.current_chunk)
+                                  .arg(stats.total_chunks)
+                                  .arg(FormatSecondsToString(stats.elapsed_time))
+                                  .arg(FormatSecondsToString(stats.remaining_time));
+  m_status_label->setText(status_text);
 }
 
 void RenderWindowView::onUpdateRenderPreview(const double* framebuffer_data) { updateImage(framebuffer_data); }
@@ -108,7 +108,7 @@ void RenderWindowView::onRenderFinished(double elapsed_time) {
   m_render_finished = true;
 
   m_progress_bar->setValue(RENDER_PROGRESS_BAR_MAX_PERCENT);
-  m_status_label->setText("Rendering completed in " + formatSecondsToString(elapsed_time));
+  m_status_label->setText("Rendering completed in " + FormatSecondsToString(elapsed_time));
   emit renderFinished();
 }
 
@@ -167,7 +167,7 @@ void RenderWindowView::updateImage(const unsigned char* image_data) {
   m_image_label->setPixmap(QPixmap::fromImage(std::move(image)));
 }
 
-QString RenderWindowView::formatSecondsToString(double seconds) {
+QString RenderWindowView::FormatSecondsToString(double seconds) {
   const int hours   = static_cast<int>(seconds / 3600);
   const int minutes = static_cast<int>((seconds - hours * 3600) / 60);
   const int secs    = static_cast<int>(seconds - hours * 3600 - minutes * 60);

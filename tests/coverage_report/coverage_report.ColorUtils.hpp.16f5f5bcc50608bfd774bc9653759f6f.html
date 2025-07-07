@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-06-17 14:25:33</td>
+      <td>2025-07-07 16:54:17</td>
     </tr>
   </table>
 </div>
@@ -73,17 +73,17 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l110">convertToLinearSpace(ColorRGB&amp;) (line 110)</a></td><td>called 18 times, returned 18 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l116">convertToLinearSpace(ColorRGBA&amp;) (line 116)</a></td><td>called 88 times, returned 88 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l93">convertToLinearSpace(double&amp;) (line 93)</a></td><td>called 420 times, returned 420 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l110">convertToLinearSpace(ColorRGB&amp;) (line 110)</a></td><td>called 3 times, returned 3 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l116">convertToLinearSpace(ColorRGBA&amp;) (line 116)</a></td><td>called 24 times, returned 24 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l93">convertToLinearSpace(double&amp;) (line 93)</a></td><td>called 93 times, returned 93 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l101">convertToLinearSpace(float&amp;) (line 101)</a></td><td>not called</td><td>0.0%</td></tr>
-    <tr><td><a href="#l81">convertToSRGBSpace(double&amp;) (line 81)</a></td><td>called 674 times, returned 674 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l36">toGrayscale(ColorRGB const&amp;) (line 36)</a></td><td>called 24 times, returned 24 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l45">toGrayscale(ColorRGBA const&amp;) (line 45)</a></td><td>called 48 times, returned 48 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l61">toRGB(ColorRGBA const&amp;) (line 61)</a></td><td>called 16 times, returned 16 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l54">toRGB(double) (line 54)</a></td><td>called 16 times, returned 16 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l75">toRGBA(ColorRGB const&amp;) (line 75)</a></td><td>called 64 times, returned 64 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l68">toRGBA(double) (line 68)</a></td><td>called 16 times, returned 16 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l81">convertToSRGBSpace(double&amp;) (line 81)</a></td><td>called 123 times, returned 123 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l36">toGrayscale(ColorRGB const&amp;) (line 36)</a></td><td>called 3 times, returned 3 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l45">toGrayscale(ColorRGBA const&amp;) (line 45)</a></td><td>called 6 times, returned 6 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l61">toRGB(ColorRGBA const&amp;) (line 61)</a></td><td>called 2 times, returned 2 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l54">toRGB(double) (line 54)</a></td><td>called 2 times, returned 2 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l75">toRGBA(ColorRGB const&amp;) (line 75)</a></td><td>called 8 times, returned 8 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l68">toRGBA(double) (line 68)</a></td><td>called 2 times, returned 2 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -347,14 +347,14 @@
       <td class="lineno"><a id="l36" href="#l36">36</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">24</td>
+      <td class="linecount coveredLine">3</td>
       <td class="src coveredLine"><span class="kr">inline</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">toGrayscale</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ColorRGB</span><span class="o">&amp;</span><span class="w"> </span><span class="n">color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l37" href="#l37">37</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">24</td>
+      <td class="linecount coveredLine">3</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">RED_CHANNEL</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">r</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GREEN_CHANNEL</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">g</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">BLUE_CHANNEL</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">b</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -410,14 +410,14 @@
       <td class="lineno"><a id="l45" href="#l45">45</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">48</td>
+      <td class="linecount coveredLine">6</td>
       <td class="src coveredLine"><span class="kr">inline</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">toGrayscale</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ColorRGBA</span><span class="o">&amp;</span><span class="w"> </span><span class="n">color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l46" href="#l46">46</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">48</td>
+      <td class="linecount coveredLine">6</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">RED_CHANNEL</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">r</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GREEN_CHANNEL</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">g</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">BLUE_CHANNEL</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">b</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -473,7 +473,7 @@
       <td class="lineno"><a id="l54" href="#l54">54</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">16</td>
+      <td class="linecount coveredLine">2</td>
       <td class="src coveredLine"><span class="kr">inline</span><span class="w"> </span><span class="n">ColorRGB</span><span class="w"> </span><span class="nf">toRGB</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">grayscale</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="n">grayscale</span><span class="p">,</span><span class="w"> </span><span class="n">grayscale</span><span class="p">,</span><span class="w"> </span><span class="n">grayscale</span><span class="p">};</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -522,7 +522,7 @@
       <td class="lineno"><a id="l61" href="#l61">61</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">16</td>
+      <td class="linecount coveredLine">2</td>
       <td class="src coveredLine"><span class="kr">inline</span><span class="w"> </span><span class="n">ColorRGB</span><span class="w"> </span><span class="nf">toRGB</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ColorRGBA</span><span class="o">&amp;</span><span class="w"> </span><span class="n">color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="n">color</span><span class="p">.</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">b</span><span class="p">};</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -571,7 +571,7 @@
       <td class="lineno"><a id="l68" href="#l68">68</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">16</td>
+      <td class="linecount coveredLine">2</td>
       <td class="src coveredLine"><span class="kr">inline</span><span class="w"> </span><span class="n">ColorRGBA</span><span class="w"> </span><span class="nf">toRGBA</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">grayscale</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="n">grayscale</span><span class="p">,</span><span class="w"> </span><span class="n">grayscale</span><span class="p">,</span><span class="w"> </span><span class="n">grayscale</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">};</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -620,7 +620,7 @@
       <td class="lineno"><a id="l75" href="#l75">75</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">64</td>
+      <td class="linecount coveredLine">8</td>
       <td class="src coveredLine"><span class="kr">inline</span><span class="w"> </span><span class="n">ColorRGBA</span><span class="w"> </span><span class="nf">toRGBA</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">ColorRGB</span><span class="o">&amp;</span><span class="w"> </span><span class="n">color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="n">color</span><span class="p">.</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">.</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">};</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -662,7 +662,7 @@
       <td class="lineno"><a id="l81" href="#l81">81</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">674</td>
+      <td class="linecount coveredLine">123</td>
       <td class="src coveredLine"><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">convertToSRGBSpace</span><span class="p">(</span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -671,26 +671,26 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 408 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 266 times.</div>
+          <div class="takenBranch">&check; Branch 0 taken 51 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 72 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">674</td>
+      <td class="linecount coveredLine">123</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">RGB_THRESHOLD</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l83" href="#l83">83</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">408</td>
+      <td class="linecount coveredLine">51</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">value</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">RGB_THRESHOLD_FACTOR</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l84" href="#l84">84</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">408</td>
+      <td class="linecount coveredLine">51</td>
       <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -704,7 +704,7 @@
       <td class="lineno"><a id="l86" href="#l86">86</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">266</td>
+      <td class="linecount coveredLine">72</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pow</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">RGB_GAMMA</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">RGB_FACTOR</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">COLOR_SPACE_ADDENDUM</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -753,7 +753,7 @@
       <td class="lineno"><a id="l93" href="#l93">93</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">420</td>
+      <td class="linecount coveredLine">93</td>
       <td class="src coveredLine"><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">convertToLinearSpace</span><span class="p">(</span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -762,26 +762,26 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 8 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 412 times.</div>
+          <div class="takenBranch">&check; Branch 0 taken 1 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 92 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">420</td>
+      <td class="linecount coveredLine">93</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">SRGB_THRESHOLD</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l95" href="#l95">95</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">8</td>
+      <td class="linecount coveredLine">1</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">value</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">SRGB_THRESHOLD_FACTOR</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l96" href="#l96">96</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">8</td>
+      <td class="linecount coveredLine">1</td>
       <td class="src coveredLine"><span class="w">    </span><span class="k">return</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -795,7 +795,7 @@
       <td class="lineno"><a id="l98" href="#l98">98</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">412</td>
+      <td class="linecount coveredLine">92</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pow</span><span class="p">((</span><span class="n">value</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">COLOR_SPACE_ADDENDUM</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">SRGB_FACTOR</span><span class="p">,</span><span class="w"> </span><span class="n">SRGB_GAMMA</span><span class="p">));</span></td>
     </tr>
     <tr class="source-line">
@@ -879,35 +879,35 @@
       <td class="lineno"><a id="l110" href="#l110">110</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">3</td>
       <td class="src coveredLine"><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">convertToLinearSpace</span><span class="p">(</span><span class="n">ColorRGB</span><span class="o">&amp;</span><span class="w"> </span><span class="n">color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l111" href="#l111">111</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">3</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">convertToLinearSpace</span><span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="n">r</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l112" href="#l112">112</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">3</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">convertToLinearSpace</span><span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="n">g</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l113" href="#l113">113</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">3</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">convertToLinearSpace</span><span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="n">b</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l114" href="#l114">114</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">3</td>
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -921,35 +921,35 @@
       <td class="lineno"><a id="l116" href="#l116">116</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">88</td>
+      <td class="linecount coveredLine">24</td>
       <td class="src coveredLine"><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">convertToLinearSpace</span><span class="p">(</span><span class="n">ColorRGBA</span><span class="o">&amp;</span><span class="w"> </span><span class="n">color</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l117" href="#l117">117</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">88</td>
+      <td class="linecount coveredLine">24</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">convertToLinearSpace</span><span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="n">r</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l118" href="#l118">118</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">88</td>
+      <td class="linecount coveredLine">24</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">convertToLinearSpace</span><span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="n">g</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l119" href="#l119">119</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">88</td>
+      <td class="linecount coveredLine">24</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">convertToLinearSpace</span><span class="p">(</span><span class="n">color</span><span class="p">.</span><span class="n">b</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l120" href="#l120">120</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">88</td>
+      <td class="linecount coveredLine">24</td>
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">

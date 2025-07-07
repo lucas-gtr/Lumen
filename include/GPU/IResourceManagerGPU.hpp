@@ -27,7 +27,7 @@
  */
 class IResourceManagerGPU {
 private:
-  virtual void setCamera(Camera* camera, int viewportWidth, int viewportHeight) = 0;
+  virtual void setCamera(Camera* camera, int viewport_width, int viewport_height) = 0;
 
   virtual const ITextureGPU* addTexture(Texture* texture) = 0;
 

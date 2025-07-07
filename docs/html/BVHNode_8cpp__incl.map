@@ -1,31 +1,20 @@
 <map id="/home/lucasgtr/lumen/src/BVH/BVHNode.cpp" name="/home/lucasgtr/lumen/src/BVH/BVHNode.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="479,5,650,45"/>
-<area shape="rect" id="Node000002" href="$BVHNode_8hpp.html" title="Header file for the BVHNode class." alt="" coords="291,93,435,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="517,48,407,91,405,86,515,43"/>
-<area shape="rect" id="Node000004" href="$Vec3_8hpp.html" title="Header file for the Vec3 class, representing a 3D vector." alt="" coords="287,167,439,192"/>
-<area shape="poly" id="edge13_Node000001_Node000004" title=" " alt="" coords="543,47,449,121,393,161,390,157,446,117,540,43"/>
-<area shape="rect" id="Node000011" href="$Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="594,93,719,119"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="589,44,634,82,631,86,585,48"/>
-<area shape="rect" id="Node000013" href="$MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="753,93,936,119"/>
-<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="632,43,791,87,790,92,631,48"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="186,167,263,192"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="342,121,261,163,258,158,340,116"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="366,119,366,153,361,153,361,119"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="5,240,68,265"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="306,195,82,243,81,237,305,189"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="93,240,191,265"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="329,195,191,238,190,233,327,189"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="215,240,295,265"/>
-<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="347,194,286,235,283,230,345,190"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="320,240,407,265"/>
-<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="366,192,366,226,361,226,361,192"/>
-<area shape="rect" id="Node000009" href="$Alignment_8hpp.html" title="Defines alignment constants for vector and matrix types." alt="" coords="431,240,619,265"/>
-<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="390,190,487,232,485,237,388,194"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="555,313,625,339"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="537,264,572,301,568,305,533,267"/>
-<area shape="poly" id="edge11_Node000011_Node000010" title=" " alt="" coords="659,119,654,183,647,225,634,266,611,304,606,302,629,264,641,224,649,182,654,119"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="695,167,792,192"/>
-<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="672,117,720,156,717,160,669,121"/>
-<area shape="rect" id="Node000014" title=" " alt="" coords="816,167,895,192"/>
-<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="849,119,854,153,849,154,844,119"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="169,5,339,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,167,127,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,48,129,67,93,95,77,123,70,153,65,152,72,121,89,92,126,62,169,43"/>
+<area shape="rect" id="Node000003" href="$BVHNode_8hpp.html" title="Header file for the BVHNode class." alt="" coords="103,93,247,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,47,199,85,195,82,233,44"/>
+<area shape="rect" id="Node000005" href="$Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="271,93,397,119"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="275,44,314,82,310,85,272,47"/>
+<area shape="rect" id="Node000008" href="$MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="421,93,604,119"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="317,43,463,87,461,92,315,48"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="159,121,97,161,94,157,156,116"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="151,167,229,192"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="180,118,187,153,182,154,175,120"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="256,167,327,192"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="329,120,307,156,303,154,325,118"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="351,167,448,192"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="347,117,381,155,378,158,343,121"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="473,167,552,192"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="515,119,515,153,510,153,510,119"/>
 </map>

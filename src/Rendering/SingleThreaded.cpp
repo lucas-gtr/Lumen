@@ -18,7 +18,7 @@ bool SingleThreaded::render() {
   const int width  = renderer()->getRenderSettings().getWidth();
 
   renderer()->getFramebuffer()->initThreadBuffers(1);
-  Framebuffer::setThreadId(0);
+  Framebuffer::SetThreadId(0);
 
   for(int s = 0; s < samples_per_pixel; ++s) {
     if(renderer()->isStopRequested()) {

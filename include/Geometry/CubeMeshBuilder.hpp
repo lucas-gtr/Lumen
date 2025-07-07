@@ -18,7 +18,7 @@
  */
 class CubeMeshBuilder : public MeshBuilder {
 private:
-  double size;
+  double m_size;
 
   constexpr static int VERTICES_PER_FACE       = 4;
   constexpr static int TOTAL_VERTICES          = 24;

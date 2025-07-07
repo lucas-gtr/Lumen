@@ -1,15 +1,15 @@
 var searchData=
 [
   ['u_0',['u',['../structTextureUV.html#a72255a9de829f718359a1dbc5ff64180',1,'TextureUV']]],
-  ['unbind_1',['unbind',['../classMaterialGL.html#ac03278981f6fc8a11c2300d311a05af7',1,'MaterialGL::unbind()'],['../classObjectGL.html#abfb53ec22f82d9a7774d5de49d658b90',1,'ObjectGL::unbind()'],['../classTextureGL.html#a9b94b23026c633af2cbbe066efe5aa0e',1,'TextureGL::unbind()']]],
-  ['uniformbuffergl_2',['uniformbuffergl',['../classUniformBufferGL.html#af71e4dfb02d029af8281526475cc7e53',1,'UniformBufferGL::UniformBufferGL(size_t size, unsigned int bindingPoint)'],['../classUniformBufferGL.html#afb6879a470cccc16b62e332ecb8d27a3',1,'UniformBufferGL::UniformBufferGL(const UniformBufferGL &amp;)=delete'],['../classUniformBufferGL.html#a82f27f8e3d84b51d6577d4db4a0d8d4b',1,'UniformBufferGL::UniformBufferGL(UniformBufferGL &amp;&amp;)=delete'],['../classUniformBufferGL.html',1,'UniformBufferGL']]],
+  ['unbind_1',['unbind',['../classMaterialGL.html#ac03278981f6fc8a11c2300d311a05af7',1,'MaterialGL::unbind()'],['../classObjectGL.html#abfb53ec22f82d9a7774d5de49d658b90',1,'ObjectGL::unbind()'],['../classTextureGL.html#aad9823bfbbbe8e11dac3df366c62b504',1,'TextureGL::unbind()']]],
+  ['uniformbuffergl_2',['uniformbuffergl',['../classUniformBufferGL.html#aef690002104edadae2f3d27fc388362d',1,'UniformBufferGL::UniformBufferGL(size_t size, unsigned int binding_point)'],['../classUniformBufferGL.html#afb6879a470cccc16b62e332ecb8d27a3',1,'UniformBufferGL::UniformBufferGL(const UniformBufferGL &amp;)=delete'],['../classUniformBufferGL.html#a82f27f8e3d84b51d6577d4db4a0d8d4b',1,'UniformBufferGL::UniformBufferGL(UniformBufferGL &amp;&amp;)=delete'],['../classUniformBufferGL.html',1,'UniformBufferGL']]],
   ['uniformbuffergl_2ecpp_3',['UniformBufferGL.cpp',['../UniformBufferGL_8cpp.html',1,'']]],
   ['uniformbuffergl_2ehpp_4',['UniformBufferGL.hpp',['../UniformBufferGL_8hpp.html',1,'']]],
   ['unselectobject_5',['unselectObject',['../classRealtimeController.html#a9f55eba131f601260b4c303be4815e35',1,'RealtimeController']]],
   ['update_6',['update',['../classRenderTime.html#ae890bef9792200f01f32e4ba9ba03cb7',1,'RenderTime']]],
   ['updatedata_7',['updateData',['../classUniformBufferGL.html#a0d9c0796d38484ac94238c1bbfcd4bc9',1,'UniformBufferGL']]],
   ['updateframebuffer_8',['updateFrameBuffer',['../classFramebuffer.html#a49beff864decae43b73e57593ca739fb',1,'Framebuffer']]],
-  ['updatehitinfofrombarycentric_9',['updateHitInfoFromBarycentric',['../namespaceRayIntersection.html#ac54bed59e899490486673e80fb28a103',1,'RayIntersection']]],
+  ['updatehitinfofrombarycentric_9',['updateHitInfoFromBarycentric',['../namespaceRayIntersection.html#a76b731fb7ea3a7ac4552b90d8ed07197',1,'RayIntersection']]],
   ['updateimagetoexport_10',['updateImageToExport',['../classRenderExporter.html#afc77db0405943044ba90465fcc1b34e5',1,'RenderExporter']]],
   ['updatelightspacematrices_11',['updateLightSpaceMatrices',['../classPointLightGL.html#adf6d445be2efeae38bcbf6953753bb89',1,'PointLightGL']]],
   ['updatelightspacematrix_12',['updatelightspacematrix',['../classDirectionalLightGL.html#a6becc3c7f0f7d1c941f2872b9f107c23',1,'DirectionalLightGL::updateLightSpaceMatrix()'],['../classSpotLightGL.html#a6602d199251324cd8923b8bcb20e7b77',1,'SpotLightGL::updateLightSpaceMatrix()']]],
@@ -25,5 +25,5 @@ var searchData=
   ['updateviewportcamera_22',['updateviewportcamera',['../classCameraGL.html#a4cf7e7383ef0323d21274554fcc0f7a3',1,'CameraGL::updateViewportCamera()'],['../classRealtimeController.html#a6be933ce97ff5e535f72566a370eb925',1,'RealtimeController::updateViewportCamera()'],['../classCameraView.html#a575ccf3c344ba8454e590c492b63639e',1,'CameraView::updateViewportCamera()']]],
   ['uploadtogpu_23',['uploadtogpu',['../classIObjectGPU.html#ab39bc01224cdbe2d95138aaca98c8a12',1,'IObjectGPU::uploadToGPU()'],['../classITextureGPU.html#a6254c7e2e64868c29b8816b921231187',1,'ITextureGPU::uploadToGPU()'],['../classObjectGL.html#a846cc125a4f0f1cfbbbe37e98ecc4d54',1,'ObjectGL::uploadToGPU()'],['../classTextureGL.html#ab6516611399cb35cdfd558b02cb7f40a',1,'TextureGL::uploadToGPU()']]],
   ['uv_5fcoord_24',['uv_coord',['../structVertex.html#ae8411cdcc478f01e1b2f3f60af0c521e',1,'Vertex']]],
-  ['uvcoordinates_25',['uvCoordinates',['../structRayHitInfo.html#a88822e8372954d1008b3fb45a812016d',1,'RayHitInfo']]]
+  ['uv_5fcoordinates_25',['uv_coordinates',['../structRayHitInfo.html#a948393af4357e504a02e2839e93b0041',1,'RayHitInfo']]]
 ];

@@ -1,0 +1,11 @@
+build-essential
+cmake
+clang-format
+clang-tidy
+ninja-build
+libgl1-mesa-dev
+libxrandr-dev
+libxinerama-dev
+libxcursor-dev
+libxi-dev
+qt6-base-dev

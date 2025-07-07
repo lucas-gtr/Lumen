@@ -11,11 +11,11 @@
 
 std::unique_ptr<Material> MaterialManager::s_default_material = nullptr;
 
-Material* MaterialManager::defaultMaterial() {
+Material* MaterialManager::DefaultMaterial() {
   if(s_default_material == nullptr) {
     s_default_material = std::make_unique<Material>();
-    s_default_material->setDiffuseTexture(TextureManager::defaultDiffuseTexture());
-    s_default_material->setNormalTexture(TextureManager::defaultNormalTexture());
+    s_default_material->setDiffuseTexture(TextureManager::DefaultDiffuseTexture());
+    s_default_material->setNormalTexture(TextureManager::DefaultNormalTexture());
   }
   return s_default_material.get();
 }

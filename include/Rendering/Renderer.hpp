@@ -38,7 +38,7 @@ private:
 
   std::atomic<bool> m_stop_requested = false;
 
-  Observer<double> m_renderProgressObserver;
+  Observer<double> m_render_progress_observer;
 
   ColorRGBA traceRay(const Ray& ray) const;
   bool      isValidHit(const RayHitInfo& hit_info) const;
@@ -66,7 +66,7 @@ public:
    * @brief Gets the observer for render progress updates.
    * @return A reference to the observer that notifies about render progress.
    */
-  Observer<double>& getRenderProgressObserver() { return m_renderProgressObserver; }
+  Observer<double>& getRenderProgressObserver() { return m_render_progress_observer; }
 
   RenderTime* getRenderTime() const { return m_render_time.get(); }
 

@@ -30,7 +30,7 @@ private:
 
   MainWindow* m_window = nullptr;
   void        createDefaultScene();
-  static void setStylesheet();
+  static void SetStylesheet();
 
 public:
   /**

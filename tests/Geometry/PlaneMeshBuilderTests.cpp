@@ -29,13 +29,13 @@ TEST(PlaneMeshBuilderTest, BuildFaceIndices) {
     
     EXPECT_EQ(mesh.getFaces().size(), 2);
     
-    EXPECT_EQ(mesh.getFaces()[0].vertexIndices[0], 0);
-    EXPECT_EQ(mesh.getFaces()[0].vertexIndices[1], 2);
-    EXPECT_EQ(mesh.getFaces()[0].vertexIndices[2], 1);
+    EXPECT_EQ(mesh.getFaces()[0].vertex_indices[0], 0);
+    EXPECT_EQ(mesh.getFaces()[0].vertex_indices[1], 2);
+    EXPECT_EQ(mesh.getFaces()[0].vertex_indices[2], 1);
 
-    EXPECT_EQ(mesh.getFaces()[1].vertexIndices[0], 0);
-    EXPECT_EQ(mesh.getFaces()[1].vertexIndices[1], 3);
-    EXPECT_EQ(mesh.getFaces()[1].vertexIndices[2], 2);
+    EXPECT_EQ(mesh.getFaces()[1].vertex_indices[0], 0);
+    EXPECT_EQ(mesh.getFaces()[1].vertex_indices[1], 3);
+    EXPECT_EQ(mesh.getFaces()[1].vertex_indices[2], 2);
 }
 
 TEST(PlaneMeshBuilderTest, BuildVertexNormals) {

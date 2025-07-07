@@ -18,8 +18,8 @@
  */
 class PlaneMeshBuilder : public MeshBuilder {
 private:
-  double width;
-  double length;
+  double m_width;
+  double m_length;
 
 public:
   /**

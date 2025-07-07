@@ -24,29 +24,29 @@ Application::Application(int& argc, char** argv)
           new MainWindow(m_scene.get(), m_texture_manager.get(), m_material_manager.get(), m_render_settings.get())) {
 
   m_window->setAttribute(Qt::WA_QuitOnClose);
-  setStylesheet();
+  SetStylesheet();
   createDefaultScene();
 }
 // NOLINTEND(cppcoreguidelines-owning-memory)
 
 // NOLINTBEGIN(cppcoreguidelines-avoid-magic-numbers, readability-magic-numbers)
 void Application::createDefaultScene() {
-  auto cubeMeshBuilder = std::make_shared<CubeMeshBuilder>(1.0);
-  auto cube            = cubeMeshBuilder->build();
-  auto cubeObject      = std::make_unique<Object3D>(cube);
-  m_scene->addObject("Default Cube", std::move(cubeObject));
+  auto cube_mesh_builder = std::make_shared<CubeMeshBuilder>(1.0);
+  auto cube              = cube_mesh_builder->build();
+  auto cube_object       = std::make_unique<Object3D>(cube);
+  m_scene->addObject("Default Cube", std::move(cube_object));
 
-  auto directionalLight = std::make_unique<DirectionalLight>();
-  directionalLight->setIntensity(1.0);
-  directionalLight->setDirection({0.5, -1.0, -2.0});
-  m_scene->addLight("Directional Light", std::move(directionalLight));
+  auto directional_light = std::make_unique<DirectionalLight>();
+  directional_light->setIntensity(1.0);
+  directional_light->setDirection({0.5, -1.0, -2.0});
+  m_scene->addLight("Directional Light", std::move(directional_light));
 
-  m_scene->getCamera()->setPosition(lin::Vec3d(-3.0, 1.5, 5.0));
-  m_scene->getCamera()->setRotation(lin::Vec3d(-15.0, -30.0, 0.0));
+  m_scene->getCamera()->setPosition(linalg::Vec3d(-3.0, 1.5, 5.0));
+  m_scene->getCamera()->setRotation(linalg::Vec3d(-15.0, -30.0, 0.0));
 }
 // NOLINTEND(cppcoreguidelines-avoid-magic-numbers, readability-magic-numbers)
 
-void Application::setStylesheet() { setStyle("Fusion"); }
+void Application::SetStylesheet() { setStyle("Fusion"); }
 
 int Application::run() {
   m_window->show();

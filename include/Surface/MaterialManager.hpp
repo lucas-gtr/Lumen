@@ -100,7 +100,7 @@ public:
    * @brief Gets the default material.
    * @return A pointer to the default material.
    */
-  static Material* defaultMaterial();
+  static Material* DefaultMaterial();
 
   ~MaterialManager() = default; ///< Default destructor for the MaterialManager class.
 };

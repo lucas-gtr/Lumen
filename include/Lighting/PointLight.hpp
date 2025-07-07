@@ -5,8 +5,9 @@
 #ifndef LIGHTING_POINTLIGHT_HPP
 #define LIGHTING_POINTLIGHT_HPP
 
+#include <linalg/Vec3.hpp>
+
 #include "Core/CommonTypes.hpp"
-#include "Core/Math/Vec3.hpp"
 #include "Lighting/Light.hpp"
 
 /**
@@ -19,7 +20,7 @@
  */
 class PointLight : public Light {
 public:
-  PointLight() : Light(LightType::Point) {} ///< Constructor with light type.
+  PointLight() : Light(LightType::POINT) {} ///< Constructor with light type.
 
   PointLight(const PointLight&)            = delete;
   PointLight& operator=(const PointLight&) = delete;
@@ -31,7 +32,7 @@ public:
    * @param point The point from which to calculate the direction.
    * @return The direction vector from the point to the light.
    */
-  lin::Vec3d getDirectionFromPoint(const lin::Vec3d& point) const override;
+  linalg::Vec3d getDirectionFromPoint(const linalg::Vec3d& point) const override;
 
   /**
    * @brief Gets the light factor at a given point and normal.
@@ -39,7 +40,7 @@ public:
    * @param normal The normal vector at the point.
    * @return The light factor at the given point and normal.
    */
-  ColorRGB getLightFactor(const lin::Vec3d& point, const lin::Vec3d& normal) const override;
+  ColorRGB getLightFactor(const linalg::Vec3d& point, const linalg::Vec3d& normal) const override;
 
   ~PointLight() override = default; ///< Default destructor.
 };

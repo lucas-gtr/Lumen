@@ -12,29 +12,29 @@
 ObjectGL::ObjectGL(Object3D* object, MaterialGL* material) : IObjectGPU(object), m_material(material) {
   initializeOpenGLFunctions();
 
-  glGenVertexArrays(1, &m_VAO);
-  glGenBuffers(1, &m_VBO);
-  glGenBuffers(1, &m_EBO);
+  glGenVertexArrays(1, &m_vao);
+  glGenBuffers(1, &m_vbo);
+  glGenBuffers(1, &m_ebo);
 
   // object.getMaterialChangedObserver().add()
 
-  std::cout << "ObjectGL: VAO " << m_VAO << " created." << '\n';
+  std::cout << "ObjectGL: VAO " << m_vao << " created." << '\n';
 }
 
 void ObjectGL::setMaterial(MaterialGL* material) {
   if(m_material != material) {
     m_material = material;
-    std::cout << "ObjectGL: Material changed for VAO " << m_VAO << "." << '\n';
+    std::cout << "ObjectGL: Material changed for VAO " << m_vao << "." << '\n';
   }
 }
 
 void ObjectGL::uploadVertices() {
-  glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
+  glBindBuffer(GL_ARRAY_BUFFER, m_vbo);
   glBufferData(GL_ARRAY_BUFFER, static_cast<GLsizeiptr>(dataSize()), vertices().data(), GL_STATIC_DRAW);
 }
 
 void ObjectGL::uploadIndices() {
-  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
+  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_ebo);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, static_cast<GLsizeiptr>(indicesSize()), indices().data(), GL_STATIC_DRAW);
 }
 
@@ -64,7 +64,7 @@ void ObjectGL::setupVertexAttributes() {
 // NOLINTEND(cppcoreguidelines-pro-type-cstyle-cast, google-readability-casting, performance-no-int-to-ptr)
 
 void ObjectGL::uploadToGPU() {
-  glBindVertexArray(m_VAO);
+  glBindVertexArray(m_vao);
 
   uploadVertices();
   uploadIndices();
@@ -74,10 +74,10 @@ void ObjectGL::uploadToGPU() {
   glBindBuffer(GL_ARRAY_BUFFER, 0);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-  std::cout << "ObjectGL: Data uploaded to GPU to VAO " << m_VAO << "." << '\n';
+  std::cout << "ObjectGL: Data uploaded to GPU to VAO " << m_vao << "." << '\n';
 }
 
-void ObjectGL::bindVAO() { glBindVertexArray(m_VAO); }
+void ObjectGL::bindVAO() { glBindVertexArray(m_vao); }
 
 void ObjectGL::bindMaterial() { m_material->bind(); }
 
@@ -91,23 +91,23 @@ void ObjectGL::release() {
   glBindBuffer(GL_ARRAY_BUFFER, 0);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-  if(m_VAO != 0U) {
-    glDeleteVertexArrays(1, &m_VAO);
-    m_VAO = 0;
+  if(m_vao != 0U) {
+    glDeleteVertexArrays(1, &m_vao);
+    m_vao = 0;
   }
-  if(m_VBO != 0U) {
-    glDeleteBuffers(1, &m_VBO);
-    m_VBO = 0;
+  if(m_vbo != 0U) {
+    glDeleteBuffers(1, &m_vbo);
+    m_vbo = 0;
   }
-  if(m_EBO != 0U) {
-    glDeleteBuffers(1, &m_EBO);
-    m_EBO = 0;
+  if(m_ebo != 0U) {
+    glDeleteBuffers(1, &m_ebo);
+    m_ebo = 0;
   }
 }
 
 ObjectGL::~ObjectGL() {
   ObjectGL::release();
-  std::cout << "ObjectGL with VAO " << m_VAO << " destroyed." << '\n';
+  std::cout << "ObjectGL with VAO " << m_vao << " destroyed." << '\n';
 }
 
 // GCOVR_EXCL_STOP

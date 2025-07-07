@@ -5,8 +5,9 @@
 #ifndef LIGHTING_DIRECTIONALLIGHT_HPP
 #define LIGHTING_DIRECTIONALLIGHT_HPP
 
+#include <linalg/Vec3.hpp>
+
 #include "Core/CommonTypes.hpp"
-#include "Core/Math/Vec3.hpp"
 #include "Lighting/Light.hpp"
 
 /**
@@ -18,10 +19,10 @@
  */
 class DirectionalLight : public Light {
 private:
-  lin::Vec3d m_direction = {0.0, 0.0, -1.0};
+  linalg::Vec3d m_direction = {0.0, 0.0, -1.0};
 
 public:
-  DirectionalLight() : Light(LightType::Directional) {} ///< Constructor with light type.
+  DirectionalLight() : Light(LightType::DIRECTIONAL) {} ///< Constructor with light type.
 
   DirectionalLight(const DirectionalLight&)            = delete;
   DirectionalLight& operator=(const DirectionalLight&) = delete;
@@ -32,13 +33,13 @@ public:
    * @brief Gets the direction of the directional light.
    * @return The direction vector of the light.
    */
-  lin::Vec3d getDirection() const;
+  linalg::Vec3d getDirection() const;
 
   /**
    * @brief Sets the direction of the directional light.
    * @param direction The new direction vector of the light.
    */
-  void setDirection(const lin::Vec3d& direction);
+  void setDirection(const linalg::Vec3d& direction);
 
   /**
    * @brief Gets the direction of the light from a given point.
@@ -47,7 +48,7 @@ public:
    * This function always returns the same direction vector,
    * as the light is directional and does not depend on the point.
    */
-  lin::Vec3d getDirectionFromPoint(const lin::Vec3d& point) const override;
+  linalg::Vec3d getDirectionFromPoint(const linalg::Vec3d& point) const override;
 
   /**
    * @brief Gets the light factor at a given point and normal.
@@ -55,7 +56,7 @@ public:
    * @param normal The normal vector at the point.
    * @return The light factor at the given point and normal.
    */
-  ColorRGB getLightFactor(const lin::Vec3d& point, const lin::Vec3d& normal) const override;
+  ColorRGB getLightFactor(const linalg::Vec3d& point, const linalg::Vec3d& normal) const override;
 
   ~DirectionalLight() override = default; ///< Default destructor.
 };

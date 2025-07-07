@@ -24,7 +24,7 @@ public:
    * @brief Gets the singleton instance of OpenGLContext.
    * @return Reference to the singleton instance of OpenGLContext.
    */
-  static OpenGLContext& instance() {
+  static OpenGLContext& Instance() {
     static OpenGLContext instance;
     return instance;
   }

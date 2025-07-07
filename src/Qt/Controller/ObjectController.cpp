@@ -27,7 +27,7 @@ void ObjectController::setObject(Object3D* object) {
 
 void ObjectController::onMaterialSelected(const QString& material_name) {
   if(material_name.toStdString() == DEFAULT_MATERIAL_NAME) {
-    m_object->setMaterial(MaterialManager::defaultMaterial());
+    m_object->setMaterial(MaterialManager::DefaultMaterial());
   } else {
     Material* material = m_material_manager->getMaterial(material_name.toStdString());
     if(material != nullptr) {

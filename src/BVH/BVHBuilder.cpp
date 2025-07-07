@@ -4,11 +4,11 @@
 
 #include "BVH/BVHBuilder.hpp"
 #include "BVH/BVHNode.hpp"
-#include "Core/Math/Vec3.hpp"
-#include "Core/Math/lin.hpp"
+#include <linalg/Vec3.hpp>
+#include <linalg/linalg.hpp>
 
 namespace BVH {
-int getLargestAxis(const lin::Vec3d& extent) {
+int getLargestAxis(const linalg::Vec3d& extent) {
   if(extent.y > extent.x && extent.y > extent.z) {
     return 1;
   }
@@ -29,16 +29,16 @@ void constructNode(std::shared_ptr<BVHNode>& node, std::vector<std::shared_ptr<B
     return;
   }
 
-  lin::Vec3d min_bound = objects[start]->getMinBound();
-  lin::Vec3d max_bound = objects[start]->getMaxBound();
+  linalg::Vec3d min_bound = objects[start]->getMinBound();
+  linalg::Vec3d max_bound = objects[start]->getMaxBound();
   for(int i = start + 1; i < end; ++i) {
-    min_bound = lin::cwiseMin(min_bound, objects[i]->getMinBound());
-    max_bound = lin::cwiseMax(max_bound, objects[i]->getMaxBound());
+    min_bound = linalg::cwiseMin(min_bound, objects[i]->getMinBound());
+    max_bound = linalg::cwiseMax(max_bound, objects[i]->getMaxBound());
   }
   node = std::make_shared<BVHNode>(min_bound, max_bound);
 
-  const lin::Vec3d extent = max_bound - min_bound;
-  const int        axis   = getLargestAxis(extent);
+  const linalg::Vec3d extent = max_bound - min_bound;
+  const int           axis   = getLargestAxis(extent);
 
   const int mid = (start + end) / 2;
   std::nth_element(objects.begin() + start, objects.begin() + mid, objects.begin() + end,

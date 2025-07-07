@@ -31,7 +31,7 @@ private:
 
   double                               m_exposure     = DEFAULT_TONE_MAPPING_EXPOSURE;
   ToneMapping                          m_tone_mapping = ToneMapping::NONE;
-  std::unique_ptr<ToneMappingStrategy> tone_mapping_strategy;
+  std::unique_ptr<ToneMappingStrategy> m_tone_mapping_strategy;
 
 public:
   /**

@@ -12,11 +12,9 @@ var searchData=
   ['framebuffer_9',['framebuffer',['../classFramebuffer.html',1,'Framebuffer'],['../classFramebuffer.html#a4f22d58d068b65f86ee0818e65afaff3',1,'Framebuffer::Framebuffer(Framebuffer &amp;&amp;)=delete'],['../classFramebuffer.html#ad023fa43b1bc49f4e0b227a77cc9756c',1,'Framebuffer::Framebuffer(const Framebuffer &amp;)=delete'],['../classFramebuffer.html#a03db0c1b3c5e641dba0c38be25ec0d92',1,'Framebuffer::Framebuffer(ImageProperties framebuffer_properties)']]],
   ['framebuffer_2ecpp_10',['Framebuffer.cpp',['../Framebuffer_8cpp.html',1,'']]],
   ['framebuffer_2ehpp_11',['Framebuffer.hpp',['../Framebuffer_8hpp.html',1,'']]],
-  ['framebuffergl_12',['framebuffergl',['../classFramebufferGL.html',1,'FramebufferGL'],['../classFramebufferGL.html#a8cf60ec305239b7c5a665e926187e461',1,'FramebufferGL::FramebufferGL(int width, int height, int numColorAttachments, int multisampleCount)'],['../classFramebufferGL.html#a21877986f582b18d39dc2425198723b7',1,'FramebufferGL::FramebufferGL(const FramebufferGL &amp;)=delete'],['../classFramebufferGL.html#a5155841ce332d1821abf3e7e78de85c0',1,'FramebufferGL::FramebufferGL(FramebufferGL &amp;&amp;)=delete']]],
+  ['framebuffergl_12',['framebuffergl',['../classFramebufferGL.html',1,'FramebufferGL'],['../classFramebufferGL.html#a64162d61f54e3c3f98c4bd883dd2e774',1,'FramebufferGL::FramebufferGL(int width, int height, int num_color_attachments, int multisample_count)'],['../classFramebufferGL.html#a21877986f582b18d39dc2425198723b7',1,'FramebufferGL::FramebufferGL(const FramebufferGL &amp;)=delete'],['../classFramebufferGL.html#a5155841ce332d1821abf3e7e78de85c0',1,'FramebufferGL::FramebufferGL(FramebufferGL &amp;&amp;)=delete']]],
   ['framebuffergl_2ecpp_13',['FramebufferGL.cpp',['../FramebufferGL_8cpp.html',1,'']]],
   ['framebuffergl_2ehpp_14',['FramebufferGL.hpp',['../FramebufferGL_8hpp.html',1,'']]],
-  ['fromcolumns_15',['fromcolumns',['../structlin_1_1Mat3.html#a7bfe8bb3ab100220a273fa8420ad918a',1,'lin::Mat3::FromColumns()'],['../structlin_1_1Mat4.html#a09d366dab4732be7a4a03f2f2a7f8a7c',1,'lin::Mat4::FromColumns()']]],
-  ['fromdirection_16',['FromDirection',['../structRay.html#a36173efa2922ba955d13702ddc8517c2',1,'Ray']]],
-  ['frompoint_17',['FromPoint',['../structRay.html#a12d4f4791e47166c37354e5ec43683ae',1,'Ray']]],
-  ['fromrows_18',['fromrows',['../structlin_1_1Mat3.html#aee8571869cc24b9fa42312477c96b75d',1,'lin::Mat3::FromRows()'],['../structlin_1_1Mat4.html#a483d77d2f27335d25e6536c1a9a47502',1,'lin::Mat4::FromRows()']]]
+  ['fromdirection_15',['FromDirection',['../structRay.html#a0d0584fccc02bf759e5968500fc61fc6',1,'Ray']]],
+  ['frompoint_16',['FromPoint',['../structRay.html#ae56680ce707f778ad778584f10505987',1,'Ray']]]
 ];

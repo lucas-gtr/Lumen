@@ -79,9 +79,9 @@ void RealtimeController::updateViewportCamera() { m_engine->getResourceManager()
 
 void RealtimeController::updateRenderCamera() { m_engine->getResourceManager()->getCamera()->updateRenderCamera(); }
 
-bool RealtimeController::shouldClose() const { return m_shouldClose; }
+bool RealtimeController::shouldClose() const { return m_should_close; }
 
 void RealtimeController::closeWindow() {
-  m_shouldClose = true;
+  m_should_close = true;
   m_view->close();
 }

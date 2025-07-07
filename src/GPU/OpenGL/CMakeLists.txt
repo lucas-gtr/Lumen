@@ -21,7 +21,7 @@ find_package(Qt6 REQUIRED COMPONENTS OpenGL OpenGLWidgets)
 cmake_policy(SET CMP0072 NEW)
 find_package(OpenGL REQUIRED)
 
-target_link_libraries(RenderingGL PUBLIC Qt6::OpenGL Qt6::OpenGLWidgets GPU OpenGL::GL Geometry)
+target_link_libraries(RenderingGL PRIVATE Qt6::OpenGL Qt6::OpenGLWidgets GPU OpenGL::GL)
 
 target_include_directories(RenderingGL PUBLIC
     ${CMAKE_SOURCE_DIR}/include

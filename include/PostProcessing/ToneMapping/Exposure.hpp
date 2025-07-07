@@ -26,7 +26,7 @@ private:
 public:
   /**
    * @brief Constructor for the ExposureToneMapping class.
-   * @param double exposure The exposure value to be used in the tone mapping algorithm.
+   * @param exposure The exposure value to be used in the tone mapping algorithm.
    */
   explicit ExposureToneMapping(double exposure) : m_exposure(exposure) {}
 

@@ -1,10 +1,10 @@
 #include <cmath>
 #include <iostream>
+#include <linalg/Vec3.hpp>
 #include <memory>
 
 #include "Core/CommonTypes.hpp"
 #include "Core/Framebuffer.hpp"
-#include "Core/Math/Vec3.hpp"
 #include "Core/Random.hpp"
 #include "Core/Ray.hpp"
 #include "Rendering/CameraRayEmitter.hpp"
@@ -125,19 +125,19 @@ ColorRGBA Renderer::traceRay(const Ray& ray) const {
     return m_scene->getSkyboxColor(ray.direction);
   }
 
-  const ColorRGBA diffuse_color = hit_info.material->getDiffuse(hit_info.uvCoordinates);
+  const ColorRGBA diffuse_color = hit_info.material->getDiffuse(hit_info.uv_coordinates);
 
   ColorRGB light_factor = {0.0, 0.0, 0.0};
   for(const auto& light : m_scene->getLightList()) {
-    const lin::Vec3d light_direction = light->getDirectionFromPoint(hit_info.hitPoint).normalized();
-    const Ray        shadow_ray      = Ray::FromDirection(hit_info.hitPoint, light_direction);
+    const linalg::Vec3d light_direction = light->getDirectionFromPoint(hit_info.hit_point).normalized();
+    const Ray           shadow_ray      = Ray::FromDirection(hit_info.hit_point, light_direction);
 
     const RayHitInfo shadow_hit = RayIntersection::getSceneIntersection(shadow_ray, m_scene);
     if(isValidHit(shadow_hit)) {
       continue;
     }
 
-    light_factor += light->getLightFactor(hit_info.hitPoint, hit_info.normal);
+    light_factor += light->getLightFactor(hit_info.hit_point, hit_info.normal);
   }
 
   ColorRGBA final_color = {diffuse_color.r * light_factor.r, diffuse_color.g * light_factor.g,

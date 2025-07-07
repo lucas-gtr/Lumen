@@ -20,19 +20,19 @@
  */
 class FramebufferGL : protected QOpenGLFunctions_3_3_Core {
 private:
-  GLuint              m_framebufferID = 0;
-  std::vector<GLuint> m_colorAttachments;
-  GLuint              m_depthRenderbuffer = 0;
+  GLuint              m_framebuffer_id = 0;
+  std::vector<GLuint> m_color_attachments;
+  GLuint              m_depth_renderbuffer = 0;
 
-  int m_width               = 0;
-  int m_height              = 0;
-  int m_numColorAttachments = 0;
-  int m_multisampleCount    = 1;
+  int m_width                 = 0;
+  int m_height                = 0;
+  int m_num_color_attachments = 0;
+  int m_multisample_count     = 1;
 
   void createFramebuffer();
 
-  void createTexture2D(GLuint textureID);
-  void createMultisampleTexture(GLuint textureID);
+  void createTexture2D(GLuint texture_id);
+  void createMultisampleTexture(GLuint texture_id);
   void createColorAttachments();
 
   void createDepthAttachment();
@@ -45,10 +45,10 @@ public:
    * Initializes the framebuffer with the specified width, height, number of color attachments, and multisample count.
    * @param width The width of the framebuffer.
    * @param height The height of the framebuffer.
-   * @param numColorAttachments The number of color attachments.
-   * @param multisampleCount The number of samples for multisampling (default is 1).
+   * @param num_color_attachments The number of color attachments.
+   * @param multisample_count The number of samples for multisampling (default is 1).
    */
-  FramebufferGL(int width, int height, int numColorAttachments, int multisampleCount);
+  FramebufferGL(int width, int height, int num_color_attachments, int multisample_count);
 
   FramebufferGL(const FramebufferGL&)            = delete;
   FramebufferGL& operator=(const FramebufferGL&) = delete;
@@ -62,18 +62,18 @@ public:
 
   /**
    * @brief Resizes the framebuffer to the specified width and height.
-   * @param newWidth The new width of the framebuffer.
-   * @param newHeight The new height of the framebuffer.
+   * @param new_width The new width of the framebuffer.
+   * @param new_height The new height of the framebuffer.
    */
-  void resize(int newWidth, int newHeight);
+  void resize(int new_width, int new_height);
 
   /**
    * @brief Sets the texture unit for a specific color attachment.
    * @param index The index of the color attachment (0 to numColorAttachments - 1).
-   * @param textureUnit The OpenGL texture unit to bind the color attachment to.
+   * @param texture_unit The OpenGL texture unit to bind the color attachment to.
    * @throws std::out_of_range if the index is out of range.
    */
-  void setTextureUnit(size_t index, int textureUnit);
+  void setTextureUnit(size_t index, int texture_unit);
 
   /**
    * @brief Gets the OpenGL ID of the framebuffer.

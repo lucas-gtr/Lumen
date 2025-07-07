@@ -43,16 +43,16 @@ void DirectionalLightView::setupUI() {
 // NOLINTEND(cppcoreguidelines-owning-memory)
 
 void DirectionalLightView::connectSignals() {
-  auto emitDirectionChanged = [this]() {
+  auto emit_direction_changed = [this]() {
     const double x = m_direction_x->text().toDouble();
     const double y = m_direction_y->text().toDouble();
     const double z = m_direction_z->text().toDouble();
     emit         directionChanged(x, y, z);
   };
 
-  connect(m_direction_x, &QLineEdit::editingFinished, this, emitDirectionChanged);
-  connect(m_direction_y, &QLineEdit::editingFinished, this, emitDirectionChanged);
-  connect(m_direction_z, &QLineEdit::editingFinished, this, emitDirectionChanged);
+  connect(m_direction_x, &QLineEdit::editingFinished, this, emit_direction_changed);
+  connect(m_direction_y, &QLineEdit::editingFinished, this, emit_direction_changed);
+  connect(m_direction_z, &QLineEdit::editingFinished, this, emit_direction_changed);
 }
 
 void DirectionalLightView::setDirection(double x, double y, double z) {

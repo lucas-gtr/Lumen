@@ -20,10 +20,10 @@ MaterialController::MaterialController(MaterialView* view, MaterialManager* mate
   m_view->getNormalTextureSelector()->connectToTextureManager(texture_manager);
   connectSignals();
 
-  emit diffuseTextureImageChanged(TextureManager::defaultDiffuseTexture()->getPreviewData(),
-                                  TextureManager::defaultDiffuseTexture()->getPreviewProperties());
-  emit normalTextureImageChanged(TextureManager::defaultNormalTexture()->getPreviewData(),
-                                 TextureManager::defaultNormalTexture()->getPreviewProperties());
+  emit diffuseTextureImageChanged(TextureManager::DefaultDiffuseTexture()->getPreviewData(),
+                                  TextureManager::DefaultDiffuseTexture()->getPreviewProperties());
+  emit normalTextureImageChanged(TextureManager::DefaultNormalTexture()->getPreviewData(),
+                                 TextureManager::DefaultNormalTexture()->getPreviewProperties());
 }
 
 void MaterialController::connectSignals() {
@@ -94,14 +94,14 @@ void MaterialController::onNormalTextureSelected(const QString& texture_name) {
 
 void MaterialController::createDiffuseTextureFromFile(const QString& file_path) {
   const std::string new_texture_name =
-      m_texture_controller->createTextureFromFile(file_path.toStdString(), ColorSpace::Linear, true);
+      m_texture_controller->createTextureFromFile(file_path.toStdString(), ColorSpace::LINEAR, true);
   m_view->setDiffuseTexture(QString::fromStdString(new_texture_name));
   updateDiffuseTexture(new_texture_name);
 }
 
 void MaterialController::createNormalTextureFromFile(const QString& file_path) {
   const std::string new_texture_name =
-      m_texture_controller->createTextureFromFile(file_path.toStdString(), ColorSpace::sRGB, true);
+      m_texture_controller->createTextureFromFile(file_path.toStdString(), ColorSpace::S_RGB, true);
   m_view->setNormalTexture(QString::fromStdString(new_texture_name));
   updateNormalTexture(new_texture_name);
 }
@@ -129,15 +129,15 @@ void MaterialController::updateNormalTexture(const std::string& texture_name) {
 }
 
 void MaterialController::resetDiffuseTextureToDefault() {
-  m_current_material->setDiffuseTexture(TextureManager::defaultDiffuseTexture());
-  emit diffuseTextureImageChanged(TextureManager::defaultDiffuseTexture()->getPreviewData(),
-                                  TextureManager::defaultDiffuseTexture()->getPreviewProperties());
+  m_current_material->setDiffuseTexture(TextureManager::DefaultDiffuseTexture());
+  emit diffuseTextureImageChanged(TextureManager::DefaultDiffuseTexture()->getPreviewData(),
+                                  TextureManager::DefaultDiffuseTexture()->getPreviewProperties());
 }
 
 void MaterialController::resetNormalTextureToDefault() {
-  m_current_material->setNormalTexture(TextureManager::defaultNormalTexture());
-  emit normalTextureImageChanged(TextureManager::defaultNormalTexture()->getPreviewData(),
-                                 TextureManager::defaultNormalTexture()->getPreviewProperties());
+  m_current_material->setNormalTexture(TextureManager::DefaultNormalTexture());
+  emit normalTextureImageChanged(TextureManager::DefaultNormalTexture()->getPreviewData(),
+                                 TextureManager::DefaultNormalTexture()->getPreviewProperties());
 }
 
 void MaterialController::updateViewFromModel() {

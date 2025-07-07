@@ -15,8 +15,8 @@
  */
 class OutputFormatTga : public OutputFormatStrategy {
 public:
-  bool write_image(const std::string& file_path, int width, int height, int channel_count,
-                   const unsigned char* image) const override;
+  bool writeImage(const std::string& file_path, int width, int height, int channel_count,
+                  const unsigned char* image) const override;
 };
 
 #endif // EXPORT_OUTPUTFORMATTGA_HPP

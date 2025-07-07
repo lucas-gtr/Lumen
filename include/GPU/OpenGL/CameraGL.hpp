@@ -7,8 +7,9 @@
 
 // GCOVR_EXCL_START
 
-#include "Core/Math/Mat4.hpp"
-#include "Core/Math/Vec3.hpp"
+#include <linalg/Mat4.hpp>
+#include <linalg/Vec3.hpp>
+
 #include "Core/Ray.hpp"
 #include "GPU/OpenGL/UniformBufferGL.hpp"
 #include "SceneObjects/Camera.hpp"
@@ -23,11 +24,11 @@
  * @note The matrices are stored in column-major order, which is the default for OpenGL.
  */
 struct CameraUBO {
-  lin::Mat4f view_transposed                     = lin::Mat4f::Identity();
-  lin::Mat4f view_without_translation_transposed = lin::Mat4f::Identity();
-  lin::Mat4f projection_transposed               = lin::Mat4f::Identity();
-  lin::Vec3f position                            = lin::Vec3f(0.0F);
-  float      padding1{};
+  linalg::Mat4f view_transposed                     = linalg::Mat4f::Identity();
+  linalg::Mat4f view_without_translation_transposed = linalg::Mat4f::Identity();
+  linalg::Mat4f projection_transposed               = linalg::Mat4f::Identity();
+  linalg::Vec3f position                            = linalg::Vec3f(0.0F);
+  float         padding1{};
 };
 
 /**
@@ -42,12 +43,12 @@ class CameraGL {
 private:
   Camera* m_render_camera;
 
-  lin::Vec3f m_forward;
-  lin::Vec3f m_right;
-  lin::Vec3f m_up;
+  linalg::Vec3f m_forward;
+  linalg::Vec3f m_right;
+  linalg::Vec3f m_up;
 
-  CameraUBO       m_camera_UBO;
-  UniformBufferGL m_gl_camera_UBO;
+  CameraUBO       m_camera_ubo;
+  UniformBufferGL m_gl_camera_ubo;
 
   float m_yaw   = 0.0;
   float m_pitch = 0.0;
@@ -61,10 +62,10 @@ public:
   /**
    * @brief Constructor for CameraGL.
    * @param cam The Camera object to build the OpenGL camera from.
-   * @param viewportWidth The width of the viewport in pixels.
-   * @param viewportHeight The height of the viewport in pixels.
+   * @param viewport_width The width of the viewport in pixels.
+   * @param viewport_height The height of the viewport in pixels.
    */
-  CameraGL(Camera& cam, int viewportWidth, int viewportHeight);
+  CameraGL(Camera& cam, int viewport_width, int viewport_height);
 
   /**
    * @brief Sets the viewport size.
@@ -97,7 +98,7 @@ public:
    * @brief Gets ID of the OpenGL Uniform Buffer Object (UBO) used for the camera.
    * @return The OpenGL ID of the camera UBO.
    */
-  unsigned int getUBO() const { return m_gl_camera_UBO.getID(); }
+  unsigned int getUBO() const { return m_gl_camera_ubo.getID(); }
 
   /**
    * @brief Moves the camera forward by a specified distance.
@@ -119,10 +120,10 @@ public:
 
   /**
    * @brief Rotates the camera by specified yaw and pitch angles.
-   * @param deltaYaw The change in yaw angle (in radians).
-   * @param deltaPitch The change in pitch angle (in radians).
+   * @param delta_yaw The change in yaw angle (in radians).
+   * @param delta_pitch The change in pitch angle (in radians).
    */
-  void rotate(float deltaYaw, float deltaPitch);
+  void rotate(float delta_yaw, float delta_pitch);
 
   Ray getRayFromMousePosition(int mouse_x, int mouse_y) const;
 };

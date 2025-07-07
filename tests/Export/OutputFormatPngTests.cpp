@@ -14,7 +14,7 @@ TEST(OutputFormatPngTests, WritesPngFile) {
     0, 0, 255,   255, 255, 0
   };
 
-  output_format.write_image(file_path, width, height, channel_count, image);
+  output_format.writeImage(file_path, width, height, channel_count, image);
 
   std::ifstream file(file_path);
   ASSERT_TRUE(file.good());

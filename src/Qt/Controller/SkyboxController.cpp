@@ -39,7 +39,7 @@ void SkyboxController::onDisplayInViewportToggled(bool enabled) {
 
 void SkyboxController::createSkyboxTextureFromFile(const QString& file_name) {
   const std::string new_texture_name =
-      m_texture_controller->createTextureFromFile(file_name.toStdString(), ColorSpace::Linear, false);
+      m_texture_controller->createTextureFromFile(file_name.toStdString(), ColorSpace::LINEAR, false);
 
   m_view->setSkybox(QString::fromStdString(new_texture_name));
   updateSkyboxTexture(new_texture_name);
@@ -57,7 +57,7 @@ void SkyboxController::updateSkyboxTexture(const std::string& texture_name) {
 }
 
 void SkyboxController::resetSkyboxTextureToDefault() {
-  m_skybox->setTexture(TextureManager::defaultSkyboxTexture());
+  m_skybox->setTexture(TextureManager::DefaultSkyboxTexture());
 
   emit skyboxImageChanged(m_skybox->getTexture()->getPreviewData(), m_skybox->getTexture()->getPreviewProperties());
 }

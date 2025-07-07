@@ -7,8 +7,9 @@
 
 #include <memory>
 
+#include <linalg/Vec3.hpp>
+
 #include "Core/CommonTypes.hpp"
-#include "Core/Math/Vec3.hpp"
 #include "Core/Observer.hpp"
 #include "Surface/Texture.hpp"
 
@@ -50,14 +51,14 @@ public:
    * @param direction The direction vector for which to get the UV coordinates.
    * @return The UV coordinates for the given direction.
    */
-  static TextureUV getUVCoordinates(const lin::Vec3d& direction);
+  static TextureUV GetUvCoordinates(const linalg::Vec3d& direction);
 
   /**
    * @brief Gets the color based on the given direction.
    * @param direction The direction vector for which to get the color.
    * @return The color for the given direction.
    */
-  ColorRGBA getColor(const lin::Vec3d& direction) const;
+  ColorRGBA getColor(const linalg::Vec3d& direction) const;
 
   /**
    * @brief Gets the texture associated with the skybox.

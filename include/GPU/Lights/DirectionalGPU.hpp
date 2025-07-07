@@ -5,7 +5,8 @@
 #ifndef GPU_LIGHTS_DIRECTIONALGPU_HPP
 #define GPU_LIGHTS_DIRECTIONALGPU_HPP
 
-#include "Core/Math/Vec3.hpp"
+#include <linalg/Vec3.hpp>
+
 #include "Lighting/DirectionalLight.hpp"
 
 /**
@@ -19,8 +20,8 @@ class DirectionalLightGPU {
 private:
   const DirectionalLight* m_light = nullptr;
 
-  lin::Vec3f m_direction;
-  lin::Vec3f m_color;
+  linalg::Vec3f m_direction;
+  linalg::Vec3f m_color;
 
 public:
   /**
@@ -43,13 +44,13 @@ public:
    * @brief Returns the direction of the light.
    * @return The direction vector of the light.
    */
-  lin::Vec3f getDirection() const { return m_direction; }
+  linalg::Vec3f getDirection() const { return m_direction; }
 
   /**
    * @brief Returns the color of the light multiplied by the intensity.
    * @return The color vector of the light multiplied by the intensity.
    */
-  lin::Vec3f getColor() const { return m_color; }
+  linalg::Vec3f getColor() const { return m_color; }
 
   ~DirectionalLightGPU() = default; ///< Default destructor.
 };

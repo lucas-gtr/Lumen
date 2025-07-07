@@ -5,8 +5,9 @@
 #ifndef RENDERING_CAMERARAYEMITTER_HPP
 #define RENDERING_CAMERARAYEMITTER_HPP
 
-#include "Core/Math/Mat3.hpp"
-#include "Core/Math/Vec3.hpp"
+#include <linalg/Mat3.hpp>
+#include <linalg/Vec3.hpp>
+
 #include "Core/Ray.hpp"
 
 /**
@@ -14,13 +15,13 @@
  * @brief Struct to hold parameters for ray emitter configuration.
  */
 struct RayEmitterParameters {
-  lin::Vec3d camera_position        = {0.0, 0.0, 0.0};
-  lin::Mat3d camera_rotation_matrix = lin::Mat3d::Identity();
-  double     sensor_width           = 0.0;
-  double     focal_length           = 0.0;
-  double     focus_distance         = 0.0;
-  double     lens_radius            = 0.0;
-  double     image_aspect_ratio     = 0.0;
+  linalg::Vec3d camera_position        = {0.0, 0.0, 0.0};
+  linalg::Mat3d camera_rotation_matrix = linalg::Mat3d::Identity();
+  double        sensor_width           = 0.0;
+  double        focal_length           = 0.0;
+  double        focus_distance         = 0.0;
+  double        lens_radius            = 0.0;
+  double        image_aspect_ratio     = 0.0;
 };
 
 /**
@@ -34,13 +35,13 @@ class CameraRayEmitter {
 private:
   RayEmitterParameters m_parameters;
 
-  lin::Vec3d m_viewport_top_left_corner;
-  lin::Vec3d m_horizontal_vector;
-  lin::Vec3d m_vertical_vector;
+  linalg::Vec3d m_viewport_top_left_corner;
+  linalg::Vec3d m_horizontal_vector;
+  linalg::Vec3d m_vertical_vector;
 
-  lin::Vec3d generateCorner(double x, double y) const;
-  lin::Vec3d getRayOrigin() const;
-  lin::Vec3d getFocusPoint(double u, double v) const;
+  linalg::Vec3d generateCorner(double x, double y) const;
+  linalg::Vec3d getRayOrigin() const;
+  linalg::Vec3d getFocusPoint(double u, double v) const;
 
 public:
   CameraRayEmitter() = default; ///< Default constructor.

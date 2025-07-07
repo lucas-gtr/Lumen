@@ -21,7 +21,7 @@
  * The RGB mode is used for standard RGB color representation, while sRGB is used for
  * standard RGB color representation with gamma correction.
  */
-enum class ColorSpace : std::uint8_t { Linear, sRGB };
+enum class ColorSpace : std::uint8_t { LINEAR, S_RGB };
 
 enum class TextureType : std::uint8_t { IMAGE_TEXTURE, COLOR_TEXTURE };
 
@@ -47,7 +47,7 @@ private:
   std::string m_texture_path;
   bool        m_flipped_vertically = false;
 
-  ColorSpace                        m_color_space    = ColorSpace::sRGB;
+  ColorSpace                        m_color_space    = ColorSpace::S_RGB;
   TextureSampling::TextureFiltering m_filtering_mode = TextureSampling::TextureFiltering::BILINEAR;
   TextureSampling::TextureWrapping  m_wrapping_mode  = TextureSampling::TextureWrapping::MIRRORED_REPEAT;
 
@@ -137,9 +137,9 @@ public:
 
   /**
    * @brief Sets the color space of the texture.
-   * @param colorSpace The new color space for the texture.
+   * @param color_space The new color space for the texture.
    */
-  void setColorSpace(ColorSpace colorSpace);
+  void setColorSpace(ColorSpace color_space);
 
   /**
    * @brief Gets the color space of the texture.
@@ -149,9 +149,9 @@ public:
 
   /**
    * @brief Sets the filtering mode of the texture.
-   * @param filteringMode The new filtering mode for the texture.
+   * @param filtering_mode The new filtering mode for the texture.
    */
-  void setFilteringMode(TextureSampling::TextureFiltering filteringMode);
+  void setFilteringMode(TextureSampling::TextureFiltering filtering_mode);
 
   /**
    * @brief Gets the filtering mode of the texture.
@@ -161,9 +161,9 @@ public:
 
   /**
    * @brief Sets the wrapping mode of the texture.
-   * @param wrappingMode The new wrapping mode for the texture.
+   * @param wrapping_mode The new wrapping mode for the texture.
    */
-  void setWrappingMode(TextureSampling::TextureWrapping wrappingMode);
+  void setWrappingMode(TextureSampling::TextureWrapping wrapping_mode);
 
   /**
    * @brief Gets the wrapping mode of the texture.

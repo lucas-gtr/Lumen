@@ -3,19 +3,19 @@
 #include <gtest/gtest.h>
 
 TEST(RayTest, ConstructorTest) {
-    lin::Vec3d origin(0.0, 0.0, 0.0);
-    lin::Vec3d point(1.0, 0.0, 0.0);
+    linalg::Vec3d origin(0.0, 0.0, 0.0);
+    linalg::Vec3d point(1.0, 0.0, 0.0);
     
     Ray ray = Ray::FromPoint(origin, point);
 
     EXPECT_EQ(ray.origin, origin);
 
-    EXPECT_EQ(ray.direction, lin::Vec3d(1.0, 0.0, 0.0));
+    EXPECT_EQ(ray.direction, linalg::Vec3d(1.0, 0.0, 0.0));
 }
 
 TEST(RayTest, NormalizedDirectionTest) {
-    lin::Vec3d origin(0.0, 0.0, 0.0);
-    lin::Vec3d point(1.0, 1.0, 0.0); 
+    linalg::Vec3d origin(0.0, 0.0, 0.0);
+    linalg::Vec3d point(1.0, 1.0, 0.0); 
 
     Ray ray = Ray::FromPoint(origin, point);
 
@@ -23,8 +23,8 @@ TEST(RayTest, NormalizedDirectionTest) {
 }
 
 TEST(RayTest, EqualDirectionTest) {
-    lin::Vec3d origin(0.0, 0.0, 0.0);
-    lin::Vec3d point(1.0, 0.0, 0.0);
+    linalg::Vec3d origin(0.0, 0.0, 0.0);
+    linalg::Vec3d point(1.0, 0.0, 0.0);
 
     Ray ray1 = Ray::FromPoint(origin, point);
     Ray ray2 = Ray::FromPoint(origin, point);
@@ -33,18 +33,18 @@ TEST(RayTest, EqualDirectionTest) {
 }
 
 TEST(RayTest, DirectionCalculationTest) {
-    lin::Vec3d origin(1.0, 2.0, 3.0);
-    lin::Vec3d point(4.0, 5.0, 6.0);
+    linalg::Vec3d origin(1.0, 2.0, 3.0);
+    linalg::Vec3d point(4.0, 5.0, 6.0);
     
     Ray ray = Ray::FromPoint(origin, point);
 
-    lin::Vec3d expected_direction = (point - origin).normalized();
+    linalg::Vec3d expected_direction = (point - origin).normalized();
     EXPECT_EQ(ray.direction, expected_direction);
 }
 
 TEST(RayTest, FromDirectionTest) {
-    lin::Vec3d origin(0.0, 0.0, 0.0);
-    lin::Vec3d direction(1.0, 2.0, 3.0);
+    linalg::Vec3d origin(0.0, 0.0, 0.0);
+    linalg::Vec3d direction(1.0, 2.0, 3.0);
 
     Ray ray = Ray::FromDirection(origin, direction);
 

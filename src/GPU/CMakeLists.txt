@@ -10,6 +10,6 @@ target_include_directories(GPU PRIVATE
     ${CMAKE_SOURCE_DIR}/include
 )
 
-target_link_libraries(GPU PRIVATE Geometry)
+target_link_libraries(GPU PUBLIC Core Geometry Lighting Surface)
 
 add_subdirectory(OpenGL)

@@ -76,19 +76,19 @@ void ViewportController::updateViewFromModel() {
   m_view->setDynamicShadowMap(engine->isDynamicShadowMapEnabled());
 
   const ToneMapping tone_mapping = engine->getToneMapping();
-  std::string       toneMappingStr;
+  std::string       tone_mapping_str;
   switch(tone_mapping) {
   case ToneMapping::REINHARD:
-    toneMappingStr = "Reinhard";
+    tone_mapping_str = "Reinhard";
     break;
   case ToneMapping::EXPOSURE:
-    toneMappingStr = "Exposure";
+    tone_mapping_str = "Exposure";
     break;
   default:
-    toneMappingStr = "None";
+    tone_mapping_str = "None";
     break;
   }
-  m_view->setToneMapping(QString::fromStdString(toneMappingStr));
+  m_view->setToneMapping(QString::fromStdString(tone_mapping_str));
 
   m_view->setExposure(engine->getExposure());
 }

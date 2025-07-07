@@ -30,8 +30,8 @@ public:
    * @return The ID of the added callback.
    */
   CallbackID add(const Callback& callback) {
-    const CallbackID id = nextID++;
-    callbacks[id]       = callback;
+    const CallbackID id = m_next_id++;
+    m_callbacks[id]     = callback;
     return id;
   }
 
@@ -39,14 +39,14 @@ public:
    * @brief Removes a callback from the observer.
    * @param id The ID of the callback to remove.
    */
-  void remove(CallbackID id) { callbacks.erase(id); }
+  void remove(CallbackID id) { m_callbacks.erase(id); }
 
   /**
    * @brief Notifies all registered callbacks with the provided arguments.
    * @param args The arguments to pass to the callbacks.
    */
   void notify(Args... args) const {
-    for(const auto& [id, callback] : callbacks) {
+    for(const auto& [id, callback] : m_callbacks) {
       if(callback) {
         callback(args...);
       }
@@ -54,8 +54,8 @@ public:
   }
 
 private:
-  std::unordered_map<CallbackID, Callback> callbacks;
-  std::atomic<CallbackID>                  nextID{0};
+  std::unordered_map<CallbackID, Callback> m_callbacks;
+  std::atomic<CallbackID>                  m_next_id{0};
 };
 
 #endif // CORE_OBSERVER_HPP

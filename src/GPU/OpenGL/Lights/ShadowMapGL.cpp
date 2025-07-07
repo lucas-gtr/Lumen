@@ -11,14 +11,14 @@
 ShadowMapGL::ShadowMapGL(int size) : m_size(size) { initializeOpenGLFunctions(); }
 
 void ShadowMapGL::createFramebuffer() {
-  glGenFramebuffers(1, &m_depthMapFBO);
-  glBindFramebuffer(GL_FRAMEBUFFER, m_depthMapFBO);
+  glGenFramebuffers(1, &m_depth_map_fbo);
+  glBindFramebuffer(GL_FRAMEBUFFER, m_depth_map_fbo);
 }
 
 void ShadowMapGL::createDepthTexture2D() {
-  glGenTextures(1, &m_depthMap);
+  glGenTextures(1, &m_depth_map);
   glActiveTexture(GL_TEXTURE0 + LOAD_TEXTURE_UNIT);
-  glBindTexture(GL_TEXTURE_2D, m_depthMap);
+  glBindTexture(GL_TEXTURE_2D, m_depth_map);
 
   glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT32, m_size, m_size, 0, GL_DEPTH_COMPONENT, GL_FLOAT, nullptr);
 
@@ -27,14 +27,14 @@ void ShadowMapGL::createDepthTexture2D() {
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
 
-  std::array<float, 4> borderColor = {1.0F, 1.0F, 1.0F, 1.0F};
-  glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor.data());
+  std::array<float, 4> border_color = {1.0F, 1.0F, 1.0F, 1.0F};
+  glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, border_color.data());
 }
 
 void ShadowMapGL::createDepthTextureCube() {
-  glGenTextures(1, &m_depthMap);
+  glGenTextures(1, &m_depth_map);
   glActiveTexture(GL_TEXTURE0 + LOAD_TEXTURE_UNIT);
-  glBindTexture(GL_TEXTURE_CUBE_MAP, m_depthMap);
+  glBindTexture(GL_TEXTURE_CUBE_MAP, m_depth_map);
 
   for(unsigned int i = 0; i < CUBE_MAP_FACE_COUNT; ++i) {
     glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_DEPTH_COMPONENT32, m_size, m_size, 0, GL_DEPTH_COMPONENT,
@@ -50,9 +50,9 @@ void ShadowMapGL::createDepthTextureCube() {
 
 void ShadowMapGL::attachDepthTexture(GLenum target) {
   if(target == GL_TEXTURE_CUBE_MAP) {
-    glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, m_depthMap, 0);
+    glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, m_depth_map, 0);
   } else {
-    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, target, m_depthMap, 0);
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, target, m_depth_map, 0);
   }
   glDrawBuffer(GL_NONE);
   glReadBuffer(GL_NONE);
@@ -66,7 +66,7 @@ void ShadowMapGL::validateFramebuffer() {
 }
 
 void ShadowMapGL::initialize2DMap() {
-  m_depthMapType = GL_TEXTURE_2D;
+  m_depth_map_type = GL_TEXTURE_2D;
 
   createFramebuffer();
   createDepthTexture2D();
@@ -75,7 +75,7 @@ void ShadowMapGL::initialize2DMap() {
 }
 
 void ShadowMapGL::initializeCubeMap() {
-  m_depthMapType = GL_TEXTURE_CUBE_MAP;
+  m_depth_map_type = GL_TEXTURE_CUBE_MAP;
 
   createFramebuffer();
   createDepthTextureCube();
@@ -83,10 +83,10 @@ void ShadowMapGL::initializeCubeMap() {
   validateFramebuffer();
 }
 
-void ShadowMapGL::resize(int newSize) {
+void ShadowMapGL::resize(int new_size) {
   cleanup();
-  m_size = std::clamp(newSize, MIN_SHADOW_MAP_SIZE, MAX_SHADOW_MAP_SIZE);
-  if(m_depthMapType == GL_TEXTURE_2D) {
+  m_size = std::clamp(new_size, MIN_SHADOW_MAP_SIZE, MAX_SHADOW_MAP_SIZE);
+  if(m_depth_map_type == GL_TEXTURE_2D) {
     initialize2DMap();
 
   } else {
@@ -94,21 +94,21 @@ void ShadowMapGL::resize(int newSize) {
   }
 }
 
-void ShadowMapGL::bindFramebuffer() { glBindFramebuffer(GL_FRAMEBUFFER, m_depthMapFBO); }
+void ShadowMapGL::bindFramebuffer() { glBindFramebuffer(GL_FRAMEBUFFER, m_depth_map_fbo); }
 
-void ShadowMapGL::bindTexture(unsigned int textureUnit) {
-  glActiveTexture(GL_TEXTURE0 + textureUnit);
-  glBindTexture(m_depthMapType, m_depthMap);
+void ShadowMapGL::bindTexture(unsigned int texture_unit) {
+  glActiveTexture(GL_TEXTURE0 + texture_unit);
+  glBindTexture(m_depth_map_type, m_depth_map);
 }
 
 void ShadowMapGL::cleanup() {
-  if(m_depthMapFBO != 0) {
-    glDeleteFramebuffers(1, &m_depthMapFBO);
-    m_depthMapFBO = 0;
+  if(m_depth_map_fbo != 0) {
+    glDeleteFramebuffers(1, &m_depth_map_fbo);
+    m_depth_map_fbo = 0;
   }
-  if(m_depthMap != 0) {
-    glDeleteTextures(1, &m_depthMap);
-    m_depthMap = 0;
+  if(m_depth_map != 0) {
+    glDeleteTextures(1, &m_depth_map);
+    m_depth_map = 0;
   }
 }
 

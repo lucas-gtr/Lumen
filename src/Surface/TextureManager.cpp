@@ -13,33 +13,33 @@ std::unique_ptr<Texture> TextureManager::s_default_skybox_texture  = nullptr;
 std::unique_ptr<Texture> TextureManager::s_default_diffuse_texture = nullptr;
 std::unique_ptr<Texture> TextureManager::s_default_normal_texture  = nullptr;
 
-Texture* TextureManager::defaultSkyboxTexture() {
+Texture* TextureManager::DefaultSkyboxTexture() {
   if(s_default_skybox_texture == nullptr) {
     s_default_skybox_texture = std::make_unique<Texture>();
     s_default_skybox_texture->setTextureType(TextureType::COLOR_TEXTURE);
     s_default_skybox_texture->setValue(
         ColorRGBA{DEFAULT_SKYBOX_COLOR_R, DEFAULT_SKYBOX_COLOR_G, DEFAULT_SKYBOX_COLOR_B, 1.0});
-    s_default_skybox_texture->setColorSpace(ColorSpace::Linear);
+    s_default_skybox_texture->setColorSpace(ColorSpace::LINEAR);
   }
   return s_default_skybox_texture.get();
 }
 
-Texture* TextureManager::defaultDiffuseTexture() {
+Texture* TextureManager::DefaultDiffuseTexture() {
   if(s_default_diffuse_texture == nullptr) {
     s_default_diffuse_texture = std::make_unique<Texture>();
     s_default_diffuse_texture->setTextureType(TextureType::COLOR_TEXTURE);
     s_default_diffuse_texture->setValue(ColorRGBA{1.0, 1.0, 1.0, 1.0});
-    s_default_diffuse_texture->setColorSpace(ColorSpace::Linear);
+    s_default_diffuse_texture->setColorSpace(ColorSpace::LINEAR);
   }
   return s_default_diffuse_texture.get();
 }
 
-Texture* TextureManager::defaultNormalTexture() {
+Texture* TextureManager::DefaultNormalTexture() {
   if(s_default_normal_texture == nullptr) {
     s_default_normal_texture = std::make_unique<Texture>();
     s_default_normal_texture->setTextureType(TextureType::COLOR_TEXTURE);
     s_default_normal_texture->setValue(ColorRGB{HALF, HALF, 1.0});
-    s_default_normal_texture->setColorSpace(ColorSpace::sRGB);
+    s_default_normal_texture->setColorSpace(ColorSpace::S_RGB);
   }
   return s_default_normal_texture.get();
 }
