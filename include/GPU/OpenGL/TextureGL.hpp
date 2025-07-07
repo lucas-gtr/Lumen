@@ -25,19 +25,19 @@
  */
 class TextureGL : public ITextureGPU, protected QOpenGLFunctions_3_3_Core {
 private:
-  GLuint m_textureID = 0U;
+  GLuint m_texture_id = 0U;
 
   Observer<>::CallbackID m_texture_data_observer_id;
   Observer<>::CallbackID m_texture_parameters_observer_id;
 
   void configureParameters(const Texture* texture);
 
-  void applyWrappingMode(TextureSampling::TextureWrapping wrappingMode, const ColorRGBA& borderColor);
-  void applyFilteringMode(TextureSampling::TextureFiltering filteringMode);
+  void applyWrappingMode(TextureSampling::TextureWrapping wrapping_mode, const ColorRGBA& border_color);
+  void applyFilteringMode(TextureSampling::TextureFiltering filtering_mode);
 
-  static GLint getGLWrappingMode(TextureSampling::TextureWrapping wrappingMode);
-  static GLint getGLFilteringMode(TextureSampling::TextureFiltering filteringMode);
-  static GLint getGLFormat(int channelCount);
+  static GLint GetGlWrappingMode(TextureSampling::TextureWrapping wrapping_mode);
+  static GLint GetGlFilteringMode(TextureSampling::TextureFiltering filtering_mode);
+  static GLint GetGlFormat(int channel_count);
 
 public:
   /**
@@ -63,15 +63,15 @@ public:
 
   /**
    * @brief Binds the texture to a specified texture unit.
-   * @param textureUnit The texture unit to bind the texture to.
+   * @param texture_unit The texture unit to bind the texture to.
    */
-  void bind(int textureUnit);
+  void bind(int texture_unit);
 
   /**
    * @brief Unbinds the texture from the current texture unit.
-   * @param textureUnit The texture unit to unbind the texture from.
+   * @param texture_unit The texture unit to unbind the texture from.
    */
-  void unbind(int textureUnit);
+  void unbind(int texture_unit);
 
   /**
    * @brief Destructor for TextureGL.

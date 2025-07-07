@@ -181,7 +181,7 @@ double Texture::getValue1d(TextureUV uv_coord) const {
     }
   }
 
-  if(m_color_space == ColorSpace::Linear) {
+  if(m_color_space == ColorSpace::LINEAR) {
     convertToLinearSpace(value);
   }
 
@@ -232,7 +232,7 @@ ColorRGB Texture::getValue3d(TextureUV uv_coord) const {
     }
   }
 
-  if(m_color_space == ColorSpace::Linear) {
+  if(m_color_space == ColorSpace::LINEAR) {
     convertToLinearSpace(color);
   }
   return color;
@@ -281,14 +281,14 @@ ColorRGBA Texture::getValue4d(TextureUV uv_coord) const {
     }
   }
 
-  if(m_color_space == ColorSpace::Linear) {
+  if(m_color_space == ColorSpace::LINEAR) {
     convertToLinearSpace(color);
   }
   return color;
 }
 
-void Texture::setColorSpace(ColorSpace colorSpace) {
-  m_color_space = colorSpace;
+void Texture::setColorSpace(ColorSpace color_space) {
+  m_color_space = color_space;
   m_texture_data_observer.notify();
 }
 

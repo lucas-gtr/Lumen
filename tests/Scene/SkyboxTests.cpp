@@ -8,7 +8,7 @@
 TEST(SkyboxTest, DefaultConstructorUsesDefaultColor) {
   Skybox skybox;
 
-  lin::Vec3d direction(1.0, 0.0, 0.0);
+  linalg::Vec3d direction(1.0, 0.0, 0.0);
   ColorRGBA color = skybox.getColor(direction);
 
   double r = 0.65;
@@ -27,11 +27,11 @@ TEST(SkyboxTest, DefaultConstructorUsesDefaultColor) {
 TEST(SkyboxTest, SetTextureWithSingleColorReturnsCorrectColor) {
   Skybox skybox;
 
-  lin::Vec3d direction(0.0, 1.0, 0.0);
+  linalg::Vec3d direction(0.0, 1.0, 0.0);
   ColorRGB color_rgb(0.2, 0.4, 0.6);
   Texture texture;
   texture.setValue(color_rgb);
-  texture.setColorSpace(ColorSpace::Linear);
+  texture.setColorSpace(ColorSpace::LINEAR);
   skybox.setTexture(&texture);
 
   ColorRGBA color = skybox.getColor(direction);
@@ -48,35 +48,35 @@ TEST(SkyboxTest, GetUVCoordinatesIsCorrectlyComputed) {
   Skybox skybox;
   TextureUV uv;
 
-  lin::Vec3d direction1(0.0, 0.0, -1.0);
-  uv = skybox.getUVCoordinates(direction1);
+  linalg::Vec3d direction1(0.0, 0.0, -1.0);
+  uv = skybox.GetUvCoordinates(direction1);
 
   EXPECT_NEAR(uv.u, 0.25, 1e-6);
   EXPECT_NEAR(uv.v, 0.5, 1e-6);
 
-  lin::Vec3d direction2(0.0, 0.0, 1.0);
-  uv = skybox.getUVCoordinates(direction2);
+  linalg::Vec3d direction2(0.0, 0.0, 1.0);
+  uv = skybox.GetUvCoordinates(direction2);
   
   EXPECT_NEAR(uv.u, 0.75, 1e-6);
   EXPECT_NEAR(uv.v, 0.5, 1e-6);
 
-  lin::Vec3d direction3(1.0, 0.0, 0.0);
-  uv = skybox.getUVCoordinates(direction3);
+  linalg::Vec3d direction3(1.0, 0.0, 0.0);
+  uv = skybox.GetUvCoordinates(direction3);
   EXPECT_NEAR(uv.u, 0.5, 1e-6);
   EXPECT_NEAR(uv.v, 0.5, 1e-6);
 
-  lin::Vec3d direction4(-1.0, 0.0, 0.0);
-  uv = skybox.getUVCoordinates(direction4);
+  linalg::Vec3d direction4(-1.0, 0.0, 0.0);
+  uv = skybox.GetUvCoordinates(direction4);
   EXPECT_NEAR(uv.u, 1.0, 1e-6);
   EXPECT_NEAR(uv.v, 0.5, 1e-6);
 
-  lin::Vec3d direction5(0.0, 1.0, 0.0);
-  uv = skybox.getUVCoordinates(direction5);
+  linalg::Vec3d direction5(0.0, 1.0, 0.0);
+  uv = skybox.GetUvCoordinates(direction5);
   EXPECT_NEAR(uv.u, 0.5, 1e-6);
   EXPECT_NEAR(uv.v, 0.0, 1e-6);
 
-  lin::Vec3d direction6(0.0, -1.0, 0.0);
-  uv = skybox.getUVCoordinates(direction6);
+  linalg::Vec3d direction6(0.0, -1.0, 0.0);
+  uv = skybox.GetUvCoordinates(direction6);
   EXPECT_NEAR(uv.u, 0.5, 1e-6);
   EXPECT_NEAR(uv.v, 1.0, 1e-6);
 
@@ -87,7 +87,7 @@ TEST(SkyboxTest, ReturnsDefaultColorAfterTextureIsResetToNull) {
 
   Texture texture;
   texture.setValue(ColorRGB(0.1, 0.2, 0.3));
-  texture.setColorSpace(ColorSpace::Linear);
+  texture.setColorSpace(ColorSpace::LINEAR);
   skybox.setTexture(&texture);
 
   skybox.setTexture(nullptr);
@@ -99,7 +99,7 @@ TEST(SkyboxTest, ReturnsDefaultColorAfterTextureIsResetToNull) {
   double b = 0.3;
   convertToLinearSpace(b);
 
-  lin::Vec3d direction(0.0, 0.0, 1.0);
+  linalg::Vec3d direction(0.0, 0.0, 1.0);
   ColorRGBA color = skybox.getColor(direction);
 
   EXPECT_DOUBLE_EQ(color.r, r);

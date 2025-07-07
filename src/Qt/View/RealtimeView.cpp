@@ -30,7 +30,7 @@ void RealtimeView::initializeGL() {
   std::cout << "OpenGL initialized. Version: " << glGetString(GL_VERSION) << '\n';
   emit initializeRequested();
 
-  OpenGLContext::instance().setWidget(this);
+  OpenGLContext::Instance().setWidget(this);
 }
 
 void RealtimeView::resizeGL(int width, int height) { emit resized(width, height); }
@@ -44,7 +44,7 @@ void RealtimeView::wheelEvent(QWheelEvent* event) {
 
 void RealtimeView::mousePressEvent(QMouseEvent* event) {
   if(event->button() == Qt::MiddleButton) {
-    m_lastMousePos = event->pos();
+    m_last_mouse_pos = event->pos();
   } else if(event->button() == Qt::LeftButton) {
     emit leftMouseClicked(event->pos().x(), event->pos().y());
   }
@@ -52,12 +52,12 @@ void RealtimeView::mousePressEvent(QMouseEvent* event) {
 
 void RealtimeView::mouseMoveEvent(QMouseEvent* event) {
   if((event->buttons() & Qt::MiddleButton) != 0U) {
-    const int  dx    = m_lastMousePos.x() - event->pos().x();
-    const int  dy    = event->pos().y() - m_lastMousePos.y();
+    const int  dx    = m_last_mouse_pos.x() - event->pos().x();
+    const int  dy    = event->pos().y() - m_last_mouse_pos.y();
     const bool shift = (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier) != 0U;
     emit       middleMouseDragged(dx, dy, shift);
   }
-  m_lastMousePos = event->pos();
+  m_last_mouse_pos = event->pos();
 }
 
 void RealtimeView::keyPressEvent(QKeyEvent* event) {}

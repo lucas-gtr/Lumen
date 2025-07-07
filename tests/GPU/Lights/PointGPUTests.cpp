@@ -9,8 +9,8 @@ TEST(PointGPUTest, Initialization) {
 
     PointLightGPU gpu_light(&light);
 
-    EXPECT_EQ(gpu_light.getPosition(), lin::Vec3f(1.0f, 2.0f, 3.0f));
-    EXPECT_EQ(gpu_light.getColor(), lin::Vec3f(1.0f, 1.0f, 1.0f));
+    EXPECT_EQ(gpu_light.getPosition(), linalg::Vec3f(1.0f, 2.0f, 3.0f));
+    EXPECT_EQ(gpu_light.getColor(), linalg::Vec3f(1.0f, 1.0f, 1.0f));
 }
 
 TEST(PointGPUTest, Position) {
@@ -18,7 +18,7 @@ TEST(PointGPUTest, Position) {
     light.setPosition({0.0f, 0.0f, -1.0f});
     PointLightGPU gpu_light(&light);
 
-    EXPECT_EQ(gpu_light.getPosition(), lin::Vec3f(0.0f, 0.0f, -1.0f));
+    EXPECT_EQ(gpu_light.getPosition(), linalg::Vec3f(0.0f, 0.0f, -1.0f));
 }
 
 TEST(PointGPUTest, Color) {
@@ -26,7 +26,7 @@ TEST(PointGPUTest, Color) {
     light.setColor({0.5f, 0.5f, 0.5f});
     PointLightGPU gpu_light(&light);
 
-    EXPECT_EQ(gpu_light.getColor(), lin::Vec3f(0.5f, 0.5f, 0.5f));
+    EXPECT_EQ(gpu_light.getColor(), linalg::Vec3f(0.5f, 0.5f, 0.5f));
 }
 
 TEST(PointGPUTest, Intensity) {
@@ -35,6 +35,6 @@ TEST(PointGPUTest, Intensity) {
     light.setColor({1.0f, 1.0f, 1.0f});
     PointLightGPU gpu_light(&light);
 
-    lin::Vec3f expected_color = lin::Vec3f(1.0f, 1.0f, 1.0f) * 2.0f;
+    linalg::Vec3f expected_color = linalg::Vec3f(1.0f, 1.0f, 1.0f) * 2.0f;
     EXPECT_EQ(gpu_light.getColor(), expected_color);
 }

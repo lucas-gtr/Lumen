@@ -28,7 +28,7 @@ void EngineGL::initialize(Scene* scene) {
   m_resource_manager       = std::make_unique<ResourceManagerGL>(m_viewport_width, m_viewport_height, scene);
   m_scene_pass_framebuffer = std::make_unique<FramebufferGL>(m_viewport_width, m_viewport_height, 1, 4);
   m_resolve_framebuffer    = std::make_unique<FramebufferGL>(m_viewport_width, m_viewport_height, 1, 1);
-  m_shadow_map_2D          = std::make_unique<ShadowMapGL>(m_shadow_map_size);
+  m_shadow_map_2_d          = std::make_unique<ShadowMapGL>(m_shadow_map_size);
   m_shadow_map_cube        = std::make_unique<ShadowMapGL>(m_shadow_map_size);
 
   loadShaderPrograms();
@@ -37,7 +37,7 @@ void EngineGL::initialize(Scene* scene) {
 }
 
 void EngineGL::loadShaderPrograms() {
-  m_shadow_map_2D_program.loadShaders("Resources/ShadersGL/ShadowMap2D.vert", "Resources/ShadersGL/ShadowMap2D.frag");
+  m_shadow_map_2_d_program.loadShaders("Resources/ShadersGL/ShadowMap2D.vert", "Resources/ShadersGL/ShadowMap2D.frag");
   m_shadow_map_cube_program.loadShaders("Resources/ShadersGL/ShadowMapCube.vert",
                                         "Resources/ShadersGL/ShadowMapCube.geom",
                                         "Resources/ShadersGL/ShadowMapCube.frag");
@@ -59,28 +59,28 @@ void EngineGL::configureOpenGLStates() {
 }
 
 void EngineGL::initQuadVAO() {
-  constexpr std::array<float, 16> quadVertices = {
+  constexpr std::array<float, 16> quad_vertices = {
       // positions   // texture coords
       -1.0F, -1.0F, 0.0F, 0.0F, 1.0F, -1.0F, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, 1.0F, -1.0F, 1.0F, 0.0F, 1.0F,
   };
 
-  constexpr std::array<unsigned int, 6> quadIndices = {0, 1, 2, 2, 3, 0};
-  glGenVertexArrays(1, &m_quad_VAO);
-  glBindVertexArray(m_quad_VAO);
+  constexpr std::array<unsigned int, 6> quad_indices = {0, 1, 2, 2, 3, 0};
+  glGenVertexArrays(1, &m_quad_vao);
+  glBindVertexArray(m_quad_vao);
 
-  unsigned int VBO = 0U;
-  unsigned int EBO = 0U;
+  unsigned int vbo = 0U;
+  unsigned int ebo = 0U;
 
-  glGenBuffers(1, &VBO);
-  glGenBuffers(1, &EBO);
+  glGenBuffers(1, &vbo);
+  glGenBuffers(1, &ebo);
 
-  glBindBuffer(GL_ARRAY_BUFFER, VBO);
-  glBufferData(GL_ARRAY_BUFFER, static_cast<GLsizeiptr>(quadVertices.size() * sizeof(float)), quadVertices.data(),
+  glBindBuffer(GL_ARRAY_BUFFER, vbo);
+  glBufferData(GL_ARRAY_BUFFER, static_cast<GLsizeiptr>(quad_vertices.size() * sizeof(float)), quad_vertices.data(),
                GL_STATIC_DRAW);
 
-  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-  glBufferData(GL_ELEMENT_ARRAY_BUFFER, static_cast<GLsizeiptr>(quadIndices.size() * sizeof(unsigned int)),
-               quadIndices.data(), GL_STATIC_DRAW);
+  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+  glBufferData(GL_ELEMENT_ARRAY_BUFFER, static_cast<GLsizeiptr>(quad_indices.size() * sizeof(unsigned int)),
+               quad_indices.data(), GL_STATIC_DRAW);
 
   // NOLINTBEGIN(cppcoreguidelines-pro-type-cstyle-cast, google-readability-casting, performance-no-int-to-ptr)
   glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 4, nullptr);
@@ -94,19 +94,19 @@ void EngineGL::initQuadVAO() {
   glBindBuffer(GL_ARRAY_BUFFER, 0);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-  std::cout << "EngineGL: Quad VAO " << m_quad_VAO << " created." << '\n';
-  glDeleteBuffers(1, &VBO);
-  glDeleteBuffers(1, &EBO);
+  std::cout << "EngineGL: Quad VAO " << m_quad_vao << " created." << '\n';
+  glDeleteBuffers(1, &vbo);
+  glDeleteBuffers(1, &ebo);
 }
 
 void EngineGL::setShadowMapSize(int size) {
-  OpenGLContext::instance().makeContextCurrent();
+  OpenGLContext::Instance().makeContextCurrent();
   m_shadow_map_size = std::clamp(size, MIN_SHADOW_MAP_SIZE, MAX_SHADOW_MAP_SIZE);
-  m_shadow_map_2D->resize(m_shadow_map_size);
+  m_shadow_map_2_d->resize(m_shadow_map_size);
   m_shadow_map_cube->resize(m_shadow_map_size);
   drawShadowMap2D();
   drawShadowMapCube();
-  OpenGLContext::instance().doneContext();
+  OpenGLContext::Instance().doneContext();
 }
 
 void EngineGL::setViewportSize(int width, int height) {
@@ -132,14 +132,14 @@ void EngineGL::setExposure(float exposure) {
   m_post_processing_program.setUniform1f("exposure", m_exposure);
 }
 
-void EngineGL::setToneMapping(ToneMapping toneMapping) {
-  m_toneMapping = toneMapping;
+void EngineGL::setToneMapping(ToneMapping tone_mapping) {
+  m_tone_mapping = tone_mapping;
   m_post_processing_program.bind();
-  m_post_processing_program.setUniform1i("toneMapping", static_cast<int>(toneMapping));
+  m_post_processing_program.setUniform1i("toneMapping", static_cast<int>(tone_mapping));
 }
 
 void EngineGL::drawShadowMap2D() {
-  m_shadow_map_2D->bindFramebuffer();
+  m_shadow_map_2_d->bindFramebuffer();
 
   glClearColor(0.0F, 0.0F, 0.0F, 1.0F);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -153,20 +153,20 @@ void EngineGL::drawShadowMap2D() {
     drawLightShadowMap2D(m_resource_manager->getSpotLights()[i]->getLightSpaceMatrix(), i, 1);
   }
 
-  m_shadow_map_2D->bindTexture(SHADOW_2D_MAP_TEXTURE_UNIT);
+  m_shadow_map_2_d->bindTexture(SHADOW_2D_MAP_TEXTURE_UNIT);
 }
 
-void EngineGL::drawLightShadowMap2D(const float* lightSpaceMatrix, int indexX, int indexY) {
-  const int tileSize = static_cast<int>(m_shadow_map_size * HALF);
-  glViewport(tileSize * indexX, tileSize * indexY, tileSize, tileSize);
+void EngineGL::drawLightShadowMap2D(const float* light_space_matrix, int index_x, int index_y) {
+  const int tile_size = static_cast<int>(m_shadow_map_size * HALF);
+  glViewport(tile_size * index_x, tile_size * index_y, tile_size, tile_size);
 
-  m_shadow_map_2D_program.bind();
-  m_shadow_map_2D_program.setUniformMatrix4fv("lightSpaceMatrix", lightSpaceMatrix);
+  m_shadow_map_2_d_program.bind();
+  m_shadow_map_2_d_program.setUniformMatrix4fv("lightSpaceMatrix", light_space_matrix);
 
-  for(const auto& dataBuffer : m_resource_manager->getObjectList()) {
-    dataBuffer->bindVAO();
-    m_shadow_map_2D_program.setUniformMatrix4fv("model", dataBuffer->getModelMatrix());
-    glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(dataBuffer->getIndexCount()), GL_UNSIGNED_INT, nullptr);
+  for(const auto& data_buffer : m_resource_manager->getObjectList()) {
+    data_buffer->bindVAO();
+    m_shadow_map_2_d_program.setUniformMatrix4fv("model", data_buffer->getModelMatrix());
+    glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(data_buffer->getIndexCount()), GL_UNSIGNED_INT, nullptr);
   }
 }
 
@@ -188,18 +188,21 @@ void EngineGL::drawPointShadowMap(const PointLightGL* light) {
   glViewport(0, 0, m_shadow_map_size, m_shadow_map_size);
 
   m_shadow_map_cube_program.bind();
-  for(int i = 0; i < CUBE_MAP_FACE_COUNT; ++i) {
-    m_shadow_map_cube_program.setUniformMatrix4fv(("lightSpaceMatrices[" + std::to_string(i) + "]").c_str(),
-                                                  light->getLightSpaceMatrix(i));
+  for (int i = 0; i < CUBE_MAP_FACE_COUNT; ++i) {
+    std::string const matrix_uniform = "lightSpaceMatrices[" + std::to_string(i) + "]";
+    m_shadow_map_cube_program.setUniformMatrix4fv(matrix_uniform.c_str(), light->getLightSpaceMatrix(i));
   }
-  m_shadow_map_cube_program.setUniform3f("lightPos", light->getPosition().x, light->getPosition().y,
+
+  m_shadow_map_cube_program.setUniform3f("lightPos",
+                                         light->getPosition().x,
+                                         light->getPosition().y,
                                          light->getPosition().z);
   m_shadow_map_cube_program.setUniform1f("farPlane", light->getFarPlane());
 
-  for(const auto& dataBuffer : m_resource_manager->getObjectList()) {
-    dataBuffer->bindVAO();
-    m_shadow_map_cube_program.setUniformMatrix4fv("model", dataBuffer->getModelMatrix());
-    glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(dataBuffer->getIndexCount()), GL_UNSIGNED_INT, nullptr);
+  for (const auto& data_buffer : m_resource_manager->getObjectList()) {
+    data_buffer->bindVAO();
+    m_shadow_map_cube_program.setUniformMatrix4fv("model", data_buffer->getModelMatrix());
+    glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(data_buffer->getIndexCount()), GL_UNSIGNED_INT, nullptr);
   }
 
   m_scene_pass_program.bind();
@@ -217,44 +220,60 @@ void EngineGL::uploadLightsData() {
 void EngineGL::uploadDirectionalLightsData() {
   m_scene_pass_program.setUniform1i("numDirLights",
                                     static_cast<int>(m_resource_manager->getDirectionalLights().size()));
-  for(int i = 0; i < m_resource_manager->getDirectionalLights().size(); ++i) {
+  for (int i = 0; i < m_resource_manager->getDirectionalLights().size(); ++i) {
     const auto& light = m_resource_manager->getDirectionalLights()[i];
-    m_scene_pass_program.setUniform3f(("dirLights[" + std::to_string(i) + "].direction").c_str(),
-                                      light->getDirection().x, light->getDirection().y, light->getDirection().z);
-    m_scene_pass_program.setUniform3f(("dirLights[" + std::to_string(i) + "].color").c_str(), light->getColor().x,
-                                      light->getColor().y, light->getColor().z);
-    m_scene_pass_program.setUniformMatrix4fv(("dirLights[" + std::to_string(i) + "].lightSpaceMatrix").c_str(),
-                                             light->getLightSpaceMatrix());
+    const auto& direction = light->getDirection();
+    const auto& color = light->getColor();
+
+    std::string const dir_uniform = "dirLights[" + std::to_string(i) + "].direction";
+    std::string const color_uniform = "dirLights[" + std::to_string(i) + "].color";
+    std::string const matrix_uniform = "dirLights[" + std::to_string(i) + "].lightSpaceMatrix";
+
+    m_scene_pass_program.setUniform3f(dir_uniform.c_str(), direction.x, direction.y, direction.z);
+    m_scene_pass_program.setUniform3f(color_uniform.c_str(), color.x, color.y, color.z);
+
+    m_scene_pass_program.setUniformMatrix4fv(matrix_uniform.c_str(), light->getLightSpaceMatrix());
   }
 }
 
 void EngineGL::uploadSpotLightsData() {
   m_scene_pass_program.setUniform1i("numPointLights", static_cast<int>(m_resource_manager->getPointLights().size()));
-  for(int i = 0; i < m_resource_manager->getSpotLights().size(); ++i) {
+  for (int i = 0; i < m_resource_manager->getSpotLights().size(); ++i) {
     const auto& light = m_resource_manager->getSpotLights()[i];
-    m_scene_pass_program.setUniform3f(("spotLights[" + std::to_string(i) + "].position").c_str(),
-                                      light->getPosition().x, light->getPosition().y, light->getPosition().z);
-    m_scene_pass_program.setUniform3f(("spotLights[" + std::to_string(i) + "].direction").c_str(),
-                                      light->getDirection().x, light->getDirection().y, light->getDirection().z);
-    m_scene_pass_program.setUniform1f(("spotLights[" + std::to_string(i) + "].innerCutOff").c_str(),
-                                      light->getCosInnerCutoff());
-    m_scene_pass_program.setUniform1f(("spotLights[" + std::to_string(i) + "].outerCutOff").c_str(),
-                                      light->getCosOuterCutoff());
-    m_scene_pass_program.setUniform3f(("spotLights[" + std::to_string(i) + "].color").c_str(), light->getColor().x,
-                                      light->getColor().y, light->getColor().z);
-    m_scene_pass_program.setUniformMatrix4fv(("spotLights[" + std::to_string(i) + "].lightSpaceMatrix").c_str(),
-                                             light->getLightSpaceMatrix());
+    const auto& position = light->getPosition();
+    const auto& direction = light->getDirection();
+    const auto& color = light->getColor();
+    const float inner_cut_off = light->getCosInnerCutoff();
+    const float outer_cut_off = light->getCosOuterCutoff();
+
+    std::string const pos_uniform = "spotLights[" + std::to_string(i) + "].position";
+    std::string const dir_uniform = "spotLights[" + std::to_string(i) + "].direction";
+    std::string const inner_uniform = "spotLights[" + std::to_string(i) + "].innerCutOff";
+    std::string const outer_uniform = "spotLights[" + std::to_string(i) + "].outerCutOff";
+    std::string const color_uniform = "spotLights[" + std::to_string(i) + "].color";
+    std::string const matrix_uniform = "spotLights[" + std::to_string(i) + "].lightSpaceMatrix";
+
+    m_scene_pass_program.setUniform3f(pos_uniform.c_str(), position.x, position.y, position.z);
+    m_scene_pass_program.setUniform3f(dir_uniform.c_str(), direction.x, direction.y, direction.z);
+    m_scene_pass_program.setUniform1f(inner_uniform.c_str(), inner_cut_off);
+    m_scene_pass_program.setUniform1f(outer_uniform.c_str(), outer_cut_off);
+    m_scene_pass_program.setUniform3f(color_uniform.c_str(), color.x, color.y, color.z);
+    m_scene_pass_program.setUniformMatrix4fv(matrix_uniform.c_str(), light->getLightSpaceMatrix());
   }
 }
 
 void EngineGL::uploadPointLightsData() {
   m_scene_pass_program.setUniform1i("numSpotLights", static_cast<int>(m_resource_manager->getSpotLights().size()));
-  for(int i = 0; i < m_resource_manager->getPointLights().size(); ++i) {
+  for (int i = 0; i < m_resource_manager->getPointLights().size(); ++i) {
     const auto& light = m_resource_manager->getPointLights()[i];
-    m_scene_pass_program.setUniform3f(("pointLights[" + std::to_string(i) + "].position").c_str(),
-                                      light->getPosition().x, light->getPosition().y, light->getPosition().z);
-    m_scene_pass_program.setUniform3f(("pointLights[" + std::to_string(i) + "].color").c_str(), light->getColor().x,
-                                      light->getColor().y, light->getColor().z);
+    const auto& position = light->getPosition();
+    const auto& color = light->getColor();
+
+    std::string const pos_uniform = "pointLights[" + std::to_string(i) + "].position";
+    std::string const color_uniform = "pointLights[" + std::to_string(i) + "].color";
+
+    m_scene_pass_program.setUniform3f(pos_uniform.c_str(), position.x, position.y, position.z);
+    m_scene_pass_program.setUniform3f(color_uniform.c_str(), color.x, color.y, color.z);
   }
 }
 
@@ -294,17 +313,18 @@ void EngineGL::renderScenePass() {
   glClearStencil(0);
   glEnable(GL_STENCIL_TEST);
   glStencilMask(FULL_STENCIL_MASK);
+  glClearColor(BACKGROUND_COLOR, BACKGROUND_COLOR, BACKGROUND_COLOR, 1.0F);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
   glDisable(GL_STENCIL_TEST);
 
   m_scene_pass_program.bind();
 
-  for(const auto& dataBuffer : m_resource_manager->getObjectList()) {
-    dataBuffer->bindVAO();
-    dataBuffer->bindMaterial();
-    m_scene_pass_program.setUniformMatrix4fv("model", dataBuffer->getModelMatrix());
-    m_scene_pass_program.setUniformMatrix3fv("normalMatrix", dataBuffer->getNormalMatrix());
-    glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(dataBuffer->getIndexCount()), GL_UNSIGNED_INT, nullptr);
+  for(const auto& data_buffer : m_resource_manager->getObjectList()) {
+    data_buffer->bindVAO();
+    data_buffer->bindMaterial();
+    m_scene_pass_program.setUniformMatrix4fv("model", data_buffer->getModelMatrix());
+    m_scene_pass_program.setUniformMatrix3fv("normalMatrix", data_buffer->getNormalMatrix());
+    glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(data_buffer->getIndexCount()), GL_UNSIGNED_INT, nullptr);
   }
 
   glBindVertexArray(0);
@@ -322,15 +342,15 @@ void EngineGL::drawOutline() {
 
   m_outline_program.bind();
 
-  for(const auto& dataBuffer : m_resource_manager->getObjectList()) {
-    if(!dataBuffer->isSelected()) {
+  for(const auto& data_buffer : m_resource_manager->getObjectList()) {
+    if(!data_buffer->isSelected()) {
       continue;
     }
-    dataBuffer->bindVAO();
-    dataBuffer->bindMaterial();
-    m_outline_program.setUniformMatrix4fv("model", dataBuffer->getModelMatrix());
+    data_buffer->bindVAO();
+    data_buffer->bindMaterial();
+    m_outline_program.setUniformMatrix4fv("model", data_buffer->getModelMatrix());
     m_outline_program.setUniform1f("outline_scale", 1.00F);
-    glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(dataBuffer->getIndexCount()), GL_UNSIGNED_INT, nullptr);
+    glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(data_buffer->getIndexCount()), GL_UNSIGNED_INT, nullptr);
   }
 
   glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
@@ -339,15 +359,15 @@ void EngineGL::drawOutline() {
   glStencilFunc(GL_NOTEQUAL, 1, FULL_STENCIL_MASK);
   glStencilMask(NO_STENCIL_MASK);
 
-  for(const auto& dataBuffer : m_resource_manager->getObjectList()) {
-    if(!dataBuffer->isSelected()) {
+  for(const auto& data_buffer : m_resource_manager->getObjectList()) {
+    if(!data_buffer->isSelected()) {
       continue;
     }
-    dataBuffer->bindVAO();
-    dataBuffer->bindMaterial();
-    m_outline_program.setUniformMatrix4fv("model", dataBuffer->getModelMatrix());
+    data_buffer->bindVAO();
+    data_buffer->bindMaterial();
+    m_outline_program.setUniformMatrix4fv("model", data_buffer->getModelMatrix());
     m_outline_program.setUniform1f("outline_scale", OUTLINE_SCALE);
-    glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(dataBuffer->getIndexCount()), GL_UNSIGNED_INT, nullptr);
+    glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(data_buffer->getIndexCount()), GL_UNSIGNED_INT, nullptr);
   }
 
   glEnable(GL_DEPTH_TEST);
@@ -361,7 +381,7 @@ void EngineGL::drawSkybox() {
 
   glDepthFunc(GL_LEQUAL); // Set depth function for skybox rendering
 
-  glBindVertexArray(m_quad_VAO);
+  glBindVertexArray(m_quad_vao);
   glDrawElements(GL_TRIANGLES, QUAD_INDICES_COUNT, GL_UNSIGNED_INT, nullptr);
   glBindVertexArray(0);
 
@@ -374,7 +394,7 @@ void EngineGL::drawViewportGrid() {
 
   m_viewport_grid_program.bind();
 
-  glBindVertexArray(m_quad_VAO);
+  glBindVertexArray(m_quad_vao);
   glDrawElements(GL_TRIANGLES, QUAD_INDICES_COUNT, GL_UNSIGNED_INT, nullptr);
   glBindVertexArray(0);
 }
@@ -391,12 +411,11 @@ void EngineGL::applyPostProcessing() {
 
   m_post_processing_program.bind();
 
-  glClearColor(BACKGROUND_COLOR, BACKGROUND_COLOR, BACKGROUND_COLOR, 1.0F);
   glClear(GL_COLOR_BUFFER_BIT);
 
   glDisable(GL_DEPTH_TEST);
 
-  glBindVertexArray(m_quad_VAO);
+  glBindVertexArray(m_quad_vao);
 
   glDrawElements(GL_TRIANGLES, QUAD_INDICES_COUNT, GL_UNSIGNED_INT, nullptr);
 
@@ -407,7 +426,7 @@ void EngineGL::applyPostProcessing() {
 
 void EngineGL::setupRendering() {
   configureShadersAndUniforms();
-  m_shadow_map_2D->initialize2DMap();
+  m_shadow_map_2_d->initialize2DMap();
   m_shadow_map_cube->initializeCubeMap();
   bakeLights();
 
@@ -421,7 +440,7 @@ void EngineGL::renderFrame(unsigned int default_ramebuffer) {
 
   if(m_dynamic_shadow_map) {
     drawShadowMap2D();
-    drawShadowMapCube();
+    // drawShadowMapCube();
   }
 
   m_scene_pass_framebuffer->bind();
@@ -440,7 +459,7 @@ void EngineGL::renderFrame(unsigned int default_ramebuffer) {
 }
 
 EngineGL::~EngineGL() {
-  glDeleteVertexArrays(1, &m_quad_VAO);
+  glDeleteVertexArrays(1, &m_quad_vao);
   glBindFramebuffer(GL_FRAMEBUFFER, 0);
   glBindVertexArray(0);
   glUseProgram(0);

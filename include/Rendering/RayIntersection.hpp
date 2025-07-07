@@ -6,10 +6,10 @@
 #define RENDERING_RAYINTERSECTION_HPP
 
 #include <limits>
+#include <linalg/Vec3.hpp>
 #include <vector>
 
 #include "Core/CommonTypes.hpp"
-#include "Core/Math/Vec3.hpp"
 #include "Core/Ray.hpp"
 #include "Geometry/Mesh.hpp"
 #include "Scene/Scene.hpp"
@@ -24,11 +24,11 @@
 struct RayHitInfo {
   double          distance = std::numeric_limits<double>::max();
   const Material* material = nullptr;
-  TextureUV       uvCoordinates;
-  lin::Vec3d      normal;
-  lin::Vec3d      tangent;
-  lin::Vec3d      bitangent;
-  lin::Vec3d      hitPoint;
+  TextureUV       uv_coordinates;
+  linalg::Vec3d      normal;
+  linalg::Vec3d      tangent;
+  linalg::Vec3d      bitangent;
+  linalg::Vec3d      hit_point;
 };
 
 /**
@@ -60,8 +60,8 @@ constexpr double EPSILON           = 1e-6;
  * @param bary_coords The barycentric coordinates of the intersection point, if any.
  * @return True if the ray intersects the triangle, false otherwise.
  */
-bool getTriangleIntersection(const Ray& ray, const lin::Vec3d& p0, const lin::Vec3d& p1, const lin::Vec3d& p2,
-                             double& hit_distance, lin::Vec3d& bary_coords);
+bool getTriangleIntersection(const Ray& ray, const linalg::Vec3d& p0, const linalg::Vec3d& p1, const linalg::Vec3d& p2,
+                             double& hit_distance, linalg::Vec3d& bary_coords);
 
 /**
  * @brief Processes the intersection of a ray with a mesh using a BVH.
@@ -127,7 +127,7 @@ RayHitInfo getSceneIntersection(const Ray& ray, const Scene* scene);
  * @param hit_distance The distance to the intersection point, if any.
  * @return True if the ray intersects the AABB, false otherwise.
  */
-bool getAABBIntersection(const Ray& ray, const lin::Vec3d& min_bound, const lin::Vec3d& max_bound,
+bool getAABBIntersection(const Ray& ray, const linalg::Vec3d& min_bound, const linalg::Vec3d& max_bound,
                          double& hit_distance);
 
 /**
@@ -164,7 +164,7 @@ void processFaceIntersection(const Ray& ray, const Mesh& mesh, const Face& face,
  * @param v1 The second vertex of the triangle.
  * @param v2 The third vertex of the triangle.
  */
-void updateHitInfoFromBarycentric(RayHitInfo& hit_info, double distance, const lin::Vec3d& bary, const Vertex& v0,
+void updateHitInfoFromBarycentric(RayHitInfo& hit_info, double distance, const linalg::Vec3d& bary, const Vertex& v0,
                                   const Vertex& v1, const Vertex& v2);
 
 /**

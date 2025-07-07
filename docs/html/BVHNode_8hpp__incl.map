@@ -1,19 +1,7 @@
 <map id="/home/lucasgtr/lumen/include/BVH/BVHNode.hpp" name="/home/lucasgtr/lumen/include/BVH/BVHNode.hpp">
-<area shape="rect" id="Node000001" title="Header file for the BVHNode class." alt="" coords="87,5,285,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="78,93,155,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,47,138,84,134,81,167,44"/>
-<area shape="rect" id="Node000003" href="$Vec3_8hpp.html" title="Header file for the Vec3 class, representing a 3D vector." alt="" coords="179,93,331,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="205,44,238,81,234,84,201,47"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="5,167,68,192"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="221,121,82,166,80,161,219,116"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="93,167,191,192"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="239,121,173,162,170,157,236,116"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="215,167,295,192"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="258,119,258,153,253,153,253,119"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="320,167,407,192"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="274,116,336,157,333,161,271,121"/>
-<area shape="rect" id="Node000008" href="$Alignment_8hpp.html" title="Defines alignment constants for vector and matrix types." alt="" coords="431,167,619,192"/>
-<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="299,116,469,161,467,166,298,121"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="489,240,560,265"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="527,192,527,226,522,226,522,192"/>
+<area shape="rect" id="Node000001" title="Header file for the BVHNode class." alt="" coords="6,5,205,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,83,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,47,64,84,59,81,88,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="107,93,229,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,44,152,81,148,84,118,47"/>
 </map>

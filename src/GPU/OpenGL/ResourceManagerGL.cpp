@@ -52,11 +52,11 @@ void ResourceManagerGL::addObject3D(Object3D* object) {
   Material*   material    = object->getMaterial();
   MaterialGL* gl_material = addMaterial(material);
 
-  OpenGLContext::instance().makeContextCurrent();
+  OpenGLContext::Instance().makeContextCurrent();
   auto object_gl = std::make_unique<ObjectGL>(object, gl_material);
   object_gl->uploadToGPU();
   m_object_list.push_back(std::move(object_gl));
-  OpenGLContext::instance().doneContext();
+  OpenGLContext::Instance().doneContext();
 
   object->getMaterialChangedObserver().add([this](const Object3D* obj) { this->onObjectMaterialChanged(obj); });
 }
@@ -74,11 +74,11 @@ TextureGL* ResourceManagerGL::addTexture(Texture* texture) {
     }
   }
 
-  OpenGLContext::instance().makeContextCurrent();
+  OpenGLContext::Instance().makeContextCurrent();
   auto new_texture = std::make_unique<TextureGL>(texture);
   new_texture->uploadToGPU();
   m_textures.push_back(std::move(new_texture));
-  OpenGLContext::instance().doneContext();
+  OpenGLContext::Instance().doneContext();
   return m_textures.back().get();
 }
 
@@ -92,32 +92,32 @@ MaterialGL* ResourceManagerGL::addMaterial(Material* material) {
   TextureGL* diffuse_texture = ResourceManagerGL::addTexture(material->getDiffuseTexture());
   TextureGL* normal_texture  = ResourceManagerGL::addTexture(material->getNormalTexture());
 
-  OpenGLContext::instance().makeContextCurrent();
+  OpenGLContext::Instance().makeContextCurrent();
   auto new_material = std::make_unique<MaterialGL>(material, diffuse_texture, normal_texture);
   m_materials.push_back(std::move(new_material));
   material->getMaterialChangedObserver().add(
       [this](const Material* material) { this->onMaterialTextureChanged(material); });
-  OpenGLContext::instance().doneContext();
+  OpenGLContext::Instance().doneContext();
   return m_materials.back().get();
 }
 
 void ResourceManagerGL::addLight(Light* light) {
   switch(light->getType()) {
-  case LightType::Directional:
+  case LightType::DIRECTIONAL:
     if(auto* directional = dynamic_cast<DirectionalLight*>(light)) {
       ResourceManagerGL::addLight(directional);
     } else {
       std::cerr << "Failed to cast to DirectionalLight\n";
     }
     break;
-  case LightType::Point:
+  case LightType::POINT:
     if(auto* point = dynamic_cast<PointLight*>(light)) {
       ResourceManagerGL::addLight(point);
     } else {
       std::cerr << "Failed to cast to PointLight\n";
     }
     break;
-  case LightType::Spot:
+  case LightType::SPOT:
     if(auto* spot = dynamic_cast<SpotLight*>(light)) {
       ResourceManagerGL::addLight(spot);
     } else {

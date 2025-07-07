@@ -17,7 +17,7 @@ protected:
 
   void SetUp() override {
     framebuffer.initThreadBuffers(2);
-    Framebuffer::setThreadId(0);
+    Framebuffer::SetThreadId(0);
   }
 };
 
@@ -52,7 +52,7 @@ TEST_F(FramebufferTest, SetFramebufferPropertiesReallocatesChannels) {
 
 TEST_F(FramebufferTest, InitThreadBuffersAllocatesCorrectSize) {
   framebuffer.initThreadBuffers(3);
-  Framebuffer::setThreadId(2);
+  Framebuffer::SetThreadId(2);
   framebuffer.setPixelColor(pixel00, red, 1.0);
 }
 
@@ -76,10 +76,10 @@ TEST_F(FramebufferTest, SetPixelColorOutOfBoundsIsIgnored) {
 }
 
 TEST_F(FramebufferTest, ReduceThreadBuffersCombinesData) {
-  Framebuffer::setThreadId(0);
+  Framebuffer::SetThreadId(0);
   framebuffer.setPixelColor(pixel22, red, 0.5);
 
-  Framebuffer::setThreadId(1);
+  Framebuffer::SetThreadId(1);
   framebuffer.setPixelColor(pixel22, red, 0.5);
 
   framebuffer.reduceThreadBuffers();
@@ -105,7 +105,7 @@ TEST_F(FramebufferTest, ConvertToSRGBColorSpaceDoesNotCrash) {
 TEST_F(FramebufferTest, GrayscalePixelSetCorrectly) {
   framebuffer.setFramebufferProperties({2, 2, 1});
   framebuffer.initThreadBuffers(1);
-  Framebuffer::setThreadId(0);
+  Framebuffer::SetThreadId(0);
 
   framebuffer.setPixelColor({1, 1}, ColorRGBA{0.2, 0.4, 0.6, 1.0}, 1.0);
   framebuffer.reduceThreadBuffers();
@@ -119,7 +119,7 @@ TEST_F(FramebufferTest, GrayscalePixelSetCorrectly) {
 TEST_F(FramebufferTest, AlphaChannelIsAddedWhenChannelsEqual4) {
   framebuffer.setFramebufferProperties({1, 1, 4});
   framebuffer.initThreadBuffers(1);
-  Framebuffer::setThreadId(0);
+  Framebuffer::SetThreadId(0);
 
   framebuffer.setPixelColor({0, 0}, ColorRGBA{0.5, 0.6, 0.7, 1.0}, 1.0);
   framebuffer.reduceThreadBuffers();
@@ -133,7 +133,7 @@ TEST_F(FramebufferTest, AlphaChannelIsAddedWhenChannelsEqual4) {
 TEST_F(FramebufferTest, UnsupportedChannelCountDoesNothing) {
   framebuffer.setFramebufferProperties({2, 2, 2});
   framebuffer.initThreadBuffers(1);
-  Framebuffer::setThreadId(0);
+  Framebuffer::SetThreadId(0);
 
   testing::internal::CaptureStderr();
   framebuffer.setPixelColor({0, 0}, ColorRGBA{0.5, 0.6, 0.7, 1.0}, 1.0);
@@ -150,14 +150,14 @@ TEST_F(FramebufferTest, UnsupportedChannelCountDoesNothing) {
 TEST_F(FramebufferTest, InvalidThreadIdThrowsError) {
   testing::internal::CaptureStderr();
   
-  Framebuffer::setThreadId(-1);
+  Framebuffer::SetThreadId(-1);
   framebuffer.setPixelColor({0, 0}, ColorRGBA{0.5, 0.6, 0.7, 1.0}, 1.0); 
   std::string outputNegative = testing::internal::GetCapturedStderr();
   EXPECT_TRUE(outputNegative.find("Invalid thread ID") != std::string::npos);
 
   testing::internal::CaptureStderr();
   
-  Framebuffer::setThreadId(99); 
+  Framebuffer::SetThreadId(99); 
   framebuffer.setPixelColor({0, 0}, ColorRGBA{0.5, 0.6, 0.7, 1.0}, 1.0); 
   std::string outputExceeding = testing::internal::GetCapturedStderr();
   EXPECT_TRUE(outputExceeding.find("Invalid thread ID") != std::string::npos);

@@ -27,8 +27,8 @@ public:
 TEST(IResourceManagerGPUTest, AddObject3D) {
     TestResourceManagerGPU resourceManager;
     Object3D object;
-    object.setPosition(lin::Vec3d(1.0, 2.0, 3.0));
-    object.setRotation(lin::Vec3d(45.0, 90.0, 180.0));
+    object.setPosition(linalg::Vec3d(1.0, 2.0, 3.0));
+    object.setRotation(linalg::Vec3d(45.0, 90.0, 180.0));
 
     EXPECT_NO_THROW(resourceManager.addObject3D(&object));
 }

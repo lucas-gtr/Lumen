@@ -1,16 +1,16 @@
 #include <algorithm>
 #include <cmath>
 #include <limits>
+#include <linalg/Mat3.hpp>
+#include <linalg/Mat4.hpp>
+#include <linalg/Vec3.hpp>
+#include <linalg/linalg.hpp>
 #include <stack>
 #include <string>
 #include <vector>
 
 #include "BVH/BVHNode.hpp"
 #include "Core/CommonTypes.hpp"
-#include "Core/Math/Mat3.hpp"
-#include "Core/Math/Mat4.hpp"
-#include "Core/Math/Vec3.hpp"
-#include "Core/Math/lin.hpp"
 #include "Core/Ray.hpp"
 #include "Geometry/Mesh.hpp"
 #include "Rendering/RayIntersection.hpp"
@@ -19,33 +19,33 @@
 
 namespace RayIntersection {
 
-bool getTriangleIntersection(const Ray& ray, const lin::Vec3d& p0, const lin::Vec3d& p1, const lin::Vec3d& p2,
-                             double& hit_distance, lin::Vec3d& bary_coords) {
-  const lin::Vec3d edge1 = p1 - p0;
-  const lin::Vec3d edge2 = p2 - p0;
-  const lin::Vec3d h     = ray.direction.cross(edge2);
-  const double     a     = lin::dot(edge1, h);
+bool getTriangleIntersection(const Ray& ray, const linalg::Vec3d& p0, const linalg::Vec3d& p1, const linalg::Vec3d& p2,
+                             double& hit_distance, linalg::Vec3d& bary_coords) {
+  const linalg::Vec3d edge1 = p1 - p0;
+  const linalg::Vec3d edge2 = p2 - p0;
+  const linalg::Vec3d h     = ray.direction.cross(edge2);
+  const double     a     = linalg::dot(edge1, h);
 
   if(std::abs(a) < EPSILON) {
     return false;
   }
 
   const double     f = 1.0 / a;
-  const lin::Vec3d s = ray.origin - p0;
-  const double     u = f * lin::dot(s, h);
+  const linalg::Vec3d s = ray.origin - p0;
+  const double     u = f * linalg::dot(s, h);
 
   if(u < 0.0 || u > 1.0) {
     return false;
   }
 
-  const lin::Vec3d q = s.cross(edge1);
-  const double     v = f * lin::dot(ray.direction, q);
+  const linalg::Vec3d q = s.cross(edge1);
+  const double     v = f * linalg::dot(ray.direction, q);
 
   if(v < 0.0 || u + v > 1.0) {
     return false;
   }
 
-  hit_distance = f * lin::dot(edge2, q);
+  hit_distance = f * linalg::dot(edge2, q);
 
   if(hit_distance > EPSILON) {
     bary_coords = {1.0 - u - v, u, v};
@@ -56,12 +56,12 @@ bool getTriangleIntersection(const Ray& ray, const lin::Vec3d& p0, const lin::Ve
 }
 
 void processFaceIntersection(const Ray& ray, const Mesh& mesh, const Face& face, RayHitInfo& closest_hit) {
-  const Vertex& v0 = mesh.getVertex(face.vertexIndices[0]);
-  const Vertex& v1 = mesh.getVertex(face.vertexIndices[1]);
-  const Vertex& v2 = mesh.getVertex(face.vertexIndices[2]);
+  const Vertex& v0 = mesh.getVertex(face.vertex_indices[0]);
+  const Vertex& v1 = mesh.getVertex(face.vertex_indices[1]);
+  const Vertex& v2 = mesh.getVertex(face.vertex_indices[2]);
 
   double     hit_distance = std::numeric_limits<double>::max();
-  lin::Vec3d bary_coords;
+  linalg::Vec3d bary_coords;
 
   if(!getTriangleIntersection(ray, v0.position, v1.position, v2.position, hit_distance, bary_coords)) {
     return;
@@ -72,11 +72,11 @@ void processFaceIntersection(const Ray& ray, const Mesh& mesh, const Face& face,
   }
 }
 
-void updateHitInfoFromBarycentric(RayHitInfo& hit_info, double distance, const lin::Vec3d& bary, const Vertex& v0,
+void updateHitInfoFromBarycentric(RayHitInfo& hit_info, double distance, const linalg::Vec3d& bary, const Vertex& v0,
                                   const Vertex& v1, const Vertex& v2) {
   hit_info.distance        = distance;
-  hit_info.uvCoordinates.u = bary.x * v0.uv_coord.u + bary.y * v1.uv_coord.u + bary.z * v2.uv_coord.u;
-  hit_info.uvCoordinates.v = bary.x * v0.uv_coord.v + bary.y * v1.uv_coord.v + bary.z * v2.uv_coord.v;
+  hit_info.uv_coordinates.u = bary.x * v0.uv_coord.u + bary.y * v1.uv_coord.u + bary.z * v2.uv_coord.u;
+  hit_info.uv_coordinates.v = bary.x * v0.uv_coord.v + bary.y * v1.uv_coord.v + bary.z * v2.uv_coord.v;
   hit_info.normal          = (bary.x * v0.normal + bary.y * v1.normal + bary.z * v2.normal).normalized();
   hit_info.tangent         = (bary.x * v0.tangent + bary.y * v1.tangent + bary.z * v2.tangent).normalized();
   hit_info.bitangent       = (bary.x * v0.bitangent + bary.y * v1.bitangent + bary.z * v2.bitangent).normalized();
@@ -122,20 +122,20 @@ void updateNormalWithTangentSpace(RayHitInfo& hit_info) {
     return;
   }
 
-  const lin::Mat3d tangent_space = lin::Mat3d::FromColumns(hit_info.tangent, hit_info.bitangent, hit_info.normal);
+  const linalg::Mat3d tangent_space = linalg::Mat3d::FromColumns(hit_info.tangent, hit_info.bitangent, hit_info.normal);
 
-  const ColorRGB normal_color     = hit_info.material->getNormal(hit_info.uvCoordinates);
-  lin::Vec3d     normal_direction = {normal_color.r, normal_color.g, normal_color.b};
-  normal_direction                = (normal_direction * 2) - lin::Vec3d(1.0, 1.0, 1.0);
+  const ColorRGB normal_color     = hit_info.material->getNormal(hit_info.uv_coordinates);
+  linalg::Vec3d     normal_direction = {normal_color.r, normal_color.g, normal_color.b};
+  normal_direction                = (normal_direction * 2) - linalg::Vec3d(1.0, 1.0, 1.0);
 
   hit_info.normal = (tangent_space * normal_direction).normalized();
 }
 
 Ray transformRayToObjectSpace(const Ray& ray, const Object3D* object) {
-  const lin::Mat4d inv_matrix = object->getInverseMatrix();
+  const linalg::Mat4d inv_matrix = object->getInverseMatrix();
 
-  const lin::Vec3d origin    = lin::toVec3((inv_matrix * lin::toVec4(ray.origin)));
-  const lin::Vec3d direction = (inv_matrix.topLeft3x3() * ray.direction).normalized();
+  const linalg::Vec3d origin    = linalg::toVec3((inv_matrix * linalg::toVec4(ray.origin)));
+  const linalg::Vec3d direction = (inv_matrix.topLeft3x3() * ray.direction).normalized();
 
   Ray local_ray = Ray::FromDirection(origin, direction);
 
@@ -144,14 +144,14 @@ Ray transformRayToObjectSpace(const Ray& ray, const Object3D* object) {
 
 void transformHitInfoToWorldSpace(RayHitInfo& hit_info, const Ray& local_ray, const Ray& original_ray,
                                   const Object3D* object) {
-  const lin::Vec3d hit_local = local_ray.origin + hit_info.distance * local_ray.direction;
-  const lin::Vec3d hit_world = lin::toVec3((object->getTransformationMatrix() * lin::toVec4(hit_local)));
+  const linalg::Vec3d hit_local = local_ray.origin + hit_info.distance * local_ray.direction;
+  const linalg::Vec3d hit_world = linalg::toVec3((object->getTransformationMatrix() * linalg::toVec4(hit_local)));
 
   hit_info.distance = (hit_world - original_ray.origin).length();
-  hit_info.hitPoint = hit_world;
+  hit_info.hit_point = hit_world;
   hit_info.material = object->getMaterial();
 
-  const lin::Mat3d normal_matrix = object->getNormalMatrix();
+  const linalg::Mat3d normal_matrix = object->getNormalMatrix();
   hit_info.normal                = (normal_matrix * hit_info.normal).normalized();
   hit_info.tangent               = (normal_matrix * hit_info.tangent).normalized();
   hit_info.bitangent             = (normal_matrix * hit_info.bitangent).normalized();
@@ -168,14 +168,14 @@ RayHitInfo getObjectIntersection(const Ray& ray, const Object3D* object) {
   return hit_info;
 }
 
-bool getAABBIntersection(const Ray& ray, const lin::Vec3d& min_bound, const lin::Vec3d& max_bound,
+bool getAABBIntersection(const Ray& ray, const linalg::Vec3d& min_bound, const linalg::Vec3d& max_bound,
                          double& hit_distance) {
-  const lin::Vec3d inv_dir = ray.direction.cwiseInverse();
-  const lin::Vec3d t0      = lin::cwiseProduct((min_bound - ray.origin), inv_dir);
-  const lin::Vec3d t1      = lin::cwiseProduct((max_bound - ray.origin), inv_dir);
+  const linalg::Vec3d inv_dir = ray.direction.cwiseInverse();
+  const linalg::Vec3d t0      = linalg::cwiseProduct((min_bound - ray.origin), inv_dir);
+  const linalg::Vec3d t1      = linalg::cwiseProduct((max_bound - ray.origin), inv_dir);
 
-  const lin::Vec3d t_min = lin::cwiseMin(t0, t1);
-  const lin::Vec3d t_max = lin::cwiseMax(t0, t1);
+  const linalg::Vec3d t_min = linalg::cwiseMin(t0, t1);
+  const linalg::Vec3d t_max = linalg::cwiseMax(t0, t1);
 
   const double t_entry = t_min.maxValue();
   const double t_exit  = t_max.minValue();
@@ -189,21 +189,21 @@ bool getAABBIntersection(const Ray& ray, const lin::Vec3d& min_bound, const lin:
 
 std::vector<RayBVHHitInfo> getBVHIntersection(const Ray& ray, const BVHNode* bvh_node) {
   std::vector<RayBVHHitInfo> bvh_hits;
-  std::stack<const BVHNode*> nodeStack;
-  nodeStack.push(bvh_node);
+  std::stack<const BVHNode*> node_stack;
+  node_stack.push(bvh_node);
 
-  while(!nodeStack.empty()) {
-    const BVHNode* node = nodeStack.top();
-    nodeStack.pop();
+  while(!node_stack.empty()) {
+    const BVHNode* node = node_stack.top();
+    node_stack.pop();
 
     double hit_distance = std::numeric_limits<double>::max();
     if(!getAABBIntersection(ray, node->getMinBound(), node->getMaxBound(), hit_distance)) {
       continue;
     }
 
-    const int leafIndex = node->getLeafIndex();
-    if(leafIndex != -1) {
-      bvh_hits.push_back({leafIndex, hit_distance});
+    const int leaf_index = node->getLeafIndex();
+    if(leaf_index != -1) {
+      bvh_hits.push_back({leaf_index, hit_distance});
     } else {
       BVHNode* left  = node->getLeftChild().get();
       BVHNode* right = node->getRightChild().get();
@@ -211,28 +211,28 @@ std::vector<RayBVHHitInfo> getBVHIntersection(const Ray& ray, const BVHNode* bvh
       double left_child_distance  = std::numeric_limits<float>::max();
       double right_child_distance = std::numeric_limits<float>::max();
 
-      bool leftHit = false;
+      bool left_hit = false;
 
       if(left != nullptr) {
-        leftHit = getAABBIntersection(ray, left->getMinBound(), left->getMaxBound(), left_child_distance);
+        left_hit = getAABBIntersection(ray, left->getMinBound(), left->getMaxBound(), left_child_distance);
       }
-      bool rightHit = false;
+      bool right_hit = false;
       if(right != nullptr) {
-        rightHit = getAABBIntersection(ray, right->getMinBound(), right->getMaxBound(), right_child_distance);
+        right_hit = getAABBIntersection(ray, right->getMinBound(), right->getMaxBound(), right_child_distance);
       }
 
-      if(leftHit && rightHit) {
+      if(left_hit && right_hit) {
         if(left_child_distance < right_child_distance) {
-          nodeStack.push(right);
-          nodeStack.push(left);
+          node_stack.push(right);
+          node_stack.push(left);
         } else {
-          nodeStack.push(left);
-          nodeStack.push(right);
+          node_stack.push(left);
+          node_stack.push(right);
         }
-      } else if(leftHit) {
-        nodeStack.push(left);
-      } else if(rightHit) {
-        nodeStack.push(right);
+      } else if(left_hit) {
+        node_stack.push(left);
+      } else if(right_hit) {
+        node_stack.push(right);
       }
     }
   }

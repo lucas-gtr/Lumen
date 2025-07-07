@@ -13,11 +13,11 @@ SkyboxGL::SkyboxGL(Skybox* skybox) : m_skybox(skybox) {
 
 void SkyboxGL::updateSkyboxTexture() {
   if(m_skybox->getTexture() != nullptr) {
-    OpenGLContext::instance().makeContextCurrent();
+    OpenGLContext::Instance().makeContextCurrent();
     m_texture = std::make_unique<TextureGL>(m_skybox->getTexture());
     m_texture->uploadToGPU();
     m_texture->bind(SKYBOX_TEXTURE_UNIT);
-    OpenGLContext::instance().doneContext();
+    OpenGLContext::Instance().doneContext();
   }
 }
 

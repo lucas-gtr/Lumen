@@ -35,7 +35,7 @@ TEST(SceneTest, GetSkyboxColor) {
   Texture texture;
   texture.setValue(ColorRGB(1.0, 0.0, 0.0));
   scene.setSkybox(&texture);
-  lin::Vec3d direction(1.0, 0.0, 0.0);
+  linalg::Vec3d direction(1.0, 0.0, 0.0);
   ColorRGBA color = scene.getSkyboxColor(direction);
   EXPECT_EQ(color, ColorRGBA(1.0, 0.0, 0.0, 1.0)); 
 }

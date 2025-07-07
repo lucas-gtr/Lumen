@@ -10,9 +10,9 @@ TEST(MeshTest, DefaultConstructorTest) {
 }
 
 TEST(MeshTest, ParameterizedConstructorTest) {
-    Vertex v1 {lin::Vec3d(1.0, 2.0, 3.0), lin::Vec3d(0.0, 1.0, 0.0), {0.5, 0.5}};
-    Vertex v2 {lin::Vec3d(4.0, 5.0, 6.0), lin::Vec3d(0.0, 0.0, 1.0), {0.25, 0.25}};
-    Vertex v3 {lin::Vec3d(7.0, 8.0, 9.0), lin::Vec3d(1.0, 0.0, 0.0), {0.75, 0.75}};
+    Vertex v1 {linalg::Vec3d(1.0, 2.0, 3.0), linalg::Vec3d(0.0, 1.0, 0.0), {0.5, 0.5}};
+    Vertex v2 {linalg::Vec3d(4.0, 5.0, 6.0), linalg::Vec3d(0.0, 0.0, 1.0), {0.25, 0.25}};
+    Vertex v3 {linalg::Vec3d(7.0, 8.0, 9.0), linalg::Vec3d(1.0, 0.0, 0.0), {0.75, 0.75}};
     Face f1 {{0, 1, 2}};
 
     std::vector<Vertex> vertices = {v1, v2, v3};
@@ -25,9 +25,9 @@ TEST(MeshTest, ParameterizedConstructorTest) {
 }
 
 TEST(MeshTest, InvalidConstructorTest) {
-  Vertex v1 {lin::Vec3d(1.0, 2.0, 3.0), lin::Vec3d(0.0, 1.0, 0.0), {0.5, 0.5}};
-  Vertex v2 {lin::Vec3d(4.0, 5.0, 6.0), lin::Vec3d(0.0, 0.0, 1.0), {0.25, 0.25}};
-  Vertex v3 {lin::Vec3d(7.0, 8.0, 9.0), lin::Vec3d(1.0, 0.0, 0.0), {0.75, 0.75}};
+  Vertex v1 {linalg::Vec3d(1.0, 2.0, 3.0), linalg::Vec3d(0.0, 1.0, 0.0), {0.5, 0.5}};
+  Vertex v2 {linalg::Vec3d(4.0, 5.0, 6.0), linalg::Vec3d(0.0, 0.0, 1.0), {0.25, 0.25}};
+  Vertex v3 {linalg::Vec3d(7.0, 8.0, 9.0), linalg::Vec3d(1.0, 0.0, 0.0), {0.75, 0.75}};
   Face f1 {{0, 1, 2}};
   Face f2 {{1, 2, 3}}; // Invalid face index
 
@@ -41,13 +41,13 @@ TEST(MeshTest, InvalidConstructorTest) {
 }
 
 TEST(MeshTest, VertexSize) {
-    EXPECT_EQ(Vertex::valuePerVertex(), 14); // position (3) + normal (3) + uv_coord (2) + tangent (3) + bitangent (3)
+    EXPECT_EQ(Vertex::ValuePerVertex(), 14); // position (3) + normal (3) + uv_coord (2) + tangent (3) + bitangent (3)
 }
 
 TEST(MeshTest, GetVertexTest) {
-    Vertex v1 {lin::Vec3d(1.0, 2.0, 3.0), lin::Vec3d(0.0, 1.0, 0.0), {0.5, 0.5}};
-    Vertex v2 {lin::Vec3d(4.0, 5.0, 6.0), lin::Vec3d(0.0, 0.0, 1.0), {0.25, 0.25}};
-    Vertex v3 {lin::Vec3d(7.0, 8.0, 9.0), lin::Vec3d(1.0, 0.0, 0.0), {0.75, 0.75}};
+    Vertex v1 {linalg::Vec3d(1.0, 2.0, 3.0), linalg::Vec3d(0.0, 1.0, 0.0), {0.5, 0.5}};
+    Vertex v2 {linalg::Vec3d(4.0, 5.0, 6.0), linalg::Vec3d(0.0, 0.0, 1.0), {0.25, 0.25}};
+    Vertex v3 {linalg::Vec3d(7.0, 8.0, 9.0), linalg::Vec3d(1.0, 0.0, 0.0), {0.75, 0.75}};
     Face f1 {{0, 1, 2}};
 
     std::vector<Vertex> vertices = {v1, v2, v3};
@@ -60,9 +60,9 @@ TEST(MeshTest, GetVertexTest) {
 }
 
 TEST(MeshTest, MeshEquality) {
-  Vertex v1 {lin::Vec3d(1.0, 2.0, 3.0), lin::Vec3d(0.0, 1.0, 0.0), {0.5, 0.5}};
-  Vertex v2 {lin::Vec3d(4.0, 5.0, 6.0), lin::Vec3d(0.0, 0.0, 1.0), {0.25, 0.25}};
-  Vertex v3 {lin::Vec3d(7.0, 8.0, 9.0), lin::Vec3d(1.0, 0.0, 0.0), {0.75, 0.75}};
+  Vertex v1 {linalg::Vec3d(1.0, 2.0, 3.0), linalg::Vec3d(0.0, 1.0, 0.0), {0.5, 0.5}};
+  Vertex v2 {linalg::Vec3d(4.0, 5.0, 6.0), linalg::Vec3d(0.0, 0.0, 1.0), {0.25, 0.25}};
+  Vertex v3 {linalg::Vec3d(7.0, 8.0, 9.0), linalg::Vec3d(1.0, 0.0, 0.0), {0.75, 0.75}};
 
   std::vector<Vertex> vertices1 = {v1, v2, v3};
   std::vector<Vertex> vertices2 = {v3, v2, v1};
@@ -89,20 +89,20 @@ TEST(MeshTest, MeshEquality) {
 }
 
 TEST(MeshTest, VertexEquality) {
-  Vertex v1 {lin::Vec3d(1.0, 2.0, 3.0), lin::Vec3d(0.0, 1.0, 0.0), {0.5, 0.5}};
-  Vertex v2 {lin::Vec3d(1.0, 2.0, 3.0), lin::Vec3d(0.0, 1.0, 0.0), {0.25, 0.25}};
+  Vertex v1 {linalg::Vec3d(1.0, 2.0, 3.0), linalg::Vec3d(0.0, 1.0, 0.0), {0.5, 0.5}};
+  Vertex v2 {linalg::Vec3d(1.0, 2.0, 3.0), linalg::Vec3d(0.0, 1.0, 0.0), {0.25, 0.25}};
   EXPECT_NE(v1, v2); // Identical positions and normals, different texcoords
 
-  Vertex v3 {lin::Vec3d(1.0, 2.0, 3.0), lin::Vec3d(0.0, 0.0, 1.0), {0.5, 0.5}};
+  Vertex v3 {linalg::Vec3d(1.0, 2.0, 3.0), linalg::Vec3d(0.0, 0.0, 1.0), {0.5, 0.5}};
   EXPECT_NE(v1, v3); // Identical positions and texcoords, different normals
 
-  Vertex v4 {lin::Vec3d(4.0, 5.0, 6.0), lin::Vec3d(0.0, 1.0, 0.0), {0.5, 0.5}};
+  Vertex v4 {linalg::Vec3d(4.0, 5.0, 6.0), linalg::Vec3d(0.0, 1.0, 0.0), {0.5, 0.5}};
   EXPECT_NE(v1, v4); // Identical normals and texcoords, different positions
 
-  Vertex v5 {lin::Vec3d(1.0, 2.0, 3.0), lin::Vec3d(0.0, 1.0, 0.0), {0.5, 0.5}};
+  Vertex v5 {linalg::Vec3d(1.0, 2.0, 3.0), linalg::Vec3d(0.0, 1.0, 0.0), {0.5, 0.5}};
   EXPECT_EQ(v1, v5); // Identical positions, normals, and texcoords
 
-  Vertex v6 {lin::Vec3d(7.0, 8.0, 9.0), lin::Vec3d(1.0, 0.0, 0.0), {0.75, 0.75}};
+  Vertex v6 {linalg::Vec3d(7.0, 8.0, 9.0), linalg::Vec3d(1.0, 0.0, 0.0), {0.75, 0.75}};
   EXPECT_NE(v1, v6); // Different positions, normals, and texcoords
 }
 
@@ -125,9 +125,9 @@ TEST(MeshTest, FaceEquality) {
 }
 
 TEST(MeshTest, BuildBVH) {
-    Vertex v1 {lin::Vec3d(1.0, 2.0, 3.0), lin::Vec3d(0.0, 1.0, 0.0), {0.5, 0.5}};
-    Vertex v2 {lin::Vec3d(4.0, 5.0, 6.0), lin::Vec3d(0.0, 0.0, 1.0), {0.25, 0.25}};
-    Vertex v3 {lin::Vec3d(7.0, 8.0, 9.0), lin::Vec3d(1.0, 0.0, 0.0), {0.75, 0.75}};
+    Vertex v1 {linalg::Vec3d(1.0, 2.0, 3.0), linalg::Vec3d(0.0, 1.0, 0.0), {0.5, 0.5}};
+    Vertex v2 {linalg::Vec3d(4.0, 5.0, 6.0), linalg::Vec3d(0.0, 0.0, 1.0), {0.25, 0.25}};
+    Vertex v3 {linalg::Vec3d(7.0, 8.0, 9.0), linalg::Vec3d(1.0, 0.0, 0.0), {0.75, 0.75}};
     Face f1 {{0, 1, 2}};
 
     std::vector<Vertex> vertices = {v1, v2, v3};

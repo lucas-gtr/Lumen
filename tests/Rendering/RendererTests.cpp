@@ -65,7 +65,7 @@ TEST_F(RendererTest, FramebufferUpdatesWhenRenderSettingsChange) {
 
 TEST_F(RendererTest, RenderInfluencedByLight) {
   auto light = std::make_unique<DirectionalLight>();
-  light->setDirection(lin::Vec3d(0.0, 0.0, -1.0));
+  light->setDirection(linalg::Vec3d(0.0, 0.0, -1.0));
   light->setColor({0.9, 0.0, 0.0});
   light->setIntensity(1.0);
   scene.addLight("light", std::move(light));
@@ -73,7 +73,7 @@ TEST_F(RendererTest, RenderInfluencedByLight) {
   CubeMeshBuilder cube_builder(5.0);
   auto cube_mesh = cube_builder.build();
   auto cube_object = std::make_unique<Object3D>(cube_mesh);
-  cube_object->setPosition(lin::Vec3d(0.0, 0.0, -7.0));
+  cube_object->setPosition(linalg::Vec3d(0.0, 0.0, -7.0));
   
   Texture texture;
   texture.setValue(ColorRGB(0.5, 0.3, 0.9));
@@ -82,8 +82,8 @@ TEST_F(RendererTest, RenderInfluencedByLight) {
   cube_object->setMaterial(&material);
   scene.addObject("1", std::move(cube_object));
 
-  scene.getCamera()->setPosition(lin::Vec3d(0.0, 0.0, 0.0));
-  scene.getCamera()->setRotation(lin::Vec3d(0.0, 0.0, 0.0));
+  scene.getCamera()->setPosition(linalg::Vec3d(0.0, 0.0, 0.0));
+  scene.getCamera()->setRotation(linalg::Vec3d(0.0, 0.0, 0.0));
   scene.getCamera()->setHorizontalFov(10.0);
 
   settings.setWidth(1);
@@ -103,7 +103,7 @@ TEST_F(RendererTest, RenderInfluencedByLight) {
 
 TEST_F(RendererTest, ShadowRayBlockedByObject) {
   auto light = std::make_unique<DirectionalLight>();
-  light->setDirection(lin::Vec3d(0.0, 0.0, -1.0));
+  light->setDirection(linalg::Vec3d(0.0, 0.0, -1.0));
   light->setColor({0.9, 0.0, 0.0});
   light->setIntensity(1.0);
   scene.addLight("light", std::move(light));
@@ -111,12 +111,12 @@ TEST_F(RendererTest, ShadowRayBlockedByObject) {
   CubeMeshBuilder cube_builder(5.0);
   auto cube_mesh = cube_builder.build();
   auto cube_object = std::make_unique<Object3D>(cube_mesh);
-  cube_object->setPosition(lin::Vec3d(0.0, 0.0, -7.0));
+  cube_object->setPosition(linalg::Vec3d(0.0, 0.0, -7.0));
 
   CubeMeshBuilder cube_builder2(6.0);
   auto cube_mesh2 = cube_builder2.build();
   auto cube_object2 = std::make_unique<Object3D>(cube_mesh2);
-  cube_object2->setPosition(lin::Vec3d(0.0, 0.0, 6.5));
+  cube_object2->setPosition(linalg::Vec3d(0.0, 0.0, 6.5));
   
   Texture texture;
   texture.setValue(ColorRGB(0.5, 0.3, 0.9));
@@ -129,8 +129,8 @@ TEST_F(RendererTest, ShadowRayBlockedByObject) {
   scene.addObject("1", std::move(cube_object));
   scene.addObject("2", std::move(cube_object2));
 
-  scene.getCamera()->setPosition(lin::Vec3d(0.0, 0.0, 0.0));
-  scene.getCamera()->setRotation(lin::Vec3d(0.0, 0.0, 0.0));
+  scene.getCamera()->setPosition(linalg::Vec3d(0.0, 0.0, 0.0));
+  scene.getCamera()->setRotation(linalg::Vec3d(0.0, 0.0, 0.0));
   scene.getCamera()->setHorizontalFov(10.0);
 
   settings.setWidth(1);

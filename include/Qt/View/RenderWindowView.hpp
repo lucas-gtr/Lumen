@@ -64,7 +64,7 @@ private:
   void updateImage(const unsigned char* image_data);
   void clearImage();
 
-  static QString formatSecondsToString(double seconds);
+  static QString FormatSecondsToString(double seconds);
 };
 
 #endif // QT_VIEW_RENDERWINDOWVIEW_HPP

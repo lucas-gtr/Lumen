@@ -18,12 +18,12 @@
  */
 class ShadowMapGL : protected QOpenGLFunctions_3_3_Core {
 private:
-  unsigned int m_depthMapFBO = 0;
-  unsigned int m_depthMap    = 0;
+  unsigned int m_depth_map_fbo = 0;
+  unsigned int m_depth_map    = 0;
 
   int m_size = DEFAULT_SHADOW_MAP_SIZE;
 
-  GLenum m_depthMapType = GL_TEXTURE_2D;
+  GLenum m_depth_map_type = GL_TEXTURE_2D;
 
   void createFramebuffer();
   void createDepthTexture2D();
@@ -58,13 +58,17 @@ public:
    */
   void bindFramebuffer();
 
-  void resize(int newSize);
+  /**
+   * @brief Resizes the shadow map to a new size.
+   * @param new_size The new size of the shadow map in pixels (squared).
+   */
+  void resize(int new_size);
 
   /**
    * @brief Binds the shadow map texture for sampling.
-   * @param textureUnit The texture unit to bind the shadow map to.
+   * @param texture_unit The texture unit to bind the shadow map to.
    */
-  void bindTexture(unsigned int textureUnit);
+  void bindTexture(unsigned int texture_unit);
 
   /**
    * @brief Cleans up resources used by the shadow map.

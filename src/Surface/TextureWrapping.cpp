@@ -6,8 +6,8 @@
 
 namespace TextureSampling {
 
-void wrapCoordinates(TextureUV& uv_coord, TextureWrapping wrappingMode) {
-  switch(wrappingMode) {
+void wrapCoordinates(TextureUV& uv_coord, TextureWrapping wrapping_mode) {
+  switch(wrapping_mode) {
   case TextureWrapping::REPEAT:
     wrapRepeat(uv_coord);
     break;

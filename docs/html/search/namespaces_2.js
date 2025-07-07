@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['objloader_0',['OBJLoader',['../namespaceOBJLoader.html',1,'']]]
+  ['rayintersection_0',['RayIntersection',['../namespaceRayIntersection.html',1,'']]]
 ];

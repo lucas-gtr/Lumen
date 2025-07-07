@@ -29,9 +29,9 @@ void RenderView::setupUI() {
   m_image_width_spin->setRange(1, MAX_IMAGE_WIDTH);
   m_image_width_spin->setSuffix(" px");
 
-  image_height_spin = new QSpinBox(this);
-  image_height_spin->setRange(1, MAX_IMAGE_HEIGHT);
-  image_height_spin->setSuffix(" px");
+  m_image_height_spin = new QSpinBox(this);
+  m_image_height_spin->setRange(1, MAX_IMAGE_HEIGHT);
+  m_image_height_spin->setSuffix(" px");
 
   m_channels_combo = new QComboBox(this);
   m_channels_combo->addItems({"1", "3", "4"});
@@ -63,7 +63,7 @@ void RenderView::setupUI() {
 
   auto* form_layout = new QFormLayout;
   form_layout->addRow("Image width", m_image_width_spin);
-  form_layout->addRow("Image height", image_height_spin);
+  form_layout->addRow("Image height", m_image_height_spin);
   form_layout->addRow("Channels", m_channels_combo);
   form_layout->addRow("Samples per pixel", m_samples_spin);
   form_layout->addRow("Max bounces", m_bounces_spin);
@@ -82,7 +82,7 @@ void RenderView::setupUI() {
 
 void RenderView::connectSignals() {
   connect(m_image_width_spin, QOverload<int>::of(&QSpinBox::valueChanged), this, &RenderView::imageWidthChanged);
-  connect(image_height_spin, QOverload<int>::of(&QSpinBox::valueChanged), this, &RenderView::imageHeightChanged);
+  connect(m_image_height_spin, QOverload<int>::of(&QSpinBox::valueChanged), this, &RenderView::imageHeightChanged);
   connect(m_channels_combo, &QComboBox::currentTextChanged, this,
           [this](const QString& text) { channelsChanged(text.toInt()); });
   connect(m_samples_spin, QOverload<int>::of(&QSpinBox::valueChanged), this, &RenderView::samplesPerPixelChanged);
@@ -104,8 +104,8 @@ void RenderView::setImageWidth(int width) {
 }
 
 void RenderView::setImageHeight(int height) {
-  const QSignalBlocker blocker(image_height_spin);
-  image_height_spin->setValue(height);
+  const QSignalBlocker blocker(m_image_height_spin);
+  m_image_height_spin->setValue(height);
 }
 
 void RenderView::setChannels(int channels) {

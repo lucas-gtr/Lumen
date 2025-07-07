@@ -5,7 +5,8 @@
 #ifndef GPU_LIGHTS_POINTGPU_HPP
 #define GPU_LIGHTS_POINTGPU_HPP
 
-#include "Core/Math/Vec3.hpp"
+#include <linalg/Vec3.hpp>
+
 #include "Lighting/PointLight.hpp"
 
 /**
@@ -19,8 +20,8 @@ class PointLightGPU {
 private:
   const PointLight* m_light = nullptr;
 
-  lin::Vec3f m_position;
-  lin::Vec3f m_color;
+  linalg::Vec3f m_position;
+  linalg::Vec3f m_color;
 
 protected:
   const PointLight* light() const { return m_light; }
@@ -46,7 +47,7 @@ public:
    * @brief Gets the position of the light.
    * @return The position vector of the light.
    */
-  lin::Vec3f getPosition() const {
+  linalg::Vec3f getPosition() const {
     return m_position; ///< Gets the direction of the light.
   }
 
@@ -54,7 +55,7 @@ public:
    * @brief Gets the color of the light multiplied by the intensity.
    * @return The color vector of the light multiplied by the intensity.
    */
-  lin::Vec3f getColor() const {
+  linalg::Vec3f getColor() const {
     return m_color; ///< Gets the color of the light.
   }
 

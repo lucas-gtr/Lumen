@@ -194,9 +194,9 @@ void TextureController::onColorSpaceChanged(const QString& color_space) {
     return;
   }
   if(color_space == "Linear") {
-    m_current_texture->setColorSpace(ColorSpace::Linear);
+    m_current_texture->setColorSpace(ColorSpace::LINEAR);
   } else if(color_space == "sRGB") {
-    m_current_texture->setColorSpace(ColorSpace::sRGB);
+    m_current_texture->setColorSpace(ColorSpace::S_RGB);
   } else {
     return;
   }
@@ -283,7 +283,7 @@ void TextureController::updateViewFromModel() {
 
   m_view->setFlipVertically(m_current_texture->isFlippedVertically());
 
-  const std::string color_space = m_current_texture->getColorSpace() == ColorSpace::Linear ? "Linear" : "sRGB";
+  const std::string color_space = m_current_texture->getColorSpace() == ColorSpace::LINEAR ? "Linear" : "sRGB";
   m_view->setColorSpace(QString::fromStdString(color_space));
 
   std::string texture_filtering;

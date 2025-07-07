@@ -5,9 +5,10 @@
 #ifndef GPU_OPENGL_LIGHTS_DIRECTIONALGL_HPP
 #define GPU_OPENGL_LIGHTS_DIRECTIONALGL_HPP
 
+#include <linalg/Mat4.hpp>
+#include <linalg/Vec3.hpp>
+
 #include "Core/Config.hpp"
-#include "Core/Math/Mat4.hpp"
-#include "Core/Math/Vec3.hpp"
 #include "GPU/Lights/DirectionalGPU.hpp"
 #include "Lighting/DirectionalLight.hpp"
 
@@ -20,7 +21,7 @@ private:
   float m_near_plane = DEFAULT_LIGHT_NEAR_PLANE;
   float m_far_plane  = DEFAULT_LIGHT_FAR_PLANE;
 
-  lin::Mat4f m_lightSpaceMatrix;
+  linalg::Mat4f m_light_space_matrix;
 
 public:
   /**
@@ -39,7 +40,7 @@ public:
    * @return A raw pointer to the light space matrix data.
    */
   const float* getLightSpaceMatrix() const {
-    return m_lightSpaceMatrix.data(); ///< Gets the light space matrix for the directional light.
+    return m_light_space_matrix.data(); ///< Gets the light space matrix for the directional light.
   }
 
   /**

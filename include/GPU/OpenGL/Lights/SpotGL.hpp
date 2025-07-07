@@ -5,7 +5,8 @@
 #ifndef GPU_OPENGL_LIGHTS_SPOTGL_HPP
 #define GPU_OPENGL_LIGHTS_SPOTGL_HPP
 
-#include "Core/Math/Vec3.hpp"
+#include <linalg/Vec3.hpp>
+
 #include "GPU/Lights/SpotGPU.hpp"
 #include "Lighting/SpotLight.hpp"
 
@@ -21,7 +22,7 @@ private:
   float m_near_plane = DEFAULT_LIGHT_NEAR_PLANE;
   float m_far_plane  = DEFAULT_LIGHT_FAR_PLANE;
 
-  lin::Mat4f m_lightSpaceMatrix;
+  linalg::Mat4f m_light_space_matrix;
 
 public:
   /**
@@ -39,7 +40,7 @@ public:
    * @brief Gets the light space matrix of the spot light.
    * @return A raw pointer to the light space matrix data.
    */
-  const float* getLightSpaceMatrix() const { return m_lightSpaceMatrix.data(); }
+  const float* getLightSpaceMatrix() const { return m_light_space_matrix.data(); }
 
   /**
    * @brief Gets the far plane distance of the light.

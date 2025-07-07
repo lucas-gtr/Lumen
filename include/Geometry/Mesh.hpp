@@ -12,18 +12,18 @@
 
 #include "BVH/BVHNode.hpp"
 #include "Core/CommonTypes.hpp"
-#include "Core/Math/Vec3.hpp"
+#include <linalg/Vec3.hpp>
 
 /**
  * @struct Vertex
  * @brief Structure representing a vertex in a 3D mesh.
  */
 struct Vertex {
-  lin::Vec3d position  = {0.0, 0.0, 0.0}; ///< Position of the vertex in 3D space.
-  lin::Vec3d normal    = {0.0, 0.0, 0.0}; ///< Normal vector at the vertex.
+  linalg::Vec3d position  = {0.0, 0.0, 0.0}; ///< Position of the vertex in 3D space.
+  linalg::Vec3d normal    = {0.0, 0.0, 0.0}; ///< Normal vector at the vertex.
   TextureUV  uv_coord  = {0, 0};          ///< Texture coordinates of the vertex.
-  lin::Vec3d tangent   = {0.0, 0.0, 0.0}; ///< Tangent vector at the vertex.
-  lin::Vec3d bitangent = {0.0, 0.0, 0.0}; ///< Bitangent vector at the vertex.
+  linalg::Vec3d tangent   = {0.0, 0.0, 0.0}; ///< Tangent vector at the vertex.
+  linalg::Vec3d bitangent = {0.0, 0.0, 0.0}; ///< Bitangent vector at the vertex.
 
   /**
    * @brief Equality operator for comparing two vertices.
@@ -39,7 +39,7 @@ struct Vertex {
    * @brief Returns the size of a vertex in terms of the number of values it contains.
    * @return The number of values in a vertex.
    */
-  static constexpr size_t valuePerVertex() {
+  static constexpr size_t ValuePerVertex() {
     return 3 + 3 + 2 + 3 + 3; // position (3), normal (3), uv_coord (2), tangent (3), bitangent (3)
   }
 };
@@ -49,7 +49,7 @@ struct Vertex {
  * @brief Structure representing a face in a 3D mesh, defined by three vertices.
  */
 struct Face {
-  std::array<int, 3> vertexIndices = {0, 0, 0}; ///< Indices of the vertices making up the face.
+  std::array<int, 3> vertex_indices = {0, 0, 0}; ///< Indices of the vertices making up the face.
 
   /**
    * @brief Equality operator for comparing two faces.
@@ -57,8 +57,8 @@ struct Face {
    * @return True if the faces are equal, false otherwise.
    */
   bool operator==(const Face& other) const {
-    return vertexIndices[0] == other.vertexIndices[0] && vertexIndices[1] == other.vertexIndices[1] &&
-           vertexIndices[2] == other.vertexIndices[2];
+    return vertex_indices[0] == other.vertex_indices[0] && vertex_indices[1] == other.vertex_indices[1] &&
+           vertex_indices[2] == other.vertex_indices[2];
   }
 };
 

@@ -30,7 +30,7 @@ public:
 
   void disableAllInputs();
 
-  static void setLineEditValue(QLineEdit* line_edit, double value);
+  static void SetLineEditValue(QLineEdit* line_edit, double value);
 
 signals:
   void positionXChanged(const QString& position_x);

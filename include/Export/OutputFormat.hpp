@@ -33,7 +33,7 @@ public:
    * @param channel_count The number of color channels in the image.
    * @param image Pointer to the image data (unsigned char array).
    */
-  virtual bool write_image(const std::string& file_path, int width, int height, int channel_count,
+  virtual bool writeImage(const std::string& file_path, int width, int height, int channel_count,
                            const unsigned char* image) const = 0;
 
   virtual ~OutputFormatStrategy() = default; ///< Default destructor.

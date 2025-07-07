@@ -1,8 +1,9 @@
-#include "Qt/Controller/Light/SpotLightController.hpp"
-#include "Core/Math/Vec3.hpp"
+#include <linalg/Vec3.hpp>
+
 #include "Core/MathConstants.hpp"
 #include "Lighting/SpotLight.hpp"
 #include "Qt/Controller/Light/LightController.hpp"
+#include "Qt/Controller/Light/SpotLightController.hpp"
 #include "Qt/View/Light/SpotLightView.hpp"
 
 SpotLightController::SpotLightController(SpotLightView* view) : LightController(view), m_spot_light_view(view) {
@@ -20,8 +21,8 @@ void SpotLightController::onDirectionChanged(double x, double y, double z) {
     return;
   }
 
-  const lin::Vec3d newDirection(x, y, z);
-  m_spot_light->setDirection(newDirection);
+  const linalg::Vec3d new_direction(x, y, z);
+  m_spot_light->setDirection(new_direction);
 }
 
 void SpotLightController::onInnerAngleChanged(double angle) {
@@ -53,7 +54,7 @@ void SpotLightController::updateViewFromModel() {
     return;
   }
 
-  const lin::Vec3d dir = m_spot_light->getDirection();
+  const linalg::Vec3d dir = m_spot_light->getDirection();
   m_spot_light_view->setDirection(dir.x, dir.y, dir.z);
 
   m_spot_light_view->setInnerAngle(m_spot_light->getInnerAngle() * RAD_TO_DEG);

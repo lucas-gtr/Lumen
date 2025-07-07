@@ -1,3 +1,35 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classObserver.html" title="A class that implements the observer pattern." alt="" coords="5,5,145,31"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,301,80,327"/>
+<area shape="rect" id="Node000001" href="$classCameraController.html" title=" " alt="" coords="135,5,272,31"/>
+<area shape="poly" id="edge32_Node000000_Node000001" title=" " alt="" coords="42,287,46,236,59,170,84,101,103,69,126,40,142,29,145,33,130,44,107,72,89,103,64,171,52,237,47,288"/>
+<area shape="rect" id="Node000002" href="$classExportController.html" title=" " alt="" coords="139,55,267,80"/>
+<area shape="poly" id="edge33_Node000000_Node000002" title=" " alt="" coords="44,287,51,244,66,191,90,137,106,112,126,89,143,78,146,82,130,93,111,115,95,139,71,193,57,245,49,288"/>
+<area shape="rect" id="Node000003" href="$classLightController.html" title=" " alt="" coords="144,104,263,129"/>
+<area shape="poly" id="edge34_Node000000_Node000003" title=" " alt="" coords="47,287,57,253,73,214,96,173,126,139,144,127,147,132,130,143,100,177,78,216,62,255,52,289"/>
+<area shape="rect" id="Node000007" href="$classMaterialController.html" title=" " alt="" coords="133,153,273,179"/>
+<area shape="poly" id="edge38_Node000000_Node000007" title=" " alt="" coords="53,287,81,237,102,211,126,188,147,176,149,181,130,192,106,214,86,240,57,290"/>
+<area shape="rect" id="Node000008" href="$classMenuController.html" title=" " alt="" coords="142,203,265,228"/>
+<area shape="poly" id="edge39_Node000000_Node000008" title=" " alt="" coords="63,289,92,262,127,237,152,226,154,230,129,242,95,266,66,293"/>
+<area shape="rect" id="Node000009" href="$classObjectController.html" title=" " alt="" coords="139,252,267,277"/>
+<area shape="poly" id="edge40_Node000000_Node000009" title=" " alt="" coords="92,296,160,275,162,280,94,301"/>
+<area shape="rect" id="Node000010" href="$classRealtimeController.html" title=" " alt="" coords="131,301,276,327"/>
+<area shape="poly" id="edge41_Node000000_Node000010" title=" " alt="" coords="94,311,130,311,130,317,94,317"/>
+<area shape="rect" id="Node000011" href="$classRenderController.html" title=" " alt="" coords="137,351,269,376"/>
+<area shape="poly" id="edge42_Node000000_Node000011" title=" " alt="" coords="94,327,162,348,160,353,92,332"/>
+<area shape="rect" id="Node000012" href="$classSceneController.html" title=" " alt="" coords="141,400,266,425"/>
+<area shape="poly" id="edge43_Node000000_Node000012" title=" " alt="" coords="67,335,95,361,129,385,157,398,155,402,127,390,92,365,63,339"/>
+<area shape="rect" id="Node000013" href="$classSkyboxController.html" title=" " alt="" coords="137,449,270,475"/>
+<area shape="poly" id="edge44_Node000000_Node000013" title=" " alt="" coords="57,338,86,387,106,412,130,435,152,447,149,452,126,439,102,416,82,390,53,340"/>
+<area shape="rect" id="Node000014" href="$classTextureController.html" title=" " alt="" coords="136,499,271,524"/>
+<area shape="poly" id="edge45_Node000000_Node000014" title=" " alt="" coords="52,339,63,372,78,411,100,450,130,484,150,496,147,501,126,488,96,453,73,413,57,374,47,341"/>
+<area shape="rect" id="Node000015" href="$classTransformController.html" title=" " alt="" coords="128,548,279,573"/>
+<area shape="poly" id="edge46_Node000000_Node000015" title=" " alt="" coords="49,340,57,382,71,434,95,487,111,512,130,533,148,546,145,550,126,537,107,515,90,490,66,436,52,384,44,341"/>
+<area shape="rect" id="Node000016" href="$classViewportController.html" title=" " alt="" coords="131,597,275,623"/>
+<area shape="poly" id="edge47_Node000000_Node000016" title=" " alt="" coords="47,340,52,391,64,457,89,525,107,556,130,584,145,595,142,599,126,588,103,559,84,527,59,458,46,392,42,341"/>
+<area shape="rect" id="Node000004" href="$classDirectionalLightController.html" title=" " alt="" coords="327,55,516,80"/>
+<area shape="poly" id="edge35_Node000003_Node000004" title=" " alt="" coords="273,98,364,77,365,83,274,104"/>
+<area shape="rect" id="Node000005" href="$classPointLightController.html" title=" " alt="" coords="346,104,497,129"/>
+<area shape="poly" id="edge36_Node000003_Node000005" title=" " alt="" coords="276,114,346,114,346,119,276,119"/>
+<area shape="rect" id="Node000006" href="$classSpotLightController.html" title=" " alt="" coords="348,153,495,179"/>
+<area shape="poly" id="edge37_Node000003_Node000006" title=" " alt="" coords="274,130,365,151,364,156,273,135"/>
 </map>

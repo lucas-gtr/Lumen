@@ -1,4 +1,4 @@
-function(check_compile_warnings TARGET)
+function(target_enable_warnings TARGET)
     set(MSVC_WARNINGS
         /W4
         /permissive-)
@@ -24,5 +24,4 @@ function(check_compile_warnings TARGET)
 
     target_compile_options(${TARGET} PRIVATE ${WARNINGS})
     message(STATUS ${WARNINGS})
-
-endfunction(check_compile_warnings)
+endfunction()

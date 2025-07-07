@@ -29,9 +29,9 @@ enum class TextureWrapping : std::uint8_t { REPEAT, MIRRORED_REPEAT, CLAMP_TO_ED
  * This function modifies the given UV coordinates according to the specified wrapping mode.
  *
  * @param uv_coord The UV coordinates to wrap.
- * @param wrappingMode The wrapping mode to apply.
+ * @param wrapping_mode The wrapping mode to apply.
  */
-void wrapCoordinates(TextureUV& uv_coord, TextureWrapping wrappingMode);
+void wrapCoordinates(TextureUV& uv_coord, TextureWrapping wrapping_mode);
 
 /**
  * @brief Wraps the UV coordinates using the REPEAT wrapping mode.

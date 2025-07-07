@@ -36,7 +36,7 @@ struct ImageProperties {
  * @brief Structure to hold pixel coordinates (x, y) in the framebuffer.
  * @note The coordinates are zero-based, meaning (0, 0) is the top-left corner of the image.
  */
-struct alignas(Align8) PixelCoord {
+struct alignas(ALIGN8) PixelCoord {
   int x = 0; ///< X coordinate of the pixel.
   int y = 0; ///< Y coordinate of the pixel.
 };
@@ -45,7 +45,7 @@ struct alignas(Align8) PixelCoord {
  * @struct Resolution
  * @brief Structure to hold the resolution of an image.
  */
-struct alignas(Align8) Resolution {
+struct alignas(ALIGN8) Resolution {
   int width  = 1; ///< Width of the resolution.
   int height = 1; ///< Height of the resolution.
 };
@@ -55,7 +55,7 @@ struct alignas(Align8) Resolution {
  * @brief Structure to hold the UV coordinates of a texture.
  * @note The coordinates are normalized, meaning (0, 0) is the top-left corner and (1, 1) is the bottom-right corner.
  */
-struct alignas(Align16) TextureUV {
+struct alignas(ALIGN16) TextureUV {
   double u = 0.0; ///< U coordinate of the texture.
   double v = 0.0; ///< V coordinate of the texture.
 };
@@ -66,7 +66,7 @@ struct ColorRGBA; ///< Forward declaration for ColorRGBA.
  * @struct ColorRGB
  * @brief Structure to hold RGB color values.
  */
-struct alignas(Align32) ColorRGB {
+struct alignas(ALIGN32) ColorRGB {
   double r = 0.0; ///< Red component of the color
   double g = 0.0; ///< Green component of the color
   double b = 0.0; ///< Blue component of the color
@@ -93,7 +93,7 @@ struct alignas(Align32) ColorRGB {
  * @struct ColorRGBA
  * @brief Structure to hold RGBA color values.
  */
-struct alignas(Align32) ColorRGBA {
+struct alignas(ALIGN32) ColorRGBA {
   double r = 0.0; ///< Red component of the color
   double g = 0.0; ///< Green component of the color
   double b = 0.0; ///< Blue component of the color

@@ -12,11 +12,11 @@ TEST(SpotGLTest, Initialization) {
 
     SpotLightGL gpu_light(&light);
 
-    EXPECT_EQ(gpu_light.getPosition(), lin::Vec3f(1.0f, 2.0f, 3.0f));
-    EXPECT_EQ(gpu_light.getDirection(), lin::Vec3f(0.0f, -1.0f, 0.0f).normalized());
+    EXPECT_EQ(gpu_light.getPosition(), linalg::Vec3f(1.0f, 2.0f, 3.0f));
+    EXPECT_EQ(gpu_light.getDirection(), linalg::Vec3f(0.0f, -1.0f, 0.0f).normalized());
     EXPECT_FLOAT_EQ(gpu_light.getCosInnerCutoff(), std::cos(30.0f * DEG_TO_RAD));
     EXPECT_FLOAT_EQ(gpu_light.getCosOuterCutoff(), std::cos(45.0f * DEG_TO_RAD));
-    EXPECT_EQ(gpu_light.getColor(), lin::Vec3f(1.0f, 1.0f, 1.0f));
+    EXPECT_EQ(gpu_light.getColor(), linalg::Vec3f(1.0f, 1.0f, 1.0f));
 }
 
 TEST(SpotLightGLTest, UpdateLightSpaceMatrixUpdatesFarPlaneAndMatrix) {

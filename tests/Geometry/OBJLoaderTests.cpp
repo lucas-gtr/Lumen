@@ -47,13 +47,13 @@ TEST_F(OBJLoaderTest, LoadOBJFileWithCommentsAndNoise) {
   const Vertex& v1 = mesh.getVertices()[1];
   const Vertex& v2 = mesh.getVertices()[2];
 
-  EXPECT_EQ(v0.position, lin::Vec3d(1.0, 0.0, 0.0));
-  EXPECT_EQ(v1.position, lin::Vec3d(0.0, 1.0, 0.0));
-  EXPECT_EQ(v2.position, lin::Vec3d(0.0, 0.0, 1.0));
+  EXPECT_EQ(v0.position, linalg::Vec3d(1.0, 0.0, 0.0));
+  EXPECT_EQ(v1.position, linalg::Vec3d(0.0, 1.0, 0.0));
+  EXPECT_EQ(v2.position, linalg::Vec3d(0.0, 0.0, 1.0));
 
-  EXPECT_EQ(v0.normal, lin::Vec3d(0.0, 0.0, 1.0));
-  EXPECT_EQ(v1.normal, lin::Vec3d(0.0, 1.0, 0.0));
-  EXPECT_EQ(v2.normal, lin::Vec3d(1.0, 0.0, 0.0));
+  EXPECT_EQ(v0.normal, linalg::Vec3d(0.0, 0.0, 1.0));
+  EXPECT_EQ(v1.normal, linalg::Vec3d(0.0, 1.0, 0.0));
+  EXPECT_EQ(v2.normal, linalg::Vec3d(1.0, 0.0, 0.0));
 
   EXPECT_FLOAT_EQ(v0.uv_coord.u, 0.1f);
   EXPECT_FLOAT_EQ(v0.uv_coord.v, 0.2f);
@@ -63,9 +63,9 @@ TEST_F(OBJLoaderTest, LoadOBJFileWithCommentsAndNoise) {
   EXPECT_FLOAT_EQ(v2.uv_coord.v, 0.2f);
 
   const Face& face = mesh.getFaces()[0];
-  EXPECT_EQ(face.vertexIndices[0], 0);
-  EXPECT_EQ(face.vertexIndices[1], 1);
-  EXPECT_EQ(face.vertexIndices[2], 2);
+  EXPECT_EQ(face.vertex_indices[0], 0);
+  EXPECT_EQ(face.vertex_indices[1], 1);
+  EXPECT_EQ(face.vertex_indices[2], 2);
 }
 
 TEST(OBJLoaderEdgeCaseTest, LoadNonExistentFile) {

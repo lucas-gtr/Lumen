@@ -9,8 +9,8 @@ TEST(DirectionalGLTest, Initialization) {
 
     DirectionalLightGL gpu_light(&light);
 
-    EXPECT_EQ(gpu_light.getDirection(), lin::Vec3f(1.0f, -1.0f, 0.0f).normalized());
-    EXPECT_EQ(gpu_light.getColor(), lin::Vec3f(1.0f, 1.0f, 1.0f));
+    EXPECT_EQ(gpu_light.getDirection(), linalg::Vec3f(1.0f, -1.0f, 0.0f).normalized());
+    EXPECT_EQ(gpu_light.getColor(), linalg::Vec3f(1.0f, 1.0f, 1.0f));
 }
 
 TEST(DirectionalGLTest, LightSpaceMatrix) {

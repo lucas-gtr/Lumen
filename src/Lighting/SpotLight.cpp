@@ -1,14 +1,14 @@
 #include <algorithm>
 #include <cmath>
+#include <linalg/Vec3.hpp>
+#include <linalg/linalg.hpp>
 
 #include "Core/CommonTypes.hpp"
 #include "Core/Config.hpp"
-#include "Core/Math/Vec3.hpp"
-#include "Core/Math/lin.hpp"
 #include "Core/MathConstants.hpp"
 #include "Lighting/SpotLight.hpp"
 
-void SpotLight::setDirection(const lin::Vec3d& direction) {
+void SpotLight::setDirection(const linalg::Vec3d& direction) {
   m_direction = direction.normalized();
   getLightChangedObserver().notify();
 }
@@ -23,18 +23,18 @@ void SpotLight::setOuterAngle(double outer_angle) {
   getLightChangedObserver().notify();
 }
 
-lin::Vec3d SpotLight::getDirectionFromPoint(const lin::Vec3d& point) const {
+linalg::Vec3d SpotLight::getDirectionFromPoint(const linalg::Vec3d& point) const {
   return (getPosition() - point).normalized();
 }
 
-ColorRGB SpotLight::getLightFactor(const lin::Vec3d& point, const lin::Vec3d& normal) const {
+ColorRGB SpotLight::getLightFactor(const linalg::Vec3d& point, const linalg::Vec3d& normal) const {
   const double distance    = (getPosition() - point).length();
   const double attenuation = getIntensity() / (distance * distance);
 
-  const lin::Vec3d light_dir   = (getPosition() - point).normalized();
+  const linalg::Vec3d light_dir   = (getPosition() - point).normalized();
   const double     dot_product = dot(normal, light_dir);
 
-  const double cosine_angle = lin::dot(-light_dir, m_direction.normalized());
+  const double cosine_angle = linalg::dot(-light_dir, m_direction.normalized());
   const double inner_cutoff = std::cos(m_inner_angle * DEG_TO_RAD);
   const double outer_cutoff = std::cos(m_outer_angle * DEG_TO_RAD);
 

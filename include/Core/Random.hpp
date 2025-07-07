@@ -5,7 +5,7 @@
 #ifndef CORE_RANDOM_HPP
 #define CORE_RANDOM_HPP
 
-#include "Core/Math/Vec2.hpp"
+#include <linalg/Vec2.hpp>
 
 /**
  * @brief Generates a random point inside the unit disk.
@@ -19,7 +19,7 @@
  *
  * @return A 2D vector representing the random point in the unit disk.
  */
-lin::Vec2d randomPointInUnitDisk();
+linalg::Vec2d randomPointInUnitDisk();
 
 /**
  * @brief Generates a random number uniformly distributed in the range [0, 1).

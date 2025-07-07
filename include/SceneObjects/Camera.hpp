@@ -121,9 +121,9 @@ public:
 
   /**
    * @brief Sets the shutter speed.
-   * @param shutterSpeed The shutter speed in seconds.
+   * @param shutter_speed The shutter speed in seconds.
    */
-  void setShutterSpeed(double shutterSpeed);
+  void setShutterSpeed(double shutter_speed);
 
   /**
    * @brief Gets the current focus distance in meters.
@@ -150,9 +150,9 @@ public:
 
   /**
    * @brief Sets the near clipping plane distance.
-   * @param nearPlane The near clipping plane distance in meters.
+   * @param near_plane The near clipping plane distance in meters.
    */
-  void setNearPlane(double nearPlane);
+  void setNearPlane(double near_plane);
 
   /**
    * @brief Gets the far clipping plane distance in meters.
@@ -162,9 +162,9 @@ public:
 
   /**
    * @brief Sets the far clipping plane distance.
-   * @param farPlane The far clipping plane distance in meters.
+   * @param far_plane The far clipping plane distance in meters.
    */
-  void setFarPlane(double farPlane);
+  void setFarPlane(double far_plane);
 
   ~Camera() = default; ///< Default destructor.
 };

@@ -19,58 +19,58 @@
 
 TextureGL::TextureGL(Texture* texture) : ITextureGPU(texture) {
   initializeOpenGLFunctions();
-  glGenTextures(1, &m_textureID);
+  glGenTextures(1, &m_texture_id);
   m_texture_data_observer_id = texture->getTextureDataObserver().add([this]() { uploadToGPU(); });
   m_texture_parameters_observer_id =
       texture->getTextureParametersObserver().add([this, texture]() { configureParameters(texture); });
-  std::cout << "TextureGL: Texture created with ID " << m_textureID << "." << '\n';
+  std::cout << "TextureGL: Texture created with ID " << m_texture_id << "." << '\n';
 }
 
-void TextureGL::bind(int textureUnit) {
-  if(textureUnit != 0 && textureUnit != 1) {
-    std::cout << "TextureGL: Binding texture with ID " << m_textureID << " to texture unit " << textureUnit << "."
+void TextureGL::bind(int texture_unit) {
+  if(texture_unit != 0 && texture_unit != 1) {
+    std::cout << "TextureGL: Binding texture with ID " << m_texture_id << " to texture unit " << texture_unit << "."
               << '\n';
   }
-  glActiveTexture(GL_TEXTURE0 + textureUnit);
-  glBindTexture(GL_TEXTURE_2D, m_textureID);
+  glActiveTexture(GL_TEXTURE0 + texture_unit);
+  glBindTexture(GL_TEXTURE_2D, m_texture_id);
 }
 
 void TextureGL::configureParameters(const Texture* texture) {
   glActiveTexture(GL_TEXTURE0 + LOAD_TEXTURE_UNIT);
-  glBindTexture(GL_TEXTURE_2D, m_textureID);
+  glBindTexture(GL_TEXTURE_2D, m_texture_id);
 
   applyWrappingMode(texture->getWrappingMode(), texture->getBorderColor());
   applyFilteringMode(texture->getFilteringMode());
 }
 
-void TextureGL::applyWrappingMode(TextureSampling::TextureWrapping wrappingMode, const ColorRGBA& borderColor) {
-  const GLint glMode = getGLWrappingMode(wrappingMode);
-  if(glMode == -1) {
+void TextureGL::applyWrappingMode(TextureSampling::TextureWrapping wrapping_mode, const ColorRGBA& border_color) {
+  const GLint gl_mode = GetGlWrappingMode(wrapping_mode);
+  if(gl_mode == -1) {
     return;
   }
 
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, glMode);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, glMode);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, gl_mode);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, gl_mode);
 
-  if(wrappingMode == TextureSampling::TextureWrapping::CLAMP_TO_BORDER) {
-    std::array<float, 4> glBorderColor = {static_cast<float>(borderColor.r), static_cast<float>(borderColor.g),
-                                          static_cast<float>(borderColor.b), static_cast<float>(borderColor.a)};
-    glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, glBorderColor.data());
+  if(wrapping_mode == TextureSampling::TextureWrapping::CLAMP_TO_BORDER) {
+    std::array<float, 4> gl_border_color = {static_cast<float>(border_color.r), static_cast<float>(border_color.g),
+                                          static_cast<float>(border_color.b), static_cast<float>(border_color.a)};
+    glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, gl_border_color.data());
   }
 }
 
-void TextureGL::applyFilteringMode(TextureSampling::TextureFiltering filteringMode) {
-  const GLint glMode = getGLFilteringMode(filteringMode);
-  if(glMode == -1) {
+void TextureGL::applyFilteringMode(TextureSampling::TextureFiltering filtering_mode) {
+  const GLint gl_mode = GetGlFilteringMode(filtering_mode);
+  if(gl_mode == -1) {
     return;
   }
 
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, glMode);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, glMode);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, gl_mode);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, gl_mode);
 }
 
-GLint TextureGL::getGLWrappingMode(TextureSampling::TextureWrapping wrappingMode) {
-  switch(wrappingMode) {
+GLint TextureGL::GetGlWrappingMode(TextureSampling::TextureWrapping wrapping_mode) {
+  switch(wrapping_mode) {
   case TextureSampling::TextureWrapping::REPEAT:
     return GL_REPEAT;
   case TextureSampling::TextureWrapping::MIRRORED_REPEAT:
@@ -85,8 +85,8 @@ GLint TextureGL::getGLWrappingMode(TextureSampling::TextureWrapping wrappingMode
   }
 }
 
-GLint TextureGL::getGLFilteringMode(TextureSampling::TextureFiltering filteringMode) {
-  switch(filteringMode) {
+GLint TextureGL::GetGlFilteringMode(TextureSampling::TextureFiltering filtering_mode) {
+  switch(filtering_mode) {
   case TextureSampling::TextureFiltering::NEAREST:
     return GL_NEAREST;
   case TextureSampling::TextureFiltering::BILINEAR:
@@ -97,8 +97,8 @@ GLint TextureGL::getGLFilteringMode(TextureSampling::TextureFiltering filteringM
   }
 }
 
-GLint TextureGL::getGLFormat(int channelCount) {
-  switch(channelCount) {
+GLint TextureGL::GetGlFormat(int channel_count) {
+  switch(channel_count) {
   case 1:
     return GL_RED;
   case 3:
@@ -112,36 +112,36 @@ GLint TextureGL::getGLFormat(int channelCount) {
 }
 void TextureGL::uploadToGPU() {
   glActiveTexture(GL_TEXTURE0 + LOAD_TEXTURE_UNIT);
-  glBindTexture(GL_TEXTURE_2D, m_textureID);
+  glBindTexture(GL_TEXTURE_2D, m_texture_id);
 
   const Texture* texture = getSource();
   configureParameters(texture);
 
-  if(const double* imageData = texture->getImageData()) {
-    const auto format = getGLFormat(texture->getProperties().channels);
+  if(const double* image_data = texture->getImageData()) {
+    const auto format = GetGlFormat(texture->getProperties().channels);
     if(format == 0) {
       return;
     }
 
     const auto [width, height] = std::make_pair(texture->getProperties().width, texture->getProperties().height);
-    const int dataSize         = width * height * texture->getProperties().channels;
+    const int data_size         = width * height * texture->getProperties().channels;
 
-    if(texture->getColorSpace() == ColorSpace::Linear) {
-      std::vector<float> linearData(dataSize);
-      for(size_t i = 0; i < static_cast<size_t>(dataSize); ++i) {
-        linearData[i] = static_cast<float>(imageData[i]);
-        convertToLinearSpace(linearData[i]);
+    if(texture->getColorSpace() == ColorSpace::LINEAR) {
+      std::vector<float> linear_data(data_size);
+      for(size_t i = 0; i < static_cast<size_t>(data_size); ++i) {
+        linear_data[i] = static_cast<float>(image_data[i]);
+        convertToLinearSpace(linear_data[i]);
       }
 
-      glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_FLOAT, linearData.data());
+      glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_FLOAT, linear_data.data());
     } else {
-      std::vector<unsigned char> convertedData(dataSize);
-      for(size_t i = 0; i < static_cast<size_t>(dataSize); ++i) {
-        convertedData[i] = static_cast<unsigned char>(
-            std::clamp(imageData[i] * NORMALIZED_TO_COLOR8, 0.0, static_cast<double>(COLOR8_MAX_VALUE)));
+      std::vector<unsigned char> converted_data(data_size);
+      for(size_t i = 0; i < static_cast<size_t>(data_size); ++i) {
+        converted_data[i] = static_cast<unsigned char>(
+            std::clamp(image_data[i] * NORMALIZED_TO_COLOR8, 0.0, static_cast<double>(COLOR8_MAX_VALUE)));
       }
 
-      glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, convertedData.data());
+      glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, converted_data.data());
     }
   } else {
     std::cerr << "Error: Texture data is null." << '\n';
@@ -151,17 +151,17 @@ void TextureGL::uploadToGPU() {
 }
 
 void TextureGL::release() {
-  if(m_textureID != 0) {
+  if(m_texture_id != 0) {
     glBindTexture(GL_TEXTURE_2D, 0);
-    glDeleteTextures(1, &m_textureID);
-    std::cout << "TextureGL with ID " << m_textureID << " destroyed." << '\n';
+    glDeleteTextures(1, &m_texture_id);
+    std::cout << "TextureGL with ID " << m_texture_id << " destroyed." << '\n';
 
-    m_textureID = 0U;
+    m_texture_id = 0U;
   }
 }
 
-void TextureGL::unbind(int textureUnit) {
-  glActiveTexture(GL_TEXTURE0 + textureUnit);
+void TextureGL::unbind(int texture_unit) {
+  glActiveTexture(GL_TEXTURE0 + texture_unit);
   glBindTexture(GL_TEXTURE_2D, 0);
 }
 

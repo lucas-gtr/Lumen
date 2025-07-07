@@ -34,7 +34,7 @@ private:
   std::unique_ptr<FramebufferGL> m_scene_pass_framebuffer = nullptr;
   std::unique_ptr<FramebufferGL> m_resolve_framebuffer    = nullptr;
 
-  ShadersGL m_shadow_map_2D_program;
+  ShadersGL m_shadow_map_2_d_program;
   ShadersGL m_shadow_map_cube_program;
   ShadersGL m_scene_pass_program;
   ShadersGL m_outline_program;
@@ -43,10 +43,10 @@ private:
   ShadersGL m_post_processing_program;
 
   int                          m_shadow_map_size = DEFAULT_SHADOW_MAP_SIZE;
-  std::unique_ptr<ShadowMapGL> m_shadow_map_2D   = nullptr;
+  std::unique_ptr<ShadowMapGL> m_shadow_map_2_d   = nullptr;
   std::unique_ptr<ShadowMapGL> m_shadow_map_cube = nullptr;
 
-  GLuint m_quad_VAO = 0U;
+  GLuint m_quad_vao = 0U;
 
   int m_viewport_width  = 0;
   int m_viewport_height = 0;
@@ -56,7 +56,7 @@ private:
   bool m_dynamic_lighting   = false;
   bool m_dynamic_shadow_map = false;
 
-  ToneMapping m_toneMapping = ToneMapping::NONE;
+  ToneMapping m_tone_mapping = ToneMapping::NONE;
   float       m_exposure    = 1.0F;
 
   void loadShaderPrograms();
@@ -65,7 +65,7 @@ private:
 
   void drawShadowMap2D();
   void drawShadowMapCube();
-  void drawLightShadowMap2D(const float* lightSpaceMatrix, int indexX, int indexY);
+  void drawLightShadowMap2D(const float* light_space_matrix, int index_x, int index_y);
   void drawPointShadowMap(const PointLightGL* light);
 
   void uploadLightsData();
@@ -162,15 +162,15 @@ public:
 
   /**
    * @brief Sets the tone mapping algorithm for post-processing.
-   * @param toneMapping The ToneMapping enum value to set, determining the tone mapping algorithm used.
+   * @param tone_mapping The ToneMapping enum value to set, determining the tone mapping algorithm used.
    */
-  void setToneMapping(ToneMapping toneMapping);
+  void setToneMapping(ToneMapping tone_mapping);
 
   /**
    * @brief Gets the current tone mapping algorithm used for post-processing.
    * @return A constant reference to the ToneMapping enum value representing the current tone mapping algorithm.
    */
-  const ToneMapping& getToneMapping() const { return m_toneMapping; }
+  const ToneMapping& getToneMapping() const { return m_tone_mapping; }
 
   /**
    * @brief Sets the exposure for post-processing effects.

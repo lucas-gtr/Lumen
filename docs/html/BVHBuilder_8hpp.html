@@ -92,35 +92,23 @@ $(function() {
 <div class="textblock"><code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="BVHNode_8hpp_source.html">BVH/BVHNode.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Vec3_8hpp_source.html">Core/Math/Vec3.hpp</a>&quot;</code><br />
+<code>#include &lt;linalg/Vec3.hpp&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for BVHBuilder.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="BVHBuilder_8hpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2BVH_2BVHBuilder_8hpp" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2include_2BVH_2BVHBuilder_8hpp" id="a_2home_2lucasgtr_2lumen_2include_2BVH_2BVHBuilder_8hpp">
-<area shape="rect" title="Header file for the BVH builder functions." alt="" coords="31,5,242,45"/>
-<area shape="rect" title=" " alt="" coords="49,167,126,192"/>
-<area shape="poly" title=" " alt="" coords="86,48,55,67,31,95,28,111,33,127,45,142,60,156,56,160,41,146,28,129,22,111,26,92,51,63,83,43"/>
-<area shape="rect" title=" " alt="" coords="41,93,104,119"/>
-<area shape="poly" title=" " alt="" coords="123,47,93,84,89,81,119,44"/>
-<area shape="rect" href="BVHNode_8hpp.html" title="Header file for the BVHNode class." alt="" coords="129,93,273,119"/>
-<area shape="poly" title=" " alt="" coords="154,44,184,81,180,84,150,47"/>
-<area shape="rect" href="Vec3_8hpp.html" title="Header file for the Vec3 class, representing a 3D vector." alt="" coords="179,167,331,192"/>
-<area shape="poly" title=" " alt="" coords="221,43,258,62,274,76,287,92,292,108,291,125,276,156,271,154,286,124,287,109,282,95,270,79,255,67,219,48"/>
-<area shape="poly" title=" " alt="" coords="184,121,119,162,116,157,181,116"/>
-<area shape="poly" title=" " alt="" coords="212,117,240,154,236,157,208,121"/>
-<area shape="rect" title=" " alt="" coords="5,240,68,265"/>
-<area shape="poly" title=" " alt="" coords="221,195,82,239,80,234,219,189"/>
-<area shape="rect" title=" " alt="" coords="93,240,191,265"/>
-<area shape="poly" title=" " alt="" coords="239,194,173,235,170,230,236,190"/>
-<area shape="rect" title=" " alt="" coords="215,240,295,265"/>
-<area shape="poly" title=" " alt="" coords="258,192,258,226,253,226,253,192"/>
-<area shape="rect" title=" " alt="" coords="320,240,407,265"/>
-<area shape="poly" title=" " alt="" coords="274,190,336,230,333,235,271,194"/>
-<area shape="rect" href="Alignment_8hpp.html" title="Defines alignment constants for vector and matrix types." alt="" coords="431,240,619,265"/>
-<area shape="poly" title=" " alt="" coords="299,189,469,234,467,239,298,195"/>
-<area shape="rect" title=" " alt="" coords="489,313,560,339"/>
-<area shape="poly" title=" " alt="" coords="527,266,527,300,522,300,522,266"/>
+<area shape="rect" title="Header file for the BVH builder functions." alt="" coords="12,5,223,45"/>
+<area shape="rect" title=" " alt="" coords="38,167,115,192"/>
+<area shape="poly" title=" " alt="" coords="67,48,36,67,12,95,9,111,15,128,29,143,46,157,42,161,25,147,11,130,3,112,7,92,33,63,64,43"/>
+<area shape="rect" title=" " alt="" coords="22,93,85,119"/>
+<area shape="poly" title=" " alt="" coords="104,47,74,84,70,81,100,44"/>
+<area shape="rect" href="BVHNode_8hpp.html" title="Header file for the BVHNode class." alt="" coords="110,93,254,119"/>
+<area shape="poly" title=" " alt="" coords="135,44,165,81,161,84,131,47"/>
+<area shape="rect" title=" " alt="" coords="176,167,297,192"/>
+<area shape="poly" title=" " alt="" coords="203,43,239,62,255,76,268,92,274,108,272,125,257,156,252,154,267,124,268,109,263,95,251,79,236,67,200,48"/>
+<area shape="poly" title=" " alt="" coords="166,121,106,161,103,157,163,116"/>
+<area shape="poly" title=" " alt="" coords="193,117,221,154,217,157,189,121"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -148,9 +136,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aafa139562b34fc691dfc0e8f80027c66" id="r_aafa139562b34fc691dfc0e8f80027c66"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceBVH.html#aafa139562b34fc691dfc0e8f80027c66">BVH::getLargestAxis</a> (const <a class="el" href="namespacelin.html#adb4f22af3a3d53d7b834f8533a027a8e">lin::Vec3d</a> &amp;extent)</td></tr>
-<tr class="memdesc:aafa139562b34fc691dfc0e8f80027c66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the largest axis of a given extent.  <br /></td></tr>
-<tr class="separator:aafa139562b34fc691dfc0e8f80027c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7c83cfc32cdd5eb62e1773dc9f6c9c1" id="r_ac7c83cfc32cdd5eb62e1773dc9f6c9c1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceBVH.html#ac7c83cfc32cdd5eb62e1773dc9f6c9c1">BVH::getLargestAxis</a> (const linalg::Vec3d &amp;extent)</td></tr>
+<tr class="memdesc:ac7c83cfc32cdd5eb62e1773dc9f6c9c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the largest axis of a given extent.  <br /></td></tr>
+<tr class="separator:ac7c83cfc32cdd5eb62e1773dc9f6c9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fe0efb5437fce36b86bf302b5fa28d3" id="r_a8fe0efb5437fce36b86bf302b5fa28d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceBVH.html#a8fe0efb5437fce36b86bf302b5fa28d3">BVH::constructNode</a> (std::shared_ptr&lt; <a class="el" href="classBVHNode.html">BVHNode</a> &gt; &amp;node, std::vector&lt; std::shared_ptr&lt; <a class="el" href="classBVHNode.html">BVHNode</a> &gt; &gt; &amp;objects, int start, int end)</td></tr>
 <tr class="memdesc:a8fe0efb5437fce36b86bf302b5fa28d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a <a class="el" href="namespaceBVH.html" title="Namespace for Bounding Volume Hierarchy (BVH) related functions.">BVH</a> node (left and right child) from a list of objects.  <br /></td></tr>
 <tr class="separator:a8fe0efb5437fce36b86bf302b5fa28d3"><td class="memSeparator" colspan="2">&#160;</td></tr>

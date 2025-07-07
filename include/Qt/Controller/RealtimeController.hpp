@@ -41,7 +41,7 @@ private:
 
   Scene*                    m_scene;
   std::unique_ptr<EngineGL> m_engine;
-  bool                      m_shouldClose = false;
+  bool                      m_should_close = false;
 
   void connectSignals();
 };

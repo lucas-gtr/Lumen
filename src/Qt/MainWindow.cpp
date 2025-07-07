@@ -247,19 +247,19 @@ void MainWindow::onLightSelected(const QString& light_name) {
   m_transform_view->setVisible(true);
 
   switch(light->getType()) {
-  case LightType::Directional:
+  case LightType::DIRECTIONAL:
     m_directional_light_view->setVisible(true);
     m_directional_light_controller->setDirectionalLight(dynamic_cast<DirectionalLight*>(light));
     m_selected_object_name->setText("Directional Light");
     break;
-  case LightType::Point:
+  case LightType::POINT:
     m_transform_view->enablePositionInputs();
 
     m_point_light_view->setVisible(true);
     m_point_light_controller->setPointLight(dynamic_cast<PointLight*>(light));
     m_selected_object_name->setText("Point Light");
     break;
-  case LightType::Spot:
+  case LightType::SPOT:
     m_transform_view->enablePositionInputs();
 
     m_spot_light_view->setVisible(true);

@@ -9,8 +9,8 @@ TEST(DirectionalGPUTest, Initialization) {
 
     DirectionalLightGPU gpu_light(&light);
 
-    EXPECT_EQ(gpu_light.getDirection(), lin::Vec3f(1.0f, -1.0f, 0.0f).normalized());
-    EXPECT_EQ(gpu_light.getColor(), lin::Vec3f(1.0f, 1.0f, 1.0f));
+    EXPECT_EQ(gpu_light.getDirection(), linalg::Vec3f(1.0f, -1.0f, 0.0f).normalized());
+    EXPECT_EQ(gpu_light.getColor(), linalg::Vec3f(1.0f, 1.0f, 1.0f));
 }
 
 TEST(DirectionalGPUTest, Direction) {
@@ -18,7 +18,7 @@ TEST(DirectionalGPUTest, Direction) {
     light.setDirection({0.0f, 0.0f, -1.0f});
     DirectionalLightGPU gpu_light(&light);
 
-    EXPECT_EQ(gpu_light.getDirection(), lin::Vec3f(0.0f, 0.0f, -1.0f));
+    EXPECT_EQ(gpu_light.getDirection(), linalg::Vec3f(0.0f, 0.0f, -1.0f));
 }
 
 TEST(DirectionalGPUTest, Color) {
@@ -26,7 +26,7 @@ TEST(DirectionalGPUTest, Color) {
     light.setColor({0.5f, 0.5f, 0.5f});
     DirectionalLightGPU gpu_light(&light);
 
-    EXPECT_EQ(gpu_light.getColor(), lin::Vec3f(0.5f, 0.5f, 0.5f));
+    EXPECT_EQ(gpu_light.getColor(), linalg::Vec3f(0.5f, 0.5f, 0.5f));
 }
 TEST(DirectionalGPUTest, Intensity) {
     DirectionalLight light;
@@ -34,6 +34,6 @@ TEST(DirectionalGPUTest, Intensity) {
     light.setColor({1.0f, 1.0f, 1.0f});
     DirectionalLightGPU gpu_light(&light);
 
-    lin::Vec3f expected_color = lin::Vec3f(1.0f, 1.0f, 1.0f) * 2.0f;
+    linalg::Vec3f expected_color = linalg::Vec3f(1.0f, 1.0f, 1.0f) * 2.0f;
     EXPECT_EQ(gpu_light.getColor(), expected_color);
 }

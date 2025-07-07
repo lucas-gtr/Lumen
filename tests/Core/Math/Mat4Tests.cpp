@@ -1,8 +1,10 @@
 #include <gtest/gtest.h>
-#include "Core/Math/Mat4.hpp"
-#include "Core/Math/Mat3.hpp"
+#include <linalg/Mat4.hpp>
+#include <linalg/Mat3.hpp>
 
-using namespace lin;
+#include "Core/MathConstants.hpp"
+
+using namespace linalg;
 
 TEST(Mat4dTest, DefaultConstructor) {
   Mat4d mat;

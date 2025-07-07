@@ -49,7 +49,7 @@ private:
 
   // Members
   QSpinBox*  m_image_width_spin  = nullptr;
-  QSpinBox*  image_height_spin   = nullptr;
+  QSpinBox*  m_image_height_spin   = nullptr;
   QComboBox* m_channels_combo    = nullptr;
   QSpinBox*  m_samples_spin      = nullptr;
   QSpinBox*  m_bounces_spin      = nullptr;

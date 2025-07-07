@@ -1,3 +1,39 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$classObserver.html" title=" " alt="" coords="5,5,220,31"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,351,84,376"/>
+<area shape="rect" id="Node000001" href="$classCameraView.html" title="Widget for viewing and editing camera parameters (MVC View)." alt="" coords="167,5,272,31"/>
+<area shape="poly" id="edge48_Node000000_Node000001" title=" " alt="" coords="42,337,44,276,55,197,66,155,81,113,103,74,130,40,147,28,166,21,168,26,149,33,134,44,107,77,86,115,71,156,60,198,49,277,48,337"/>
+<area shape="rect" id="Node000002" href="$classExportView.html" title="Widget for configuring export settings." alt="" coords="171,55,267,80"/>
+<area shape="poly" id="edge49_Node000000_Node000002" title=" " alt="" coords="44,336,48,285,61,218,72,183,87,149,106,117,130,89,149,77,170,69,172,74,152,81,134,93,111,121,92,152,77,185,67,220,54,285,49,337"/>
+<area shape="rect" id="Node000003" href="$classLightView.html" title=" " alt="" coords="176,104,263,129"/>
+<area shape="poly" id="edge50_Node000000_Node000003" title=" " alt="" coords="46,336,53,293,68,240,93,186,110,161,130,139,151,125,175,118,176,123,154,130,134,143,114,164,98,188,73,242,59,294,51,337"/>
+<area shape="rect" id="Node000007" href="$classMaterialSelectorWidget.html" title="A widget for selecting materials from a dropdown list." alt="" coords="132,153,307,179"/>
+<area shape="poly" id="edge54_Node000000_Node000007" title=" " alt="" coords="49,337,59,303,76,263,99,222,130,188,149,177,152,181,134,192,103,226,80,265,64,305,54,338"/>
+<area shape="rect" id="Node000008" href="$classMaterialView.html" title=" " alt="" coords="165,203,273,228"/>
+<area shape="poly" id="edge55_Node000000_Node000008" title=" " alt="" coords="55,337,84,286,105,260,131,237,164,222,166,226,133,242,109,263,88,289,59,340"/>
+<area shape="rect" id="Node000009" href="$classObjectView.html" title=" " alt="" coords="171,252,267,277"/>
+<area shape="poly" id="edge56_Node000000_Node000009" title=" " alt="" coords="65,338,95,311,131,286,170,271,172,276,133,291,98,315,69,342"/>
+<area shape="rect" id="Node000010" href="$classRenderView.html" title="Widget for configuring render parameters." alt="" coords="169,301,269,327"/>
+<area shape="poly" id="edge57_Node000000_Node000010" title=" " alt="" coords="96,346,131,335,171,324,173,329,133,341,98,351"/>
+<area shape="rect" id="Node000011" href="$classRenderWindowView.html" title=" " alt="" coords="143,351,295,376"/>
+<area shape="poly" id="edge58_Node000000_Node000011" title=" " alt="" coords="98,361,143,361,143,366,98,366"/>
+<area shape="rect" id="Node000012" href="$classSceneView.html" title=" " alt="" coords="173,400,266,425"/>
+<area shape="poly" id="edge59_Node000000_Node000012" title=" " alt="" coords="98,375,174,397,173,402,96,381"/>
+<area shape="rect" id="Node000013" href="$classSkyboxView.html" title=" " alt="" coords="169,449,270,475"/>
+<area shape="poly" id="edge60_Node000000_Node000013" title=" " alt="" coords="69,384,98,410,133,434,169,449,167,454,131,439,95,414,65,388"/>
+<area shape="rect" id="Node000014" href="$classTexturePreviewWidget.html" title="A widget that displays a texture preview image." alt="" coords="135,499,303,524"/>
+<area shape="poly" id="edge61_Node000000_Node000014" title=" " alt="" coords="60,387,89,437,109,462,134,484,157,496,155,501,130,488,105,466,84,440,55,390"/>
+<area shape="rect" id="Node000015" href="$classTextureSelectorWidget.html" title="A widget for selecting textures from a TextureManager." alt="" coords="135,548,304,573"/>
+<area shape="poly" id="edge62_Node000000_Node000015" title=" " alt="" coords="55,389,65,422,81,461,104,500,134,533,154,546,152,550,130,537,99,503,76,463,60,424,49,390"/>
+<area shape="rect" id="Node000016" href="$classTextureView.html" title=" " alt="" coords="168,597,271,623"/>
+<area shape="poly" id="edge63_Node000000_Node000016" title=" " alt="" coords="51,390,59,432,74,484,98,537,114,561,134,583,150,594,169,601,167,606,147,598,130,587,110,565,93,540,69,486,54,433,46,391"/>
+<area shape="rect" id="Node000017" href="$classTransformView.html" title=" " alt="" coords="160,647,279,672"/>
+<area shape="poly" id="edge64_Node000000_Node000017" title=" " alt="" coords="49,389,54,441,67,506,78,540,92,574,111,605,134,632,161,648,158,653,130,636,106,608,88,576,73,542,62,507,49,441,44,390"/>
+<area shape="rect" id="Node000018" href="$classViewportView.html" title=" " alt="" coords="163,696,275,721"/>
+<area shape="poly" id="edge65_Node000000_Node000018" title=" " alt="" coords="48,390,49,450,60,529,71,571,86,611,107,649,134,683,148,693,164,700,162,705,145,698,130,687,103,652,81,614,66,572,55,530,44,450,42,390"/>
+<area shape="rect" id="Node000004" href="$classDirectionalLightView.html" title=" " alt="" coords="355,55,512,80"/>
+<area shape="poly" id="edge51_Node000003_Node000004" title=" " alt="" coords="276,101,377,77,378,83,277,106"/>
+<area shape="rect" id="Node000005" href="$classPointLightView.html" title=" " alt="" coords="374,104,493,129"/>
+<area shape="poly" id="edge52_Node000003_Node000005" title=" " alt="" coords="277,114,374,114,374,119,277,119"/>
+<area shape="rect" id="Node000006" href="$classSpotLightView.html" title=" " alt="" coords="376,153,491,179"/>
+<area shape="poly" id="edge53_Node000003_Node000006" title=" " alt="" coords="277,127,378,151,377,156,276,132"/>
 </map>

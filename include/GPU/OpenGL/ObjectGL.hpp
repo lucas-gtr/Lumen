@@ -24,9 +24,9 @@
  */
 class ObjectGL : public IObjectGPU, protected QOpenGLFunctions_3_3_Core {
 private:
-  unsigned int m_VAO = 0;
-  unsigned int m_VBO = 0;
-  unsigned int m_EBO = 0;
+  unsigned int m_vao = 0;
+  unsigned int m_vbo = 0;
+  unsigned int m_ebo = 0;
 
   MaterialGL* m_material;
 
@@ -64,7 +64,7 @@ public:
    * @brief Gets the Vertex Array Object ID.
    * @return The Vertex Array Object ID.
    */
-  unsigned int getVAO() const { return m_VAO; }
+  unsigned int getVAO() const { return m_vao; }
 
   /**
    * @brief Sets the selection state of the object.

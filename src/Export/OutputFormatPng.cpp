@@ -4,7 +4,7 @@
 #include "Export/OutputFormatPng.hpp"
 #include "stb_image_write.h"
 
-bool OutputFormatPng::write_image(const std::string& file_path, int width, int height, int channel_count,
+bool OutputFormatPng::writeImage(const std::string& file_path, int width, int height, int channel_count,
                                   const unsigned char* image) const {
 
   // NOLINTNEXTLINE(clang-analyzer-optin.portability.UnixAPI)

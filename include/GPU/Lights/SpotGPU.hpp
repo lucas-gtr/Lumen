@@ -5,7 +5,8 @@
 #ifndef GPU_LIGHTS_SPOTGPU_HPP
 #define GPU_LIGHTS_SPOTGPU_HPP
 
-#include "Core/Math/Vec3.hpp"
+#include <linalg/Vec3.hpp>
+
 #include "Lighting/SpotLight.hpp"
 
 /**
@@ -20,11 +21,11 @@ class SpotLightGPU {
 private:
   const SpotLight* m_light = nullptr;
 
-  lin::Vec3f m_position         = lin::Vec3f(0.0F);
-  lin::Vec3f m_direction        = lin::Vec3f(0.0F, 0.0F, -1.0F);
+  linalg::Vec3f m_position         = linalg::Vec3f(0.0F);
+  linalg::Vec3f m_direction        = linalg::Vec3f(0.0F, 0.0F, -1.0F);
   float      m_cos_inner_cutoff = 0.0F;
   float      m_cos_outer_cutoff = 0.0F;
-  lin::Vec3f m_color            = lin::Vec3f(1.0F);
+  linalg::Vec3f m_color            = linalg::Vec3f(1.0F);
 
 protected:
   const SpotLight* light() const { return m_light; }
@@ -50,13 +51,13 @@ public:
    * @brief Gets the position of the spot light.
    * @return The position vector of the light.
    */
-  lin::Vec3f getPosition() const { return m_position; }
+  linalg::Vec3f getPosition() const { return m_position; }
 
   /**
    * @brief Gets the direction of the spot light.
    * @return The direction vector of the light.
    */
-  lin::Vec3f getDirection() const { return m_direction; }
+  linalg::Vec3f getDirection() const { return m_direction; }
 
   /**
    * @brief Gets the cosine of the inner cutoff angle of the spot light.
@@ -74,7 +75,7 @@ public:
    * @brief Gets the color of the spot light multiplied by its intensity.
    * @return The color vector of the light multiplied by the intensity.
    */
-  lin::Vec3f getColor() const { return m_color; }
+  linalg::Vec3f getColor() const { return m_color; }
 
   ~SpotLightGPU() = default; ///< Default destructor for SpotLightGPU.
 };

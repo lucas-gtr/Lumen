@@ -4,14 +4,14 @@
 #include "Surface/TextureManager.hpp"
 
 Material::Material()
-    : m_diffuse_texture(TextureManager::defaultDiffuseTexture()),
-      m_normal_texture(TextureManager::defaultNormalTexture()) {}
+    : m_diffuse_texture(TextureManager::DefaultDiffuseTexture()),
+      m_normal_texture(TextureManager::DefaultNormalTexture()) {}
 
 void Material::setDiffuseTexture(Texture* texture) {
   if(texture != nullptr) {
     m_diffuse_texture = texture;
   } else {
-    m_diffuse_texture = TextureManager::defaultDiffuseTexture();
+    m_diffuse_texture = TextureManager::DefaultDiffuseTexture();
   }
   m_material_changed_observer.notify(this);
 }
@@ -20,7 +20,7 @@ void Material::setNormalTexture(Texture* texture) {
   if(texture != nullptr) {
     m_normal_texture = texture;
   } else {
-    m_normal_texture = TextureManager::defaultNormalTexture();
+    m_normal_texture = TextureManager::DefaultNormalTexture();
   }
   m_material_changed_observer.notify(this);
 }
@@ -31,14 +31,14 @@ ColorRGB Material::getNormal(TextureUV uv_coord) const { return m_normal_texture
 
 Texture* Material::getDiffuseTexture() const {
   if(m_diffuse_texture == nullptr) {
-    return TextureManager::defaultDiffuseTexture();
+    return TextureManager::DefaultDiffuseTexture();
   }
   return m_diffuse_texture;
 }
 
 Texture* Material::getNormalTexture() const {
   if(m_normal_texture == nullptr) {
-    return TextureManager::defaultNormalTexture();
+    return TextureManager::DefaultNormalTexture();
   }
   return m_normal_texture;
 }

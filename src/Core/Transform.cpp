@@ -1,13 +1,14 @@
-#include "Core/Transform.hpp"
-#include "Core/Math/Mat3.hpp"
-#include "Core/Math/Mat4.hpp"
-#include "Core/Math/Vec3.hpp"
-#include "Core/Math/lin.hpp"
+#include <linalg/Mat3.hpp>
+#include <linalg/Mat4.hpp>
+#include <linalg/Vec3.hpp>
+#include <linalg/linalg.hpp>
+
 #include "Core/MathConstants.hpp"
+#include "Core/Transform.hpp"
 
 #include <cmath>
 
-Transform::Transform(const lin::Vec3d& position, const lin::Vec3d& rotation, const lin::Vec3d& scale)
+Transform::Transform(const linalg::Vec3d& position, const linalg::Vec3d& rotation, const linalg::Vec3d& scale)
     : m_position(position), m_rotation(rotation), m_scale(scale) {
 
   updateTranslationMatrix();
@@ -16,7 +17,7 @@ Transform::Transform(const lin::Vec3d& position, const lin::Vec3d& rotation, con
   updateTransformationMatrix();
 }
 
-void Transform::setPosition(const lin::Vec3d& pos) {
+void Transform::setPosition(const linalg::Vec3d& pos) {
   m_position = pos;
   updateTranslationMatrix();
 }
@@ -43,7 +44,7 @@ void Transform::updateTranslationMatrix() {
   updateTransformationMatrix();
 }
 
-void Transform::setRotation(const lin::Vec3d& rot) {
+void Transform::setRotation(const linalg::Vec3d& rot) {
   m_rotation = rot;
   updateRotationMatrix();
 }
@@ -65,17 +66,17 @@ void Transform::setRotationZ(double z) {
 
 void Transform::updateRotationMatrix() {
   m_rotation_matrix =
-      lin::getRotationMatrix(m_rotation.x * DEG_TO_RAD, m_rotation.y * DEG_TO_RAD, m_rotation.z * DEG_TO_RAD);
+      linalg::getRotationMatrix(m_rotation.x * DEG_TO_RAD, m_rotation.y * DEG_TO_RAD, m_rotation.z * DEG_TO_RAD);
   updateTransformationMatrix();
 }
 
-void Transform::setScale(const lin::Vec3d& scale) {
+void Transform::setScale(const linalg::Vec3d& scale) {
   m_scale = scale;
   updateScaleMatrix();
 }
 
 void Transform::setScale(double scale) {
-  m_scale = lin::Vec3d(scale, scale, scale);
+  m_scale = linalg::Vec3d(scale, scale, scale);
   updateScaleMatrix();
 }
 
@@ -102,11 +103,11 @@ void Transform::updateScaleMatrix() {
 }
 
 void Transform::updateTransformationMatrix() {
-  const lin::Mat4d rotationMatrix4d(m_rotation_matrix);
+  const linalg::Mat4d rotation_matrix4d(m_rotation_matrix);
 
-  const lin::Mat4d scaleMatrix4d(m_scale_matrix);
+  const linalg::Mat4d scale_matrix4d(m_scale_matrix);
 
-  m_transformation_matrix = m_translation_matrix * scaleMatrix4d * rotationMatrix4d;
+  m_transformation_matrix = m_translation_matrix * scale_matrix4d * rotation_matrix4d;
   updateInverseMatrix();
   updateNormalMatrix();
 

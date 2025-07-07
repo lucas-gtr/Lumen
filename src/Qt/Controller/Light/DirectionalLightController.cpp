@@ -1,6 +1,7 @@
-#include "Qt/Controller/Light/DirectionalLightController.hpp"
-#include "Core/Math/Vec3.hpp"
+#include <linalg/Vec3.hpp>
+
 #include "Lighting/DirectionalLight.hpp"
+#include "Qt/Controller/Light/DirectionalLightController.hpp"
 #include "Qt/Controller/Light/LightController.hpp"
 #include "Qt/View/Light/DirectionalLightView.hpp"
 
@@ -18,8 +19,8 @@ void DirectionalLightController::onDirectionChanged(double x, double y, double z
   if(m_directional_light == nullptr) {
     return;
   }
-  const lin::Vec3d newDirection(x, y, z);
-  m_directional_light->setDirection(newDirection);
+  const linalg::Vec3d new_direction(x, y, z);
+  m_directional_light->setDirection(new_direction);
 }
 
 void DirectionalLightController::setDirectionalLight(DirectionalLight* light) {
@@ -33,6 +34,6 @@ void DirectionalLightController::updateViewFromModel() {
     return;
   }
 
-  const lin::Vec3d dir = m_directional_light->getDirection();
+  const linalg::Vec3d dir = m_directional_light->getDirection();
   m_directional_light_view->setDirection(dir.x, dir.y, dir.z);
 }

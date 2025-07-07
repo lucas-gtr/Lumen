@@ -7,31 +7,31 @@ protected:
     PointLight light;
 
     void SetUp() override {
-        light.setPosition(lin::Vec3d(1.0, 2.0, 3.0));
+        light.setPosition(linalg::Vec3d(1.0, 2.0, 3.0));
     }
 };
 
 TEST_F(PointLightTest, ConstructorSetsTypeCorrectly) {
-    EXPECT_EQ(light.getType(), LightType::Point);
+    EXPECT_EQ(light.getType(), LightType::POINT);
 }
 
 TEST_F(PointLightTest, GetDirectionFromPointReturnsNormalizedVector) {
-    lin::Vec3d point(4.0, 6.0, 8.0);
-    lin::Vec3d direction = light.getDirectionFromPoint(point);
+    linalg::Vec3d point(4.0, 6.0, 8.0);
+    linalg::Vec3d direction = light.getDirectionFromPoint(point);
 
-    lin::Vec3d expectedDirection = (light.getPosition() - point).normalized();
+    linalg::Vec3d expectedDirection = (light.getPosition() - point).normalized();
     EXPECT_NEAR(direction.x, expectedDirection.x, 1e-9);
     EXPECT_NEAR(direction.y, expectedDirection.y, 1e-9);
     EXPECT_NEAR(direction.z, expectedDirection.z, 1e-9);
 }
 
 TEST_F(PointLightTest, GetLightFactorConsidersDistanceAndNormalInclination) {
-    lin::Vec3d pointNear(1.5, 2.5, 3.5);
-    lin::Vec3d pointFar(10.0, 10.0, 10.0);
+    linalg::Vec3d pointNear(1.5, 2.5, 3.5);
+    linalg::Vec3d pointFar(10.0, 10.0, 10.0);
 
-    lin::Vec3d normalFacing = (light.getPosition() - pointNear).normalized();
+    linalg::Vec3d normalFacing = (light.getPosition() - pointNear).normalized();
     
-    lin::Vec3d normalSlightlyInclined = (light.getPosition() - pointNear).normalized();
+    linalg::Vec3d normalSlightlyInclined = (light.getPosition() - pointNear).normalized();
     normalSlightlyInclined.x += 0.1; 
     normalSlightlyInclined.normalize();
 

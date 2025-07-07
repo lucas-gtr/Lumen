@@ -42,8 +42,8 @@ void Camera::setAperture(double aperture) {
   m_camera_changed_observer.notify();
 }
 
-void Camera::setShutterSpeed(double shutterSpeed) {
-  m_shutter_speed = std::clamp(shutterSpeed, MIN_SHUTTER_SPEED, MAX_SHUTTER_SPEED);
+void Camera::setShutterSpeed(double shutter_speed) {
+  m_shutter_speed = std::clamp(shutter_speed, MIN_SHUTTER_SPEED, MAX_SHUTTER_SPEED);
   m_camera_changed_observer.notify();
 }
 
@@ -52,12 +52,12 @@ void Camera::setFocusDistance(double focus_distance) {
   m_camera_changed_observer.notify();
 }
 
-void Camera::setNearPlane(double nearPlane) {
-  m_near_plane = std::clamp(nearPlane, MIN_CAMERA_PLANE, m_far_plane - MIN_CAMERA_PLANE);
+void Camera::setNearPlane(double near_plane) {
+  m_near_plane = std::clamp(near_plane, MIN_CAMERA_PLANE, m_far_plane - MIN_CAMERA_PLANE);
   m_camera_changed_observer.notify();
 }
 
-void Camera::setFarPlane(double farPlane) {
-  m_far_plane = std::clamp(farPlane, m_near_plane + MIN_CAMERA_PLANE, MAX_CAMERA_PLANE);
+void Camera::setFarPlane(double far_plane) {
+  m_far_plane = std::clamp(far_plane, m_near_plane + MIN_CAMERA_PLANE, MAX_CAMERA_PLANE);
   m_camera_changed_observer.notify();
 }

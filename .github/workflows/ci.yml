@@ -1,7 +1,10 @@
-name: CI Workflow
+name: C++ CI Workflow
 
 on:
   pull_request:
+    branches:
+      - main
+  push:
     branches:
       - main
 
@@ -9,29 +12,42 @@ permissions:
   contents: write
 
 jobs:
-  run-tests:
+  build-and-test:
     runs-on: ubuntu-latest
+    env:
+      CC: gcc
+      CXX: g++
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           submodules: true
 
-      - name: Install dependencies for tests
+      - name: Setup cache for CMake build
+        uses: actions/cache@v3
+        with:
+          path: |
+            build/
+            ~/.cache/ccache
+          key: ${{ runner.os }}-cmake-${{ hashFiles('**/CMakeLists.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-cmake-
+
+      - name: Install project dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libgl1-mesa-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev
+          xargs -a dependencies.txt sudo apt-get install -y
 
-      - name: Install dependencies for Qt
-        run: |
-          sudo apt-get install -y qt6-base-dev
+      - name: Configure CMake
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Tests -DENABLE_UNIT_TESTS=ON -G Ninja
+
+      - name: Build
+        run: cmake --build build --parallel
 
       - name: Run tests
-        run: |
-          make configure-tests
-          make run-tests
-          
-  clang-format-and-tidy:
+        run: ./build/tests/UnitTests
+
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -39,19 +55,5 @@ jobs:
         with:
           submodules: true
 
-      - name: Install dependencies for clang-format and clang-tidy
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y clang-format clang-tidy 
-
-      - name: Install dependencies for OpenGL
-        run: |
-          sudo apt-get install -y libgl1-mesa-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev
-      
-      - name: Install dependencies for Qt
-        run: |
-          sudo apt-get install -y qt6-base-dev
-
-      - name: Check code format and lint
-        run: |
-          make format-and-lint
+      - name: Run clang-tidy analysis
+        run: make lint || (echo "Linting failed" && exit 1)

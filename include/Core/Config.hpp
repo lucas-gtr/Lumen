@@ -130,9 +130,9 @@ static constexpr unsigned int THREADS_TO_KEEP_FREE        = 4;
 static constexpr double EPSILON = 1e-9; // for floating-point comparisons
 
 //<-------- ALIGNMENT --------->
-static constexpr size_t Align8  = 8;
-static constexpr size_t Align16 = 16;
-static constexpr size_t Align32 = 32;
+static constexpr size_t ALIGN8  = 8;
+static constexpr size_t ALIGN16 = 16;
+static constexpr size_t ALIGN32 = 32;
 
 //<-------- ENGINE --------->
 static constexpr float DEFAULT_CAMERA_MOVE_SPEED   = 0.005F;

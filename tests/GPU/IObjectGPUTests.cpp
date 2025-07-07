@@ -2,8 +2,8 @@
 #include "GPU/IObjectGPU.hpp"
 #include "SceneObjects/Object3D.hpp"
 #include "Geometry/Mesh.hpp"
-#include "Core/Math/Mat3.hpp"
-#include "Core/Math/Mat4.hpp"
+#include <linalg/Mat3.hpp>
+#include <linalg/Mat4.hpp>
 
 class TestObjectGPU : public IObjectGPU {
 public:
@@ -29,9 +29,9 @@ protected:
         v3.position = {0.0, 0.0, 1.0};
 
         Face face;
-        face.vertexIndices[0] = 0;
-        face.vertexIndices[1] = 1;
-        face.vertexIndices[2] = 2;
+        face.vertex_indices[0] = 0;
+        face.vertex_indices[1] = 1;
+        face.vertex_indices[2] = 2;
 
         std::vector<Vertex> vertices = {v1, v2, v3};
         std::vector<Face> faces = {face};
@@ -52,8 +52,8 @@ TEST_F(IObjectGPUTest, InitializationTest) {
     const float* modelMatrix = gpuObject.getModelMatrix();
     const float* normalMatrix = gpuObject.getNormalMatrix();
 
-    lin::Mat4f expectedModel = lin::Mat4f(object.getTransformationMatrix());
-    lin::Mat3f expectedNormal = lin::Mat3f(object.getNormalMatrix());
+    linalg::Mat4f expectedModel = linalg::Mat4f(object.getTransformationMatrix());
+    linalg::Mat3f expectedNormal = linalg::Mat3f(object.getNormalMatrix());
 
     for (int i = 0; i < 16; ++i)
         EXPECT_FLOAT_EQ(modelMatrix[i], expectedModel.data()[i]);
@@ -69,13 +69,13 @@ TEST_F(IObjectGPUTest, VertexAndIndexDataTest) {
     const std::vector<unsigned int>& indices = gpuObject.indices();
 
     EXPECT_EQ(indices.size(), 3u);
-    EXPECT_EQ(vertices.size(), 3u * Vertex::valuePerVertex());
+    EXPECT_EQ(vertices.size(), 3u * Vertex::ValuePerVertex());
 
     EXPECT_EQ(indices[0], 0u);
     EXPECT_EQ(indices[1], 1u);
     EXPECT_EQ(indices[2], 2u);
 
-    EXPECT_EQ(gpuObject.dataSize(), 3u * Vertex::valuePerVertex() * sizeof(float));
+    EXPECT_EQ(gpuObject.dataSize(), 3u * Vertex::ValuePerVertex() * sizeof(float));
     EXPECT_EQ(gpuObject.indicesSize(), 3u * sizeof(unsigned int));
 
     EXPECT_FLOAT_EQ(vertices[0], 1.0f); // x

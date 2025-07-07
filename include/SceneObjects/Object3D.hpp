@@ -6,7 +6,8 @@
 #ifndef SCENEOBJECTS_OBJECT3D_HPP
 #define SCENEOBJECTS_OBJECT3D_HPP
 
-#include "Core/Math/Vec3.hpp"
+#include <linalg/Vec3.hpp>
+
 #include "Core/Observer.hpp"
 #include "Core/Transform.hpp"
 #include "Geometry/Mesh.hpp"
@@ -80,13 +81,13 @@ public:
    * @brief Gets the minimum bounding box corner of the object.
    * @return The minimum bounding box corner as a Vec3d.
    */
-  lin::Vec3d getMinBound() const;
+  linalg::Vec3d getMinBound() const;
 
   /**
    * @brief Gets the maximum bounding box corner of the object.
    * @return The maximum bounding box corner as a Vec3d.
    */
-  lin::Vec3d getMaxBound() const;
+  linalg::Vec3d getMaxBound() const;
 
   ~Object3D() = default; ///< Default destructor.
 };

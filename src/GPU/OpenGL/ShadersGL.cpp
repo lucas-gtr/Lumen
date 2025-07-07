@@ -16,8 +16,8 @@ ShadersGL::ShadersGL() { initializeOpenGLFunctions(); }
 
 unsigned int ShadersGL::compileShader(const std::string& source, unsigned int type) {
   const unsigned int shader       = glCreateShader(type);
-  const char*        shaderSource = source.c_str();
-  glShaderSource(shader, 1, &shaderSource, nullptr);
+  const char*        shader_source = source.c_str();
+  glShaderSource(shader, 1, &shader_source, nullptr);
   glCompileShader(shader);
 
   if(checkCompileErrorsShader(shader) == 0) {
@@ -29,73 +29,73 @@ unsigned int ShadersGL::compileShader(const std::string& source, unsigned int ty
 
 int ShadersGL::checkCompileErrorsShader(unsigned int shader) {
   int                                    success = 0;
-  std::array<char, ERROR_MESSAGE_LENGTH> infoLog{};
+  std::array<char, ERROR_MESSAGE_LENGTH> info_log{};
   glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
   if(success == 0) {
-    glGetShaderInfoLog(shader, ERROR_MESSAGE_LENGTH, nullptr, infoLog.data());
-    std::cerr << "ERROR::SHADER::COMPILATION_FAILED\n" << infoLog.data() << '\n';
+    glGetShaderInfoLog(shader, ERROR_MESSAGE_LENGTH, nullptr, info_log.data());
+    std::cerr << "ERROR::SHADER::COMPILATION_FAILED\n" << info_log.data() << '\n';
   }
   return success;
 }
 
 int ShadersGL::checkCompileErrorsProgram(unsigned int program) {
   int                                    success = 0;
-  std::array<char, ERROR_MESSAGE_LENGTH> infoLog{};
+  std::array<char, ERROR_MESSAGE_LENGTH> info_log{};
   glGetProgramiv(program, GL_LINK_STATUS, &success);
   if(success == 0) {
-    glGetProgramInfoLog(program, ERROR_MESSAGE_LENGTH, nullptr, infoLog.data());
-    std::cerr << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog.data() << '\n';
+    glGetProgramInfoLog(program, ERROR_MESSAGE_LENGTH, nullptr, info_log.data());
+    std::cerr << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << info_log.data() << '\n';
   }
   return success;
 }
 
-std::string ShadersGL::readShaderFromFile(const char* filePath) {
-  std::ifstream shaderFile(filePath);
-  if(!shaderFile) {
-    std::cerr << "ERROR::SHADER::FILE_NOT_FOUND: " << filePath << '\n';
+std::string ShadersGL::ReadShaderFromFile(const char* file_path) {
+  std::ifstream shader_file(file_path);
+  if(!shader_file) {
+    std::cerr << "ERROR::SHADER::FILE_NOT_FOUND: " << file_path << '\n';
     return "";
   }
-  std::stringstream shaderStream;
-  shaderStream << shaderFile.rdbuf();
-  shaderFile.close();
-  return shaderStream.str();
+  std::stringstream shader_stream;
+  shader_stream << shader_file.rdbuf();
+  shader_file.close();
+  return shader_stream.str();
 }
 
-void ShadersGL::loadShaders(const char* vertexShaderPath, const char* fragmentShaderPath) {
-  compileShadersFromSources({{GL_VERTEX_SHADER, vertexShaderPath}, {GL_FRAGMENT_SHADER, fragmentShaderPath}});
+void ShadersGL::loadShaders(const char* vertex_shader_path, const char* fragment_shader_path) {
+  compileShadersFromSources({{GL_VERTEX_SHADER, vertex_shader_path}, {GL_FRAGMENT_SHADER, fragment_shader_path}});
 }
 
-void ShadersGL::loadShaders(const char* vertexShaderPath, const char* geometryShaderPath,
-                            const char* fragmentShaderPath) {
-  compileShadersFromSources({{GL_VERTEX_SHADER, vertexShaderPath},
-                             {GL_GEOMETRY_SHADER, geometryShaderPath},
-                             {GL_FRAGMENT_SHADER, fragmentShaderPath}});
+void ShadersGL::loadShaders(const char* vertex_shader_path, const char* geometry_shader_path,
+                            const char* fragment_shader_path) {
+  compileShadersFromSources({{GL_VERTEX_SHADER, vertex_shader_path},
+                             {GL_GEOMETRY_SHADER, geometry_shader_path},
+                             {GL_FRAGMENT_SHADER, fragment_shader_path}});
 }
 
 void ShadersGL::compileShadersFromSources(const std::vector<std::pair<GLenum, const char*>>& shaders) {
-  std::vector<unsigned int> compiledShaders;
+  std::vector<unsigned int> compiled_shaders;
 
   for(const auto& [type, path] : shaders) {
-    const std::string  source = readShaderFromFile(path);
+    const std::string  source = ReadShaderFromFile(path);
     const unsigned int shader = compileShader(source, type);
     if(shader == 0) {
       std::cerr << "Could not compile shader from file: " << path << '\n';
-      for(const unsigned int s : compiledShaders) {
+      for(const unsigned int s : compiled_shaders) {
         glDeleteShader(s);
       }
       return;
     }
-    compiledShaders.push_back(shader);
+    compiled_shaders.push_back(shader);
   }
 
   m_program = glCreateProgram();
-  for(const unsigned int shader : compiledShaders) {
+  for(const unsigned int shader : compiled_shaders) {
     glAttachShader(m_program, shader);
   }
 
   glLinkProgram(m_program);
 
-  for(const unsigned int shader : compiledShaders) {
+  for(const unsigned int shader : compiled_shaders) {
     glDeleteShader(shader);
   }
 
@@ -121,18 +121,18 @@ void ShadersGL::bind() {
   }
 }
 
-void ShadersGL::bindUniformBlock(const char* blockName, unsigned int bindingPoint) {
-  const unsigned int blockIndex = glGetUniformBlockIndex(m_program, blockName);
-  if(blockIndex == -1) {
-    std::cerr << "Warning: uniform block '" << blockName << "' doesn't exist!" << '\n';
+void ShadersGL::bindUniformBlock(const char* block_name, unsigned int binding_point) {
+  const unsigned int block_index = glGetUniformBlockIndex(m_program, block_name);
+  if(block_index == -1) {
+    std::cerr << "Warning: uniform block '" << block_name << "' doesn't exist!" << '\n';
     return;
   }
-  glUniformBlockBinding(m_program, blockIndex, bindingPoint);
+  glUniformBlockBinding(m_program, block_index, binding_point);
 }
 
 int ShadersGL::getUniformLocation(const char* name) {
-  auto it = m_uniformLocationCache.find(name);
-  if(it != m_uniformLocationCache.end()) {
+  auto it = m_uniform_location_cache.find(name);
+  if(it != m_uniform_location_cache.end()) {
     return it->second;
   }
 
@@ -141,7 +141,7 @@ int ShadersGL::getUniformLocation(const char* name) {
   if(location == -1) {
     std::cerr << "Warning: uniform '" << name << "' doesn't exist!" << '\n';
   }
-  m_uniformLocationCache[name] = location;
+  m_uniform_location_cache[name] = location;
 
   return location;
 }
