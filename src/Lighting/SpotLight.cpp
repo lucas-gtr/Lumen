@@ -32,7 +32,7 @@ ColorRGB SpotLight::getLightFactor(const linalg::Vec3d& point, const linalg::Vec
   const double attenuation = getIntensity() / (distance * distance);
 
   const linalg::Vec3d light_dir   = (getPosition() - point).normalized();
-  const double     dot_product = dot(normal, light_dir);
+  const double        dot_product = dot(normal, light_dir);
 
   const double cosine_angle = linalg::dot(-light_dir, m_direction.normalized());
   const double inner_cutoff = std::cos(m_inner_angle * DEG_TO_RAD);

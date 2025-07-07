@@ -14,8 +14,10 @@ void CameraRayEmitter::initializeViewport(const RayEmitterParameters& parameters
 
   m_viewport_top_left_corner = generateCorner(-m_parameters.sensor_width * HALF, sensor_height * HALF);
 
-  const linalg::Vec3d viewport_top_right_corner   = generateCorner(m_parameters.sensor_width * HALF, sensor_height * HALF);
-  const linalg::Vec3d viewport_bottom_left_corner = generateCorner(-m_parameters.sensor_width * HALF, -sensor_height * HALF);
+  const linalg::Vec3d viewport_top_right_corner =
+      generateCorner(m_parameters.sensor_width * HALF, sensor_height * HALF);
+  const linalg::Vec3d viewport_bottom_left_corner =
+      generateCorner(-m_parameters.sensor_width * HALF, -sensor_height * HALF);
 
   m_horizontal_vector = viewport_top_right_corner - m_viewport_top_left_corner;
   m_vertical_vector   = viewport_bottom_left_corner - m_viewport_top_left_corner;

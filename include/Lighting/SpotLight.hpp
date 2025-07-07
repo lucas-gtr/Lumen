@@ -22,8 +22,8 @@
 class SpotLight : public Light {
 private:
   linalg::Vec3d m_direction   = {0.0, 0.0, -1.0};
-  double     m_inner_angle = DEFAULT_SPOT_LIGHT_INNER_ANGLE; // in degrees
-  double     m_outer_angle = DEFAULT_SPOT_LIGHT_OUTER_ANGLE; // in degrees
+  double        m_inner_angle = DEFAULT_SPOT_LIGHT_INNER_ANGLE; // in degrees
+  double        m_outer_angle = DEFAULT_SPOT_LIGHT_OUTER_ANGLE; // in degrees
 
 public:
   SpotLight() : Light(LightType::SPOT) {} ///< Constructor with light type.

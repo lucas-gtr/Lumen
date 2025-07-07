@@ -17,11 +17,11 @@
 struct RayEmitterParameters {
   linalg::Vec3d camera_position        = {0.0, 0.0, 0.0};
   linalg::Mat3d camera_rotation_matrix = linalg::Mat3d::Identity();
-  double     sensor_width           = 0.0;
-  double     focal_length           = 0.0;
-  double     focus_distance         = 0.0;
-  double     lens_radius            = 0.0;
-  double     image_aspect_ratio     = 0.0;
+  double        sensor_width           = 0.0;
+  double        focal_length           = 0.0;
+  double        focus_distance         = 0.0;
+  double        lens_radius            = 0.0;
+  double        image_aspect_ratio     = 0.0;
 };
 
 /**

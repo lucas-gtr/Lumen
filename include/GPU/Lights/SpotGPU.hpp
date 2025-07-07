@@ -23,8 +23,8 @@ private:
 
   linalg::Vec3f m_position         = linalg::Vec3f(0.0F);
   linalg::Vec3f m_direction        = linalg::Vec3f(0.0F, 0.0F, -1.0F);
-  float      m_cos_inner_cutoff = 0.0F;
-  float      m_cos_outer_cutoff = 0.0F;
+  float         m_cos_inner_cutoff = 0.0F;
+  float         m_cos_outer_cutoff = 0.0F;
   linalg::Vec3f m_color            = linalg::Vec3f(1.0F);
 
 protected:

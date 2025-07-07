@@ -16,7 +16,7 @@
 class OutputFormatBmp : public OutputFormatStrategy {
 public:
   bool writeImage(const std::string& file_path, int width, int height, int channel_count,
-                   const unsigned char* image) const override;
+                  const unsigned char* image) const override;
 };
 
 #endif // EXPORT_OUTPUTFORMATBMP_HPP

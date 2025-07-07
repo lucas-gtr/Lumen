@@ -34,7 +34,7 @@ public:
    * @param image Pointer to the image data (unsigned char array).
    */
   virtual bool writeImage(const std::string& file_path, int width, int height, int channel_count,
-                           const unsigned char* image) const = 0;
+                          const unsigned char* image) const = 0;
 
   virtual ~OutputFormatStrategy() = default; ///< Default destructor.
 };

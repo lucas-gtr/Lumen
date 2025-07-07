@@ -18,12 +18,12 @@ Mesh SphereMeshBuilder::build() const {
   std::vector<Face>   faces;
 
   for(int i = 0; i <= m_rings; ++i) {
-    const double theta    = i * std::numbers::pi / m_rings;
+    const double theta     = i * std::numbers::pi / m_rings;
     const double sin_theta = sin(theta);
     const double cos_theta = cos(theta);
 
     for(int j = 0; j <= m_segments; ++j) {
-      const double phi    = j * 2.0 * std::numbers::pi / m_segments;
+      const double phi     = j * 2.0 * std::numbers::pi / m_segments;
       const double sin_phi = sin(phi);
       const double cos_phi = cos(phi);
 

@@ -113,7 +113,7 @@ void RenderExporter::exportRender() {
       framebuffer[i] = static_cast<float>(m_framebuffer->getFramebuffer()[i]);
     }
     OutputFormatHdr::WriteImageHdr(getPath() + getFilename(), m_framebuffer->getWidth(), m_framebuffer->getHeight(),
-                                     m_framebuffer->getChannelCount(), framebuffer.data());
+                                   m_framebuffer->getChannelCount(), framebuffer.data());
 
   } else {
     render_success = m_output_format_strategy->writeImage(

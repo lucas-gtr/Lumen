@@ -26,5 +26,5 @@ void SpotLightGL::updateLightSpaceMatrix() {
   const linalg::Mat4f light_projection =
       linalg::Mat4f::Perspective(static_cast<float>(light()->getOuterAngle()), 1.0F, m_near_plane, m_far_plane);
 
-      m_light_space_matrix = light_projection * light_view;
+  m_light_space_matrix = light_projection * light_view;
 }

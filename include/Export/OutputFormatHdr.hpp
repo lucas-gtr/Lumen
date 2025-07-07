@@ -16,9 +16,8 @@
 class OutputFormatHdr : public OutputFormatStrategy {
 public:
   bool        writeImage(const std::string& file_path, int width, int height, int channel_count,
-                          const unsigned char* image) const override;
-  static bool WriteImageHdr(const std::string& file_path, int width, int height, int channel_count,
-                              const float* image);
+                         const unsigned char* image) const override;
+  static bool WriteImageHdr(const std::string& file_path, int width, int height, int channel_count, const float* image);
 };
 
 #endif // EXPORT_OUTPUTFORMATHDR_HPP

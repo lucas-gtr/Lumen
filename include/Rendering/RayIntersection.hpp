@@ -25,10 +25,10 @@ struct RayHitInfo {
   double          distance = std::numeric_limits<double>::max();
   const Material* material = nullptr;
   TextureUV       uv_coordinates;
-  linalg::Vec3d      normal;
-  linalg::Vec3d      tangent;
-  linalg::Vec3d      bitangent;
-  linalg::Vec3d      hit_point;
+  linalg::Vec3d   normal;
+  linalg::Vec3d   tangent;
+  linalg::Vec3d   bitangent;
+  linalg::Vec3d   hit_point;
 };
 
 /**

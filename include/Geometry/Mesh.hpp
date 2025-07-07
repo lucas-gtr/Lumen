@@ -21,7 +21,7 @@
 struct Vertex {
   linalg::Vec3d position  = {0.0, 0.0, 0.0}; ///< Position of the vertex in 3D space.
   linalg::Vec3d normal    = {0.0, 0.0, 0.0}; ///< Normal vector at the vertex.
-  TextureUV  uv_coord  = {0, 0};          ///< Texture coordinates of the vertex.
+  TextureUV     uv_coord  = {0, 0};          ///< Texture coordinates of the vertex.
   linalg::Vec3d tangent   = {0.0, 0.0, 0.0}; ///< Tangent vector at the vertex.
   linalg::Vec3d bitangent = {0.0, 0.0, 0.0}; ///< Bitangent vector at the vertex.
 

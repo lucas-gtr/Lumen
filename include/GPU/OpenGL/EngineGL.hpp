@@ -43,7 +43,7 @@ private:
   ShadersGL m_post_processing_program;
 
   int                          m_shadow_map_size = DEFAULT_SHADOW_MAP_SIZE;
-  std::unique_ptr<ShadowMapGL> m_shadow_map_2_d   = nullptr;
+  std::unique_ptr<ShadowMapGL> m_shadow_map_2_d  = nullptr;
   std::unique_ptr<ShadowMapGL> m_shadow_map_cube = nullptr;
 
   GLuint m_quad_vao = 0U;
@@ -57,7 +57,7 @@ private:
   bool m_dynamic_shadow_map = false;
 
   ToneMapping m_tone_mapping = ToneMapping::NONE;
-  float       m_exposure    = 1.0F;
+  float       m_exposure     = 1.0F;
 
   void loadShaderPrograms();
   void configureOpenGLStates();

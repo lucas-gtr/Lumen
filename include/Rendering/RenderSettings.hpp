@@ -70,7 +70,7 @@ public:
    */
   void setWidth(int width) {
     m_properties.width = std::clamp(width, MIN_WIDTH, MAX_IMAGE_WIDTH);
-    m_dx                 = 1.0 / static_cast<double>(width);
+    m_dx               = 1.0 / static_cast<double>(width);
   }
 
   /**
@@ -92,7 +92,7 @@ public:
    */
   void setHeight(int height) {
     m_properties.height = std::clamp(height, MIN_HEIGHT, MAX_IMAGE_HEIGHT);
-    m_dy                  = 1.0 / static_cast<double>(height);
+    m_dy                = 1.0 / static_cast<double>(height);
   }
 
   /**

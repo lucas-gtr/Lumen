@@ -28,7 +28,7 @@ struct CameraUBO {
   linalg::Mat4f view_without_translation_transposed = linalg::Mat4f::Identity();
   linalg::Mat4f projection_transposed               = linalg::Mat4f::Identity();
   linalg::Vec3f position                            = linalg::Vec3f(0.0F);
-  float      padding1{};
+  float         padding1{};
 };
 
 /**

@@ -24,7 +24,9 @@ struct Ray {
    * @param to The ending point of the ray.
    * @return A Ray object with the origin at 'from' and direction normalized from 'from' to 'to'.
    */
-  static Ray FromPoint(const linalg::Vec3d& from, const linalg::Vec3d& to) { return Ray{from, (to - from).normalized()}; }
+  static Ray FromPoint(const linalg::Vec3d& from, const linalg::Vec3d& to) {
+    return Ray{from, (to - from).normalized()};
+  }
 
   /**
    * @brief Constructs a Ray from an origin and a direction vector.
@@ -32,7 +34,9 @@ struct Ray {
    * @param dir The direction vector of the ray, which will be normalized.
    * @return A Ray object with the specified origin and normalized direction.
    */
-  static Ray FromDirection(const linalg::Vec3d& origin, const linalg::Vec3d& dir) { return Ray{origin, dir.normalized()}; }
+  static Ray FromDirection(const linalg::Vec3d& origin, const linalg::Vec3d& dir) {
+    return Ray{origin, dir.normalized()};
+  }
 
 private:
   Ray(const linalg::Vec3d& o, const linalg::Vec3d& d) : origin(o), direction(d) {}

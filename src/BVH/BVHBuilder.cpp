@@ -38,7 +38,7 @@ void constructNode(std::shared_ptr<BVHNode>& node, std::vector<std::shared_ptr<B
   node = std::make_shared<BVHNode>(min_bound, max_bound);
 
   const linalg::Vec3d extent = max_bound - min_bound;
-  const int        axis   = getLargestAxis(extent);
+  const int           axis   = getLargestAxis(extent);
 
   const int mid = (start + end) / 2;
   std::nth_element(objects.begin() + start, objects.begin() + mid, objects.begin() + end,

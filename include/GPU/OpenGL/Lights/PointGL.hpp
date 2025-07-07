@@ -23,8 +23,8 @@
 class PointLightGL : public PointLightGPU {
 private:
   std::vector<linalg::Mat4f> m_light_space_matrices;
-  float                   m_near_plane = DEFAULT_LIGHT_NEAR_PLANE;
-  float                   m_far_plane  = DEFAULT_LIGHT_FAR_PLANE;
+  float                      m_near_plane = DEFAULT_LIGHT_NEAR_PLANE;
+  float                      m_far_plane  = DEFAULT_LIGHT_FAR_PLANE;
 
 public:
   /**

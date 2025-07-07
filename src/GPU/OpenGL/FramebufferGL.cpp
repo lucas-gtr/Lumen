@@ -9,7 +9,7 @@
 
 FramebufferGL::FramebufferGL(int width, int height, int num_color_attachments, int multisample_count)
     : m_width(width), m_height(height), m_num_color_attachments(num_color_attachments),
-    m_multisample_count(multisample_count) {
+      m_multisample_count(multisample_count) {
   initializeOpenGLFunctions();
   createFramebuffer();
 }
@@ -75,8 +75,8 @@ void FramebufferGL::createColorAttachments() {
   for(int i = 0; i < m_num_color_attachments; ++i) {
     if(m_multisample_count > 1) {
       createMultisampleTexture(m_color_attachments[i]);
-      glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + i, GL_TEXTURE_2D_MULTISAMPLE, m_color_attachments[i],
-                             0);
+      glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + i, GL_TEXTURE_2D_MULTISAMPLE,
+                             m_color_attachments[i], 0);
     } else {
       createTexture2D(m_color_attachments[i]);
       glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + i, GL_TEXTURE_2D, m_color_attachments[i], 0);

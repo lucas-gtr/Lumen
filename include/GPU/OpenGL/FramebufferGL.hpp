@@ -24,10 +24,10 @@ private:
   std::vector<GLuint> m_color_attachments;
   GLuint              m_depth_renderbuffer = 0;
 
-  int m_width               = 0;
-  int m_height              = 0;
+  int m_width                 = 0;
+  int m_height                = 0;
   int m_num_color_attachments = 0;
-  int m_multisample_count    = 1;
+  int m_multisample_count     = 1;
 
   void createFramebuffer();
 

@@ -23,11 +23,11 @@ PointLightGL::PointLightGL(PointLight* light) : PointLightGPU(light) {
 
 void PointLightGL::updateLightSpaceMatrices() {
   static constexpr std::array<linalg::Vec3f, CUBE_MAP_FACE_COUNT> face_directions = {{{1.0F, 0.0F, 0.0F},
-                                                                                  {-1.0F, 0.0F, 0.0F},
-                                                                                  {0.0F, 1.0F, 0.0F},
-                                                                                  {0.0F, -1.0F, 0.0F},
-                                                                                  {0.0F, 0.0F, 1.0F},
-                                                                                  {0.0F, 0.0F, -1.0F}}};
+                                                                                      {-1.0F, 0.0F, 0.0F},
+                                                                                      {0.0F, 1.0F, 0.0F},
+                                                                                      {0.0F, -1.0F, 0.0F},
+                                                                                      {0.0F, 0.0F, 1.0F},
+                                                                                      {0.0F, 0.0F, -1.0F}}};
   static constexpr std::array<linalg::Vec3f, CUBE_MAP_FACE_COUNT> up_vectors      = {
       {linalg::Vec3f(0.0F, -1.0F, 0.0F), linalg::Vec3f(0.0F, -1.0F, 0.0F), linalg::Vec3f(0.0F, 0.0F, 1.0F),
             linalg::Vec3f(0.0F, 0.0F, -1.0F), linalg::Vec3f(0.0F, -1.0F, 0.0F), linalg::Vec3f(0.0F, -1.0F, 0.0F)}};
@@ -41,7 +41,8 @@ void PointLightGL::updateLightSpaceMatrices() {
   const linalg::Mat4f light_projection = linalg::Mat4f::Perspective(PI_2, 1.0F, m_near_plane, m_far_plane);
 
   for(int i = 0; i < CUBE_MAP_FACE_COUNT; ++i) {
-    const linalg::Mat4f light_view = linalg::Mat4f::LookAt(getPosition(), getPosition() + face_directions[i], up_vectors[i]);
+    const linalg::Mat4f light_view =
+        linalg::Mat4f::LookAt(getPosition(), getPosition() + face_directions[i], up_vectors[i]);
     m_light_space_matrices.push_back(light_projection * light_view);
   }
 }

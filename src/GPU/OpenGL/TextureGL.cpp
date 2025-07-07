@@ -54,7 +54,7 @@ void TextureGL::applyWrappingMode(TextureSampling::TextureWrapping wrapping_mode
 
   if(wrapping_mode == TextureSampling::TextureWrapping::CLAMP_TO_BORDER) {
     std::array<float, 4> gl_border_color = {static_cast<float>(border_color.r), static_cast<float>(border_color.g),
-                                          static_cast<float>(border_color.b), static_cast<float>(border_color.a)};
+                                            static_cast<float>(border_color.b), static_cast<float>(border_color.a)};
     glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, gl_border_color.data());
   }
 }
@@ -124,7 +124,7 @@ void TextureGL::uploadToGPU() {
     }
 
     const auto [width, height] = std::make_pair(texture->getProperties().width, texture->getProperties().height);
-    const int data_size         = width * height * texture->getProperties().channels;
+    const int data_size        = width * height * texture->getProperties().channels;
 
     if(texture->getColorSpace() == ColorSpace::LINEAR) {
       std::vector<float> linear_data(data_size);

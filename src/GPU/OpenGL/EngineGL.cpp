@@ -28,7 +28,7 @@ void EngineGL::initialize(Scene* scene) {
   m_resource_manager       = std::make_unique<ResourceManagerGL>(m_viewport_width, m_viewport_height, scene);
   m_scene_pass_framebuffer = std::make_unique<FramebufferGL>(m_viewport_width, m_viewport_height, 1, 4);
   m_resolve_framebuffer    = std::make_unique<FramebufferGL>(m_viewport_width, m_viewport_height, 1, 1);
-  m_shadow_map_2_d          = std::make_unique<ShadowMapGL>(m_shadow_map_size);
+  m_shadow_map_2_d         = std::make_unique<ShadowMapGL>(m_shadow_map_size);
   m_shadow_map_cube        = std::make_unique<ShadowMapGL>(m_shadow_map_size);
 
   loadShaderPrograms();
@@ -188,18 +188,16 @@ void EngineGL::drawPointShadowMap(const PointLightGL* light) {
   glViewport(0, 0, m_shadow_map_size, m_shadow_map_size);
 
   m_shadow_map_cube_program.bind();
-  for (int i = 0; i < CUBE_MAP_FACE_COUNT; ++i) {
+  for(int i = 0; i < CUBE_MAP_FACE_COUNT; ++i) {
     std::string const matrix_uniform = "lightSpaceMatrices[" + std::to_string(i) + "]";
     m_shadow_map_cube_program.setUniformMatrix4fv(matrix_uniform.c_str(), light->getLightSpaceMatrix(i));
   }
 
-  m_shadow_map_cube_program.setUniform3f("lightPos",
-                                         light->getPosition().x,
-                                         light->getPosition().y,
+  m_shadow_map_cube_program.setUniform3f("lightPos", light->getPosition().x, light->getPosition().y,
                                          light->getPosition().z);
   m_shadow_map_cube_program.setUniform1f("farPlane", light->getFarPlane());
 
-  for (const auto& data_buffer : m_resource_manager->getObjectList()) {
+  for(const auto& data_buffer : m_resource_manager->getObjectList()) {
     data_buffer->bindVAO();
     m_shadow_map_cube_program.setUniformMatrix4fv("model", data_buffer->getModelMatrix());
     glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(data_buffer->getIndexCount()), GL_UNSIGNED_INT, nullptr);
@@ -220,13 +218,13 @@ void EngineGL::uploadLightsData() {
 void EngineGL::uploadDirectionalLightsData() {
   m_scene_pass_program.setUniform1i("numDirLights",
                                     static_cast<int>(m_resource_manager->getDirectionalLights().size()));
-  for (int i = 0; i < m_resource_manager->getDirectionalLights().size(); ++i) {
-    const auto& light = m_resource_manager->getDirectionalLights()[i];
+  for(int i = 0; i < m_resource_manager->getDirectionalLights().size(); ++i) {
+    const auto& light     = m_resource_manager->getDirectionalLights()[i];
     const auto& direction = light->getDirection();
-    const auto& color = light->getColor();
+    const auto& color     = light->getColor();
 
-    std::string const dir_uniform = "dirLights[" + std::to_string(i) + "].direction";
-    std::string const color_uniform = "dirLights[" + std::to_string(i) + "].color";
+    std::string const dir_uniform    = "dirLights[" + std::to_string(i) + "].direction";
+    std::string const color_uniform  = "dirLights[" + std::to_string(i) + "].color";
     std::string const matrix_uniform = "dirLights[" + std::to_string(i) + "].lightSpaceMatrix";
 
     m_scene_pass_program.setUniform3f(dir_uniform.c_str(), direction.x, direction.y, direction.z);
@@ -238,19 +236,19 @@ void EngineGL::uploadDirectionalLightsData() {
 
 void EngineGL::uploadSpotLightsData() {
   m_scene_pass_program.setUniform1i("numPointLights", static_cast<int>(m_resource_manager->getPointLights().size()));
-  for (int i = 0; i < m_resource_manager->getSpotLights().size(); ++i) {
-    const auto& light = m_resource_manager->getSpotLights()[i];
-    const auto& position = light->getPosition();
-    const auto& direction = light->getDirection();
-    const auto& color = light->getColor();
+  for(int i = 0; i < m_resource_manager->getSpotLights().size(); ++i) {
+    const auto& light         = m_resource_manager->getSpotLights()[i];
+    const auto& position      = light->getPosition();
+    const auto& direction     = light->getDirection();
+    const auto& color         = light->getColor();
     const float inner_cut_off = light->getCosInnerCutoff();
     const float outer_cut_off = light->getCosOuterCutoff();
 
-    std::string const pos_uniform = "spotLights[" + std::to_string(i) + "].position";
-    std::string const dir_uniform = "spotLights[" + std::to_string(i) + "].direction";
-    std::string const inner_uniform = "spotLights[" + std::to_string(i) + "].innerCutOff";
-    std::string const outer_uniform = "spotLights[" + std::to_string(i) + "].outerCutOff";
-    std::string const color_uniform = "spotLights[" + std::to_string(i) + "].color";
+    std::string const pos_uniform    = "spotLights[" + std::to_string(i) + "].position";
+    std::string const dir_uniform    = "spotLights[" + std::to_string(i) + "].direction";
+    std::string const inner_uniform  = "spotLights[" + std::to_string(i) + "].innerCutOff";
+    std::string const outer_uniform  = "spotLights[" + std::to_string(i) + "].outerCutOff";
+    std::string const color_uniform  = "spotLights[" + std::to_string(i) + "].color";
     std::string const matrix_uniform = "spotLights[" + std::to_string(i) + "].lightSpaceMatrix";
 
     m_scene_pass_program.setUniform3f(pos_uniform.c_str(), position.x, position.y, position.z);
@@ -264,12 +262,12 @@ void EngineGL::uploadSpotLightsData() {
 
 void EngineGL::uploadPointLightsData() {
   m_scene_pass_program.setUniform1i("numSpotLights", static_cast<int>(m_resource_manager->getSpotLights().size()));
-  for (int i = 0; i < m_resource_manager->getPointLights().size(); ++i) {
-    const auto& light = m_resource_manager->getPointLights()[i];
+  for(int i = 0; i < m_resource_manager->getPointLights().size(); ++i) {
+    const auto& light    = m_resource_manager->getPointLights()[i];
     const auto& position = light->getPosition();
-    const auto& color = light->getColor();
+    const auto& color    = light->getColor();
 
-    std::string const pos_uniform = "pointLights[" + std::to_string(i) + "].position";
+    std::string const pos_uniform   = "pointLights[" + std::to_string(i) + "].position";
     std::string const color_uniform = "pointLights[" + std::to_string(i) + "].color";
 
     m_scene_pass_program.setUniform3f(pos_uniform.c_str(), position.x, position.y, position.z);

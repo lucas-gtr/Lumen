@@ -14,7 +14,7 @@ IObjectGPU::IObjectGPU(Object3D* object)
   updateMatrices();
   m_object->getTransformationChangedObserver().add([this]() { updateMatrices(); });
 
-  const Mesh&  mesh        = object->getMesh();
+  const Mesh&  mesh         = object->getMesh();
   const size_t vertex_count = mesh.getVertices().size();
   const size_t face_count   = mesh.getFaces().size();
 

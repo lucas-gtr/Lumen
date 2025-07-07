@@ -23,7 +23,7 @@ Mesh CubeMeshBuilder::build() const {
   const std::vector<TextureUV> uvs = {{0, 0}, {1, 0}, {1, 1}, {0, 1}};
 
   const std::vector<linalg::Vec3d> positions = {{-h, -h, h},  {h, -h, h},  {h, h, h},  {-h, h, h},
-                                             {-h, -h, -h}, {h, -h, -h}, {h, h, -h}, {-h, h, -h}};
+                                                {-h, -h, -h}, {h, -h, -h}, {h, h, -h}, {-h, h, -h}};
 
   const std::vector<std::vector<int>> face_indices = {
       {0, 1, 2, 3}, // front

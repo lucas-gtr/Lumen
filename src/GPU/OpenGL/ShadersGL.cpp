@@ -15,7 +15,7 @@
 ShadersGL::ShadersGL() { initializeOpenGLFunctions(); }
 
 unsigned int ShadersGL::compileShader(const std::string& source, unsigned int type) {
-  const unsigned int shader       = glCreateShader(type);
+  const unsigned int shader        = glCreateShader(type);
   const char*        shader_source = source.c_str();
   glShaderSource(shader, 1, &shader_source, nullptr);
   glCompileShader(shader);

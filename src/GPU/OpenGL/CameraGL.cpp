@@ -122,7 +122,8 @@ void CameraGL::updateViewMatrix() {
   m_camera_ubo.view_without_translation_transposed(3, 1) = 0.0F;
   m_camera_ubo.view_without_translation_transposed(3, 2) = 0.0F;
 
-  m_gl_camera_ubo.updateData(&m_camera_ubo.view_transposed, sizeof(linalg::Mat4f), offsetof(CameraUBO, view_transposed));
+  m_gl_camera_ubo.updateData(&m_camera_ubo.view_transposed, sizeof(linalg::Mat4f),
+                             offsetof(CameraUBO, view_transposed));
   m_gl_camera_ubo.updateData(&m_camera_ubo.view_without_translation_transposed, sizeof(linalg::Mat4f),
                              offsetof(CameraUBO, view_without_translation_transposed));
 }
@@ -153,8 +154,8 @@ Ray CameraGL::getRayFromMousePosition(int mouse_x, int mouse_y) const {
   const linalg::Mat4f inv_view = m_camera_ubo.view_transposed.transposed().inverse();
 
   linalg::Vec4f eye_coords = inv_proj * ndc_center;
-  eye_coords.z          = -1.0F;
-  eye_coords.w          = 0.0F;
+  eye_coords.z             = -1.0F;
+  eye_coords.w             = 0.0F;
 
   const linalg::Vec4f world_coords  = inv_view * eye_coords;
   const linalg::Vec3f ray_direction = linalg::Vec3f(world_coords.x, world_coords.y, world_coords.z).normalized();

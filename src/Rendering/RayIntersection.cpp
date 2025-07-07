@@ -24,22 +24,22 @@ bool getTriangleIntersection(const Ray& ray, const linalg::Vec3d& p0, const lina
   const linalg::Vec3d edge1 = p1 - p0;
   const linalg::Vec3d edge2 = p2 - p0;
   const linalg::Vec3d h     = ray.direction.cross(edge2);
-  const double     a     = linalg::dot(edge1, h);
+  const double        a     = linalg::dot(edge1, h);
 
   if(std::abs(a) < EPSILON) {
     return false;
   }
 
-  const double     f = 1.0 / a;
+  const double        f = 1.0 / a;
   const linalg::Vec3d s = ray.origin - p0;
-  const double     u = f * linalg::dot(s, h);
+  const double        u = f * linalg::dot(s, h);
 
   if(u < 0.0 || u > 1.0) {
     return false;
   }
 
   const linalg::Vec3d q = s.cross(edge1);
-  const double     v = f * linalg::dot(ray.direction, q);
+  const double        v = f * linalg::dot(ray.direction, q);
 
   if(v < 0.0 || u + v > 1.0) {
     return false;
@@ -60,7 +60,7 @@ void processFaceIntersection(const Ray& ray, const Mesh& mesh, const Face& face,
   const Vertex& v1 = mesh.getVertex(face.vertex_indices[1]);
   const Vertex& v2 = mesh.getVertex(face.vertex_indices[2]);
 
-  double     hit_distance = std::numeric_limits<double>::max();
+  double        hit_distance = std::numeric_limits<double>::max();
   linalg::Vec3d bary_coords;
 
   if(!getTriangleIntersection(ray, v0.position, v1.position, v2.position, hit_distance, bary_coords)) {
@@ -74,12 +74,12 @@ void processFaceIntersection(const Ray& ray, const Mesh& mesh, const Face& face,
 
 void updateHitInfoFromBarycentric(RayHitInfo& hit_info, double distance, const linalg::Vec3d& bary, const Vertex& v0,
                                   const Vertex& v1, const Vertex& v2) {
-  hit_info.distance        = distance;
+  hit_info.distance         = distance;
   hit_info.uv_coordinates.u = bary.x * v0.uv_coord.u + bary.y * v1.uv_coord.u + bary.z * v2.uv_coord.u;
   hit_info.uv_coordinates.v = bary.x * v0.uv_coord.v + bary.y * v1.uv_coord.v + bary.z * v2.uv_coord.v;
-  hit_info.normal          = (bary.x * v0.normal + bary.y * v1.normal + bary.z * v2.normal).normalized();
-  hit_info.tangent         = (bary.x * v0.tangent + bary.y * v1.tangent + bary.z * v2.tangent).normalized();
-  hit_info.bitangent       = (bary.x * v0.bitangent + bary.y * v1.bitangent + bary.z * v2.bitangent).normalized();
+  hit_info.normal           = (bary.x * v0.normal + bary.y * v1.normal + bary.z * v2.normal).normalized();
+  hit_info.tangent          = (bary.x * v0.tangent + bary.y * v1.tangent + bary.z * v2.tangent).normalized();
+  hit_info.bitangent        = (bary.x * v0.bitangent + bary.y * v1.bitangent + bary.z * v2.bitangent).normalized();
 }
 
 RayHitInfo getMeshIntersectionWithBVH(const Ray& ray, const Mesh& mesh) {
@@ -125,7 +125,7 @@ void updateNormalWithTangentSpace(RayHitInfo& hit_info) {
   const linalg::Mat3d tangent_space = linalg::Mat3d::FromColumns(hit_info.tangent, hit_info.bitangent, hit_info.normal);
 
   const ColorRGB normal_color     = hit_info.material->getNormal(hit_info.uv_coordinates);
-  linalg::Vec3d     normal_direction = {normal_color.r, normal_color.g, normal_color.b};
+  linalg::Vec3d  normal_direction = {normal_color.r, normal_color.g, normal_color.b};
   normal_direction                = (normal_direction * 2) - linalg::Vec3d(1.0, 1.0, 1.0);
 
   hit_info.normal = (tangent_space * normal_direction).normalized();
@@ -147,14 +147,14 @@ void transformHitInfoToWorldSpace(RayHitInfo& hit_info, const Ray& local_ray, co
   const linalg::Vec3d hit_local = local_ray.origin + hit_info.distance * local_ray.direction;
   const linalg::Vec3d hit_world = linalg::toVec3((object->getTransformationMatrix() * linalg::toVec4(hit_local)));
 
-  hit_info.distance = (hit_world - original_ray.origin).length();
+  hit_info.distance  = (hit_world - original_ray.origin).length();
   hit_info.hit_point = hit_world;
-  hit_info.material = object->getMaterial();
+  hit_info.material  = object->getMaterial();
 
   const linalg::Mat3d normal_matrix = object->getNormalMatrix();
-  hit_info.normal                = (normal_matrix * hit_info.normal).normalized();
-  hit_info.tangent               = (normal_matrix * hit_info.tangent).normalized();
-  hit_info.bitangent             = (normal_matrix * hit_info.bitangent).normalized();
+  hit_info.normal                   = (normal_matrix * hit_info.normal).normalized();
+  hit_info.tangent                  = (normal_matrix * hit_info.tangent).normalized();
+  hit_info.bitangent                = (normal_matrix * hit_info.bitangent).normalized();
 }
 
 RayHitInfo getObjectIntersection(const Ray& ray, const Object3D* object) {

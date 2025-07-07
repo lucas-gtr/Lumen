@@ -95,10 +95,10 @@ void RenderWindowView::onRenderProgress(RenderStats stats) {
   m_progress_bar->setValue(static_cast<int>(progress));
 
   const QString status_text = QString("Rendering: %1/%2 chunks - Elapsed: %3, Remaining: %4")
-                                 .arg(stats.current_chunk)
-                                 .arg(stats.total_chunks)
-                                 .arg(FormatSecondsToString(stats.elapsed_time))
-                                 .arg(FormatSecondsToString(stats.remaining_time));
+                                  .arg(stats.current_chunk)
+                                  .arg(stats.total_chunks)
+                                  .arg(FormatSecondsToString(stats.elapsed_time))
+                                  .arg(FormatSecondsToString(stats.remaining_time));
   m_status_label->setText(status_text);
 }
 

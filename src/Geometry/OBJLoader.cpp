@@ -28,8 +28,8 @@ Mesh OBJLoader::load(const std::string& filename) {
     return {};
   }
 
-  std::vector<linalg::Vec3d>              positions;
-  std::vector<linalg::Vec3d>              normals;
+  std::vector<linalg::Vec3d>           positions;
+  std::vector<linalg::Vec3d>           normals;
   std::vector<TextureUV>               uvs;
   std::vector<Vertex>                  vertices;
   std::vector<Face>                    faces;
@@ -63,14 +63,14 @@ Mesh OBJLoader::load(const std::string& filename) {
 namespace {
 void parseVertexLine(const std::string& line, std::vector<linalg::Vec3d>& positions) {
   std::istringstream iss(line.substr(2));
-  linalg::Vec3d         pos;
+  linalg::Vec3d      pos;
   iss >> pos.x >> pos.y >> pos.z;
   positions.push_back(pos);
 }
 
 void parseNormalLine(const std::string& line, std::vector<linalg::Vec3d>& normals) {
   std::istringstream iss(line.substr(3));
-  linalg::Vec3d         normal;
+  linalg::Vec3d      normal;
   iss >> normal.x >> normal.y >> normal.z;
   normals.push_back(normal);
 }

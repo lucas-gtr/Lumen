@@ -19,7 +19,7 @@
 class ShadowMapGL : protected QOpenGLFunctions_3_3_Core {
 private:
   unsigned int m_depth_map_fbo = 0;
-  unsigned int m_depth_map    = 0;
+  unsigned int m_depth_map     = 0;
 
   int m_size = DEFAULT_SHADOW_MAP_SIZE;
 

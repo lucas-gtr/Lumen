@@ -130,7 +130,7 @@ ColorRGBA Renderer::traceRay(const Ray& ray) const {
   ColorRGB light_factor = {0.0, 0.0, 0.0};
   for(const auto& light : m_scene->getLightList()) {
     const linalg::Vec3d light_direction = light->getDirectionFromPoint(hit_info.hit_point).normalized();
-    const Ray        shadow_ray      = Ray::FromDirection(hit_info.hit_point, light_direction);
+    const Ray           shadow_ray      = Ray::FromDirection(hit_info.hit_point, light_direction);
 
     const RayHitInfo shadow_hit = RayIntersection::getSceneIntersection(shadow_ray, m_scene);
     if(isValidHit(shadow_hit)) {

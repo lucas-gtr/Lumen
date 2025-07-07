@@ -32,8 +32,8 @@ Application::Application(int& argc, char** argv)
 // NOLINTBEGIN(cppcoreguidelines-avoid-magic-numbers, readability-magic-numbers)
 void Application::createDefaultScene() {
   auto cube_mesh_builder = std::make_shared<CubeMeshBuilder>(1.0);
-  auto cube            = cube_mesh_builder->build();
-  auto cube_object      = std::make_unique<Object3D>(cube);
+  auto cube              = cube_mesh_builder->build();
+  auto cube_object       = std::make_unique<Object3D>(cube);
   m_scene->addObject("Default Cube", std::move(cube_object));
 
   auto directional_light = std::make_unique<DirectionalLight>();

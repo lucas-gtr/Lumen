@@ -31,7 +31,7 @@ public:
    */
   CallbackID add(const Callback& callback) {
     const CallbackID id = m_next_id++;
-    m_callbacks[id]       = callback;
+    m_callbacks[id]     = callback;
     return id;
   }
 
