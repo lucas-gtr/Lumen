@@ -55,5 +55,10 @@ jobs:
         with:
           submodules: true
 
+      - name: Install project dependencies
+        run: |
+          sudo apt-get update
+          xargs -a dependencies.txt sudo apt-get install -y
+
       - name: Run clang-tidy analysis
         run: make lint || (echo "Linting failed" && exit 1)
