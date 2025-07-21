@@ -1,16 +1,20 @@
 var searchData=
 [
   ['v_0',['v',['../structTextureUV.html#abf8f5580d06c9c43842c7a1a7e4c1fd8',1,'TextureUV']]],
-  ['valuepervertex_1',['ValuePerVertex',['../structVertex.html#aa6754081f0389c2343fc05dbcf9278e0',1,'Vertex']]],
-  ['vertex_2',['Vertex',['../structVertex.html',1,'']]],
-  ['vertex_5findices_3',['vertex_indices',['../structFace.html#a959e987bcbff4ad4ae41d6150b54b1bf',1,'Face']]],
-  ['vertices_4',['vertices',['../classIObjectGPU.html#a59775bda843bcbea14158bbb4abd7eec',1,'IObjectGPU']]],
-  ['view_5ftransposed_5',['view_transposed',['../structCameraUBO.html#ad481fdcd7916feed9e926a46c9a2489e',1,'CameraUBO']]],
-  ['view_5fwithout_5ftranslation_5ftransposed_6',['view_without_translation_transposed',['../structCameraUBO.html#aa269ac3bd02d13fa992889c94c2b75d5',1,'CameraUBO']]],
-  ['viewportcontroller_7',['viewportcontroller',['../classViewportController.html',1,'ViewportController'],['../classViewportController.html#a86e694e5c77d02a4ec2ce43c31972595',1,'ViewportController::ViewportController()']]],
-  ['viewportcontroller_2ecpp_8',['ViewportController.cpp',['../ViewportController_8cpp.html',1,'']]],
-  ['viewportcontroller_2ehpp_9',['ViewportController.hpp',['../ViewportController_8hpp.html',1,'']]],
-  ['viewportview_10',['viewportview',['../classViewportView.html',1,'ViewportView'],['../classViewportView.html#ae9a813d716b65a235ba49249c40d0af8',1,'ViewportView::ViewportView()']]],
-  ['viewportview_2ecpp_11',['ViewportView.cpp',['../ViewportView_8cpp.html',1,'']]],
-  ['viewportview_2ehpp_12',['ViewportView.hpp',['../ViewportView_8hpp.html',1,'']]]
+  ['value_1',['value',['../classLineEditDouble.html#a35cdd55e800ec5c773d5091c370f95f9',1,'LineEditDouble']]],
+  ['valuechanged_2',['valuechanged',['../classLineEditDouble.html#a37e2154ec50fe50be83f7b72b5de7890',1,'LineEditDouble::valueChanged()'],['../classSliderSpinBox.html#a31dfb5db9c10a14ca5488f98befb288e',1,'SliderSpinBox::valueChanged()'],['../classVec3Editor.html#a545c691bd4b761710755bf3f3781de79',1,'Vec3Editor::valueChanged()']]],
+  ['valuefromtext_3',['valueFromText',['../classSquareSpinBox.html#a075d843c182513c43c016347f3d7c296',1,'SquareSpinBox']]],
+  ['valuepervertex_4',['ValuePerVertex',['../structVertex.html#aa6754081f0389c2343fc05dbcf9278e0',1,'Vertex']]],
+  ['vec3editor_5',['vec3editor',['../classVec3Editor.html',1,'Vec3Editor'],['../classVec3Editor.html#a737cd7f0dd819757059402a4622ec13c',1,'Vec3Editor::Vec3Editor()']]],
+  ['vec3editor_2ecpp_6',['Vec3Editor.cpp',['../Vec3Editor_8cpp.html',1,'']]],
+  ['vec3editor_2ehpp_7',['Vec3Editor.hpp',['../Vec3Editor_8hpp.html',1,'']]],
+  ['vertex_8',['Vertex',['../structVertex.html',1,'']]],
+  ['vertex_5findices_9',['vertex_indices',['../structFace.html#a959e987bcbff4ad4ae41d6150b54b1bf',1,'Face']]],
+  ['vertices_10',['vertices',['../classIObjectGPU.html#a59775bda843bcbea14158bbb4abd7eec',1,'IObjectGPU']]],
+  ['view_5ftransposed_11',['view_transposed',['../structCameraUBO.html#ad481fdcd7916feed9e926a46c9a2489e',1,'CameraUBO']]],
+  ['view_5fwithout_5ftranslation_5ftransposed_12',['view_without_translation_transposed',['../structCameraUBO.html#aa269ac3bd02d13fa992889c94c2b75d5',1,'CameraUBO']]],
+  ['viewportcameraupdated_13',['viewportCameraUpdated',['../classCameraWidget.html#a590ed8a40c1e7f84ec464ab122f4e025',1,'CameraWidget']]],
+  ['viewportsettingswidget_14',['viewportsettingswidget',['../classViewportSettingsWidget.html',1,'ViewportSettingsWidget'],['../classViewportSettingsWidget.html#a83e1059e6a56e71c5103dc3d4cab0c83',1,'ViewportSettingsWidget::ViewportSettingsWidget()']]],
+  ['viewportsettingswidget_2ecpp_15',['ViewportSettingsWidget.cpp',['../ViewportSettingsWidget_8cpp.html',1,'']]],
+  ['viewportsettingswidget_2ehpp_16',['ViewportSettingsWidget.hpp',['../ViewportSettingsWidget_8hpp.html',1,'']]]
 ];

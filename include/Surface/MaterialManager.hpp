@@ -71,11 +71,11 @@ public:
 
   /**
    * @brief Renames a material.
-   * @param material The material to rename.
+   * @param old_name The current name of the material.
    * @param new_name The new name for the material.
-   * @return True if the rename was successful, false if a material with the new name already exists.
+   * @return True if the material was successfully renamed, false if the new name is already in use.
    */
-  bool renameMaterial(const Material* material, const std::string& new_name);
+  bool renameMaterial(const std::string& old_name, const std::string& new_name);
 
   /**
    * @brief Retrieves a material by its name.

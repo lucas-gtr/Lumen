@@ -10,17 +10,15 @@
 
 #include "Core/Config.hpp"
 #include "GPU/Lights/DirectionalGPU.hpp"
+#include "GPU/OpenGL/Lights/LightGL.hpp"
 #include "Lighting/DirectionalLight.hpp"
 
 /**
  * @class DirectionalLightGL
  * @brief A class that represents a directional light in OpenGL, inheriting from DirectionalLightGPU.
  */
-class DirectionalLightGL : public DirectionalLightGPU {
+class DirectionalLightGL : public DirectionalLightGPU, public LightGL {
 private:
-  float m_near_plane = DEFAULT_LIGHT_NEAR_PLANE;
-  float m_far_plane  = DEFAULT_LIGHT_FAR_PLANE;
-
   linalg::Mat4f m_light_space_matrix;
 
 public:
@@ -39,16 +37,14 @@ public:
    * @brief Gets the light space matrix for the directional light.
    * @return A raw pointer to the light space matrix data.
    */
-  const float* getLightSpaceMatrix() const {
-    return m_light_space_matrix.data(); ///< Gets the light space matrix for the directional light.
-  }
+  const float* getLightSpaceMatrix() const { return m_light_space_matrix.data(); }
 
   /**
    * @brief Updates the light space matrix for the directional light.
    */
-  void updateLightSpaceMatrix();
+  void updateLightSpaceMatrix() override;
 
-  ~DirectionalLightGL() = default; ///< Default destructor.
+  ~DirectionalLightGL() override = default; ///< Default destructor.
 };
 
 #endif // GPU_OPENGL_LIGHTS_DIRECTIONALGL_HPP

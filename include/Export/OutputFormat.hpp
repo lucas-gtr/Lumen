@@ -1,5 +1,5 @@
 /**
- * @file OutputFormatStrategy.hpp
+ * @file OutputFormat.hpp
  * @brief Header file for the OutputFormatStrategy class.
  */
 #ifndef EXPORT_OUTPUTFORMAT_HPP

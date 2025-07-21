@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$structPixelCoord.html" title="Structure to hold pixel coordinates (x, y) in the framebuffer." alt="" coords="5,5,96,31"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,31,155,56"/>
+<area shape="rect" id="Node000001" href="$classMaterialsListModel.html" title=" " alt="" coords="203,5,349,31"/>
+<area shape="poly" id="edge30_Node000000_Node000001" title=" " alt="" coords="168,29,202,25,203,30,169,35"/>
+<area shape="rect" id="Node000002" href="$classTexturesListModel.html" title=" " alt="" coords="206,55,346,80"/>
+<area shape="poly" id="edge31_Node000000_Node000002" title=" " alt="" coords="169,51,206,56,205,61,168,57"/>
 </map>

@@ -60,11 +60,11 @@ public:
 
   /**
    * @brief Renames a texture in the manager.
-   * @param texture The texture to rename.
+   * @param old_name The current name of the texture.
    * @param new_name The new name for the texture.
-   * @return True if the texture was successfully renamed, false if the new name is already in use.
+   * @return True if the texture was successfully renamed, false otherwise.
    */
-  bool renameTexture(const Texture* texture, const std::string& new_name);
+  bool renameTexture(const std::string& old_name, const std::string& new_name);
 
   /**
    * @brief Gets a texture by its name.

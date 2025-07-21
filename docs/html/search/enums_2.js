@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['outputformat_0',['OutputFormat',['../OutputFormat_8hpp.html#a98dc27a624eda851a90dea794d0e715b',1,'OutputFormat.hpp']]]
+  ['lighttype_0',['LightType',['../Light_8hpp.html#a334f02e8b0313de02a05fab6e8bf4c12',1,'Light.hpp']]]
 ];

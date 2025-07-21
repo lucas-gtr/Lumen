@@ -47,9 +47,15 @@ public:
 
   /**
    * @brief Gets the inner angle of the spot light.
+   * @return The inner angle in radians.
+   */
+  double getInnerAngleRad() const { return m_inner_angle * DEG_TO_RAD; }
+
+  /**
+   * @brief Gets the inner angle of the spot light in degrees.
    * @return The inner angle in degrees.
    */
-  double getInnerAngle() const { return m_inner_angle * DEG_TO_RAD; }
+  double getInnerAngleDeg() const { return m_inner_angle; }
 
   /**
    * @brief Sets the inner angle of the spot light.
@@ -59,9 +65,15 @@ public:
 
   /**
    * @brief Gets the outer angle of the spot light.
-   * @return The outer in degrees.
+   * @return The outer in radians.
    */
-  double getOuterAngle() const { return m_outer_angle * DEG_TO_RAD; }
+  double getOuterAngleRad() const { return m_outer_angle * DEG_TO_RAD; }
+
+  /**
+   * @brief Gets the outer angle of the spot light in degrees.
+   * @return The outer angle in degrees.
+   */
+  double getOuterAngleDeg() const { return m_outer_angle; }
 
   /**
    * @brief Sets the outer angle of the spot light.

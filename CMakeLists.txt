@@ -28,7 +28,7 @@ add_subdirectory(src/Scene)
 add_subdirectory(src/Rendering)
 add_subdirectory(src/Export)
 add_subdirectory(src/GPU)
-add_subdirectory(src/Qt)
+add_subdirectory(src/GUI)
 
 add_executable(Lumen src/main.cpp)
 
@@ -50,7 +50,7 @@ target_link_libraries(Lumen
         Export      
         GPU
         RenderingGL  
-        QtInterface
+        GUI
 )
 
 option(ENABLE_WARNINGS             "Enable compiler warnings"                    ON)

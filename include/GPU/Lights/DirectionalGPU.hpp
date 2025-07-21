@@ -7,6 +7,7 @@
 
 #include <linalg/Vec3.hpp>
 
+#include "GPU/Lights/LightGPU.hpp"
 #include "Lighting/DirectionalLight.hpp"
 
 /**
@@ -16,12 +17,11 @@
  * This class is designed to hold the properties of a directional light,
  * such as its direction and color, for efficient access in GPU rendering.
  */
-class DirectionalLightGPU {
+class DirectionalLightGPU : public LightGPU {
 private:
   const DirectionalLight* m_light = nullptr;
 
   linalg::Vec3f m_direction;
-  linalg::Vec3f m_color;
 
 public:
   /**
@@ -38,7 +38,7 @@ public:
   /**
    * @brief Retrieves the direction and color of the light.
    */
-  void retrieveData();
+  void retrieveData() override;
 
   /**
    * @brief Returns the direction of the light.
@@ -47,12 +47,12 @@ public:
   linalg::Vec3f getDirection() const { return m_direction; }
 
   /**
-   * @brief Returns the color of the light multiplied by the intensity.
-   * @return The color vector of the light multiplied by the intensity.
+   * @brief Gets the light source.
+   * @return A pointer to the DirectionalLight source.
    */
-  linalg::Vec3f getColor() const { return m_color; }
+  const Light* getSource() const override { return m_light; }
 
-  ~DirectionalLightGPU() = default; ///< Default destructor.
+  ~DirectionalLightGPU() override = default; ///< Default destructor.
 };
 
 #endif // GPU_LIGHTS_DIRECTIONALGPU_HPP

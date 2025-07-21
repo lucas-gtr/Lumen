@@ -30,7 +30,8 @@ private:
   ColorRGB m_color     = {1.0, 1.0, 1.0};
   double   m_intensity = 1.0;
 
-  Observer<> m_light_changed_observer;
+  Observer<>             m_light_changed_observer;
+  Observer<const Light*> m_light_deleted_observer;
 
 public:
   /**
@@ -49,6 +50,12 @@ public:
    * @return A reference to the observer that notifies when the light properties change.
    */
   Observer<>& getLightChangedObserver() { return m_light_changed_observer; }
+
+  /**
+   * @brief Gets the observer for light deletion.
+   * @return A reference to the observer that notifies when the light is deleted.
+   */
+  Observer<const Light*>& getLightDeletedObserver() { return m_light_deleted_observer; }
 
   /**
    * @brief Sets the color of the light.
@@ -95,7 +102,7 @@ public:
    */
   virtual ColorRGB getLightFactor(const linalg::Vec3d& point, const linalg::Vec3d& normal) const = 0;
 
-  virtual ~Light() = default; ///< Default destructor.
+  virtual ~Light(); ///< Default destructor.
 };
 
 #endif // LIGHTING_LIGHT_HPP

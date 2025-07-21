@@ -115,7 +115,7 @@ public:
   /**
    * @brief Enables or disables the skybox rendering in the scene.
    */
-  void setDrawSkybox(bool enabled) { m_draw_skybox = enabled; }
+  void setSkyboxVisible(bool enabled) { m_draw_skybox = enabled; }
 
   /**
    * @brief Checks if the skybox rendering is enabled.

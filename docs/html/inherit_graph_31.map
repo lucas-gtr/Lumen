@@ -1,11 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="Node000000" title=" " alt="" coords="5,55,80,80"/>
-<area shape="rect" id="Node000001" href="$classMeshBuilderDialog.html" title="A dialog for building meshes with a form layout." alt="" coords="128,55,273,80"/>
-<area shape="poly" id="edge26_Node000000_Node000001" title=" " alt="" coords="94,65,127,65,127,70,94,70"/>
-<area shape="rect" id="Node000002" href="$classCubeMeshBuilderDialog.html" title="A dialog for building cube meshes." alt="" coords="327,5,506,31"/>
-<area shape="poly" id="edge27_Node000001_Node000002" title=" " alt="" coords="269,49,360,28,361,33,271,54"/>
-<area shape="rect" id="Node000003" href="$classPlaneMeshBuilderDialog.html" title="A dialog for building plane meshes." alt="" coords="326,55,507,80"/>
-<area shape="poly" id="edge28_Node000001_Node000003" title=" " alt="" coords="287,65,326,65,326,70,287,70"/>
-<area shape="rect" id="Node000004" href="$classSphereMeshBuilderDialog.html" title="A dialog for building sphere meshes." alt="" coords="321,104,512,129"/>
-<area shape="poly" id="edge29_Node000001_Node000004" title=" " alt="" coords="271,80,361,101,360,107,269,86"/>
+<area shape="rect" id="Node000001" href="$classCubeDialog.html" title=" " alt="" coords="134,5,231,31"/>
+<area shape="poly" id="edge34_Node000000_Node000001" title=" " alt="" coords="91,47,145,28,147,33,93,52"/>
+<area shape="rect" id="Node000002" href="$classPlaneDialog.html" title=" " alt="" coords="133,55,233,80"/>
+<area shape="poly" id="edge35_Node000000_Node000002" title=" " alt="" coords="93,65,133,65,133,70,93,70"/>
+<area shape="rect" id="Node000003" href="$classSphereDialog.html" title=" " alt="" coords="128,104,237,129"/>
+<area shape="poly" id="edge36_Node000000_Node000003" title=" " alt="" coords="93,82,147,101,145,106,91,87"/>
 </map>

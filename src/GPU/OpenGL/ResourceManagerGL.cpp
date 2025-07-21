@@ -16,7 +16,6 @@
 #include "Lighting/Light.hpp"
 #include "Lighting/PointLight.hpp"
 #include "Lighting/SpotLight.hpp"
-#include "Qt/OpenGLContext.hpp"
 #include "Scene/Scene.hpp"
 #include "SceneObjects/Camera.hpp"
 #include "SceneObjects/Object3D.hpp"
@@ -52,13 +51,23 @@ void ResourceManagerGL::addObject3D(Object3D* object) {
   Material*   material    = object->getMaterial();
   MaterialGL* gl_material = addMaterial(material);
 
-  OpenGLContext::Instance().makeContextCurrent();
   auto object_gl = std::make_unique<ObjectGL>(object, gl_material);
   object_gl->uploadToGPU();
   m_object_list.push_back(std::move(object_gl));
-  OpenGLContext::Instance().doneContext();
 
   object->getMaterialChangedObserver().add([this](const Object3D* obj) { this->onObjectMaterialChanged(obj); });
+  object->getObjectDeletedObserver().add([this](const Object3D* obj) { this->removeObject3D(obj); });
+}
+
+void ResourceManagerGL::removeObject3D(const Object3D* object) {
+  auto it = std::remove_if(m_object_list.begin(), m_object_list.end(),
+                           [object](const std::unique_ptr<ObjectGL>& obj_gl) { return obj_gl->getSource() == object; });
+  if(it != m_object_list.end()) {
+    m_object_list.erase(it, m_object_list.end());
+    std::cout << "ObjectGL: Removed object\n";
+  } else {
+    std::cerr << "ObjectGL: Object not found for removal.\n";
+  }
 }
 
 void ResourceManagerGL::setCamera(Camera* camera, int viewport_width, int viewport_height) {
@@ -74,11 +83,9 @@ TextureGL* ResourceManagerGL::addTexture(Texture* texture) {
     }
   }
 
-  OpenGLContext::Instance().makeContextCurrent();
   auto new_texture = std::make_unique<TextureGL>(texture);
   new_texture->uploadToGPU();
   m_textures.push_back(std::move(new_texture));
-  OpenGLContext::Instance().doneContext();
   return m_textures.back().get();
 }
 
@@ -92,12 +99,10 @@ MaterialGL* ResourceManagerGL::addMaterial(Material* material) {
   TextureGL* diffuse_texture = ResourceManagerGL::addTexture(material->getDiffuseTexture());
   TextureGL* normal_texture  = ResourceManagerGL::addTexture(material->getNormalTexture());
 
-  OpenGLContext::Instance().makeContextCurrent();
   auto new_material = std::make_unique<MaterialGL>(material, diffuse_texture, normal_texture);
   m_materials.push_back(std::move(new_material));
   material->getMaterialChangedObserver().add(
       [this](const Material* material) { this->onMaterialTextureChanged(material); });
-  OpenGLContext::Instance().doneContext();
   return m_materials.back().get();
 }
 
@@ -105,21 +110,21 @@ void ResourceManagerGL::addLight(Light* light) {
   switch(light->getType()) {
   case LightType::DIRECTIONAL:
     if(auto* directional = dynamic_cast<DirectionalLight*>(light)) {
-      ResourceManagerGL::addLight(directional);
+      m_directional_lights.push_back(std::make_unique<DirectionalLightGL>(directional));
     } else {
       std::cerr << "Failed to cast to DirectionalLight\n";
     }
     break;
   case LightType::POINT:
     if(auto* point = dynamic_cast<PointLight*>(light)) {
-      ResourceManagerGL::addLight(point);
+      m_point_lights.push_back(std::make_unique<PointLightGL>(point));
     } else {
       std::cerr << "Failed to cast to PointLight\n";
     }
     break;
   case LightType::SPOT:
     if(auto* spot = dynamic_cast<SpotLight*>(light)) {
-      ResourceManagerGL::addLight(spot);
+      m_spot_lights.push_back(std::make_unique<SpotLightGL>(spot));
     } else {
       std::cerr << "Failed to cast to SpotLight\n";
     }
@@ -128,15 +133,50 @@ void ResourceManagerGL::addLight(Light* light) {
     std::cerr << "Unknown light type encountered in OpenGLResourceManager initialization.\n";
     break;
   }
+  light->getLightDeletedObserver().add([this](const Light* light) { this->removeLight(light); });
 }
 
-void ResourceManagerGL::addLight(DirectionalLight* light) {
-  m_directional_lights.push_back(std::make_unique<DirectionalLightGL>(light));
+void ResourceManagerGL::removeLight(const Light* light) {
+  switch(light->getType()) {
+  case LightType::DIRECTIONAL: {
+    auto it = std::remove_if(m_directional_lights.begin(), m_directional_lights.end(),
+                             [light](const std::unique_ptr<DirectionalLightGL>& dir_light_gl) {
+                               return dir_light_gl->getSource() == light;
+                             });
+    if(it != m_directional_lights.end()) {
+      m_directional_lights.erase(it, m_directional_lights.end());
+      std::cout << "DirectionalLightGL: Removed directional light\n";
+    } else {
+      std::cerr << "DirectionalLightGL: Directional light not found for removal.\n";
+    }
+    break;
+  }
+  case LightType::POINT: {
+    auto it = std::remove_if(
+        m_point_lights.begin(), m_point_lights.end(),
+        [light](const std::unique_ptr<PointLightGL>& point_light_gl) { return point_light_gl->getSource() == light; });
+    if(it != m_point_lights.end()) {
+      m_point_lights.erase(it, m_point_lights.end());
+      std::cout << "PointLightGL: Removed point light\n";
+    } else {
+      std::cerr << "PointLightGL: Point light not found for removal.\n";
+    }
+    break;
+  }
+  case LightType::SPOT: {
+    auto it = std::remove_if(
+        m_spot_lights.begin(), m_spot_lights.end(),
+        [light](const std::unique_ptr<SpotLightGL>& spot_light_gl) { return spot_light_gl->getSource() == light; });
+    if(it != m_spot_lights.end()) {
+      m_spot_lights.erase(it, m_spot_lights.end());
+      std::cout << "SpotLightGL: Removed spot light\n";
+    } else {
+      std::cerr << "SpotLightGL: Spot light not found for removal.\n";
+    }
+    break;
+  }
+  }
 }
-
-void ResourceManagerGL::addLight(PointLight* light) { m_point_lights.push_back(std::make_unique<PointLightGL>(light)); }
-
-void ResourceManagerGL::addLight(SpotLight* light) { m_spot_lights.push_back(std::make_unique<SpotLightGL>(light)); }
 
 void ResourceManagerGL::setSelectedObject(Object3D* object) {
   for(auto& object_gl : m_object_list) {

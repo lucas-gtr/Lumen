@@ -221,5 +221,10 @@ static constexpr int    TEXTURE_MATERIAL_SELECTOR_MINIMUM_WIDTH = 200;
 static constexpr int    JPEG_QUALITY_COMBO_STEP                 = 5;
 static constexpr int    EXPORT_VIEW_MINIMUM_WIDTH               = 400;
 static constexpr int    HIERARCHY_TREE_INDENTATION              = 10;
+static constexpr int    LINE_EDIT_DOUBLE_VALIDATOR_DECIMALS     = 10;
+static constexpr int    LINE_EDIT_DOUBLE_DISPLAY_PRECISION      = 5;
+static constexpr int    TEXTURE_PREVIEW_MAX_SIZE                = 144;
+
+static constexpr std::string_view GROUP_BOX_STYLESHEET = "QGroupBox {font-weight :bold; font-size: 14px;}";
 
 #endif // CORE_CONFIG_HPP

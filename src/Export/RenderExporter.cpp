@@ -99,10 +99,10 @@ void RenderExporter::setOutputFormat(OutputFormat output_format) {
   }
 }
 
-void RenderExporter::exportRender() {
+bool RenderExporter::exportRender() {
   if(m_output_format_strategy == nullptr) {
     std::cerr << "Output format is not set. Using default PNG format." << '\n';
-    return;
+    return false;
   }
   bool render_success = false;
 
@@ -126,4 +126,5 @@ void RenderExporter::exportRender() {
   } else {
     std::cout << "Render exported successfully to " << getPath() + getFilename() << '\n';
   }
+  return render_success;
 }

@@ -44,8 +44,13 @@ void Transform::updateTranslationMatrix() {
   updateTransformationMatrix();
 }
 
-void Transform::setRotation(const linalg::Vec3d& rot) {
+void Transform::setRotationDeg(const linalg::Vec3d& rot) {
   m_rotation = rot;
+  updateRotationMatrix();
+}
+
+void Transform::setRotationRad(const linalg::Vec3d& rot) {
+  m_rotation = rot * RAD_TO_DEG;
   updateRotationMatrix();
 }
 

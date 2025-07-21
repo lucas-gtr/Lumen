@@ -8,6 +8,7 @@
 #include <linalg/Vec3.hpp>
 
 #include "GPU/Lights/SpotGPU.hpp"
+#include "GPU/OpenGL/Lights/LightGL.hpp"
 #include "Lighting/SpotLight.hpp"
 
 /**
@@ -17,11 +18,8 @@
  * This class extends the SpotLightGPU class to provide functionality specific to OpenGL,
  * including the management of the light space matrix and the near and far planes for shadow mapping.
  */
-class SpotLightGL : public SpotLightGPU {
+class SpotLightGL : public SpotLightGPU, public LightGL {
 private:
-  float m_near_plane = DEFAULT_LIGHT_NEAR_PLANE;
-  float m_far_plane  = DEFAULT_LIGHT_FAR_PLANE;
-
   linalg::Mat4f m_light_space_matrix;
 
 public:
@@ -43,17 +41,11 @@ public:
   const float* getLightSpaceMatrix() const { return m_light_space_matrix.data(); }
 
   /**
-   * @brief Gets the far plane distance of the light.
-   * @return The far plane distance.
-   */
-  float getFarPlane() const { return m_far_plane; }
-
-  /**
    * @brief Updates the light space matrix based on the light's position, direction and angles.
    */
-  void updateLightSpaceMatrix();
+  void updateLightSpaceMatrix() override;
 
-  ~SpotLightGL() = default; ///< Default destructor.
+  ~SpotLightGL() override = default; ///< Default destructor.
 };
 
 #endif // GPU_OPENGL_LIGHTS_SPOTGL_HPP

@@ -26,6 +26,7 @@ private:
   Material* m_material;
 
   Observer<const Object3D*> m_material_changed_observer;
+  Observer<const Object3D*> m_object_deleted_observer;
 
 public:
   Object3D(); ///< Default constructor.
@@ -46,6 +47,12 @@ public:
    * @return A reference to the observer that notifies about material changes.
    */
   Observer<const Object3D*>& getMaterialChangedObserver() { return m_material_changed_observer; }
+
+  /**
+   * @brief Gets the observer that notifies when the object is deleted.
+   * @return A reference to the observer that notifies about object deletion.
+   */
+  Observer<const Object3D*>& getObjectDeletedObserver() { return m_object_deleted_observer; }
 
   /**
    * @brief Sets the mesh for this 3D object.
@@ -89,7 +96,7 @@ public:
    */
   linalg::Vec3d getMaxBound() const;
 
-  ~Object3D() = default; ///< Default destructor.
+  ~Object3D(); ///< Default destructor.
 };
 
 #endif // SCENEOBJECTS_OBJECT3D_HPP

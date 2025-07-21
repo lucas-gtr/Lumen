@@ -27,16 +27,17 @@ class Scene {
 private:
   std::unordered_map<std::string, std::unique_ptr<Object3D>> m_object_map;
   std::vector<Object3D*>                                     m_object_index;
-  std::unordered_map<std::string, std::unique_ptr<Light>>    m_light_map;
-  std::vector<Light*>                                        m_light_index;
-  std::unique_ptr<Camera>                                    m_current_camera;
-  std::unique_ptr<Skybox>                                    m_skybox;
-  std::shared_ptr<BVHNode>                                   m_bvh_root = nullptr;
 
-  Observer<Object3D*>          m_object_added_observer;
-  Observer<const std::string&> m_object_added_name_observer;
-  Observer<Light*>             m_light_added_observer;
-  Observer<const std::string&> m_light_added_name_observer;
+  std::unordered_map<std::string, std::unique_ptr<Light>> m_light_map;
+  std::vector<Light*>                                     m_light_index;
+
+  std::unique_ptr<Camera> m_current_camera;
+  std::unique_ptr<Skybox> m_skybox;
+
+  std::shared_ptr<BVHNode> m_bvh_root = nullptr;
+
+  Observer<Object3D*> m_object_added_observer;
+  Observer<Light*>    m_light_added_observer;
 
 public:
   Scene();
@@ -67,6 +68,12 @@ public:
   bool renameObject(const std::string& old_name, const std::string& new_name);
 
   /**
+   * @brief Removes an object from the scene by its name.
+   * @param name The name of the object to be removed.
+   */
+  void removeObject(const std::string& name);
+
+  /**
    * @brief Gets the name of an object in the scene.
    * @param object A pointer to the Object3D for which to get the name.
    * @return The name of the object as a string.
@@ -78,12 +85,6 @@ public:
    * @return A reference to the observer that notifies when an object is added.
    */
   Observer<Object3D*>& getObjectAddedObserver() { return m_object_added_observer; }
-
-  /**
-   * @brief Gets the observer for when an object is added to the scene with its name.
-   * @return A reference to the observer that notifies when an object is added with its name.
-   */
-  Observer<const std::string&>& getObjectAddedNameObserver() { return m_object_added_name_observer; }
 
   /**
    * @brief Adds a light to the scene.
@@ -102,6 +103,12 @@ public:
   bool renameLight(const std::string& old_name, const std::string& new_name);
 
   /**
+   * @brief Removes a light from the scene by its name.
+   * @param name The name of the light to be removed.
+   */
+  void removeLight(const std::string& name);
+
+  /**
    * @brief Gets the name of a light in the scene.
    * @param light A pointer to the Light for which to get the name.
    * @return The name of the light as a string.
@@ -113,12 +120,6 @@ public:
    * @return A reference to the observer that notifies when a light is added.
    */
   Observer<Light*>& getLightAddedObserver() { return m_light_added_observer; }
-
-  /**
-   * @brief Gets the observer for when a light is added to the scene with its name.
-   * @return A reference to the observer that notifies when a light is added with its name.
-   */
-  Observer<const std::string&>& getLightAddedNameObserver() { return m_light_added_name_observer; }
 
   /**
    * @brief Gets an object by its name.

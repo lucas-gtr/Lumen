@@ -62,8 +62,6 @@ uniform int numPointLights;
 uniform int numSpotLights;
 
 uniform DirectionalLight dirLights[MAX_DIRECTIONAL_LIGHTS];
-uniform sampler2D dirShadowMaps[MAX_DIRECTIONAL_LIGHTS];
-
 uniform PointLight pointLights[MAX_POINT_LIGHTS];
 uniform SpotLight spotLights[MAX_SPOT_LIGHTS];
 
@@ -194,4 +192,5 @@ void main() {
     lighting += applySpotLight(spotLights[i], fragPosition, normal, viewDir, i);
 
   fragColor = vec4(lighting, 1.0) * texture(diffuseTexture, fragTexCoord);
+  // fragColor = vec4(dirLights[0].color, 1.0);
 }

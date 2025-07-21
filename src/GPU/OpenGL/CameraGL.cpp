@@ -45,16 +45,15 @@ void CameraGL::rotate(float delta_yaw, float delta_pitch) {
 
 void CameraGL::updateViewportCamera() {
   m_camera_ubo.position = linalg::Vec3f(m_render_camera->getPosition());
-  m_pitch               = static_cast<float>(m_render_camera->getRotation().x);
-  m_yaw                 = static_cast<float>(m_render_camera->getRotation().y);
+  m_pitch               = static_cast<float>(m_render_camera->getRotationRad().x);
+  m_yaw                 = static_cast<float>(m_render_camera->getRotationRad().y);
 
   updateAxisVectors();
 }
 
 void CameraGL::updateRenderCamera() {
   m_render_camera->setPosition(linalg::Vec3d(m_camera_ubo.position));
-  m_render_camera->setRotation(
-      {static_cast<double>(m_pitch) * RAD_TO_DEG, static_cast<double>(m_yaw) * RAD_TO_DEG, 0.0F});
+  m_render_camera->setRotationRad({static_cast<double>(m_pitch), static_cast<double>(m_yaw), 0.0F});
 }
 
 void CameraGL::updateAxisVectors() {

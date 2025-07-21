@@ -32,7 +32,7 @@ private:
 
   void configureParameters(const Texture* texture);
 
-  void applyWrappingMode(TextureSampling::TextureWrapping wrapping_mode, const ColorRGBA& border_color);
+  void applyWrappingMode(TextureSampling::TextureWrapping wrapping_mode, const ColorRGB& border_color);
   void applyFilteringMode(TextureSampling::TextureFiltering filtering_mode);
 
   static GLint GetGlWrappingMode(TextureSampling::TextureWrapping wrapping_mode);

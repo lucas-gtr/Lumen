@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['image_5ftexture_0',['IMAGE_TEXTURE',['../Texture_8hpp.html#a61fa55e64bf671bdb5e7e3886062b579a20a27af33bfffdb8c56f7ca63e4ac330',1,'Texture.hpp']]]
+  ['hdr_0',['HDR',['../OutputFormat_8hpp.html#a98dc27a624eda851a90dea794d0e715ba6cad826248cd3f4e93da71e7b49928e3',1,'OutputFormat.hpp']]]
 ];

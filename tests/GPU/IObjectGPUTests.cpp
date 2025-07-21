@@ -43,7 +43,7 @@ protected:
 
 TEST_F(IObjectGPUTest, InitializationTest) {
     object.setPosition({1.0, 2.0, 3.0});
-    object.setRotation({45.0, 90.0, 180.0});
+    object.setRotationDeg({45.0, 90.0, 180.0});
 
     TestObjectGPU gpuObject(&object);
 

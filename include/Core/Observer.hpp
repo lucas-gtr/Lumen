@@ -53,8 +53,16 @@ public:
     }
   }
 
+  /**
+   * @brief Clears all registered callbacks and resets the next ID.
+   */
+  void clear() {
+    m_callbacks.clear();
+    m_next_id.store(0);
+  }
+
 private:
-  std::unordered_map<CallbackID, Callback> m_callbacks;
+  std::unordered_map<CallbackID, Callback> m_callbacks = {};
   std::atomic<CallbackID>                  m_next_id{0};
 };
 

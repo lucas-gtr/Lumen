@@ -5,7 +5,8 @@ Checks: >
   -modernize-pass-by-value,-fuchsia-default-arguments-calls,
   -cppcoreguidelines-pro-bounds-pointer-arithmetic,
   -fuchsia-statically-constructed-objects, -fuchsia-multiple-inheritance,
-  -bugprone-easily-swappable-parameters
+  -bugprone-easily-swappable-parameters, -misc-include-cleaner,
+  -google-default-arguments, -cppcoreguidelines-owning-memory
 HeaderFilterRegex: '^(?!.*external).*'
 FormatStyle: 'file'
 CheckOptions: 

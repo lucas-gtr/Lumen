@@ -58,3 +58,9 @@ Material* Object3D::getMaterial() const {
   }
   return m_material;
 }
+
+Object3D::~Object3D() {
+  m_object_deleted_observer.notify(this);
+  m_material_changed_observer.clear();
+  m_object_deleted_observer.clear();
+}

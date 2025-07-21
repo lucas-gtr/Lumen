@@ -98,7 +98,13 @@ public:
    * @brief Sets the rotation of the object.
    * @param rot The new rotation in Euler angles (degrees).
    */
-  void setRotation(const linalg::Vec3d& rot);
+  void setRotationDeg(const linalg::Vec3d& rot);
+
+  /**
+   * @brief Sets the rotation of the object in radians.
+   * @param rot The new rotation in Euler angles (radians).
+   */
+  void setRotationRad(const linalg::Vec3d& rot);
 
   /**
    * @brief Sets the X component of the rotation.
@@ -158,7 +164,13 @@ public:
    * @brief Gets the current rotation of the object in radians (converted from degrees).
    * @return The rotation vector in radians.
    */
-  linalg::Vec3d getRotation() const { return m_rotation * DEG_TO_RAD; }
+  linalg::Vec3d getRotationRad() const { return m_rotation * DEG_TO_RAD; }
+
+  /**
+   * @brief Gets the current rotation of the object in degrees.
+   * @return The rotation vector in degrees.
+   */
+  linalg::Vec3d getRotationDeg() const { return m_rotation; }
 
   /**
    * @brief Gets the current scale of the object.

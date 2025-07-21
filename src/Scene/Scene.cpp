@@ -46,7 +46,6 @@ void Scene::addObject(const std::string& name, std::unique_ptr<Object3D> object)
   m_object_map.emplace(name, std::move(object));
 
   m_object_added_observer.notify(ptr);
-  m_object_added_name_observer.notify(name);
 }
 
 bool Scene::renameObject(const std::string& old_name, const std::string& new_name) {
@@ -61,6 +60,15 @@ bool Scene::renameObject(const std::string& old_name, const std::string& new_nam
     return true; // Rename successful
   }
   return false; // Old name not found
+}
+
+void Scene::removeObject(const std::string& name) {
+  auto it = m_object_map.find(name);
+  if(it != m_object_map.end()) {
+    Object3D* object = it->second.get();
+    m_object_index.erase(std::remove(m_object_index.begin(), m_object_index.end(), object), m_object_index.end());
+    m_object_map.erase(it);
+  }
 }
 
 std::string Scene::getObjectName(const Object3D* object) const {
@@ -86,7 +94,6 @@ void Scene::addLight(const std::string& name, std::unique_ptr<Light> light) {
   m_light_map.emplace(name, std::move(light));
 
   m_light_added_observer.notify(ptr);
-  m_light_added_name_observer.notify(name);
 }
 
 bool Scene::renameLight(const std::string& old_name, const std::string& new_name) {
@@ -101,6 +108,15 @@ bool Scene::renameLight(const std::string& old_name, const std::string& new_name
     return true; // Rename successful
   }
   return false; // Old name not found
+}
+
+void Scene::removeLight(const std::string& name) {
+  auto it = m_light_map.find(name);
+  if(it != m_light_map.end()) {
+    Light* light = it->second.get();
+    m_light_index.erase(std::remove(m_light_index.begin(), m_light_index.end(), light), m_light_index.end());
+    m_light_map.erase(it);
+  }
 }
 
 Light* Scene::getLight(const std::string& name) const {
