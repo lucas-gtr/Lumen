@@ -117,7 +117,8 @@ lint:
 	$(call check_tool,CLANG_TIDY,clang-tidy)
 	@echo "Running clang-tidy (FIX=$(FIX))..."
 	@cmake -S . -B build-lint -DFILES_TO_CHECK="$(FILES)" -DENABLE_CLANG_FORMAT=OFF -DENABLE_CLANG_TIDY=ON -DENABLE_FIX_CLANG_TIDY=$(FIX)
-	@cmake --build build-lint --target run-clang-tidy
+	@cmake --build build-lint --parallel
+	@cmake --build build-lint --parallel --target run-clang-tidy
 
 lint-diff:
 	$(call check_tool,CLANG_TIDY,clang-tidy)
@@ -126,6 +127,7 @@ lint-diff:
 	else \
 		echo "Running clang-tidy on changed files : $(FILES_TO_LINT) (FIX=$(FIX))"; \
 		cmake -S . -B build-lint -DFILES_TO_CHECK="$(FILES_TO_LINT)" -DENABLE_CLANG_FORMAT=OFF -DENABLE_CLANG_TIDY=ON -DENABLE_FIX_CLANG_TIDY=$(FIX); \
+		cmake --build build-lint --parallel
 		cmake --build build-lint --target run-clang-tidy; \
 	fi
 

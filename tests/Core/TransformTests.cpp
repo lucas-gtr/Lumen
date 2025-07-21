@@ -6,7 +6,7 @@
 TEST(TransformTest, DefaultConstructorTest) {
     Transform t;
     EXPECT_EQ(t.getPosition(), linalg::Vec3d(0.0));
-    EXPECT_EQ(t.getRotation(), linalg::Vec3d(0.0));
+    EXPECT_EQ(t.getRotationDeg(), linalg::Vec3d(0.0));
     EXPECT_EQ(t.getScale(), linalg::Vec3d(1.0));
 }
 
@@ -18,7 +18,7 @@ TEST(TransformTest, ParameterizedConstructorTest) {
     Transform t(position, rotation, scale);
 
     EXPECT_EQ(t.getPosition(), position);
-    EXPECT_EQ(t.getRotation(), rotation * M_PI / 180.0);
+    EXPECT_EQ(t.getRotationRad(), rotation * M_PI / 180.0);
     EXPECT_EQ(t.getScale(), scale);
 }
 
@@ -35,9 +35,10 @@ TEST(TransformTest, SetRotationTest) {
     Transform t;
     linalg::Vec3d newRotation(45.0, 90.0, 135.0);
     
-    t.setRotation(newRotation);
+    t.setRotationDeg(newRotation);
     
-    EXPECT_EQ(t.getRotation(), newRotation * M_PI / 180.0);
+    EXPECT_EQ(t.getRotationDeg(), newRotation);
+    EXPECT_EQ(t.getRotationRad(), newRotation * M_PI / 180.0);
 }
 
 TEST(TransformTest, SetScaleTest) {
@@ -73,19 +74,19 @@ TEST(TransformTest, SetPositionZTest) {
 TEST(TransformTest, SetRotationXTest) {
     Transform t;
     t.setRotationX(90.0);
-    EXPECT_EQ(t.getRotation(), linalg::Vec3d(90.0 * M_PI / 180.0, 0.0, 0.0));
+    EXPECT_EQ(t.getRotationRad(), linalg::Vec3d(90.0 * M_PI / 180.0, 0.0, 0.0));
 }
 
 TEST(TransformTest, SetRotationYTest) {
     Transform t;
     t.setRotationY(180.0);
-    EXPECT_EQ(t.getRotation(), linalg::Vec3d(0.0, 180.0 * M_PI / 180.0, 0.0));
+    EXPECT_EQ(t.getRotationRad(), linalg::Vec3d(0.0, 180.0 * M_PI / 180.0, 0.0));
 }
 
 TEST(TransformTest, SetRotationZTest) {
     Transform t;
     t.setRotationZ(270.0);
-    EXPECT_EQ(t.getRotation(), linalg::Vec3d(0.0, 0.0, 270.0 * M_PI / 180.0));
+    EXPECT_EQ(t.getRotationRad(), linalg::Vec3d(0.0, 0.0, 270.0 * M_PI / 180.0));
 }
 
 TEST(TransformTest, SetScaleXTest) {
@@ -121,7 +122,7 @@ TEST(TransformTest, TranslationMatrixTest) {
 TEST(TransformTest, RotationMatrixTest) {
     linalg::Vec3d rotation(45.0, 90.0, 30.0);
     Transform t;
-    t.setRotation(rotation);
+    t.setRotationDeg(rotation);
 
     linalg::Mat3d rotationX, rotationY, rotationZ;
     double rx = rotation.x * M_PI / 180.0;

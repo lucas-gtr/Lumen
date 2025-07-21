@@ -1,4 +1,4 @@
-#include "Qt/Application.hpp"
+#include "GUI/Application.hpp"
 
 int main(int argc, char* argv[]) {
   Application app(argc, argv);

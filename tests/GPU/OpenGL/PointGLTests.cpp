@@ -19,7 +19,7 @@ TEST(PointLightGLTest, UpdateLightSpaceMatrixUpdatesFarPlaneAndMatrix) {
     light.setIntensity(9.0f);
 
     PointLightGL lightGL(&light);
-    lightGL.updateLightSpaceMatrices();
+    lightGL.updateLightSpaceMatrix();
 
     float expectedFarPlane = std::sqrt(9.0f / MIN_LIGHT_INTENSITY_FAR_PLANE);
     EXPECT_NEAR(lightGL.getFarPlane(), expectedFarPlane, 1e-5f);

@@ -16,7 +16,7 @@ target_link_libraries(UnitTests PRIVATE
     Export
     GPU
     RenderingGL
-    QtInterface
+    GUI
     gtest
     gmock)
 

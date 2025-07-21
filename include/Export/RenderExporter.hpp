@@ -136,10 +136,9 @@ public:
 
   /**
    * @brief Exports the render to the specified location.
-   *
-   * This method must be implemented by derived classes to define the actual export behavior.
+   * @return True if the export was successful, false otherwise.
    */
-  void exportRender();
+  bool exportRender();
 
   ~RenderExporter() = default; ///< Default destructor.
 };

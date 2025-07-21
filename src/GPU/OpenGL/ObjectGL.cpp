@@ -16,8 +16,6 @@ ObjectGL::ObjectGL(Object3D* object, MaterialGL* material) : IObjectGPU(object),
   glGenBuffers(1, &m_vbo);
   glGenBuffers(1, &m_ebo);
 
-  // object.getMaterialChangedObserver().add()
-
   std::cout << "ObjectGL: VAO " << m_vao << " created." << '\n';
 }
 

@@ -28,7 +28,7 @@
 class Renderer {
 private:
   const RenderSettings* m_render_settings;
-  Scene*                m_scene;
+  Scene*                m_scene = nullptr;
   Framebuffer*          m_framebuffer;
 
   std::unique_ptr<RenderStrategy> m_render_strategy;
@@ -49,13 +49,9 @@ private:
 public:
   /**
    * @brief Constructor for the Renderer class.
-   *
-   * Initializes the Renderer with the provided render settings and scene.
-   *
    * @param render_settings The render settings to be used for rendering.
-   * @param scene The scene to be rendered.
    */
-  Renderer(Scene* scene, RenderSettings* render_settings);
+  explicit Renderer(RenderSettings* render_settings);
 
   Renderer(const Renderer&)            = delete;
   Renderer& operator=(const Renderer&) = delete;
@@ -68,6 +64,10 @@ public:
    */
   Observer<double>& getRenderProgressObserver() { return m_render_progress_observer; }
 
+  /**
+   * @brief Gets the render time statistics.
+   * @return A pointer to the RenderTime object containing render statistics.
+   */
   RenderTime* getRenderTime() const { return m_render_time.get(); }
 
   /**

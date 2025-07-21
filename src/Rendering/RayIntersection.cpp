@@ -9,6 +9,8 @@
 #include <string>
 #include <vector>
 
+#include <cassert>
+
 #include "BVH/BVHNode.hpp"
 #include "Core/CommonTypes.hpp"
 #include "Core/Ray.hpp"

@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>2140</width>
+    <height>1070</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Lumen</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="SceneTreeView" name="sceneView">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+      </widget>
+      <widget class="OpenGLWidget" name="openGLWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::ClickFocus</enum>
+       </property>
+      </widget>
+      <widget class="QWidget" name="widget" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="nameLabel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Name</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="TransformWidget" name="transformWidget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Transform Settings</string>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="CameraWidget" name="cameraWidget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Camera Settings</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="LightWidget" name="lightWidget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Light Settings</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="ObjectWidget" name="objectWidget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Object Settings</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::ClickFocus</enum>
+          </property>
+          <property name="tabPosition">
+           <enum>QTabWidget::North</enum>
+          </property>
+          <property name="tabShape">
+           <enum>QTabWidget::Rounded</enum>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <property name="elideMode">
+           <enum>Qt::ElideRight</enum>
+          </property>
+          <property name="documentMode">
+           <bool>true</bool>
+          </property>
+          <property name="movable">
+           <bool>true</bool>
+          </property>
+          <property name="tabBarAutoHide">
+           <bool>false</bool>
+          </property>
+          <widget class="QWidget" name="viewport">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>1</verstretch>
+            </sizepolicy>
+           </property>
+           <attribute name="title">
+            <string>Viewport</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="ViewportSettingsWidget" name="viewportSettingsWidget" native="true">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                <horstretch>0</horstretch>
+                <verstretch>1</verstretch>
+               </sizepolicy>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="skybox">
+           <attribute name="title">
+            <string>Skybox</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="SkyboxWidget" name="skyboxWidget" native="true"/>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="textures">
+           <attribute name="title">
+            <string>Textures</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="TexturesWidget" name="texturesWidget" native="true"/>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="materials">
+           <attribute name="title">
+            <string>Materials</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="MaterialsWidget" name="materialsWidget" native="true"/>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="render">
+           <attribute name="title">
+            <string>Render</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="RenderSettingsWidget" name="renderSettingsWidget" native="true">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Preferred</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>2140</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_Geometry">
+    <property name="title">
+     <string>&amp;Geometry</string>
+    </property>
+    <addaction name="actionAdd_Cube"/>
+    <addaction name="actionAdd_Plane"/>
+    <addaction name="actionAdd_Sphere"/>
+    <addaction name="separator"/>
+    <addaction name="actionLoad_OBJ"/>
+   </widget>
+   <widget class="QMenu" name="menuLighs">
+    <property name="title">
+     <string>&amp;Light</string>
+    </property>
+    <addaction name="actionAdd_Directional_Light"/>
+    <addaction name="actionAdd_Point_Light"/>
+    <addaction name="actionAdd_Spotlight"/>
+   </widget>
+   <addaction name="menu_Geometry"/>
+   <addaction name="menuLighs"/>
+  </widget>
+  <action name="actionAdd_Cube">
+   <property name="text">
+    <string>Add Cube</string>
+   </property>
+  </action>
+  <action name="actionAdd_Plane">
+   <property name="text">
+    <string>Add Plane</string>
+   </property>
+  </action>
+  <action name="actionAdd_Sphere">
+   <property name="text">
+    <string>Add Sphere</string>
+   </property>
+  </action>
+  <action name="actionLoad_OBJ">
+   <property name="text">
+    <string>Load .OBJ</string>
+   </property>
+  </action>
+  <action name="actionAdd_Directional_Light">
+   <property name="text">
+    <string>Add Directional Light</string>
+   </property>
+  </action>
+  <action name="actionAdd_Point_Light">
+   <property name="text">
+    <string>Add Point Light</string>
+   </property>
+  </action>
+  <action name="actionAdd_Spotlight">
+   <property name="text">
+    <string>Add Spotlight</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>OpenGLWidget</class>
+   <extends>QOpenGLWidget</extends>
+   <header>OpenGLWidget.hpp</header>
+  </customwidget>
+  <customwidget>
+   <class>SceneTreeView</class>
+   <extends>QTreeView</extends>
+   <header>SceneTreeView.hpp</header>
+  </customwidget>
+  <customwidget>
+   <class>TransformWidget</class>
+   <extends>QGroupBox</extends>
+   <header>TransformWidget.hpp</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CameraWidget</class>
+   <extends>QGroupBox</extends>
+   <header>CameraWidget.hpp</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ViewportSettingsWidget</class>
+   <extends>QWidget</extends>
+   <header>ViewportSettingsWidget.hpp</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>LightWidget</class>
+   <extends>QGroupBox</extends>
+   <header>LightWidget.hpp</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>RenderSettingsWidget</class>
+   <extends>QWidget</extends>
+   <header>RenderSettingsWidget.hpp</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ObjectWidget</class>
+   <extends>QGroupBox</extends>
+   <header>ObjectWidget.hpp</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MaterialsWidget</class>
+   <extends>QWidget</extends>
+   <header>MaterialsWidget.hpp</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TexturesWidget</class>
+   <extends>QWidget</extends>
+   <header>TexturesWidget.hpp</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SkyboxWidget</class>
+   <extends>QWidget</extends>
+   <header>SkyboxWidget.hpp</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

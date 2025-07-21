@@ -62,7 +62,7 @@ TEST(TextureTest, SetBorderColor) {
   texture_4d.setBorderColor(borderColor_4d);
   ColorRGBA value = texture_4d.getValue4d({-1.0, -1.0});
 
-  EXPECT_EQ(texture_4d.getBorderColor(), borderColor_4d);
+  EXPECT_EQ(ColorRGBA(texture_4d.getBorderColor()), borderColor_4d);
 
   EXPECT_EQ(value.r, 1.0);
   EXPECT_EQ(value.g, 0.5);

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keypressevent_0',['keypressevent',['../classMainWindow.html#a55ae3e0d4303334ccabae0a5050cfd88',1,'MainWindow::keyPressEvent()'],['../classRealtimeView.html#aea72292b74262f854abab64e28017eb9',1,'RealtimeView::keyPressEvent()']]]
+  ['keypressevent_0',['keypressevent',['../classOpenGLWidget.html#a952fae01558110a36daa5b02d133dce5',1,'OpenGLWidget::keyPressEvent()'],['../classSceneTreeView.html#a699c4acfae93efbcf87ed131e21761a9',1,'SceneTreeView::keyPressEvent()']]]
 ];

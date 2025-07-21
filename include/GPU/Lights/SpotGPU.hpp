@@ -7,6 +7,7 @@
 
 #include <linalg/Vec3.hpp>
 
+#include "GPU/Lights/LightGPU.hpp"
 #include "Lighting/SpotLight.hpp"
 
 /**
@@ -17,7 +18,7 @@
  * such as its position, direction, inner and outer cutoffs, and color,
  * for efficient access in GPU rendering.
  */
-class SpotLightGPU {
+class SpotLightGPU : public LightGPU {
 private:
   const SpotLight* m_light = nullptr;
 
@@ -25,7 +26,6 @@ private:
   linalg::Vec3f m_direction        = linalg::Vec3f(0.0F, 0.0F, -1.0F);
   float         m_cos_inner_cutoff = 0.0F;
   float         m_cos_outer_cutoff = 0.0F;
-  linalg::Vec3f m_color            = linalg::Vec3f(1.0F);
 
 protected:
   const SpotLight* light() const { return m_light; }
@@ -45,7 +45,7 @@ public:
   /**
    * @brief Retrieves the position, direction, inner and outer cutoffs, and color of the light.
    */
-  void retrieveData();
+  void retrieveData() override;
 
   /**
    * @brief Gets the position of the spot light.
@@ -72,12 +72,12 @@ public:
   float getCosOuterCutoff() const { return m_cos_outer_cutoff; }
 
   /**
-   * @brief Gets the color of the spot light multiplied by its intensity.
-   * @return The color vector of the light multiplied by the intensity.
+   * @brief Gets the light source.
+   * @return A pointer to the DirectionalLight source.
    */
-  linalg::Vec3f getColor() const { return m_color; }
+  const Light* getSource() const override { return m_light; }
 
-  ~SpotLightGPU() = default; ///< Default destructor for SpotLightGPU.
+  ~SpotLightGPU() override = default; ///< Default destructor for SpotLightGPU.
 };
 
 #endif // GPU_LIGHTS_SPOTGPU_HPP

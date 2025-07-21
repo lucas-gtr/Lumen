@@ -27,12 +27,12 @@ TEST_F(SpotLightTest, GetDirection) {
 
 TEST_F(SpotLightTest, GetInnerAngle) {
     light.setInnerAngle(15.0);
-    EXPECT_DOUBLE_EQ(light.getInnerAngle(), 15.0 * M_PI / 180.0); 
+    EXPECT_DOUBLE_EQ(light.getInnerAngleRad(), 15.0 * M_PI / 180.0); 
 }
 
 TEST_F(SpotLightTest, GetOuterAngle) {
     light.setOuterAngle(30.0);
-    EXPECT_DOUBLE_EQ(light.getOuterAngle(), 30.0 * M_PI / 180.0); 
+    EXPECT_DOUBLE_EQ(light.getOuterAngleRad(), 30.0 * M_PI / 180.0); 
 }
 
 TEST_F(SpotLightTest, GetDirectionFromPointReturnsNormalizedVector) {

@@ -49,22 +49,22 @@ public:
   virtual void addObject3D(Object3D* object) = 0;
 
   /**
+   * @brief Removes a 3D object from the resource manager.
+   * @param object Pointer to the Object3D to be removed.
+   */
+  virtual void removeObject3D(const Object3D* object) = 0;
+
+  /**
    * @brief Adds a directional light to the resource manager.
    * @param light Reference to the DirectionalLight to be added.
    */
-  virtual void addLight(DirectionalLight* light) = 0;
+  virtual void addLight(Light* light) = 0;
 
   /**
-   * @brief Adds a point light to the resource manager.
-   * @param light Reference to the PointLight to be added.
+   * @brief Adds a light to the resource manager.
+   * @param light Pointer to the Light object to be added.
    */
-  virtual void addLight(PointLight* light) = 0;
-
-  /**
-   * @brief Adds a spot light to the resource manager.
-   * @param light Reference to the SpotLight to be added.
-   */
-  virtual void addLight(SpotLight* light) = 0;
+  virtual void removeLight(const Light* light) = 0;
 
   /**
    * @brief Sets the skybox texture for the resource manager.

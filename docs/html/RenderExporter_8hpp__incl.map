@@ -8,7 +8,7 @@
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="348,43,417,93,454,127,488,165,509,203,522,240,517,242,504,206,483,168,451,131,414,97,345,48"/>
 <area shape="rect" id="Node000007" href="$Framebuffer_8hpp.html" title="Header file for the Framebuffer class." alt="" coords="596,93,759,119"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="403,43,612,88,611,93,402,48"/>
-<area shape="rect" id="Node000013" href="$OutputFormat_8hpp.html" title=" " alt="" coords="157,93,344,119"/>
+<area shape="rect" id="Node000013" href="$OutputFormat_8hpp.html" title="Header file for the OutputFormatStrategy class." alt="" coords="157,93,344,119"/>
 <area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="302,47,271,84,267,81,298,44"/>
 <area shape="rect" id="Node000014" href="$ToneMapping_8hpp.html" title="Header file for the ToneMappingStrategy class." alt="" coords="263,167,473,207"/>
 <area shape="poly" id="edge17_Node000001_Node000014" title=" " alt="" coords="332,44,346,66,359,92,366,123,370,152,364,153,361,124,353,94,342,69,328,47"/>

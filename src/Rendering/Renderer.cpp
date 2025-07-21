@@ -17,8 +17,8 @@
 #include "Scene/Scene.hpp"
 #include "Surface/Material.hpp"
 
-Renderer::Renderer(Scene* scene, RenderSettings* render_settings)
-    : m_scene(scene), m_render_time(std::make_unique<RenderTime>()), m_framebuffer(new Framebuffer({1, 1, 1})),
+Renderer::Renderer(RenderSettings* render_settings)
+    : m_render_time(std::make_unique<RenderTime>()), m_framebuffer(new Framebuffer({1, 1, 1})),
       m_render_settings(render_settings) {}
 
 void Renderer::updateRenderMode() {
@@ -130,7 +130,7 @@ ColorRGBA Renderer::traceRay(const Ray& ray) const {
   ColorRGB light_factor = {0.0, 0.0, 0.0};
   for(const auto& light : m_scene->getLightList()) {
     const linalg::Vec3d light_direction = light->getDirectionFromPoint(hit_info.hit_point).normalized();
-    const Ray           shadow_ray      = Ray::FromDirection(hit_info.hit_point, light_direction);
+    const Ray           shadow_ray = Ray::FromDirection(hit_info.hit_point + hit_info.normal * 0.01, light_direction);
 
     const RayHitInfo shadow_hit = RayIntersection::getSceneIntersection(shadow_ray, m_scene);
     if(isValidHit(shadow_hit)) {

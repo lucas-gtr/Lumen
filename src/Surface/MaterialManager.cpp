@@ -40,12 +40,12 @@ std::string MaterialManager::getAvailableMaterialName(const std::string& name) c
   return new_name;
 }
 
-bool MaterialManager::renameMaterial(const Material* material, const std::string& new_name) {
+bool MaterialManager::renameMaterial(const std::string& old_name, const std::string& new_name) {
   if(new_name.empty()) {
     return false;
   }
   for(auto it = m_material_map.begin(); it != m_material_map.end(); ++it) {
-    if(it->second.get() == material) {
+    if(it->first == old_name) {
       if(m_material_map.find(new_name) != m_material_map.end()) {
         return false;
       }
@@ -54,6 +54,7 @@ bool MaterialManager::renameMaterial(const Material* material, const std::string
 
       node.key() = new_name;
       m_material_map.insert(std::move(node));
+
       return true;
     }
   }

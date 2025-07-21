@@ -23,7 +23,6 @@
 #include "Lighting/DirectionalLight.hpp"
 #include "Lighting/PointLight.hpp"
 #include "Lighting/SpotLight.hpp"
-#include "Qt/OpenGLContext.hpp"
 #include "Scene/Scene.hpp"
 #include "SceneObjects/Camera.hpp"
 #include "SceneObjects/Object3D.hpp"
@@ -83,28 +82,22 @@ public:
   void addObject3D(Object3D* object) override;
 
   /**
+   * @brief Removes a 3D object from the resource manager.
+   * @param object Pointer to the Object3D to be removed.
+   */
+  void removeObject3D(const Object3D* object) override;
+
+  /**
    * @brief Adds a light to the resource manager.
    * @param light Pointer to the Light object to be added.
    */
-  void addLight(Light* light);
+  void addLight(Light* light) override;
 
   /**
-   * @brief Adds a directional light to the resource manager.
-   * @param light Reference of the DirectionalLight to be added.
+   * @brief Removes a light from the resource manager.
+   * @param light Pointer to the Light object to be removed.
    */
-  void addLight(DirectionalLight* light) override;
-
-  /**
-   * @brief Adds a point light to the resource manager.
-   * @param light Reference of the PointLight to be added.
-   */
-  void addLight(PointLight* light) override;
-
-  /**
-   * @brief Adds a spot light to the resource manager.
-   * @param light Reference of the SpotLight to be added.
-   */
-  void addLight(SpotLight* light) override;
+  void removeLight(const Light* light) override;
 
   /**
    * @brief Sets the selected object for the viewport.

@@ -23,6 +23,13 @@
  */
 enum class ColorSpace : std::uint8_t { LINEAR, S_RGB };
 
+/**
+ * @enum TextureType
+ * @brief Enumeration for texture types.
+ *
+ * This enum defines the types of textures, including image textures and color textures.
+ * Image textures are used for loading images, while color textures are used for solid colors.
+ */
 enum class TextureType : std::uint8_t { IMAGE_TEXTURE, COLOR_TEXTURE };
 
 /**
@@ -51,7 +58,7 @@ private:
   TextureSampling::TextureFiltering m_filtering_mode = TextureSampling::TextureFiltering::BILINEAR;
   TextureSampling::TextureWrapping  m_wrapping_mode  = TextureSampling::TextureWrapping::MIRRORED_REPEAT;
 
-  ColorRGBA m_border_color;
+  ColorRGB m_border_color;
 
   Observer<> m_texture_data_observer;
   Observer<> m_texture_parameters_observer;
@@ -193,7 +200,7 @@ public:
    * @brief Gets the border color of the texture.
    * @return The border color of the texture.
    */
-  const ColorRGBA& getBorderColor() const { return m_border_color; }
+  const ColorRGB& getBorderColor() const { return m_border_color; }
 
   /**
    * @brief Sets whether the texture is flipped vertically.

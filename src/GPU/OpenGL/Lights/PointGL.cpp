@@ -10,18 +10,18 @@
 #include "Lighting/PointLight.hpp"
 
 PointLightGL::PointLightGL(PointLight* light) : PointLightGPU(light) {
-  updateLightSpaceMatrices();
+  PointLightGL::updateLightSpaceMatrix();
   light->getTransformationChangedObserver().add([this]() {
     retrieveData();
-    updateLightSpaceMatrices();
+    updateLightSpaceMatrix();
   });
   light->getLightChangedObserver().add([this]() {
     retrieveData();
-    updateLightSpaceMatrices();
+    updateLightSpaceMatrix();
   });
 }
 
-void PointLightGL::updateLightSpaceMatrices() {
+void PointLightGL::updateLightSpaceMatrix() {
   static constexpr std::array<linalg::Vec3f, CUBE_MAP_FACE_COUNT> face_directions = {{{1.0F, 0.0F, 0.0F},
                                                                                       {-1.0F, 0.0F, 0.0F},
                                                                                       {0.0F, 1.0F, 0.0F},
@@ -32,13 +32,13 @@ void PointLightGL::updateLightSpaceMatrices() {
       {linalg::Vec3f(0.0F, -1.0F, 0.0F), linalg::Vec3f(0.0F, -1.0F, 0.0F), linalg::Vec3f(0.0F, 0.0F, 1.0F),
             linalg::Vec3f(0.0F, 0.0F, -1.0F), linalg::Vec3f(0.0F, -1.0F, 0.0F), linalg::Vec3f(0.0F, -1.0F, 0.0F)}};
 
-  m_far_plane = static_cast<float>(std::sqrt(light()->getIntensity() / MIN_LIGHT_INTENSITY_FAR_PLANE));
+  setFarPlane(static_cast<float>(std::sqrt(light()->getIntensity() / MIN_LIGHT_INTENSITY_FAR_PLANE)));
 
   m_light_space_matrices.clear();
   m_light_space_matrices.reserve(CUBE_MAP_FACE_COUNT);
 
   // 90° field of view for omnidirectional shadow mapping
-  const linalg::Mat4f light_projection = linalg::Mat4f::Perspective(PI_2, 1.0F, m_near_plane, m_far_plane);
+  const linalg::Mat4f light_projection = linalg::Mat4f::Perspective(PI_2, 1.0F, getNearPlane(), getFarPlane());
 
   for(int i = 0; i < CUBE_MAP_FACE_COUNT; ++i) {
     const linalg::Mat4f light_view =

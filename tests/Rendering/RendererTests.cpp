@@ -22,22 +22,25 @@ protected:
 };
 
 TEST_F(RendererTest, ConstructorInitializesCorrectly) {
-  Renderer renderer(&scene, &settings);
+  Renderer renderer(&settings);
 
   EXPECT_EQ(&renderer.getRenderSettings(), &settings);
-  EXPECT_EQ(&renderer.getScene(), &scene);
+  EXPECT_EQ(&renderer.getScene(), nullptr);
   ASSERT_NE(renderer.getFramebuffer(), nullptr);
 }
 
 TEST_F(RendererTest, IsReadyToRenderReturnsTrueWithCamera) {
-  Renderer renderer(&scene, &settings);
+  Renderer renderer(&settings);
+  renderer.setScene(&scene);
+  
   EXPECT_TRUE(renderer.isReadyToRender());
 }
 
 TEST_F(RendererTest, RenderFrameRendersSomething) {
   settings.setWidth(1);
   settings.setHeight(1);
-  Renderer renderer(&scene, &settings);
+  Renderer renderer(&settings);
+  renderer.setScene(&scene);
 
   renderer.renderFrame();
 
@@ -49,7 +52,8 @@ TEST_F(RendererTest, RenderFrameRendersSomething) {
 }
 
 TEST_F(RendererTest, FramebufferUpdatesWhenRenderSettingsChange) {
-  Renderer renderer(&scene, &settings);
+  Renderer renderer(&settings);
+  renderer.setScene(&scene);
 
   renderer.renderFrame();
   EXPECT_EQ(renderer.getFramebuffer()->getWidth(), settings.getWidth());
@@ -83,12 +87,13 @@ TEST_F(RendererTest, RenderInfluencedByLight) {
   scene.addObject("1", std::move(cube_object));
 
   scene.getCamera()->setPosition(linalg::Vec3d(0.0, 0.0, 0.0));
-  scene.getCamera()->setRotation(linalg::Vec3d(0.0, 0.0, 0.0));
+  scene.getCamera()->setRotationDeg(linalg::Vec3d(0.0, 0.0, 0.0));
   scene.getCamera()->setHorizontalFov(10.0);
 
   settings.setWidth(1);
   settings.setHeight(1);
-  Renderer renderer(&scene, &settings);
+  Renderer renderer(&settings);
+  renderer.setScene(&scene);
 
   renderer.renderFrame();
 
@@ -130,12 +135,13 @@ TEST_F(RendererTest, ShadowRayBlockedByObject) {
   scene.addObject("2", std::move(cube_object2));
 
   scene.getCamera()->setPosition(linalg::Vec3d(0.0, 0.0, 0.0));
-  scene.getCamera()->setRotation(linalg::Vec3d(0.0, 0.0, 0.0));
+  scene.getCamera()->setRotationDeg(linalg::Vec3d(0.0, 0.0, 0.0));
   scene.getCamera()->setHorizontalFov(10.0);
 
   settings.setWidth(1);
   settings.setHeight(1);
-  Renderer renderer(&scene, &settings);
+  Renderer renderer(&settings);
+  renderer.setScene(&scene);
 
   renderer.renderFrame();
 

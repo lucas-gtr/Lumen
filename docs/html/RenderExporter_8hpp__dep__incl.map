@@ -1,31 +1,13 @@
 <map id="/home/lucasgtr/lumen/include/Export/RenderExporter.hpp" name="/home/lucasgtr/lumen/include/Export/RenderExporter.hpp">
-<area shape="rect" id="Node000001" title="Header file for the RenderExporter class." alt="" coords="565,5,815,45"/>
-<area shape="rect" id="Node000002" href="$ExportController_8hpp.html" title=" " alt="" coords="327,93,491,148"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="621,52,489,96,487,91,619,47"/>
-<area shape="rect" id="Node000004" href="$RenderController_8hpp.html" title=" " alt="" coords="393,299,557,353"/>
-<area shape="poly" id="edge15_Node000001_Node000004" title=" " alt="" coords="707,57,722,99,732,150,733,177,731,204,724,229,711,252,679,283,641,304,599,317,558,325,557,319,598,312,639,299,676,279,707,249,719,227,726,203,728,177,727,151,717,101,702,59"/>
-<area shape="rect" id="Node000011" href="$ExportController_8cpp.html" title=" " alt="" coords="428,203,696,243"/>
-<area shape="poly" id="edge17_Node000001_Node000011" title=" " alt="" coords="672,58,577,205,572,202,668,56"/>
-<area shape="rect" id="Node000012" href="$RenderExporter_8cpp.html" title=" " alt="" coords="771,101,993,141"/>
-<area shape="poly" id="edge16_Node000001_Node000012" title=" " alt="" coords="742,49,844,98,842,103,740,54"/>
-<area shape="rect" id="Node000003" href="$RenderWindowView_8hpp.html" title=" " alt="" coords="173,196,404,251"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="369,159,322,198,318,194,365,155"/>
-<area shape="rect" id="Node000010" href="$RenderWindowView_8cpp.html" title=" " alt="" coords="5,306,265,346"/>
-<area shape="poly" id="edge14_Node000002_Node000010" title=" " alt="" coords="313,130,273,138,233,151,195,171,163,198,147,223,139,252,136,306,131,306,133,252,142,221,159,194,192,166,230,146,272,133,312,125"/>
-<area shape="poly" id="edge13_Node000002_Node000011" title=" " alt="" coords="462,153,534,201,532,205,459,158"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="350,255,428,296,425,301,348,259"/>
-<area shape="rect" id="Node000009" href="$RenderController_8cpp.html" title=" " alt="" coords="166,401,438,441"/>
-<area shape="poly" id="edge11_Node000003_Node000009" title=" " alt="" coords="294,265,303,401,298,401,289,265"/>
-<area shape="poly" id="edge12_Node000003_Node000010" title=" " alt="" coords="239,260,166,308,163,303,236,256"/>
-<area shape="rect" id="Node000005" href="$MainWindow_8hpp.html" title="Header file for the MainWindow class, which serves as the main application window." alt="" coords="548,401,755,441"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="538,357,617,399,614,404,535,362"/>
-<area shape="rect" id="Node000008" href="$MainWindow_8cpp.html" title=" " alt="" coords="367,489,546,529"/>
-<area shape="poly" id="edge10_Node000004_Node000008" title=" " alt="" coords="474,367,461,489,456,489,469,367"/>
-<area shape="poly" id="edge9_Node000004_Node000009" title=" " alt="" coords="416,362,338,404,336,399,413,357"/>
-<area shape="rect" id="Node000006" href="$Application_8hpp.html" title="Header file for the Application class, which manages the Qt application lifecycle." alt="" coords="570,489,767,529"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="660,454,667,489,662,490,655,455"/>
-<area shape="rect" id="Node000007" href="$Application_8cpp.html" title=" " alt="" coords="653,577,821,617"/>
-<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="732,445,760,463,782,488,788,512,783,537,771,559,757,579,752,575,766,557,778,535,783,512,777,491,756,467,729,449"/>
-<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="597,449,500,492,498,487,595,444"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="694,539,724,575,720,579,690,542"/>
+<area shape="rect" id="Node000001" title="Header file for the RenderExporter class." alt="" coords="266,5,517,45"/>
+<area shape="rect" id="Node000002" href="$RenderExporter_8cpp.html" title=" " alt="" coords="5,93,228,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="319,52,178,96,176,91,317,47"/>
+<area shape="rect" id="Node000003" href="$ExportWidget_8cpp.html" title=" " alt="" coords="252,93,531,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="394,59,394,93,389,93,389,59"/>
+<area shape="rect" id="Node000004" href="$RenderWindow_8hpp.html" title=" " alt="" coords="555,93,843,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="473,46,633,91,631,96,471,52"/>
+<area shape="rect" id="Node000005" href="$RenderSettingsWidget_8cpp.html" title=" " alt="" coords="419,181,681,236"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="659,143,593,184,591,179,656,138"/>
+<area shape="rect" id="Node000006" href="$RenderWindow_8cpp.html" title=" " alt="" coords="705,189,992,229"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="742,138,820,186,817,191,740,143"/>
 </map>

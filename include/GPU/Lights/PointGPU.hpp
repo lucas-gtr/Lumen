@@ -7,6 +7,7 @@
 
 #include <linalg/Vec3.hpp>
 
+#include "GPU/Lights/LightGPU.hpp"
 #include "Lighting/PointLight.hpp"
 
 /**
@@ -16,12 +17,11 @@
  * This class is designed to hold the properties of a point light,
  * such as its position and color, for efficient access in GPU rendering.
  */
-class PointLightGPU {
+class PointLightGPU : public LightGPU {
 private:
   const PointLight* m_light = nullptr;
 
   linalg::Vec3f m_position;
-  linalg::Vec3f m_color;
 
 protected:
   const PointLight* light() const { return m_light; }
@@ -41,7 +41,7 @@ public:
   /**
    * @brief Retrieves the position and color of the light.
    */
-  void retrieveData();
+  void retrieveData() override;
 
   /**
    * @brief Gets the position of the light.
@@ -52,14 +52,12 @@ public:
   }
 
   /**
-   * @brief Gets the color of the light multiplied by the intensity.
-   * @return The color vector of the light multiplied by the intensity.
+   * @brief Gets the light source.
+   * @return A pointer to the DirectionalLight source.
    */
-  linalg::Vec3f getColor() const {
-    return m_color; ///< Gets the color of the light.
-  }
+  const Light* getSource() const override { return m_light; }
 
-  ~PointLightGPU() = default; ///< Default destructor for PointLightGPU.
+  ~PointLightGPU() override = default; ///< Default destructor for PointLightGPU.
 };
 
 #endif // GPU_LIGHTS_POINTGPU_HPP

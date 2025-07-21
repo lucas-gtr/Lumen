@@ -43,7 +43,7 @@ void TextureGL::configureParameters(const Texture* texture) {
   applyFilteringMode(texture->getFilteringMode());
 }
 
-void TextureGL::applyWrappingMode(TextureSampling::TextureWrapping wrapping_mode, const ColorRGBA& border_color) {
+void TextureGL::applyWrappingMode(TextureSampling::TextureWrapping wrapping_mode, const ColorRGB& border_color) {
   const GLint gl_mode = GetGlWrappingMode(wrapping_mode);
   if(gl_mode == -1) {
     return;
@@ -54,7 +54,7 @@ void TextureGL::applyWrappingMode(TextureSampling::TextureWrapping wrapping_mode
 
   if(wrapping_mode == TextureSampling::TextureWrapping::CLAMP_TO_BORDER) {
     std::array<float, 4> gl_border_color = {static_cast<float>(border_color.r), static_cast<float>(border_color.g),
-                                            static_cast<float>(border_color.b), static_cast<float>(border_color.a)};
+                                            static_cast<float>(border_color.b), 1.0};
     glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, gl_border_color.data());
   }
 }
@@ -110,6 +110,7 @@ GLint TextureGL::GetGlFormat(int channel_count) {
     return 0;
   }
 }
+
 void TextureGL::uploadToGPU() {
   glActiveTexture(GL_TEXTURE0 + LOAD_TEXTURE_UNIT);
   glBindTexture(GL_TEXTURE_2D, m_texture_id);
@@ -147,6 +148,7 @@ void TextureGL::uploadToGPU() {
     std::cerr << "Error: Texture data is null." << '\n';
   }
 
+  std::cout << "TextureGL: Texture with ID " << m_texture_id << " uploaded to GPU." << '\n';
   glBindTexture(GL_TEXTURE_2D, 0);
 }
 

@@ -17,7 +17,6 @@ Framebuffer::Framebuffer(ImageProperties properties) : m_framebuffer_properties(
 
 void Framebuffer::updateFrameBuffer() {
   delete[] m_framebuffer;
-  // NOLINTNEXTLINE(cppcoreguidelines-owning-memory)
   m_framebuffer = new double[m_framebuffer_properties.bufferSize()];
   for(std::uint64_t i = 0; i < m_framebuffer_properties.bufferSize(); ++i) {
     m_framebuffer[i] = 0.0;

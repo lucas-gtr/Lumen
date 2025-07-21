@@ -77,18 +77,18 @@ void Texture::appendPixelFromSource(int src_x, int src_y, int channels, int orig
 }
 
 void Texture::setValue(double value) {
+  m_texture_type = TextureType::COLOR_TEXTURE;
   generateTexture({1, 1, 1}, {value});
-  finalizeTexture();
 }
 
 void Texture::setValue(const ColorRGB& color) {
+  m_texture_type = TextureType::COLOR_TEXTURE;
   generateTexture({1, 1, 3}, {color.r, color.g, color.b});
-  finalizeTexture();
 }
 
 void Texture::setValue(const ColorRGBA& color) {
+  m_texture_type = TextureType::COLOR_TEXTURE;
   generateTexture({1, 1, 4}, {color.r, color.g, color.b, color.a});
-  finalizeTexture();
 }
 
 void Texture::setTextureType(TextureType type) {
@@ -104,6 +104,7 @@ void Texture::setTextureType(TextureType type) {
 
 void Texture::loadFromFile(const char* filename) {
   TextureLoader::load(filename, m_image_data, m_texture_properties);
+  m_texture_type = TextureType::IMAGE_TEXTURE;
   m_texture_path = filename;
   finalizeTexture();
 }
@@ -132,7 +133,7 @@ void Texture::flipVertically() {
       }
     }
   }
-  m_texture_data_observer.notify();
+  finalizeTexture();
 }
 
 void Texture::setFlippedVertically(bool flipped) {
@@ -202,7 +203,7 @@ ColorRGB Texture::getValue3d(TextureUV uv_coord) const {
   const bool is_border = (uv_coord.u == -1.0 || uv_coord.v == -1.0);
 
   if(is_border) {
-    color = ColorRGB(m_border_color);
+    color = m_border_color;
   } else {
     const int w = m_texture_properties.width;
     const int h = m_texture_properties.height;
@@ -251,7 +252,7 @@ ColorRGBA Texture::getValue4d(TextureUV uv_coord) const {
   const bool is_border = (uv_coord.u == -1.0 || uv_coord.v == -1.0);
 
   if(is_border) {
-    color = m_border_color;
+    color = ColorRGBA(m_border_color);
   } else {
     const int w = m_texture_properties.width;
     const int h = m_texture_properties.height;
@@ -293,17 +294,17 @@ void Texture::setColorSpace(ColorSpace color_space) {
 }
 
 void Texture::setBorderColor(const ColorRGBA& color) {
-  m_border_color = color;
+  m_border_color = ColorRGB(color);
   m_texture_parameters_observer.notify();
 }
 
 void Texture::setBorderColor(const ColorRGB& color) {
-  m_border_color = ColorRGBA(color, 1.0);
+  m_border_color = color;
   m_texture_parameters_observer.notify();
 }
 
 void Texture::setBorderColor(double value) {
-  m_border_color = {value, value, value, 1.0};
+  m_border_color = {value, value, value};
   m_texture_parameters_observer.notify();
 }
 

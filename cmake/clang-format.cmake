@@ -14,7 +14,10 @@ function(run_clang_format)
 
     if(FILES_TO_CHECK STREQUAL "")
       file(GLOB_RECURSE src_cpp_files "${CMAKE_SOURCE_DIR}/src/*.cpp")
-      file(GLOB_RECURSE include_hpp_files "${CMAKE_SOURCE_DIR}/include/*.hpp")
+      file(GLOB_RECURSE include_hpp_files 
+        "${CMAKE_SOURCE_DIR}/include/*.hpp"
+        "${CMAKE_SOURCE_DIR}/src/*.hpp"
+      )
 
       list(APPEND CLANG_FORMAT_TARGET_FILES
           ${src_cpp_files}

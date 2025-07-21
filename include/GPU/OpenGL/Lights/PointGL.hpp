@@ -11,6 +11,7 @@
 #include <linalg/Vec3.hpp>
 
 #include "GPU/Lights/PointGPU.hpp"
+#include "GPU/OpenGL/Lights/LightGL.hpp"
 #include "Lighting/PointLight.hpp"
 
 /**
@@ -20,11 +21,9 @@
  * This class extends the PointLightGPU class to provide functionality specific to OpenGL,
  * including the management of light space matrices for shadow mapping and the near and far planes.
  */
-class PointLightGL : public PointLightGPU {
+class PointLightGL : public PointLightGPU, public LightGL {
 private:
   std::vector<linalg::Mat4f> m_light_space_matrices;
-  float                      m_near_plane = DEFAULT_LIGHT_NEAR_PLANE;
-  float                      m_far_plane  = DEFAULT_LIGHT_FAR_PLANE;
 
 public:
   /**
@@ -46,17 +45,11 @@ public:
   const float* getLightSpaceMatrix(int index) const { return m_light_space_matrices[index].data(); }
 
   /**
-   * @brief Gets the far plane distance for the light.
-   * @return The far plane distance as a float.
-   */
-  float getFarPlane() const { return m_far_plane; }
-
-  /**
    * @brief Updates the light space matrices for the point light.
    */
-  void updateLightSpaceMatrices();
+  void updateLightSpaceMatrix() override;
 
-  ~PointLightGL() = default; ///< Default destructor.
+  ~PointLightGL() override = default; ///< Default destructor.
 };
 
 #endif // GPU_OPENGL_LIGHTS_POINTGL_HPP
