@@ -8,7 +8,7 @@
 #include <QWidget>
 
 namespace Ui {
-  class SliderSpinBox;
+class SliderSpinBox;
 }
 
 /**
@@ -34,19 +34,19 @@ public:
    * @param value The new integer value to set.
    */
   void setValue(int value);
-  
+
   /**
    * @brief Gets the current value of the slider spin box.
    * @return The current integer value.
    */
-  int  getValue() const;
+  int getValue() const;
 
   /**
    * @brief Sets the minimum value for the slider spin box.
    * @param min The minimum integer value.
    */
   void setMinimum(int min);
-  
+
   /**
    * @brief Sets the maximum value for the slider spin box.
    * @param max The maximum integer value.

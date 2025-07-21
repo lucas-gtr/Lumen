@@ -184,6 +184,4 @@ void ExportWidget::onExportButtonClicked() {
   }
 }
 
-ExportWidget::~ExportWidget() {
-  delete ui;
-}
+ExportWidget::~ExportWidget() { delete ui; }

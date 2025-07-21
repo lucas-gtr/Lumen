@@ -13,15 +13,15 @@
 #include "Rendering/RenderTime.hpp"
 
 namespace Ui {
-  class RenderWindow;
+class RenderWindow;
 }
 
 /**
  * @class RenderWindow
  * @brief A widget that provides a user interface for rendering and exporting images.
  *
- * This class allows users to view the rendered image, track rendering progress, and export the image in various formats.
- * It also provides functionality to update the image based on the current framebuffer.
+ * This class allows users to view the rendered image, track rendering progress, and export the image in various
+ * formats. It also provides functionality to update the image based on the current framebuffer.
  */
 class RenderWindow : public QWidget {
   Q_OBJECT

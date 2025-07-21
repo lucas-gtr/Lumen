@@ -9,7 +9,7 @@ class Scene;
 /**
  * @class SceneTreeView
  * @brief A tree view widget for displaying and managing the scene hierarchy, including objects and lights.
- * 
+ *
  * This class provides functionality to initialize the view from a Scene object, add and remove objects and lights,
  * and handle selection changes. It emits signals when a camera, object, or light is selected, and allows for
  * renaming and deleting items in the scene.
@@ -30,7 +30,7 @@ public:
    * This method clears the current model and populates it with the objects and lights from the provided Scene.
    */
   void initializeFromScene(Scene* scene);
-  
+
   /**
    * @brief Adds a 3D object to the scene tree.
    * @param name The name of the object to be added.

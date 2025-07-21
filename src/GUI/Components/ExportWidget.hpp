@@ -10,7 +10,7 @@
 class RenderExporter;
 
 namespace Ui {
-  class ExportWidget;
+class ExportWidget;
 }
 
 /**
@@ -35,7 +35,7 @@ public:
    * @param exporter Pointer to the RenderExporter instance that handles the export logic.
    */
   void setExporter(RenderExporter* exporter);
-  
+
   /**
    * @brief Sets whether the export is ready to be performed.
    * @param ready True if the export is ready, false otherwise.

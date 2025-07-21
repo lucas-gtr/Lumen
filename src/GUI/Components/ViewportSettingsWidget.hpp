@@ -11,7 +11,7 @@
 #include "GPU/OpenGL/EngineGL.hpp"
 
 namespace Ui {
-  class ViewportSettingsWidget;
+class ViewportSettingsWidget;
 }
 
 /**

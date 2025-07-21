@@ -8,7 +8,7 @@
 #include <QDialog>
 
 namespace Ui {
-  class CubeDialog;
+class CubeDialog;
 }
 
 /**
@@ -26,7 +26,7 @@ public:
    * @param parent The parent widget for this dialog.
    */
   explicit CubeDialog(QWidget* parent = nullptr);
-  
+
   /**
    * @brief Gets the size of the cube specified in the dialog.
    * @return The size of the cube as a double.

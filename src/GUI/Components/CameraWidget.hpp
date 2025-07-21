@@ -11,7 +11,7 @@
 class Camera;
 
 namespace Ui {
-  class CameraWidget;
+class CameraWidget;
 }
 
 /**

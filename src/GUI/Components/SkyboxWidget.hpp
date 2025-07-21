@@ -13,7 +13,7 @@
 class Skybox;
 
 namespace Ui {
-  class SkyboxWidget;
+class SkyboxWidget;
 }
 
 /**
@@ -37,7 +37,7 @@ public:
    * @param skybox The Skybox instance to set.
    */
   void setSkybox(Skybox* skybox);
-  
+
   /**
    * @brief Sets the textures list model for this widget.
    * @param model The DefaultOptionProxyModel instance to set as the textures list model.

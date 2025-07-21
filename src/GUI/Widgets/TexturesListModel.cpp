@@ -1,5 +1,5 @@
-#include "Surface/TextureManager.hpp"
 #include "TexturesListModel.hpp"
+#include "Surface/TextureManager.hpp"
 
 TexturesListModel::TexturesListModel(TextureManager* texture_manager, QObject* parent)
     : QAbstractListModel(parent), m_texture_manager(texture_manager) {}

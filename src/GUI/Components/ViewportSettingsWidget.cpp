@@ -1,5 +1,5 @@
-#include "GPU/OpenGL/EngineGL.hpp"
 #include "ViewportSettingsWidget.hpp"
+#include "GPU/OpenGL/EngineGL.hpp"
 #include "ui_ViewportSettingsWidget.h"
 
 ViewportSettingsWidget::ViewportSettingsWidget(QWidget* parent) : QWidget(parent), ui(new Ui::ViewportSettingsWidget) {

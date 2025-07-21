@@ -13,7 +13,7 @@
 class Object3D;
 class MaterialManager;
 namespace Ui {
-  class ObjectWidget;
+class ObjectWidget;
 }
 
 /**
@@ -38,7 +38,7 @@ public:
    * @param object The Object3D instance to set.
    */
   void setObject3D(Object3D* object);
-  
+
   /**
    * @brief Sets the materials list model for this widget.
    * @param model The DefaultOptionProxyModel instance to set as the materials list model.

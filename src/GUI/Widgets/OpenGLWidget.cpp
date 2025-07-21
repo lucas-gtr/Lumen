@@ -1,9 +1,9 @@
 #include <QGuiApplication>
 
+#include "GPU/OpenGL/EngineGL.hpp"
 #include "OpenGLWidget.hpp"
 #include "Rendering/RayIntersection.hpp"
 #include "Scene/Scene.hpp"
-#include "GPU/OpenGL/EngineGL.hpp"
 
 OpenGLWidget::OpenGLWidget(QWidget* parent)
     : QOpenGLWidget(parent), m_scene(nullptr), m_engine(nullptr), m_refresh_timer(new QTimer(this)) {

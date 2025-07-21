@@ -35,7 +35,7 @@ public:
    * @param parent The parent index (default is an invalid index).
    * @return The number of rows in the model.
    */
-  int           rowCount(const QModelIndex& parent = QModelIndex()) const override;
+  int rowCount(const QModelIndex& parent = QModelIndex()) const override;
 
   /**
    * @brief Returns the data for the specified index and role.
@@ -43,7 +43,7 @@ public:
    * @param role The role for which to retrieve data (default is Qt::DisplayRole).
    * @return The data for the specified index and role.
    */
-  QVariant      data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+  QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
 
   /**
    * @brief Sets the data for the specified index and role.
@@ -52,7 +52,7 @@ public:
    * @param role The role for which to set data (default is Qt::EditRole).
    * @return True if the data was set successfully, false otherwise.
    */
-  bool          setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole) override;
+  bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole) override;
 
   /**
    * @brief Returns the flags for the specified index.
@@ -66,7 +66,7 @@ public:
    * @param item The name of the texture to add.
    */
   void addItem(const QString& item);
-  
+
   /**
    * @brief Renames an existing texture item in the model.
    * @param row The row index of the item to rename.
@@ -74,7 +74,7 @@ public:
    * @return True if the item was renamed successfully, false otherwise.
    */
   bool renameItem(int row, const QString& new_name);
-  
+
   /**
    * @brief Removes an item from the model.
    * @param row The row index of the item to remove.

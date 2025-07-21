@@ -16,7 +16,7 @@ class MaterialManager;
 class TextureManager;
 
 namespace Ui {
-  class MaterialsWidget;
+class MaterialsWidget;
 }
 
 /**
@@ -40,7 +40,7 @@ public:
    * @param material_manager The MaterialManager instance to set.
    */
   void setMaterialManager(MaterialManager* material_manager);
-  
+
   /**
    * @brief Sets the TextureManager instance for this widget.
    * @param texture_manager The TextureManager instance to set.

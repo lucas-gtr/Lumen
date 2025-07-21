@@ -1,8 +1,8 @@
 #include <QMessageBox>
 #include <QSignalBlocker>
 
-#include "Surface/TextureManager.hpp"
 #include "Surface/Texture.hpp"
+#include "Surface/TextureManager.hpp"
 #include "TexturesWidget.hpp"
 #include "ui_TexturesWidget.h"
 

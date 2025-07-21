@@ -9,7 +9,7 @@
 #include <QDialog>
 
 namespace Ui {
-  class SphereDialog;
+class SphereDialog;
 }
 
 /**
@@ -27,24 +27,24 @@ public:
    * @param parent The parent widget for this dialog.
    */
   explicit SphereDialog(QWidget* parent = nullptr);
-  
+
   /**
    * @brief Gets the radius of the sphere.
    * @return The radius of the sphere.
    */
   double getRadius() const;
-  
+
   /**
    * @brief Gets the number of segments of the sphere.
    * @return The number of segments of the sphere.
    */
-  int    getSegments() const;
-  
+  int getSegments() const;
+
   /**
    * @brief Gets the number of rings of the sphere.
    * @return The number of rings of the sphere.
    */
-  int    getRings() const;
+  int getRings() const;
 
   ~SphereDialog(); ///< Default destructor for the SphereDialog class.
 

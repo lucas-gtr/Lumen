@@ -23,6 +23,4 @@ linalg::Vec3d Vec3Editor::getValue() const {
 
 void Vec3Editor::onValueChanged() { emit valueChanged(getValue()); }
 
-Vec3Editor::~Vec3Editor() {
-  delete ui;
-}
+Vec3Editor::~Vec3Editor() { delete ui; }

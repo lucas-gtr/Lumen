@@ -16,7 +16,7 @@ class Texture;
 class TextureManager;
 
 namespace Ui {
-  class TexturesWidget;
+class TexturesWidget;
 }
 
 /**
@@ -40,7 +40,7 @@ public:
    * @param texture_manager The TextureManager instance to set.
    */
   void setTextureManager(TextureManager* texture_manager);
-  
+
   /**
    * @brief Sets the model for the textures list view.
    * @param model The TexturesListModel instance to set as the model for the textures list view.

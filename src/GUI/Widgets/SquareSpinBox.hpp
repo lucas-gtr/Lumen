@@ -10,7 +10,7 @@
 /**
  * @class SquareSpinBox
  * @brief A spin box that allows selection of square numbers.
- * 
+ *
  * This class inherits from QSpinBox and overrides methods to ensure that the values
  * are always square numbers. It provides functionality to step through square numbers
  * when the user interacts with the spin box.

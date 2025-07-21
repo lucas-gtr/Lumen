@@ -18,7 +18,7 @@ class Light;
 enum class ColorSpace : uint8_t;
 
 namespace Ui {
-  class MainWindow;
+class MainWindow;
 }
 
 class MainWindow : public QMainWindow {

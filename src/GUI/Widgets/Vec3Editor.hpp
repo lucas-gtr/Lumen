@@ -10,7 +10,7 @@
 #include <linalg/Vec3.hpp>
 
 namespace Ui {
-  class Vec3Editor;
+class Vec3Editor;
 }
 
 /**

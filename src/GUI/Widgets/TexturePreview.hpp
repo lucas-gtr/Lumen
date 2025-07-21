@@ -14,7 +14,7 @@
 /**
  * @class TexturePreview
  * @brief A widget that displays a preview of a texture.
- * 
+ *
  * This class inherits from QLabel and provides functionality to set an image preview
  * based on the provided image data and properties. It can handle both color images and
  * solid colors, and it can create a QImage from the raw image data.

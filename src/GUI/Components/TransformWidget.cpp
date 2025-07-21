@@ -1,6 +1,6 @@
+#include "TransformWidget.hpp"
 #include "Core/Config.hpp"
 #include "Core/Transform.hpp"
-#include "TransformWidget.hpp"
 #include "ui_TransformWidget.h"
 
 TransformWidget::TransformWidget(QWidget* parent) : QGroupBox(parent), ui(new Ui::TransformWidget) {
@@ -49,6 +49,4 @@ void TransformWidget::onScaleChanged(const linalg::Vec3d& new_scale) {
   }
 }
 
-TransformWidget::~TransformWidget() {
-  delete ui;
-}
+TransformWidget::~TransformWidget() { delete ui; }

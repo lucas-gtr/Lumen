@@ -11,7 +11,7 @@
 
 class Transform;
 namespace Ui {
-  class TransformWidget;
+class TransformWidget;
 }
 
 /**
@@ -29,7 +29,7 @@ public:
    * @param parent The parent widget for this transform widget.
    */
   explicit TransformWidget(QWidget* parent = nullptr);
-  
+
   /**
    * @brief Sets the Transform object for this widget.
    * @param transform The Transform instance to set.

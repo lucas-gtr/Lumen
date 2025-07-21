@@ -13,7 +13,7 @@
 class Light;
 
 namespace Ui {
-  class LightWidget;
+class LightWidget;
 }
 
 /**
@@ -31,7 +31,7 @@ public:
    * @param parent The parent widget for this light widget.
    */
   explicit LightWidget(QWidget* parent = nullptr);
-  
+
   /**
    * @brief Sets the light for this widget.
    * @param light The Light object to set.

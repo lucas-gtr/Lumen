@@ -9,13 +9,13 @@
 #include <QWidget>
 
 #include "Core/CommonTypes.hpp"
-#include "Rendering/Renderer.hpp"
 #include "Rendering/RenderSettings.hpp"
+#include "Rendering/Renderer.hpp"
 
 class Scene;
 
 namespace Ui {
-  class RenderSettingsWidget;
+class RenderSettingsWidget;
 }
 
 class RenderWindow;
@@ -23,7 +23,7 @@ class RenderWindow;
 /**
  * @class RenderSettingsWidget
  * @brief A widget for configuring rendering settings.
- * 
+ *
  * This class provides a user interface for adjusting various rendering settings such as image dimensions,
  * format, samples per pixel, maximum bounces, render mode, thread count, and chunk size.
  * It allows users to start rendering and provides feedback on the rendering progress.
@@ -42,7 +42,7 @@ public:
    * @param scene The scene to be rendered.
    */
   void setScene(Scene* scene);
-  
+
   /**
    * @brief Updates the widget to reflect the current render settings.
    */

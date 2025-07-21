@@ -89,6 +89,4 @@ void CameraWidget::onFarPlaneChanged(double value) {
   }
 }
 
-CameraWidget::~CameraWidget() {
-  delete ui;
-}
+CameraWidget::~CameraWidget() { delete ui; }
