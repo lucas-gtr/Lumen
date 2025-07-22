@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-07-22 15:49:10</td>
+      <td>2025-07-22 16:25:56</td>
     </tr>
   </table>
 </div>
@@ -73,10 +73,10 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l13">DirectionalLight::getDirection() const (line 13)</a></td><td>called 452 times, returned 452 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l16">DirectionalLight::getDirectionFromPoint(linalg::Vec3&lt;double&gt; const&amp;) const (line 16)</a></td><td>called 164 times, returned 164 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l19">DirectionalLight::getLightFactor(linalg::Vec3&lt;double&gt; const&amp;, linalg::Vec3&lt;double&gt; const&amp;) const (line 19)</a></td><td>called 82 times, returned 82 times</td><td>81.0%</td></tr>
-    <tr><td><a href="#l8">DirectionalLight::setDirection(linalg::Vec3&lt;double&gt; const&amp;) (line 8)</a></td><td>called 411 times, returned 411 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l13">DirectionalLight::getDirection() const (line 13)</a></td><td>called 464 times, returned 464 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l16">DirectionalLight::getDirectionFromPoint(linalg::Vec3&lt;double&gt; const&amp;) const (line 16)</a></td><td>called 168 times, returned 168 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l19">DirectionalLight::getLightFactor(linalg::Vec3&lt;double&gt; const&amp;, linalg::Vec3&lt;double&gt; const&amp;) const (line 19)</a></td><td>called 84 times, returned 84 times</td><td>81.0%</td></tr>
+    <tr><td><a href="#l8">DirectionalLight::setDirection(linalg::Vec3&lt;double&gt; const&amp;) (line 8)</a></td><td>called 422 times, returned 422 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -144,28 +144,28 @@
       <td class="lineno"><a id="l8" href="#l8">8</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">411</td>
+      <td class="linecount coveredLine">422</td>
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">DirectionalLight::setDirection</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">direction</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l9" href="#l9">9</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">411</td>
+      <td class="linecount coveredLine">422</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">direction</span><span class="p">.</span><span class="n">normalized</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l10" href="#l10">10</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">411</td>
+      <td class="linecount coveredLine">422</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">getLightChangedObserver</span><span class="p">().</span><span class="n">notify</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l11" href="#l11">11</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">411</td>
+      <td class="linecount coveredLine">422</td>
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -179,7 +179,7 @@
       <td class="lineno"><a id="l13" href="#l13">13</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">452</td>
+      <td class="linecount coveredLine">464</td>
       <td class="src coveredLine"><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="nf">DirectionalLight::getDirection</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_direction</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -200,7 +200,7 @@
       <td class="lineno"><a id="l16" href="#l16">16</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">164</td>
+      <td class="linecount coveredLine">168</td>
       <td class="src coveredLine"><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="nf">DirectionalLight::getDirectionFromPoint</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">point</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="n">m_direction</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -221,14 +221,14 @@
       <td class="lineno"><a id="l19" href="#l19">19</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">82</td>
+      <td class="linecount coveredLine">84</td>
       <td class="src coveredLine"><span class="n">ColorRGB</span><span class="w"> </span><span class="nf">DirectionalLight::getLightFactor</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">point</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">normal</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l20" href="#l20">20</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">82</td>
+      <td class="linecount coveredLine">84</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">dot_product</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">linalg</span><span class="o">::</span><span class="n">dot</span><span class="p">(</span><span class="o">-</span><span class="n">m_direction</span><span class="p">.</span><span class="n">normalized</span><span class="p">(),</span><span class="w"> </span><span class="n">normal</span><span class="p">.</span><span class="n">normalized</span><span class="p">());</span></td>
     </tr>
     <tr class="source-line">
@@ -237,12 +237,12 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 4 taken 82 times.</div>
-          <div class="takenBranch">&check; Branch 7 taken 82 times.</div>
+          <div class="takenBranch">&check; Branch 4 taken 84 times.</div>
+          <div class="takenBranch">&check; Branch 7 taken 84 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">82</td>
+      <td class="linecount coveredLine">84</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">getIntensity</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">getColor</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">dot_product</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">

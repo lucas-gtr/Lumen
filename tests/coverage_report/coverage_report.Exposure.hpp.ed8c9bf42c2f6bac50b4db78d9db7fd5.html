@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-07-22 15:49:10</td>
+      <td>2025-07-22 16:25:56</td>
     </tr>
   </table>
 </div>
@@ -73,8 +73,8 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l31">ExposureToneMapping::ExposureToneMapping(double) (line 31)</a></td><td>called 271 times, returned 271 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l43">ExposureToneMapping::apply(double&amp;) const (line 43)</a></td><td>called 46080123 times, returned 46080123 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l31">ExposureToneMapping::ExposureToneMapping(double) (line 31)</a></td><td>called 278 times, returned 278 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l43">ExposureToneMapping::apply(double&amp;) const (line 43)</a></td><td>called 47520126 times, returned 47520126 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -303,7 +303,7 @@
       <td class="lineno"><a id="l31" href="#l31">31</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">271</td>
+      <td class="linecount coveredLine">278</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">ExposureToneMapping</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">exposure</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_exposure</span><span class="p">(</span><span class="n">exposure</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span></td>
     </tr>
     <tr class="source-line">
@@ -387,7 +387,7 @@
       <td class="lineno"><a id="l43" href="#l43">43</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">46080123</td>
+      <td class="linecount coveredLine">47520126</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="kt">double</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_exposure</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">

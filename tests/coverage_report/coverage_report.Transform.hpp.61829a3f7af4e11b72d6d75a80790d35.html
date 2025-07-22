@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-07-22 15:49:10</td>
+      <td>2025-07-22 16:25:56</td>
     </tr>
   </table>
 </div>
@@ -73,17 +73,17 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l52">Transform::Transform() (line 52)</a></td><td>called 5031 times, returned 5031 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l209">Transform::getInverseMatrix() const (line 209)</a></td><td>called 433 times, returned 433 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l215">Transform::getNormalMatrix() const (line 215)</a></td><td>called 472 times, returned 472 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l161">Transform::getPosition() const (line 161)</a></td><td>called 2163 times, returned 2163 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l173">Transform::getRotationDeg() const (line 173)</a></td><td>called 123 times, returned 123 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l191">Transform::getRotationMatrix() const (line 191)</a></td><td>called 40 times, returned 40 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l167">Transform::getRotationRad() const (line 167)</a></td><td>called 246 times, returned 246 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l179">Transform::getScale() const (line 179)</a></td><td>called 287 times, returned 287 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l71">Transform::getTransformationChangedObserver() (line 71)</a></td><td>called 428 times, returned 428 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l203">Transform::getTransformationMatrix() const (line 203)</a></td><td>called 1210 times, returned 1210 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l217">Transform::~Transform() (line 217)</a></td><td>called 5101 times, returned 5101 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l52">Transform::Transform() (line 52)</a></td><td>called 5184 times, returned 5184 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l209">Transform::getInverseMatrix() const (line 209)</a></td><td>called 446 times, returned 446 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l215">Transform::getNormalMatrix() const (line 215)</a></td><td>called 486 times, returned 486 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l161">Transform::getPosition() const (line 161)</a></td><td>called 2219 times, returned 2219 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l173">Transform::getRotationDeg() const (line 173)</a></td><td>called 126 times, returned 126 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l191">Transform::getRotationMatrix() const (line 191)</a></td><td>called 45 times, returned 45 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l167">Transform::getRotationRad() const (line 167)</a></td><td>called 252 times, returned 252 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l179">Transform::getScale() const (line 179)</a></td><td>called 294 times, returned 294 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l71">Transform::getTransformationChangedObserver() (line 71)</a></td><td>called 440 times, returned 440 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l203">Transform::getTransformationMatrix() const (line 203)</a></td><td>called 1242 times, returned 1242 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l217">Transform::~Transform() (line 217)</a></td><td>called 5254 times, returned 5254 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -459,7 +459,7 @@
       <td class="lineno"><a id="l52" href="#l52">52</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">5031</td>
+      <td class="linecount coveredLine">5184</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">Transform</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_position</span><span class="p">(</span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)),</span><span class="w"> </span><span class="n">m_rotation</span><span class="p">(</span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)),</span><span class="w"> </span><span class="n">m_scale</span><span class="p">(</span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="p">(</span><span class="mf">1.0</span><span class="p">))</span><span class="w"> </span><span class="p">{}</span></td>
     </tr>
     <tr class="source-line">
@@ -592,7 +592,7 @@
       <td class="lineno"><a id="l71" href="#l71">71</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">428</td>
+      <td class="linecount coveredLine">440</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">Observer</span><span class="o">&lt;&gt;&amp;</span><span class="w"> </span><span class="n">getTransformationChangedObserver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_transformation_changed_observer</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1222,7 +1222,7 @@
       <td class="lineno"><a id="l161" href="#l161">161</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">2163</td>
+      <td class="linecount coveredLine">2219</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="nf">getPosition</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_position</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1264,7 +1264,7 @@
       <td class="lineno"><a id="l167" href="#l167">167</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">246</td>
+      <td class="linecount coveredLine">252</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="nf">getRotationRad</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_rotation</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">DEG_TO_RAD</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1306,7 +1306,7 @@
       <td class="lineno"><a id="l173" href="#l173">173</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">123</td>
+      <td class="linecount coveredLine">126</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="nf">getRotationDeg</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_rotation</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1348,7 +1348,7 @@
       <td class="lineno"><a id="l179" href="#l179">179</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">287</td>
+      <td class="linecount coveredLine">294</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="nf">getScale</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_scale</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1432,7 +1432,7 @@
       <td class="lineno"><a id="l191" href="#l191">191</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">40</td>
+      <td class="linecount coveredLine">45</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">linalg</span><span class="o">::</span><span class="n">Mat3d</span><span class="w"> </span><span class="nf">getRotationMatrix</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_rotation_matrix</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1516,7 +1516,7 @@
       <td class="lineno"><a id="l203" href="#l203">203</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">1210</td>
+      <td class="linecount coveredLine">1242</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">linalg</span><span class="o">::</span><span class="n">Mat4d</span><span class="w"> </span><span class="nf">getTransformationMatrix</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_transformation_matrix</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1558,7 +1558,7 @@
       <td class="lineno"><a id="l209" href="#l209">209</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">433</td>
+      <td class="linecount coveredLine">446</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">linalg</span><span class="o">::</span><span class="n">Mat4d</span><span class="w"> </span><span class="nf">getInverseMatrix</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_inverse_matrix</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1600,7 +1600,7 @@
       <td class="lineno"><a id="l215" href="#l215">215</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">472</td>
+      <td class="linecount coveredLine">486</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">linalg</span><span class="o">::</span><span class="n">Mat3d</span><span class="w"> </span><span class="nf">getNormalMatrix</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_normal_matrix</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1614,7 +1614,7 @@
       <td class="lineno"><a id="l217" href="#l217">217</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">5101</td>
+      <td class="linecount coveredLine">5254</td>
       <td class="src coveredLine"><span class="w">  </span><span class="o">~</span><span class="n">Transform</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default destructor.</span></td>
     </tr>
     <tr class="source-line">
