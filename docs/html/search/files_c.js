@@ -19,7 +19,6 @@ var searchData=
   ['rendertime_2ehpp_16',['RenderTime.hpp',['../RenderTime_8hpp.html',1,'']]],
   ['renderwindow_2ecpp_17',['RenderWindow.cpp',['../RenderWindow_8cpp.html',1,'']]],
   ['renderwindow_2ehpp_18',['RenderWindow.hpp',['../RenderWindow_8hpp.html',1,'']]],
-  ['renderwinodw_2ecpp_19',['RenderWinodw.cpp',['../RenderWinodw_8cpp.html',1,'']]],
-  ['resourcemanagergl_2ecpp_20',['ResourceManagerGL.cpp',['../ResourceManagerGL_8cpp.html',1,'']]],
-  ['resourcemanagergl_2ehpp_21',['ResourceManagerGL.hpp',['../ResourceManagerGL_8hpp.html',1,'']]]
+  ['resourcemanagergl_2ecpp_19',['ResourceManagerGL.cpp',['../ResourceManagerGL_8cpp.html',1,'']]],
+  ['resourcemanagergl_2ehpp_20',['ResourceManagerGL.hpp',['../ResourceManagerGL_8hpp.html',1,'']]]
 ];

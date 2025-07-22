@@ -11,7 +11,7 @@
 
 static constexpr double NORMALIZED_TO_COLOR8 = 255.999;
 static constexpr int    COLOR8_MAX_VALUE     = 255;
-static constexpr double COLOR8_TO_NORMALIZED = 1.0 / COLOR8_MAX_VALUE;
+static constexpr double COLOR8_TO_NORMALIZED = 1.0 / NORMALIZED_TO_COLOR8;
 
 static constexpr double RED_CHANNEL   = 0.299;
 static constexpr double GREEN_CHANNEL = 0.587;

@@ -14,7 +14,7 @@ ExportWidget::ExportWidget(QWidget* parent) : QGroupBox(parent), ui(new Ui::Expo
   ui->fileSelector->setMode(FileSelectorMode::FOLDER);
   ui->jpegQualityWidget->setMinimum(1);
   ui->jpegQualityWidget->setMaximum(MAX_JPEG_QUALITY);
-  ui->jpegQualityWidget->setStep(JPEG_QUALITY_COMBO_STEP);
+  ui->jpegQualityWidget->setStep(JPEG_QUALITY_STEP);
   ui->jpegQualityWidget->setValue(DEFAULT_JPEG_QUALITY);
 
   connect(ui->formatComboBox, &QComboBox::currentTextChanged, this, &ExportWidget::onFormatChanged);

@@ -163,4 +163,20 @@ TEST_F(FramebufferTest, InvalidThreadIdThrowsError) {
   EXPECT_TRUE(outputExceeding.find("Invalid thread ID") != std::string::npos);
 }
 
+TEST_F(FramebufferTest, ScaleBufferValuesScalesCorrectly) {
+  framebuffer.setFramebufferProperties({2, 2, 3});
+  framebuffer.initThreadBuffers(1);
+  Framebuffer::SetThreadId(0);
+
+  framebuffer.setPixelColor({0, 0}, ColorRGBA{0.5, 0.5, 0.5, 1.0}, 1.0);
+  framebuffer.reduceThreadBuffers();
+
+  framebuffer.scaleBufferValues(2.0);
+
+  const double* data = framebuffer.getFramebuffer();
+  EXPECT_DOUBLE_EQ(data[0], 1.0); 
+  EXPECT_DOUBLE_EQ(data[1], 1.0); 
+  EXPECT_DOUBLE_EQ(data[2], 1.0); 
+}
+
 

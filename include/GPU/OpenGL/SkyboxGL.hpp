@@ -1,5 +1,11 @@
+/**
+ * @file SkyboxGL.hpp
+ * @brief Header file for the SkyboxGL class, which manages OpenGL skybox rendering
+ */
 #ifndef GPU_OPENGL_SKYBOXGL_HPP
 #define GPU_OPENGL_SKYBOXGL_HPP
+
+// GCOVR_EXCL_START
 
 #include <memory>
 
@@ -36,5 +42,7 @@ public:
    */
   TextureGL* getTexture() const;
 };
+
+// GCOVR_EXCL_STOP
 
 #endif // GPU_OPENGL_SKYBOXGL_HPP

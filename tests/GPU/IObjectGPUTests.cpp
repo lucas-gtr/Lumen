@@ -82,3 +82,8 @@ TEST_F(IObjectGPUTest, VertexAndIndexDataTest) {
     EXPECT_FLOAT_EQ(vertices[1], 0.0f); // y
     EXPECT_FLOAT_EQ(vertices[2], 0.0f); // z
 }
+
+TEST_F(IObjectGPUTest, GetSourceTest) {
+    TestObjectGPU gpuObject(&object);
+    EXPECT_EQ(gpuObject.getSource(), &object);
+}

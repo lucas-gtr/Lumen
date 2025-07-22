@@ -135,4 +135,21 @@ TEST(CameraTest, TestFarPlaneAndNearPlaneInteraction) {
     EXPECT_DOUBLE_EQ(camera.getFarPlane(), 100.0);
 }
 
+TEST(CameraTest, CameraChangedObserver) {
+    Camera camera;
+    bool camera_changed_called = false;
+
+    camera.getCameraChangedObserver().add([&]() { camera_changed_called = true; });
+
+    camera.setHorizontalFov(60.0);
+    EXPECT_TRUE(camera_changed_called);
+
+    camera_changed_called = false;
+    camera.setSensorWidth(35.0);
+    EXPECT_TRUE(camera_changed_called);
+
+    camera_changed_called = false;
+    camera.setFocalLength(50.0);
+    EXPECT_TRUE(camera_changed_called);
+}
 

@@ -63,11 +63,6 @@ void Framebuffer::reduceThreadBuffers() {
 }
 
 void Framebuffer::scaleBufferValues(double factor) {
-  if(factor <= 0.0) {
-    std::cerr << "Factor must be greater than zero. No changes applied.\n";
-    return;
-  }
-
   for(std::uint64_t i = 0; i < m_framebuffer_properties.bufferSize(); ++i) {
     m_framebuffer[i] *= factor;
   }

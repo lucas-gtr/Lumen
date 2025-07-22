@@ -61,9 +61,6 @@ void RenderExporter::setToneMapping(ToneMapping tone_mapping) {
   case ToneMapping::EXPOSURE:
     m_tone_mapping_strategy = std::make_unique<ExposureToneMapping>(m_exposure);
     break;
-  default:
-    std::cerr << "Unknown tone mapping strategy. Using no tone mapping." << '\n';
-    m_tone_mapping_strategy = std::make_unique<NoToneMapping>();
   }
 }
 
@@ -93,17 +90,11 @@ void RenderExporter::setOutputFormat(OutputFormat output_format) {
   case OutputFormat::HDR:
     m_output_format_strategy = std::make_unique<OutputFormatHdr>();
     break;
-  default:
-    std::cerr << "Unknown output format. Using PNG format." << '\n';
-    m_output_format_strategy = std::make_unique<OutputFormatPng>();
   }
 }
 
 bool RenderExporter::exportRender() {
-  if(m_output_format_strategy == nullptr) {
-    std::cerr << "Output format is not set. Using default PNG format." << '\n';
-    return false;
-  }
+  updateImageToExport();
   bool render_success = false;
 
   if(m_output_format == OutputFormat::HDR) {

@@ -47,8 +47,18 @@ public:
   Scene(Scene&& other)                 = delete;
   Scene& operator=(Scene&& other)      = delete;
 
+  /**
+   * @brief Gets the available name for a new object in the scene.
+   * @param name The base name for the object.
+   * @return A unique name for the object that does not conflict with existing names.
+   */
   std::string getAvailableObjectName(const std::string& name) const;
 
+  /**
+   * @brief Gets the available name for a new light in the scene.
+   * @param name The base name for the light.
+   * @return A unique name for the light that does not conflict with existing names.
+   */
   std::string getAvailableLightName(const std::string& name) const;
 
   /**

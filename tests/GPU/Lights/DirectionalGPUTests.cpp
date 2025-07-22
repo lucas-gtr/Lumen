@@ -37,3 +37,10 @@ TEST(DirectionalGPUTest, Intensity) {
     linalg::Vec3f expected_color = linalg::Vec3f(1.0f, 1.0f, 1.0f) * 2.0f;
     EXPECT_EQ(gpu_light.getColor(), expected_color);
 }
+
+TEST(DirectionalGPUTest, GetSource) {
+    DirectionalLight light;
+    DirectionalLightGPU gpu_light(&light);
+
+    EXPECT_EQ(gpu_light.getSource(), &light);
+}

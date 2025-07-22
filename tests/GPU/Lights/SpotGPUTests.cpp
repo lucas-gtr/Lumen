@@ -52,3 +52,10 @@ TEST(SpotGPUTest, Intensity) {
     linalg::Vec3f expected_color = linalg::Vec3f(1.0f, 1.0f, 1.0f) * 2.0f;
     EXPECT_EQ(gpu_light.getColor(), expected_color);
 }
+
+TEST(SpotGPUTest, GetSource) {
+    SpotLight light;
+    SpotLightGPU gpu_light(&light);
+
+    EXPECT_EQ(gpu_light.getSource(), &light);
+}

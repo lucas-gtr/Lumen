@@ -1,5 +1,6 @@
 #include "SceneObjects/Object3D.hpp"
 #include "Geometry/CubeMeshBuilder.hpp"
+#include "Surface/MaterialManager.hpp"
 
 #include <gtest/gtest.h>
 
@@ -64,4 +65,43 @@ TEST(Object3DTest, BoundsTransformationTest) {
 
     linalg::Vec3d expectedMinBound(1.0 - std::sqrt(8.0), 1.0, 3.0 - std::sqrt(8.0));
     linalg::Vec3d expectedMaxBound(1.0 + std::sqrt(8.0), 3.0, 3.0 + std::sqrt(8.0));
+}
+
+TEST(Object3DTest, MaterialChangedObserverTest) {
+    Mesh mesh;
+    Object3D obj(mesh);
+    bool material_changed_called = false;
+
+    obj.getMaterialChangedObserver().add([&](const Object3D* object) {
+        material_changed_called = true;
+    });
+
+    auto material = Material();
+    obj.setMaterial(&material);
+
+    EXPECT_TRUE(material_changed_called);
+}
+
+TEST(Object3DTest, ObjectDeletedObserverTest) {
+    Mesh mesh;
+    Object3D* obj = new Object3D(mesh);
+    bool object_deleted_called = false;
+
+    obj->getObjectDeletedObserver().add([&](const Object3D* object) {
+        object_deleted_called = true;
+    });
+
+    delete obj;
+
+    EXPECT_TRUE(object_deleted_called);
+}
+
+TEST(Object3DTest, SetMaterialNullptrTest) {
+    Mesh mesh;
+    Object3D obj(mesh);
+    
+    EXPECT_EQ(obj.getMaterial(), MaterialManager::DefaultMaterial());
+
+    obj.setMaterial(nullptr);
+    EXPECT_EQ(obj.getMaterial(), MaterialManager::DefaultMaterial());
 }

@@ -62,6 +62,7 @@ TEST(ColorSpaceConversionTest, ConvertToLinearSpaceAboveThreshold) {
     double value = 0.5;
     double expected = std::pow((0.5 + COLOR_SPACE_ADDENDUM) * SRGB_FACTOR, SRGB_GAMMA);
     convertToLinearSpace(value);
+    std::cout << "Expected: " << expected << ", Value: " << value << std::endl;
     EXPECT_NEAR(value, expected, 1e-7);
 }
 
@@ -79,4 +80,19 @@ TEST(ColorSpaceConversionTest, ConvertToLinearAndBack) {
     convertToLinearSpace(converted);
     convertToSRGBSpace(converted);
     EXPECT_NEAR(converted, original, 1e-6);
+}
+
+TEST(ColorSpaceConversionTest, ConvertToLinearFloatBelowThreshold) {
+    float value = 0.02f;
+    float expected = value * static_cast<float>(SRGB_THRESHOLD_FACTOR);
+    convertToLinearSpace(value);
+    EXPECT_NEAR(value, expected, 1e-7f);
+}
+
+TEST(ColorSpaceConversionTest, ConvertToLinearFloatAboveThreshold) {
+    float value = 0.5f;
+    float expected = std::pow((value + static_cast<float>(COLOR_SPACE_ADDENDUM)) * static_cast<float>(SRGB_FACTOR),
+                              static_cast<float>(SRGB_GAMMA));
+    convertToLinearSpace(value);
+    EXPECT_NEAR(value, expected, 1e-7f);
 }

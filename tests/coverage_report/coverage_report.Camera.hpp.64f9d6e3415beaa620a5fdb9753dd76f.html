@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-07-20 19:35:25</td>
+      <td>2025-07-22 17:04:40</td>
     </tr>
   </table>
 </div>
@@ -41,15 +41,15 @@
     </tr>
     <tr>
       <th scope="row">Lines:</th>
-      <td>10</td>
       <td>11</td>
-      <td class="coverage-high">90.9%</td>
+      <td>11</td>
+      <td class="coverage-high">100.0%</td>
     </tr>
     <tr>
       <th scope="row">Functions:</th>
-      <td>10</td>
       <td>11</td>
-      <td class="coverage-high">90.9%</td>
+      <td>11</td>
+      <td class="coverage-high">100.0%</td>
     </tr>
     <tr>
       <th scope="row">Branches:</th>
@@ -73,17 +73,17 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l108">Camera::getAperture() const (line 108)</a></td><td>called 12 times, returned 12 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l54">Camera::getCameraChangedObserver() (line 54)</a></td><td>not called</td><td>0.0%</td></tr>
-    <tr><td><a href="#l161">Camera::getFarPlane() const (line 161)</a></td><td>called 87 times, returned 87 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l96">Camera::getFocalLength() const (line 96)</a></td><td>called 27 times, returned 27 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l132">Camera::getFocusDistance() const (line 132)</a></td><td>called 27 times, returned 27 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l72">Camera::getFovX() const (line 72)</a></td><td>called 24 times, returned 24 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l143">Camera::getLensRadius() const (line 143)</a></td><td>called 21 times, returned 21 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l149">Camera::getNearPlane() const (line 149)</a></td><td>called 12 times, returned 12 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l84">Camera::getSensorWidth() const (line 84)</a></td><td>called 42 times, returned 42 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l120">Camera::getShutterSpeed() const (line 120)</a></td><td>called 12 times, returned 12 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l169">Camera::~Camera() (line 169)</a></td><td>called 72 times, returned 72 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l108">Camera::getAperture() const (line 108)</a></td><td>called 104 times, returned 104 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l54">Camera::getCameraChangedObserver() (line 54)</a></td><td>called 26 times, returned 26 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l161">Camera::getFarPlane() const (line 161)</a></td><td>called 754 times, returned 754 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l96">Camera::getFocalLength() const (line 96)</a></td><td>called 234 times, returned 234 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l132">Camera::getFocusDistance() const (line 132)</a></td><td>called 234 times, returned 234 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l72">Camera::getFovX() const (line 72)</a></td><td>called 208 times, returned 208 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l143">Camera::getLensRadius() const (line 143)</a></td><td>called 182 times, returned 182 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l149">Camera::getNearPlane() const (line 149)</a></td><td>called 104 times, returned 104 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l84">Camera::getSensorWidth() const (line 84)</a></td><td>called 364 times, returned 364 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l120">Camera::getShutterSpeed() const (line 120)</a></td><td>called 104 times, returned 104 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l169">Camera::~Camera() (line 169)</a></td><td>called 389 times, returned 389 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -473,8 +473,8 @@
       <td class="lineno"><a id="l54" href="#l54">54</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount uncoveredLine">&cross;</td>
-      <td class="src uncoveredLine"><span class="w">  </span><span class="n">Observer</span><span class="o">&lt;&gt;&amp;</span><span class="w"> </span><span class="n">getCameraChangedObserver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_camera_changed_observer</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
+      <td class="linecount coveredLine">26</td>
+      <td class="src coveredLine"><span class="w">  </span><span class="n">Observer</span><span class="o">&lt;&gt;&amp;</span><span class="w"> </span><span class="n">getCameraChangedObserver</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_camera_changed_observer</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l55" href="#l55">55</a></td>
@@ -599,7 +599,7 @@
       <td class="lineno"><a id="l72" href="#l72">72</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">24</td>
+      <td class="linecount coveredLine">208</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getFovX</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_horizontal_fov</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -683,7 +683,7 @@
       <td class="lineno"><a id="l84" href="#l84">84</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">42</td>
+      <td class="linecount coveredLine">364</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getSensorWidth</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_sensor_width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">MM_TO_M</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -767,7 +767,7 @@
       <td class="lineno"><a id="l96" href="#l96">96</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">27</td>
+      <td class="linecount coveredLine">234</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getFocalLength</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_focal_length</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">MM_TO_M</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -851,7 +851,7 @@
       <td class="lineno"><a id="l108" href="#l108">108</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">12</td>
+      <td class="linecount coveredLine">104</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getAperture</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_aperture</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -935,7 +935,7 @@
       <td class="lineno"><a id="l120" href="#l120">120</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">12</td>
+      <td class="linecount coveredLine">104</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getShutterSpeed</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_shutter_speed</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1019,7 +1019,7 @@
       <td class="lineno"><a id="l132" href="#l132">132</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">27</td>
+      <td class="linecount coveredLine">234</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getFocusDistance</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_focus_distance</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1096,7 +1096,7 @@
       <td class="lineno"><a id="l143" href="#l143">143</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">21</td>
+      <td class="linecount coveredLine">182</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getLensRadius</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_lens_radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">MM_TO_M</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1138,7 +1138,7 @@
       <td class="lineno"><a id="l149" href="#l149">149</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">12</td>
+      <td class="linecount coveredLine">104</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getNearPlane</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_near_plane</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1222,7 +1222,7 @@
       <td class="lineno"><a id="l161" href="#l161">161</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">87</td>
+      <td class="linecount coveredLine">754</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="nf">getFarPlane</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_far_plane</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1278,7 +1278,7 @@
       <td class="lineno"><a id="l169" href="#l169">169</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">72</td>
+      <td class="linecount coveredLine">389</td>
       <td class="src coveredLine"><span class="w">  </span><span class="o">~</span><span class="n">Camera</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default destructor.</span></td>
     </tr>
     <tr class="source-line">

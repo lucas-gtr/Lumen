@@ -6,7 +6,7 @@
 <area shape="poly" id="edge14_Node000000_Node000005" title=" " alt="" coords="262,71,357,83,356,89,261,76"/>
 <area shape="rect" id="Node000007" href="$classSpotLightGL.html" title="A class that represents a spot light in OpenGL, inheriting from SpotLightGPU." alt="" coords="359,141,459,167"/>
 <area shape="poly" id="edge15_Node000000_Node000007" title=" " alt="" coords="262,79,290,89,385,139,382,144,288,94,261,84"/>
-<area shape="rect" id="Node000003" href="$classLightGPU.html" title=" " alt="" coords="5,104,88,129"/>
+<area shape="rect" id="Node000003" href="$classLightGPU.html" title="A class that represents a light source in GPU rendering." alt="" coords="5,104,88,129"/>
 <area shape="rect" id="Node000002" href="$classDirectionalLightGPU.html" title="Represents a directional light in GPU memory." alt="" coords="136,5,289,31"/>
 <area shape="poly" id="edge16_Node000003_Node000002" title=" " alt="" coords="68,92,98,65,135,40,160,28,163,33,137,44,101,69,72,96"/>
 <area shape="rect" id="Node000004" href="$classPointLightGPU.html" title="Represents a point light in GPU memory." alt="" coords="155,104,270,129"/>

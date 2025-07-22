@@ -52,12 +52,7 @@ linalg::Vec3d Object3D::getMaxBound() const {
   return transformed;
 }
 
-Material* Object3D::getMaterial() const {
-  if(m_material == nullptr) {
-    throw std::runtime_error("Material is not set for this Object3D.");
-  }
-  return m_material;
-}
+Material* Object3D::getMaterial() const { return m_material; }
 
 Object3D::~Object3D() {
   m_object_deleted_observer.notify(this);

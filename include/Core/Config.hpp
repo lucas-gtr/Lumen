@@ -150,6 +150,7 @@ static constexpr float MAX_CAMERA_PITCH            = 89.0F * 3.14F / 180.0F;  //
 //<-------- OPENGL --------->
 static constexpr int          OPENGL_MAJOR_VERSION         = 3;
 static constexpr int          OPENGL_MINOR_VERSION         = 3;
+static constexpr int          OPENGL_REFRESH_RATE          = 16;
 static constexpr int          ERROR_MESSAGE_LENGTH         = 512;
 static constexpr int          QUAD_INDICES_COUNT           = 6;
 static constexpr int          LOAD_TEXTURE_UNIT            = 10;
@@ -185,45 +186,13 @@ static constexpr int MAX_SHADOW_MAP_SIZE     = 4096;
 static constexpr int CUBE_MAP_FACE_COUNT     = 6;
 
 //<-------- QT --------->
-static constexpr int              QT_DEFAULT_WINDOW_WIDTH      = 1920;
-static constexpr int              QT_DEFAULT_WINDOW_HEIGHT     = 1440;
-static constexpr std::string_view QT_WINDOW_TITLE              = "Lumen";
-static constexpr std::string_view DEFAULT_MATERIAL_NAME        = "Default Material";
-static constexpr std::string_view DEFAULT_DIFFUSE_TEXTURE_NAME = "Default Diffuse";
-static constexpr std::string_view DEFAULT_NORMAL_TEXTURE_NAME  = "Default Normal";
-static constexpr std::string_view DEFAULT_SKYBOX_NAME          = "Default Skybox";
-static constexpr std::string_view TAB_VIEWPORT_NAME            = "Viewport";
-static constexpr std::string_view TAB_TEXTURES_NAME            = "Textures";
-static constexpr std::string_view TAB_MATERIALS_NAME           = "Materials";
-static constexpr std::string_view TAB_SKYBOX_NAME              = "Skybox";
-static constexpr std::string_view TAB_RENDER_NAME              = "Render";
-
-//<-------- QT VIEWS --------->
-static constexpr double VIEWPORT_CAMERA_SETTINGS_DECIMALS       = 4;
-static constexpr double VIEWPORT_CAMERA_MOUSE_DRAG_STEP         = 0.01;
-static constexpr double VIEWPORT_CAMERA_MOUSE_WHEEL_STEP        = 0.1;
-static constexpr int    SHADOW_MAP_SIZE_STEP                    = 64;
-static constexpr double EXPOSURE_STEP                           = 0.1;
-static constexpr int    ADD_REMOVE_BUTTON_WIDTH                 = 24;
-static constexpr int    ADD_REMOVE_BUTTON_HEIGHT                = 32;
-static constexpr int    COLOR_BUTTON_WIDTH                      = 32;
-static constexpr int    COLOR_BUTTON_HEIGHT                     = 24;
-static constexpr int    TEXTURE_VIEW_TEXTURE_PREVIEW_MAX_SIZE   = 150;
-static constexpr int    SKYBOX_VIEW_TEXTURE_PREVIEW_MAX_SIZE    = 256;
-static constexpr int    MATERIAL_VIEW_TEXTURE_PREVIEW_MAX_SIZE  = 64;
-static constexpr int    RENDER_PROGRESS_BAR_MAX_PERCENT         = 100;
-static constexpr float  WHEEL_TICK_ANGLE                        = 120.0F;
-static constexpr int    OPENGL_REFRESH_RATE                     = 16; // in milliseconds
-static constexpr double APERTURE_STEP                           = 0.1;
-static constexpr int    BROWSE_BUTTON_WIDTH                     = 80;
-static constexpr int    MAIN_WIDOW_RIGHT_LAYOUT_MIN_WIDTH       = 420;
-static constexpr int    TEXTURE_MATERIAL_SELECTOR_MINIMUM_WIDTH = 200;
-static constexpr int    JPEG_QUALITY_COMBO_STEP                 = 5;
-static constexpr int    EXPORT_VIEW_MINIMUM_WIDTH               = 400;
-static constexpr int    HIERARCHY_TREE_INDENTATION              = 10;
-static constexpr int    LINE_EDIT_DOUBLE_VALIDATOR_DECIMALS     = 10;
-static constexpr int    LINE_EDIT_DOUBLE_DISPLAY_PRECISION      = 5;
-static constexpr int    TEXTURE_PREVIEW_MAX_SIZE                = 144;
+static constexpr int   QT_DEFAULT_WINDOW_WIDTH             = 1920;
+static constexpr int   QT_DEFAULT_WINDOW_HEIGHT            = 1440;
+static constexpr float WHEEL_TICK_ANGLE                    = 120.0F;
+static constexpr int   JPEG_QUALITY_STEP                   = 5;
+static constexpr int   LINE_EDIT_DOUBLE_VALIDATOR_DECIMALS = 10;
+static constexpr int   LINE_EDIT_DOUBLE_DISPLAY_PRECISION  = 5;
+static constexpr int   TEXTURE_PREVIEW_MAX_SIZE            = 144;
 
 static constexpr std::string_view GROUP_BOX_STYLESHEET = "QGroupBox {font-weight :bold; font-size: 14px;}";
 

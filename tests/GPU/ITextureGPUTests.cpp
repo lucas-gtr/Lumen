@@ -2,7 +2,6 @@
 #include "GPU/ITextureGPU.hpp"
 #include "Surface/Texture.hpp"
 
-// Implémentation minimale pour permettre le test
 class TestTextureGPU : public ITextureGPU {
 public:
   explicit TestTextureGPU(Texture* texture) : ITextureGPU(texture) {}
@@ -12,7 +11,6 @@ public:
   void release() override {  }
 };
 
-// Tests
 TEST(ITextureGPUTest, ConstructorStoresTexturePointer) {
   Texture texture;
   texture.setValue(1.0);

@@ -45,7 +45,7 @@ void LightWidget::updateWidget() {
   case LightType::SPOT: {
     ui->lightTypeWidget->setCurrentIndex(1);
     auto* spot_light = dynamic_cast<SpotLight*>(m_light);
-    if(spot_light != nullptr) {
+    if(spot_light == nullptr) {
       std::cerr << "LightWidget::updateWidget: Light is not a SpotLight.\n";
       return;
     }
@@ -57,7 +57,7 @@ void LightWidget::updateWidget() {
   case LightType::DIRECTIONAL: {
     ui->lightTypeWidget->setCurrentIndex(2);
     auto* directional_light = dynamic_cast<DirectionalLight*>(m_light);
-    if(directional_light != nullptr) {
+    if(directional_light == nullptr) {
       std::cerr << "LightWidget::updateWidget: Light is not a DirectionalLight.\n";
       return;
     }

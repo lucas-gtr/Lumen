@@ -119,3 +119,18 @@ TEST(SkyboxTest, GetTexture) {
   const Texture* retrieved_texture = skybox.getTexture();
   EXPECT_NE(retrieved_texture, nullptr);
 }
+
+TEST(SkyboxTest, TextureObserverNotifiesOnTextureChange) {
+  Skybox skybox;
+  Texture texture;
+
+  bool notified = false;
+  skybox.getTextureObserver().add([&]() { notified = true; });
+
+  skybox.setTexture(&texture);
+  EXPECT_TRUE(notified);
+
+  notified = false;
+  skybox.setTexture(nullptr);
+  EXPECT_FALSE(notified); // No notification expected when setting to nullptr
+}

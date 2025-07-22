@@ -1,6 +1,6 @@
 <map id="/home/lucasgtr/lumen/include/Rendering/Renderer.hpp" name="/home/lucasgtr/lumen/include/Rendering/Renderer.hpp">
 <area shape="rect" id="Node000001" title="Header file for the Renderer class." alt="" coords="399,5,632,45"/>
-<area shape="rect" id="Node000002" href="$RenderSettingsWidget_8hpp.html" title=" " alt="" coords="5,93,268,148"/>
+<area shape="rect" id="Node000002" href="$RenderSettingsWidget_8hpp.html" title="Header file for the RenderSettingsWidget class, which provides a user interface for configuring rende..." alt="" coords="5,93,268,148"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="426,51,244,96,242,91,425,46"/>
 <area shape="rect" id="Node000004" href="$MultiThreadedCPU_8cpp.html" title=" " alt="" coords="293,93,506,148"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="483,56,434,95,430,91,479,52"/>

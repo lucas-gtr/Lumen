@@ -89,7 +89,7 @@ add_library(GUI STATIC
   Application.cpp
 )
 
-set(CMAKE_PREFIX_PATH "/opt/Qt/6.8.2/gcc_64/lib/cmake")
+set(CMAKE_PREFIX_PATH ${Qt6Widgets_INCLUDE_DIRS})
 find_package(Qt6 REQUIRED COMPONENTS Widgets OpenGL OpenGLWidgets)
 
 target_link_libraries(GUI 
@@ -105,6 +105,7 @@ target_link_libraries(GUI
     RenderingGL
 )
 
+message(STATUS "Qt6 Widgets include directories: ${Qt6Widgets_INCLUDE_DIRS}")
 target_include_directories(GUI PUBLIC
     ${CMAKE_SOURCE_DIR}/include
     ${Qt6Widgets_INCLUDE_DIRS}

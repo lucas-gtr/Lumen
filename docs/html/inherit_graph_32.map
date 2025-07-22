@@ -1,13 +1,13 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="Node000000" title=" " alt="" coords="5,104,101,129"/>
-<area shape="rect" id="Node000001" href="$classCameraWidget.html" title=" " alt="" coords="157,5,275,31"/>
+<area shape="rect" id="Node000001" href="$classCameraWidget.html" title="A widget for displaying and editing camera settings." alt="" coords="157,5,275,31"/>
 <area shape="poly" id="edge37_Node000000_Node000001" title=" " alt="" coords="77,92,110,65,148,40,173,28,175,33,151,44,113,70,80,96"/>
-<area shape="rect" id="Node000002" href="$classExportWidget.html" title=" " alt="" coords="161,55,271,80"/>
+<area shape="rect" id="Node000002" href="$classExportWidget.html" title="A widget for exporting rendered images with various settings." alt="" coords="161,55,271,80"/>
 <area shape="poly" id="edge38_Node000000_Node000002" title=" " alt="" coords="108,97,172,78,174,83,110,102"/>
-<area shape="rect" id="Node000003" href="$classLightWidget.html" title=" " alt="" coords="166,104,266,129"/>
+<area shape="rect" id="Node000003" href="$classLightWidget.html" title="A widget for displaying and editing light settings." alt="" coords="166,104,266,129"/>
 <area shape="poly" id="edge39_Node000000_Node000003" title=" " alt="" coords="115,114,166,114,166,119,115,119"/>
-<area shape="rect" id="Node000004" href="$classObjectWidget.html" title=" " alt="" coords="161,153,271,179"/>
+<area shape="rect" id="Node000004" href="$classObjectWidget.html" title="A widget for displaying and editing properties of a 3D object." alt="" coords="161,153,271,179"/>
 <area shape="poly" id="edge40_Node000000_Node000004" title=" " alt="" coords="110,131,174,151,172,156,108,136"/>
-<area shape="rect" id="Node000005" href="$classTransformWidget.html" title=" " alt="" coords="149,203,283,228"/>
+<area shape="rect" id="Node000005" href="$classTransformWidget.html" title="A widget for displaying and editing transformation properties of a 3D object." alt="" coords="149,203,283,228"/>
 <area shape="poly" id="edge41_Node000000_Node000005" title=" " alt="" coords="80,136,113,163,151,188,177,200,175,205,148,192,110,167,77,141"/>
 </map>

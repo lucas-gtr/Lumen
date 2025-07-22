@@ -31,3 +31,20 @@ TEST(PointLightGLTest, UpdateLightSpaceMatrixUpdatesFarPlaneAndMatrix) {
       }
     }
 }
+
+TEST(PointLightGLTest, ObserverCallbacksUpdateDirectionAndMatrix) {
+  PointLight light;
+  light.setPosition({1.0f, 2.0f, 3.0f});
+  light.setColor({1.0f, 1.0f, 1.0f});
+  light.setIntensity(2.0f);
+
+  PointLightGL lightGL(&light);
+
+  EXPECT_EQ(lightGL.getColor(), linalg::Vec3f(1.0f, 1.0f, 1.0f) * 2.0);
+
+  light.setIntensity(3.0f);
+  EXPECT_EQ(lightGL.getColor(), linalg::Vec3f(1.0f, 1.0f, 1.0f) * 3.0);
+
+  light.setPosition({2.0f, 3.0f, 4.0f});
+  EXPECT_EQ(lightGL.getPosition(), linalg::Vec3f(2.0f, 3.0f, 4.0f));
+}

@@ -5,7 +5,7 @@ var searchData=
   ['mainwindow_2ehpp_2',['MainWindow.hpp',['../MainWindow_8hpp.html',1,'']]],
   ['mapfromsource_3',['mapFromSource',['../classDefaultOptionProxyModel.html#ab5ab3b764b2325eea0401f5a43cf2b06',1,'DefaultOptionProxyModel']]],
   ['maptosource_4',['mapToSource',['../classDefaultOptionProxyModel.html#a282f2ea11d5439cb821456e1b2396b24',1,'DefaultOptionProxyModel']]],
-  ['material_5',['material',['../classMaterial.html',1,'Material'],['../structRayHitInfo.html#a60e243074df0df25744353eaa114b3d1',1,'RayHitInfo::material'],['../classMaterial.html#a883f8dac6125f3c0266efe2b28f65882',1,'Material::Material(Material &amp;&amp;)=delete'],['../classMaterial.html#a25b550b11c2b1c2154b3a79fc38c3938',1,'Material::Material(const Material &amp;)=delete'],['../classMaterial.html#a137e987401b63eb7c6c27c3e38bc74b5',1,'Material::Material()']]],
+  ['material_5',['material',['../classMaterial.html',1,'Material'],['../classMaterial.html#a883f8dac6125f3c0266efe2b28f65882',1,'Material::Material(Material &amp;&amp;)=delete'],['../classMaterial.html#a25b550b11c2b1c2154b3a79fc38c3938',1,'Material::Material(const Material &amp;)=delete'],['../classMaterial.html#a137e987401b63eb7c6c27c3e38bc74b5',1,'Material::Material()'],['../structRayHitInfo.html#a60e243074df0df25744353eaa114b3d1',1,'RayHitInfo::material']]],
   ['material_2ecpp_6',['Material.cpp',['../Material_8cpp.html',1,'']]],
   ['material_2ehpp_7',['Material.hpp',['../Material_8hpp.html',1,'']]],
   ['materialchanged_8',['materialChanged',['../classObjectWidget.html#a2944cfd88fadd5578d0aaa93c7e3ae3a',1,'ObjectWidget']]],

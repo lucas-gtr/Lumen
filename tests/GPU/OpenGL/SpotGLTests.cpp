@@ -38,3 +38,19 @@ TEST(SpotLightGLTest, UpdateLightSpaceMatrixUpdatesFarPlaneAndMatrix) {
     EXPECT_TRUE(std::isfinite(matrixData[i]));
   }
 }
+
+TEST(SpotLightGLTest, ObserverCallbacksUpdateDirectionAndMatrix) {
+  SpotLight light;
+  light.setPosition({1.0f, 2.0f, 3.0f});
+  light.setDirection({0.0f, -1.0f, 0.0f});
+
+  SpotLightGL lightGL(&light);
+
+  EXPECT_EQ(lightGL.getDirection(), linalg::Vec3f(0.0f, -1.0f, 0.0f).normalized());
+
+  light.setDirection({1.0f, 0.0f, 0.0f});
+  EXPECT_EQ(lightGL.getDirection(), linalg::Vec3f(1.0f, 0.0f, 0.0f).normalized());
+
+  light.setPosition({2.0f, 3.0f, 4.0f});
+  EXPECT_EQ(lightGL.getPosition(), linalg::Vec3f(2.0f, 3.0f, 4.0f));
+}

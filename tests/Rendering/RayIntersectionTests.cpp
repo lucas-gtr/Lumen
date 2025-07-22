@@ -298,3 +298,30 @@ TEST(RayIntersectionTest, UpdateNormalWithTangentSpace) {
 
     EXPECT_TRUE(hit.normal.isApprox(linalg::Vec3d(0.5, 1, 0).normalized(), EPSILON));
 }
+
+TEST(RayIntersectionTest, GetObjectNameFromHit) {
+    Vertex v0{{0, 1, 0}, {0, 0, 1}, {0, 0}};
+    Vertex v1{{-1, -1, 0}, {0, 0, 1}, {0, 0}};
+    Vertex v2{{1, -1, 0}, {0, 0, 1}, {0, 0}};
+    Face face{{0, 1, 2}};
+
+    Mesh mesh({v0, v1, v2}, {face});
+    Ray ray_1 = Ray::FromPoint({0, 0, 3}, {0, 0, 0});
+    Ray ray_2 = Ray::FromPoint({0, 0, -3}, {0, 0, 0});
+
+    std::unique_ptr<Object3D> object_1 = std::make_unique<Object3D>(mesh);
+    object_1->setPosition(linalg::Vec3d(0, 0, 0));
+
+    std::unique_ptr<Object3D> object_2 = std::make_unique<Object3D>(mesh);
+    object_2->setPosition(linalg::Vec3d(0, 0, -1));
+
+    Scene scene;
+    scene.addObject("TestObject1", std::move(object_1));
+    scene.addObject("TestObject2", std::move(object_2));
+
+    std::string object_name_1 = RayIntersection::getObjectNameFromHit(ray_1, &scene);
+    std::string object_name_2 = RayIntersection::getObjectNameFromHit(ray_2, &scene);
+
+    EXPECT_EQ(object_name_1, "TestObject1");
+    EXPECT_EQ(object_name_2, "TestObject2");
+}

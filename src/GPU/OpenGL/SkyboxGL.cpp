@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include <memory>
 
 #include "Core/Config.hpp"
@@ -19,3 +20,5 @@ void SkyboxGL::updateSkyboxTexture() {
 }
 
 TextureGL* SkyboxGL::getTexture() const { return m_texture.get(); }
+
+// GCOVR_EXCL_STOP

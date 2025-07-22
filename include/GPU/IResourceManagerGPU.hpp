@@ -5,6 +5,8 @@
 #ifndef GPU_IRESOURCEMANAGERGPU_HPP
 #define GPU_IRESOURCEMANAGERGPU_HPP
 
+// GCOVR_EXCL_START
+
 #include <memory>
 #include <vector>
 
@@ -77,4 +79,5 @@ public:
   virtual ~IResourceManagerGPU() = default; ///< Virtual destructor for the resource manager interface.
 };
 
+// GCOVR_EXCL_STOP
 #endif // GPU_IRESOURCEMANAGERGPU_HPP
