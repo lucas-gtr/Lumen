@@ -85,7 +85,10 @@ TEST(RendererSettingsTest, SetAndGetThreadCount) {
   RenderSettings settings;
 
   settings.setThreadCount(8);
-  EXPECT_EQ(settings.getThreadCount(), 8);
+
+  unsigned int max_thread = std::max(1U, std::thread::hardware_concurrency() - 4);
+
+  EXPECT_EQ(settings.getThreadCount(), std::min(8U, max_thread));
 
   unsigned int hardware_concurrency = std::thread::hardware_concurrency();
   settings.setThreadCount(hardware_concurrency + 2);
