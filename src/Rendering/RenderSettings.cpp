@@ -24,5 +24,5 @@ void RenderSettings::setChunkSize(int chunk_size) {
 }
 
 void RenderSettings::setThreadCount(unsigned int thread_count) {
-  m_thread_count = std::clamp(thread_count, 1U, std::thread::hardware_concurrency() - 4);
+  m_thread_count = std::clamp(thread_count, 1U, std::max(1U, std::thread::hardware_concurrency() - THREADS_TO_KEEP_FREE));
 }
