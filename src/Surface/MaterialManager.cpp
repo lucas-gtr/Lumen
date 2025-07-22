@@ -75,7 +75,7 @@ std::string MaterialManager::getMaterialName(const Material* material) const {
       return pair.first;
     }
   }
-  return std::string(DEFAULT_MATERIAL_NAME);
+  return {"Default"};
 }
 
 void MaterialManager::removeMaterial(const std::string& material_name) {

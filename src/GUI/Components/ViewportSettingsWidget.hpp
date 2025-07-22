@@ -32,8 +32,7 @@ public:
   explicit ViewportSettingsWidget(QWidget* parent = nullptr);
 
   /**
-   * @brief Sets the OpenGL engine for this widget.
-   * @param engine The EngineGL instance to set.
+   * @brief Updates the widget to reflect the current settings of the OpenGL engine.
    */
   void updateWidget();
 

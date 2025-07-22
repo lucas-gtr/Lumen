@@ -27,3 +27,15 @@ TEST(DirectionalGLTest, LightSpaceMatrix) {
         EXPECT_TRUE(std::isfinite(matrixData[i]));
     }
 }
+
+TEST(DirectionalGLTest, ObserverCallbacks) {
+    DirectionalLight light;
+    light.setDirection({1.0f, 0.0f, 0.0f});
+
+    DirectionalLightGL gpu_light(&light);
+
+    EXPECT_EQ(gpu_light.getDirection(), linalg::Vec3f(1.0f, 0.0f, 0.0f).normalized());
+
+    light.setDirection({0.0f, 1.0f, 0.0f});
+    EXPECT_EQ(gpu_light.getDirection(), linalg::Vec3f(0.0f, 1.0f, 0.0f).normalized());
+}

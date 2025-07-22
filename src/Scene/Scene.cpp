@@ -43,6 +43,11 @@ std::string Scene::getAvailableLightName(const std::string& name) const {
 void Scene::addObject(const std::string& name, std::unique_ptr<Object3D> object) {
   Object3D* ptr = object.get();
   m_object_index.push_back(ptr);
+  if(m_object_map.find(name) != m_object_map.end()) {
+    throw std::runtime_error(
+        "Object with name '" + name +
+        "' already exists in the scene. You must check for existing names before adding a new object.");
+  }
   m_object_map.emplace(name, std::move(object));
 
   m_object_added_observer.notify(ptr);
@@ -91,6 +96,11 @@ Object3D* Scene::getObject(const std::string& name) const {
 void Scene::addLight(const std::string& name, std::unique_ptr<Light> light) {
   Light* ptr = light.get();
   m_light_index.push_back(ptr);
+  if(m_light_map.find(name) != m_light_map.end()) {
+    throw std::runtime_error(
+        "Light with name '" + name +
+        "' already exists in the scene. You must check for existing names before adding a new light.");
+  }
   m_light_map.emplace(name, std::move(light));
 
   m_light_added_observer.notify(ptr);

@@ -13,11 +13,11 @@ It reflects my expertise in computer graphics and professional software engineer
 - **Advanced Lighting:** Implements directional, point, and spot lights with customizable parameters
 - **Camera System:** Configurable camera with aperture, focus distance, field of view, and transformation controls
 - **OpenGL Rendering View:** Real-time viewport with support for lights, shadows, tone mapping, gamma correction, textured materials, and skybox rendering  
-- **Qt User Interface:** Fully-featured Qt interface following the MVC architecture to control and inspect all scene elements dynamically  
+- **Qt User Interface**: Developed a full-featured user interface using Qt and Qt Designer (`.ui` files), allowing dynamic control and inspection of all scene elements  
 - **Skybox Integration:** Supports environment mapping using skybox textures
 - **Image Exporting:** Renders can be exported as PNG, JPEG, BMP, TGA and HDR images with tone mapping and exposure adjustments
-- **Ray Acceleration:** Ray traversal acceleration with a *Bounding Volume Hierarchy* (BVH)
 - **Ray Tracing Renderer:** High-quality image rendering using a CPU-based ray tracer, with both single-threaded and multi-threaded execution modes  
+- **Ray Acceleration:** Ray traversal acceleration with a *Bounding Volume Hierarchy* (BVH)
 - **Comprehensive CI:** Automated formatting, linting and testing via GitHub Actions
 
 ## 🧩 Architecture Overview
@@ -31,7 +31,7 @@ The project is structured into distinct modules to ensure maintainability and sc
 - **Scene:** Manages objects, camera, lights, and the skybox
 - **Rendering:** Handles the rendering pipeline and settings
 - **OpenGL:** Manages the real-time rendering view, shaders, framebuffers, and OpenGL-specific resources  
-- **Qt:** Provides the user interface and interaction logic, built with an MVC architecture for clean separation between UI, data, and control flow  
+- **GUI**: Implements the user interface and interaction logic using Qt and Qt Designer (.ui files), enabling intuitive control and visualization of scene components.
 - **Export:** Manages the export of rendered images
 
 This modular design facilitates independent development and testing of each component, promoting clean code practices and ease of maintenance.

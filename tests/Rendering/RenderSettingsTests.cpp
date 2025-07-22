@@ -73,3 +73,21 @@ TEST(RendererSettingsTest, SetAndGetExecutionMode) {
   settings.setRenderMode(RenderMode::SINGLE_THREADED);
   EXPECT_EQ(settings.getRenderMode(), RenderMode::SINGLE_THREADED);
 }
+
+TEST(RendererSettingsTest, SetAndGetChunkSize) {
+  RenderSettings settings;
+
+  settings.setChunkSize(64);
+  EXPECT_EQ(settings.getChunkSize(), 64);
+}
+
+TEST(RendererSettingsTest, SetAndGetThreadCount) {
+  RenderSettings settings;
+
+  settings.setThreadCount(8);
+  EXPECT_EQ(settings.getThreadCount(), 8);
+
+  unsigned int hardware_concurrency = std::thread::hardware_concurrency();
+  settings.setThreadCount(hardware_concurrency + 2);
+  EXPECT_EQ(settings.getThreadCount(), hardware_concurrency - 4);
+}

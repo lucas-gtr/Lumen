@@ -5,9 +5,8 @@
 #ifndef BVH_BVHNODE_HPP
 #define BVH_BVHNODE_HPP
 
-#include <memory>
-
 #include <linalg/Vec3.hpp>
+#include <memory>
 
 /**
  * @class BVHNode

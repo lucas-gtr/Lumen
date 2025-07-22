@@ -89,6 +89,16 @@ TEST(TransformTest, SetRotationZTest) {
     EXPECT_EQ(t.getRotationRad(), linalg::Vec3d(0.0, 0.0, 270.0 * M_PI / 180.0));
 }
 
+TEST(TransformTest, SetRotationRadTest) {
+    Transform t;
+    linalg::Vec3d newRotationRad(0.0, M_PI / 2.0, M_PI);
+    
+    t.setRotationRad(newRotationRad);
+    
+    EXPECT_EQ(t.getRotationRad(), newRotationRad);
+    EXPECT_EQ(t.getRotationDeg(), newRotationRad * 180.0 / M_PI);
+}
+
 TEST(TransformTest, SetScaleXTest) {
     Transform t;
     t.setScaleX(2.5);

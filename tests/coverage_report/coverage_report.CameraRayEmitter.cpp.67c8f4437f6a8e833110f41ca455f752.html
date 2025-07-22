@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-07-20 19:35:25</td>
+      <td>2025-07-22 15:49:10</td>
     </tr>
   </table>
 </div>
@@ -73,11 +73,11 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l26">CameraRayEmitter::generateCorner(double, double) const (line 26)</a></td><td>called 90 times, returned 90 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l41">CameraRayEmitter::generateRay(double, double) const (line 41)</a></td><td>called 84 times, returned 84 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l32">CameraRayEmitter::getFocusPoint(double, double) const (line 32)</a></td><td>called 84 times, returned 84 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l36">CameraRayEmitter::getRayOrigin() const (line 36)</a></td><td>called 84 times, returned 84 times</td><td>88.0%</td></tr>
-    <tr><td><a href="#l10">CameraRayEmitter::initializeViewport(RayEmitterParameters const&amp;) (line 10)</a></td><td>called 30 times, returned 30 times</td><td>88.0%</td></tr>
+    <tr><td><a href="#l26">CameraRayEmitter::generateCorner(double, double) const (line 26)</a></td><td>called 1230 times, returned 1230 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l41">CameraRayEmitter::generateRay(double, double) const (line 41)</a></td><td>called 1148 times, returned 1148 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l32">CameraRayEmitter::getFocusPoint(double, double) const (line 32)</a></td><td>called 1148 times, returned 1148 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l36">CameraRayEmitter::getRayOrigin() const (line 36)</a></td><td>called 1148 times, returned 1148 times</td><td>88.0%</td></tr>
+    <tr><td><a href="#l10">CameraRayEmitter::initializeViewport(RayEmitterParameters const&amp;) (line 10)</a></td><td>called 410 times, returned 410 times</td><td>88.0%</td></tr>
   </table>
 </details>
 
@@ -159,14 +159,14 @@
       <td class="lineno"><a id="l10" href="#l10">10</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">30</td>
+      <td class="linecount coveredLine">410</td>
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="nf">CameraRayEmitter::initializeViewport</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">RayEmitterParameters</span><span class="o">&amp;</span><span class="w"> </span><span class="n">parameters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l11" href="#l11">11</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">30</td>
+      <td class="linecount coveredLine">410</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parameters</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -180,7 +180,7 @@
       <td class="lineno"><a id="l13" href="#l13">13</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">30</td>
+      <td class="linecount coveredLine">410</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">sensor_height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m_parameters</span><span class="p">.</span><span class="n">sensor_width</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">m_parameters</span><span class="p">.</span><span class="n">image_aspect_ratio</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -196,11 +196,11 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 30 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 410 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">30</td>
+      <td class="linecount coveredLine">410</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_viewport_top_left_corner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">generateCorner</span><span class="p">(</span><span class="o">-</span><span class="n">m_parameters</span><span class="p">.</span><span class="n">sensor_width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">HALF</span><span class="p">,</span><span class="w"> </span><span class="n">sensor_height</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">HALF</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -223,11 +223,11 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 30 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 410 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">30</td>
+      <td class="linecount coveredLine">410</td>
       <td class="src coveredLine"><span class="w">      </span><span class="n">generateCorner</span><span class="p">(</span><span class="n">m_parameters</span><span class="p">.</span><span class="n">sensor_width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">HALF</span><span class="p">,</span><span class="w"> </span><span class="n">sensor_height</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">HALF</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -243,11 +243,11 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 30 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 410 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">30</td>
+      <td class="linecount coveredLine">410</td>
       <td class="src coveredLine"><span class="w">      </span><span class="n">generateCorner</span><span class="p">(</span><span class="o">-</span><span class="n">m_parameters</span><span class="p">.</span><span class="n">sensor_width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">HALF</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">sensor_height</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">HALF</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -261,21 +261,21 @@
       <td class="lineno"><a id="l22" href="#l22">22</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">30</td>
+      <td class="linecount coveredLine">410</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_horizontal_vector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">viewport_top_right_corner</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">m_viewport_top_left_corner</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l23" href="#l23">23</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">30</td>
+      <td class="linecount coveredLine">410</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_vertical_vector</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">viewport_bottom_left_corner</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">m_viewport_top_left_corner</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l24" href="#l24">24</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">30</td>
+      <td class="linecount coveredLine">410</td>
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -289,28 +289,28 @@
       <td class="lineno"><a id="l26" href="#l26">26</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">90</td>
+      <td class="linecount coveredLine">1230</td>
       <td class="src coveredLine"><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="nf">CameraRayEmitter::generateCorner</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l27" href="#l27">27</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">90</td>
+      <td class="linecount coveredLine">1230</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">m_parameters</span><span class="p">.</span><span class="n">camera_rotation_matrix</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">m_parameters</span><span class="p">.</span><span class="n">focal_length</span><span class="p">)</span><span class="w"> </span><span class="o">*</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l28" href="#l28">28</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">180</td>
+      <td class="linecount coveredLine">2460</td>
       <td class="src coveredLine"><span class="w">             </span><span class="n">m_parameters</span><span class="p">.</span><span class="n">focus_distance</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">m_parameters</span><span class="p">.</span><span class="n">focal_length</span><span class="w"> </span><span class="o">+</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l29" href="#l29">29</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">180</td>
+      <td class="linecount coveredLine">2460</td>
       <td class="src coveredLine"><span class="w">         </span><span class="n">m_parameters</span><span class="p">.</span><span class="n">camera_position</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -331,14 +331,14 @@
       <td class="lineno"><a id="l32" href="#l32">32</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">84</td>
+      <td class="linecount coveredLine">1148</td>
       <td class="src coveredLine"><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="nf">CameraRayEmitter::getFocusPoint</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l33" href="#l33">33</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">84</td>
+      <td class="linecount coveredLine">1148</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">m_viewport_top_left_corner</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_horizontal_vector</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_vertical_vector</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -359,7 +359,7 @@
       <td class="lineno"><a id="l36" href="#l36">36</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">84</td>
+      <td class="linecount coveredLine">1148</td>
       <td class="src coveredLine"><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="nf">CameraRayEmitter::getRayOrigin</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -368,18 +368,18 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 84 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 1148 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">84</td>
+      <td class="linecount coveredLine">1148</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec2d</span><span class="w"> </span><span class="n">offset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">randomPointInUnitDisk</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">m_parameters</span><span class="p">.</span><span class="n">lens_radius</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l38" href="#l38">38</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">84</td>
+      <td class="linecount coveredLine">1148</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="p">(</span><span class="n">offset</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">offset</span><span class="p">.</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">m_parameters</span><span class="p">.</span><span class="n">camera_position</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -400,7 +400,7 @@
       <td class="lineno"><a id="l41" href="#l41">41</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">84</td>
+      <td class="linecount coveredLine">1148</td>
       <td class="src coveredLine"><span class="n">Ray</span><span class="w"> </span><span class="nf">CameraRayEmitter::generateRay</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -409,11 +409,11 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 84 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 1148 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">84</td>
+      <td class="linecount coveredLine">1148</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="n">origin</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">getRayOrigin</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -422,11 +422,11 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 84 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 1148 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">84</td>
+      <td class="linecount coveredLine">1148</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="w"> </span><span class="n">focus_point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getFocusPoint</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -435,11 +435,11 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 84 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 1148 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">168</td>
+      <td class="linecount coveredLine">2296</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Ray</span><span class="o">::</span><span class="n">FromPoint</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span><span class="w"> </span><span class="n">focus_point</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">

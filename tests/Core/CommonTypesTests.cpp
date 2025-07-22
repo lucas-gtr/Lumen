@@ -64,6 +64,13 @@ TEST(ColorRGBTest, EqualityOperator) {
   EXPECT_FALSE(c1 == c3);
 }
 
+TEST(ColorRGBTest, StreamOutput) {
+  ColorRGB color(0.5, 0.6, 0.7);
+  std::ostringstream oss;
+  oss << color;
+  EXPECT_EQ(oss.str(), "ColorRGB(0.5, 0.6, 0.7)");
+}
+
 TEST(ColorRGBATest, DefaultConstructor) {
   ColorRGBA color;
   EXPECT_DOUBLE_EQ(color.r, 0.0);
@@ -148,4 +155,11 @@ TEST(ColorRGBATest, EqualityOperator) {
   ColorRGBA c3(0.1, 0.2, 0.3, 1.0);
   EXPECT_TRUE(c1 == c2);
   EXPECT_FALSE(c1 == c3);
+}
+
+TEST(ColorRGBATest, StreamOutput) {
+  ColorRGBA color(0.5, 0.6, 0.7, 0.8);
+  std::ostringstream oss;
+  oss << color;
+  EXPECT_EQ(oss.str(), "ColorRGBA(0.5, 0.6, 0.7, 0.8)");
 }

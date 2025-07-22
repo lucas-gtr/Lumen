@@ -59,4 +59,27 @@ class MockLight : public Light {
       ColorRGB expected_light_factor(1.0, 0.9, 0.8);
       EXPECT_EQ(light.getLightFactor(point, normal), expected_light_factor);
   }
+
+  TEST(LightTest, LightChangedObserver) {
+      MockLight light(LightType::POINT);
+      bool was_called = false;
+      light.getLightChangedObserver().add([&]() { was_called = true; });
+      
+      light.setColor(ColorRGB(0.5, 0.5, 0.5));
+      EXPECT_TRUE(was_called);
+      
+      was_called = false;
+      light.setIntensity(2.0);
+      EXPECT_TRUE(was_called);
+  }
+
+  TEST(LightTest, LightDeletedObserver) {
+      MockLight light(LightType::POINT);
+      bool was_called = false;
+      light.getLightDeletedObserver().add([&](const Light* deleted_light) { was_called = true; });
+      
+      // Simulate deletion
+      light.getLightDeletedObserver().notify(&light);
+      EXPECT_TRUE(was_called);
+  }
   

@@ -101,8 +101,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5b37bc2b8acb2d4e2250984639a1c26c" id="r_a5b37bc2b8acb2d4e2250984639a1c26c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classScene.html">Scene</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a5b37bc2b8acb2d4e2250984639a1c26c">operator=</a> (<a class="el" href="classScene.html">Scene</a> &amp;&amp;other)=delete</td></tr>
 <tr class="separator:a5b37bc2b8acb2d4e2250984639a1c26c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a365af26c647c69471254cd94bb81fafa" id="r_a365af26c647c69471254cd94bb81fafa"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a365af26c647c69471254cd94bb81fafa">getAvailableObjectName</a> (const std::string &amp;name) const</td></tr>
+<tr class="memdesc:a365af26c647c69471254cd94bb81fafa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the available name for a new object in the scene.  <br /></td></tr>
 <tr class="separator:a365af26c647c69471254cd94bb81fafa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb34f7d34ae3b0077e0d0bbf95c10074" id="r_abb34f7d34ae3b0077e0d0bbf95c10074"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#abb34f7d34ae3b0077e0d0bbf95c10074">getAvailableLightName</a> (const std::string &amp;name) const</td></tr>
+<tr class="memdesc:abb34f7d34ae3b0077e0d0bbf95c10074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the available name for a new light in the scene.  <br /></td></tr>
 <tr class="separator:abb34f7d34ae3b0077e0d0bbf95c10074"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a129b7353f51dc62278d2ada9170e592b" id="r_a129b7353f51dc62278d2ada9170e592b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a129b7353f51dc62278d2ada9170e592b">addObject</a> (const std::string &amp;name, std::unique_ptr&lt; <a class="el" href="classObject3D.html">Object3D</a> &gt; object)</td></tr>
 <tr class="memdesc:a129b7353f51dc62278d2ada9170e592b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a 3D object to the scene.  <br /></td></tr>
@@ -377,6 +379,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Gets the available name for a new light in the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The base name for the light. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A unique name for the light that does not conflict with existing names. </dd></dl>
+
 </div>
 </div>
 <a id="a365af26c647c69471254cd94bb81fafa" name="a365af26c647c69471254cd94bb81fafa"></a>
@@ -394,6 +405,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Gets the available name for a new object in the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The base name for the object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A unique name for the object that does not conflict with existing names. </dd></dl>
 
 </div>
 </div>
