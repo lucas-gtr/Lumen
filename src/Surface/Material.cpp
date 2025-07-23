@@ -1,3 +1,5 @@
+#include <algorithm>
+
 #include "Surface/Material.hpp"
 #include "Core/CommonTypes.hpp"
 #include "Surface/Texture.hpp"
