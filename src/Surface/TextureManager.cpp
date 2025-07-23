@@ -9,9 +9,12 @@
 #include "Surface/Texture.hpp"
 #include "Surface/TextureManager.hpp"
 
-std::unique_ptr<Texture> TextureManager::s_default_skybox_texture  = nullptr;
-std::unique_ptr<Texture> TextureManager::s_default_diffuse_texture = nullptr;
-std::unique_ptr<Texture> TextureManager::s_default_normal_texture  = nullptr;
+std::unique_ptr<Texture> TextureManager::s_default_skybox_texture   = nullptr;
+std::unique_ptr<Texture> TextureManager::s_default_diffuse_texture  = nullptr;
+std::unique_ptr<Texture> TextureManager::s_default_normal_texture   = nullptr;
+std::unique_ptr<Texture> TextureManager::s_default_white_texture    = nullptr;
+std::unique_ptr<Texture> TextureManager::s_default_mid_gray_texture = nullptr;
+std::unique_ptr<Texture> TextureManager::s_default_black_texture    = nullptr;
 
 Texture* TextureManager::DefaultSkyboxTexture() {
   if(s_default_skybox_texture == nullptr) {
@@ -39,6 +42,33 @@ Texture* TextureManager::DefaultNormalTexture() {
     s_default_normal_texture->setColorSpace(ColorSpace::S_RGB);
   }
   return s_default_normal_texture.get();
+}
+
+Texture* TextureManager::DefaultWhiteTexture() {
+  if(s_default_white_texture == nullptr) {
+    s_default_white_texture = std::make_unique<Texture>();
+    s_default_white_texture->setValue(1.0);
+    s_default_white_texture->setColorSpace(ColorSpace::S_RGB);
+  }
+  return s_default_white_texture.get();
+}
+
+Texture* TextureManager::DefaultMidGrayTexture() {
+  if(s_default_mid_gray_texture == nullptr) {
+    s_default_mid_gray_texture = std::make_unique<Texture>();
+    s_default_mid_gray_texture->setValue(DEFAULT_ROUGHNESS_VALUE);
+    s_default_mid_gray_texture->setColorSpace(ColorSpace::S_RGB);
+  }
+  return s_default_mid_gray_texture.get();
+}
+
+Texture* TextureManager::DefaultBlackTexture() {
+  if(s_default_black_texture == nullptr) {
+    s_default_black_texture = std::make_unique<Texture>();
+    s_default_black_texture->setValue(0.0);
+    s_default_black_texture->setColorSpace(ColorSpace::S_RGB);
+  }
+  return s_default_black_texture.get();
 }
 
 void TextureManager::addTexture(const std::string& texture_name) {
@@ -75,7 +105,7 @@ std::string TextureManager::getTextureName(const Texture* texture) const {
       return pair.first;
     }
   }
-  return "";
+  return "Default";
 }
 
 bool TextureManager::renameTexture(const std::string& old_name, const std::string& new_name) {

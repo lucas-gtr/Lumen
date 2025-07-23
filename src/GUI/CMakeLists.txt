@@ -28,6 +28,7 @@ set(COMPONENT_WIDGETS
 set(WIDGETS_WITH_UI
   Vec3Editor
   SliderSpinBox
+  DoubleSliderSpinBox
   FileSelector
 )
 

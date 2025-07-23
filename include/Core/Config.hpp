@@ -95,6 +95,10 @@ static constexpr double DEFAULT_TEXTURE_UNDEFINED_G = 0.0;
 static constexpr double DEFAULT_TEXTURE_UNDEFINED_B = 1.0;
 static constexpr int    MAX_PREVIEW_TEXTURE_SIZE    = 256;
 
+//<-------- MATERIAL --------->
+static constexpr double MAX_EMISSIVE_STRENGTH   = 10.0;
+static constexpr double DEFAULT_ROUGHNESS_VALUE = 0.5;
+
 //<-------- LIGHT --------->
 static constexpr double DEFAULT_LIGHT_INTENSITY        = 1.0;
 static constexpr double MIN_LIGHT_INTENSITY            = 0.0;
@@ -186,13 +190,14 @@ static constexpr int MAX_SHADOW_MAP_SIZE     = 4096;
 static constexpr int CUBE_MAP_FACE_COUNT     = 6;
 
 //<-------- QT --------->
-static constexpr int   QT_DEFAULT_WINDOW_WIDTH             = 1920;
-static constexpr int   QT_DEFAULT_WINDOW_HEIGHT            = 1440;
-static constexpr float WHEEL_TICK_ANGLE                    = 120.0F;
-static constexpr int   JPEG_QUALITY_STEP                   = 5;
-static constexpr int   LINE_EDIT_DOUBLE_VALIDATOR_DECIMALS = 10;
-static constexpr int   LINE_EDIT_DOUBLE_DISPLAY_PRECISION  = 5;
-static constexpr int   TEXTURE_PREVIEW_MAX_SIZE            = 144;
+static constexpr int    QT_DEFAULT_WINDOW_WIDTH             = 1920;
+static constexpr int    QT_DEFAULT_WINDOW_HEIGHT            = 1440;
+static constexpr float  WHEEL_TICK_ANGLE                    = 120.0F;
+static constexpr int    JPEG_QUALITY_STEP                   = 5;
+static constexpr int    LINE_EDIT_DOUBLE_VALIDATOR_DECIMALS = 10;
+static constexpr int    LINE_EDIT_DOUBLE_DISPLAY_PRECISION  = 5;
+static constexpr int    TEXTURE_PREVIEW_MAX_SIZE            = 64;
+static constexpr double DOUBLE_SLIDER_SPINBOX_PRECISION     = 0.01;
 
 static constexpr std::string_view GROUP_BOX_STYLESHEET = "QGroupBox {font-weight :bold; font-size: 14px;}";
 

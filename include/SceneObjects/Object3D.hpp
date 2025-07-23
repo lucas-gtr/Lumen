@@ -85,6 +85,14 @@ public:
   Material* getMaterial() const;
 
   /**
+   * @brief Computes the bounding box of the object.
+   * @param comparator A function to compare two Vec3d objects.
+   * @return The bounding box as a Vec3d.
+   */
+  linalg::Vec3d
+  computeBound(const std::function<linalg::Vec3d(const linalg::Vec3d&, const linalg::Vec3d&)>& comparator) const;
+
+  /**
    * @brief Gets the minimum bounding box corner of the object.
    * @return The minimum bounding box corner as a Vec3d.
    */
