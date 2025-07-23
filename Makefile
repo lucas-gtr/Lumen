@@ -31,8 +31,8 @@ TEST_FLAGS := $(DEBUG_FLAGS) -DENABLE_UNIT_TESTS=ON
 CMAKE_FLAGS ?= $(RELEASE_FLAGS)
 
 # Files to format and lint
-CHANGED_CPP := $(shell git diff --name-only origin/main... -- $(SRC_DIR)/*.cpp)
-CHANGED_HPP := $(shell git diff --name-only origin/main... -- $(INCLUDE_DIR)/*.hpp)
+CHANGED_CPP := $(shell git diff --name-only origin/main... -- $(SRC_DIR) | grep '\.cpp$$')
+CHANGED_HPP := $(shell git diff --name-only origin/main... -- $(INCLUDE_DIR) | grep '\.hpp$$')
 
 UNTRACKED_CPP := $(shell git ls-files --others --exclude-standard | grep '^$(SRC_DIR)/.*\.cpp$$')
 UNTRACKED_HPP := $(shell git ls-files --others --exclude-standard | grep '^$(INCLUDE_DIR)/.*\.hpp$$')
@@ -127,7 +127,7 @@ lint-diff:
 	else \
 		echo "Running clang-tidy on changed files : $(FILES_TO_LINT) (FIX=$(FIX))"; \
 		cmake -S . -B build-lint -DFILES_TO_CHECK="$(FILES_TO_LINT)" -DENABLE_CLANG_FORMAT=OFF -DENABLE_CLANG_TIDY=ON -DENABLE_FIX_CLANG_TIDY=$(FIX); \
-		cmake --build build-lint --parallel
+		cmake --build build-lint --parallel; \
 		cmake --build build-lint --target run-clang-tidy; \
 	fi
 

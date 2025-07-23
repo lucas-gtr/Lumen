@@ -93,6 +93,9 @@ MainWindow::MainWindow(Scene* scene, TextureManager* texture_manager, MaterialMa
 
   connect(ui->materialsWidget, &MaterialsWidget::diffuseTextureCreated, this, &MainWindow::onDiffuseTextureCreated);
   connect(ui->materialsWidget, &MaterialsWidget::normalTextureCreated, this, &MainWindow::onNormalTextureCreated);
+  connect(ui->materialsWidget, &MaterialsWidget::emissiveTextureCreated, this, &MainWindow::onEmissiveTextureCreated);
+  connect(ui->materialsWidget, &MaterialsWidget::roughnessTextureCreated, this, &MainWindow::onRoughnessTextureCreated);
+  connect(ui->materialsWidget, &MaterialsWidget::metalTextureCreated, this, &MainWindow::onMetalTextureCreated);
 
   connect(ui->viewportSettingsWidget, &ViewportSettingsWidget::lightBakeRequested, this,
           &MainWindow::onBakeLightRequested);
@@ -301,6 +304,27 @@ void MainWindow::onNormalTextureCreated(const QString& texture_path) {
   const QString texture_name = createTextureFromFile(texture_path.toStdString(), ColorSpace::S_RGB);
   ui->openGLWidget->makeCurrent();
   ui->materialsWidget->setNormalTexture(texture_name);
+  ui->openGLWidget->doneCurrent();
+}
+
+void MainWindow::onEmissiveTextureCreated(const QString& texture_path) {
+  const QString texture_name = createTextureFromFile(texture_path.toStdString(), ColorSpace::LINEAR);
+  ui->openGLWidget->makeCurrent();
+  ui->materialsWidget->setEmissiveTexture(texture_name);
+  ui->openGLWidget->doneCurrent();
+}
+
+void MainWindow::onRoughnessTextureCreated(const QString& texture_path) {
+  const QString texture_name = createTextureFromFile(texture_path.toStdString(), ColorSpace::LINEAR);
+  ui->openGLWidget->makeCurrent();
+  ui->materialsWidget->setRoughnessTexture(texture_name);
+  ui->openGLWidget->doneCurrent();
+}
+
+void MainWindow::onMetalTextureCreated(const QString& texture_path) {
+  const QString texture_name = createTextureFromFile(texture_path.toStdString(), ColorSpace::LINEAR);
+  ui->openGLWidget->makeCurrent();
+  ui->materialsWidget->setMetalTexture(texture_name);
   ui->openGLWidget->doneCurrent();
 }
 

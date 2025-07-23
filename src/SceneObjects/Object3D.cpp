@@ -20,36 +20,27 @@ void Object3D::setMaterial(Material* material) {
   m_material_changed_observer.notify(this);
 }
 
-linalg::Vec3d Object3D::getMinBound() const {
+linalg::Vec3d Object3D::computeBound(
+    const std::function<linalg::Vec3d(const linalg::Vec3d&, const linalg::Vec3d&)>& comparator) const {
   const auto& vertices = m_mesh.getVertices();
   if(vertices.empty()) {
     return {0.0, 0.0, 0.0};
   }
 
-  linalg::Vec3d min_bound = vertices[0].position;
+  linalg::Vec3d bound = vertices[0].position;
   for(size_t i = 1; i < vertices.size(); ++i) {
-    min_bound = linalg::cwiseMin(min_bound, vertices[i].position);
+    bound = comparator(bound, vertices[i].position);
   }
 
-  linalg::Vec3d transformed = linalg::toVec3(getTransformationMatrix() * linalg::toVec4(min_bound));
+  return linalg::toVec3(getTransformationMatrix() * linalg::toVec4(bound));
+}
 
-  return transformed;
+linalg::Vec3d Object3D::getMinBound() const {
+  return computeBound([](const linalg::Vec3d& a, const linalg::Vec3d& b) { return linalg::cwiseMin(a, b); });
 }
 
 linalg::Vec3d Object3D::getMaxBound() const {
-  const auto& vertices = m_mesh.getVertices();
-  if(vertices.empty()) {
-    return {0.0, 0.0, 0.0};
-  }
-
-  linalg::Vec3d max_bound = vertices[0].position;
-  for(size_t i = 1; i < vertices.size(); ++i) {
-    max_bound = linalg::cwiseMax(max_bound, vertices[i].position);
-  }
-
-  linalg::Vec3d transformed = linalg::toVec3(getTransformationMatrix() * linalg::toVec4(max_bound));
-
-  return transformed;
+  return computeBound([](const linalg::Vec3d& a, const linalg::Vec3d& b) { return linalg::cwiseMax(a, b); });
 }
 
 Material* Object3D::getMaterial() const { return m_material; }

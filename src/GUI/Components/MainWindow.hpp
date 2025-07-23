@@ -64,6 +64,9 @@ private slots:
 
   void onDiffuseTextureCreated(const QString& texture_path);
   void onNormalTextureCreated(const QString& texture_path);
+  void onEmissiveTextureCreated(const QString& texture_path);
+  void onRoughnessTextureCreated(const QString& texture_path);
+  void onMetalTextureCreated(const QString& texture_path);
 
   void onBakeLightRequested();
 

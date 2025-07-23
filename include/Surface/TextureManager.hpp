@@ -25,6 +25,9 @@ private:
   static std::unique_ptr<Texture> s_default_skybox_texture;
   static std::unique_ptr<Texture> s_default_diffuse_texture;
   static std::unique_ptr<Texture> s_default_normal_texture;
+  static std::unique_ptr<Texture> s_default_white_texture;
+  static std::unique_ptr<Texture> s_default_mid_gray_texture;
+  static std::unique_ptr<Texture> s_default_black_texture;
 
   Observer<std::string>              m_texture_added_observer;
   Observer<std::string>              m_texture_removed_observer;
@@ -103,6 +106,24 @@ public:
    * @return A pointer to the default normal texture.
    */
   static Texture* DefaultNormalTexture();
+
+  /**
+   * @brief Gets the default white texture.
+   * @return A pointer to the default white texture.
+   */
+  static Texture* DefaultWhiteTexture();
+
+  /**
+   * @brief Gets the default mid gray texture.
+   * @return A pointer to the default mid gray texture.
+   */
+  static Texture* DefaultMidGrayTexture();
+
+  /**
+   * @brief Gets the default black texture.
+   * @return A pointer to the default black texture.
+   */
+  static Texture* DefaultBlackTexture();
 
   ~TextureManager() = default; ///< Default destructor for the TextureManager class.
 };

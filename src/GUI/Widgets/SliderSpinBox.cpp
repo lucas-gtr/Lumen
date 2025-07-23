@@ -13,7 +13,6 @@ void SliderSpinBox::setupConnections() {
   connect(ui->slider, &QSlider::valueChanged, ui->spinBox, &QSpinBox::setValue);
   connect(ui->spinBox, QOverload<int>::of(&QSpinBox::valueChanged), ui->slider, &QSlider::setValue);
 
-  // Émettre le signal valueChanged lorsque la valeur change
   connect(ui->slider, &QSlider::valueChanged, this, &SliderSpinBox::valueChanged);
 }
 
