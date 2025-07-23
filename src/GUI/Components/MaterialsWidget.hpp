@@ -88,7 +88,7 @@ public:
    * @brief Sets the diffuse texture for the current material.
    * @param texture_name The name of the texture to set as the diffuse texture.
    */
-  static void setTexture(QComboBox* comboBox, const QString& name);
+  static void setTexture(QComboBox* combo_box, const QString& name);
 
   /**
    * @brief Sets the diffuse texture for the current material.
