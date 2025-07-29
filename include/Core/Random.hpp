@@ -26,11 +26,8 @@ inline double randomUniform01() {
   const thread_local uint64_t thread_seed = std::hash<std::thread::id>()(std::this_thread::get_id());
 
   thread_local std::array<uint64_t, 4> shuffle_table = {
-    0x1234567890abcdefU ^ thread_seed,
-    0xfedcba0987654321U ^ thread_seed,
-    0x1122334455667788U ^ thread_seed,
-    0x8877665544332211U ^ thread_seed
-  };
+      0x1234567890abcdefU ^ thread_seed, 0xfedcba0987654321U ^ thread_seed, 0x1122334455667788U ^ thread_seed,
+      0x8877665544332211U ^ thread_seed};
 
   const uint64_t result_plus = shuffle_table[0] + shuffle_table[3];
 

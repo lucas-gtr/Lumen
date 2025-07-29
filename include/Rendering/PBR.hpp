@@ -173,7 +173,7 @@ inline ColorRGB evaluateBrdf(const linalg::Vec3d& incoming_direction, const lina
                              double metalness) {
   const linalg::Vec3d& half_vector = (incoming_direction + outgoing_direction).normalized();
 
-  const ColorRGB       F0          = getBaseReflectance(base_color, metalness);
+  const ColorRGB F0 = getBaseReflectance(base_color, metalness);
 
   const ColorRGB k_s = getFresnelSchlick(half_vector, incoming_direction, F0);
   const ColorRGB k_d = (ColorRGB(1.0) - k_s) * (1.0 - metalness);

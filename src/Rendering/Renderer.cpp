@@ -126,7 +126,7 @@ bool Renderer::isValidHit(const RayHitInfo& hit_info) const {
 
 ColorRGB Renderer::getRadiance(const Ray& ray, const ColorRGB& throughput) const {
   const RayHitInfo hit_info = RayIntersection::getSceneIntersection(ray, m_scene);
-  if (!isValidHit(hit_info)) {
+  if(!isValidHit(hit_info)) {
     return ColorRGB(m_scene->getSkyboxColor(ray.direction)) * throughput;
   }
 
@@ -134,30 +134,27 @@ ColorRGB Renderer::getRadiance(const Ray& ray, const ColorRGB& throughput) const
       hit_info.material->getEmissive(hit_info.bary_coordinates) * hit_info.material->getEmissiveIntensity();
 
   const double rr_prob = std::min(1.0, throughput.maxComponent());
-  if (randomUniform01() > rr_prob) {
+  if(randomUniform01() > rr_prob) {
     return emitted_light * throughput;
   }
 
-  const PBR::SurfaceInteraction interaction = {
-    hit_info.normal,
-    hit_info.tangent,
-    hit_info.bitangent,
-    -ray.direction,
+  const PBR::SurfaceInteraction interaction = {hit_info.normal,
+                                               hit_info.tangent,
+                                               hit_info.bitangent,
+                                               -ray.direction,
 
-    ColorRGB(hit_info.material->getDiffuse(hit_info.bary_coordinates)),
-    hit_info.material->getRoughness(hit_info.bary_coordinates),
-    hit_info.material->getMetallic(hit_info.bary_coordinates)
-  };
+                                               ColorRGB(hit_info.material->getDiffuse(hit_info.bary_coordinates)),
+                                               hit_info.material->getRoughness(hit_info.bary_coordinates),
+                                               hit_info.material->getMetallic(hit_info.bary_coordinates)};
 
-  linalg::Vec3d outgoing_direction;
+  linalg::Vec3d  outgoing_direction;
   const ColorRGB brdf = PBR::getCookTorranceBrdf(interaction, outgoing_direction);
 
-  const Ray outgoing_ray = Ray::FromDirection(hit_info.hit_point, outgoing_direction);
+  const Ray      outgoing_ray   = Ray::FromDirection(hit_info.hit_point, outgoing_direction);
   const ColorRGB new_throughput = throughput * brdf / rr_prob;
 
   return emitted_light * throughput + getRadiance(outgoing_ray, new_throughput);
 }
-
 
 ColorRGB Renderer::getRadiance(const Ray& initial_ray) const {
   struct Bounce {
@@ -170,12 +167,12 @@ ColorRGB Renderer::getRadiance(const Ray& initial_ray) const {
   std::stack<Bounce> bounce_stack;
   bounce_stack.push({initial_ray, ColorRGB(1.0)});
 
-  while (!bounce_stack.empty()) {
+  while(!bounce_stack.empty()) {
     const Bounce current = bounce_stack.top();
     bounce_stack.pop();
 
     const RayHitInfo hit_info = RayIntersection::getSceneIntersection(current.ray, m_scene);
-    if (!isValidHit(hit_info)) {
+    if(!isValidHit(hit_info)) {
       accumulated_radiance += current.throughput * ColorRGB(m_scene->getSkyboxColor(current.ray.direction));
       continue;
     }
@@ -186,25 +183,23 @@ ColorRGB Renderer::getRadiance(const Ray& initial_ray) const {
     accumulated_radiance += current.throughput * emitted_light;
 
     const double rr_prob = std::min(1.0, current.throughput.maxComponent());
-    if (randomUniform01() >= rr_prob) {
+    if(randomUniform01() >= rr_prob) {
       continue;
     }
 
-    const PBR::SurfaceInteraction interaction = {
-        hit_info.normal,
-        hit_info.tangent,
-        hit_info.bitangent,
-        -current.ray.direction,
+    const PBR::SurfaceInteraction interaction = {hit_info.normal,
+                                                 hit_info.tangent,
+                                                 hit_info.bitangent,
+                                                 -current.ray.direction,
 
-        ColorRGB(hit_info.material->getDiffuse(hit_info.bary_coordinates)),
-        hit_info.material->getRoughness(hit_info.bary_coordinates),
-        hit_info.material->getMetallic(hit_info.bary_coordinates)
-    };
+                                                 ColorRGB(hit_info.material->getDiffuse(hit_info.bary_coordinates)),
+                                                 hit_info.material->getRoughness(hit_info.bary_coordinates),
+                                                 hit_info.material->getMetallic(hit_info.bary_coordinates)};
 
-    linalg::Vec3d outgoing_direction;
+    linalg::Vec3d  outgoing_direction;
     const ColorRGB brdf = PBR::getCookTorranceBrdf(interaction, outgoing_direction);
 
-    const Ray next_ray = Ray::FromDirection(hit_info.hit_point, outgoing_direction);
+    const Ray      next_ray        = Ray::FromDirection(hit_info.hit_point, outgoing_direction);
     const ColorRGB next_throughput = current.throughput * brdf / rr_prob;
 
     bounce_stack.push({next_ray, next_throughput});
@@ -212,6 +207,5 @@ ColorRGB Renderer::getRadiance(const Ray& initial_ray) const {
 
   return accumulated_radiance;
 }
-
 
 Renderer::~Renderer() { delete m_framebuffer; }

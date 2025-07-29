@@ -75,9 +75,7 @@ struct alignas(ALIGN32) ColorRGB {
 
   explicit ColorRGB(const ColorRGBA& color);
 
-  ColorRGB operator+(const ColorRGB& other) const {
-    return {r + other.r, g + other.g, b + other.b};
-  }
+  ColorRGB  operator+(const ColorRGB& other) const { return {r + other.r, g + other.g, b + other.b}; }
   ColorRGB& operator+=(const ColorRGB& other) {
     r += other.r;
     g += other.g;
@@ -87,9 +85,7 @@ struct alignas(ALIGN32) ColorRGB {
 
   ColorRGBA operator+(const ColorRGBA& other) const;
 
-  ColorRGB operator-(const ColorRGB& other) const {
-    return {r - other.r, g - other.g, b - other.b};
-  }
+  ColorRGB  operator-(const ColorRGB& other) const { return {r - other.r, g - other.g, b - other.b}; }
   ColorRGB& operator-=(const ColorRGB& other) {
     r -= other.r;
     g -= other.g;
@@ -97,9 +93,7 @@ struct alignas(ALIGN32) ColorRGB {
     return *this;
   }
 
-  ColorRGB operator*(double scalar) const {
-    return {r * scalar, g * scalar, b * scalar};
-  }
+  ColorRGB  operator*(double scalar) const { return {r * scalar, g * scalar, b * scalar}; }
   ColorRGB& operator*=(double scalar) {
     r *= scalar;
     g *= scalar;
@@ -107,9 +101,7 @@ struct alignas(ALIGN32) ColorRGB {
     return *this;
   }
 
-  ColorRGB operator*(const ColorRGB& other) const {
-    return {r * other.r, g * other.g, b * other.b};
-  }
+  ColorRGB  operator*(const ColorRGB& other) const { return {r * other.r, g * other.g, b * other.b}; }
   ColorRGB& operator*=(const ColorRGB& other) {
     r *= other.r;
     g *= other.g;
@@ -118,13 +110,13 @@ struct alignas(ALIGN32) ColorRGB {
   }
 
   ColorRGB operator/(double scalar) const {
-    if (scalar == 0.0){
+    if(scalar == 0.0) {
       throw std::runtime_error("Division by zero in ColorRGB operator/");
     }
     return {r / scalar, g / scalar, b / scalar};
   }
   ColorRGB& operator/=(double scalar) {
-    if (scalar == 0.0){
+    if(scalar == 0.0) {
       throw std::runtime_error("Division by zero in ColorRGB operator/=");
     }
     r /= scalar;
@@ -134,13 +126,13 @@ struct alignas(ALIGN32) ColorRGB {
   }
 
   ColorRGB operator/(const ColorRGB& other) const {
-    if (other.r == 0.0 || other.g == 0.0 || other.b == 0.0){
+    if(other.r == 0.0 || other.g == 0.0 || other.b == 0.0) {
       throw std::runtime_error("A component of ColorRGB is zero in operator/");
     }
     return {r / other.r, g / other.g, b / other.b};
   }
   ColorRGB& operator/=(const ColorRGB& other) {
-    if (other.r == 0.0 || other.g == 0.0 || other.b == 0.0){
+    if(other.r == 0.0 || other.g == 0.0 || other.b == 0.0) {
       throw std::runtime_error("A component of ColorRGB is zero in operator/=");
     }
     r /= other.r;
@@ -149,9 +141,7 @@ struct alignas(ALIGN32) ColorRGB {
     return *this;
   }
 
-  bool operator==(const ColorRGB& other) const {
-    return (r == other.r) && (g == other.g) && (b == other.b);
-  }
+  bool operator==(const ColorRGB& other) const { return (r == other.r) && (g == other.g) && (b == other.b); }
 
   double maxComponent() const { return std::max({r, g, b}); }
   double minComponent() const { return std::min({r, g, b}); }
@@ -162,13 +152,9 @@ struct alignas(ALIGN32) ColorRGB {
     b = std::clamp(b, min, max);
   }
 
-  friend ColorRGB operator*(double scalar, const ColorRGB& color) {
-    return color * scalar;
-  }
+  friend ColorRGB operator*(double scalar, const ColorRGB& color) { return color * scalar; }
 
-  friend ColorRGB lerp(const ColorRGB& start, const ColorRGB& end, double t) {
-    return start + (end - start) * t;
-  }
+  friend ColorRGB lerp(const ColorRGB& start, const ColorRGB& end, double t) { return start + (end - start) * t; }
 
   friend ColorRGB lerp(const ColorRGB& start, const ColorRGB& end, const ColorRGB& t) {
     return start + (end - start) * t;
@@ -184,35 +170,26 @@ struct alignas(ALIGN32) ColorRGB {
  * @brief Structure to hold RGBA color values.
  */
 struct alignas(ALIGN32) ColorRGBA {
-  double r = 0.0; 
-  double g = 0.0; 
-  double b = 0.0; 
-  double a = 1.0; 
+  double r = 0.0;
+  double g = 0.0;
+  double b = 0.0;
+  double a = 1.0;
 
   ColorRGBA() = default;
 
-  ColorRGBA(double red, double green, double blue, double alpha)
-    : r(red), g(green), b(blue), a(alpha) {}
+  ColorRGBA(double red, double green, double blue, double alpha) : r(red), g(green), b(blue), a(alpha) {}
 
-  explicit ColorRGBA(double grayscale)
-    : r(grayscale), g(grayscale), b(grayscale) {}
+  explicit ColorRGBA(double grayscale) : r(grayscale), g(grayscale), b(grayscale) {}
 
-  ColorRGBA(double grayscale, double alpha)
-    : r(grayscale), g(grayscale), b(grayscale), a(alpha) {}
+  ColorRGBA(double grayscale, double alpha) : r(grayscale), g(grayscale), b(grayscale), a(alpha) {}
 
-  explicit ColorRGBA(const ColorRGB& color)
-    : r(color.r), g(color.g), b(color.b) {}
+  explicit ColorRGBA(const ColorRGB& color) : r(color.r), g(color.g), b(color.b) {}
 
-  ColorRGBA(const ColorRGB& color, double alpha)
-    : r(color.r), g(color.g), b(color.b), a(alpha) {}
+  ColorRGBA(const ColorRGB& color, double alpha) : r(color.r), g(color.g), b(color.b), a(alpha) {}
 
-  ColorRGBA operator+(const ColorRGB& other) const {
-    return {r + other.r, g + other.g, b + other.b, a};
-  }
+  ColorRGBA operator+(const ColorRGB& other) const { return {r + other.r, g + other.g, b + other.b, a}; }
 
-  ColorRGBA operator+(const ColorRGBA& other) const {
-    return {r + other.r, g + other.g, b + other.b, a + other.a};
-  }
+  ColorRGBA  operator+(const ColorRGBA& other) const { return {r + other.r, g + other.g, b + other.b, a + other.a}; }
   ColorRGBA& operator+=(const ColorRGBA& other) {
     r += other.r;
     g += other.g;
@@ -221,9 +198,7 @@ struct alignas(ALIGN32) ColorRGBA {
     return *this;
   }
 
-  ColorRGBA operator-(const ColorRGBA& other) const {
-    return {r - other.r, g - other.g, b - other.b, a - other.a};
-  }
+  ColorRGBA  operator-(const ColorRGBA& other) const { return {r - other.r, g - other.g, b - other.b, a - other.a}; }
   ColorRGBA& operator-=(const ColorRGBA& other) {
     r -= other.r;
     g -= other.g;
@@ -232,9 +207,7 @@ struct alignas(ALIGN32) ColorRGBA {
     return *this;
   }
 
-  ColorRGBA operator*(double scalar) const {
-    return {r * scalar, g * scalar, b * scalar, a * scalar};
-  }
+  ColorRGBA  operator*(double scalar) const { return {r * scalar, g * scalar, b * scalar, a * scalar}; }
   ColorRGBA& operator*=(double scalar) {
     r *= scalar;
     g *= scalar;
@@ -243,9 +216,7 @@ struct alignas(ALIGN32) ColorRGBA {
     return *this;
   }
 
-  ColorRGBA operator*(const ColorRGB& other) const {
-    return {r * other.r, g * other.g, b * other.b, a};
-  }
+  ColorRGBA  operator*(const ColorRGB& other) const { return {r * other.r, g * other.g, b * other.b, a}; }
   ColorRGBA& operator*=(const ColorRGB& other) {
     r *= other.r;
     g *= other.g;
@@ -253,9 +224,7 @@ struct alignas(ALIGN32) ColorRGBA {
     return *this;
   }
 
-  ColorRGBA operator*(const ColorRGBA& other) const {
-    return {r * other.r, g * other.g, b * other.b, a * other.a};
-  }
+  ColorRGBA  operator*(const ColorRGBA& other) const { return {r * other.r, g * other.g, b * other.b, a * other.a}; }
   ColorRGBA& operator*=(const ColorRGBA& other) {
     r *= other.r;
     g *= other.g;
@@ -265,13 +234,13 @@ struct alignas(ALIGN32) ColorRGBA {
   }
 
   ColorRGBA operator/(double scalar) const {
-    if (scalar == 0.0){
+    if(scalar == 0.0) {
       throw std::runtime_error("Division by zero in ColorRGBA operator/");
     }
     return {r / scalar, g / scalar, b / scalar, a / scalar};
   }
   ColorRGBA& operator/=(double scalar) {
-    if (scalar == 0.0){
+    if(scalar == 0.0) {
       throw std::runtime_error("Division by zero in ColorRGBA operator/=");
     }
     r /= scalar;
@@ -282,13 +251,13 @@ struct alignas(ALIGN32) ColorRGBA {
   }
 
   ColorRGBA operator/(const ColorRGBA& other) const {
-    if (other.r == 0.0 || other.g == 0.0 || other.b == 0.0 || other.a == 0.0){
+    if(other.r == 0.0 || other.g == 0.0 || other.b == 0.0 || other.a == 0.0) {
       throw std::runtime_error("Division by zero in ColorRGBA operator/");
     }
     return {r / other.r, g / other.g, b / other.b, a / other.a};
   }
   ColorRGBA& operator/=(const ColorRGBA& other) {
-    if (other.r == 0.0 || other.g == 0.0 || other.b == 0.0 || other.a == 0.0){
+    if(other.r == 0.0 || other.g == 0.0 || other.b == 0.0 || other.a == 0.0) {
       throw std::runtime_error("Division by zero in ColorRGBA operator/=");
     }
     r /= other.r;
@@ -312,13 +281,9 @@ struct alignas(ALIGN32) ColorRGBA {
     a = std::clamp(a, min, max);
   }
 
-  friend ColorRGBA operator*(double scalar, const ColorRGBA& color) {
-    return color * scalar;
-  }
+  friend ColorRGBA operator*(double scalar, const ColorRGBA& color) { return color * scalar; }
 
-  friend ColorRGBA lerp(const ColorRGBA& start, const ColorRGBA& end, double t) {
-    return start + (end - start) * t;
-  }
+  friend ColorRGBA lerp(const ColorRGBA& start, const ColorRGBA& end, double t) { return start + (end - start) * t; }
 
   friend ColorRGBA lerp(const ColorRGBA& start, const ColorRGBA& end, const ColorRGBA& t) {
     return start + (end - start) * t;

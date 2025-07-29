@@ -133,7 +133,7 @@ void Application::createCornellBoxScene() {
   m_scene->addObject("Left Cube", std::move(right_cube_object));
 
   const SphereMeshBuilder sphere_mesh_builder(82.5, 32, 16);
-  auto sphere_mesh = sphere_mesh_builder.build();
+  auto                    sphere_mesh = sphere_mesh_builder.build();
 
   auto left_sphere_object = std::make_unique<Object3D>(sphere_mesh);
   left_sphere_object->setPosition({92.5, 82.5, 152.5});
