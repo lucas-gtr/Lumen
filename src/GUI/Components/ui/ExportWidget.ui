@@ -31,33 +31,7 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QComboBox" name="formatComboBox">
-        <item>
-         <property name="text">
-          <string>PNG</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>JPEG</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>TGA</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>BMP</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>HDR</string>
-         </property>
-        </item>
-       </widget>
+       <widget class="QComboBox" name="formatComboBox"/>
       </item>
       <item row="1" column="0">
        <widget class="QLabel" name="jpegQualityLabel">
@@ -94,23 +68,7 @@
        </widget>
       </item>
       <item row="4" column="1">
-       <widget class="QComboBox" name="toneMappingComboBox">
-        <item>
-         <property name="text">
-          <string>None</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Reinhard</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Exposure</string>
-         </property>
-        </item>
-       </widget>
+       <widget class="QComboBox" name="toneMappingComboBox"/>
       </item>
       <item row="5" column="0">
        <widget class="QLabel" name="exposureLabel">
@@ -144,6 +102,45 @@
           <widget class="QLabel" name="suffixLabel">
            <property name="text">
             <string>.png</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="whitePointLabel">
+        <property name="text">
+         <string>White Point </string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QWidget" name="whitePointWidget" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QDoubleSpinBox" name="whitePointSpinBox">
+           <property name="maximum">
+            <double>10000.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="maxWhitePointButton">
+           <property name="text">
+            <string>Set to image maximum</string>
            </property>
           </widget>
          </item>

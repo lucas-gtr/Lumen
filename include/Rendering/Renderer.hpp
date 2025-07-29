@@ -40,9 +40,10 @@ private:
 
   Observer<double> m_render_progress_observer;
 
-  ColorRGBA traceRay(const Ray& ray) const;
-  bool      isValidHit(const RayHitInfo& hit_info) const;
-  void      cancelRendering();
+  ColorRGB getRadiance(const Ray& ray) const;
+  ColorRGB getRadiance(const Ray& ray, const ColorRGB& throughput) const;
+  bool     isValidHit(const RayHitInfo& hit_info) const;
+  void     cancelRendering();
 
   void updateRenderMode();
 

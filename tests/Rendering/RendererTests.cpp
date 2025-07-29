@@ -42,8 +42,13 @@ TEST_F(RendererTest, RenderFrameRendersSomething) {
   Renderer renderer(&settings);
   renderer.setScene(&scene);
 
-  renderer.renderFrame();
+  Texture texture = Texture();
+  texture.setValue(ColorRGB(0.65, 0.65, 0.9));
+  texture.setColorSpace(ColorSpace::LINEAR);
+  
+  scene.setSkybox(&texture);
 
+  renderer.renderFrame();
   const double* image = renderer.getFramebuffer()->getFramebuffer();
 
   EXPECT_NEAR(image[0], 0.65, 0.001);
@@ -65,45 +70,6 @@ TEST_F(RendererTest, FramebufferUpdatesWhenRenderSettingsChange) {
 
   EXPECT_EQ(renderer.getFramebuffer()->getWidth(), 4);
   EXPECT_EQ(renderer.getFramebuffer()->getHeight(), 4);
-}
-
-TEST_F(RendererTest, RenderInfluencedByLight) {
-  auto light = std::make_unique<DirectionalLight>();
-  light->setDirection(linalg::Vec3d(0.0, 0.0, -1.0));
-  light->setColor({0.9, 0.0, 0.0});
-  light->setIntensity(1.0);
-  scene.addLight("light", std::move(light));
-
-  CubeMeshBuilder cube_builder(5.0);
-  auto cube_mesh = cube_builder.build();
-  auto cube_object = std::make_unique<Object3D>(cube_mesh);
-  cube_object->setPosition(linalg::Vec3d(0.0, 0.0, -7.0));
-  
-  Texture texture;
-  texture.setValue(ColorRGB(0.5, 0.3, 0.9));
-  auto material = Material();
-  material.setDiffuseTexture(&texture);
-  cube_object->setMaterial(&material);
-  scene.addObject("1", std::move(cube_object));
-
-  scene.getCamera()->setPosition(linalg::Vec3d(0.0, 0.0, 0.0));
-  scene.getCamera()->setRotationDeg(linalg::Vec3d(0.0, 0.0, 0.0));
-  scene.getCamera()->setHorizontalFov(10.0);
-
-  settings.setWidth(1);
-  settings.setHeight(1);
-  Renderer renderer(&settings);
-  renderer.setScene(&scene);
-
-  renderer.renderFrame();
-
-  const double* image = renderer.getFramebuffer()->getFramebuffer();
-  double expected_red_value = 0.45;
-  convertToSRGBSpace(expected_red_value);
-
-  EXPECT_NEAR(image[0], expected_red_value, 0.001);
-  EXPECT_NEAR(image[1], 0.0, 0.001);
-  EXPECT_NEAR(image[2], 0.0, 0.001);
 }
 
 TEST_F(RendererTest, ShadowRayBlockedByObject) {

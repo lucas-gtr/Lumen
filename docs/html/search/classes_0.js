@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['application_0',['Application',['../classApplication.html',1,'']]]
+  ['acestonemapping_0',['AcesToneMapping',['../classAcesToneMapping.html',1,'']]],
+  ['application_1',['Application',['../classApplication.html',1,'']]]
 ];

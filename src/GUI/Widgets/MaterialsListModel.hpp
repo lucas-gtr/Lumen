@@ -7,7 +7,7 @@
 
 #include <QAbstractListModel>
 #include <QString>
-#include <QVector>
+#include <vector>
 
 class MaterialManager;
 
@@ -81,8 +81,8 @@ public:
   void removeItem(int row);
 
 private:
-  QVector<QString> m_items;
-  MaterialManager* m_material_manager = nullptr;
+  std::vector<QString> m_items;
+  MaterialManager*     m_material_manager = nullptr;
 };
 
 #endif // GUI_WIDGETS_TEXTURESLISTMODEL_HPP

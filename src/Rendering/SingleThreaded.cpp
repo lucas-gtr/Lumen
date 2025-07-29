@@ -26,7 +26,6 @@ bool SingleThreaded::render() {
       renderer()->getRenderTime()->stop();
       return false;
     }
-    std::cout << "Sample: " << s + 1 << "/" << samples_per_pixel << '\n';
     const PixelCoord grid_pos{s % samples_per_row, s / samples_per_row};
     renderer()->renderSample({0, 0}, {width, height}, sample_weight, grid_pos, cell_size);
     renderer()->getRenderTime()->update(s + 1);
@@ -35,8 +34,6 @@ bool SingleThreaded::render() {
 
   renderer()->getFramebuffer()->reduceThreadBuffers();
   renderer()->getFramebuffer()->clearThreadBuffers();
-
-  renderer()->getRenderTime()->stop();
 
   return true;
 }

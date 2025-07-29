@@ -5,11 +5,11 @@
 TEST(RenderSettingsTest, DefaultValues) {
   RenderSettings settings;
 
-  EXPECT_EQ(settings.getWidth(), 1920);
-  EXPECT_EQ(settings.getHeight(), 1080);
+  EXPECT_EQ(settings.getWidth(), 800);
+  EXPECT_EQ(settings.getHeight(), 800);
   EXPECT_EQ(settings.getChannelCount(), 3);
   EXPECT_EQ(settings.getMaxBounces(), 5);
-  EXPECT_EQ(settings.getSamplesPerPixel(), 4);
+  EXPECT_EQ(settings.getSamplesPerPixel(), 9);
 }
 
 TEST(RenderSettingsTest, SetAndGetWidth) {

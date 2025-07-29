@@ -2,13 +2,16 @@
 #include <iostream>
 #include <linalg/Vec3.hpp>
 #include <memory>
+#include <stack>
 
 #include "Core/CommonTypes.hpp"
 #include "Core/Framebuffer.hpp"
 #include "Core/Random.hpp"
 #include "Core/Ray.hpp"
+#include "Diagnostics/ScopedTimer.hpp"
 #include "Rendering/CameraRayEmitter.hpp"
 #include "Rendering/MultiThreadedCPU.hpp"
+#include "Rendering/PBR.hpp"
 #include "Rendering/RayIntersection.hpp"
 #include "Rendering/RenderSettings.hpp"
 #include "Rendering/RenderTime.hpp"
@@ -71,8 +74,6 @@ bool Renderer::renderFrame() {
 
   m_scene->buildBVH();
 
-  std::cout << "Rendering scene with " << m_scene->getObjectList().size() << " objects and "
-            << m_scene->getLightList().size() << " lights." << '\n';
   const bool render_successed = m_render_strategy->render();
   if(!render_successed) {
     cancelRendering();
@@ -81,16 +82,20 @@ bool Renderer::renderFrame() {
 
   m_framebuffer->convertToSRGBColorSpace();
 
-  std::cout << "Rendering completed successfully." << '\n';
+  m_render_time->stop();
+  std::cout << "Rendering completed in " << m_render_time->getRenderStats().elapsed_time << " seconds.\n";
+
+  ScopedTimer::PrintStats();
   return true;
 }
 
 ColorRGBA Renderer::getPixelColor(const PixelCoord& pixel, double dx, double dy, const PixelCoord& subpixel_grid_pos,
                                   double cell_size) const {
-  const double v   = (static_cast<double>(pixel.y) + (subpixel_grid_pos.y + randomUniform01()) * cell_size) * dy;
-  const double u   = (static_cast<double>(pixel.x) + (subpixel_grid_pos.x + randomUniform01()) * cell_size) * dx;
-  const Ray    ray = m_camera_ray_emitter.generateRay(u, v);
-  return traceRay(ray);
+  const double   v        = (static_cast<double>(pixel.y) + (subpixel_grid_pos.y + randomUniform01()) * cell_size) * dy;
+  const double   u        = (static_cast<double>(pixel.x) + (subpixel_grid_pos.x + randomUniform01()) * cell_size) * dx;
+  const Ray      ray      = m_camera_ray_emitter.generateRay(u, v);
+  const ColorRGB radiance = getRadiance(ray);
+  return ColorRGBA(radiance);
 }
 
 void Renderer::renderSample(const PixelCoord& pixel_start, const PixelCoord& pixel_end, double sample_weight,
@@ -119,30 +124,94 @@ bool Renderer::isValidHit(const RayHitInfo& hit_info) const {
   return distance > 0.0 && distance <= m_scene->getCamera()->getFarPlane();
 }
 
-ColorRGBA Renderer::traceRay(const Ray& ray) const {
+ColorRGB Renderer::getRadiance(const Ray& ray, const ColorRGB& throughput) const {
   const RayHitInfo hit_info = RayIntersection::getSceneIntersection(ray, m_scene);
-  if(!isValidHit(hit_info)) {
-    return m_scene->getSkyboxColor(ray.direction);
+  if (!isValidHit(hit_info)) {
+    return ColorRGB(m_scene->getSkyboxColor(ray.direction)) * throughput;
   }
 
-  const ColorRGBA diffuse_color = hit_info.material->getDiffuse(hit_info.uv_coordinates);
+  const ColorRGB emitted_light =
+      hit_info.material->getEmissive(hit_info.bary_coordinates) * hit_info.material->getEmissiveIntensity();
 
-  ColorRGB light_factor = {0.0, 0.0, 0.0};
-  for(const auto& light : m_scene->getLightList()) {
-    const linalg::Vec3d light_direction = light->getDirectionFromPoint(hit_info.hit_point).normalized();
-    const Ray           shadow_ray = Ray::FromDirection(hit_info.hit_point + hit_info.normal * 0.01, light_direction);
+  const double rr_prob = std::min(1.0, throughput.maxComponent());
+  if (randomUniform01() > rr_prob) {
+    return emitted_light * throughput;
+  }
 
-    const RayHitInfo shadow_hit = RayIntersection::getSceneIntersection(shadow_ray, m_scene);
-    if(isValidHit(shadow_hit)) {
+  const PBR::SurfaceInteraction interaction = {
+    hit_info.normal,
+    hit_info.tangent,
+    hit_info.bitangent,
+    -ray.direction,
+
+    ColorRGB(hit_info.material->getDiffuse(hit_info.bary_coordinates)),
+    hit_info.material->getRoughness(hit_info.bary_coordinates),
+    hit_info.material->getMetallic(hit_info.bary_coordinates)
+  };
+
+  linalg::Vec3d outgoing_direction;
+  const ColorRGB brdf = PBR::getCookTorranceBrdf(interaction, outgoing_direction);
+
+  const Ray outgoing_ray = Ray::FromDirection(hit_info.hit_point, outgoing_direction);
+  const ColorRGB new_throughput = throughput * brdf / rr_prob;
+
+  return emitted_light * throughput + getRadiance(outgoing_ray, new_throughput);
+}
+
+
+ColorRGB Renderer::getRadiance(const Ray& initial_ray) const {
+  struct Bounce {
+    Ray      ray;
+    ColorRGB throughput;
+  };
+
+  ColorRGB accumulated_radiance(0.0);
+
+  std::stack<Bounce> bounce_stack;
+  bounce_stack.push({initial_ray, ColorRGB(1.0)});
+
+  while (!bounce_stack.empty()) {
+    const Bounce current = bounce_stack.top();
+    bounce_stack.pop();
+
+    const RayHitInfo hit_info = RayIntersection::getSceneIntersection(current.ray, m_scene);
+    if (!isValidHit(hit_info)) {
+      accumulated_radiance += current.throughput * ColorRGB(m_scene->getSkyboxColor(current.ray.direction));
       continue;
     }
 
-    light_factor += light->getLightFactor(hit_info.hit_point, hit_info.normal);
+    const ColorRGB emitted_light =
+        hit_info.material->getEmissive(hit_info.bary_coordinates) * hit_info.material->getEmissiveIntensity();
+
+    accumulated_radiance += current.throughput * emitted_light;
+
+    const double rr_prob = std::min(1.0, current.throughput.maxComponent());
+    if (randomUniform01() >= rr_prob) {
+      continue;
+    }
+
+    const PBR::SurfaceInteraction interaction = {
+        hit_info.normal,
+        hit_info.tangent,
+        hit_info.bitangent,
+        -current.ray.direction,
+
+        ColorRGB(hit_info.material->getDiffuse(hit_info.bary_coordinates)),
+        hit_info.material->getRoughness(hit_info.bary_coordinates),
+        hit_info.material->getMetallic(hit_info.bary_coordinates)
+    };
+
+    linalg::Vec3d outgoing_direction;
+    const ColorRGB brdf = PBR::getCookTorranceBrdf(interaction, outgoing_direction);
+
+    const Ray next_ray = Ray::FromDirection(hit_info.hit_point, outgoing_direction);
+    const ColorRGB next_throughput = current.throughput * brdf / rr_prob;
+
+    bounce_stack.push({next_ray, next_throughput});
   }
 
-  ColorRGBA final_color = {diffuse_color.r * light_factor.r, diffuse_color.g * light_factor.g,
-                           diffuse_color.b * light_factor.b, diffuse_color.a};
-  return final_color;
+  return accumulated_radiance;
 }
+
 
 Renderer::~Renderer() { delete m_framebuffer; }

@@ -1,7 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,151,31"/>
-<area shape="rect" id="Node000001" href="$classOpenGLWidget.html" title="A widget that provides an OpenGL rendering context for rendering a scene." alt="" coords="199,31,317,56"/>
-<area shape="poly" id="edge45_Node000000_Node000001" title=" " alt="" coords="165,28,199,32,198,38,164,33"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="14,55,142,80"/>
-<area shape="poly" id="edge46_Node000002_Node000001" title=" " alt="" coords="156,54,198,49,199,54,156,60"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,121,31"/>
+<area shape="rect" id="Node000001" href="$classMainWindow.html" title=" " alt="" coords="169,5,276,31"/>
+<area shape="poly" id="edge44_Node000000_Node000001" title=" " alt="" coords="135,15,169,15,169,21,135,21"/>
 </map>

@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-07-23 11:30:51</td>
+      <td>2025-07-29 23:37:35</td>
     </tr>
   </table>
 </div>
@@ -73,10 +73,10 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l15">Scene::Scene() (line 15)</a></td><td>called 27 times, returned 27 times</td><td>55.0%</td></tr>
-    <tr><td><a href="#l96">Scene::addLight(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, std::unique_ptr&lt;Light, std::default_delete&lt;Light&gt; &gt;) (line 96)</a></td><td>called 11 times, returned 10 times</td><td>64.0%</td></tr>
-    <tr><td><a href="#l43">Scene::addObject(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, std::unique_ptr&lt;Object3D, std::default_delete&lt;Object3D&gt; &gt;) (line 43)</a></td><td>called 18 times, returned 16 times</td><td>64.0%</td></tr>
-    <tr><td><a href="#l149">Scene::buildBVH() (line 149)</a></td><td>called 7 times, returned 7 times</td><td>70.0%</td></tr>
+    <tr><td><a href="#l15">Scene::Scene() (line 15)</a></td><td>called 26 times, returned 26 times</td><td>55.0%</td></tr>
+    <tr><td><a href="#l96">Scene::addLight(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, std::unique_ptr&lt;Light, std::default_delete&lt;Light&gt; &gt;) (line 96)</a></td><td>called 10 times, returned 9 times</td><td>64.0%</td></tr>
+    <tr><td><a href="#l43">Scene::addObject(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;, std::unique_ptr&lt;Object3D, std::default_delete&lt;Object3D&gt; &gt;) (line 43)</a></td><td>called 17 times, returned 15 times</td><td>64.0%</td></tr>
+    <tr><td><a href="#l149">Scene::buildBVH() (line 149)</a></td><td>called 6 times, returned 6 times</td><td>70.0%</td></tr>
     <tr><td><a href="#l30">Scene::getAvailableLightName(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;) const (line 30)</a></td><td>called 4 times, returned 4 times</td><td>60.0%</td></tr>
     <tr><td><a href="#l17">Scene::getAvailableObjectName(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;) const (line 17)</a></td><td>called 4 times, returned 4 times</td><td>60.0%</td></tr>
     <tr><td><a href="#l132">Scene::getLight(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;) const (line 132)</a></td><td>called 7 times, returned 7 times</td><td>100.0%</td></tr>
@@ -205,12 +205,12 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 5 taken 27 times.</div>
-          <div class="takenBranch">&check; Branch 8 taken 27 times.</div>
+          <div class="takenBranch">&check; Branch 5 taken 26 times.</div>
+          <div class="takenBranch">&check; Branch 8 taken 26 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">27</td>
+      <td class="linecount coveredLine">26</td>
       <td class="src coveredLine"><span class="n">Scene</span><span class="o">::</span><span class="n">Scene</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_current_camera</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Camera</span><span class="o">&gt;</span><span class="p">()),</span><span class="w"> </span><span class="n">m_skybox</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Skybox</span><span class="o">&gt;</span><span class="p">())</span><span class="w"> </span><span class="p">{}</span></td>
     </tr>
     <tr class="source-line">
@@ -482,14 +482,14 @@
       <td class="lineno"><a id="l43" href="#l43">43</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">17</td>
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Scene</span><span class="o">::</span><span class="n">addObject</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Object3D</span><span class="o">&gt;</span><span class="w"> </span><span class="n">object</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l44" href="#l44">44</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">17</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">Object3D</span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">object</span><span class="p">.</span><span class="n">get</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -498,11 +498,11 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 18 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 17 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">17</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_object_index</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -511,13 +511,13 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/3</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 2 taken 18 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 17 times.</div>
           <div class="takenBranch">&check; Branch 5 taken 1 times.</div>
-          <div class="takenBranch">&check; Branch 6 taken 17 times.</div>
+          <div class="takenBranch">&check; Branch 6 taken 16 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">18</td>
+      <td class="linecount coveredLine">17</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">m_object_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">m_object_map</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -567,11 +567,11 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 2 taken 17 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 16 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">17</td>
+      <td class="linecount coveredLine">16</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_object_map</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">object</span><span class="p">));</span></td>
     </tr>
     <tr class="source-line">
@@ -587,18 +587,18 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 17 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 16 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">17</td>
+      <td class="linecount coveredLine">16</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_object_added_observer</span><span class="p">.</span><span class="n">notify</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l54" href="#l54">54</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">17</td>
+      <td class="linecount coveredLine">16</td>
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -990,14 +990,14 @@
       <td class="lineno"><a id="l96" href="#l96">96</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">11</td>
+      <td class="linecount coveredLine">10</td>
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Scene</span><span class="o">::</span><span class="n">addLight</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Light</span><span class="o">&gt;</span><span class="w"> </span><span class="n">light</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l97" href="#l97">97</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">11</td>
+      <td class="linecount coveredLine">10</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">Light</span><span class="o">*</span><span class="w"> </span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">light</span><span class="p">.</span><span class="n">get</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1006,11 +1006,11 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 11 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 10 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">11</td>
+      <td class="linecount coveredLine">10</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_light_index</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
@@ -1019,13 +1019,13 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/3</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 2 taken 11 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 10 times.</div>
           <div class="takenBranch">&check; Branch 5 taken 1 times.</div>
-          <div class="takenBranch">&check; Branch 6 taken 10 times.</div>
+          <div class="takenBranch">&check; Branch 6 taken 9 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">11</td>
+      <td class="linecount coveredLine">10</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">m_light_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">m_light_map</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -1075,11 +1075,11 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 2 taken 10 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 9 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">10</td>
+      <td class="linecount coveredLine">9</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_light_map</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">light</span><span class="p">));</span></td>
     </tr>
     <tr class="source-line">
@@ -1095,18 +1095,18 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 10 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 9 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">10</td>
+      <td class="linecount coveredLine">9</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">m_light_added_observer</span><span class="p">.</span><span class="n">notify</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l107" href="#l107">107</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">10</td>
+      <td class="linecount coveredLine">9</td>
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1498,14 +1498,14 @@
       <td class="lineno"><a id="l149" href="#l149">149</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">7</td>
+      <td class="linecount coveredLine">6</td>
       <td class="src coveredLine"><span class="kt">void</span><span class="w"> </span><span class="n">Scene</span><span class="o">::</span><span class="n">buildBVH</span><span class="p">()</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l150" href="#l150">150</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">7</td>
+      <td class="linecount coveredLine">6</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">BVHNode</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">bvh_leaf_list</span><span class="p">;</span></td>
     </tr>
     <tr class="source-line">
@@ -1514,12 +1514,12 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">2/2</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 6 times.</div>
-          <div class="takenBranch">&check; Branch 2 taken 7 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 5 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 6 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">13</td>
+      <td class="linecount coveredLine">11</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m_object_index</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span></td>
     </tr>
     <tr class="source-line">
@@ -1528,11 +1528,11 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 3 taken 6 times.</div>
+          <div class="takenBranch">&check; Branch 3 taken 5 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">6</td>
+      <td class="linecount coveredLine">5</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">m_object_index</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">getMesh</span><span class="p">().</span><span class="n">buildBVH</span><span class="p">();</span></td>
     </tr>
     <tr class="source-line">
@@ -1541,11 +1541,11 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 1 taken 6 times.</div>
+          <div class="takenBranch">&check; Branch 1 taken 5 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">6</td>
+      <td class="linecount coveredLine">5</td>
       <td class="src coveredLine"><span class="w">    </span><span class="n">bvh_leaf_list</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span></td>
     </tr>
     <tr class="source-line">
@@ -1554,13 +1554,13 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">3/3</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 2 taken 6 times.</div>
-          <div class="takenBranch">&check; Branch 6 taken 6 times.</div>
-          <div class="takenBranch">&check; Branch 9 taken 6 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 5 times.</div>
+          <div class="takenBranch">&check; Branch 6 taken 5 times.</div>
+          <div class="takenBranch">&check; Branch 9 taken 5 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">12</td>
+      <td class="linecount coveredLine">10</td>
       <td class="src coveredLine"><span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">BVHNode</span><span class="o">&gt;</span><span class="p">(</span><span class="n">m_object_index</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">getMinBound</span><span class="p">(),</span><span class="w"> </span><span class="n">m_object_index</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">getMaxBound</span><span class="p">(),</span><span class="w"> </span><span class="n">i</span><span class="p">));</span></td>
     </tr>
     <tr class="source-line">
@@ -1576,18 +1576,18 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 2 taken 7 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 6 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">7</td>
+      <td class="linecount coveredLine">6</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">BVH</span><span class="o">::</span><span class="n">constructNode</span><span class="p">(</span><span class="n">m_bvh_root</span><span class="p">,</span><span class="w"> </span><span class="n">bvh_leaf_list</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">bvh_leaf_list</span><span class="p">.</span><span class="n">size</span><span class="p">()));</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l157" href="#l157">157</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">7</td>
+      <td class="linecount coveredLine">6</td>
       <td class="src coveredLine"><span class="p">}</span></td>
     </tr>
     <tr class="source-line">

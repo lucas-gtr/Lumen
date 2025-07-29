@@ -58,7 +58,7 @@ void SkyboxWidget::onBrowseButtonClicked() {
   QString selected_image_path;
 
   selected_image_path =
-      QFileDialog::getOpenFileName(this, "Select Image", "", "Images (*.png *.jpg *.jpeg *.bmp *.tga)");
+      QFileDialog::getOpenFileName(this, "Select Image", "", "Images (*.png *.jpg *.jpeg *.bmp *.tga *.hdr)");
 
   if(!selected_image_path.isEmpty()) {
     emit skyboxTextureCreated(selected_image_path);

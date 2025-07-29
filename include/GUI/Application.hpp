@@ -30,6 +30,11 @@ private:
 
   MainWindow* m_window;
   void        createDefaultScene();
+  void        createCornellBoxScene();
+  void        createSphereScene();
+  void        createRoughnessScene();
+
+  void        debugPBR();
   static void SetStylesheet();
 
 public:

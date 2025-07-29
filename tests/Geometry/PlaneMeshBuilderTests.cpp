@@ -56,14 +56,14 @@ TEST(PlaneMeshBuilderTest, BuildVertexUVs) {
     EXPECT_DOUBLE_EQ(mesh.getVertex(0).uv_coord.u, 0.0);
     EXPECT_DOUBLE_EQ(mesh.getVertex(0).uv_coord.v, 0.0);
 
-    EXPECT_DOUBLE_EQ(mesh.getVertex(1).uv_coord.u, 1.0);
+    EXPECT_DOUBLE_EQ(mesh.getVertex(1).uv_coord.u, 10.0);
     EXPECT_DOUBLE_EQ(mesh.getVertex(1).uv_coord.v, 0.0);
 
-    EXPECT_DOUBLE_EQ(mesh.getVertex(2).uv_coord.u, 1.0);
-    EXPECT_DOUBLE_EQ(mesh.getVertex(2).uv_coord.v, 1.0);
+    EXPECT_DOUBLE_EQ(mesh.getVertex(2).uv_coord.u, 10.0);
+    EXPECT_DOUBLE_EQ(mesh.getVertex(2).uv_coord.v, 20.0);
 
     EXPECT_DOUBLE_EQ(mesh.getVertex(3).uv_coord.u, 0.0);
-    EXPECT_DOUBLE_EQ(mesh.getVertex(3).uv_coord.v, 1.0);
+    EXPECT_DOUBLE_EQ(mesh.getVertex(3).uv_coord.v, 20.0);
 }
 
 TEST(PlaneMeshBuilderTest, BuildInvalidSize) {

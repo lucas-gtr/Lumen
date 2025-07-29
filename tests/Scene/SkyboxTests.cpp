@@ -11,16 +11,9 @@ TEST(SkyboxTest, DefaultConstructorUsesDefaultColor) {
   linalg::Vec3d direction(1.0, 0.0, 0.0);
   ColorRGBA color = skybox.getColor(direction);
 
-  double r = 0.65;
-  convertToLinearSpace(r);
-  double g = 0.65;
-  convertToLinearSpace(g);
-  double b = 0.9;
-  convertToLinearSpace(b);
-
-  EXPECT_DOUBLE_EQ(color.r, r);
-  EXPECT_DOUBLE_EQ(color.g, g);
-  EXPECT_DOUBLE_EQ(color.b, b);
+  EXPECT_DOUBLE_EQ(color.r, 0.0);
+  EXPECT_DOUBLE_EQ(color.g, 0.0);
+  EXPECT_DOUBLE_EQ(color.b, 0.0);
   EXPECT_DOUBLE_EQ(color.a, 1.0);
 }
 

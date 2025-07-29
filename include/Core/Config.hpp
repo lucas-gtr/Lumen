@@ -57,11 +57,11 @@ static constexpr double MIN_PLANE_LENGTH     = 0.1;    // in meters
 static constexpr double MAX_PLANE_LENGTH     = 1000.0; // in meters
 
 //<-------- RENDER SETTINGS --------->
-static constexpr int DEFAULT_WIDTH   = 1920; // in pixels
+static constexpr int DEFAULT_WIDTH   = 800; // in pixels
 static constexpr int MIN_WIDTH       = 1;
 static constexpr int MAX_IMAGE_WIDTH = 8192;
 
-static constexpr int DEFAULT_HEIGHT   = 1080; // in pixels
+static constexpr int DEFAULT_HEIGHT   = 800; // in pixels
 static constexpr int MIN_HEIGHT       = 1;
 static constexpr int MAX_IMAGE_HEIGHT = 8192;
 
@@ -73,9 +73,9 @@ static constexpr int DEFAULT_MAX_BOUNCES = 5; // for path tracing
 static constexpr int MIN_MAX_BOUNCES     = 0;
 static constexpr int MAX_BOUNCES         = 100;
 
-static constexpr int DEFAULT_SAMPLES_PER_PIXEL = 4;
+static constexpr int DEFAULT_SAMPLES_PER_PIXEL = 9;
 static constexpr int MIN_SAMPLES_PER_PIXEL     = 1;
-static constexpr int MAX_SAMPLES_PER_PIXEL     = 1024;
+static constexpr int MAX_SAMPLES_PER_PIXEL     = 20000;
 
 //<-------- RENDER EXPORTER --------->
 static constexpr std::string_view DEFAULT_FILE_PATH    = "RenderImages/";
@@ -84,10 +84,13 @@ static constexpr int              DEFAULT_JPEG_QUALITY = 90;
 static constexpr int              MIN_JPEG_QUALITY     = 1;
 static constexpr int              MAX_JPEG_QUALITY     = 100;
 
+//<-------- POST-PROCESSING --------->
+static constexpr double DEFAULT_WHITE_POINT = 10.0;
+
 //<-------- SKYBOX --------->
-static constexpr double DEFAULT_SKYBOX_COLOR_R = 0.65;
-static constexpr double DEFAULT_SKYBOX_COLOR_G = 0.65;
-static constexpr double DEFAULT_SKYBOX_COLOR_B = 0.9;
+static constexpr double DEFAULT_SKYBOX_COLOR_R = 0.0;
+static constexpr double DEFAULT_SKYBOX_COLOR_G = 0.0;
+static constexpr double DEFAULT_SKYBOX_COLOR_B = 0.0;
 
 //<-------- TEXTURE --------->
 static constexpr double DEFAULT_TEXTURE_UNDEFINED_R = 1.0;
@@ -96,7 +99,7 @@ static constexpr double DEFAULT_TEXTURE_UNDEFINED_B = 1.0;
 static constexpr int    MAX_PREVIEW_TEXTURE_SIZE    = 256;
 
 //<-------- MATERIAL --------->
-static constexpr double MAX_EMISSIVE_STRENGTH   = 10.0;
+static constexpr double MAX_EMISSIVE_STRENGTH   = 1000.0;
 static constexpr double DEFAULT_ROUGHNESS_VALUE = 0.5;
 
 //<-------- LIGHT --------->
@@ -115,23 +118,16 @@ static constexpr float DIRECTIONAL_LIGHT_DISTANCE    = 20.0F;
 static constexpr float ORTHOGRAPHIC_LIGHT_SIZE       = 4.0F;
 static constexpr float MIN_LIGHT_INTENSITY_FAR_PLANE = 0.01F;
 
-//<-------- POST-PROCESSING --------->
-static constexpr double DEFAULT_TONE_MAPPING_EXPOSURE = 1.0;
-static constexpr double MIN_TONE_MAPPING_EXPOSURE     = 0.0;
-static constexpr double MAX_TONE_MAPPING_EXPOSURE     = 10.0;
-
 //<-------- BVH --------->
-static constexpr double BVH_CONSTRUCTION_EPSILON = 0.0001;
+static constexpr double BVH_CONSTRUCTION_EPSILON           = 0.0001;
+static constexpr int    MINIMUM_FACES_FOR_BVH_CONSTRUCTION = 50;
 
 //<-------- RENDER EXECUTION --------->
-static constexpr int          DEFAULT_CHUNK_SIZE          = 256; // in pixels
+static constexpr int          DEFAULT_CHUNK_SIZE          = 400; // in pixels
 static constexpr int          MIN_CHUNK_SIZE              = 1;
 static constexpr int          MAX_CHUNK_SIZE              = 1024;
-static constexpr int          CHUNK_COUNT_UPDATE_INTERVAL = 10;
+static constexpr int          CHUNK_COUNT_UPDATE_INTERVAL = 50;
 static constexpr unsigned int THREADS_TO_KEEP_FREE        = 4;
-
-//<-------- MATH --------->
-static constexpr double EPSILON = 1e-9; // for floating-point comparisons
 
 //<-------- ALIGNMENT --------->
 static constexpr size_t ALIGN8  = 8;
@@ -139,7 +135,7 @@ static constexpr size_t ALIGN16 = 16;
 static constexpr size_t ALIGN32 = 32;
 
 //<-------- ENGINE --------->
-static constexpr float DEFAULT_CAMERA_MOVE_SPEED   = 0.005F;
+static constexpr float DEFAULT_CAMERA_MOVE_SPEED   = 0.01F;
 static constexpr float MIN_CAMERA_MOVE_SPEED       = 0.001F;
 static constexpr float MAX_CAMERA_MOVE_SPEED       = 1.0F;
 static constexpr float DEFAULT_CAMERA_ROTATE_SPEED = 0.001F;

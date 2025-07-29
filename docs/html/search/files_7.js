@@ -7,5 +7,6 @@ var searchData=
   ['lightwidget_2ecpp_4',['LightWidget.cpp',['../LightWidget_8cpp.html',1,'']]],
   ['lightwidget_2ehpp_5',['LightWidget.hpp',['../LightWidget_8hpp.html',1,'']]],
   ['lineeditdouble_2ecpp_6',['LineEditDouble.cpp',['../LineEditDouble_8cpp.html',1,'']]],
-  ['lineeditdouble_2ehpp_7',['LineEditDouble.hpp',['../LineEditDouble_8hpp.html',1,'']]]
+  ['lineeditdouble_2ehpp_7',['LineEditDouble.hpp',['../LineEditDouble_8hpp.html',1,'']]],
+  ['luminancereinhard_2ehpp_8',['LuminanceReinhard.hpp',['../LuminanceReinhard_8hpp.html',1,'']]]
 ];

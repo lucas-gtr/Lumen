@@ -85,3 +85,12 @@ void MaterialManager::removeMaterial(const std::string& material_name) {
     m_material_removed_observer.notify(material_name);
   }
 }
+
+std::vector<std::string> MaterialManager::getAllMaterialsName() const {
+  std::vector<std::string> material_names;
+  material_names.reserve(m_material_map.size());
+  for(const auto& pair : m_material_map) {
+    material_names.push_back(pair.first);
+  }
+  return material_names;
+}

@@ -145,6 +145,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5913ce6d49752c1f1cc19d8f1a8eedc9" id="r_a5913ce6d49752c1f1cc19d8f1a8eedc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMaterial.html">Material</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject3D.html#a5913ce6d49752c1f1cc19d8f1a8eedc9">getMaterial</a> () const</td></tr>
 <tr class="memdesc:a5913ce6d49752c1f1cc19d8f1a8eedc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the material associated with this 3D object.  <br /></td></tr>
 <tr class="separator:a5913ce6d49752c1f1cc19d8f1a8eedc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9c85ae944478eca8ce0c205ab10f77d" id="r_aa9c85ae944478eca8ce0c205ab10f77d"><td class="memItemLeft" align="right" valign="top">linalg::Vec3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject3D.html#aa9c85ae944478eca8ce0c205ab10f77d">computeBound</a> (const std::function&lt; linalg::Vec3d(const linalg::Vec3d &amp;, const linalg::Vec3d &amp;)&gt; &amp;comparator) const</td></tr>
+<tr class="memdesc:aa9c85ae944478eca8ce0c205ab10f77d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the bounding box of the object.  <br /></td></tr>
+<tr class="separator:aa9c85ae944478eca8ce0c205ab10f77d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2d894daccb996bbff1ff2b5512713b4" id="r_ae2d894daccb996bbff1ff2b5512713b4"><td class="memItemLeft" align="right" valign="top">linalg::Vec3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject3D.html#ae2d894daccb996bbff1ff2b5512713b4">getMinBound</a> () const</td></tr>
 <tr class="memdesc:ae2d894daccb996bbff1ff2b5512713b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the minimum bounding box corner of the object.  <br /></td></tr>
 <tr class="separator:ae2d894daccb996bbff1ff2b5512713b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -377,6 +380,33 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa9c85ae944478eca8ce0c205ab10f77d" name="aa9c85ae944478eca8ce0c205ab10f77d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9c85ae944478eca8ce0c205ab10f77d">&#9670;&#160;</a></span>computeBound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">linalg::Vec3d Object3D::computeBound </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; linalg::Vec3d(const linalg::Vec3d &amp;, const linalg::Vec3d &amp;)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>comparator</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the bounding box of the object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comparator</td><td>A function to compare two Vec3d objects. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The bounding box as a Vec3d. </dd></dl>
+
+</div>
+</div>
 <a id="a5913ce6d49752c1f1cc19d8f1a8eedc9" name="a5913ce6d49752c1f1cc19d8f1a8eedc9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5913ce6d49752c1f1cc19d8f1a8eedc9">&#9670;&#160;</a></span>getMaterial()</h2>
 

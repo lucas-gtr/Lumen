@@ -93,7 +93,6 @@ void EngineGL::initQuadVAO() {
   glBindBuffer(GL_ARRAY_BUFFER, 0);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-  std::cout << "EngineGL: Quad VAO " << m_quad_vao << " created." << '\n';
   glDeleteBuffers(1, &vbo);
   glDeleteBuffers(1, &ebo);
 }
@@ -122,8 +121,7 @@ void EngineGL::setDynamicLighting(bool enabled) { m_dynamic_lighting = enabled; 
 void EngineGL::setDynamicShadowMap(bool enabled) { m_dynamic_shadow_map = enabled; }
 
 void EngineGL::setExposure(float exposure) {
-  m_exposure = static_cast<float>(
-      std::clamp(static_cast<double>(exposure), MIN_TONE_MAPPING_EXPOSURE, MAX_TONE_MAPPING_EXPOSURE));
+  m_exposure = static_cast<float>(std::max(static_cast<double>(exposure), 0.0));
 
   m_post_processing_program.bind();
   m_post_processing_program.setUniform1f("exposure", m_exposure);

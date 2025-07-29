@@ -105,6 +105,4 @@ double Material::getMetallic(TextureUV uv_coord) const {
   return m_metallic_value;
 }
 
-ColorRGB Material::getEmissive(TextureUV uv_coord) const {
-  return m_emissive_texture->getValue3d(uv_coord) * m_emissive_intensity;
-}
+ColorRGB Material::getEmissive(TextureUV uv_coord) const { return m_emissive_texture->getValue3d(uv_coord); }

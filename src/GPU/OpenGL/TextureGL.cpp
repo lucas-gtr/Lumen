@@ -23,14 +23,9 @@ TextureGL::TextureGL(Texture* texture) : ITextureGPU(texture) {
   m_texture_data_observer_id = texture->getTextureDataObserver().add([this]() { uploadToGPU(); });
   m_texture_parameters_observer_id =
       texture->getTextureParametersObserver().add([this, texture]() { configureParameters(texture); });
-  std::cout << "TextureGL: Texture created with ID " << m_texture_id << "." << '\n';
 }
 
 void TextureGL::bind(int texture_unit) {
-  if(texture_unit != 0 && texture_unit != 1) {
-    std::cout << "TextureGL: Binding texture with ID " << m_texture_id << " to texture unit " << texture_unit << "."
-              << '\n';
-  }
   glActiveTexture(GL_TEXTURE0 + texture_unit);
   glBindTexture(GL_TEXTURE_2D, m_texture_id);
 }
@@ -148,7 +143,6 @@ void TextureGL::uploadToGPU() {
     std::cerr << "Error: Texture data is null." << '\n';
   }
 
-  std::cout << "TextureGL: Texture with ID " << m_texture_id << " uploaded to GPU." << '\n';
   glBindTexture(GL_TEXTURE_2D, 0);
 }
 
@@ -156,7 +150,6 @@ void TextureGL::release() {
   if(m_texture_id != 0) {
     glBindTexture(GL_TEXTURE_2D, 0);
     glDeleteTextures(1, &m_texture_id);
-    std::cout << "TextureGL with ID " << m_texture_id << " destroyed." << '\n';
 
     m_texture_id = 0U;
   }

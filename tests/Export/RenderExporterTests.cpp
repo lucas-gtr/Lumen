@@ -2,7 +2,7 @@
 #include "Export/OutputFormatPng.hpp"
 #include "PostProcessing/ToneMapping/Exposure.hpp"
 #include "PostProcessing/ToneMapping/None.hpp"
-#include "PostProcessing/ToneMapping/Reinhard.hpp"
+#include "PostProcessing/ToneMapping/LuminanceReinhard.hpp"
 
 #include <gtest/gtest.h>
 #include <fstream>
@@ -26,7 +26,7 @@ TEST(RenderExporterTest, ExportRenderPng) {
     RenderExporter exporter(&framebuffer);
 
     exporter.setOutputFormat(OutputFormat::PNG);
-    exporter.setToneMapping(ToneMapping::REINHARD);
+    exporter.setToneMapping(ToneMapping::LUMINANCE_REINHARD);
     exporter.setPath("/tmp");
     exporter.setFilename("test_image.png");
 
@@ -79,8 +79,8 @@ TEST(RenderExporterTest, SetAndGetToneMapping) {
     exporter.setToneMapping(ToneMapping::NONE);
     EXPECT_EQ(exporter.getToneMapping(), ToneMapping::NONE);
 
-    exporter.setToneMapping(ToneMapping::REINHARD);
-    EXPECT_EQ(exporter.getToneMapping(), ToneMapping::REINHARD);
+    exporter.setToneMapping(ToneMapping::LUMINANCE_REINHARD);
+    EXPECT_EQ(exporter.getToneMapping(), ToneMapping::LUMINANCE_REINHARD);
 
     exporter.setToneMapping(ToneMapping::EXPOSURE);
     EXPECT_EQ(exporter.getToneMapping(), ToneMapping::EXPOSURE);

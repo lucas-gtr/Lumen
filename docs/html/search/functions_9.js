@@ -9,5 +9,6 @@ var searchData=
   ['lineeditdouble_6',['LineEditDouble',['../classLineEditDouble.html#a24775df22404bd572766adf8678b8117',1,'LineEditDouble']]],
   ['load_7',['load',['../namespaceTextureLoader.html#a62f68b81caf9abfc157d4dc1e95e073a',1,'TextureLoader::load()'],['../namespaceOBJLoader.html#a698682f088f1d8fe86113901784022bf',1,'OBJLoader::load()']]],
   ['loadfromfile_8',['loadFromFile',['../classTexture.html#aba1b9890fda93e17a853bf0990dcc768',1,'Texture']]],
-  ['loadshaders_9',['loadshaders',['../classShadersGL.html#a621a27dcacb18caa2468605a18906329',1,'ShadersGL::loadShaders(const char *vertex_shader_path, const char *fragment_shader_path)'],['../classShadersGL.html#a95829110f2dd644760fc4583a230c71f',1,'ShadersGL::loadShaders(const char *vertex_shader_path, const char *geometry_shader_path, const char *fragment_shader_path)']]]
+  ['loadshaders_9',['loadshaders',['../classShadersGL.html#a621a27dcacb18caa2468605a18906329',1,'ShadersGL::loadShaders(const char *vertex_shader_path, const char *fragment_shader_path)'],['../classShadersGL.html#a95829110f2dd644760fc4583a230c71f',1,'ShadersGL::loadShaders(const char *vertex_shader_path, const char *geometry_shader_path, const char *fragment_shader_path)']]],
+  ['luminancereinhardtonemapping_10',['LuminanceReinhardToneMapping',['../classLuminanceReinhardToneMapping.html#a9ca7e2d7a1f215a1e0f21467c0357bbf',1,'LuminanceReinhardToneMapping']]]
 ];

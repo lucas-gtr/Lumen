@@ -22,7 +22,7 @@ Mesh PlaneMeshBuilder::build() const {
 
   for(auto& vertex : vertices) {
     vertex.normal   = linalg::Vec3d(0.0, 1.0, 0.0);
-    vertex.uv_coord = {vertex.position.x / m_width + HALF, vertex.position.z / m_length + HALF};
+    vertex.uv_coord = {vertex.position.x + m_width * HALF, vertex.position.z + m_length * HALF};
   }
 
   faces.push_back({{0, 2, 1}});

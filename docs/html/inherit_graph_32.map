@@ -1,13 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,104,101,129"/>
-<area shape="rect" id="Node000001" href="$classCameraWidget.html" title="A widget for displaying and editing camera settings." alt="" coords="157,5,275,31"/>
-<area shape="poly" id="edge37_Node000000_Node000001" title=" " alt="" coords="77,92,110,65,148,40,173,28,175,33,151,44,113,70,80,96"/>
-<area shape="rect" id="Node000002" href="$classExportWidget.html" title="A widget for exporting rendered images with various settings." alt="" coords="161,55,271,80"/>
-<area shape="poly" id="edge38_Node000000_Node000002" title=" " alt="" coords="108,97,172,78,174,83,110,102"/>
-<area shape="rect" id="Node000003" href="$classLightWidget.html" title="A widget for displaying and editing light settings." alt="" coords="166,104,266,129"/>
-<area shape="poly" id="edge39_Node000000_Node000003" title=" " alt="" coords="115,114,166,114,166,119,115,119"/>
-<area shape="rect" id="Node000004" href="$classObjectWidget.html" title="A widget for displaying and editing properties of a 3D object." alt="" coords="161,153,271,179"/>
-<area shape="poly" id="edge40_Node000000_Node000004" title=" " alt="" coords="110,131,174,151,172,156,108,136"/>
-<area shape="rect" id="Node000005" href="$classTransformWidget.html" title="A widget for displaying and editing transformation properties of a 3D object." alt="" coords="149,203,283,228"/>
-<area shape="poly" id="edge41_Node000000_Node000005" title=" " alt="" coords="80,136,113,163,151,188,177,200,175,205,148,192,110,167,77,141"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,55,80,80"/>
+<area shape="rect" id="Node000001" href="$classCubeDialog.html" title="A dialog for creating cubes with a specified size." alt="" coords="134,5,231,31"/>
+<area shape="poly" id="edge34_Node000000_Node000001" title=" " alt="" coords="91,47,145,28,147,33,93,52"/>
+<area shape="rect" id="Node000002" href="$classPlaneDialog.html" title="A dialog for creating and editing a plane object." alt="" coords="133,55,233,80"/>
+<area shape="poly" id="edge35_Node000000_Node000002" title=" " alt="" coords="93,65,133,65,133,70,93,70"/>
+<area shape="rect" id="Node000003" href="$classSphereDialog.html" title="A dialog for creating and configuring spheres in a 3D scene." alt="" coords="128,104,237,129"/>
+<area shape="poly" id="edge36_Node000000_Node000003" title=" " alt="" coords="93,82,147,101,145,106,91,87"/>
 </map>

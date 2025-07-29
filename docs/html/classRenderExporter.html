@@ -137,6 +137,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2ddf1ebd400d956075226f403431c473" id="r_a2ddf1ebd400d956075226f403431c473"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a2ddf1ebd400d956075226f403431c473">getExposure</a> () const</td></tr>
 <tr class="memdesc:a2ddf1ebd400d956075226f403431c473"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current exposure value.  <br /></td></tr>
 <tr class="separator:a2ddf1ebd400d956075226f403431c473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9239ea46758765a46466fa17067c6ff5" id="r_a9239ea46758765a46466fa17067c6ff5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a9239ea46758765a46466fa17067c6ff5">setWhitePoint</a> (double white_point)</td></tr>
+<tr class="memdesc:a9239ea46758765a46466fa17067c6ff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the white point value for the render, for white point-based tone mapping.  <br /></td></tr>
+<tr class="separator:a9239ea46758765a46466fa17067c6ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae14e6ac1687592fcee02fe10d32f9a67" id="r_ae14e6ac1687592fcee02fe10d32f9a67"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#ae14e6ac1687592fcee02fe10d32f9a67">getWhitePoint</a> () const</td></tr>
+<tr class="memdesc:ae14e6ac1687592fcee02fe10d32f9a67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the white point value for the render, for white point-based tone mapping.  <br /></td></tr>
+<tr class="separator:ae14e6ac1687592fcee02fe10d32f9a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a339207569cf985ecd077a7ff31506774" id="r_a339207569cf985ecd077a7ff31506774"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a339207569cf985ecd077a7ff31506774">setJpegQuality</a> (int quality)</td></tr>
 <tr class="memdesc:a339207569cf985ecd077a7ff31506774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the JPEG quality for the render.  <br /></td></tr>
 <tr class="separator:a339207569cf985ecd077a7ff31506774"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -514,6 +520,34 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae14e6ac1687592fcee02fe10d32f9a67" name="ae14e6ac1687592fcee02fe10d32f9a67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae14e6ac1687592fcee02fe10d32f9a67">&#9670;&#160;</a></span>getWhitePoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RenderExporter::getWhitePoint </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the white point value for the render, for white point-based tone mapping. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current white point value used for tone mapping. </dd></dl>
+
+</div>
+</div>
 <a id="a284bfc98a628548b9dbad11fc9dfa53a" name="a284bfc98a628548b9dbad11fc9dfa53a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a284bfc98a628548b9dbad11fc9dfa53a">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
@@ -732,6 +766,32 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tone_mapping</td><td>Pointer to the <a class="el" href="classToneMappingStrategy.html" title="Abstract base class for tone mapping strategies.">ToneMappingStrategy</a> object that defines the tone mapping. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9239ea46758765a46466fa17067c6ff5" name="a9239ea46758765a46466fa17067c6ff5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9239ea46758765a46466fa17067c6ff5">&#9670;&#160;</a></span>setWhitePoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderExporter::setWhitePoint </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>white_point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the white point value for the render, for white point-based tone mapping. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">white_point</td><td>The white point value to be set for the render. </td></tr>
   </table>
   </dd>
 </dl>

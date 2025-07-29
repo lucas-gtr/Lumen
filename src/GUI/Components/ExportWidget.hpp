@@ -60,12 +60,12 @@ private slots:
   void onToneMappingChanged(const QString& tone_mapping);
   void onExposureChanged(double exposure);
   void onExportButtonClicked();
+  void onWhitePointChanged(double white_point);
+  void onMaxWhitePointClicked();
 
 private:
   Ui::ExportWidget* ui;
   RenderExporter*   m_exporter = nullptr;
-
-  bool m_export_ready = false;
 };
 
 #endif // GUI_WIDGETS_LIGHTWIDGET_HPP

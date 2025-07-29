@@ -136,3 +136,12 @@ void TextureManager::removeTexture(const std::string& texture_name) {
     m_texture_removed_observer.notify(texture_name);
   }
 }
+
+std::vector<std::string> TextureManager::getAllTexturesName() const {
+  std::vector<std::string> texture_names;
+  texture_names.reserve(m_texture_map.size());
+  for(const auto& pair : m_texture_map) {
+    texture_names.push_back(pair.first);
+  }
+  return texture_names;
+}

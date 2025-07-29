@@ -1,9 +1,13 @@
 # Lumen
 
-**Lumen** is a modern C++20 3D rendering engine built from scratch to showcase high-performance rendering, clean architecture, and real-time + offline graphics capabilities.
-It reflects my expertise in computer graphics and professional software engineering, with a modular design, real-time OpenGL viewport, and a custom CPU-based ray tracer.
+Lumen is a modern C++20 3D rendering engine built from scratch, designed to explore both real-time and offline rendering. It features a physically-based CPU path tracer with microfacet BRDFs (GGX), Multiple Importance Sampling, and BVH acceleration, alongside a real-time OpenGL viewport — demonstrating my amy skills in computer graphics and software engineering.
 
-![Viewport with some objects](Gallery/ViewportWithObjects.png)
+![Demo scene](Gallery/DemoScene.png)
+
+![Software interface](Gallery/LumenInterface.png)
+
+![Cornell Box](Gallery/CornellBox.png)
+
 
 ## ✨ Features
 
@@ -16,7 +20,8 @@ It reflects my expertise in computer graphics and professional software engineer
 - **Qt User Interface**: Developed a full-featured user interface using Qt and Qt Designer (`.ui` files), allowing dynamic control and inspection of all scene elements  
 - **Skybox Integration:** Supports environment mapping using skybox textures
 - **Image Exporting:** Renders can be exported as PNG, JPEG, BMP, TGA and HDR images with tone mapping and exposure adjustments
-- **Ray Tracing Renderer:** High-quality image rendering using a CPU-based ray tracer, with both single-threaded and multi-threaded execution modes  
+- **Tone Mapping**: Multiple tone mapping operators including `Exposure`, `Reinhard`, `ACES`, and `Uncharted2`
+- **Physically-Based CPU Renderer**: Custom path tracer implemented on CPU, supporting both single-threaded and multi-threaded modes. Features GGX microfacet distribution, Multiple Importance Sampling (MIS), Russian Roulette termination  
 - **Ray Acceleration:** Ray traversal acceleration with a *Bounding Volume Hierarchy* (BVH)
 - **Comprehensive CI:** Automated formatting, linting and testing via GitHub Actions
 
@@ -25,16 +30,18 @@ It reflects my expertise in computer graphics and professional software engineer
 The project is structured into distinct modules to ensure maintainability and scalability:
 
 - **Core:** Fundamental utilities and data structures
+- **BVH** : Manages the BVH construction
 - **Surface:** Manages materials and textures
 - **Geometry:** Responsible for mesh creation and loading
 - **Lighting:** Defines different light types and their behaviors
-- **Scene:** Manages objects, camera, lights, and the skybox
+- **SceneObjects** : Manages objects of the scene such as 3D Objects and Camera
+- **Scene:** Manages the Scene and the Skybox.
 - **Rendering:** Handles the rendering pipeline and settings
 - **OpenGL:** Manages the real-time rendering view, shaders, framebuffers, and OpenGL-specific resources  
 - **GUI**: Implements the user interface and interaction logic using Qt and Qt Designer (.ui files), enabling intuitive control and visualization of scene components.
 - **Export:** Manages the export of rendered images
 
-This modular design facilitates independent development and testing of each component, promoting clean code practices and ease of maintenance.
+This modular design facilitates independent development and testing of each component.
 
 ## 📚 Documentation
 
@@ -44,11 +51,11 @@ It includes detailed class references and module overviews.
 
 ## 🖼️ Rendering Pipeline
 
-- **Ray Sampling**: Rendering uses a Monte Carlo approach. For each pixel, several rays are sampled using stratified sampling within a grid, ensuring uniform stochastic coverage across the pixel area. This improves convergence and reduces noise in the output.
-- **Flexible Sample Count**: The number of rays per pixel (render samples) is configurable, allowing a trade-off between quality and performance
-- **No Indirect Lighting:** Currently, no global illumination or path tracing is implemented.
-- **Tone Mapping:** Final color output can be mapped using Reinhard or Exposure techniques, or simply clamped for raw output.
-- **Color Accuracy:** All lighting computations are performed in linear space, with gamma correction applied when writing to sRGB.
+- **Ray Sampling**: Monte Carlo path tracing with stratified sampling per pixel, ensuring uniform stochastic coverage and improved convergence with reduced noise
+- **Configurable Sampling**: The number of samples per pixel is fully configurable, allowing a balance between image quality and rendering time
+- **Light Transport**: Supports direct and indirect lighting via global illumination. Paths are traced recursively with Russian Roulette termination to optimize performance without bias
+- **BRDF Sampling**: Uses importance sampling of the GGX microfacet distribution, combined with Multiple Importance Sampling (MIS) for efficient and realistic light integration
+- **Color Accuracy & Tone Mapping**: All shading is performed in linear space. Final output undergoes gamma correction and tone mapping using operators such as `Exposure`, `Reinhard`, `ACES`, and `Uncharted2`
 
 ## 🛠️ Build & Run Instructions
 
@@ -91,10 +98,10 @@ From the graphical interface, you can then:
 - Create various meshes (cube, sphere, plane)
 - Load OBJ models
 - Add and customize directional, point, and spot lights
-- Set up materials with diffuse texture and normal maps
+- Set up materials with diffuse and emissive textures, normal maps, emissive strength, roughness and metalness
 - Configure a camera with aperture, focus distance, and field of view
 - Adjust tone mapping, exposure, and post-processing settings in real-time
-- Trigger a ray-traced render (single- or multi-threaded) and export the image
+- Trigger a path-traced render (single- or multi-threaded) and export the image
 
 ## ✅ Continuous Integration
 The project employs GitHub Actions for continuous integration, ensuring code quality and reliability through automated workflows:
@@ -140,9 +147,11 @@ These are the available Make targets:
 
 Planned enhancements for future development:
 
-- **Auto-generated modular UI**: A powerful and flexible interface system driven by JSON schemas, enabling automatic generation of control panels (e.g., camera, lighting, materials) with customizable widgets, value ranges, and live bindings
-- **GPU acceleration with CUDA** for real-time performance
-- Integration of **full rendering equation** and support for **physically-based rendering** (PBR)
+- **Next Event Estimation (NEE)**: Improve light transport efficiency by explicitly sampling direct illumination from light sources at each bounce.
+- **Real-Time Viewport Enhancements**: Add support for post-processing effects such as Bloom, Fog, and Screen Space Ambient Occlusion (SSAO) to enhance visual realism.
+- **Deferred Shading Pipeline**: Introduce a deferred renderer to decouple geometry pass from lighting calculations, allowing efficient rendering of complex scenes with many lights.
+- **glTF Support**: Implement a glTF 2.0 parser for loading entire scenes.
+- **GPU Acceleration with CUDA**: Port the path tracer to CUDA to significantly reduce render times and enable real-time or near real-time feedback for high-quality previews.
 
 ## 🙋 About me
 
@@ -160,11 +169,7 @@ I'm a software engineer specializing in 3D development and modern C++ practices.
 
 **Export window to visualize and export the rendering**
 
-![Lumen default interface](Gallery/ExportInterface.png)
-
-*Image 1920x1080 - 34581 triangles - 2 lights - 4 samples per pixel* | **Render time single-threaded**: 2min 11s | **Render time multi-threaded (28 threads)**: 10s
-
-![OBJ example](Gallery/RenderTest.png)
+![Lumen default interface](Gallery/RenderWindow.png)
 
 
 

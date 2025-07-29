@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gpu_5fcuda_0',['GPU_CUDA',['../RenderSettings_8hpp.html#ab8267c4b196a3445bfa237ffea2c74fdae532a01aa444c7086d6fcf042bce4e55',1,'RenderSettings.hpp']]]
+  ['folder_0',['FOLDER',['../FileSelector_8hpp.html#a017027cef985120697cc4895df3056c3a80dc13242b57656668e67c9ca779ccb3',1,'FileSelector.hpp']]]
 ];
