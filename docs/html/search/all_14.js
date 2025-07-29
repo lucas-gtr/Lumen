@@ -2,7 +2,7 @@ var searchData=
 [
   ['v_0',['v',['../structTextureUV.html#abf8f5580d06c9c43842c7a1a7e4c1fd8',1,'TextureUV']]],
   ['value_1',['value',['../classLineEditDouble.html#a35cdd55e800ec5c773d5091c370f95f9',1,'LineEditDouble']]],
-  ['valuechanged_2',['valuechanged',['../classLineEditDouble.html#a37e2154ec50fe50be83f7b72b5de7890',1,'LineEditDouble::valueChanged()'],['../classSliderSpinBox.html#a31dfb5db9c10a14ca5488f98befb288e',1,'SliderSpinBox::valueChanged()'],['../classVec3Editor.html#a545c691bd4b761710755bf3f3781de79',1,'Vec3Editor::valueChanged()']]],
+  ['valuechanged_2',['valuechanged',['../classDoubleSliderSpinBox.html#a9d3584eafa96dd735ad3c6fe3729833a',1,'DoubleSliderSpinBox::valueChanged()'],['../classLineEditDouble.html#a37e2154ec50fe50be83f7b72b5de7890',1,'LineEditDouble::valueChanged()'],['../classSliderSpinBox.html#a31dfb5db9c10a14ca5488f98befb288e',1,'SliderSpinBox::valueChanged()'],['../classVec3Editor.html#a545c691bd4b761710755bf3f3781de79',1,'Vec3Editor::valueChanged()']]],
   ['valuefromtext_3',['valueFromText',['../classSquareSpinBox.html#a075d843c182513c43c016347f3d7c296',1,'SquareSpinBox']]],
   ['valuepervertex_4',['ValuePerVertex',['../structVertex.html#aa6754081f0389c2343fc05dbcf9278e0',1,'Vertex']]],
   ['vec3editor_5',['vec3editor',['../classVec3Editor.html',1,'Vec3Editor'],['../classVec3Editor.html#a737cd7f0dd819757059402a4622ec13c',1,'Vec3Editor::Vec3Editor()']]],

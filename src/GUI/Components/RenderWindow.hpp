@@ -5,6 +5,7 @@
 #ifndef GUI_COMPONENTS_RENDERWINDOW_HPP
 #define GUI_COMPONENTS_RENDERWINDOW_HPP
 
+#include <QPixmap>
 #include <QWidget>
 
 #include "Core/CommonTypes.hpp"
@@ -48,13 +49,22 @@ public slots:
   void onRenderProgress(RenderStats stats);
   void onRenderFinished(double elapsed_time);
 
+signals:
+  void aboutToClose();
+
+protected:
+  void resizeEvent(QResizeEvent* event) override;
+  void closeEvent(QCloseEvent* event) override;
+
 private:
   Ui::RenderWindow* ui;
   Framebuffer*      m_framebuffer = nullptr;
 
   std::unique_ptr<RenderExporter> m_exporter;
+  bool                            m_render_finished = false;
 
   ImageProperties m_render_image_properties;
+  QPixmap         m_render_image;
 
   void updateImageToExport();
 

@@ -105,12 +105,6 @@ void ShadersGL::compileShadersFromSources(const std::vector<std::pair<GLenum, co
     m_program = 0;
     return;
   }
-
-  std::cout << "Shaders loaded successfully: ";
-  for(const auto& [_, path] : shaders) {
-    std::cout << path << " ";
-  }
-  std::cout << '\n';
 }
 
 void ShadersGL::bind() {

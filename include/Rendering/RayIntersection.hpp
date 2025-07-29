@@ -24,7 +24,7 @@
 struct RayHitInfo {
   double          distance = std::numeric_limits<double>::max();
   const Material* material = nullptr;
-  TextureUV       uv_coordinates;
+  TextureUV       bary_coordinates;
   linalg::Vec3d   normal;
   linalg::Vec3d   tangent;
   linalg::Vec3d   bitangent;
@@ -47,8 +47,8 @@ struct RayBVHHitInfo {
   double distance;
 };
 
-constexpr double RAY_OFFSET_FACTOR = 1e-9;
-constexpr double EPSILON           = 1e-6;
+constexpr double RAY_OFFSET_FACTOR      = 1e-9;
+constexpr double INTERSECTION_TOLERANCE = 1e-6;
 
 /**
  * @brief Checks for intersection between a ray and a triangle defined by three points.
@@ -121,14 +121,15 @@ RayHitInfo getSceneIntersection(const Ray& ray, const Scene* scene);
 
 /**
  * @brief Checks if a ray intersects with an axis-aligned bounding box (AABB).
- * @param ray The ray to check for intersection.
+ * @param origin The origin of the ray.
+ * @param inv_dir The inverse direction of the ray.
  * @param min_bound The minimum corner of the AABB.
  * @param max_bound The maximum corner of the AABB.
  * @param hit_distance The distance to the intersection point, if any.
  * @return True if the ray intersects the AABB, false otherwise.
  */
-bool getAABBIntersection(const Ray& ray, const linalg::Vec3d& min_bound, const linalg::Vec3d& max_bound,
-                         double& hit_distance);
+bool getAABBIntersection(const linalg::Vec3d& origin, const linalg::Vec3d& inv_dir, const linalg::Vec3d& min_bound,
+                         const linalg::Vec3d& max_bound, double& hit_distance);
 
 /**
  * @brief Gets the intersection information of a ray with a BVH node.

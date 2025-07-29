@@ -28,7 +28,7 @@ bool getTriangleIntersection(const Ray& ray, const linalg::Vec3d& p0, const lina
   const linalg::Vec3d h     = ray.direction.cross(edge2);
   const double        a     = linalg::dot(edge1, h);
 
-  if(std::abs(a) < EPSILON) {
+  if(a > -INTERSECTION_TOLERANCE && a < INTERSECTION_TOLERANCE) {
     return false;
   }
 
@@ -36,20 +36,20 @@ bool getTriangleIntersection(const Ray& ray, const linalg::Vec3d& p0, const lina
   const linalg::Vec3d s = ray.origin - p0;
   const double        u = f * linalg::dot(s, h);
 
-  if(u < 0.0 || u > 1.0) {
+  if(u < -INTERSECTION_TOLERANCE || u > 1.0 + INTERSECTION_TOLERANCE) {
     return false;
   }
 
   const linalg::Vec3d q = s.cross(edge1);
   const double        v = f * linalg::dot(ray.direction, q);
 
-  if(v < 0.0 || u + v > 1.0) {
+  if(v < -INTERSECTION_TOLERANCE || u + v > 1.0 + INTERSECTION_TOLERANCE) {
     return false;
   }
 
   hit_distance = f * linalg::dot(edge2, q);
 
-  if(hit_distance > EPSILON) {
+  if(hit_distance > INTERSECTION_TOLERANCE) {
     bary_coords = {1.0 - u - v, u, v};
     return true;
   }
@@ -68,7 +68,6 @@ void processFaceIntersection(const Ray& ray, const Mesh& mesh, const Face& face,
   if(!getTriangleIntersection(ray, v0.position, v1.position, v2.position, hit_distance, bary_coords)) {
     return;
   }
-
   if(hit_distance > 0 && hit_distance < closest_hit.distance) {
     updateHitInfoFromBarycentric(closest_hit, hit_distance, bary_coords, v0, v1, v2);
   }
@@ -76,12 +75,13 @@ void processFaceIntersection(const Ray& ray, const Mesh& mesh, const Face& face,
 
 void updateHitInfoFromBarycentric(RayHitInfo& hit_info, double distance, const linalg::Vec3d& bary, const Vertex& v0,
                                   const Vertex& v1, const Vertex& v2) {
-  hit_info.distance         = distance;
-  hit_info.uv_coordinates.u = bary.x * v0.uv_coord.u + bary.y * v1.uv_coord.u + bary.z * v2.uv_coord.u;
-  hit_info.uv_coordinates.v = bary.x * v0.uv_coord.v + bary.y * v1.uv_coord.v + bary.z * v2.uv_coord.v;
-  hit_info.normal           = (bary.x * v0.normal + bary.y * v1.normal + bary.z * v2.normal).normalized();
-  hit_info.tangent          = (bary.x * v0.tangent + bary.y * v1.tangent + bary.z * v2.tangent).normalized();
-  hit_info.bitangent        = (bary.x * v0.bitangent + bary.y * v1.bitangent + bary.z * v2.bitangent).normalized();
+  hit_info.distance           = distance;
+  hit_info.bary_coordinates.u = bary.x * v0.uv_coord.u + bary.y * v1.uv_coord.u + bary.z * v2.uv_coord.u;
+  hit_info.bary_coordinates.v = bary.x * v0.uv_coord.v + bary.y * v1.uv_coord.v + bary.z * v2.uv_coord.v;
+
+  hit_info.normal    = (bary.x * v0.normal + bary.y * v1.normal + bary.z * v2.normal).normalized();
+  hit_info.tangent   = (bary.x * v0.tangent + bary.y * v1.tangent + bary.z * v2.tangent).normalized();
+  hit_info.bitangent = (bary.x * v0.bitangent + bary.y * v1.bitangent + bary.z * v2.bitangent).normalized();
 }
 
 RayHitInfo getMeshIntersectionWithBVH(const Ray& ray, const Mesh& mesh) {
@@ -108,7 +108,6 @@ RayHitInfo getMeshIntersectionWithoutBVH(const Ray& ray, const Mesh& mesh) {
   for(const auto& face : mesh.getFaces()) {
     processFaceIntersection(ray, mesh, face, hit_info);
   }
-
   return hit_info;
 }
 
@@ -126,7 +125,7 @@ void updateNormalWithTangentSpace(RayHitInfo& hit_info) {
 
   const linalg::Mat3d tangent_space = linalg::Mat3d::FromColumns(hit_info.tangent, hit_info.bitangent, hit_info.normal);
 
-  const ColorRGB normal_color     = hit_info.material->getNormal(hit_info.uv_coordinates);
+  const ColorRGB normal_color     = hit_info.material->getNormal(hit_info.bary_coordinates);
   linalg::Vec3d  normal_direction = {normal_color.r, normal_color.g, normal_color.b};
   normal_direction                = (normal_direction * 2) - linalg::Vec3d(1.0, 1.0, 1.0);
 
@@ -170,11 +169,10 @@ RayHitInfo getObjectIntersection(const Ray& ray, const Object3D* object) {
   return hit_info;
 }
 
-bool getAABBIntersection(const Ray& ray, const linalg::Vec3d& min_bound, const linalg::Vec3d& max_bound,
-                         double& hit_distance) {
-  const linalg::Vec3d inv_dir = ray.direction.cwiseInverse();
-  const linalg::Vec3d t0      = linalg::cwiseProduct((min_bound - ray.origin), inv_dir);
-  const linalg::Vec3d t1      = linalg::cwiseProduct((max_bound - ray.origin), inv_dir);
+bool getAABBIntersection(const linalg::Vec3d& origin, const linalg::Vec3d& inv_dir, const linalg::Vec3d& min_bound,
+                         const linalg::Vec3d& max_bound, double& hit_distance) {
+  const linalg::Vec3d t0 = linalg::cwiseProduct((min_bound - origin), inv_dir);
+  const linalg::Vec3d t1 = linalg::cwiseProduct((max_bound - origin), inv_dir);
 
   const linalg::Vec3d t_min = linalg::cwiseMin(t0, t1);
   const linalg::Vec3d t_max = linalg::cwiseMax(t0, t1);
@@ -190,16 +188,18 @@ bool getAABBIntersection(const Ray& ray, const linalg::Vec3d& min_bound, const l
 }
 
 std::vector<RayBVHHitInfo> getBVHIntersection(const Ray& ray, const BVHNode* bvh_node) {
-  std::vector<RayBVHHitInfo> bvh_hits;
-  std::stack<const BVHNode*> node_stack;
-  node_stack.push(bvh_node);
+  std::vector<RayBVHHitInfo>  bvh_hits;
+  std::vector<const BVHNode*> node_stack;
+  node_stack.push_back(bvh_node);
+
+  const linalg::Vec3d inv_dir = ray.direction.cwiseInverse();
 
   while(!node_stack.empty()) {
-    const BVHNode* node = node_stack.top();
-    node_stack.pop();
+    const BVHNode* node = node_stack.back();
+    node_stack.pop_back();
 
     double hit_distance = std::numeric_limits<double>::max();
-    if(!getAABBIntersection(ray, node->getMinBound(), node->getMaxBound(), hit_distance)) {
+    if(!getAABBIntersection(ray.origin, inv_dir, node->getMinBound(), node->getMaxBound(), hit_distance)) {
       continue;
     }
 
@@ -210,38 +210,40 @@ std::vector<RayBVHHitInfo> getBVHIntersection(const Ray& ray, const BVHNode* bvh
       BVHNode* left  = node->getLeftChild().get();
       BVHNode* right = node->getRightChild().get();
 
-      double left_child_distance  = std::numeric_limits<float>::max();
-      double right_child_distance = std::numeric_limits<float>::max();
+      double left_child_distance  = std::numeric_limits<double>::max();
+      double right_child_distance = std::numeric_limits<double>::max();
 
       bool left_hit = false;
 
       if(left != nullptr) {
-        left_hit = getAABBIntersection(ray, left->getMinBound(), left->getMaxBound(), left_child_distance);
+        left_hit =
+            getAABBIntersection(ray.origin, inv_dir, left->getMinBound(), left->getMaxBound(), left_child_distance);
       }
       bool right_hit = false;
       if(right != nullptr) {
-        right_hit = getAABBIntersection(ray, right->getMinBound(), right->getMaxBound(), right_child_distance);
+        right_hit =
+            getAABBIntersection(ray.origin, inv_dir, right->getMinBound(), right->getMaxBound(), right_child_distance);
       }
 
       if(left_hit && right_hit) {
         if(left_child_distance < right_child_distance) {
-          node_stack.push(right);
-          node_stack.push(left);
+          node_stack.push_back(right);
+          node_stack.push_back(left);
         } else {
-          node_stack.push(left);
-          node_stack.push(right);
+          node_stack.push_back(left);
+          node_stack.push_back(right);
         }
       } else if(left_hit) {
-        node_stack.push(left);
+        node_stack.push_back(left);
       } else if(right_hit) {
-        node_stack.push(right);
+        node_stack.push_back(right);
       }
     }
   }
 
   std::sort(bvh_hits.begin(), bvh_hits.end(),
             [](const RayBVHHitInfo& a, const RayBVHHitInfo& b) { return a.distance < b.distance; });
-  return bvh_hits;
+  return std::move(bvh_hits);
 }
 
 RayHitInfo getSceneIntersectionWithBVH(const Ray& ray, const Scene* scene) {
@@ -249,10 +251,10 @@ RayHitInfo getSceneIntersectionWithBVH(const Ray& ray, const Scene* scene) {
   const std::vector<RayBVHHitInfo> bvh_hits = getBVHIntersection(ray, scene->getBVHRoot());
 
   for(const auto& bvh_hit : bvh_hits) {
-    if(bvh_hit.distance > closest_hit.distance) {
-      updateNormalWithTangentSpace(closest_hit);
-      return closest_hit;
-    }
+    // if(bvh_hit.distance > closest_hit.distance) {
+    //   updateNormalWithTangentSpace(closest_hit);
+    //   return closest_hit;
+    // }
     const Object3D*  object   = scene->getObjectList()[bvh_hit.index_to_check];
     const RayHitInfo hit_info = getObjectIntersection(ray, object);
     if(hit_info.distance < closest_hit.distance) {

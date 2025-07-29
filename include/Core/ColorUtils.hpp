@@ -13,9 +13,13 @@ static constexpr double NORMALIZED_TO_COLOR8 = 255.999;
 static constexpr int    COLOR8_MAX_VALUE     = 255;
 static constexpr double COLOR8_TO_NORMALIZED = 1.0 / NORMALIZED_TO_COLOR8;
 
-static constexpr double RED_CHANNEL   = 0.299;
-static constexpr double GREEN_CHANNEL = 0.587;
-static constexpr double BLUE_CHANNEL  = 0.114;
+static constexpr double GRAY_RED_CHANNEL   = 0.299;
+static constexpr double GRAY_GREEN_CHANNEL = 0.587;
+static constexpr double GRAY_BLUE_CHANNEL  = 0.114;
+
+static constexpr double LUMINANCE_RED_CHANNEL   = 0.2126;
+static constexpr double LUMINANCE_GREEN_CHANNEL = 0.7152;
+static constexpr double LUMINANCE_BLUE_CHANNEL  = 0.0722;
 
 // Constants for sRGB to Linear and Linear to sRGB conversion
 static constexpr double SRGB_GAMMA            = 2.4;
@@ -34,7 +38,7 @@ static constexpr double COLOR_SPACE_ADDENDUM  = 0.055;
  * @return The grayscale value.
  */
 inline double toGrayscale(const ColorRGB& color) {
-  return RED_CHANNEL * color.r + GREEN_CHANNEL * color.g + BLUE_CHANNEL * color.b;
+  return GRAY_RED_CHANNEL * color.r + GRAY_GREEN_CHANNEL * color.g + GRAY_BLUE_CHANNEL * color.b;
 }
 
 /**
@@ -43,7 +47,7 @@ inline double toGrayscale(const ColorRGB& color) {
  * @return The grayscale value.
  */
 inline double toGrayscale(const ColorRGBA& color) {
-  return RED_CHANNEL * color.r + GREEN_CHANNEL * color.g + BLUE_CHANNEL * color.b;
+  return GRAY_RED_CHANNEL * color.r + GRAY_GREEN_CHANNEL * color.g + GRAY_BLUE_CHANNEL * color.b;
 }
 
 /**
@@ -117,6 +121,14 @@ inline void convertToLinearSpace(ColorRGBA& color) {
   convertToLinearSpace(color.r);
   convertToLinearSpace(color.g);
   convertToLinearSpace(color.b);
+}
+
+inline double getLuminance(const ColorRGB& color) {
+  return LUMINANCE_RED_CHANNEL * color.r + LUMINANCE_GREEN_CHANNEL * color.g + LUMINANCE_BLUE_CHANNEL * color.b;
+}
+
+inline double getLuminance(const ColorRGBA& color) {
+  return LUMINANCE_RED_CHANNEL * color.r + LUMINANCE_GREEN_CHANNEL * color.g + LUMINANCE_BLUE_CHANNEL * color.b;
 }
 
 #endif // CORE_COLORUTILS_HPP

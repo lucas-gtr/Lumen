@@ -18,6 +18,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 add_subdirectory(external/linalg)
 
+add_subdirectory(src/Diagnostics)
 add_subdirectory(src/Core)
 add_subdirectory(src/BVH)
 add_subdirectory(src/Surface)
@@ -51,6 +52,7 @@ target_link_libraries(Lumen
         GPU
         RenderingGL  
         GUI
+        Diagnostics
 )
 
 option(ENABLE_WARNINGS             "Enable compiler warnings"                    ON)

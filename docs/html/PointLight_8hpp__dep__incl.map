@@ -1,21 +1,23 @@
 <map id="/home/lucasgtr/lumen/include/Lighting/PointLight.hpp" name="/home/lucasgtr/lumen/include/Lighting/PointLight.hpp">
-<area shape="rect" id="Node000001" title="Header file for the PointLight class." alt="" coords="860,5,1087,45"/>
+<area shape="rect" id="Node000001" title="Header file for the PointLight class." alt="" coords="948,5,1175,45"/>
 <area shape="rect" id="Node000002" href="$IResourceManagerGPU_8hpp.html" title="Header file for the IResourceManagerGPU interface, which manages GPU resources." alt="" coords="465,181,695,236"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="847,50,780,69,716,96,684,115,654,138,606,183,602,179,650,134,681,111,713,91,779,64,846,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="935,38,825,58,769,74,716,96,683,115,653,137,605,183,601,179,650,133,680,110,713,91,768,69,824,53,934,33"/>
 <area shape="rect" id="Node000003" href="$ResourceManagerGL_8hpp.html" title="Header file for the ResourceManagerGL class, which manages OpenGL resources." alt="" coords="515,284,739,339"/>
-<area shape="poly" id="edge20_Node000001_Node000003" title=" " alt="" coords="848,50,805,69,767,95,752,112,743,128,735,162,729,197,722,217,710,238,688,264,664,286,660,282,684,260,706,234,717,215,724,196,730,161,738,126,748,109,764,91,802,64,846,46"/>
+<area shape="poly" id="edge20_Node000001_Node000003" title=" " alt="" coords="935,46,835,67,794,80,767,95,752,111,742,127,734,161,729,197,722,217,710,238,688,264,664,286,660,282,684,260,706,234,717,214,724,196,729,160,737,125,747,108,764,91,792,75,833,62,934,41"/>
 <area shape="rect" id="Node000009" href="$ResourceManagerGL_8cpp.html" title=" " alt="" coords="657,387,911,441"/>
-<area shape="poly" id="edge23_Node000001_Node000009" title=" " alt="" coords="933,55,902,79,868,109,837,143,812,183,793,236,784,293,782,345,784,386,779,387,777,345,779,292,788,235,807,180,832,140,864,105,898,75,930,51"/>
-<area shape="rect" id="Node000010" href="$PointGPU_8hpp.html" title="Header file for the PointLightGPU class, which represents a point light for GPU memory." alt="" coords="933,93,1174,133"/>
-<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="1002,54,1038,91,1034,95,998,57"/>
+<area shape="poly" id="edge23_Node000001_Node000009" title=" " alt="" coords="984,53,937,73,889,101,845,138,827,159,812,183,792,236,783,293,781,345,784,386,778,387,776,345,778,292,787,235,807,180,822,156,841,134,886,97,935,68,982,48"/>
+<area shape="rect" id="Node000010" href="$PointGPU_8hpp.html" title="Header file for the PointLightGPU class, which represents a point light for GPU memory." alt="" coords="941,93,1182,133"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="1064,59,1064,93,1059,93,1059,59"/>
 <area shape="rect" id="Node000011" href="$PointGL_8hpp.html" title="Header file for the PointLightGL class, which represents a point light in OpenGL." alt="" coords="821,181,1024,236"/>
-<area shape="poly" id="edge19_Node000001_Node000011" title=" " alt="" coords="946,57,933,75,924,94,919,116,917,139,920,181,915,181,912,139,913,115,919,92,929,72,942,54"/>
+<area shape="poly" id="edge19_Node000001_Node000011" title=" " alt="" coords="982,53,954,71,932,95,922,115,918,138,920,181,915,181,913,137,917,114,927,92,950,67,979,49"/>
 <area shape="rect" id="Node000012" href="$PointGL_8cpp.html" title=" " alt="" coords="986,284,1161,339"/>
-<area shape="poly" id="edge22_Node000001_Node000012" title=" " alt="" coords="1101,39,1165,57,1229,85,1258,103,1285,125,1307,151,1325,180,1335,209,1333,223,1325,238,1299,257,1259,273,1162,298,1160,293,1257,268,1297,252,1321,234,1328,221,1329,210,1320,182,1303,154,1281,129,1255,107,1226,89,1163,62,1099,44"/>
+<area shape="poly" id="edge22_Node000001_Node000012" title=" " alt="" coords="1137,47,1216,79,1255,99,1291,122,1319,148,1336,176,1339,206,1334,222,1325,238,1299,257,1259,273,1162,298,1160,293,1257,268,1297,252,1321,234,1329,220,1334,205,1331,177,1314,151,1287,127,1253,104,1214,84,1135,52"/>
 <area shape="rect" id="Node000013" href="$PointGPU_8cpp.html" title=" " alt="" coords="1098,189,1310,229"/>
-<area shape="poly" id="edge21_Node000001_Node000013" title=" " alt="" coords="1101,39,1148,59,1170,74,1189,92,1202,115,1209,141,1209,188,1204,188,1204,142,1197,117,1185,95,1167,78,1146,64,1099,44"/>
-<area shape="rect" id="Node000014" href="$PointLight_8cpp.html" title=" " alt="" coords="1384,93,1581,133"/>
-<area shape="poly" id="edge24_Node000001_Node000014" title=" " alt="" coords="1099,45,1384,93,1383,98,1098,50"/>
+<area shape="poly" id="edge21_Node000001_Node000013" title=" " alt="" coords="1144,49,1173,67,1197,92,1208,116,1212,142,1210,189,1205,188,1207,143,1203,118,1192,95,1170,71,1141,53"/>
+<area shape="rect" id="Node000014" href="$Application_8cpp.html" title=" " alt="" coords="1385,93,1562,133"/>
+<area shape="poly" id="edge24_Node000001_Node000014" title=" " alt="" coords="1166,46,1385,91,1384,96,1164,51"/>
+<area shape="rect" id="Node000015" href="$PointLight_8cpp.html" title=" " alt="" coords="1587,93,1784,133"/>
+<area shape="poly" id="edge25_Node000001_Node000015" title=" " alt="" coords="1189,39,1575,91,1587,92,1586,98,1574,96,1188,44"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="600,247,617,283,612,285,596,250"/>
 <area shape="rect" id="Node000004" href="$EngineGL_8hpp.html" title="Header file for the EngineGL class, which implements the OpenGL rendering engine." alt="" coords="329,394,583,434"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="572,348,490,396,487,391,569,343"/>
@@ -30,9 +32,9 @@
 <area shape="rect" id="Node000008" href="$OpenGLWidget_8cpp.html" title=" " alt="" coords="251,497,509,537"/>
 <area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="436,447,396,498,392,495,431,443"/>
 <area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="185,547,276,590,274,594,183,552"/>
-<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="1017,143,961,183,958,179,1014,139"/>
-<area shape="poly" id="edge18_Node000010_Node000012" title=" " alt="" coords="1059,146,1073,283,1068,284,1054,147"/>
-<area shape="poly" id="edge17_Node000010_Node000013" title=" " alt="" coords="1097,138,1175,186,1172,191,1094,143"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="1024,143,963,183,960,179,1021,139"/>
+<area shape="poly" id="edge18_Node000010_Node000012" title=" " alt="" coords="1066,147,1074,283,1069,284,1061,147"/>
+<area shape="poly" id="edge17_Node000010_Node000013" title=" " alt="" coords="1103,139,1177,186,1174,191,1100,143"/>
 <area shape="poly" id="edge13_Node000011_Node000003" title=" " alt="" coords="833,243,705,286,703,281,832,238"/>
 <area shape="poly" id="edge14_Node000011_Node000005" title=" " alt="" coords="938,249,948,292,952,343,946,395,938,420,925,443,901,468,873,486,841,500,809,509,807,504,840,495,870,482,898,463,921,440,933,418,941,394,947,343,942,293,933,250"/>
 <area shape="poly" id="edge16_Node000011_Node000009" title=" " alt="" coords="899,249,804,388,800,385,895,246"/>

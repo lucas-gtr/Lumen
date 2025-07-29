@@ -66,6 +66,8 @@ private slots:
   void onChunkSizeChanged(int size);
   void onRenderButtonClicked();
 
+  void onRenderStopped();
+
 private:
   Ui::RenderSettingsWidget* ui;
   RenderWindow*             m_render_window = nullptr;

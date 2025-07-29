@@ -41,7 +41,6 @@ void Framebuffer::convertToSRGBColorSpace() {
 
 void Framebuffer::initThreadBuffers(unsigned int num_threads) {
   num_threads = std::max(1U, num_threads);
-  std::cout << "Initializing thread buffers for " << num_threads << " threads.\n";
   m_thread_buffers.resize(num_threads);
   for(auto& buffer : m_thread_buffers) {
     buffer.resize(m_framebuffer_properties.bufferSize(), 0.0);
@@ -105,6 +104,17 @@ void Framebuffer::setPixelColor(const PixelCoord& pixel_coord, const ColorRGBA& 
               << ". Supported counts are 1, 3, or 4." << '\n';
     break; // Unsupported channel count
   }
+}
+
+double Framebuffer::getMaximumValue() const {
+  double max_value = 0.0;
+  for(std::uint64_t i = 0; i < m_framebuffer_properties.bufferSize(); ++i) {
+    if(m_framebuffer_properties.channels == 4 && i % 4 == 3) {
+      continue; // Skip alpha channel
+    }
+    max_value = std::max(max_value, m_framebuffer[i]);
+  }
+  return max_value;
 }
 
 Framebuffer::~Framebuffer() { delete[] m_framebuffer; }

@@ -27,12 +27,15 @@ linalg::Vec3d Object3D::computeBound(
     return {0.0, 0.0, 0.0};
   }
 
-  linalg::Vec3d bound = vertices[0].position;
+  const auto transform = getTransformationMatrix();
+
+  linalg::Vec3d bound = linalg::toVec3(transform * linalg::toVec4(vertices[0].position));
   for(size_t i = 1; i < vertices.size(); ++i) {
-    bound = comparator(bound, vertices[i].position);
+    const linalg::Vec3d transformed = linalg::toVec3(transform * linalg::toVec4(vertices[i].position));
+    bound                           = comparator(bound, transformed);
   }
 
-  return linalg::toVec3(getTransformationMatrix() * linalg::toVec4(bound));
+  return bound;
 }
 
 linalg::Vec3d Object3D::getMinBound() const {

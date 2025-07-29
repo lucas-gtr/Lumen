@@ -315,14 +315,14 @@ void MainWindow::onEmissiveTextureCreated(const QString& texture_path) {
 }
 
 void MainWindow::onRoughnessTextureCreated(const QString& texture_path) {
-  const QString texture_name = createTextureFromFile(texture_path.toStdString(), ColorSpace::LINEAR);
+  const QString texture_name = createTextureFromFile(texture_path.toStdString(), ColorSpace::S_RGB);
   ui->openGLWidget->makeCurrent();
   ui->materialsWidget->setRoughnessTexture(texture_name);
   ui->openGLWidget->doneCurrent();
 }
 
 void MainWindow::onMetalTextureCreated(const QString& texture_path) {
-  const QString texture_name = createTextureFromFile(texture_path.toStdString(), ColorSpace::LINEAR);
+  const QString texture_name = createTextureFromFile(texture_path.toStdString(), ColorSpace::S_RGB);
   ui->openGLWidget->makeCurrent();
   ui->materialsWidget->setMetalTexture(texture_name);
   ui->openGLWidget->doneCurrent();

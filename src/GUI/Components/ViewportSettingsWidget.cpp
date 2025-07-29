@@ -36,12 +36,14 @@ void ViewportSettingsWidget::updateWidget() {
   case ToneMapping::NONE:
     tone_mapping = "None";
     break;
-  case ToneMapping::REINHARD:
+  case ToneMapping::LUMINANCE_REINHARD:
     tone_mapping = "Reinhard";
     break;
   case ToneMapping::EXPOSURE:
     tone_mapping = "Exposure";
     break;
+  default:
+    tone_mapping = "None";
   }
   ui->toneMappingComboBox->setCurrentText(tone_mapping);
   ui->exposureSpinBox->setVisible(tone_mapping == "Exposure");
@@ -88,7 +90,7 @@ void ViewportSettingsWidget::onToneMappingChanged(const QString& tone_mapping) {
     if(tone_mapping == "None") {
       m_engine->setToneMapping(ToneMapping::NONE);
     } else if(tone_mapping == "Reinhard") {
-      m_engine->setToneMapping(ToneMapping::REINHARD);
+      m_engine->setToneMapping(ToneMapping::LUMINANCE_REINHARD);
     } else if(tone_mapping == "Exposure") {
       m_engine->setToneMapping(ToneMapping::EXPOSURE);
     }

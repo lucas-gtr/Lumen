@@ -56,82 +56,101 @@
         </size>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
         <property name="topMargin">
          <number>0</number>
         </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
         <item>
-         <widget class="QLabel" name="nameLabel">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <property name="leftMargin">
+           <number>9</number>
           </property>
-          <property name="font">
-           <font>
-            <pointsize>14</pointsize>
-            <bold>true</bold>
-           </font>
+          <property name="topMargin">
+           <number>10</number>
           </property>
-          <property name="text">
-           <string>Name</string>
+          <property name="rightMargin">
+           <number>9</number>
           </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="TransformWidget" name="transformWidget">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="title">
-           <string>Transform Settings</string>
-          </property>
-          <property name="flat">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="CameraWidget" name="cameraWidget">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="title">
-           <string>Camera Settings</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="LightWidget" name="lightWidget">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="title">
-           <string>Light Settings</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="ObjectWidget" name="objectWidget">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="title">
-           <string>Object Settings</string>
-          </property>
-         </widget>
+          <item>
+           <widget class="QLabel" name="nameLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Name</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="TransformWidget" name="transformWidget">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="title">
+             <string>Transform Settings</string>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="CameraWidget" name="cameraWidget">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="title">
+             <string>Camera Settings</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="LightWidget" name="lightWidget">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="title">
+             <string>Light Settings</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="ObjectWidget" name="objectWidget">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="title">
+             <string>Object Settings</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item>
          <widget class="QTabWidget" name="tabWidget">
@@ -151,19 +170,13 @@
            <enum>QTabWidget::Rounded</enum>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>4</number>
           </property>
           <property name="elideMode">
            <enum>Qt::ElideRight</enum>
           </property>
           <property name="documentMode">
            <bool>true</bool>
-          </property>
-          <property name="movable">
-           <bool>true</bool>
-          </property>
-          <property name="tabBarAutoHide">
-           <bool>false</bool>
           </property>
           <widget class="QWidget" name="viewport">
            <property name="sizePolicy">

@@ -97,6 +97,12 @@ public:
   void removeMaterial(const std::string& material_name);
 
   /**
+   * @brief Gets all material names managed by the MaterialManager.
+   * @return A vector of strings containing the names of all materials.
+   */
+  std::vector<std::string> getAllMaterialsName() const;
+
+  /**
    * @brief Gets the default material.
    * @return A pointer to the default material.
    */

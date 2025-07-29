@@ -5,6 +5,7 @@
 #ifndef CORE_COMMONTYPES_HPP
 #define CORE_COMMONTYPES_HPP
 
+#include <algorithm>
 #include <cstdint>
 #include <immintrin.h>
 #include <iostream>
@@ -20,11 +21,6 @@ struct ImageProperties {
   int height   = 1;
   int channels = 1;
 
-  /**
-   * @brief Gets the size of the array of the framebuffer.
-   * @return The size of the framebuffer.
-   * @note The size is calculated as width * height * channels.
-   */
   std::uint64_t bufferSize() const {
     return static_cast<std::uint64_t>(width) * static_cast<std::uint64_t>(height) *
            static_cast<std::uint64_t>(channels);
@@ -67,22 +63,102 @@ struct ColorRGBA; ///< Forward declaration for ColorRGBA.
  * @brief Structure to hold RGB color values.
  */
 struct alignas(ALIGN32) ColorRGB {
-  double r = 0.0; ///< Red component of the color
-  double g = 0.0; ///< Green component of the color
-  double b = 0.0; ///< Blue component of the color
+  double r = 0.0;
+  double g = 0.0;
+  double b = 0.0;
 
   ColorRGB() = default;
-  ColorRGB(double red, double green, double blue);
-  explicit ColorRGB(double grayscale);
-  explicit ColorRGB(const ColorRGBA& color); // Ne pas définir ici
 
-  ColorRGB  operator+(const ColorRGB& other) const;
-  ColorRGB& operator+=(const ColorRGB& other);
-  ColorRGB  operator*(double scalar) const;
+  ColorRGB(double red, double green, double blue) : r(red), g(green), b(blue) {}
 
-  bool operator==(const ColorRGB& other) const;
+  explicit ColorRGB(double grayscale) : r(grayscale), g(grayscale), b(grayscale) {}
 
-  friend ColorRGB operator*(double scalar, const ColorRGB& color);
+  explicit ColorRGB(const ColorRGBA& color);
+
+  ColorRGB  operator+(const ColorRGB& other) const { return {r + other.r, g + other.g, b + other.b}; }
+  ColorRGB& operator+=(const ColorRGB& other) {
+    r += other.r;
+    g += other.g;
+    b += other.b;
+    return *this;
+  }
+
+  ColorRGBA operator+(const ColorRGBA& other) const;
+
+  ColorRGB  operator-(const ColorRGB& other) const { return {r - other.r, g - other.g, b - other.b}; }
+  ColorRGB& operator-=(const ColorRGB& other) {
+    r -= other.r;
+    g -= other.g;
+    b -= other.b;
+    return *this;
+  }
+
+  ColorRGB  operator*(double scalar) const { return {r * scalar, g * scalar, b * scalar}; }
+  ColorRGB& operator*=(double scalar) {
+    r *= scalar;
+    g *= scalar;
+    b *= scalar;
+    return *this;
+  }
+
+  ColorRGB  operator*(const ColorRGB& other) const { return {r * other.r, g * other.g, b * other.b}; }
+  ColorRGB& operator*=(const ColorRGB& other) {
+    r *= other.r;
+    g *= other.g;
+    b *= other.b;
+    return *this;
+  }
+
+  ColorRGB operator/(double scalar) const {
+    if(scalar == 0.0) {
+      throw std::runtime_error("Division by zero in ColorRGB operator/");
+    }
+    return {r / scalar, g / scalar, b / scalar};
+  }
+  ColorRGB& operator/=(double scalar) {
+    if(scalar == 0.0) {
+      throw std::runtime_error("Division by zero in ColorRGB operator/=");
+    }
+    r /= scalar;
+    g /= scalar;
+    b /= scalar;
+    return *this;
+  }
+
+  ColorRGB operator/(const ColorRGB& other) const {
+    if(other.r == 0.0 || other.g == 0.0 || other.b == 0.0) {
+      throw std::runtime_error("A component of ColorRGB is zero in operator/");
+    }
+    return {r / other.r, g / other.g, b / other.b};
+  }
+  ColorRGB& operator/=(const ColorRGB& other) {
+    if(other.r == 0.0 || other.g == 0.0 || other.b == 0.0) {
+      throw std::runtime_error("A component of ColorRGB is zero in operator/=");
+    }
+    r /= other.r;
+    g /= other.g;
+    b /= other.b;
+    return *this;
+  }
+
+  bool operator==(const ColorRGB& other) const { return (r == other.r) && (g == other.g) && (b == other.b); }
+
+  double maxComponent() const { return std::max({r, g, b}); }
+  double minComponent() const { return std::min({r, g, b}); }
+
+  void clamp(double min, double max) {
+    r = std::clamp(r, min, max);
+    g = std::clamp(g, min, max);
+    b = std::clamp(b, min, max);
+  }
+
+  friend ColorRGB operator*(double scalar, const ColorRGB& color) { return color * scalar; }
+
+  friend ColorRGB lerp(const ColorRGB& start, const ColorRGB& end, double t) { return start + (end - start) * t; }
+
+  friend ColorRGB lerp(const ColorRGB& start, const ColorRGB& end, const ColorRGB& t) {
+    return start + (end - start) * t;
+  }
 
   friend std::ostream& operator<<(std::ostream& os, const ColorRGB& color) {
     return os << "ColorRGB(" << color.r << ", " << color.g << ", " << color.b << ")";
@@ -94,28 +170,135 @@ struct alignas(ALIGN32) ColorRGB {
  * @brief Structure to hold RGBA color values.
  */
 struct alignas(ALIGN32) ColorRGBA {
-  double r = 0.0; ///< Red component of the color
-  double g = 0.0; ///< Green component of the color
-  double b = 0.0; ///< Blue component of the color
-  double a = 1.0; ///< Alpha component of the color (opacity)
+  double r = 0.0;
+  double g = 0.0;
+  double b = 0.0;
+  double a = 1.0;
 
   ColorRGBA() = default;
-  ColorRGBA(double red, double green, double blue, double alpha);
-  explicit ColorRGBA(double grayscale);
-  ColorRGBA(double grayscale, double alpha);
-  explicit ColorRGBA(const ColorRGB& color);
-  ColorRGBA(const ColorRGB& color, double alpha);
 
-  ColorRGBA operator+(const ColorRGBA& other) const;
-  ColorRGBA operator*(double scalar) const;
+  ColorRGBA(double red, double green, double blue, double alpha) : r(red), g(green), b(blue), a(alpha) {}
 
-  bool operator==(const ColorRGBA& other) const;
+  explicit ColorRGBA(double grayscale) : r(grayscale), g(grayscale), b(grayscale) {}
 
-  friend ColorRGBA operator*(double scalar, const ColorRGBA& color);
+  ColorRGBA(double grayscale, double alpha) : r(grayscale), g(grayscale), b(grayscale), a(alpha) {}
+
+  explicit ColorRGBA(const ColorRGB& color) : r(color.r), g(color.g), b(color.b) {}
+
+  ColorRGBA(const ColorRGB& color, double alpha) : r(color.r), g(color.g), b(color.b), a(alpha) {}
+
+  ColorRGBA operator+(const ColorRGB& other) const { return {r + other.r, g + other.g, b + other.b, a}; }
+
+  ColorRGBA  operator+(const ColorRGBA& other) const { return {r + other.r, g + other.g, b + other.b, a + other.a}; }
+  ColorRGBA& operator+=(const ColorRGBA& other) {
+    r += other.r;
+    g += other.g;
+    b += other.b;
+    a += other.a;
+    return *this;
+  }
+
+  ColorRGBA  operator-(const ColorRGBA& other) const { return {r - other.r, g - other.g, b - other.b, a - other.a}; }
+  ColorRGBA& operator-=(const ColorRGBA& other) {
+    r -= other.r;
+    g -= other.g;
+    b -= other.b;
+    a -= other.a;
+    return *this;
+  }
+
+  ColorRGBA  operator*(double scalar) const { return {r * scalar, g * scalar, b * scalar, a * scalar}; }
+  ColorRGBA& operator*=(double scalar) {
+    r *= scalar;
+    g *= scalar;
+    b *= scalar;
+    a *= scalar;
+    return *this;
+  }
+
+  ColorRGBA  operator*(const ColorRGB& other) const { return {r * other.r, g * other.g, b * other.b, a}; }
+  ColorRGBA& operator*=(const ColorRGB& other) {
+    r *= other.r;
+    g *= other.g;
+    b *= other.b;
+    return *this;
+  }
+
+  ColorRGBA  operator*(const ColorRGBA& other) const { return {r * other.r, g * other.g, b * other.b, a * other.a}; }
+  ColorRGBA& operator*=(const ColorRGBA& other) {
+    r *= other.r;
+    g *= other.g;
+    b *= other.b;
+    a *= other.a;
+    return *this;
+  }
+
+  ColorRGBA operator/(double scalar) const {
+    if(scalar == 0.0) {
+      throw std::runtime_error("Division by zero in ColorRGBA operator/");
+    }
+    return {r / scalar, g / scalar, b / scalar, a / scalar};
+  }
+  ColorRGBA& operator/=(double scalar) {
+    if(scalar == 0.0) {
+      throw std::runtime_error("Division by zero in ColorRGBA operator/=");
+    }
+    r /= scalar;
+    g /= scalar;
+    b /= scalar;
+    a /= scalar;
+    return *this;
+  }
+
+  ColorRGBA operator/(const ColorRGBA& other) const {
+    if(other.r == 0.0 || other.g == 0.0 || other.b == 0.0 || other.a == 0.0) {
+      throw std::runtime_error("Division by zero in ColorRGBA operator/");
+    }
+    return {r / other.r, g / other.g, b / other.b, a / other.a};
+  }
+  ColorRGBA& operator/=(const ColorRGBA& other) {
+    if(other.r == 0.0 || other.g == 0.0 || other.b == 0.0 || other.a == 0.0) {
+      throw std::runtime_error("Division by zero in ColorRGBA operator/=");
+    }
+    r /= other.r;
+    g /= other.g;
+    b /= other.b;
+    a /= other.a;
+    return *this;
+  }
+
+  bool operator==(const ColorRGBA& other) const {
+    return (r == other.r) && (g == other.g) && (b == other.b) && (a == other.a);
+  }
+
+  double maxComponent() const { return std::max({r, g, b, a}); }
+  double minComponent() const { return std::min({r, g, b, a}); }
+
+  void clamp(double min, double max) {
+    r = std::clamp(r, min, max);
+    g = std::clamp(g, min, max);
+    b = std::clamp(b, min, max);
+    a = std::clamp(a, min, max);
+  }
+
+  friend ColorRGBA operator*(double scalar, const ColorRGBA& color) { return color * scalar; }
+
+  friend ColorRGBA lerp(const ColorRGBA& start, const ColorRGBA& end, double t) { return start + (end - start) * t; }
+
+  friend ColorRGBA lerp(const ColorRGBA& start, const ColorRGBA& end, const ColorRGBA& t) {
+    return start + (end - start) * t;
+  }
 
   friend std::ostream& operator<<(std::ostream& os, const ColorRGBA& color) {
     return os << "ColorRGBA(" << color.r << ", " << color.g << ", " << color.b << ", " << color.a << ")";
   }
 };
+
+// Definition needed after ColorRGBA full declaration
+inline ColorRGB::ColorRGB(const ColorRGBA& color) : r(color.r), g(color.g), b(color.b) {}
+
+inline ColorRGBA ColorRGB::operator+(const ColorRGBA& other) const {
+  return {r + other.r, g + other.g, b + other.b, other.a};
+}
 
 #endif // CORE_COMMONTYPES_HPP

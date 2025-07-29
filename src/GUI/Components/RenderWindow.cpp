@@ -2,6 +2,8 @@
 #include "Core/ColorUtils.hpp"
 #include "ui_RenderWindow.h"
 
+#include <QResizeEvent>
+#include <QThread>
 #include <algorithm>
 #include <iostream>
 
@@ -17,7 +19,28 @@ void RenderWindow::setFramebuffer(Framebuffer* framebuffer) {
   ui->exportWidget->setExporter(m_exporter.get());
 }
 
+void RenderWindow::resizeEvent(QResizeEvent* event) {
+  QWidget::resizeEvent(event);
+
+  if(m_render_image.isNull()) {
+    return;
+  }
+  ui->imageLabel->setPixmap(
+      m_render_image.scaled(ui->imageLabel->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+}
+
+void RenderWindow::closeEvent(QCloseEvent* event) {
+  emit aboutToClose();
+  QWidget::closeEvent(event);
+
+  m_render_image = QPixmap(); // Clear the image to free resources
+  ui->imageLabel->clear();
+
+  ui->imageLabel->resize(0, 0);
+}
+
 void RenderWindow::onRenderStarted(ImageProperties properties) {
+  m_render_finished         = false;
   m_render_image_properties = properties;
 
   ui->exportWidget->setExportReady(false);
@@ -28,9 +51,12 @@ void RenderWindow::onRenderStarted(ImageProperties properties) {
   QImage               image(properties.width, properties.height, format);
   image.fill(Qt::black);
 
-  ui->imageLabel->setPixmap(QPixmap::fromImage(image));
+  m_render_image = QPixmap::fromImage(image);
 
-  std::cout << "RenderWindow: Render started\n";
+  this->resize(this->minimumSizeHint());
+  ui->imageLabel->resize(properties.width, properties.height);
+
+  ui->imageLabel->setPixmap(m_render_image);
 }
 
 void RenderWindow::onRenderProgress(RenderStats stats) {
@@ -49,16 +75,21 @@ void RenderWindow::onRenderProgress(RenderStats stats) {
 }
 
 void RenderWindow::onRenderFinished(double elapsed_time) {
-  ui->exportWidget->setExportReady(true);
-  m_exporter->updateImageToExport();
+  m_render_finished = true;
 
   ui->statusLabel->setText("Rendering completed in " + FormatSecondsToString(elapsed_time));
   ui->renderProgress->setValue(100); // NOLINT
 
   updateImageToExport();
+
+  ui->exportWidget->setExportReady(true);
 }
 
 void RenderWindow::updateImageToExport() {
+  if(!m_render_finished) {
+    return;
+  }
+  m_exporter->updateImageToExport();
   const QImage::Format format = imageFormatFromChannels(m_render_image_properties.channels);
   QImage               image(m_render_image_properties.width, m_render_image_properties.height, format);
 
@@ -70,7 +101,9 @@ void RenderWindow::updateImageToExport() {
     dst[i] = static_cast<uint8_t>(image_data[i]);
   }
 
-  ui->imageLabel->setPixmap(QPixmap::fromImage(image));
+  m_render_image = QPixmap::fromImage(image);
+  ui->imageLabel->setPixmap(
+      m_render_image.scaled(ui->imageLabel->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
 }
 
 QString RenderWindow::FormatSecondsToString(double seconds) {

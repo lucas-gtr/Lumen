@@ -12,7 +12,7 @@ MultiThreadedCPU::MultiThreadedCPU(int chunk_size, unsigned int thread_count)
     : m_chunk_size(chunk_size), m_thread_count(thread_count) {}
 
 bool MultiThreadedCPU::render() {
-  std::cout << m_thread_count << " threads available for rendering." << '\n';
+  std::cout << "Starting multi-threaded CPU rendering with " << m_thread_count << " threads.\n";
 
   m_samples_per_pixel = renderer()->getRenderSettings().getSamplesPerPixel();
 
@@ -46,7 +46,6 @@ bool MultiThreadedCPU::render() {
 
   renderer()->getFramebuffer()->reduceThreadBuffers();
   renderer()->getFramebuffer()->clearThreadBuffers();
-  renderer()->getRenderTime()->stop();
 
   return true;
 }

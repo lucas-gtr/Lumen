@@ -29,7 +29,7 @@ void FileSelector::openDialog() {
 
   case FileSelectorMode::IMAGE_FILE:
     selected_path =
-        QFileDialog::getOpenFileName(this, "Select Image", getPath(), "Images (*.png *.jpg *.jpeg *.bmp *.tga)");
+        QFileDialog::getOpenFileName(this, "Select Image", getPath(), "Images (*.png *.jpg *.jpeg *.bmp *.tga *.hdr)");
     break;
   }
 

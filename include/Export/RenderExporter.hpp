@@ -29,9 +29,13 @@ private:
   OutputFormat                          m_output_format = OutputFormat::PNG;
   std::unique_ptr<OutputFormatStrategy> m_output_format_strategy;
 
-  double                               m_exposure     = DEFAULT_TONE_MAPPING_EXPOSURE;
+  double                               m_exposure     = 1.0;
+  double                               m_white_point  = DEFAULT_WHITE_POINT;
   ToneMapping                          m_tone_mapping = ToneMapping::NONE;
   std::unique_ptr<ToneMappingStrategy> m_tone_mapping_strategy;
+
+  bool exportHDR() const;
+  bool exportLDR() const;
 
 public:
   /**
@@ -115,6 +119,18 @@ public:
    * @return The current exposure value used for tone mapping.
    */
   double getExposure() const { return m_exposure; }
+
+  /**
+   * @brief Sets the white point value for the render, for white point-based tone mapping.
+   * @param white_point The white point value to be set for the render.
+   */
+  void setWhitePoint(double white_point);
+
+  /**
+   * @brief Retrieves the white point value for the render, for white point-based tone mapping.
+   * @return The current white point value used for tone mapping.
+   */
+  double getWhitePoint() const { return m_white_point; }
 
   /**
    * @brief Sets the JPEG quality for the render.

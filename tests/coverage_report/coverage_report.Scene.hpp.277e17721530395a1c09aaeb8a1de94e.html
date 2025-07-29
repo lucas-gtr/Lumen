@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-07-23 11:30:51</td>
+      <td>2025-07-29 23:37:35</td>
     </tr>
   </table>
 </div>
@@ -73,16 +73,16 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l200">Scene::getBVHRoot() const (line 200)</a></td><td>called 35 times, returned 35 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l167">Scene::getCamera() const (line 167)</a></td><td>called 68 times, returned 68 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l200">Scene::getBVHRoot() const (line 200)</a></td><td>called 31 times, returned 31 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l167">Scene::getCamera() const (line 167)</a></td><td>called 56 times, returned 56 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l132">Scene::getLightAddedObserver() (line 132)</a></td><td>called 1 time, returned 1 time</td><td>100.0%</td></tr>
-    <tr><td><a href="#l153">Scene::getLightList() const (line 153)</a></td><td>called 11 times, returned 11 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l153">Scene::getLightList() const (line 153)</a></td><td>called 4 times, returned 4 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l97">Scene::getObjectAddedObserver() (line 97)</a></td><td>called 1 time, returned 1 time</td><td>100.0%</td></tr>
-    <tr><td><a href="#l146">Scene::getObjectList() const (line 146)</a></td><td>called 39 times, returned 39 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l146">Scene::getObjectList() const (line 146)</a></td><td>called 34 times, returned 34 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l188">Scene::getSkybox() const (line 188)</a></td><td>called 1 time, returned 1 time</td><td>100.0%</td></tr>
-    <tr><td><a href="#l175">Scene::getSkyboxColor(linalg::Vec3&lt;double&gt; const&amp;) const (line 175)</a></td><td>called 22 times, returned 22 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l182">Scene::setSkybox(Texture*) (line 182)</a></td><td>called 2 times, returned 2 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l202">Scene::~Scene() (line 202)</a></td><td>called 27 times, returned 27 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l175">Scene::getSkyboxColor(linalg::Vec3&lt;double&gt; const&amp;) const (line 175)</a></td><td>called 23 times, returned 23 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l182">Scene::setSkybox(Texture*) (line 182)</a></td><td>called 3 times, returned 3 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l202">Scene::~Scene() (line 202)</a></td><td>called 26 times, returned 26 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -1116,7 +1116,7 @@
       <td class="lineno"><a id="l146" href="#l146">146</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">39</td>
+      <td class="linecount coveredLine">34</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Object3D</span><span class="o">*&gt;&amp;</span><span class="w"> </span><span class="n">getObjectList</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_object_index</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1165,7 +1165,7 @@
       <td class="lineno"><a id="l153" href="#l153">153</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">11</td>
+      <td class="linecount coveredLine">4</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Light</span><span class="o">*&gt;&amp;</span><span class="w"> </span><span class="n">getLightList</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_light_index</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1263,7 +1263,7 @@
       <td class="lineno"><a id="l167" href="#l167">167</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">68</td>
+      <td class="linecount coveredLine">56</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">Camera</span><span class="o">*</span><span class="w"> </span><span class="nf">getCamera</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_current_camera</span><span class="p">.</span><span class="n">get</span><span class="p">();</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1319,7 +1319,7 @@
       <td class="lineno"><a id="l175" href="#l175">175</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">22</td>
+      <td class="linecount coveredLine">23</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">ColorRGBA</span><span class="w"> </span><span class="nf">getSkyboxColor</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="n">direction</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_skybox</span><span class="o">-&gt;</span><span class="n">getColor</span><span class="p">(</span><span class="n">direction</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1368,7 +1368,7 @@
       <td class="lineno"><a id="l182" href="#l182">182</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">2</td>
+      <td class="linecount coveredLine">3</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setSkybox</span><span class="p">(</span><span class="n">Texture</span><span class="o">*</span><span class="w"> </span><span class="n">skybox_texture</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">m_skybox</span><span class="o">-&gt;</span><span class="n">setTexture</span><span class="p">(</span><span class="n">skybox_texture</span><span class="p">);</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1494,7 +1494,7 @@
       <td class="lineno"><a id="l200" href="#l200">200</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">35</td>
+      <td class="linecount coveredLine">31</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">BVHNode</span><span class="o">*</span><span class="w"> </span><span class="nf">getBVHRoot</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_bvh_root</span><span class="p">.</span><span class="n">get</span><span class="p">();</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1508,7 +1508,7 @@
       <td class="lineno"><a id="l202" href="#l202">202</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">27</td>
+      <td class="linecount coveredLine">26</td>
       <td class="src coveredLine"><span class="w">  </span><span class="o">~</span><span class="n">Scene</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default destructor.</span></td>
     </tr>
     <tr class="source-line">

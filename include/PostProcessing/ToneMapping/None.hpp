@@ -19,15 +19,23 @@
  */
 class NoToneMapping : public ToneMappingStrategy {
 public:
-  NoToneMapping() = default;
+  NoToneMapping() = default; ///< Default constructor.
 
   /**
-   * @brief Applies no tone mapping to a given value.
-   * @param value The value to be tone-mapped.
-   *
-   * This method modifies the input value in place by clamping it between 0 and 1.
+   * @brief Converts a value to LDR without any tone mapping.
+   * @param value The value to convert.
+   * @return The converted value in LDR format, clamped between 0 and
    */
-  void apply(double& value) const override { value = std::clamp(value, 0.0, 1.0); }
+  double convertToLDR(double value) const override { return std::clamp(value, 0.0, 1.0); }
+
+  /**
+   * @brief Converts a ColorRGB object to LDR without any tone mapping.
+   * @param color The ColorRGB object to convert.
+   * @return The converted ColorRGB object in LDR format, with each component clamped between 0 and 1.
+   */
+  ColorRGB convertToLDR(const ColorRGB& color) const override {
+    return {std::clamp(color.r, 0.0, 1.0), std::clamp(color.g, 0.0, 1.0), std::clamp(color.b, 0.0, 1.0)};
+  }
 };
 
 #endif // POSTPROCESSING_TONEMAPPING_NONE_HPP

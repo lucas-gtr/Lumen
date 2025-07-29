@@ -5,6 +5,8 @@
 
 #include <limits>
 
+static constexpr double EPSILON = 1e-6;
+
 TEST(RayIntersectionTest, ValidIntersection) {
     Ray ray = Ray::FromPoint({0, 0, -1}, {0, 0, 1});
     linalg::Vec3d p0(0, 1, 0), p1(-1, -1, 0), p2(1, -1, 0);
@@ -205,7 +207,8 @@ TEST(RayIntersectionTest, RayIntersectionAABB) {
     linalg::Vec3d max_bound(0.5, 0.5, 0.5);
 
     double hit_distance = std::numeric_limits<double>::max();
-    bool hit = RayIntersection::getAABBIntersection(ray, min_bound, max_bound, hit_distance);
+    const linalg::Vec3d inv_dir = ray.direction.cwiseInverse();
+    bool hit = RayIntersection::getAABBIntersection(ray.origin, inv_dir, min_bound, max_bound, hit_distance);
     EXPECT_TRUE(hit);
     EXPECT_NEAR(hit_distance, 0.5, EPSILON);
 }
@@ -216,7 +219,8 @@ TEST(RayIntersectionTest, RayIntersectionAABBNoHit) {
     linalg::Vec3d max_bound(0.5, 0.5, 0.5);
 
     double hit_distance = std::numeric_limits<double>::max();
-    bool hit = RayIntersection::getAABBIntersection(ray, min_bound, max_bound, hit_distance);
+    const linalg::Vec3d inv_dir = ray.direction.cwiseInverse();
+    bool hit = RayIntersection::getAABBIntersection(ray.origin, inv_dir, min_bound, max_bound, hit_distance);
     EXPECT_FALSE(hit);
 }
 

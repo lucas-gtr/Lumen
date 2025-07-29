@@ -116,6 +116,8 @@ public:
    */
   void setPixelColor(const PixelCoord& pixel_coord, const ColorRGBA& color, double weight);
 
+  double getMaximumValue() const;
+
   /**
    * @brief Sets the thread ID for the current thread.
    * @param thread_id The ID of the thread.

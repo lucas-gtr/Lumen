@@ -54,6 +54,10 @@ void Mesh::computeTangentsAndBitangents() {
 }
 
 void Mesh::buildBVH() {
+  if(m_faces.size() < MINIMUM_FACES_FOR_BVH_CONSTRUCTION) {
+    m_bvh_root = nullptr;
+    return;
+  }
   m_bvh_root = std::make_shared<BVHNode>();
 
   std::vector<std::shared_ptr<BVHNode>> bvh_leaves;

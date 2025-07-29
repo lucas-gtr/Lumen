@@ -125,9 +125,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ac54b3b3579e4786bb20dbbf6de74786a" id="r_ac54b3b3579e4786bb20dbbf6de74786a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRayHitInfo.html">RayHitInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#ac54b3b3579e4786bb20dbbf6de74786a">getObjectIntersection</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const <a class="el" href="classObject3D.html">Object3D</a> *object)</td></tr>
 <tr class="memdesc:ac54b3b3579e4786bb20dbbf6de74786a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the intersection information of a ray with an object in the scene.  <br /></td></tr>
 <tr class="separator:ac54b3b3579e4786bb20dbbf6de74786a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa76cc469ce9d4733b5bf5f643d458302" id="r_aa76cc469ce9d4733b5bf5f643d458302"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#aa76cc469ce9d4733b5bf5f643d458302">getAABBIntersection</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const linalg::Vec3d &amp;min_bound, const linalg::Vec3d &amp;max_bound, double &amp;hit_distance)</td></tr>
-<tr class="memdesc:aa76cc469ce9d4733b5bf5f643d458302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a ray intersects with an axis-aligned bounding box (AABB).  <br /></td></tr>
-<tr class="separator:aa76cc469ce9d4733b5bf5f643d458302"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33f57296c5bf396c11711040f4f9cc2d" id="r_a33f57296c5bf396c11711040f4f9cc2d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a33f57296c5bf396c11711040f4f9cc2d">getAABBIntersection</a> (const linalg::Vec3d &amp;origin, const linalg::Vec3d &amp;inv_dir, const linalg::Vec3d &amp;min_bound, const linalg::Vec3d &amp;max_bound, double &amp;hit_distance)</td></tr>
+<tr class="memdesc:a33f57296c5bf396c11711040f4f9cc2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a ray intersects with an axis-aligned bounding box (AABB).  <br /></td></tr>
+<tr class="separator:a33f57296c5bf396c11711040f4f9cc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab66d92c959f852f29067f533763429cc" id="r_ab66d92c959f852f29067f533763429cc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structRayIntersection_1_1RayBVHHitInfo.html">RayBVHHitInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#ab66d92c959f852f29067f533763429cc">getBVHIntersection</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const <a class="el" href="classBVHNode.html">BVHNode</a> *bvh_node)</td></tr>
 <tr class="memdesc:ab66d92c959f852f29067f533763429cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the intersection information of a ray with a <a class="el" href="namespaceBVH.html" title="Namespace for Bounding Volume Hierarchy (BVH) related functions.">BVH</a> node.  <br /></td></tr>
 <tr class="separator:ab66d92c959f852f29067f533763429cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,14 +148,14 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a01f175394047bff6b7d05b0130f4d39e" id="r_a01f175394047bff6b7d05b0130f4d39e"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a01f175394047bff6b7d05b0130f4d39e">RAY_OFFSET_FACTOR</a> = 1e-9</td></tr>
 <tr class="separator:a01f175394047bff6b7d05b0130f4d39e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39243e3dc92c97cff6cee02760a9bdac" id="r_a39243e3dc92c97cff6cee02760a9bdac"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a39243e3dc92c97cff6cee02760a9bdac">EPSILON</a> = 1e-6</td></tr>
-<tr class="separator:a39243e3dc92c97cff6cee02760a9bdac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad430b7185cddb71e6decef680acd70df" id="r_ad430b7185cddb71e6decef680acd70df"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#ad430b7185cddb71e6decef680acd70df">INTERSECTION_TOLERANCE</a> = 1e-6</td></tr>
+<tr class="separator:ad430b7185cddb71e6decef680acd70df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Namespace for ray intersection functions. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="aa76cc469ce9d4733b5bf5f643d458302" name="aa76cc469ce9d4733b5bf5f643d458302"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa76cc469ce9d4733b5bf5f643d458302">&#9670;&#160;</a></span>getAABBIntersection()</h2>
+<a id="a33f57296c5bf396c11711040f4f9cc2d" name="a33f57296c5bf396c11711040f4f9cc2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33f57296c5bf396c11711040f4f9cc2d">&#9670;&#160;</a></span>getAABBIntersection()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,8 +163,14 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">bool RayIntersection::getAABBIntersection </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structRay.html">Ray</a> &amp;&#160;</td>
-          <td class="paramname"><em>ray</em>, </td>
+          <td class="paramtype">const linalg::Vec3d &amp;&#160;</td>
+          <td class="paramname"><em>origin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const linalg::Vec3d &amp;&#160;</td>
+          <td class="paramname"><em>inv_dir</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -195,7 +201,8 @@ Variables</h2></td></tr>
 <p>Checks if a ray intersects with an axis-aligned bounding box (AABB). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ray</td><td>The ray to check for intersection. </td></tr>
+    <tr><td class="paramname">origin</td><td>The origin of the ray. </td></tr>
+    <tr><td class="paramname">inv_dir</td><td>The inverse direction of the ray. </td></tr>
     <tr><td class="paramname">min_bound</td><td>The minimum corner of the AABB. </td></tr>
     <tr><td class="paramname">max_bound</td><td>The maximum corner of the AABB. </td></tr>
     <tr><td class="paramname">hit_distance</td><td>The distance to the intersection point, if any. </td></tr>
@@ -846,8 +853,8 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a39243e3dc92c97cff6cee02760a9bdac" name="a39243e3dc92c97cff6cee02760a9bdac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39243e3dc92c97cff6cee02760a9bdac">&#9670;&#160;</a></span>EPSILON</h2>
+<a id="ad430b7185cddb71e6decef680acd70df" name="ad430b7185cddb71e6decef680acd70df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad430b7185cddb71e6decef680acd70df">&#9670;&#160;</a></span>INTERSECTION_TOLERANCE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -856,7 +863,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr double RayIntersection::EPSILON = 1e-6</td>
+          <td class="memname">constexpr double RayIntersection::INTERSECTION_TOLERANCE = 1e-6</td>
         </tr>
       </table>
   </td>

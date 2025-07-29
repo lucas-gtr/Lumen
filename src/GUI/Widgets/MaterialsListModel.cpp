@@ -2,7 +2,13 @@
 #include "Surface/MaterialManager.hpp"
 
 MaterialsListModel::MaterialsListModel(MaterialManager* material_manager, QObject* parent)
-    : QAbstractListModel(parent), m_material_manager(material_manager) {}
+    : QAbstractListModel(parent), m_material_manager(material_manager) {
+  const auto materials = m_material_manager->getAllMaterialsName();
+  m_items.reserve(materials.size());
+  for(const auto& material_name : materials) {
+    m_items.push_back(QString::fromStdString(material_name));
+  }
+}
 
 int MaterialsListModel::rowCount(const QModelIndex& parent) const {
   if(parent.isValid()) {
@@ -53,7 +59,7 @@ void MaterialsListModel::addItem(const QString& item) {
   m_material_manager->addMaterial(new_material_name);
   const int insert_row = static_cast<int>(m_items.size());
   beginInsertRows(QModelIndex(), insert_row, insert_row);
-  m_items.append(QString::fromStdString(new_material_name));
+  m_items.push_back(QString::fromStdString(new_material_name));
   endInsertRows();
 }
 
@@ -77,6 +83,6 @@ void MaterialsListModel::removeItem(int row) {
   }
   beginRemoveRows(QModelIndex(), row, row);
   m_material_manager->removeMaterial(m_items[row].toStdString());
-  m_items.removeAt(row);
+  m_items.erase(m_items.begin() + row);
   endRemoveRows();
 }

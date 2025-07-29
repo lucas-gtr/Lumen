@@ -41,6 +41,7 @@ RenderSettingsWidget::RenderSettingsWidget(QWidget* parent)
   connect(this, &RenderSettingsWidget::renderStarted, m_render_window, &RenderWindow::onRenderStarted);
   connect(this, &RenderSettingsWidget::renderProgress, m_render_window, &RenderWindow::onRenderProgress);
   connect(this, &RenderSettingsWidget::renderFinished, m_render_window, &RenderWindow::onRenderFinished);
+  connect(m_render_window, &RenderWindow::aboutToClose, this, &RenderSettingsWidget::onRenderStopped);
 
   updateWidget();
 }
@@ -139,8 +140,6 @@ void RenderSettingsWidget::onRenderButtonClicked() {
 
     if(*success) {
       emit renderFinished(m_renderer->getRenderTime()->getRenderStats().elapsed_time);
-    } else {
-      std::cerr << "Rendering failed.\n";
     }
 
     thread->deleteLater();
@@ -148,6 +147,12 @@ void RenderSettingsWidget::onRenderButtonClicked() {
   });
 
   thread->start();
+}
+
+void RenderSettingsWidget::onRenderStopped() {
+  if(m_renderer) {
+    m_renderer->requestStop();
+  }
 }
 
 RenderSettingsWidget::~RenderSettingsWidget() {

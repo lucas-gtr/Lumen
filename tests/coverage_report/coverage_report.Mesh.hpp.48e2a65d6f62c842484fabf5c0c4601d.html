@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-07-23 11:30:51</td>
+      <td>2025-07-29 23:37:35</td>
     </tr>
   </table>
 </div>
@@ -75,14 +75,14 @@
     </tr>
     <tr><td><a href="#l59">Face::operator==(Face const&amp;) const (line 59)</a></td><td>called 7 times, returned 7 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l79">Mesh::Mesh() (line 79)</a></td><td>called 22 times, returned 22 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l88">Mesh::Mesh(Mesh const&amp;) (line 88)</a></td><td>called 28 times, returned 28 times</td><td>83.0%</td></tr>
-    <tr><td><a href="#l128">Mesh::getBVHRoot() const (line 128)</a></td><td>called 22 times, returned 22 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l110">Mesh::getFaces() const (line 110)</a></td><td>called 51 times, returned 51 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l104">Mesh::getVertex(int) const (line 104)</a></td><td>called 100 times, returned 100 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l97">Mesh::getVertices() const (line 97)</a></td><td>called 51 times, returned 51 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l88">Mesh::Mesh(Mesh const&amp;) (line 88)</a></td><td>called 27 times, returned 27 times</td><td>83.0%</td></tr>
+    <tr><td><a href="#l128">Mesh::getBVHRoot() const (line 128)</a></td><td>called 17 times, returned 17 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l110">Mesh::getFaces() const (line 110)</a></td><td>called 47 times, returned 47 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l104">Mesh::getVertex(int) const (line 104)</a></td><td>called 220 times, returned 220 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l97">Mesh::getVertices() const (line 97)</a></td><td>called 49 times, returned 49 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l89">Mesh::operator=(Mesh const&amp;) (line 89)</a></td><td>called 4 times, returned 4 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l117">Mesh::operator==(Mesh const&amp;) const (line 117)</a></td><td>called 6 times, returned 6 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l130">Mesh::~Mesh() (line 130)</a></td><td>called 99 times, returned 99 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l130">Mesh::~Mesh() (line 130)</a></td><td>called 97 times, returned 97 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l42">Vertex::ValuePerVertex() (line 42)</a></td><td>called 6 times, returned 6 times</td><td>100.0%</td></tr>
     <tr><td><a href="#l33">Vertex::operator==(Vertex const&amp;) const (line 33)</a></td><td>called 15 times, returned 15 times</td><td>100.0%</td></tr>
   </table>
@@ -748,11 +748,11 @@
         <details class="linebranchDetails">
         <summary class="linebranchSummary">1/1</summary>
         <div class="linebranchContents">
-          <div class="takenBranch">&check; Branch 2 taken 28 times.</div>
+          <div class="takenBranch">&check; Branch 2 taken 27 times.</div>
         </div>
         </details>
       </td>
-      <td class="linecount coveredLine">28</td>
+      <td class="linecount coveredLine">27</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">Mesh</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Mesh</span><span class="o">&amp;</span><span class="p">)</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default copy constructor.</span></td>
     </tr>
     <tr class="source-line">
@@ -815,7 +815,7 @@
       <td class="lineno"><a id="l97" href="#l97">97</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">51</td>
+      <td class="linecount coveredLine">49</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">getVertices</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_vertices</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -864,7 +864,7 @@
       <td class="lineno"><a id="l104" href="#l104">104</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">100</td>
+      <td class="linecount coveredLine">220</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">Vertex</span><span class="o">&amp;</span><span class="w"> </span><span class="n">getVertex</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_vertices</span><span class="p">[</span><span class="n">index</span><span class="p">];</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -906,7 +906,7 @@
       <td class="lineno"><a id="l110" href="#l110">110</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">51</td>
+      <td class="linecount coveredLine">47</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Face</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">getFaces</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_faces</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1041,7 +1041,7 @@
       <td class="lineno"><a id="l128" href="#l128">128</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">22</td>
+      <td class="linecount coveredLine">17</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">BVHNode</span><span class="o">*</span><span class="w"> </span><span class="nf">getBVHRoot</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_bvh_root</span><span class="p">.</span><span class="n">get</span><span class="p">();</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -1055,7 +1055,7 @@
       <td class="lineno"><a id="l130" href="#l130">130</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">99</td>
+      <td class="linecount coveredLine">97</td>
       <td class="src coveredLine"><span class="w">  </span><span class="o">~</span><span class="n">Mesh</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default destructor.</span></td>
     </tr>
     <tr class="source-line">

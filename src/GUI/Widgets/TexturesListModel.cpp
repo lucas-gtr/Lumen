@@ -2,7 +2,13 @@
 #include "Surface/TextureManager.hpp"
 
 TexturesListModel::TexturesListModel(TextureManager* texture_manager, QObject* parent)
-    : QAbstractListModel(parent), m_texture_manager(texture_manager) {}
+    : QAbstractListModel(parent), m_texture_manager(texture_manager) {
+  const auto textures = m_texture_manager->getAllTexturesName();
+  m_items.reserve(textures.size());
+  for(const auto& texture_name : textures) {
+    m_items.push_back(QString::fromStdString(texture_name));
+  };
+}
 
 int TexturesListModel::rowCount(const QModelIndex& parent) const {
   if(parent.isValid()) {
@@ -53,7 +59,7 @@ void TexturesListModel::addItem(const QString& item) {
   m_texture_manager->addTexture(new_texture_name);
   const int insert_row = static_cast<int>(m_items.size());
   beginInsertRows(QModelIndex(), insert_row, insert_row);
-  m_items.append(QString::fromStdString(new_texture_name));
+  m_items.push_back(QString::fromStdString(new_texture_name));
   endInsertRows();
 }
 
@@ -77,6 +83,6 @@ void TexturesListModel::removeItem(int row) {
   }
   beginRemoveRows(QModelIndex(), row, row);
   m_texture_manager->removeTexture(m_items[row].toStdString());
-  m_items.removeAt(row);
+  m_items.erase(m_items.begin() + row);
   endRemoveRows();
 }

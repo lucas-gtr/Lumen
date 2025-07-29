@@ -1,76 +1,80 @@
 <map id="/home/lucasgtr/lumen/include/Scene/Skybox.hpp" name="/home/lucasgtr/lumen/include/Scene/Skybox.hpp">
-<area shape="rect" id="Node000001" title="Header file for the Skybox class." alt="" coords="964,5,1159,45"/>
-<area shape="rect" id="Node000002" href="$IResourceManagerGPU_8hpp.html" title="Header file for the IResourceManagerGPU interface, which manages GPU resources." alt="" coords="122,93,353,148"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="950,37,687,59,530,76,374,96,353,99,353,94,373,91,529,71,686,54,950,32"/>
-<area shape="rect" id="Node000010" href="$SkyboxGL_8hpp.html" title="Header file for the SkyboxGL class, which manages OpenGL skybox rendering." alt="" coords="385,101,641,141"/>
-<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="951,48,624,103,623,98,950,43"/>
-<area shape="rect" id="Node000011" href="$SkyboxGL_8cpp.html" title=" " alt="" coords="416,203,643,243"/>
-<area shape="poly" id="edge43_Node000001_Node000011" title=" " alt="" coords="998,53,581,206,579,201,996,48"/>
-<area shape="rect" id="Node000012" href="$Scene_8hpp.html" title="Header file for the Scene class." alt="" coords="968,101,1155,141"/>
-<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="1064,59,1064,101,1059,101,1059,59"/>
-<area shape="rect" id="Node000026" href="$Scene_8cpp.html" title=" " alt="" coords="2185,203,2349,243"/>
-<area shape="poly" id="edge45_Node000001_Node000026" title=" " alt="" coords="1110,50,1168,91,1183,107,1192,122,1202,135,1219,146,1258,160,1305,172,1418,186,1549,191,1688,190,1961,184,2079,185,2172,193,2207,201,2205,206,2172,199,2079,191,1961,190,1688,196,1549,196,1418,191,1305,177,1257,166,1216,150,1199,138,1188,125,1179,110,1165,95,1107,55"/>
-<area shape="rect" id="Node000027" href="$SkyboxWidget_8cpp.html" title=" " alt="" coords="1229,101,1512,141"/>
-<area shape="poly" id="edge44_Node000001_Node000027" title=" " alt="" coords="1138,47,1309,98,1307,103,1136,52"/>
-<area shape="rect" id="Node000028" href="$Skybox_8cpp.html" title=" " alt="" coords="1535,101,1702,141"/>
-<area shape="poly" id="edge46_Node000001_Node000028" title=" " alt="" coords="1173,36,1339,58,1525,91,1555,98,1554,103,1523,96,1339,64,1172,41"/>
-<area shape="rect" id="Node000003" href="$ResourceManagerGL_8hpp.html" title="Header file for the ResourceManagerGL class, which manages OpenGL resources." alt="" coords="117,196,341,251"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,162,234,196,229,196,231,162"/>
-<area shape="rect" id="Node000004" href="$EngineGL_8hpp.html" title="Header file for the EngineGL class, which implements the OpenGL rendering engine." alt="" coords="155,306,408,346"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="252,262,274,304,269,307,247,264"/>
-<area shape="rect" id="Node000005" href="$EngineGL_8cpp.html" title=" " alt="" coords="5,409,229,449"/>
-<area shape="poly" id="edge9_Node000003_Node000005" title=" " alt="" coords="179,261,160,279,145,300,133,328,125,357,120,409,115,408,120,356,128,326,140,297,156,276,176,257"/>
-<area shape="rect" id="Node000009" href="$ResourceManagerGL_8cpp.html" title=" " alt="" coords="432,299,685,353"/>
-<area shape="poly" id="edge10_Node000003_Node000009" title=" " alt="" coords="329,252,474,296,472,301,327,257"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="240,356,149,411,147,406,237,351"/>
-<area shape="rect" id="Node000006" href="$ViewportSettingsWidget_8cpp.html" title=" " alt="" coords="231,504,452,559"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="282,360,284,406,295,455,306,480,321,502,317,505,302,483,289,457,279,406,277,360"/>
-<area shape="rect" id="Node000007" href="$ViewportSettingsWidget_8hpp.html" title="Header file for the ViewportSettingsWidget class, which provides a user interface for configuring vie..." alt="" coords="304,401,525,456"/>
-<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="319,352,381,399,378,403,316,356"/>
-<area shape="rect" id="Node000008" href="$OpenGLWidget_8cpp.html" title=" " alt="" coords="550,409,807,449"/>
-<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="370,347,605,406,604,411,368,352"/>
-<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="390,469,363,505,358,502,385,466"/>
-<area shape="poly" id="edge12_Node000010_Node000003" title=" " alt="" coords="448,148,304,198,303,193,446,143"/>
-<area shape="poly" id="edge13_Node000010_Node000009" title=" " alt="" coords="456,150,428,170,406,197,398,224,399,236,406,249,431,277,464,296,461,301,428,281,402,252,394,237,392,223,402,195,424,166,453,145"/>
-<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="521,154,529,203,524,204,516,155"/>
-<area shape="poly" id="edge17_Node000012_Node000003" title=" " alt="" coords="954,136,703,163,404,199,342,207,341,202,404,193,703,157,954,130"/>
-<area shape="poly" id="edge16_Node000012_Node000004" title=" " alt="" coords="954,138,809,164,744,180,700,198,686,211,679,225,671,239,656,253,380,309,379,303,653,248,667,236,674,222,682,207,697,194,743,175,807,159,953,133"/>
-<area shape="poly" id="edge31_Node000012_Node000005" title=" " alt="" coords="979,147,921,169,863,198,827,222,802,244,749,300,726,331,716,344,699,356,642,381,592,395,546,401,502,402,408,398,355,398,292,404,230,413,229,407,292,399,354,393,409,393,502,397,545,396,591,390,640,376,696,351,712,340,722,327,745,297,798,241,824,218,860,194,918,164,977,142"/>
-<area shape="poly" id="edge38_Node000012_Node000008" title=" " alt="" coords="1019,150,919,215,806,301,754,351,698,410,694,407,751,347,802,297,916,211,1016,146"/>
-<area shape="poly" id="edge32_Node000012_Node000009" title=" " alt="" coords="955,139,860,161,811,178,764,198,745,211,732,224,719,238,700,253,616,301,613,296,697,248,715,234,728,220,741,207,761,194,809,173,858,156,954,134"/>
-<area shape="rect" id="Node000013" href="$Application_8hpp.html" title="Header file for the Application class, which manages the Qt application lifecycle." alt="" coords="817,306,1023,346"/>
-<area shape="poly" id="edge18_Node000012_Node000013" title=" " alt="" coords="1042,154,936,307,931,304,1038,151"/>
-<area shape="rect" id="Node000014" href="$Application_8cpp.html" title=" " alt="" coords="831,409,1009,449"/>
-<area shape="poly" id="edge33_Node000012_Node000014" title=" " alt="" coords="1069,154,1072,197,1070,249,1060,304,1051,330,1038,355,1024,373,1007,388,970,411,967,406,1004,384,1020,369,1034,352,1046,328,1055,302,1065,248,1066,197,1063,155"/>
-<area shape="rect" id="Node000015" href="$RayIntersection_8hpp.html" title="Header file for ray intersection functions." alt="" coords="1149,203,1427,243"/>
-<area shape="poly" id="edge20_Node000012_Node000015" title=" " alt="" coords="1117,144,1247,201,1244,206,1115,149"/>
-<area shape="rect" id="Node000016" href="$Renderer_8hpp.html" title="Header file for the Renderer class." alt="" coords="1150,306,1383,346"/>
-<area shape="poly" id="edge30_Node000012_Node000016" title=" " alt="" coords="1077,152,1102,201,1119,226,1139,249,1180,280,1223,304,1220,308,1177,285,1136,253,1115,229,1098,203,1072,155"/>
-<area shape="rect" id="Node000020" href="$Renderer_8cpp.html" title=" " alt="" coords="1829,409,2033,449"/>
-<area shape="poly" id="edge41_Node000012_Node000020" title=" " alt="" coords="1143,141,1162,145,1211,153,1254,156,1328,156,1364,157,1400,162,1441,174,1487,194,1505,207,1515,221,1525,235,1541,248,1566,260,1589,267,1630,272,1671,277,1695,284,1720,296,1737,310,1747,324,1757,337,1772,351,1825,383,1879,406,1876,411,1823,387,1769,355,1753,341,1743,327,1733,314,1717,301,1693,289,1670,282,1629,277,1587,272,1564,265,1539,253,1521,239,1511,224,1501,211,1484,198,1439,179,1399,168,1363,162,1328,161,1254,161,1211,158,1161,151,1142,146"/>
-<area shape="rect" id="Node000022" href="$RayIntersection_8cpp.html" title=" " alt="" coords="1459,306,1707,346"/>
-<area shape="poly" id="edge40_Node000012_Node000022" title=" " alt="" coords="1153,141,1174,145,1250,155,1310,158,1369,166,1402,177,1440,194,1459,206,1471,219,1498,249,1562,304,1558,308,1494,253,1467,222,1455,210,1437,198,1400,182,1368,172,1310,163,1249,161,1173,151,1152,146"/>
-<area shape="rect" id="Node000023" href="$MainWindow_8cpp.html" title=" " alt="" coords="1782,306,2055,346"/>
-<area shape="poly" id="edge34_Node000012_Node000023" title=" " alt="" coords="1148,141,1174,145,1239,151,1321,151,1513,149,1611,150,1702,157,1780,170,1813,181,1840,194,1868,218,1890,248,1906,279,1916,305,1911,307,1901,281,1885,251,1864,221,1837,198,1811,186,1779,175,1701,162,1611,156,1513,154,1321,157,1239,156,1173,151,1147,146"/>
-<area shape="rect" id="Node000024" href="$MainWindow_8hpp.html" title="Header file for the MainWindow class, which provides the main user interface for the application." alt="" coords="1552,203,1827,243"/>
-<area shape="poly" id="edge35_Node000012_Node000024" title=" " alt="" coords="1152,141,1174,145,1275,162,1353,171,1534,193,1580,201,1579,206,1533,199,1353,177,1274,167,1173,151,1151,146"/>
-<area shape="rect" id="Node000025" href="$SceneTreeView_8cpp.html" title=" " alt="" coords="1901,203,2160,243"/>
-<area shape="poly" id="edge39_Node000012_Node000025" title=" " alt="" coords="1148,141,1174,145,1281,159,1372,167,1528,173,1684,176,1775,182,1883,193,1933,201,1933,206,1882,199,1775,188,1683,182,1527,178,1372,172,1280,165,1173,151,1147,146"/>
-<area shape="poly" id="edge42_Node000012_Node000026" title=" " alt="" coords="1147,141,1174,145,1325,162,1453,169,1567,169,1673,166,1779,164,1893,165,2021,174,2172,193,2207,201,2205,206,2172,199,2021,179,1893,170,1779,169,1673,171,1567,174,1453,174,1324,167,1173,151,1146,146"/>
-<area shape="poly" id="edge19_Node000013_Node000014" title=" " alt="" coords="923,360,923,409,917,409,917,360"/>
-<area shape="poly" id="edge27_Node000015_Node000008" title=" " alt="" coords="1238,252,1140,301,1090,331,1037,356,934,380,777,411,776,406,933,375,1035,351,1087,326,1137,296,1236,247"/>
-<area shape="poly" id="edge21_Node000015_Node000016" title=" " alt="" coords="1284,257,1273,306,1268,305,1279,256"/>
-<area shape="poly" id="edge29_Node000015_Node000020" title=" " alt="" coords="1332,249,1398,297,1412,313,1422,327,1432,340,1448,351,1499,374,1544,386,1586,392,1626,392,1711,390,1761,391,1818,399,1854,406,1853,411,1817,404,1760,397,1711,395,1626,398,1586,397,1543,391,1497,379,1445,356,1428,343,1418,330,1408,316,1394,301,1329,253"/>
-<area shape="poly" id="edge28_Node000015_Node000022" title=" " alt="" coords="1357,245,1528,303,1527,308,1355,250"/>
-<area shape="rect" id="Node000017" href="$RenderSettingsWidget_8hpp.html" title="Header file for the RenderSettingsWidget class, which provides a user interface for configuring rende..." alt="" coords="1033,401,1295,456"/>
-<area shape="poly" id="edge22_Node000016_Node000017" title=" " alt="" coords="1240,357,1193,403,1189,399,1236,354"/>
-<area shape="rect" id="Node000019" href="$MultiThreadedCPU_8cpp.html" title=" " alt="" coords="1320,401,1533,456"/>
-<area shape="poly" id="edge24_Node000016_Node000019" title=" " alt="" coords="1310,351,1386,399,1383,403,1307,356"/>
-<area shape="poly" id="edge25_Node000016_Node000020" title=" " alt="" coords="1373,346,1403,351,1519,366,1610,373,1702,382,1818,399,1855,406,1854,411,1817,404,1701,387,1610,379,1519,371,1402,356,1372,351"/>
-<area shape="rect" id="Node000021" href="$SingleThreaded_8cpp.html" title=" " alt="" coords="1558,409,1805,449"/>
-<area shape="poly" id="edge26_Node000016_Node000021" title=" " alt="" coords="1358,347,1604,406,1603,411,1357,352"/>
-<area shape="rect" id="Node000018" href="$RenderSettingsWidget_8cpp.html" title=" " alt="" coords="1033,504,1295,559"/>
-<area shape="poly" id="edge23_Node000017_Node000018" title=" " alt="" coords="1167,470,1167,504,1161,504,1161,470"/>
-<area shape="poly" id="edge36_Node000024_Node000013" title=" " alt="" coords="1539,247,1024,314,1023,309,1538,242"/>
-<area shape="poly" id="edge37_Node000024_Node000023" title=" " alt="" coords="1746,247,1877,303,1875,308,1744,251"/>
+<area shape="rect" id="Node000001" title="Header file for the Skybox class." alt="" coords="2626,5,2821,45"/>
+<area shape="rect" id="Node000002" href="$IResourceManagerGPU_8hpp.html" title="Header file for the IResourceManagerGPU interface, which manages GPU resources." alt="" coords="2340,93,2571,148"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2657,52,2532,96,2530,91,2655,47"/>
+<area shape="rect" id="Node000010" href="$SkyboxGL_8hpp.html" title="Header file for the SkyboxGL class, which manages OpenGL skybox rendering." alt="" coords="2595,101,2851,141"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="2726,59,2726,101,2721,101,2721,59"/>
+<area shape="rect" id="Node000011" href="$SkyboxGL_8cpp.html" title=" " alt="" coords="2769,203,2995,243"/>
+<area shape="poly" id="edge46_Node000001_Node000011" title=" " alt="" coords="2809,49,2840,67,2865,92,2880,119,2886,150,2887,203,2882,203,2881,150,2875,121,2861,95,2837,71,2806,53"/>
+<area shape="rect" id="Node000012" href="$Scene_8hpp.html" title="Header file for the Scene class." alt="" coords="1682,101,1869,141"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="2612,40,1869,113,1869,108,2612,35"/>
+<area shape="rect" id="Node000027" href="$Scene_8cpp.html" title=" " alt="" coords="2273,203,2437,243"/>
+<area shape="poly" id="edge48_Node000001_Node000027" title=" " alt="" coords="2612,33,2529,39,2445,51,2374,69,2348,81,2331,95,2323,107,2320,120,2322,149,2332,178,2345,202,2340,204,2327,180,2317,150,2315,120,2319,105,2327,92,2345,76,2372,64,2444,45,2529,34,2612,27"/>
+<area shape="rect" id="Node000028" href="$SkyboxWidget_8cpp.html" title=" " alt="" coords="2926,101,3209,141"/>
+<area shape="poly" id="edge47_Node000001_Node000028" title=" " alt="" coords="2807,46,2999,98,2997,103,2805,51"/>
+<area shape="rect" id="Node000029" href="$Skybox_8cpp.html" title=" " alt="" coords="3232,101,3399,141"/>
+<area shape="poly" id="edge49_Node000001_Node000029" title=" " alt="" coords="2834,35,3016,57,3221,91,3253,98,3251,103,3220,96,3016,62,2834,40"/>
+<area shape="rect" id="Node000003" href="$ResourceManagerGL_8hpp.html" title="Header file for the ResourceManagerGL class, which manages OpenGL resources." alt="" coords="2462,196,2686,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="2498,155,2545,194,2541,198,2495,159"/>
+<area shape="rect" id="Node000004" href="$EngineGL_8hpp.html" title="Header file for the EngineGL class, which implements the OpenGL rendering engine." alt="" coords="1849,306,2102,346"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="2449,254,2102,309,2102,304,2448,248"/>
+<area shape="rect" id="Node000005" href="$EngineGL_8cpp.html" title=" " alt="" coords="2094,409,2318,449"/>
+<area shape="poly" id="edge9_Node000003_Node000005" title=" " alt="" coords="2580,265,2574,311,2565,335,2551,355,2535,367,2512,378,2455,396,2387,409,2318,419,2318,414,2386,404,2453,390,2510,373,2532,363,2547,351,2560,332,2569,310,2574,264"/>
+<area shape="rect" id="Node000009" href="$ResourceManagerGL_8cpp.html" title=" " alt="" coords="2283,299,2537,353"/>
+<area shape="poly" id="edge10_Node000003_Node000009" title=" " alt="" coords="2521,260,2454,301,2452,296,2518,256"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="2032,349,2164,406,2162,411,2030,354"/>
+<area shape="rect" id="Node000006" href="$ViewportSettingsWidget_8cpp.html" title=" " alt="" coords="1871,504,2093,559"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="2007,355,2022,376,2034,400,2040,429,2034,457,2022,483,2007,505,2003,502,2018,480,2029,455,2034,429,2029,402,2018,379,2003,358"/>
+<area shape="rect" id="Node000007" href="$ViewportSettingsWidget_8hpp.html" title="Header file for the ViewportSettingsWidget class, which provides a user interface for configuring vie..." alt="" coords="1798,401,2019,456"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="1957,359,1928,403,1924,400,1953,356"/>
+<area shape="rect" id="Node000008" href="$OpenGLWidget_8cpp.html" title=" " alt="" coords="1516,409,1773,449"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="1901,352,1708,411,1706,406,1900,347"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="1938,466,1965,502,1961,505,1934,469"/>
+<area shape="poly" id="edge12_Node000010_Node000003" title=" " alt="" coords="2685,151,2615,198,2612,194,2682,146"/>
+<area shape="poly" id="edge13_Node000010_Node000009" title=" " alt="" coords="2729,155,2724,204,2715,230,2700,253,2674,270,2635,285,2538,308,2536,303,2633,280,2671,265,2696,249,2710,228,2719,203,2723,154"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="2766,146,2854,201,2851,206,2763,150"/>
+<area shape="poly" id="edge17_Node000012_Node000003" title=" " alt="" coords="1883,128,2142,153,2296,171,2450,193,2462,195,2461,201,2450,199,2296,177,2141,158,1882,133"/>
+<area shape="poly" id="edge16_Node000012_Node000004" title=" " alt="" coords="1800,150,1838,198,1885,249,1951,304,1948,308,1881,253,1834,201,1795,153"/>
+<area shape="poly" id="edge34_Node000012_Node000005" title=" " alt="" coords="1818,147,1880,194,1894,210,1903,224,1913,236,1929,248,1954,261,1978,267,2022,270,2066,274,2090,282,2116,296,2145,322,2169,352,2200,407,2195,410,2164,355,2141,326,2112,301,2088,287,2065,280,2021,276,1977,273,1953,266,1926,253,1909,240,1899,227,1890,213,1876,198,1815,151"/>
+<area shape="poly" id="edge41_Node000012_Node000008" title=" " alt="" coords="1789,153,1801,196,1808,248,1806,303,1799,330,1787,355,1772,373,1754,389,1714,411,1711,406,1751,384,1769,370,1782,352,1794,328,1800,302,1803,248,1796,197,1784,154"/>
+<area shape="poly" id="edge35_Node000012_Node000009" title=" " alt="" coords="1883,130,2067,155,2152,173,2211,194,2229,206,2239,220,2249,234,2264,249,2305,275,2347,296,2345,301,2302,279,2260,253,2245,238,2235,223,2225,210,2209,198,2150,178,2066,160,1882,135"/>
+<area shape="rect" id="Node000013" href="$Application_8hpp.html" title="Header file for the Application class, which manages the Qt application lifecycle." alt="" coords="1269,306,1476,346"/>
+<area shape="poly" id="edge18_Node000012_Node000013" title=" " alt="" coords="1669,136,1528,160,1468,178,1428,198,1407,222,1392,252,1378,306,1372,305,1387,250,1402,220,1424,194,1466,173,1527,155,1668,131"/>
+<area shape="rect" id="Node000014" href="$Application_8cpp.html" title=" " alt="" coords="1143,409,1320,449"/>
+<area shape="poly" id="edge36_Node000012_Node000014" title=" " alt="" coords="1669,131,1603,139,1531,152,1457,172,1387,198,1344,218,1312,237,1286,262,1259,300,1246,328,1239,357,1234,409,1228,408,1234,356,1241,326,1254,297,1282,259,1309,233,1342,214,1385,194,1456,167,1530,147,1602,134,1668,126"/>
+<area shape="rect" id="Node000015" href="$RayIntersection_8hpp.html" title="Header file for ray intersection functions." alt="" coords="842,203,1119,243"/>
+<area shape="poly" id="edge20_Node000012_Node000015" title=" " alt="" coords="1669,138,1120,207,1119,202,1668,133"/>
+<area shape="rect" id="Node000017" href="$Renderer_8cpp.html" title=" " alt="" coords="801,409,1005,449"/>
+<area shape="poly" id="edge44_Node000012_Node000017" title=" " alt="" coords="1668,126,1457,132,1198,144,951,166,850,180,773,199,719,215,675,231,640,256,608,300,599,327,601,339,608,351,684,372,824,406,822,411,682,378,604,355,596,341,593,327,604,297,636,252,673,227,717,210,772,193,849,175,950,160,1198,139,1457,126,1668,121"/>
+<area shape="rect" id="Node000018" href="$Renderer_8hpp.html" title="Header file for the Renderer class." alt="" coords="309,306,543,346"/>
+<area shape="poly" id="edge33_Node000012_Node000018" title=" " alt="" coords="1668,127,1392,135,1048,149,738,170,627,183,563,198,524,221,490,251,441,308,437,304,486,247,521,217,561,194,626,178,738,165,1048,144,1392,130,1668,122"/>
+<area shape="rect" id="Node000023" href="$RayIntersection_8cpp.html" title=" " alt="" coords="618,306,866,346"/>
+<area shape="poly" id="edge43_Node000012_Node000023" title=" " alt="" coords="1669,128,1450,136,1189,151,959,171,878,184,831,198,803,221,780,251,751,307,746,305,775,248,799,218,829,194,876,179,958,166,1189,145,1449,131,1668,123"/>
+<area shape="rect" id="Node000024" href="$MainWindow_8cpp.html" title=" " alt="" coords="1500,306,1773,346"/>
+<area shape="poly" id="edge37_Node000012_Node000024" title=" " alt="" coords="1770,155,1754,203,1727,252,1698,284,1667,308,1664,304,1694,280,1722,249,1749,200,1765,153"/>
+<area shape="rect" id="Node000025" href="$MainWindow_8hpp.html" title="Header file for the MainWindow class, which provides the main user interface for the application." alt="" coords="1438,203,1713,243"/>
+<area shape="poly" id="edge38_Node000012_Node000025" title=" " alt="" coords="1727,149,1614,206,1612,201,1724,145"/>
+<area shape="rect" id="Node000026" href="$SceneTreeView_8cpp.html" title=" " alt="" coords="1939,203,2198,243"/>
+<area shape="poly" id="edge42_Node000012_Node000026" title=" " alt="" coords="1844,143,2014,201,2013,206,1842,148"/>
+<area shape="poly" id="edge45_Node000012_Node000027" title=" " alt="" coords="1883,133,2058,158,2255,193,2287,201,2286,206,2253,199,2057,163,1882,138"/>
+<area shape="poly" id="edge19_Node000013_Node000014" title=" " alt="" coords="1336,356,1259,411,1256,406,1333,352"/>
+<area shape="poly" id="edge30_Node000015_Node000008" title=" " alt="" coords="1041,246,1155,296,1206,326,1228,338,1258,351,1322,371,1390,387,1516,410,1515,415,1388,393,1321,376,1256,356,1225,343,1203,330,1153,301,1039,251"/>
+<area shape="rect" id="Node000016" href="$PBR_8hpp.html" title="Header file for the PBR (Physically Based Rendering) utilities." alt="" coords="941,306,1143,346"/>
+<area shape="poly" id="edge21_Node000015_Node000016" title=" " alt="" coords="1002,254,1033,305,1028,307,997,257"/>
+<area shape="poly" id="edge32_Node000015_Node000017" title=" " alt="" coords="958,255,931,300,914,358,907,409,902,408,909,357,926,298,954,253"/>
+<area shape="poly" id="edge24_Node000015_Node000018" title=" " alt="" coords="864,248,530,309,529,303,863,243"/>
+<area shape="poly" id="edge31_Node000015_Node000023" title=" " alt="" coords="924,251,788,308,786,303,922,246"/>
+<area shape="poly" id="edge22_Node000016_Node000014" title=" " alt="" coords="1091,350,1197,406,1195,411,1088,355"/>
+<area shape="poly" id="edge23_Node000016_Node000017" title=" " alt="" coords="1006,356,931,411,928,406,1003,352"/>
+<area shape="poly" id="edge28_Node000018_Node000017" title=" " alt="" coords="534,346,789,399,823,406,821,411,788,404,533,351"/>
+<area shape="rect" id="Node000019" href="$RenderSettingsWidget_8hpp.html" title="Header file for the RenderSettingsWidget class, which provides a user interface for configuring rende..." alt="" coords="5,401,268,456"/>
+<area shape="poly" id="edge25_Node000018_Node000019" title=" " alt="" coords="360,353,213,404,211,399,358,348"/>
+<area shape="rect" id="Node000021" href="$MultiThreadedCPU_8cpp.html" title=" " alt="" coords="293,401,506,456"/>
+<area shape="poly" id="edge27_Node000018_Node000021" title=" " alt="" coords="420,360,409,402,404,400,415,359"/>
+<area shape="rect" id="Node000022" href="$SingleThreaded_8cpp.html" title=" " alt="" coords="531,409,777,449"/>
+<area shape="poly" id="edge29_Node000018_Node000022" title=" " alt="" coords="482,349,612,406,610,411,480,354"/>
+<area shape="rect" id="Node000020" href="$RenderSettingsWidget_8cpp.html" title=" " alt="" coords="5,504,268,559"/>
+<area shape="poly" id="edge26_Node000019_Node000020" title=" " alt="" coords="139,470,139,504,134,504,134,470"/>
+<area shape="poly" id="edge39_Node000025_Node000013" title=" " alt="" coords="1526,252,1412,308,1409,304,1524,247"/>
+<area shape="poly" id="edge40_Node000025_Node000024" title=" " alt="" coords="1596,254,1627,305,1623,307,1592,257"/>
 </map>

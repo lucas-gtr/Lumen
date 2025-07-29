@@ -194,7 +194,7 @@ void MaterialsWidget::setupTextureBinding(TextureBinding* binding) {
 
   connect(binding->browse_button, &QPushButton::clicked, this, [this, binding]() {
     const QString texture_path =
-        QFileDialog::getOpenFileName(this, "Select Image", "", "Images (*.png *.jpg *.jpeg *.bmp *.tga)");
+        QFileDialog::getOpenFileName(this, "Select Image", "", "Images (*.png *.jpg *.jpeg *.bmp *.tga *.hdr)");
     if(!texture_path.isEmpty()) {
       binding->emitTextureCreatedSignal(texture_path);
     }

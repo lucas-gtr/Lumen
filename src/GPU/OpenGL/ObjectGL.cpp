@@ -15,14 +15,11 @@ ObjectGL::ObjectGL(Object3D* object, MaterialGL* material) : IObjectGPU(object),
   glGenVertexArrays(1, &m_vao);
   glGenBuffers(1, &m_vbo);
   glGenBuffers(1, &m_ebo);
-
-  std::cout << "ObjectGL: VAO " << m_vao << " created." << '\n';
 }
 
 void ObjectGL::setMaterial(MaterialGL* material) {
   if(m_material != material) {
     m_material = material;
-    std::cout << "ObjectGL: Material changed for VAO " << m_vao << "." << '\n';
   }
 }
 
@@ -71,8 +68,6 @@ void ObjectGL::uploadToGPU() {
   glBindVertexArray(0);
   glBindBuffer(GL_ARRAY_BUFFER, 0);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-
-  std::cout << "ObjectGL: Data uploaded to GPU to VAO " << m_vao << "." << '\n';
 }
 
 void ObjectGL::bindVAO() { glBindVertexArray(m_vao); }
@@ -103,9 +98,6 @@ void ObjectGL::release() {
   }
 }
 
-ObjectGL::~ObjectGL() {
-  ObjectGL::release();
-  std::cout << "ObjectGL with VAO " << m_vao << " destroyed." << '\n';
-}
+ObjectGL::~ObjectGL() { ObjectGL::release(); }
 
 // GCOVR_EXCL_STOP

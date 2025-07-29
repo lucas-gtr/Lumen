@@ -144,11 +144,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> MAX_PLANE_LENGTH     = 1000.0; <span class="comment">// in meters</span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">//&lt;-------- RENDER SETTINGS ---------&gt;</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> DEFAULT_WIDTH   = 1920; <span class="comment">// in pixels</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> DEFAULT_WIDTH   = 800; <span class="comment">// in pixels</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> MIN_WIDTH       = 1;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> MAX_IMAGE_WIDTH = 8192;</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> DEFAULT_HEIGHT   = 1080; <span class="comment">// in pixels</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> DEFAULT_HEIGHT   = 800; <span class="comment">// in pixels</span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> MIN_HEIGHT       = 1;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> MAX_IMAGE_HEIGHT = 8192;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
@@ -160,9 +160,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> MIN_MAX_BOUNCES     = 0;</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> MAX_BOUNCES         = 100;</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> DEFAULT_SAMPLES_PER_PIXEL = 4;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> DEFAULT_SAMPLES_PER_PIXEL = 9;</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> MIN_SAMPLES_PER_PIXEL     = 1;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> MAX_SAMPLES_PER_PIXEL     = 1024;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> MAX_SAMPLES_PER_PIXEL     = 20000;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">//&lt;-------- RENDER EXPORTER ---------&gt;</span></div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">static</span> <span class="keyword">constexpr</span> std::string_view DEFAULT_FILE_PATH    = <span class="stringliteral">&quot;RenderImages/&quot;</span>;</div>
@@ -171,50 +171,50 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>              MIN_JPEG_QUALITY     = 1;</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>              MAX_JPEG_QUALITY     = 100;</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">//&lt;-------- SKYBOX ---------&gt;</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_SKYBOX_COLOR_R = 0.65;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_SKYBOX_COLOR_G = 0.65;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_SKYBOX_COLOR_B = 0.9;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">//&lt;-------- TEXTURE ---------&gt;</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_TEXTURE_UNDEFINED_R = 1.0;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_TEXTURE_UNDEFINED_G = 0.0;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_TEXTURE_UNDEFINED_B = 1.0;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>    MAX_PREVIEW_TEXTURE_SIZE    = 256;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment">//&lt;-------- LIGHT ---------&gt;</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_LIGHT_INTENSITY        = 1.0;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> MIN_LIGHT_INTENSITY            = 0.0;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> MAX_LIGHT_INTENSITY            = 10000.0;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_SPOT_LIGHT_INNER_ANGLE = 10.0;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_SPOT_LIGHT_OUTER_ANGLE = 12.5;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> MIN_SPOT_LIGHT_ANGLE           = 0.0;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> MAX_SPOT_LIGHT_ANGLE           = 90.0;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">//&lt;-------- LIGHT OPENGL ---------&gt;</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> DEFAULT_LIGHT_NEAR_PLANE      = 0.1F;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> DEFAULT_LIGHT_FAR_PLANE       = 100.0F;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> DIRECTIONAL_LIGHT_DISTANCE    = 20.0F;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> ORTHOGRAPHIC_LIGHT_SIZE       = 4.0F;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> MIN_LIGHT_INTENSITY_FAR_PLANE = 0.01F;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">//&lt;-------- POST-PROCESSING ---------&gt;</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_WHITE_POINT = 10.0;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">//&lt;-------- SKYBOX ---------&gt;</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_SKYBOX_COLOR_R = 0.0;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_SKYBOX_COLOR_G = 0.0;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_SKYBOX_COLOR_B = 0.0;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">//&lt;-------- TEXTURE ---------&gt;</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_TEXTURE_UNDEFINED_R = 1.0;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_TEXTURE_UNDEFINED_G = 0.0;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_TEXTURE_UNDEFINED_B = 1.0;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>    MAX_PREVIEW_TEXTURE_SIZE    = 256;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">//&lt;-------- MATERIAL ---------&gt;</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> MAX_EMISSIVE_STRENGTH   = 1000.0;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_ROUGHNESS_VALUE = 0.5;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">//&lt;-------- LIGHT ---------&gt;</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_LIGHT_INTENSITY        = 1.0;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> MIN_LIGHT_INTENSITY            = 0.0;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> MAX_LIGHT_INTENSITY            = 10000.0;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_SPOT_LIGHT_INNER_ANGLE = 10.0;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_SPOT_LIGHT_OUTER_ANGLE = 12.5;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> MIN_SPOT_LIGHT_ANGLE           = 0.0;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> MAX_SPOT_LIGHT_ANGLE           = 90.0;</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">//&lt;-------- POST-PROCESSING ---------&gt;</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DEFAULT_TONE_MAPPING_EXPOSURE = 1.0;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> MIN_TONE_MAPPING_EXPOSURE     = 0.0;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> MAX_TONE_MAPPING_EXPOSURE     = 10.0;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">//&lt;-------- BVH ---------&gt;</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> BVH_CONSTRUCTION_EPSILON = 0.0001;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment">//&lt;-------- RENDER EXECUTION ---------&gt;</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>          DEFAULT_CHUNK_SIZE          = 256; <span class="comment">// in pixels</span></div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>          MIN_CHUNK_SIZE              = 1;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>          MAX_CHUNK_SIZE              = 1024;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>          CHUNK_COUNT_UPDATE_INTERVAL = 10;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> THREADS_TO_KEEP_FREE        = 4;</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">//&lt;-------- MATH ---------&gt;</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> EPSILON = 1e-9; <span class="comment">// for floating-point comparisons</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">//&lt;-------- LIGHT OPENGL ---------&gt;</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> DEFAULT_LIGHT_NEAR_PLANE      = 0.1F;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> DEFAULT_LIGHT_FAR_PLANE       = 100.0F;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> DIRECTIONAL_LIGHT_DISTANCE    = 20.0F;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> ORTHOGRAPHIC_LIGHT_SIZE       = 4.0F;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> MIN_LIGHT_INTENSITY_FAR_PLANE = 0.01F;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">//&lt;-------- BVH ---------&gt;</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> BVH_CONSTRUCTION_EPSILON           = 0.0001;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>    MINIMUM_FACES_FOR_BVH_CONSTRUCTION = 50;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="comment">//&lt;-------- RENDER EXECUTION ---------&gt;</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>          DEFAULT_CHUNK_SIZE          = 400; <span class="comment">// in pixels</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>          MIN_CHUNK_SIZE              = 1;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>          MAX_CHUNK_SIZE              = 1024;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>          CHUNK_COUNT_UPDATE_INTERVAL = 50;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> THREADS_TO_KEEP_FREE        = 4;</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment">//&lt;-------- ALIGNMENT ---------&gt;</span></div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> ALIGN8  = 8;</div>
@@ -222,7 +222,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> ALIGN32 = 32;</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">//&lt;-------- ENGINE ---------&gt;</span></div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> DEFAULT_CAMERA_MOVE_SPEED   = 0.005F;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> DEFAULT_CAMERA_MOVE_SPEED   = 0.01F;</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> MIN_CAMERA_MOVE_SPEED       = 0.001F;</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> MAX_CAMERA_MOVE_SPEED       = 1.0F;</div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> DEFAULT_CAMERA_ROTATE_SPEED = 0.001F;</div>
@@ -273,17 +273,18 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> CUBE_MAP_FACE_COUNT     = 6;</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="comment">//&lt;-------- QT ---------&gt;</span></div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>   QT_DEFAULT_WINDOW_WIDTH             = 1920;</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>   QT_DEFAULT_WINDOW_HEIGHT            = 1440;</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span> WHEEL_TICK_ANGLE                    = 120.0F;</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>   JPEG_QUALITY_STEP                   = 5;</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>   LINE_EDIT_DOUBLE_VALIDATOR_DECIMALS = 10;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>   LINE_EDIT_DOUBLE_DISPLAY_PRECISION  = 5;</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>   TEXTURE_PREVIEW_MAX_SIZE            = 144;</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="keyword">static</span> <span class="keyword">constexpr</span> std::string_view GROUP_BOX_STYLESHEET = <span class="stringliteral">&quot;QGroupBox {font-weight :bold; font-size: 14px;}&quot;</span>;</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="preprocessor">#endif </span><span class="comment">// CORE_CONFIG_HPP</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>    QT_DEFAULT_WINDOW_WIDTH             = 1920;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>    QT_DEFAULT_WINDOW_HEIGHT            = 1440;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">float</span>  WHEEL_TICK_ANGLE                    = 120.0F;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>    JPEG_QUALITY_STEP                   = 5;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>    LINE_EDIT_DOUBLE_VALIDATOR_DECIMALS = 10;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>    LINE_EDIT_DOUBLE_DISPLAY_PRECISION  = 5;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span>    TEXTURE_PREVIEW_MAX_SIZE            = 64;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> DOUBLE_SLIDER_SPINBOX_PRECISION     = 0.01;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="keyword">static</span> <span class="keyword">constexpr</span> std::string_view GROUP_BOX_STYLESHEET = <span class="stringliteral">&quot;QGroupBox {font-weight :bold; font-size: 14px;}&quot;</span>;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="preprocessor">#endif </span><span class="comment">// CORE_CONFIG_HPP</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

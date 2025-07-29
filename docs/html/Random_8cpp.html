@@ -86,32 +86,49 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;linalg/Vec2.hpp&gt;</code><br />
+<code>#include &lt;linalg/Vec3.hpp&gt;</code><br />
+<code>#include &lt;linalg/linalg.hpp&gt;</code><br />
 <code>#include &lt;random&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+<code>#include &quot;<a class="el" href="MathConstants_8hpp_source.html">Core/MathConstants.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Random_8hpp_source.html">Core/Random.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Random.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Random_8cpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2src_2Core_2Random_8cpp" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2src_2Core_2Random_8cpp" id="a_2home_2lucasgtr_2lumen_2src_2Core_2Random_8cpp">
-<area shape="rect" title=" " alt="" coords="5,5,169,45"/>
-<area shape="rect" title=" " alt="" coords="55,167,176,192"/>
-<area shape="poly" title=" " alt="" coords="68,47,55,63,44,81,38,99,42,118,59,140,81,157,77,162,55,144,37,120,33,99,39,78,50,60,64,44"/>
-<area shape="rect" title=" " alt="" coords="51,93,123,119"/>
-<area shape="poly" title=" " alt="" coords="90,46,90,79,85,79,85,46"/>
-<area shape="rect" href="Random_8hpp.html" title="Header file for random number generation functions." alt="" coords="147,93,286,119"/>
-<area shape="poly" title=" " alt="" coords="120,43,187,84,185,88,117,48"/>
-<area shape="poly" title=" " alt="" coords="202,121,145,161,142,156,199,116"/>
+<area shape="rect" title=" " alt="" coords="319,5,483,45"/>
+<area shape="rect" title=" " alt="" coords="5,167,127,192"/>
+<area shape="poly" title=" " alt="" coords="319,33,239,39,156,51,84,69,58,81,40,95,34,108,35,123,50,154,45,157,30,125,29,107,36,92,55,77,82,64,155,45,239,34,318,27"/>
+<area shape="rect" title=" " alt="" coords="327,167,448,192"/>
+<area shape="poly" title=" " alt="" coords="473,43,505,56,531,73,545,95,545,107,539,120,523,138,504,151,462,169,460,164,502,147,520,134,534,117,540,106,540,96,527,77,502,61,471,48"/>
+<area shape="rect" title=" " alt="" coords="213,93,340,119"/>
+<area shape="poly" title=" " alt="" coords="372,48,308,88,305,84,369,43"/>
+<area shape="rect" title=" " alt="" coords="365,93,437,119"/>
+<area shape="poly" title=" " alt="" coords="403,46,403,79,398,79,398,46"/>
+<area shape="rect" title=" " alt="" coords="461,93,525,119"/>
+<area shape="poly" title=" " alt="" coords="425,44,470,82,467,86,421,48"/>
+<area shape="rect" href="MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="600,93,783,119"/>
+<area shape="poly" title=" " alt="" coords="471,43,636,87,635,92,470,48"/>
+<area shape="rect" href="Random_8hpp.html" title="Header file for random number generation functions." alt="" coords="50,93,189,119"/>
+<area shape="poly" title=" " alt="" coords="334,48,174,92,173,87,333,43"/>
+<area shape="rect" title=" " alt="" coords="652,167,731,192"/>
+<area shape="poly" title=" " alt="" coords="694,119,694,153,689,153,689,119"/>
+<area shape="poly" title=" " alt="" coords="113,121,85,157,81,154,108,117"/>
+<area shape="poly" title=" " alt="" coords="163,116,332,161,330,166,162,121"/>
 </map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae73a714c246773af77e846579bc30ed6" id="r_ae73a714c246773af77e846579bc30ed6"><td class="memItemLeft" align="right" valign="top">linalg::Vec2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Random_8cpp.html#ae73a714c246773af77e846579bc30ed6">randomPointInUnitDisk</a> ()</td></tr>
-<tr class="memdesc:ae73a714c246773af77e846579bc30ed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random point inside the unit disk.  <br /></td></tr>
-<tr class="separator:ae73a714c246773af77e846579bc30ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40522eacb8294915a9d6c79c6aa3eef8" id="r_a40522eacb8294915a9d6c79c6aa3eef8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Random_8cpp.html#a40522eacb8294915a9d6c79c6aa3eef8">randomUniform01</a> ()</td></tr>
 <tr class="memdesc:a40522eacb8294915a9d6c79c6aa3eef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random number uniformly distributed in the range [0, 1).  <br /></td></tr>
 <tr class="separator:a40522eacb8294915a9d6c79c6aa3eef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae73a714c246773af77e846579bc30ed6" id="r_ae73a714c246773af77e846579bc30ed6"><td class="memItemLeft" align="right" valign="top">linalg::Vec2d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Random_8cpp.html#ae73a714c246773af77e846579bc30ed6">randomPointInUnitDisk</a> ()</td></tr>
+<tr class="memdesc:ae73a714c246773af77e846579bc30ed6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random point inside the unit disk.  <br /></td></tr>
+<tr class="separator:ae73a714c246773af77e846579bc30ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa36f1883213df17206ead22458a960cc" id="r_aa36f1883213df17206ead22458a960cc"><td class="memItemLeft" align="right" valign="top">linalg::Vec3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Random_8cpp.html#aa36f1883213df17206ead22458a960cc">randomPointOnUnitSphere</a> ()</td></tr>
+<tr class="separator:aa36f1883213df17206ead22458a960cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ae73a714c246773af77e846579bc30ed6" name="ae73a714c246773af77e846579bc30ed6"></a>
@@ -133,6 +150,23 @@ Functions</h2></td></tr>
 <p>This function generates a random 2D point where both coordinates lie within the unit disk, i.e., the point satisfies the condition: \( x^2 + y^2 \leq 1 \).</p>
 <p>The point is generated using a random angle and radius within the unit disk, ensuring uniform distribution within the disk.</p>
 <dl class="section return"><dt>Returns</dt><dd>A 2D vector representing the random point in the unit disk. </dd></dl>
+
+</div>
+</div>
+<a id="aa36f1883213df17206ead22458a960cc" name="aa36f1883213df17206ead22458a960cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa36f1883213df17206ead22458a960cc">&#9670;&#160;</a></span>randomPointOnUnitSphere()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">linalg::Vec3d randomPointOnUnitSphere </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

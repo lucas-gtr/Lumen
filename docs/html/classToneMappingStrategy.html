@@ -92,13 +92,19 @@ Inheritance diagram for ToneMappingStrategy:</div>
 <div class="dyncontent">
 <div class="center"><img src="classToneMappingStrategy__inherit__graph.png" border="0" usemap="#aToneMappingStrategy_inherit__map" alt="Inheritance graph"/></div>
 <map name="aToneMappingStrategy_inherit__map" id="aToneMappingStrategy_inherit__map">
-<area shape="rect" title="Abstract base class for tone mapping strategies." alt="" coords="180,5,343,31"/>
-<area shape="rect" href="classExposureToneMapping.html" title="Class implementing the exposure tone mapping algorithm." alt="" coords="5,79,173,104"/>
-<area shape="poly" title=" " alt="" coords="222,38,118,81,116,76,220,33"/>
-<area shape="rect" href="classNoToneMapping.html" title="Class implementing no tone mapping strategy." alt="" coords="198,79,325,104"/>
-<area shape="poly" title=" " alt="" coords="264,44,264,79,259,79,259,44"/>
-<area shape="rect" href="classReinhardToneMapping.html" title="Class implementing the Reinhard tone mapping algorithm." alt="" coords="349,79,515,104"/>
-<area shape="poly" title=" " alt="" coords="303,33,405,76,403,81,300,38"/>
+<area shape="rect" title="Abstract base class for tone mapping strategies." alt="" coords="5,129,168,155"/>
+<area shape="rect" href="classAcesToneMapping.html" title="Class implementing the ACES tone mapping algorithm." alt="" coords="265,5,404,31"/>
+<area shape="poly" title=" " alt="" coords="108,118,155,77,184,57,215,40,264,24,266,29,217,44,187,61,158,81,112,122"/>
+<area shape="rect" href="classExposureToneMapping.html" title="Class implementing the exposure tone mapping algorithm." alt="" coords="251,55,419,80"/>
+<area shape="poly" title=" " alt="" coords="127,121,215,89,260,77,262,83,217,94,129,126"/>
+<area shape="rect" href="classLuminanceReinhardToneMapping.html" title="Class implementing the Reinhard tone mapping algorithm based on luminance." alt="" coords="216,104,453,129"/>
+<area shape="poly" title=" " alt="" coords="181,130,216,126,216,131,182,135"/>
+<area shape="rect" href="classNoToneMapping.html" title="Class implementing no tone mapping strategy." alt="" coords="271,153,398,179"/>
+<area shape="poly" title=" " alt="" coords="182,149,271,157,271,163,182,154"/>
+<area shape="rect" href="classUncharted2ToneMapping.html" title="Class implementing the Uncharted2 tone mapping algorithm." alt="" coords="243,203,426,228"/>
+<area shape="poly" title=" " alt="" coords="132,157,217,187,267,200,265,205,215,193,130,162"/>
+<area shape="rect" href="classWhitePointReinhardToneMapping.html" title="Class implementing the Reinhard tone mapping algorithm with white point." alt="" coords="216,252,453,277"/>
+<area shape="poly" title=" " alt="" coords="113,162,159,201,187,221,217,237,253,249,251,254,215,242,184,225,155,205,109,166"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -115,9 +121,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af4048790861ece44b168154ebdd9a43c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3165624b8d2df5598dd0a09403d96186" id="r_a3165624b8d2df5598dd0a09403d96186"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classToneMappingStrategy.html">ToneMappingStrategy</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToneMappingStrategy.html#a3165624b8d2df5598dd0a09403d96186">operator=</a> (<a class="el" href="classToneMappingStrategy.html">ToneMappingStrategy</a> &amp;&amp;)=delete</td></tr>
 <tr class="separator:a3165624b8d2df5598dd0a09403d96186"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf1e370121ec24aca9459fbe3582017e" id="r_abf1e370121ec24aca9459fbe3582017e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToneMappingStrategy.html#abf1e370121ec24aca9459fbe3582017e">apply</a> (double &amp;value) const =0</td></tr>
-<tr class="memdesc:abf1e370121ec24aca9459fbe3582017e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the tone mapping algorithm to a given value.  <br /></td></tr>
-<tr class="separator:abf1e370121ec24aca9459fbe3582017e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1079e2cc9cbb50327aafad34782f1c38" id="r_a1079e2cc9cbb50327aafad34782f1c38"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToneMappingStrategy.html#a1079e2cc9cbb50327aafad34782f1c38">convertToLDR</a> (double value) const =0</td></tr>
+<tr class="separator:a1079e2cc9cbb50327aafad34782f1c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2e9b22384155755d840a5d40c24d453" id="r_ab2e9b22384155755d840a5d40c24d453"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structColorRGB.html">ColorRGB</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToneMappingStrategy.html#ab2e9b22384155755d840a5d40c24d453">convertToLDR</a> (const <a class="el" href="structColorRGB.html">ColorRGB</a> &amp;color) const =0</td></tr>
+<tr class="separator:ab2e9b22384155755d840a5d40c24d453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42e1f00018445425b0a784321ea57854" id="r_a42e1f00018445425b0a784321ea57854"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToneMappingStrategy.html#a42e1f00018445425b0a784321ea57854">apply</a> (const double *framebuffer, unsigned char *output, int pixel_count, int channels) const</td></tr>
+<tr class="separator:a42e1f00018445425b0a784321ea57854"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00fe76da8e0de0255ea9f03e5af4fb1f" id="r_a00fe76da8e0de0255ea9f03e5af4fb1f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classToneMappingStrategy.html#a00fe76da8e0de0255ea9f03e5af4fb1f">~ToneMappingStrategy</a> ()=default</td></tr>
 <tr class="memdesc:a00fe76da8e0de0255ea9f03e5af4fb1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for the <a class="el" href="classToneMappingStrategy.html" title="Abstract base class for tone mapping strategies.">ToneMappingStrategy</a> class.  <br /></td></tr>
 <tr class="separator:a00fe76da8e0de0255ea9f03e5af4fb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -233,8 +242,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="abf1e370121ec24aca9459fbe3582017e" name="abf1e370121ec24aca9459fbe3582017e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf1e370121ec24aca9459fbe3582017e">&#9670;&#160;</a></span>apply()</h2>
+<a id="a42e1f00018445425b0a784321ea57854" name="a42e1f00018445425b0a784321ea57854"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42e1f00018445425b0a784321ea57854">&#9670;&#160;</a></span>apply()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -243,9 +252,85 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void ToneMappingStrategy::apply </td>
+          <td class="memname">void ToneMappingStrategy::apply </td>
           <td>(</td>
-          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>framebuffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pixel_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>channels</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab2e9b22384155755d840a5d40c24d453" name="ab2e9b22384155755d840a5d40c24d453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2e9b22384155755d840a5d40c24d453">&#9670;&#160;</a></span>convertToLDR() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structColorRGB.html">ColorRGB</a> ToneMappingStrategy::convertToLDR </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structColorRGB.html">ColorRGB</a> &amp;&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classAcesToneMapping.html#add077474dcba38e7c6db81868df04ae3">AcesToneMapping</a>, <a class="el" href="classExposureToneMapping.html#aa3fee155b5be0b5dd9d363dfa1a64540">ExposureToneMapping</a>, <a class="el" href="classLuminanceReinhardToneMapping.html#a5e0cda647cb3e608e61bd575a15bced1">LuminanceReinhardToneMapping</a>, <a class="el" href="classNoToneMapping.html#aec803280c70d2905cb85ec440387d1e0">NoToneMapping</a>, <a class="el" href="classUncharted2ToneMapping.html#a4e3398010c4300c0c8493512494a8393">Uncharted2ToneMapping</a>, and <a class="el" href="classWhitePointReinhardToneMapping.html#a018aef15f8562b68227951807a5c40b2">WhitePointReinhardToneMapping</a>.</p>
+
+</div>
+</div>
+<a id="a1079e2cc9cbb50327aafad34782f1c38" name="a1079e2cc9cbb50327aafad34782f1c38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1079e2cc9cbb50327aafad34782f1c38">&#9670;&#160;</a></span>convertToLDR() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double ToneMappingStrategy::convertToLDR </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -257,15 +342,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Applies the tone mapping algorithm to a given value. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The value to be tone-mapped. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="classExposureToneMapping.html#a14469e3c5207bc11172247e051c0e55a">ExposureToneMapping</a>, <a class="el" href="classNoToneMapping.html#a60889cb0ba5125f7a48d71500aa23b23">NoToneMapping</a>, and <a class="el" href="classReinhardToneMapping.html#a33890e5152fa39b53b69fe992f0b802e">ReinhardToneMapping</a>.</p>
+<p>Implemented in <a class="el" href="classAcesToneMapping.html#af378c17ceca15409eb6fcf74fe39f53c">AcesToneMapping</a>, <a class="el" href="classExposureToneMapping.html#a73e1a4e675cf723f3726b1904e1f6300">ExposureToneMapping</a>, <a class="el" href="classLuminanceReinhardToneMapping.html#ac59053d600264232c8582187cdf67d93">LuminanceReinhardToneMapping</a>, <a class="el" href="classNoToneMapping.html#ae47dc2d8112e66dc7a39bcf004619881">NoToneMapping</a>, <a class="el" href="classUncharted2ToneMapping.html#acbbceb6647928429b87776eb19f179c3">Uncharted2ToneMapping</a>, and <a class="el" href="classWhitePointReinhardToneMapping.html#a279b2c8d47213dfddfed208bd6430ed7">WhitePointReinhardToneMapping</a>.</p>
 
 </div>
 </div>

@@ -90,6 +90,12 @@ public:
   void removeTexture(const std::string& texture_name);
 
   /**
+   * @brief Gets all texture names managed by the TextureManager.
+   * @return A vector of strings containing the names of all textures.
+   */
+  std::vector<std::string> getAllTexturesName() const;
+
+  /**
    * @brief Gets the default skybox texture.
    * @return A pointer to the default skybox texture.
    */

@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <th scope="row">Date:</th>
-      <td>2025-07-23 11:30:51</td>
+      <td>2025-07-29 23:37:35</td>
     </tr>
   </table>
 </div>
@@ -41,15 +41,15 @@
     </tr>
     <tr>
       <th scope="row">Lines:</th>
+      <td>9</td>
       <td>10</td>
-      <td>10</td>
-      <td class="coverage-high">100.0%</td>
+      <td class="coverage-high">90.0%</td>
     </tr>
     <tr>
       <th scope="row">Functions:</th>
+      <td>9</td>
       <td>10</td>
-      <td>10</td>
-      <td class="coverage-high">100.0%</td>
+      <td class="coverage-high">90.0%</td>
     </tr>
     <tr>
       <th scope="row">Branches:</th>
@@ -73,16 +73,16 @@
       <th>Call count</th>
       <th>Block coverage</th>
     </tr>
-    <tr><td><a href="#l30">BVHNode::BVHNode() (line 30)</a></td><td>called 7 times, returned 7 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l73">BVHNode::getCenter() const (line 73)</a></td><td>called 873 times, returned 873 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l80">BVHNode::getLeafIndex() const (line 80)</a></td><td>called 72 times, returned 72 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l101">BVHNode::getLeftChild() (line 101)</a></td><td>called 68 times, returned 68 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l87">BVHNode::getLeftChild() const (line 87)</a></td><td>called 44 times, returned 44 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l66">BVHNode::getMaxBound() const (line 66)</a></td><td>called 393 times, returned 393 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l59">BVHNode::getMinBound() const (line 59)</a></td><td>called 393 times, returned 393 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l108">BVHNode::getRightChild() (line 108)</a></td><td>called 69 times, returned 69 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l94">BVHNode::getRightChild() const (line 94)</a></td><td>called 44 times, returned 44 times</td><td>100.0%</td></tr>
-    <tr><td><a href="#l110">BVHNode::~BVHNode() (line 110)</a></td><td>called 151 times, returned 151 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l30">BVHNode::BVHNode() (line 30)</a></td><td>not called</td><td>0.0%</td></tr>
+    <tr><td><a href="#l73">BVHNode::getCenter() const (line 73)</a></td><td>called 23 times, returned 23 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l80">BVHNode::getLeafIndex() const (line 80)</a></td><td>called 14 times, returned 14 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l101">BVHNode::getLeftChild() (line 101)</a></td><td>called 13 times, returned 13 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l87">BVHNode::getLeftChild() const (line 87)</a></td><td>called 4 times, returned 4 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l66">BVHNode::getMaxBound() const (line 66)</a></td><td>called 35 times, returned 35 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l59">BVHNode::getMinBound() const (line 59)</a></td><td>called 35 times, returned 35 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l108">BVHNode::getRightChild() (line 108)</a></td><td>called 14 times, returned 14 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l94">BVHNode::getRightChild() const (line 94)</a></td><td>called 4 times, returned 4 times</td><td>100.0%</td></tr>
+    <tr><td><a href="#l110">BVHNode::~BVHNode() (line 110)</a></td><td>called 27 times, returned 27 times</td><td>100.0%</td></tr>
   </table>
 </details>
 
@@ -304,8 +304,8 @@
       <td class="lineno"><a id="l30" href="#l30">30</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">7</td>
-      <td class="src coveredLine"><span class="w">  </span><span class="n">BVHNode</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default constructor.</span></td>
+      <td class="linecount uncoveredLine">&cross;</td>
+      <td class="src uncoveredLine"><span class="w">  </span><span class="n">BVHNode</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default constructor.</span></td>
     </tr>
     <tr class="source-line">
       <td class="lineno"><a id="l31" href="#l31">31</a></td>
@@ -507,7 +507,7 @@
       <td class="lineno"><a id="l59" href="#l59">59</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">393</td>
+      <td class="linecount coveredLine">35</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">getMinBound</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_min_bound</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -556,7 +556,7 @@
       <td class="lineno"><a id="l66" href="#l66">66</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">393</td>
+      <td class="linecount coveredLine">35</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">getMaxBound</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_max_bound</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -605,7 +605,7 @@
       <td class="lineno"><a id="l73" href="#l73">73</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">873</td>
+      <td class="linecount coveredLine">23</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">linalg</span><span class="o">::</span><span class="n">Vec3d</span><span class="o">&amp;</span><span class="w"> </span><span class="nf">getCenter</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_center</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -654,7 +654,7 @@
       <td class="lineno"><a id="l80" href="#l80">80</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">72</td>
+      <td class="linecount coveredLine">14</td>
       <td class="src coveredLine"><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="nf">getLeafIndex</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_leaf_index</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -703,7 +703,7 @@
       <td class="lineno"><a id="l87" href="#l87">87</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">44</td>
+      <td class="linecount coveredLine">4</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">BVHNode</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getLeftChild</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_left_child</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -752,7 +752,7 @@
       <td class="lineno"><a id="l94" href="#l94">94</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">44</td>
+      <td class="linecount coveredLine">4</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">BVHNode</span><span class="o">&gt;</span><span class="w"> </span><span class="n">getRightChild</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_right_child</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -801,7 +801,7 @@
       <td class="lineno"><a id="l101" href="#l101">101</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">68</td>
+      <td class="linecount coveredLine">13</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">BVHNode</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">getLeftChild</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_left_child</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -850,7 +850,7 @@
       <td class="lineno"><a id="l108" href="#l108">108</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">69</td>
+      <td class="linecount coveredLine">14</td>
       <td class="src coveredLine"><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">BVHNode</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">getRightChild</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">m_right_child</span><span class="p">;</span><span class="w"> </span><span class="p">}</span></td>
     </tr>
     <tr class="source-line">
@@ -864,7 +864,7 @@
       <td class="lineno"><a id="l110" href="#l110">110</a></td>
       <td class="linebranch">
       </td>
-      <td class="linecount coveredLine">302</td>
+      <td class="linecount coveredLine">54</td>
       <td class="src coveredLine"><span class="w">  </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">BVHNode</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span><span class="w"> </span><span class="c1">///&lt; Default destructor.</span></td>
     </tr>
     <tr class="source-line">

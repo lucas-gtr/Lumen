@@ -3,13 +3,13 @@
 
 TEST(ColorUtilsTest, Vector3dToGrayscale) {
     ColorRGB color(0.5, 0.2, 0.3);
-    double expectedGrayscale = RED_CHANNEL * 0.5 + GREEN_CHANNEL * 0.2 + BLUE_CHANNEL * 0.3;
+    double expectedGrayscale = GRAY_RED_CHANNEL * 0.5 + GRAY_GREEN_CHANNEL * 0.2 + GRAY_BLUE_CHANNEL * 0.3;
     EXPECT_DOUBLE_EQ(toGrayscale(color), expectedGrayscale);
 }
 
 TEST(ColorUtilsTest, Vector4dToGrayscale) {
     ColorRGBA color(0.5, 0.2, 0.3, 1.0);
-    double expectedGrayscale = RED_CHANNEL * 0.5 + GREEN_CHANNEL * 0.2 + BLUE_CHANNEL * 0.3;
+    double expectedGrayscale = GRAY_RED_CHANNEL * 0.5 + GRAY_GREEN_CHANNEL * 0.2 + GRAY_BLUE_CHANNEL * 0.3;
     EXPECT_DOUBLE_EQ(toGrayscale(color), expectedGrayscale);
 }
 
