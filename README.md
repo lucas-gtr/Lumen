@@ -1,6 +1,6 @@
 # Lumen
 
-Lumen is a modern C++20 3D rendering engine built from scratch, designed to explore both real-time and offline rendering. It features a physically-based CPU path tracer with microfacet BRDFs (GGX), Multiple Importance Sampling, and BVH acceleration, alongside a real-time OpenGL viewport — demonstrating my amy skills in computer graphics and software engineering.
+Lumen is a modern C++20 3D rendering engine built from scratch, designed to explore both real-time and offline rendering. It features a physically-based CPU path tracer with microfacet BRDFs (GGX), Multiple Importance Sampling, and BVH acceleration, alongside a real-time OpenGL viewport — demonstrating my skills in computer graphics and software engineering.
 
 ![Demo scene](Gallery/DemoScene.png)
 
@@ -30,7 +30,7 @@ Lumen is a modern C++20 3D rendering engine built from scratch, designed to expl
 The project is structured into distinct modules to ensure maintainability and scalability:
 
 - **Core:** Fundamental utilities and data structures
-- **BVH** : Manages the BVH construction
+- **BVH** : Manages the BVH nodes construction
 - **Surface:** Manages materials and textures
 - **Geometry:** Responsible for mesh creation and loading
 - **Lighting:** Defines different light types and their behaviors
@@ -90,6 +90,7 @@ make
 
 ### Running the Application
 ```bash
+make configure
 make run
 ```
 
@@ -115,10 +116,11 @@ These workflows are triggered on pull requests to the `main` branch, maintaining
 Unit tests are located in the tests/ directory and can be executed as follows:
 
 ```bash
+make configure-tests
 make run-tests
 ```
 
-To generate a coverage report:
+To generate a coverage report (you must configure the test build before):
 
 ```bash
 make coverage
@@ -131,16 +133,16 @@ These are the available Make targets:
 | Command               | Description                                                                 |
 |-----------------------|-----------------------------------------------------------------------------|
 | `make run`            | Build and run the Lumen application                                         |
-| `make build`          | Build the project if configured                                             |
-| `make configure`      | Configure the main development build environment                            |
-| `make format`         | Run clang-format over the entire codebase                                   |
-| `make lint`           | Run static analysis using clang-tidy                                        |
-| `make format-and-lint`| Run both clang-format and clang-tidy checks                                 |
-| `make configure-tests`| Set up the build environment for unit tests                                 |
-| `make run-tests`      | Build and run the test suite using GoogleTest                               |
-| `make coverage`       | Generate a coverage report using gcovr (HTML and JSON output)               |
-| `make update-readme`  | Inject the latest coverage report into the README.md                        |
-| `make generate-doc`   | Generate Doxygen documentation into `docs/html`                             |
+| `make configure`      | Configure the main development build environment                                    |
+| `make run-debug`      | Build and run the degug version (without compiler optimization and with sanitizers) |
+| `make configure-debug`| Configure the debug build environment                                               |
+| `make format`         | Run clang-format over the entire codebase                                           |
+| `make lint`           | Run static analysis using clang-tidy                                                |
+| `make format-and-lint`| Run both clang-format and clang-tidy checks                                         |
+| `make configure-tests`| Set up the build environment for unit tests                                         |
+| `make run-tests`      | Build and run the test suite using GoogleTest                                       |
+| `make coverage`       | Generate a coverage report using gcovr (HTML and JSON output)                       |
+| `make documentation`  | Generate Doxygen documentation into `docs/html`                                     |
 | `make clean`          | Remove all build directories and clean temporary artifacts
 
 ## 🚧 Future Improvements
