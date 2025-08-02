@@ -257,10 +257,10 @@ inline void transformHitInfoToWorldSpace(RayHitInfo& hit_info, const Ray& local_
   hit_info.hit_point = hit_world;
   hit_info.material  = object->getMaterial();
 
-  const linalg::Mat3d M = object->getTransformationMatrix().topLeft3x3();
+  const linalg::Mat3d M               = object->getTransformationMatrix().topLeft3x3();
   const linalg::Vec3d tangent_world   = M * hit_info.tangent;
   const linalg::Vec3d bitangent_world = M * hit_info.bitangent;
-  const double area_scale = tangent_world.cross(bitangent_world).length();
+  const double        area_scale      = tangent_world.cross(bitangent_world).length();
   hit_info.area *= area_scale;
 
   const linalg::Mat3d normal_matrix = object->getNormalMatrix();
