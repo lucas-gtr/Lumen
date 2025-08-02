@@ -240,7 +240,7 @@ void MaterialsWidget::updateWidget() {
   if(m_current_material->isUsingTextureMetallic()) {
     updateTextureWidget(ui->metalTextureComboBox, ui->metalPreview, m_current_material->getMetallicTexture());
   } else {
-    ui->metalDoubleSliderSpinBox->setValue(m_current_material->getMetallic({0, 0}));
+    ui->metalDoubleSliderSpinBox->setValue(m_current_material->getMetalness({0, 0}));
   }
 }
 

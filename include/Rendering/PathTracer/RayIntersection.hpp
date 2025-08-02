@@ -7,6 +7,7 @@
 
 #include <limits>
 #include <linalg/Vec3.hpp>
+#include <linalg/linalg.hpp>
 #include <vector>
 
 #include "Core/CommonTypes.hpp"
@@ -29,6 +30,7 @@ struct RayHitInfo {
   linalg::Vec3d   tangent;
   linalg::Vec3d   bitangent;
   linalg::Vec3d   hit_point;
+  double          area = 0.0;
 };
 
 /**
@@ -60,8 +62,41 @@ constexpr double INTERSECTION_TOLERANCE = 1e-6;
  * @param bary_coords The barycentric coordinates of the intersection point, if any.
  * @return True if the ray intersects the triangle, false otherwise.
  */
-bool getTriangleIntersection(const Ray& ray, const linalg::Vec3d& p0, const linalg::Vec3d& p1, const linalg::Vec3d& p2,
-                             double& hit_distance, linalg::Vec3d& bary_coords);
+inline bool getTriangleIntersection(const Ray& ray, const linalg::Vec3d& p0, const linalg::Vec3d& p1,
+                                    const linalg::Vec3d& p2, double& hit_distance, linalg::Vec3d& bary_coords) {
+  const linalg::Vec3d edge1 = p1 - p0;
+  const linalg::Vec3d edge2 = p2 - p0;
+  const linalg::Vec3d h     = ray.direction.cross(edge2);
+  const double        a     = linalg::dot(edge1, h);
+
+  if(a > -INTERSECTION_TOLERANCE && a < INTERSECTION_TOLERANCE) {
+    return false;
+  }
+
+  const double        f = 1.0 / a;
+  const linalg::Vec3d s = ray.origin - p0;
+  const double        u = f * linalg::dot(s, h);
+
+  if(u < -INTERSECTION_TOLERANCE || u > 1.0 + INTERSECTION_TOLERANCE) {
+    return false;
+  }
+
+  const linalg::Vec3d q = s.cross(edge1);
+  const double        v = f * linalg::dot(ray.direction, q);
+
+  if(v < -INTERSECTION_TOLERANCE || u + v > 1.0 + INTERSECTION_TOLERANCE) {
+    return false;
+  }
+
+  hit_distance = f * linalg::dot(edge2, q);
+
+  if(hit_distance > INTERSECTION_TOLERANCE) {
+    bary_coords = {1.0 - u - v, u, v};
+    return true;
+  }
+
+  return false;
+}
 
 /**
  * @brief Processes the intersection of a ray with a mesh using a BVH.
@@ -128,8 +163,23 @@ RayHitInfo getSceneIntersection(const Ray& ray, const Scene* scene);
  * @param hit_distance The distance to the intersection point, if any.
  * @return True if the ray intersects the AABB, false otherwise.
  */
-bool getAABBIntersection(const linalg::Vec3d& origin, const linalg::Vec3d& inv_dir, const linalg::Vec3d& min_bound,
-                         const linalg::Vec3d& max_bound, double& hit_distance);
+inline bool getAABBIntersection(const linalg::Vec3d& origin, const linalg::Vec3d& inv_dir,
+                                const linalg::Vec3d& min_bound, const linalg::Vec3d& max_bound, double& hit_distance) {
+  const linalg::Vec3d t0 = linalg::cwiseProduct((min_bound - origin), inv_dir);
+  const linalg::Vec3d t1 = linalg::cwiseProduct((max_bound - origin), inv_dir);
+
+  const linalg::Vec3d t_min = linalg::cwiseMin(t0, t1);
+  const linalg::Vec3d t_max = linalg::cwiseMax(t0, t1);
+
+  const double t_entry = t_min.maxValue();
+  const double t_exit  = t_max.minValue();
+
+  if(t_entry > t_exit || t_exit < 0) {
+    return false;
+  }
+  hit_distance = t_entry;
+  return true;
+}
 
 /**
  * @brief Gets the intersection information of a ray with a BVH node.
@@ -165,16 +215,31 @@ void processFaceIntersection(const Ray& ray, const Mesh& mesh, const Face& face,
  * @param v1 The second vertex of the triangle.
  * @param v2 The third vertex of the triangle.
  */
-void updateHitInfoFromBarycentric(RayHitInfo& hit_info, double distance, const linalg::Vec3d& bary, const Vertex& v0,
-                                  const Vertex& v1, const Vertex& v2);
+inline void updateHitInfoFromBarycentric(RayHitInfo& hit_info, double distance, const linalg::Vec3d& bary,
+                                         const Vertex& v0, const Vertex& v1, const Vertex& v2) {
+  hit_info.distance           = distance;
+  hit_info.bary_coordinates.u = bary.x * v0.uv_coord.u + bary.y * v1.uv_coord.u + bary.z * v2.uv_coord.u;
+  hit_info.bary_coordinates.v = bary.x * v0.uv_coord.v + bary.y * v1.uv_coord.v + bary.z * v2.uv_coord.v;
 
+  hit_info.normal    = (bary.x * v0.normal + bary.y * v1.normal + bary.z * v2.normal).normalized();
+  hit_info.tangent   = (bary.x * v0.tangent + bary.y * v1.tangent + bary.z * v2.tangent).normalized();
+  hit_info.bitangent = (bary.x * v0.bitangent + bary.y * v1.bitangent + bary.z * v2.bitangent).normalized();
+  hit_info.area      = (v1.position - v0.position).cross(v2.position - v0.position).length() * 0.5;
+}
 /**
  * @brief Transforms a ray from world space to object space.
  * @param ray The ray to transform.
  * @param object The object to which the ray is being transformed.
  * @return The transformed ray in object space.
  */
-Ray transformRayToObjectSpace(const Ray& ray, const Object3D* object);
+inline Ray transformRayToObjectSpace(const Ray& ray, const Object3D* object) {
+  const linalg::Mat4d inv_matrix = object->getInverseMatrix();
+
+  const linalg::Vec3d origin    = linalg::toVec3((inv_matrix * linalg::toVec4(ray.origin)));
+  const linalg::Vec3d direction = (inv_matrix.topLeft3x3() * ray.direction).normalized();
+
+  return Ray::FromDirection(origin, direction);
+}
 
 /**
  * @brief Transforms the hit information from object space to world space.
@@ -183,8 +248,26 @@ Ray transformRayToObjectSpace(const Ray& ray, const Object3D* object);
  * @param original_ray The original ray in world space.
  * @param object The object to which the hit information belongs.
  */
-void transformHitInfoToWorldSpace(RayHitInfo& hit_info, const Ray& local_ray, const Ray& original_ray,
-                                  const Object3D* object);
+inline void transformHitInfoToWorldSpace(RayHitInfo& hit_info, const Ray& local_ray, const Ray& original_ray,
+                                         const Object3D* object) {
+  const linalg::Vec3d hit_local = local_ray.origin + hit_info.distance * local_ray.direction;
+  const linalg::Vec3d hit_world = linalg::toVec3((object->getTransformationMatrix() * linalg::toVec4(hit_local)));
+
+  hit_info.distance  = (hit_world - original_ray.origin).length();
+  hit_info.hit_point = hit_world;
+  hit_info.material  = object->getMaterial();
+
+  const linalg::Mat3d M = object->getTransformationMatrix().topLeft3x3();
+  const linalg::Vec3d tangent_world   = M * hit_info.tangent;
+  const linalg::Vec3d bitangent_world = M * hit_info.bitangent;
+  const double area_scale = tangent_world.cross(bitangent_world).length();
+  hit_info.area *= area_scale;
+
+  const linalg::Mat3d normal_matrix = object->getNormalMatrix();
+  hit_info.normal                   = (normal_matrix * hit_info.normal).normalized();
+  hit_info.tangent                  = (normal_matrix * hit_info.tangent).normalized();
+  hit_info.bitangent                = (normal_matrix * hit_info.bitangent).normalized();
+}
 
 /**
  * @brief Updates the normal vector in the hit information using tangent space.

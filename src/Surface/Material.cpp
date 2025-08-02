@@ -87,7 +87,7 @@ Texture* Material::getEmissiveTexture() const { return m_emissive_texture; }
 
 double Material::getEmissiveIntensity() const { return m_emissive_intensity; }
 
-ColorRGBA Material::getDiffuse(TextureUV uv_coord) const { return m_diffuse_texture->getValue4d(uv_coord); }
+ColorRGB Material::getDiffuse(TextureUV uv_coord) const { return m_diffuse_texture->getValue3d(uv_coord); }
 
 ColorRGB Material::getNormal(TextureUV uv_coord) const { return m_normal_texture->getValue3d(uv_coord); }
 
@@ -98,7 +98,7 @@ double Material::getRoughness(TextureUV uv_coord) const {
   return m_roughness_value;
 }
 
-double Material::getMetallic(TextureUV uv_coord) const {
+double Material::getMetalness(TextureUV uv_coord) const {
   if(m_use_texture_metallic) {
     return m_metallic_texture->getValue1d(uv_coord);
   }

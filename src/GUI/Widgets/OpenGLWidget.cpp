@@ -2,7 +2,7 @@
 
 #include "GPU/OpenGL/EngineGL.hpp"
 #include "OpenGLWidget.hpp"
-#include "Rendering/RayIntersection.hpp"
+#include "Rendering/PathTracer/RayIntersection.hpp"
 #include "Scene/Scene.hpp"
 
 OpenGLWidget::OpenGLWidget(QWidget* parent)

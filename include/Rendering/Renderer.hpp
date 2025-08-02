@@ -12,7 +12,8 @@
 #include "Core/Observer.hpp"
 #include "Core/Ray.hpp"
 #include "Rendering/CameraRayEmitter.hpp"
-#include "Rendering/RayIntersection.hpp"
+#include "Rendering/PathTracer/PathTracer.hpp"
+#include "Rendering/PathTracer/RayIntersection.hpp"
 #include "Rendering/RenderSettings.hpp"
 #include "Rendering/RenderStrategy.hpp"
 #include "Rendering/RenderTime.hpp"
@@ -33,6 +34,7 @@ private:
 
   std::unique_ptr<RenderStrategy> m_render_strategy;
   CameraRayEmitter                m_camera_ray_emitter;
+  PathTracer                      m_path_tracer;
 
   std::unique_ptr<RenderTime> m_render_time;
 
@@ -40,10 +42,7 @@ private:
 
   Observer<double> m_render_progress_observer;
 
-  ColorRGB getRadiance(const Ray& ray) const;
-  ColorRGB getRadiance(const Ray& ray, const ColorRGB& throughput) const;
-  bool     isValidHit(const RayHitInfo& hit_info) const;
-  void     cancelRendering();
+  void cancelRendering();
 
   void updateRenderMode();
 
@@ -73,30 +72,24 @@ public:
 
   /**
    * @brief Sets the scene to be rendered.
-   *
-   * This method allows changing the scene after the Renderer object has been created.
-   *
    * @param scene The new scene to render.
    */
-  void setScene(Scene* scene) { this->m_scene = scene; }
+  void setScene(Scene* scene);
 
   /**
    * @brief Gets the current render settings.
-   *
    * @return A constant reference to the current render settings.
    */
   const RenderSettings& getRenderSettings() const { return *m_render_settings; }
 
   /**
    * @brief Gets the current scene.
-   *
    * @return A constant reference to the current scene.
    */
   const Scene& getScene() const { return *m_scene; }
 
   /**
    * @brief Gets the framebuffer used for storing the rendered image.
-   *
    * @return A pointer to the framebuffer.
    */
   Framebuffer* getFramebuffer() const { return m_framebuffer; }
@@ -130,6 +123,11 @@ public:
    * @return True if a stop has been requested, false otherwise.
    */
   bool isStopRequested() const { return m_stop_requested.load(); }
+
+  /**
+   * @brief Sets up the ray emitter parameters based on the current scene and camera.
+   */
+  void setupRayEmitterParameters();
 
   /**
    * @brief Gets the color of a pixel at a specific subpixel grid position.

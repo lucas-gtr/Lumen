@@ -3,9 +3,10 @@ add_library(Rendering STATIC
     SingleThreaded.cpp
     MultiThreadedCPU.cpp
     CameraRayEmitter.cpp
-    RayIntersection.cpp
+    PathTracer/RayIntersection.cpp
     RenderSettings.cpp
     RenderTime.cpp
+    PathTracer/PathTracer.cpp
 )
 
 target_include_directories(Rendering PRIVATE

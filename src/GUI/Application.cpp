@@ -3,6 +3,7 @@
 #include <memory>
 #include <utility>
 
+#include "Core/ColorUtils.hpp"
 #include "Diagnostics/ScopedTimer.hpp"
 #include "GUI/Application.hpp"
 #include "Geometry/CubeMeshBuilder.hpp"
@@ -10,8 +11,9 @@
 #include "Geometry/SphereMeshBuilder.hpp"
 #include "Lighting/DirectionalLight.hpp"
 #include "Lighting/PointLight.hpp"
-#include "Rendering/PBR.hpp"
+#include "Rendering/PathTracer/PBR.hpp"
 #include "Rendering/RenderSettings.hpp"
+#include "Rendering/Renderer.hpp"
 #include "Scene/Scene.hpp"
 #include "SceneObjects/Object3D.hpp"
 #include "Surface/MaterialManager.hpp"
@@ -24,8 +26,8 @@ Application::Application(int& argc, char** argv)
   SetStylesheet();
 
   // createDefaultScene();
-  createCornellBoxScene();
-  // createSphereScene();
+  // createCornellBoxScene();
+  createSphereScene();
   // createRoughnessScene();
 
   // debugPBR();
@@ -36,9 +38,9 @@ Application::Application(int& argc, char** argv)
 
 // NOLINTBEGIN(cppcoreguidelines-avoid-magic-numbers, readability-magic-numbers)
 void Application::createDefaultScene() {
-  auto cube_mesh_builder = std::make_shared<CubeMeshBuilder>(1.0);
-  auto cube              = cube_mesh_builder->build();
-  auto cube_object       = std::make_unique<Object3D>(cube);
+  CubeMeshBuilder cube_mesh_builder(1.0);
+  auto            cube        = cube_mesh_builder.build();
+  auto            cube_object = std::make_unique<Object3D>(cube);
   m_scene->addObject("Default Cube", std::move(cube_object));
 
   auto directional_light = std::make_unique<DirectionalLight>();
@@ -132,7 +134,7 @@ void Application::createCornellBoxScene() {
   right_cube_object->setMaterial(m_material_manager->getMaterial("White"));
   m_scene->addObject("Left Cube", std::move(right_cube_object));
 
-  const SphereMeshBuilder sphere_mesh_builder(82.5, 32, 16);
+  const SphereMeshBuilder sphere_mesh_builder(82.5, 128, 128);
   auto                    sphere_mesh = sphere_mesh_builder.build();
 
   auto left_sphere_object = std::make_unique<Object3D>(sphere_mesh);
@@ -146,6 +148,8 @@ void Application::createCornellBoxScene() {
   camera->setRotationDeg({0.0, -180.0, 0.0});
   camera->setHorizontalFov(40.0);
   camera->setFarPlane(5000.0);
+  camera->setAperture(22.0);
+  camera->setFocusDistance(900.0);
 
   auto point_light = std::make_unique<PointLight>();
   point_light->setIntensity(100000.0);
@@ -177,7 +181,7 @@ void Application::createSphereScene() {
   m_texture_manager->getTexture("LightEmissive")->setValue(ColorRGB(1.0, 1.0, 1.0));
   m_texture_manager->getTexture("LightEmissive")->setColorSpace(ColorSpace::S_RGB);
   m_material_manager->getMaterial("Light")->setEmissiveTexture(m_texture_manager->getTexture("LightEmissive"));
-  m_material_manager->getMaterial("Light")->setEmissiveIntensity(10.0);
+  m_material_manager->getMaterial("Light")->setEmissiveIntensity(1.0);
 
   const PlaneMeshBuilder plane_builder(2.5, 2.5);
   auto                   plane_mesh = plane_builder.build();
@@ -189,15 +193,15 @@ void Application::createSphereScene() {
   m_scene->addObject("Floor", std::move(floor_object));
 
   auto ceiling_light_object = std::make_unique<Object3D>(plane_mesh);
-  ceiling_light_object->setPosition({4.0, 3.0, 0.0});
-  ceiling_light_object->setScale(1.0);
-  ceiling_light_object->setRotationDeg({0.0, 0.0, -90.0});
+  ceiling_light_object->setPosition({0.0, 5.0, 0.0});
+  ceiling_light_object->setScale(2.0);
+  ceiling_light_object->setRotationDeg({180.0, 0.0, 0.0});
   ceiling_light_object->setMaterial(m_material_manager->getMaterial("Light"));
   m_scene->addObject("Ceiling Light", std::move(ceiling_light_object));
 
-  auto sphere_mesh_builder = std::make_shared<SphereMeshBuilder>(1.0, 32, 16);
-  auto sphere              = sphere_mesh_builder->build();
-  auto sphere_object       = std::make_unique<Object3D>(sphere);
+  SphereMeshBuilder sphere_mesh_builder(1.0, 32, 16);
+  auto              sphere        = sphere_mesh_builder.build();
+  auto              sphere_object = std::make_unique<Object3D>(sphere);
   sphere_object->setPosition({0.0, 1.0, 0.0});
   sphere_object->setMaterial(m_material_manager->getMaterial("Red"));
   m_scene->addObject("Sphere", std::move(sphere_object));
@@ -339,27 +343,54 @@ void Application::createRoughnessScene() {
 }
 
 void Application::debugPBR() {
-  const Ray        ray      = Ray::FromPoint({0.0, 200.0, 800.0}, {0.0, 0.0, 0.0});
-  const RayHitInfo hit_info = RayIntersection::getSceneIntersection(ray, m_scene.get());
-  std::cout << "Hit Point: " << hit_info.hit_point << '\n';
-  std::cout << "Normal: " << hit_info.normal << '\n';
+  RenderSettings render_settings;
+  render_settings.setWidth(800);
+  render_settings.setHeight(800);
 
-  if(hit_info.distance == std::numeric_limits<double>::max()) {
-    std::cout << "No intersection found.\n";
-    return;
+  Renderer renderer(&render_settings);
+  renderer.setScene(m_scene.get());
+  m_scene->buildBVH();
+  renderer.setupRayEmitterParameters();
+
+  PixelCoord pixel(120, 307);
+  double     dx = (1 / 800.0);
+  double     dy = (1 / 800.0);
+
+  PixelCoord sub_pixel(1, 1);
+
+  ColorRGBA color(0.0);
+  int       iterations = 100; // 3x3 grid of sub-pixels
+  for(int i = 0; i < iterations; ++i) {
+    sub_pixel.x            = i % static_cast<int>(std::sqrt(iterations));
+    sub_pixel.y            = i / std::sqrt(iterations);
+    ColorRGBA sample_color = renderer.getPixelColor(pixel, dx, dy, sub_pixel, 1.0 / iterations);
+    if(sample_color.r > 1.0)
+      std::cout << "Need check\n";
+    std::cout << "Sample color " << i << ": " << sample_color.r << ", " << sample_color.g << ", " << sample_color.b
+              << ", " << sample_color.a << "\n\n";
+    color += sample_color / iterations;
   }
 
-  PBR::SurfaceInteraction interaction;
-  interaction.normal             = hit_info.normal;
-  interaction.tangent            = hit_info.tangent;
-  interaction.bitangent          = hit_info.bitangent;
-  interaction.incoming_direction = -ray.direction;
-  interaction.base_color         = ColorRGB(hit_info.material->getDiffuse(hit_info.bary_coordinates));
-  interaction.roughness          = hit_info.material->getRoughness(hit_info.bary_coordinates);
-  interaction.metalness          = hit_info.material->getMetallic(hit_info.bary_coordinates);
+  convertToSRGBSpace(color.r);
+  convertToSRGBSpace(color.g);
+  convertToSRGBSpace(color.b);
 
-  linalg::Vec3d outgoing_direction;
-  std::cout << PBR::getCookTorranceBrdf(interaction, outgoing_direction) << '\n';
+  color *= 255.0; // Convert to 0-255 range
+
+  std::cout << "Color at pixel (" << pixel.x << ", " << pixel.y << "): " << "R: " << color.r << ", G: " << color.g
+            << ", B: " << color.b << ", A: " << color.a << '\n';
+
+  // PBR::SurfaceInteraction interaction;
+  // interaction.normal             = hit_info.normal;
+  // interaction.tangent            = hit_info.tangent;
+  // interaction.bitangent          = hit_info.bitangent;
+  // interaction.incoming_direction = -ray.direction;
+  // interaction.base_color         = ColorRGB(hit_info.material->getDiffuse(hit_info.bary_coordinates));
+  // interaction.roughness          = hit_info.material->getRoughness(hit_info.bary_coordinates);
+  // interaction.metalness          = hit_info.material->getMetallic(hit_info.bary_coordinates);
+
+  // linalg::Vec3d outgoing_direction;
+  // std::cout << PBR::getCookTorranceBrdf(interaction, outgoing_direction) << '\n';
 }
 // NOLINTEND(cppcoreguidelines-avoid-magic-numbers, readability-magic-numbers)
 
