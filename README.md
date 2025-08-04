@@ -1,6 +1,6 @@
 # Lumen
 
-Lumen is a modern C++20 3D rendering engine built from scratch, designed to explore both real-time and offline rendering. It features a physically-based CPU path tracer with microfacet BRDFs (GGX), Multiple Importance Sampling, and BVH acceleration, alongside a real-time OpenGL viewport — demonstrating my skills in computer graphics and software engineering.
+Lumen is a modern C++20 3D rendering engine built from scratch, designed to explore both real-time and offline rendering. It features a physically-based CPU path tracer with microfacet BRDFs (GGX), Multiple Importance Sampling, Next Event Estimation, and BVH acceleration, alongside a real-time OpenGL viewport — demonstrating my skills in computer graphics and software engineering.
 
 ![Demo scene](Gallery/DemoScene.png)
 
@@ -21,7 +21,7 @@ Lumen is a modern C++20 3D rendering engine built from scratch, designed to expl
 - **Skybox Integration:** Supports environment mapping using skybox textures
 - **Image Exporting:** Renders can be exported as PNG, JPEG, BMP, TGA and HDR images with tone mapping and exposure adjustments
 - **Tone Mapping**: Multiple tone mapping operators including `Exposure`, `Reinhard`, `ACES`, and `Uncharted2`
-- **Physically-Based CPU Renderer**: Custom path tracer implemented on CPU, supporting both single-threaded and multi-threaded modes. Features GGX microfacet distribution, Multiple Importance Sampling (MIS), Russian Roulette termination  
+- **Physically-Based CPU Renderer**: Custom path tracer implemented on CPU, supporting both single-threaded and multi-threaded modes. Features GGX microfacet distribution, Multiple Importance Sampling (MIS), Russian Roulette termination and Next Event Estimation 
 - **Ray Acceleration:** Ray traversal acceleration with a *Bounding Volume Hierarchy* (BVH)
 - **Comprehensive CI:** Automated formatting, linting and testing via GitHub Actions
 
@@ -54,6 +54,7 @@ It includes detailed class references and module overviews.
 - **Ray Sampling**: Monte Carlo path tracing with stratified sampling per pixel, ensuring uniform stochastic coverage and improved convergence with reduced noise
 - **Configurable Sampling**: The number of samples per pixel is fully configurable, allowing a balance between image quality and rendering time
 - **Light Transport**: Supports direct and indirect lighting via global illumination. Paths are traced recursively with Russian Roulette termination to optimize performance without bias
+- **Next Event Estimation**: Explicitly samples direct illumination by connecting visible light sources from each bounce, significantly improving convergence in scenes with complex lighting
 - **BRDF Sampling**: Uses importance sampling of the GGX microfacet distribution, combined with Multiple Importance Sampling (MIS) for efficient and realistic light integration
 - **Color Accuracy & Tone Mapping**: All shading is performed in linear space. Final output undergoes gamma correction and tone mapping using operators such as `Exposure`, `Reinhard`, `ACES`, and `Uncharted2`
 
