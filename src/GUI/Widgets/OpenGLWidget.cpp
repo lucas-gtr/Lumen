@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include <QGuiApplication>
 
 #include "GPU/OpenGL/EngineGL.hpp"
@@ -112,3 +113,4 @@ void OpenGLWidget::keyPressEvent(QKeyEvent* event) {
     QOpenGLWidget::keyPressEvent(event);
   }
 }
+// GCOVR_EXCL_STOP

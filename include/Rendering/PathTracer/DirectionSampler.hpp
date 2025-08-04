@@ -8,6 +8,8 @@
 #include "Rendering/PathTracer/PBR.hpp"
 #include "Rendering/PathTracer/RayIntersection.hpp"
 
+static constexpr double DOT_TOLERANCE = 1e-6;
+
 namespace Sampler {
 
 inline linalg::Vec3d sampleCosineHemisphere(const linalg::Mat3d& tbn_matrix) {
@@ -25,7 +27,7 @@ inline linalg::Vec3d sampleCosineHemisphere(const linalg::Mat3d& tbn_matrix) {
 }
 
 inline double pdfCosineHemisphere(double probability, const linalg::Vec3d& normal, const linalg::Vec3d& direction) {
-  return probability * std::max(0.0, linalg::dot(normal, direction)) / PI;
+  return probability * std::max(DOT_TOLERANCE, linalg::dot(normal, direction)) / PI;
 }
 
 inline linalg::Vec3d sampleHalfVectorGgx(double roughness, const linalg::Mat3d& tbn_matrix) {
@@ -38,30 +40,50 @@ inline linalg::Vec3d sampleHalfVectorGgx(double roughness, const linalg::Mat3d& 
 
   const double sin_theta = std::sin(theta);
 
-  linalg::Vec3d half_vector = {sin_theta * std::cos(phi), sin_theta * std::sin(phi), std::cos(theta)};
+  const linalg::Vec3d half_vector = {sin_theta * std::cos(phi), sin_theta * std::sin(phi), std::cos(theta)};
   return tbn_matrix * half_vector;
 }
 
-inline linalg::Vec3d sampleLight(const LightSample* light_sample, const linalg::Vec3d& hit_point) {
-  const linalg::Vec3d sample_point = light_sample->random_sample();
-  return (sample_point - hit_point).normalized();
+inline linalg::Vec3d sampleLight(const LightSample* light_sample, const linalg::Vec3d& position) {
+  const linalg::Vec3d sample_point = light_sample->randomSample();
+  return (sample_point - position).normalized();
 }
 
 inline double pdfHalfVectorGgx(double probability, double roughness, const linalg::Vec3d& incident,
                                const linalg::Vec3d& normal, const linalg::Vec3d& half_vector) {
   return probability * PBR::getDistributionGgx(normal, half_vector, roughness) /
-         (4.0 * std::max(1e-6, linalg::dot(incident, normal)));
+         (4.0 * std::max(DOT_TOLERANCE, linalg::dot(incident, normal))); // NOLINT
 }
 
 inline double pdfLightSample(int num_light, const RayHitInfo& hit, const linalg::Vec3d& direction) {
-  const double cos_light = std::max(1e-6, dot(direction, -hit.normal));
+  if(hit.material == nullptr) {
+    return 0.0;
+  }
+  if(hit.material->getEmissive(hit.bary_coords) * hit.material->getEmissiveIntensity() == ColorRGB(0.0)) {
+    return 0.0;
+  }
+
+  const double cos_light = std::max(DOT_TOLERANCE, dot(direction, -hit.normal));
 
   return (hit.distance * hit.distance) / (num_light * cos_light * hit.area);
 }
 
+inline std::vector<double> pdfListBrdf(double reflection_probability, double roughness, const linalg::Vec3d& incident,
+                                       const linalg::Vec3d& normal, const linalg::Vec3d& outgoing_direction) {
+  std::vector<double> pdf_list;
+  pdf_list.reserve(2);
+
+  const linalg::Vec3d half_vector = (incident + outgoing_direction).normalized();
+
+  pdf_list.push_back(pdfCosineHemisphere(1 - reflection_probability, normal, outgoing_direction));
+  pdf_list.push_back(pdfHalfVectorGgx(reflection_probability, roughness, incident, normal, half_vector));
+
+  return pdf_list;
+}
+
 inline double balanceHeuristic(double pdf_chosen, const std::vector<double>& pdf_list) {
   double sum = 0.0;
-  for(double p : pdf_list) {
+  for(const double p : pdf_list) {
     sum += p;
   }
   return (sum > 0.0) ? pdf_chosen / sum : 0.0;
@@ -69,7 +91,7 @@ inline double balanceHeuristic(double pdf_chosen, const std::vector<double>& pdf
 
 inline double powerHeuristic(double pdf_chosen, const std::vector<double>& pdf_list) {
   double sum = 0.0;
-  for(double p : pdf_list) {
+  for(const double p : pdf_list) {
     sum += p * p;
   }
   return (sum > 0.0) ? pdf_chosen * pdf_chosen / sum : 0.0;

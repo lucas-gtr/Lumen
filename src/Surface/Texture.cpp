@@ -6,9 +6,9 @@
 #include <utility>
 #include <vector>
 
-#include "Core/ColorUtils.hpp"
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
 #include "Core/Config.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Surface/Texture.hpp"
 #include "Surface/TextureFiltering.hpp"
 #include "Surface/TextureLoader.hpp"
@@ -145,10 +145,10 @@ void Texture::setFlippedVertically(bool flipped) {
 
 double Texture::getValue1d(TextureUV uv_coord) const {
   if(m_texture_properties.channels == 3) {
-    return toGrayscale(getValue3d(uv_coord));
+    return getValue3d(uv_coord).grayscale();
   }
   if(m_texture_properties.channels == 4) {
-    return toGrayscale(getValue4d(uv_coord));
+    return getValue4d(uv_coord).grayscale();
   }
   TextureSampling::wrapCoordinates(uv_coord, m_wrapping_mode);
 
@@ -156,7 +156,7 @@ double Texture::getValue1d(TextureUV uv_coord) const {
   const bool is_border = (uv_coord.u == -1.0 || uv_coord.v == -1.0);
 
   if(is_border) {
-    value = toGrayscale(m_border_color);
+    value = m_border_color.grayscale();
   } else {
     const int w = m_texture_properties.width;
     const int h = m_texture_properties.height;
@@ -191,10 +191,10 @@ double Texture::getValue1d(TextureUV uv_coord) const {
 
 ColorRGB Texture::getValue3d(TextureUV uv_coord) const {
   if(m_texture_properties.channels == 1) {
-    return toRGB(getValue1d(uv_coord));
+    return ColorRGB(getValue1d(uv_coord));
   }
   if(m_texture_properties.channels == 4) {
-    return toRGB(getValue4d(uv_coord));
+    return getValue4d(uv_coord).toRGB();
   }
 
   TextureSampling::wrapCoordinates(uv_coord, m_wrapping_mode);
@@ -234,17 +234,17 @@ ColorRGB Texture::getValue3d(TextureUV uv_coord) const {
   }
 
   if(m_color_space == ColorSpace::LINEAR) {
-    convertToLinearSpace(color);
+    return color.toLinearSpace();
   }
   return color;
 }
 
 ColorRGBA Texture::getValue4d(TextureUV uv_coord) const {
   if(m_texture_properties.channels == 1) {
-    return toRGBA(getValue1d(uv_coord));
+    return ColorRGBA(getValue1d(uv_coord));
   }
   if(m_texture_properties.channels == 3) {
-    return toRGBA(getValue3d(uv_coord));
+    return getValue3d(uv_coord).toRGBA();
   }
   TextureSampling::wrapCoordinates(uv_coord, m_wrapping_mode);
 
@@ -283,7 +283,7 @@ ColorRGBA Texture::getValue4d(TextureUV uv_coord) const {
   }
 
   if(m_color_space == ColorSpace::LINEAR) {
-    convertToLinearSpace(color);
+    return color.toLinearSpace();
   }
   return color;
 }

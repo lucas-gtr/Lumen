@@ -1,7 +1,7 @@
 #include <linalg/Vec3.hpp>
 #include <vector>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Core/MathConstants.hpp"
 #include "Geometry/CubeMeshBuilder.hpp"
 #include "Geometry/Mesh.hpp"

@@ -9,7 +9,8 @@
 
 #include <linalg/Vec3.hpp>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Core/Observer.hpp"
 #include "Surface/Texture.hpp"
 

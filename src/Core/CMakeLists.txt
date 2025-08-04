@@ -1,12 +1,12 @@
 add_library(Core STATIC
     Framebuffer.cpp
     Transform.cpp
+    ScopedTimer.cpp
 )
 
 target_link_libraries(Core
     PUBLIC
         linalg
-        Diagnostics
 )
 
 target_include_directories(Core PRIVATE

@@ -7,7 +7,7 @@
 
 #include <cstdint>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/ImageTypes.hpp"
 
 /**
  * @namespace TextureSampling

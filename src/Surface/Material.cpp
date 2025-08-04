@@ -1,6 +1,7 @@
 #include <algorithm>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Surface/Material.hpp"
 #include "Surface/Texture.hpp"
 #include "Surface/TextureManager.hpp"

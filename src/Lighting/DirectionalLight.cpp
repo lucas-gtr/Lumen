@@ -2,7 +2,7 @@
 #include <linalg/Vec3.hpp>
 #include <linalg/linalg.hpp>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
 #include "Lighting/DirectionalLight.hpp"
 
 void DirectionalLight::setDirection(const linalg::Vec3d& direction) {

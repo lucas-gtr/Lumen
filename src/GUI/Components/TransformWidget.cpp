@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include "TransformWidget.hpp"
 #include "Core/Config.hpp"
 #include "Core/Transform.hpp"
@@ -50,3 +51,4 @@ void TransformWidget::onScaleChanged(const linalg::Vec3d& new_scale) {
 }
 
 TransformWidget::~TransformWidget() { delete ui; }
+// GCOVR_EXCL_STOP

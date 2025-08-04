@@ -8,8 +8,8 @@
 #include <QPixmap>
 #include <QWidget>
 
-#include "Core/CommonTypes.hpp"
 #include "Core/Framebuffer.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Export/RenderExporter.hpp"
 #include "Rendering/RenderTime.hpp"
 

@@ -11,7 +11,7 @@
 #include <vector>
 
 #include "BVH/BVHNode.hpp"
-#include "Core/CommonTypes.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Core/Observer.hpp"
 #include "Lighting/Light.hpp"
 #include "Scene/LightSample.hpp"
@@ -154,7 +154,17 @@ public:
    */
   const std::vector<Light*>& getLightList() const { return m_light_index; }
 
+  /**
+   * @brief Gets a random light sample from the scene.
+   * @return A pointer to a LightSample object representing the light sample.
+   */
   void addLightSample(const Object3D& object, double intensity);
+
+  /**
+   * @brief Gets the number of light samples in the scene.
+   * @return The number of light samples.
+   */
+  int getLightSampleCount() const;
 
   const LightSample* getLightSample() const;
 

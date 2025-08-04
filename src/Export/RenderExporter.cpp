@@ -4,7 +4,7 @@
 #include <memory>
 #include <vector>
 
-#include "Core/ColorUtils.hpp"
+#include "Core/Color.hpp"
 #include "Core/Config.hpp"
 #include "Core/Framebuffer.hpp"
 #include "Export/OutputFormat.hpp"

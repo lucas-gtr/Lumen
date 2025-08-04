@@ -1,10 +1,11 @@
+// GCOVR_EXCL_START
 #include <QApplication>
 #include <QFile>
 #include <memory>
 #include <utility>
 
-#include "Core/ColorUtils.hpp"
-#include "Diagnostics/ScopedTimer.hpp"
+#include "Core/Color.hpp"
+#include "Core/ScopedTimer.hpp"
 #include "GUI/Application.hpp"
 #include "Geometry/CubeMeshBuilder.hpp"
 #include "Geometry/PlaneMeshBuilder.hpp"
@@ -26,8 +27,8 @@ Application::Application(int& argc, char** argv)
   SetStylesheet();
 
   // createDefaultScene();
-  // createCornellBoxScene();
-  createSphereScene();
+  createCornellBoxScene();
+  // createSphereScene();
   // createRoughnessScene();
 
   // debugPBR();
@@ -38,9 +39,9 @@ Application::Application(int& argc, char** argv)
 
 // NOLINTBEGIN(cppcoreguidelines-avoid-magic-numbers, readability-magic-numbers)
 void Application::createDefaultScene() {
-  CubeMeshBuilder cube_mesh_builder(1.0);
-  auto            cube        = cube_mesh_builder.build();
-  auto            cube_object = std::make_unique<Object3D>(cube);
+  const CubeMeshBuilder cube_mesh_builder(1.0);
+  auto                  cube        = cube_mesh_builder.build();
+  auto                  cube_object = std::make_unique<Object3D>(cube);
   m_scene->addObject("Default Cube", std::move(cube_object));
 
   auto directional_light = std::make_unique<DirectionalLight>();
@@ -199,9 +200,9 @@ void Application::createSphereScene() {
   ceiling_light_object->setMaterial(m_material_manager->getMaterial("Light"));
   m_scene->addObject("Ceiling Light", std::move(ceiling_light_object));
 
-  SphereMeshBuilder sphere_mesh_builder(1.0, 32, 16);
-  auto              sphere        = sphere_mesh_builder.build();
-  auto              sphere_object = std::make_unique<Object3D>(sphere);
+  const SphereMeshBuilder sphere_mesh_builder(1.0, 32, 16);
+  auto                    sphere        = sphere_mesh_builder.build();
+  auto                    sphere_object = std::make_unique<Object3D>(sphere);
   sphere_object->setPosition({0.0, 1.0, 0.0});
   sphere_object->setMaterial(m_material_manager->getMaterial("Red"));
   m_scene->addObject("Sphere", std::move(sphere_object));
@@ -352,23 +353,17 @@ void Application::debugPBR() {
   m_scene->buildBVH();
   renderer.setupRayEmitterParameters();
 
-  PixelCoord pixel(120, 307);
-  double     dx = (1 / 800.0);
-  double     dy = (1 / 800.0);
+  const PixelCoord pixel(120, 307);
+  const double     dx = (1 / 800.0);
+  const double     dy = (1 / 800.0);
 
   PixelCoord sub_pixel(1, 1);
 
   ColorRGBA color(0.0);
-  int       iterations = 100; // 3x3 grid of sub-pixels
+  const int iterations = 100; // 3x3 grid of sub-pixels
   for(int i = 0; i < iterations; ++i) {
-    sub_pixel.x            = i % static_cast<int>(std::sqrt(iterations));
-    sub_pixel.y            = i / std::sqrt(iterations);
-    ColorRGBA sample_color = renderer.getPixelColor(pixel, dx, dy, sub_pixel, 1.0 / iterations);
-    if(sample_color.r > 1.0)
-      std::cout << "Need check\n";
-    std::cout << "Sample color " << i << ": " << sample_color.r << ", " << sample_color.g << ", " << sample_color.b
-              << ", " << sample_color.a << "\n\n";
-    color += sample_color / iterations;
+    sub_pixel.x = i % static_cast<int>(std::sqrt(iterations));
+    sub_pixel.y = i / static_cast<int>(std::sqrt(iterations));
   }
 
   convertToSRGBSpace(color.r);
@@ -379,18 +374,6 @@ void Application::debugPBR() {
 
   std::cout << "Color at pixel (" << pixel.x << ", " << pixel.y << "): " << "R: " << color.r << ", G: " << color.g
             << ", B: " << color.b << ", A: " << color.a << '\n';
-
-  // PBR::SurfaceInteraction interaction;
-  // interaction.normal             = hit_info.normal;
-  // interaction.tangent            = hit_info.tangent;
-  // interaction.bitangent          = hit_info.bitangent;
-  // interaction.incoming_direction = -ray.direction;
-  // interaction.base_color         = ColorRGB(hit_info.material->getDiffuse(hit_info.bary_coordinates));
-  // interaction.roughness          = hit_info.material->getRoughness(hit_info.bary_coordinates);
-  // interaction.metalness          = hit_info.material->getMetallic(hit_info.bary_coordinates);
-
-  // linalg::Vec3d outgoing_direction;
-  // std::cout << PBR::getCookTorranceBrdf(interaction, outgoing_direction) << '\n';
 }
 // NOLINTEND(cppcoreguidelines-avoid-magic-numbers, readability-magic-numbers)
 
@@ -407,3 +390,5 @@ Application::~Application() {
     delete m_window;
   }
 }
+
+// GCOVR_EXCL_STOP

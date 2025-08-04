@@ -1,4 +1,4 @@
-#include "Diagnostics/ScopedTimer.hpp"
+#include "Core/ScopedTimer.hpp"
 
 ScopedTimer::ScopedTimer(const std::string& name) : m_name(name), m_start(std::chrono::high_resolution_clock::now()) {}
 

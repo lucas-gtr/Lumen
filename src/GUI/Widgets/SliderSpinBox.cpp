@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include "SliderSpinBox.hpp"
 #include "ui_SliderSpinBox.h"
 
@@ -36,3 +37,4 @@ void SliderSpinBox::setStep(int step) {
 }
 
 SliderSpinBox::~SliderSpinBox() { delete ui; }
+// GCOVR_EXCL_STOP

@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QMessageBox>
@@ -350,3 +351,4 @@ void MaterialsWidget::onMetallicValueChanged(double value) {
 }
 
 MaterialsWidget::~MaterialsWidget() { delete ui; }
+// GCOVR_EXCL_STOP

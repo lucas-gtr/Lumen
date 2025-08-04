@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "Core/ColorUtils.hpp"
+#include "Core/Color.hpp"
 #include "Surface/Texture.hpp"
 
 TEST(TextureTest, ConstructFromDouble) {
@@ -115,7 +115,7 @@ TEST(TextureTest, GetValueFromRGB) {
   EXPECT_NEAR(rgb_value.b, 0.6, 1e-9);
 
   double gray_value = texture.getValue1d({0.0, 0.0});
-  EXPECT_NEAR(gray_value, toGrayscale(rgb_value), 1e-9);
+  EXPECT_NEAR(gray_value, rgb_value.grayscale(), 1e-9);
 
   ColorRGBA rgba_value = texture.getValue4d({0.0, 0.0});
   EXPECT_NEAR(rgba_value.r, 0.2, 1e-9);
@@ -134,7 +134,7 @@ TEST(TextureTest, GetValueFromRGBA) {
   EXPECT_NEAR(rgba_value.a, 0.7, 1e-9);
 
   double gray_value = texture.getValue1d({0.0, 0.0});
-  EXPECT_NEAR(gray_value, toGrayscale(rgba_value), 1e-9);
+  EXPECT_NEAR(gray_value, rgba_value.grayscale(), 1e-9);
 
   ColorRGB rgb_value = texture.getValue3d({0.0, 0.0});
   EXPECT_NEAR(rgb_value.r, 0.1, 1e-9);

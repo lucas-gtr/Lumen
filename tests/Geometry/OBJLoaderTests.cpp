@@ -1,6 +1,6 @@
 #include "Geometry/OBJLoader.hpp"
 #include "Geometry/Mesh.hpp"
-#include "Core/CommonTypes.hpp"
+#include "Core/ImageTypes.hpp"
 
 #include <gtest/gtest.h>
 #include <fstream>

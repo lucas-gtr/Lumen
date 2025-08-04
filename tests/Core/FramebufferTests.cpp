@@ -1,6 +1,5 @@
 #include <gtest/gtest.h>
 
-#include "Core/ColorUtils.hpp"
 #include "Core/Framebuffer.hpp"
 
 class FramebufferTest : public ::testing::Test {
@@ -112,7 +111,7 @@ TEST_F(FramebufferTest, GrayscalePixelSetCorrectly) {
 
   const int index = (1 * 2 + 1) * 1;
   const double* data = framebuffer.getFramebuffer();
-  const double expected = toGrayscale(ColorRGBA{0.2, 0.4, 0.6, 1.0});
+  const double expected = ColorRGBA{0.2, 0.4, 0.6, 1.0}.grayscale();
   EXPECT_NEAR(data[index], expected, 1e-8);
 }
 

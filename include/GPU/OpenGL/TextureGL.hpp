@@ -9,7 +9,7 @@
 
 #include <qopenglfunctions_3_3_core.h>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Core/Observer.hpp"
 #include "GPU/ITextureGPU.hpp"
 #include "Surface/Texture.hpp"

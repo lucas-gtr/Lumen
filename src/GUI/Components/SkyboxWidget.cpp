@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include <QFileDialog>
 
 #include "SkyboxWidget.hpp"
@@ -66,3 +67,4 @@ void SkyboxWidget::onBrowseButtonClicked() {
 }
 
 SkyboxWidget::~SkyboxWidget() { delete ui; }
+// GCOVR_EXCL_STOP

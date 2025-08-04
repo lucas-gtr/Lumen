@@ -8,8 +8,9 @@
 #include <algorithm>
 #include <linalg/Vec3.hpp>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
 #include "Core/Config.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Core/MathConstants.hpp"
 #include "Lighting/Light.hpp"
 

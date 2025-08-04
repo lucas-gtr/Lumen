@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include "DefaultOptionProxyModel.hpp"
 
 DefaultOptionProxyModel::DefaultOptionProxyModel(QObject* parent) : QAbstractProxyModel(parent) {}
@@ -75,3 +76,4 @@ QModelIndex DefaultOptionProxyModel::mapFromSource(const QModelIndex& source_ind
   }
   return index(source_index.row() + 1, source_index.column());
 }
+// GCOVR_EXCL_STOP

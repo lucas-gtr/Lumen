@@ -7,8 +7,9 @@
 
 #include <memory>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
 #include "Core/Framebuffer.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Core/Observer.hpp"
 #include "Core/Ray.hpp"
 #include "Rendering/CameraRayEmitter.hpp"

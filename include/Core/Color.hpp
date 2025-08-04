@@ -1,60 +1,62 @@
 /**
- * @file CommonTypes.hpp
- * @brief Header file for common types used in the project.
+ * @file Color.hpp
+ * @brief Header file for color utility.
  */
-#ifndef CORE_COMMONTYPES_HPP
-#define CORE_COMMONTYPES_HPP
+#ifndef CORE_COLOR_HPP
+#define CORE_COLOR_HPP
 
 #include <algorithm>
-#include <cstdint>
+#include <cmath>
 #include <immintrin.h>
 #include <iostream>
 
 #include "Core/Config.hpp"
 
-/**
- * @struct ImageProperties
- * @brief Structure to hold image properties such as width, height, and number of channels.
- */
-struct ImageProperties {
-  int width    = 1;
-  int height   = 1;
-  int channels = 1;
+static constexpr double NORMALIZED_TO_COLOR8 = 255.999;
+static constexpr int    COLOR8_MAX_VALUE     = 255;
+static constexpr double COLOR8_TO_NORMALIZED = 1.0 / NORMALIZED_TO_COLOR8;
 
-  std::uint64_t bufferSize() const {
-    return static_cast<std::uint64_t>(width) * static_cast<std::uint64_t>(height) *
-           static_cast<std::uint64_t>(channels);
+static constexpr double GRAY_RED_CHANNEL   = 0.299;
+static constexpr double GRAY_GREEN_CHANNEL = 0.587;
+static constexpr double GRAY_BLUE_CHANNEL  = 0.114;
+
+static constexpr double LUMINANCE_RED_CHANNEL   = 0.2126;
+static constexpr double LUMINANCE_GREEN_CHANNEL = 0.7152;
+static constexpr double LUMINANCE_BLUE_CHANNEL  = 0.0722;
+
+static constexpr double SRGB_GAMMA            = 2.4;
+static constexpr double RGB_GAMMA             = 1.0 / SRGB_GAMMA;
+static constexpr double RGB_THRESHOLD         = 0.0031308;
+static constexpr double SRGB_THRESHOLD        = 0.04045;
+static constexpr double RGB_THRESHOLD_FACTOR  = 12.92;
+static constexpr double SRGB_THRESHOLD_FACTOR = 1.0 / RGB_THRESHOLD_FACTOR;
+static constexpr double RGB_FACTOR            = 1.055;
+static constexpr double SRGB_FACTOR           = 1 / RGB_FACTOR;
+static constexpr double COLOR_SPACE_ADDENDUM  = 0.055;
+
+/**
+ * @brief Converts a value from sRGB to linear space.
+ * @param value The sRGB value.
+ */
+template <typename T> inline void convertToLinearSpace(T& value) {
+  if(value <= SRGB_THRESHOLD) {
+    value *= SRGB_THRESHOLD_FACTOR;
+    return;
   }
-};
+  value = (std::pow((value + COLOR_SPACE_ADDENDUM) * SRGB_FACTOR, SRGB_GAMMA));
+}
 
 /**
- * @struct PixelCoord
- * @brief Structure to hold pixel coordinates (x, y) in the framebuffer.
- * @note The coordinates are zero-based, meaning (0, 0) is the top-left corner of the image.
+ * @brief Converts a value from linear space to sRGB space.
+ * @param value The linear space value.
  */
-struct alignas(ALIGN8) PixelCoord {
-  int x = 0; ///< X coordinate of the pixel.
-  int y = 0; ///< Y coordinate of the pixel.
-};
-
-/**
- * @struct Resolution
- * @brief Structure to hold the resolution of an image.
- */
-struct alignas(ALIGN8) Resolution {
-  int width  = 1; ///< Width of the resolution.
-  int height = 1; ///< Height of the resolution.
-};
-
-/**
- * @struct TextureUV
- * @brief Structure to hold the UV coordinates of a texture.
- * @note The coordinates are normalized, meaning (0, 0) is the top-left corner and (1, 1) is the bottom-right corner.
- */
-struct alignas(ALIGN16) TextureUV {
-  double u = 0.0; ///< U coordinate of the texture.
-  double v = 0.0; ///< V coordinate of the texture.
-};
+template <typename T> inline void convertToSRGBSpace(T& value) {
+  if(value <= RGB_THRESHOLD) {
+    value *= RGB_THRESHOLD_FACTOR;
+    return;
+  }
+  value = (std::pow(value, RGB_GAMMA) * RGB_FACTOR) - COLOR_SPACE_ADDENDUM;
+}
 
 struct ColorRGBA; ///< Forward declaration for ColorRGBA.
 
@@ -150,6 +152,30 @@ struct alignas(ALIGN32) ColorRGB {
     r = std::clamp(r, min, max);
     g = std::clamp(g, min, max);
     b = std::clamp(b, min, max);
+  }
+
+  ColorRGB toLinearSpace() const {
+    ColorRGB linear_color = *this;
+    convertToLinearSpace(linear_color.r);
+    convertToLinearSpace(linear_color.g);
+    convertToLinearSpace(linear_color.b);
+    return linear_color;
+  }
+
+  ColorRGB toSRGBSpace() const {
+    ColorRGB srgb_color = *this;
+    convertToSRGBSpace(srgb_color.r);
+    convertToSRGBSpace(srgb_color.g);
+    convertToSRGBSpace(srgb_color.b);
+    return srgb_color;
+  }
+
+  double grayscale() const { return (r * GRAY_RED_CHANNEL) + (g * GRAY_GREEN_CHANNEL) + (b * GRAY_BLUE_CHANNEL); }
+
+  ColorRGBA toRGBA() const;
+
+  double luminance() const {
+    return (r * LUMINANCE_RED_CHANNEL) + (g * LUMINANCE_GREEN_CHANNEL) + (b * LUMINANCE_BLUE_CHANNEL);
   }
 
   friend ColorRGB operator*(double scalar, const ColorRGB& color) { return color * scalar; }
@@ -281,6 +307,30 @@ struct alignas(ALIGN32) ColorRGBA {
     a = std::clamp(a, min, max);
   }
 
+  double grayscale() const { return (r * GRAY_RED_CHANNEL) + (g * GRAY_GREEN_CHANNEL) + (b * GRAY_BLUE_CHANNEL); }
+
+  ColorRGB toRGB() const { return {r, g, b}; }
+
+  double luminance() const {
+    return (r * LUMINANCE_RED_CHANNEL) + (g * LUMINANCE_GREEN_CHANNEL) + (b * LUMINANCE_BLUE_CHANNEL);
+  }
+
+  ColorRGBA toLinearSpace() const {
+    ColorRGBA linear_color = *this;
+    convertToLinearSpace(linear_color.r);
+    convertToLinearSpace(linear_color.g);
+    convertToLinearSpace(linear_color.b);
+    return linear_color;
+  }
+
+  ColorRGBA toSRGBSpace() const {
+    ColorRGBA srgb_color = *this;
+    convertToSRGBSpace(srgb_color.r);
+    convertToSRGBSpace(srgb_color.g);
+    convertToSRGBSpace(srgb_color.b);
+    return srgb_color;
+  }
+
   friend ColorRGBA operator*(double scalar, const ColorRGBA& color) { return color * scalar; }
 
   friend ColorRGBA lerp(const ColorRGBA& start, const ColorRGBA& end, double t) { return start + (end - start) * t; }
@@ -301,4 +351,6 @@ inline ColorRGBA ColorRGB::operator+(const ColorRGBA& other) const {
   return {r + other.r, g + other.g, b + other.b, other.a};
 }
 
-#endif // CORE_COMMONTYPES_HPP
+inline ColorRGBA ColorRGB::toRGBA() const { return {r, g, b, 1.0}; }
+
+#endif // CORE_COLOR_HPP

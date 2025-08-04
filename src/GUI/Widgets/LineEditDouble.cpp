@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include "LineEditDouble.hpp"
 #include "Core/Config.hpp"
 
@@ -32,3 +33,4 @@ void LineEditDouble::onTextChanged(const QString& text) {
     }
   }
 }
+// GCOVR_EXCL_STOP

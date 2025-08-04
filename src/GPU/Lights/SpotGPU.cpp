@@ -1,7 +1,7 @@
 #include <cmath>
 #include <linalg/Vec3.hpp>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
 #include "GPU/Lights/SpotGPU.hpp"
 #include "Lighting/SpotLight.hpp"
 

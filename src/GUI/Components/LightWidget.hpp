@@ -8,7 +8,7 @@
 #include <QGroupBox>
 #include <linalg/Vec3.hpp>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
 
 class Light;
 

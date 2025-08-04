@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include <QFile>
 #include <QMessageBox>
 
@@ -166,3 +167,4 @@ void ExportWidget::onExportButtonClicked() {
 }
 
 ExportWidget::~ExportWidget() { delete ui; }
+// GCOVR_EXCL_STOP

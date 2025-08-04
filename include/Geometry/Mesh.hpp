@@ -7,12 +7,12 @@
 
 #include <array>
 #include <cstddef>
+#include <linalg/Vec3.hpp>
 #include <memory>
 #include <vector>
 
 #include "BVH/BVHNode.hpp"
-#include "Core/CommonTypes.hpp"
-#include <linalg/Vec3.hpp>
+#include "Core/ImageTypes.hpp"
 
 /**
  * @struct Vertex

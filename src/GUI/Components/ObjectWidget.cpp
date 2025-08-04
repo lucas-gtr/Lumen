@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include "ObjectWidget.hpp"
 #include "Core/Config.hpp"
 #include "SceneObjects/Object3D.hpp"
@@ -59,3 +60,4 @@ void ObjectWidget::onMaterialChanged(const QString& new_material) {
 }
 
 ObjectWidget::~ObjectWidget() { delete ui; }
+// GCOVR_EXCL_STOP

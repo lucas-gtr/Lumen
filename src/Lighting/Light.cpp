@@ -1,5 +1,5 @@
 #include "Lighting/Light.hpp"
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
 
 void Light::setColor(const ColorRGB& color) {
   m_color = color;

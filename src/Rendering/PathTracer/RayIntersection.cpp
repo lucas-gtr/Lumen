@@ -12,7 +12,8 @@
 #include <cassert>
 
 #include "BVH/BVHNode.hpp"
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Core/Ray.hpp"
 #include "Geometry/Mesh.hpp"
 #include "Rendering/PathTracer/RayIntersection.hpp"
@@ -44,9 +45,6 @@ RayHitInfo getMeshIntersectionWithBVH(const Ray& ray, const Mesh& mesh) {
   const std::vector<RayBVHHitInfo> bvh_hits = getBVHIntersection(ray, mesh.getBVHRoot());
 
   for(const auto& bvh_hit : bvh_hits) {
-    if(bvh_hit.distance > hit_info.distance) {
-      return hit_info;
-    }
     const Face& face = mesh.getFaces()[bvh_hit.index_to_check];
     processFaceIntersection(ray, mesh, face, hit_info);
   }
@@ -78,7 +76,7 @@ void updateNormalWithTangentSpace(RayHitInfo& hit_info) {
 
   const linalg::Mat3d tangent_space = linalg::Mat3d::FromColumns(hit_info.tangent, hit_info.bitangent, hit_info.normal);
 
-  const ColorRGB normal_color     = hit_info.material->getNormal(hit_info.bary_coordinates);
+  const ColorRGB normal_color     = hit_info.material->getNormal(hit_info.bary_coords);
   linalg::Vec3d  normal_direction = {normal_color.r, normal_color.g, normal_color.b};
   normal_direction                = (normal_direction * 2) - linalg::Vec3d(1.0, 1.0, 1.0);
 
@@ -149,15 +147,15 @@ std::vector<RayBVHHitInfo> getBVHIntersection(const Ray& ray, const BVHNode* bvh
       }
     }
   }
-
-  std::sort(bvh_hits.begin(), bvh_hits.end(),
-            [](const RayBVHHitInfo& a, const RayBVHHitInfo& b) { return a.distance < b.distance; });
   return std::move(bvh_hits);
 }
 
 RayHitInfo getSceneIntersectionWithBVH(const Ray& ray, const Scene* scene) {
-  RayHitInfo                       closest_hit;
-  const std::vector<RayBVHHitInfo> bvh_hits = getBVHIntersection(ray, scene->getBVHRoot());
+  RayHitInfo                 closest_hit;
+  std::vector<RayBVHHitInfo> bvh_hits = getBVHIntersection(ray, scene->getBVHRoot());
+
+  std::sort(bvh_hits.begin(), bvh_hits.end(),
+            [](const RayBVHHitInfo& a, const RayBVHHitInfo& b) { return a.distance < b.distance; });
 
   for(const auto& bvh_hit : bvh_hits) {
     if(bvh_hit.distance > closest_hit.distance) {

@@ -4,11 +4,12 @@
 #include <memory>
 #include <stack>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
 #include "Core/Framebuffer.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Core/Random.hpp"
 #include "Core/Ray.hpp"
-#include "Diagnostics/ScopedTimer.hpp"
+#include "Core/ScopedTimer.hpp"
 #include "Rendering/CameraRayEmitter.hpp"
 #include "Rendering/MultiThreadedCPU.hpp"
 #include "Rendering/PathTracer/PBR.hpp"
@@ -22,7 +23,7 @@
 
 Renderer::Renderer(RenderSettings* render_settings)
     : m_render_time(std::make_unique<RenderTime>()), m_framebuffer(new Framebuffer({1, 1, 1})),
-      m_render_settings(render_settings) {}
+      m_render_settings(render_settings), m_path_tracer() {}
 
 void Renderer::setScene(Scene* scene) {
   m_scene = scene;

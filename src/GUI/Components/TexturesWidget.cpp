@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include <QMessageBox>
 #include <QSignalBlocker>
 
@@ -234,3 +235,4 @@ void TexturesWidget::onWrappingModeChanged(const QString& mode) {
 void TexturesWidget::onBorderColorChanged(const ColorRGB& new_color) { m_current_texture->setBorderColor(new_color); }
 
 TexturesWidget::~TexturesWidget() { delete ui; }
+// GCOVR_EXCL_STOP

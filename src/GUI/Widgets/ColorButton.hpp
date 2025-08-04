@@ -8,7 +8,7 @@
 #include <QColor>
 #include <QPushButton>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
 
 /**
  * @class ColorButton
@@ -18,14 +18,14 @@
  * using a QColorDialog. The selected color is stored as a ColorRGB object.
  */
 class ColorButton : public QPushButton {
-  Q_OBJECT
+  Q_OBJECT // GCOVR_EXCL_LINE
 
-public:
-  /**
-   * @brief Constructor for the ColorButton class.
-   * @param parent The parent widget for this button.
-   */
-  explicit ColorButton(QWidget* parent = nullptr);
+      public :
+      /**
+       * @brief Constructor for the ColorButton class.
+       * @param parent The parent widget for this button.
+       */
+      explicit ColorButton(QWidget* parent = nullptr);
 
   /**
    * @brief Sets the current color of the button.

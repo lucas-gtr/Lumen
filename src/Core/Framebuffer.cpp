@@ -7,9 +7,9 @@
 #include <numeric>
 #include <vector>
 
-#include "Core/ColorUtils.hpp"
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
 #include "Core/Framebuffer.hpp"
+#include "Core/ImageTypes.hpp"
 
 thread_local int Framebuffer::m_thread_id = -1;
 
@@ -86,7 +86,7 @@ void Framebuffer::setPixelColor(const PixelCoord& pixel_coord, const ColorRGBA& 
 
   switch(m_framebuffer_properties.channels) {
   case 1:
-    m_thread_buffers[m_thread_id][index] += toGrayscale(color) * weight;
+    m_thread_buffers[m_thread_id][index] += color.grayscale() * weight;
     break;
   case 3:
     m_thread_buffers[m_thread_id][index] += color.r * weight;

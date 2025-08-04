@@ -86,6 +86,20 @@ TEST(RenderExporterTest, SetAndGetToneMapping) {
     EXPECT_EQ(exporter.getToneMapping(), ToneMapping::EXPOSURE);
 }
 
+TEST(RenderExporterTest, SetAndGetWhitePoint) {
+    Framebuffer framebuffer({800, 600, 3});
+    RenderExporter exporter(&framebuffer);
+
+    exporter.setWhitePoint(1.0);
+    EXPECT_DOUBLE_EQ(exporter.getWhitePoint(), 1.0);
+
+    exporter.setWhitePoint(2.0);
+    EXPECT_DOUBLE_EQ(exporter.getWhitePoint(), 2.0);
+
+    exporter.setWhitePoint(0.5);
+    EXPECT_DOUBLE_EQ(exporter.getWhitePoint(), 0.5);
+}
+
 TEST(RenderExporterTest, SetAndGetOutputFormat) {
     Framebuffer framebuffer({800, 600, 3});
     RenderExporter exporter(&framebuffer);

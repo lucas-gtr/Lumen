@@ -156,10 +156,10 @@ void Scene::addLightSample(const Object3D& object, double intensity) {
     sample.v2 = toVec3(transform * toVec4(mesh.getVertex(face.vertex_indices[1]).position));
     sample.v3 = toVec3(transform * toVec4(mesh.getVertex(face.vertex_indices[2]).position));
 
-    linalg::Vec3d edge1 = sample.v2 - sample.v1;
-    linalg::Vec3d edge2 = sample.v3 - sample.v1;
-    sample.area         = 0.5 * edge1.cross(edge2).length();
-    sample.intensity    = intensity;
+    const linalg::Vec3d edge1 = sample.v2 - sample.v1;
+    const linalg::Vec3d edge2 = sample.v3 - sample.v1;
+    sample.area               = HALF * edge1.cross(edge2).length();
+    sample.intensity          = intensity;
     m_light_samples.push_back(sample);
   }
 }
@@ -168,16 +168,19 @@ const LightSample* Scene::getLightSample() const {
   if(m_light_samples.empty()) {
     return nullptr;
   }
-  double random_value = randomUniform01();
-  int    index        = static_cast<int>(random_value * m_light_samples.size());
+  const double random_value = randomUniform01();
+  const int    index        = static_cast<int>(random_value * static_cast<double>(m_light_samples.size()));
 
   return &m_light_samples[index];
 }
 
+int Scene::getLightSampleCount() const { return static_cast<int>(m_light_samples.size()); }
+
 void Scene::buildBVH() {
   std::vector<std::shared_ptr<BVHNode>> bvh_leaf_list;
+  m_light_samples.clear();
   for(size_t i = 0; i < m_object_index.size(); ++i) {
-    double emissive_intensity = m_object_index[i]->getMaterial()->getEmissiveIntensity();
+    const double emissive_intensity = m_object_index[i]->getMaterial()->getEmissiveIntensity();
     if(emissive_intensity > 0.0) {
       addLightSample(*m_object_index[i], m_object_index[i]->getMaterial()->getEmissiveIntensity());
     }

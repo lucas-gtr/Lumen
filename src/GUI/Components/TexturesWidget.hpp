@@ -9,7 +9,7 @@
 #include <QListView>
 #include <QWidget>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/ImageTypes.hpp"
 #include "TexturesListModel.hpp"
 
 class Texture;

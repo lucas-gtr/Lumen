@@ -9,7 +9,7 @@
 #include <QImage>
 #include <QLabel>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/ImageTypes.hpp"
 
 /**
  * @class TexturePreview

@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include "LightWidget.hpp"
 #include "Lighting/DirectionalLight.hpp"
 #include "Lighting/Light.hpp"
@@ -133,3 +134,4 @@ void LightWidget::onOuterAngleChanged(double value) {
 }
 
 LightWidget::~LightWidget() { delete ui; }
+// GCOVR_EXCL_STOP

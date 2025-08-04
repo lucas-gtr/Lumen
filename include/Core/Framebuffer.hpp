@@ -8,7 +8,8 @@
 #include <cstddef>
 #include <vector>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
+#include "Core/ImageTypes.hpp"
 
 /**
  * @class Framebuffer

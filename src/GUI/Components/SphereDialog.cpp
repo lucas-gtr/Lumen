@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include "SphereDialog.hpp"
 #include "ui_SphereDialog.h"
 
@@ -10,3 +11,4 @@ int SphereDialog::getSegments() const { return ui->segmentsSpinBox->value(); }
 int SphereDialog::getRings() const { return ui->ringsSpinBox->value(); }
 
 SphereDialog::~SphereDialog() { delete ui; }
+// GCOVR_EXCL_STOP

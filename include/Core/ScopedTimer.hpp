@@ -2,8 +2,8 @@
  * @file ScopedTimer.hpp
  * @brief Header file for the ScopedTimer class, which measures the execution time of code blocks.
  */
-#ifndef DIAGNOSTICS_SCOPEDTIMER_HPP
-#define DIAGNOSTICS_SCOPEDTIMER_HPP
+#ifndef CORE_SCOPEDTIMER_HPP
+#define CORE_SCOPEDTIMER_HPP
 
 #include <chrono>
 #include <cstdint>
@@ -55,4 +55,4 @@ public:
   ~ScopedTimer(); ///< Destructor that stops the timer if it hasn't been stopped already.
 };
 
-#endif // DIAGNOSTICS_SCOPEDTIMER_HPP
+#endif // CORE_SCOPEDTIMER_HPP

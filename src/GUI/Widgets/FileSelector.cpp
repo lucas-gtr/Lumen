@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include "FileSelector.hpp"
 #include "ui_FileSelector.h"
 
@@ -39,3 +40,4 @@ void FileSelector::openDialog() {
 }
 
 FileSelector::~FileSelector() { delete ui; }
+// GCOVR_EXCL_STOP

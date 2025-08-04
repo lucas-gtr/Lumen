@@ -2,15 +2,15 @@
  * @file RayIntersection.hpp
  * @brief Header file for ray intersection functions.
  */
-#ifndef RENDERING_RAYINTERSECTION_HPP
-#define RENDERING_RAYINTERSECTION_HPP
+#ifndef RENDERING_PATHTRACER_RAYINTERSECTION_HPP
+#define RENDERING_PATHTRACER_RAYINTERSECTION_HPP
 
 #include <limits>
 #include <linalg/Vec3.hpp>
 #include <linalg/linalg.hpp>
 #include <vector>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Core/Ray.hpp"
 #include "Geometry/Mesh.hpp"
 #include "Scene/Scene.hpp"
@@ -23,14 +23,15 @@
  * @brief Structure that holds information about a ray intersection.
  */
 struct RayHitInfo {
-  double          distance = std::numeric_limits<double>::max();
-  const Material* material = nullptr;
-  TextureUV       bary_coordinates;
+  ColorRGB        emitted_light = ColorRGB(0.0);
   linalg::Vec3d   normal;
   linalg::Vec3d   tangent;
   linalg::Vec3d   bitangent;
-  linalg::Vec3d   hit_point;
-  double          area = 0.0;
+  linalg::Vec3d   position;
+  TextureUV       bary_coords;
+  double          distance = std::numeric_limits<double>::max();
+  double          area     = 0.0;
+  const Material* material = nullptr;
 };
 
 /**
@@ -217,14 +218,14 @@ void processFaceIntersection(const Ray& ray, const Mesh& mesh, const Face& face,
  */
 inline void updateHitInfoFromBarycentric(RayHitInfo& hit_info, double distance, const linalg::Vec3d& bary,
                                          const Vertex& v0, const Vertex& v1, const Vertex& v2) {
-  hit_info.distance           = distance;
-  hit_info.bary_coordinates.u = bary.x * v0.uv_coord.u + bary.y * v1.uv_coord.u + bary.z * v2.uv_coord.u;
-  hit_info.bary_coordinates.v = bary.x * v0.uv_coord.v + bary.y * v1.uv_coord.v + bary.z * v2.uv_coord.v;
+  hit_info.distance      = distance;
+  hit_info.bary_coords.u = bary.x * v0.uv_coord.u + bary.y * v1.uv_coord.u + bary.z * v2.uv_coord.u;
+  hit_info.bary_coords.v = bary.x * v0.uv_coord.v + bary.y * v1.uv_coord.v + bary.z * v2.uv_coord.v;
 
   hit_info.normal    = (bary.x * v0.normal + bary.y * v1.normal + bary.z * v2.normal).normalized();
   hit_info.tangent   = (bary.x * v0.tangent + bary.y * v1.tangent + bary.z * v2.tangent).normalized();
   hit_info.bitangent = (bary.x * v0.bitangent + bary.y * v1.bitangent + bary.z * v2.bitangent).normalized();
-  hit_info.area      = (v1.position - v0.position).cross(v2.position - v0.position).length() * 0.5;
+  hit_info.area      = (v1.position - v0.position).cross(v2.position - v0.position).length() * HALF;
 }
 /**
  * @brief Transforms a ray from world space to object space.
@@ -250,17 +251,21 @@ inline Ray transformRayToObjectSpace(const Ray& ray, const Object3D* object) {
  */
 inline void transformHitInfoToWorldSpace(RayHitInfo& hit_info, const Ray& local_ray, const Ray& original_ray,
                                          const Object3D* object) {
-  const linalg::Vec3d hit_local = local_ray.origin + hit_info.distance * local_ray.direction;
-  const linalg::Vec3d hit_world = linalg::toVec3((object->getTransformationMatrix() * linalg::toVec4(hit_local)));
+  const linalg::Vec3d local_position = local_ray.origin + hit_info.distance * local_ray.direction;
+  const linalg::Vec3d world_position =
+      linalg::toVec3((object->getTransformationMatrix() * linalg::toVec4(local_position)));
 
-  hit_info.distance  = (hit_world - original_ray.origin).length();
-  hit_info.hit_point = hit_world;
-  hit_info.material  = object->getMaterial();
+  hit_info.distance = (world_position - original_ray.origin).length();
+  hit_info.position = world_position;
+  hit_info.material = object->getMaterial();
 
-  const linalg::Mat3d M               = object->getTransformationMatrix().topLeft3x3();
-  const linalg::Vec3d tangent_world   = M * hit_info.tangent;
-  const linalg::Vec3d bitangent_world = M * hit_info.bitangent;
-  const double        area_scale      = tangent_world.cross(bitangent_world).length();
+  hit_info.emitted_light =
+      hit_info.material->getEmissive(hit_info.bary_coords) * hit_info.material->getEmissiveIntensity();
+
+  const linalg::Mat3d rotation_scale_matrix = object->getTransformationMatrix().topLeft3x3();
+  const linalg::Vec3d tangent_world         = rotation_scale_matrix * hit_info.tangent;
+  const linalg::Vec3d bitangent_world       = rotation_scale_matrix * hit_info.bitangent;
+  const double        area_scale            = tangent_world.cross(bitangent_world).length();
   hit_info.area *= area_scale;
 
   const linalg::Mat3d normal_matrix = object->getNormalMatrix();
@@ -277,4 +282,4 @@ void updateNormalWithTangentSpace(RayHitInfo& hit_info);
 
 } // namespace RayIntersection
 
-#endif // RENDERING_RAYINTERSECTION_HPP
+#endif // RENDERING_PATHTRACER_RAYINTERSECTION_HPP

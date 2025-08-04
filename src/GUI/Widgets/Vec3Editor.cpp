@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include <linalg/Vec3.hpp>
 
 #include "Vec3Editor.hpp"
@@ -24,3 +25,4 @@ linalg::Vec3d Vec3Editor::getValue() const {
 void Vec3Editor::onValueChanged() { emit valueChanged(getValue()); }
 
 Vec3Editor::~Vec3Editor() { delete ui; }
+// GCOVR_EXCL_STOP
