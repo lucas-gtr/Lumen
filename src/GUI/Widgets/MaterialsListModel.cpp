@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include "MaterialsListModel.hpp"
 #include "Surface/MaterialManager.hpp"
 
@@ -86,3 +87,4 @@ void MaterialsListModel::removeItem(int row) {
   m_items.erase(m_items.begin() + row);
   endRemoveRows();
 }
+// GCOVR_EXCL_STOP

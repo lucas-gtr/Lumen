@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include "ColorButton.hpp"
 
 #include <QColorDialog>
@@ -47,3 +48,4 @@ void ColorButton::updateButtonColor() {
 
   setStyleSheet(style);
 }
+// GCOVR_EXCL_STOP

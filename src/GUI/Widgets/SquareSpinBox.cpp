@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include "SquareSpinBox.hpp"
 #include <cmath>
 
@@ -46,3 +47,4 @@ void SquareSpinBox::stepBy(int steps) {
 
   setValue(new_value);
 }
+// GCOVR_EXCL_STOP

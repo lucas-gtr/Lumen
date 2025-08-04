@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include "DoubleSliderSpinBox.hpp"
 #include "Core/Config.hpp"
 #include "ui_DoubleSliderSpinBox.h"
@@ -46,3 +47,4 @@ void DoubleSliderSpinBox::setStep(double step) {
 }
 
 DoubleSliderSpinBox::~DoubleSliderSpinBox() { delete ui; }
+// GCOVR_EXCL_STOP

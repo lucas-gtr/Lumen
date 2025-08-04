@@ -1,5 +1,6 @@
+// GCOVR_EXCL_START
 #include "RenderWindow.hpp"
-#include "Core/ColorUtils.hpp"
+#include "Core/Color.hpp"
 #include "ui_RenderWindow.h"
 
 #include <QResizeEvent>
@@ -128,3 +129,4 @@ QImage::Format RenderWindow::imageFormatFromChannels(int channels) {
 }
 
 RenderWindow::~RenderWindow() { delete ui; }
+// GCOVR_EXCL_STOP

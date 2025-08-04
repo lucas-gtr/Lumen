@@ -2,7 +2,6 @@
 #include <numbers>
 #include <vector>
 
-#include "Core/CommonTypes.hpp"
 #include "Geometry/Mesh.hpp"
 #include "Geometry/SphereMeshBuilder.hpp"
 

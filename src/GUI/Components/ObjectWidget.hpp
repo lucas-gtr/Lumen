@@ -7,7 +7,6 @@
 
 #include <QGroupBox>
 
-#include "Core/CommonTypes.hpp"
 #include "DefaultOptionProxyModel.hpp"
 
 class Object3D;

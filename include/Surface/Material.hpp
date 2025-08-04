@@ -7,7 +7,8 @@
 
 #include <memory>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Core/Observer.hpp"
 #include "Surface/Texture.hpp"
 #include "Surface/TextureManager.hpp"
@@ -32,7 +33,7 @@ private:
   bool     m_use_texture_metallic = false;
 
   Texture* m_emissive_texture   = TextureManager::DefaultBlackTexture();
-  double   m_emissive_intensity = 1.0;
+  double   m_emissive_intensity = 0.0;
 
   Observer<const Material*> m_material_changed_observer;
 
@@ -156,7 +157,7 @@ public:
    * @brief Gets the albedo texture of this material.
    * @return The albedo texture.
    */
-  ColorRGBA getDiffuse(TextureUV uv_coord) const;
+  ColorRGB getDiffuse(TextureUV uv_coord) const;
   /**
    * @brief Gets the normal texture of this material.
    * @return The normal texture.
@@ -173,7 +174,7 @@ public:
    * @brief Gets the metallic texture of this material.
    * @return The metallic texture.
    */
-  double getMetallic(TextureUV uv_coord) const;
+  double getMetalness(TextureUV uv_coord) const;
 
   /**
    * @brief Gets the emissive texture of this material.

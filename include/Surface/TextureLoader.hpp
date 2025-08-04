@@ -8,7 +8,7 @@
 #include <memory>
 #include <vector>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/ImageTypes.hpp"
 
 /**
  * @namespace TextureLoader

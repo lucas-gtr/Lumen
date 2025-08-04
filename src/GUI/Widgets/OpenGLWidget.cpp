@@ -1,8 +1,9 @@
+// GCOVR_EXCL_START
 #include <QGuiApplication>
 
 #include "GPU/OpenGL/EngineGL.hpp"
 #include "OpenGLWidget.hpp"
-#include "Rendering/RayIntersection.hpp"
+#include "Rendering/PathTracer/RayIntersection.hpp"
 #include "Scene/Scene.hpp"
 
 OpenGLWidget::OpenGLWidget(QWidget* parent)
@@ -112,3 +113,4 @@ void OpenGLWidget::keyPressEvent(QKeyEvent* event) {
     QOpenGLWidget::keyPressEvent(event);
   }
 }
+// GCOVR_EXCL_STOP

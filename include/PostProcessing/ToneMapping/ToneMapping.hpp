@@ -9,7 +9,7 @@
 #include <unordered_map>
 #include <vector>
 
-#include "Core/ColorUtils.hpp"
+#include "Core/Color.hpp"
 
 /**
  * @brief Enumeration for different tone mapping strategies.

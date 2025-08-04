@@ -12,8 +12,8 @@
 #include <string>
 #include <thread>
 
-#include "Core/CommonTypes.hpp"
 #include "Core/Config.hpp"
+#include "Core/ImageTypes.hpp"
 
 enum class RenderMode : std::uint8_t { SINGLE_THREADED, MULTI_THREADED_CPU, GPU_CUDA };
 

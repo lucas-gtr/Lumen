@@ -65,7 +65,7 @@ public:
    * @brief Gets the OpenGL rendering engine used by this widget.
    * @return A pointer to the EngineGL instance managing OpenGL rendering.
    */
-  EngineGL* getEngine() const { return m_engine.get(); }
+  EngineGL* getEngine() const { return m_engine.get(); } // GCOVR_EXCL_LINE
 
 signals:
   void engineInitialized(EngineGL* engine);

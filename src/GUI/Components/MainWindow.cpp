@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include "MainWindow.hpp"
 #include "CubeDialog.hpp"
 #include "Geometry/CubeMeshBuilder.hpp"
@@ -346,3 +347,4 @@ MainWindow::~MainWindow() {
   delete m_textures_list_model;
   delete m_materials_list_model;
 }
+// GCOVR_EXCL_STOP

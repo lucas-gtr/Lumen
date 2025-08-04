@@ -7,7 +7,7 @@
 
 #include <linalg/Vec3.hpp>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
 #include "Lighting/Light.hpp"
 
 /**

@@ -1,5 +1,6 @@
+// GCOVR_EXCL_START
 #include "TexturePreview.hpp"
-#include "Core/ColorUtils.hpp"
+#include "Core/Color.hpp"
 
 TexturePreview::TexturePreview(QWidget* parent) : QLabel(parent) {
   setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -75,3 +76,4 @@ QImage TexturePreview::createImageFromData(const unsigned char* data, const Imag
 
   return image;
 }
+// GCOVR_EXCL_STOP

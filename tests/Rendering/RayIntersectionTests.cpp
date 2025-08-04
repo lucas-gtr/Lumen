@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "Rendering/RayIntersection.hpp"
+#include "Rendering/PathTracer/RayIntersection.hpp"
 #include "Scene/Scene.hpp"
 #include "Geometry/CubeMeshBuilder.hpp"
 

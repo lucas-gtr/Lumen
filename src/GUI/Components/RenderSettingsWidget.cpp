@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include "RenderSettingsWidget.hpp"
 #include "RenderWindow.hpp"
 #include "ui_RenderSettingsWidget.h"
@@ -159,3 +160,4 @@ RenderSettingsWidget::~RenderSettingsWidget() {
   delete m_render_window;
   delete ui;
 }
+// GCOVR_EXCL_STOP

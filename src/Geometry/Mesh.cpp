@@ -8,7 +8,7 @@
 
 #include "BVH/BVHBuilder.hpp"
 #include "BVH/BVHNode.hpp"
-#include "Core/CommonTypes.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Geometry/Mesh.hpp"
 
 Mesh::Mesh(const std::vector<Vertex>& vertices, const std::vector<Face>& faces) : m_vertices(vertices) {

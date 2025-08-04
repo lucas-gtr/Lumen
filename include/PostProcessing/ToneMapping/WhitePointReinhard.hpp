@@ -47,7 +47,7 @@ public:
    * @return The converted ColorRGB object in LDR format.
    */
   ColorRGB convertToLDR(const ColorRGB& color) const override {
-    const double current_luminance = getLuminance(color);
+    const double current_luminance = color.luminance();
     const double numerator         = (1.0 + current_luminance / (m_white_point * m_white_point));
     return color * numerator / (1.0 + current_luminance);
   }

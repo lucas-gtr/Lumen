@@ -8,9 +8,9 @@
 #include <utility>
 #include <vector>
 
-#include "Core/ColorUtils.hpp"
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
 #include "Core/Config.hpp"
+#include "Core/ImageTypes.hpp"
 #include "GPU/ITextureGPU.hpp"
 #include "GPU/OpenGL/TextureGL.hpp"
 #include "Surface/Texture.hpp"

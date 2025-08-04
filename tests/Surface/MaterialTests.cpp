@@ -4,7 +4,7 @@
 
 TEST(MaterialTest, DefaultConstructor) {
     Material material;
-    EXPECT_EQ(material.getDiffuse({0, 0}), ColorRGBA(1.0, 1.0, 1.0, 1.0));
+    EXPECT_EQ(material.getDiffuse({0, 0}), ColorRGB(1.0, 1.0, 1.0));
     EXPECT_EQ(material.getNormal({0, 0}), ColorRGB(0.5, 0.5, 1.0));
 }
 
@@ -13,7 +13,7 @@ TEST(MaterialTest, SetDiffuseTexture) {
     Texture texture;
     texture.setValue(ColorRGB(0.5, 0.5, 0.5));
     material.setDiffuseTexture(&texture);
-    EXPECT_EQ(material.getDiffuse({0, 0}), ColorRGBA(0.5, 0.5, 0.5, 1.0));
+    EXPECT_EQ(material.getDiffuse({0, 0}), ColorRGB(0.5, 0.5, 0.5));
 }
 
 TEST(MaterialTest, SetNormalTexture) {
@@ -35,7 +35,7 @@ TEST(MaterialTest, GetDiffuseTexture) {
 TEST(MaterialTest, GetDiffuseTextureDefault) {
     Material material;
     const Texture* defaultTexture = material.getDiffuseTexture();
-    EXPECT_EQ(defaultTexture->getValue4d({0, 0}), ColorRGBA(1.0, 1.0, 1.0, 1.0));
+    EXPECT_EQ(defaultTexture->getValue3d({0, 0}), ColorRGB(1.0, 1.0, 1.0));
 }
 
 TEST(MaterialTest, GetNormalTexture) {

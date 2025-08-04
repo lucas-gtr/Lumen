@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <cmath>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Surface/TextureWrapping.hpp"
 
 namespace TextureSampling {

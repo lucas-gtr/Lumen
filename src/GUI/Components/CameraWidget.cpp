@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include "CameraWidget.hpp"
 #include "Core/Config.hpp"
 #include "SceneObjects/Camera.hpp"
@@ -90,3 +91,4 @@ void CameraWidget::onFarPlaneChanged(double value) {
 }
 
 CameraWidget::~CameraWidget() { delete ui; }
+// GCOVR_EXCL_STOP

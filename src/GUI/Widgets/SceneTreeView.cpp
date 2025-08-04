@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include <QKeyEvent>
 #include <QMessageBox>
 #include <QSignalBlocker>
@@ -227,3 +228,4 @@ void SceneTreeView::onItemRenamed(QStandardItem* item) {
     break;
   }
 }
+// GCOVR_EXCL_STOP

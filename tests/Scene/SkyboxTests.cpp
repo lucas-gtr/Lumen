@@ -1,9 +1,9 @@
 #include <gtest/gtest.h>
 #include <memory>
 
+#include "Core/Color.hpp"
 #include "Scene/Skybox.hpp"
 #include "Surface/Texture.hpp"
-#include "Core/ColorUtils.hpp"
 
 TEST(SkyboxTest, DefaultConstructorUsesDefaultColor) {
   Skybox skybox;
@@ -21,7 +21,7 @@ TEST(SkyboxTest, SetTextureWithSingleColorReturnsCorrectColor) {
   Skybox skybox;
 
   linalg::Vec3d direction(0.0, 1.0, 0.0);
-  ColorRGB color_rgb(0.2, 0.4, 0.6);
+  ColorRGBA color_rgb(0.2, 0.4, 0.6, 1.0);
   Texture texture;
   texture.setValue(color_rgb);
   texture.setColorSpace(ColorSpace::LINEAR);
@@ -29,12 +29,10 @@ TEST(SkyboxTest, SetTextureWithSingleColorReturnsCorrectColor) {
 
   ColorRGBA color = skybox.getColor(direction);
 
-  convertToLinearSpace(color_rgb);
+  color_rgb.toLinearSpace();
 
-  EXPECT_DOUBLE_EQ(color.r, color_rgb.r);
-  EXPECT_DOUBLE_EQ(color.g, color_rgb.g);
-  EXPECT_DOUBLE_EQ(color.b, color_rgb.b);
-  EXPECT_DOUBLE_EQ(color.a, 1.0);
+  EXPECT_EQ(color, color_rgb.toLinearSpace());
+  EXPECT_EQ(color.a, 1.0);
 }
 
 TEST(SkyboxTest, GetUVCoordinatesIsCorrectlyComputed) {

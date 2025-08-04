@@ -4,7 +4,7 @@ Checks: >
   -altera-*,-modernize-use-nodiscard,-fuchsia-overloaded-operator,
   -modernize-pass-by-value,-fuchsia-default-arguments-calls,
   -cppcoreguidelines-pro-bounds-pointer-arithmetic,
-  -fuchsia-statically-constructed-objects, -fuchsia-multiple-inheritance,
+  -fuchsia-statically-constructed-objects, -fuchsia-multiple-inheritance, -fuchsia-default-arguments-declarations,
   -bugprone-easily-swappable-parameters, -misc-include-cleaner,
   -google-default-arguments, -cppcoreguidelines-owning-memory
 HeaderFilterRegex: '^(?!.*external).*'

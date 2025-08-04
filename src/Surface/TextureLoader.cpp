@@ -5,8 +5,8 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-#include "Core/ColorUtils.hpp"
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Surface/TextureLoader.hpp"
 
 namespace TextureLoader {

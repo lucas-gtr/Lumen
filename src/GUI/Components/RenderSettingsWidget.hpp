@@ -8,7 +8,7 @@
 
 #include <QWidget>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Rendering/RenderSettings.hpp"
 #include "Rendering/Renderer.hpp"
 

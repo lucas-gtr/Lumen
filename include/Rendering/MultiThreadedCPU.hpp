@@ -8,8 +8,8 @@
 #include <atomic>
 #include <vector>
 
-#include "Core/CommonTypes.hpp"
 #include "Core/Config.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Rendering/RenderStrategy.hpp"
 
 /**

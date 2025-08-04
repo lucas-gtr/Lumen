@@ -11,9 +11,10 @@
 #include <vector>
 
 #include "BVH/BVHNode.hpp"
-#include "Core/CommonTypes.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Core/Observer.hpp"
 #include "Lighting/Light.hpp"
+#include "Scene/LightSample.hpp"
 #include "Scene/Skybox.hpp"
 #include "SceneObjects/Camera.hpp"
 #include "SceneObjects/Object3D.hpp"
@@ -35,6 +36,7 @@ private:
   std::unique_ptr<Skybox> m_skybox;
 
   std::shared_ptr<BVHNode> m_bvh_root = nullptr;
+  std::vector<LightSample> m_light_samples;
 
   Observer<Object3D*> m_object_added_observer;
   Observer<Light*>    m_light_added_observer;
@@ -153,6 +155,20 @@ public:
   const std::vector<Light*>& getLightList() const { return m_light_index; }
 
   /**
+   * @brief Gets a random light sample from the scene.
+   * @return A pointer to a LightSample object representing the light sample.
+   */
+  void addLightSample(const Object3D& object, double intensity);
+
+  /**
+   * @brief Gets the number of light samples in the scene.
+   * @return The number of light samples.
+   */
+  int getLightSampleCount() const;
+
+  const LightSample* getLightSample() const;
+
+  /**
    * @brief Gets a light by its name.
    * @param name The name of the light to retrieve.
    * @return A pointer to the Light with the specified name, or nullptr if not found.
@@ -177,7 +193,7 @@ public:
   /**
    * @brief Sets the skybox texture for the scene.
    *
-   * @param skybox_texture A shared pointer to the Texture to be used as the skybox.
+   * @param skybox_texture A pointer to the Texture to be used as the skybox.
    */
   void setSkybox(Texture* skybox_texture) { m_skybox->setTexture(skybox_texture); }
 

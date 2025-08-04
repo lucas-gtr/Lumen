@@ -1,8 +1,8 @@
 #include <cmath>
 #include <iostream>
 
-#include "Core/CommonTypes.hpp"
 #include "Core/Framebuffer.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Rendering/Renderer.hpp"
 #include "Rendering/SingleThreaded.hpp"
 

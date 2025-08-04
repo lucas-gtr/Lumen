@@ -3,8 +3,9 @@
 #include <linalg/Vec3.hpp>
 #include <linalg/linalg.hpp>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
 #include "Core/Config.hpp"
+#include "Core/ImageTypes.hpp"
 #include "Core/MathConstants.hpp"
 #include "Lighting/SpotLight.hpp"
 

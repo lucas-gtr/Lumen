@@ -2,7 +2,7 @@
 #include "BVH/BVHNode.hpp"
 
 TEST(BVHNodeTest, DefaultConstructorInitializesMembers) {
-    BVHNode node;
+    BVHNode node = BVHNode();
 
     EXPECT_EQ(node.getLeafIndex(), -1);
     EXPECT_EQ(node.getLeftChild(), nullptr);

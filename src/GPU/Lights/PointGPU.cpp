@@ -1,6 +1,6 @@
 #include <linalg/Vec3.hpp>
 
-#include "Core/CommonTypes.hpp"
+#include "Core/Color.hpp"
 #include "GPU/Lights/PointGPU.hpp"
 #include "Lighting/PointLight.hpp"
 

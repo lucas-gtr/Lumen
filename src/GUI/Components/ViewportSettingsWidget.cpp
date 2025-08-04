@@ -1,3 +1,4 @@
+// GCOVR_EXCL_START
 #include "ViewportSettingsWidget.hpp"
 #include "GPU/OpenGL/EngineGL.hpp"
 #include "ui_ViewportSettingsWidget.h"
@@ -106,3 +107,4 @@ void ViewportSettingsWidget::onExposureChanged(double value) {
 }
 
 ViewportSettingsWidget::~ViewportSettingsWidget() { delete ui; }
+// GCOVR_EXCL_STOP
