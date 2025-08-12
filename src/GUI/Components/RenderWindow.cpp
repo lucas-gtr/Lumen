@@ -1,17 +1,16 @@
 // GCOVR_EXCL_START
-#include "RenderWindow.hpp"
-#include "Core/Color.hpp"
-#include "ui_RenderWindow.h"
-
 #include <QResizeEvent>
 #include <QThread>
-#include <algorithm>
-#include <iostream>
+#include <cstdint>
+
+#include "Core/Framebuffer.hpp"
+#include "RenderWindow.hpp"
+#include "ui_RenderWindow.h"
 
 RenderWindow::RenderWindow(QWidget* parent) : QWidget(parent), ui(new Ui::RenderWindow) {
   ui->setupUi(this);
 
-  connect(ui->exportWidget, &ExportWidget::toneMappingChanged, this, &RenderWindow::updateImageToExport);
+  connect(ui->exportWidget, &ExportWidget::exportPreviewChanged, this, &RenderWindow::updateImageToExport);
 }
 
 void RenderWindow::setFramebuffer(Framebuffer* framebuffer) {
@@ -40,22 +39,22 @@ void RenderWindow::closeEvent(QCloseEvent* event) {
   ui->imageLabel->resize(0, 0);
 }
 
-void RenderWindow::onRenderStarted(ImageProperties properties) {
-  m_render_finished         = false;
-  m_render_image_properties = properties;
+void RenderWindow::onRenderStarted(Resolution resolution) {
+  m_render_finished  = false;
+  m_image_resolution = resolution;
 
   ui->exportWidget->setExportReady(false);
   ui->statusLabel->setText("Estimating render time...");
   ui->renderProgress->setValue(0);
 
-  const QImage::Format format = imageFormatFromChannels(properties.channels);
-  QImage               image(properties.width, properties.height, format);
+  const QImage::Format format = imageFormatFromChannels(m_exporter->getChannelCount());
+  QImage               image(resolution.width, resolution.height, format);
   image.fill(Qt::black);
 
   m_render_image = QPixmap::fromImage(image);
 
   this->resize(this->minimumSizeHint());
-  ui->imageLabel->resize(properties.width, properties.height);
+  ui->imageLabel->resize(resolution.width, resolution.height);
 
   ui->imageLabel->setPixmap(m_render_image);
 }
@@ -91,11 +90,11 @@ void RenderWindow::updateImageToExport() {
     return;
   }
   m_exporter->updateImageToExport();
-  const QImage::Format format = imageFormatFromChannels(m_render_image_properties.channels);
-  QImage               image(m_render_image_properties.width, m_render_image_properties.height, format);
+  const QImage::Format format = imageFormatFromChannels(m_exporter->getChannelCount());
+  QImage               image(m_image_resolution.width, m_image_resolution.height, format);
 
   const unsigned char* image_data = m_exporter->getImageToExport();
-  const int            total_size = static_cast<int>(m_render_image_properties.bufferSize());
+  const int total_size = m_image_resolution.width * m_image_resolution.height * m_exporter->getChannelCount();
 
   uint8_t* dst = image.bits();
   for(int i = 0; i < total_size; ++i) {

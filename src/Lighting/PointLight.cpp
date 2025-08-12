@@ -3,7 +3,6 @@
 #include <linalg/linalg.hpp>
 
 #include "Core/Color.hpp"
-#include "Core/ImageTypes.hpp"
 #include "Lighting/PointLight.hpp"
 
 linalg::Vec3d PointLight::getDirectionFromPoint(const linalg::Vec3d& point) const {

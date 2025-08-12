@@ -26,6 +26,7 @@ add_subdirectory(src/SceneObjects)
 add_subdirectory(src/Lighting)
 add_subdirectory(src/Scene)
 add_subdirectory(src/Rendering)
+add_subdirectory(src/PostProcessing)
 add_subdirectory(src/Export)
 add_subdirectory(src/GPU)
 add_subdirectory(src/GUI)
@@ -47,6 +48,7 @@ target_link_libraries(Lumen
         Lighting
         Scene
         Rendering
+        PostProcessing
         Export      
         GPU
         RenderingGL  

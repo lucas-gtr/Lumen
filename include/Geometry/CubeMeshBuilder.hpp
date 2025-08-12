@@ -5,8 +5,9 @@
 #ifndef GEOMETRY_CUBEMESHBUILDER_HPP
 #define GEOMETRY_CUBEMESHBUILDER_HPP
 
-#include "Geometry/Mesh.hpp"
 #include "Geometry/MeshBuilder.hpp"
+
+class Mesh;
 
 /**
  * @class CubeMeshBuilder

@@ -52,17 +52,6 @@ public:
   }
 
   /**
-   * @brief Converts a value to LDR using the ACES tone mapping algorithm.
-   * @param value The value to convert.
-   * @return The converted value in LDR format, clamped between 0 and 1.
-   */
-  double convertToLDR(double value) const override {
-    const linalg::Vec3d vec_color(value);
-    const linalg::Vec3d aces_color = acesFitted(vec_color);
-    return (aces_color.x + aces_color.y + aces_color.z) / 3;
-  }
-
-  /**
    * @brief Converts a ColorRGB object to LDR using the ACES tone mapping algorithm.
    * @param color The ColorRGB object to convert.
    * @return The converted ColorRGB object in LDR format.

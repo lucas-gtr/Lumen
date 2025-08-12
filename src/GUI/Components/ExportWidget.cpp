@@ -1,8 +1,10 @@
 // GCOVR_EXCL_START
 #include <QFile>
 #include <QMessageBox>
+#include <string>
 
 #include "Core/Config.hpp"
+#include "Core/Framebuffer.hpp"
 #include "Export/OutputFormat.hpp"
 #include "Export/RenderExporter.hpp"
 #include "ExportWidget.hpp"
@@ -26,7 +28,10 @@ ExportWidget::ExportWidget(QWidget* parent) : QGroupBox(parent), ui(new Ui::Expo
   ui->jpegQualityWidget->setStep(JPEG_QUALITY_STEP);
   ui->jpegQualityWidget->setValue(DEFAULT_JPEG_QUALITY);
 
+  ui->channelsCombobox->setCurrentText(QString::fromStdString("RGBA"));
+
   connect(ui->formatComboBox, &QComboBox::currentTextChanged, this, &ExportWidget::onFormatChanged);
+  connect(ui->channelsCombobox, &QComboBox::currentTextChanged, this, &ExportWidget::onColorChannelsChanged);
   connect(ui->jpegQualityWidget, &SliderSpinBox::valueChanged, this, &ExportWidget::onJpegQualityChanged);
   connect(ui->fileNameLineEdit, &QLineEdit::textChanged, this, &ExportWidget::onFileNameChanged);
   connect(ui->fileSelector, &FileSelector::pathChanged, this, &ExportWidget::onFilePathChanged);
@@ -45,6 +50,22 @@ void ExportWidget::updateWidget() {
   const OutputFormat format = m_exporter->getOutputFormat();
   ui->formatComboBox->setCurrentText(QString::fromStdString(outputFormatToString(format)));
   ui->suffixLabel->setText('.' + ui->formatComboBox->currentText().toLower());
+
+  const int channel_count = m_exporter->getChannelCount();
+  switch(channel_count) {
+  case 1:
+    ui->channelsCombobox->setCurrentText(QString::fromStdString("Grayscale"));
+    break;
+  case 3:
+    ui->channelsCombobox->setCurrentText(QString::fromStdString("RGB"));
+    break;
+  case 4:
+    ui->channelsCombobox->setCurrentText(QString::fromStdString("RGBA"));
+    break;
+  default:
+    throw std::runtime_error("Unsupported channel count in ExportWidget::updateWidget: " +
+                             std::to_string(channel_count));
+  }
 
   ui->jpegQualityWidget->setValue(m_exporter->getJpegQuality());
   ui->jpegQualityWidget->setVisible(format == OutputFormat::JPEG);
@@ -86,6 +107,23 @@ void ExportWidget::onFormatChanged(const QString& format) {
   ui->jpegQualityLabel->setVisible(current_format == OutputFormat::JPEG);
 }
 
+void ExportWidget::onColorChannelsChanged(const QString& channel) {
+  if(m_exporter == nullptr) {
+    return;
+  }
+  if(channel == "Grayscale") {
+    m_exporter->setChannelCount(1);
+  } else if(channel == "RGB") {
+    m_exporter->setChannelCount(3);
+  } else if(channel == "RGBA") {
+    m_exporter->setChannelCount(4);
+  } else {
+    throw std::runtime_error("Unsupported channel type in ExportWidget::onColorChannelsChanged: " +
+                             channel.toStdString());
+  }
+  emit exportPreviewChanged();
+}
+
 void ExportWidget::onJpegQualityChanged(int quality) {
   if(m_exporter != nullptr) {
     m_exporter->setJpegQuality(quality);
@@ -114,20 +152,20 @@ void ExportWidget::onToneMappingChanged(const QString& tone_mapping) {
   ui->exposureLabel->setVisible(t_m == ToneMapping::EXPOSURE || t_m == ToneMapping::UNCHARTED2);
   ui->whitePointWidget->setVisible(t_m == ToneMapping::WHITE_POINT_REINHARD || t_m == ToneMapping::UNCHARTED2);
   ui->whitePointLabel->setVisible(t_m == ToneMapping::WHITE_POINT_REINHARD || t_m == ToneMapping::UNCHARTED2);
-  emit toneMappingChanged();
+  emit exportPreviewChanged();
 }
 
 void ExportWidget::onExposureChanged(double exposure) {
   if(m_exporter != nullptr) {
     m_exporter->setExposure(exposure);
-    emit toneMappingChanged();
+    emit exportPreviewChanged();
   }
 }
 
 void ExportWidget::onWhitePointChanged(double white_point) {
   if(m_exporter != nullptr) {
     m_exporter->setWhitePoint(white_point);
-    emit toneMappingChanged();
+    emit exportPreviewChanged();
   }
 }
 

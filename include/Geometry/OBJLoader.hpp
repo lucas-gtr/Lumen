@@ -7,7 +7,7 @@
 
 #include <string>
 
-#include "Geometry/Mesh.hpp"
+class Mesh;
 
 /**
  * @namespace OBJLoader

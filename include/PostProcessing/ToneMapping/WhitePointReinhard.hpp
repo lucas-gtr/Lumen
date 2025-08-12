@@ -32,16 +32,6 @@ public:
   explicit WhitePointReinhardToneMapping(double white_point) : m_white_point(white_point) {}
 
   /**
-   * @brief Converts a value to LDR using the Reinhard tone mapping algorithm with white point.
-   * @param value The value to convert.
-   * @return The converted value in LDR format.
-   */
-  double convertToLDR(double value) const override {
-    const double numerator = (1.0 + value / (m_white_point * m_white_point));
-    return value * numerator / (1.0 + value);
-  }
-
-  /**
    * @brief Converts a ColorRGB object to LDR using the Reinhard tone mapping algorithm with white point.
    * @param color The ColorRGB object to convert.
    * @return The converted ColorRGB object in LDR format.

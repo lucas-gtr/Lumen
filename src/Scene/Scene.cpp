@@ -1,17 +1,25 @@
 #include <cstddef>
+#include <linalg/Mat4.hpp>
 #include <linalg/linalg.hpp>
 #include <memory>
+#include <stdexcept>
 #include <string>
 #include <utility>
 #include <vector>
 
 #include "BVH/BVHBuilder.hpp"
 #include "BVH/BVHNode.hpp"
+#include "Core/Config.hpp"
+#include "Core/MathConstants.hpp"
+#include "Core/Random.hpp"
+#include "Geometry/Mesh.hpp"
 #include "Lighting/Light.hpp"
+#include "Scene/LightSample.hpp"
 #include "Scene/Scene.hpp"
 #include "Scene/Skybox.hpp"
 #include "SceneObjects/Camera.hpp"
 #include "SceneObjects/Object3D.hpp"
+#include "Surface/Material.hpp"
 
 Scene::Scene() : m_current_camera(std::make_unique<Camera>()), m_skybox(std::make_unique<Skybox>()) {}
 

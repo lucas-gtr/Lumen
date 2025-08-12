@@ -5,12 +5,12 @@
 #ifndef SCENEOBJECTS_CAMERA_HPP
 #define SCENEOBJECTS_CAMERA_HPP
 
+#include <algorithm>
+
 #include "Core/Config.hpp"
 #include "Core/MathConstants.hpp"
 #include "Core/Observer.hpp"
 #include "Core/Transform.hpp"
-
-#include <algorithm>
 
 /**
  * @class Camera

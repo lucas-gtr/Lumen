@@ -64,14 +64,14 @@ private:
   Observer<> m_texture_data_observer;
   Observer<> m_texture_parameters_observer;
 
+  void      readPixelChannels(int x, int y, double* out) const;
+  ColorRGBA samplePixelColor(TextureUV uv) const;
+
   std::pair<int, int> computePreviewSize() const;
   void                appendPixelFromSource(int src_x, int src_y, int channels, int original_width);
   void                generateRescaledImage(int new_width, int new_height);
 
   void flipVertically();
-
-  void generateTexture(const ImageProperties& properties, const std::vector<double>& image_data);
-  void finalizeTexture();
 
 public:
   /**
@@ -112,6 +112,13 @@ public:
    * @brief Generates preview data for the texture.
    */
   void generatePreviewData();
+
+  /**
+   * @brief Generates texture data from the given properties and image data.
+   * @param properties The properties of the texture to be generated.
+   * @param image_data The image data to be used for the texture.
+   */
+  void generateTexture(const ImageProperties& properties, const std::vector<double>& image_data);
 
   /**
    * @brief Loads texture data from a file.

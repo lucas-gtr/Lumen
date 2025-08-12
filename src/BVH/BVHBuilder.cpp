@@ -1,11 +1,11 @@
 #include <algorithm>
+#include <linalg/Vec3.hpp>
+#include <linalg/linalg.hpp>
 #include <memory>
 #include <vector>
 
 #include "BVH/BVHBuilder.hpp"
 #include "BVH/BVHNode.hpp"
-#include <linalg/Vec3.hpp>
-#include <linalg/linalg.hpp>
 
 namespace BVH {
 int getLargestAxis(const linalg::Vec3d& extent) {

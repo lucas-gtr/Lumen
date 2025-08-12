@@ -1,5 +1,9 @@
 #include "Scene/Scene.hpp"
+#include "Scene/Skybox.hpp"
 #include "Lighting/DirectionalLight.hpp"
+#include "SceneObjects/Object3D.hpp"
+#include "Surface/Texture.hpp"
+#include "BVH/BVHNode.hpp"
 
 #include <gtest/gtest.h>
 
@@ -78,8 +82,8 @@ TEST(SceneTest, GetSkyboxColor) {
   texture.setValue(ColorRGB(1.0, 0.0, 0.0));
   scene.setSkybox(&texture);
   linalg::Vec3d direction(1.0, 0.0, 0.0);
-  ColorRGBA color = scene.getSkyboxColor(direction);
-  EXPECT_EQ(color, ColorRGBA(1.0, 0.0, 0.0, 1.0)); 
+  ColorRGB color = scene.getSkyboxColor(direction);
+  EXPECT_EQ(color, ColorRGB(1.0, 0.0, 0.0)); 
 }
 
 TEST(SceneTest, BuildBVH) {

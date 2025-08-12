@@ -2,6 +2,7 @@
 #include <QMessageBox>
 #include <QSignalBlocker>
 
+#include "Core/Config.hpp"
 #include "Surface/Texture.hpp"
 #include "Surface/TextureManager.hpp"
 #include "TexturesWidget.hpp"

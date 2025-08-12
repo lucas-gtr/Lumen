@@ -11,14 +11,15 @@
 #include "Core/Framebuffer.hpp"
 #include "Core/ImageTypes.hpp"
 #include "Core/Observer.hpp"
-#include "Core/Ray.hpp"
 #include "Rendering/CameraRayEmitter.hpp"
 #include "Rendering/PathTracer/PathTracer.hpp"
 #include "Rendering/PathTracer/RayIntersection.hpp"
 #include "Rendering/RenderSettings.hpp"
 #include "Rendering/RenderStrategy.hpp"
 #include "Rendering/RenderTime.hpp"
-#include "Scene/Scene.hpp"
+
+class Ray;
+class Scene;
 
 /**
  * @class Renderer
@@ -34,10 +35,10 @@ private:
   Framebuffer*          m_framebuffer;
 
   std::unique_ptr<RenderStrategy> m_render_strategy;
-  CameraRayEmitter                m_camera_ray_emitter;
-  PathTracer                      m_path_tracer;
 
-  std::unique_ptr<RenderTime> m_render_time;
+  CameraRayEmitter m_camera_ray_emitter;
+  PathTracer       m_path_tracer;
+  RenderTime       m_render_time;
 
   std::atomic<bool> m_stop_requested = false;
 
@@ -69,7 +70,7 @@ public:
    * @brief Gets the render time statistics.
    * @return A pointer to the RenderTime object containing render statistics.
    */
-  RenderTime* getRenderTime() const { return m_render_time.get(); }
+  RenderTime* getRenderTime() { return &m_render_time; }
 
   /**
    * @brief Sets the scene to be rendered.
@@ -140,10 +141,10 @@ public:
    * @param dy The vertical offset for the subpixel grid.
    * @param subpixel_grid_pos The subpixel grid position within the pixel.
    * @param cell_size The size of the cell in the subpixel grid.
-   * @return The color of the pixel as a ColorRGBA object.
+   * @return The color of the pixel as a ColorRGB object.
    */
-  ColorRGBA getPixelColor(const PixelCoord& pixel, double dx, double dy, const PixelCoord& subpixel_grid_pos,
-                          double cell_size) const;
+  ColorRGB getPixelColor(const PixelCoord& pixel, double dx, double dy, const PixelCoord& subpixel_grid_pos,
+                         double cell_size) const;
 
   /**
    * @brief Renders a sample at a specific grid position.

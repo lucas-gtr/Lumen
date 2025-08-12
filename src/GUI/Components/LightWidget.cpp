@@ -1,11 +1,14 @@
 // GCOVR_EXCL_START
+#include <iostream>
+#include <linalg/Vec3.hpp>
+
+#include "Core/Color.hpp"
+#include "Core/Config.hpp"
 #include "LightWidget.hpp"
 #include "Lighting/DirectionalLight.hpp"
 #include "Lighting/Light.hpp"
 #include "Lighting/SpotLight.hpp"
 #include "ui_LightWidget.h"
-
-#include "Core/Config.hpp"
 
 LightWidget::LightWidget(QWidget* parent) : QGroupBox(parent), ui(new Ui::LightWidget) {
   ui->setupUi(this);

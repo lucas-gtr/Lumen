@@ -8,6 +8,7 @@
 
 #include "BVH/BVHBuilder.hpp"
 #include "BVH/BVHNode.hpp"
+#include "Core/Config.hpp"
 #include "Core/ImageTypes.hpp"
 #include "Geometry/Mesh.hpp"
 

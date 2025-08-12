@@ -1,11 +1,13 @@
 // GCOVR_EXCL_START
+#include <QThread>
+#include <QTimer>
+#include <algorithm>
+#include <memory>
+#include <thread>
+
 #include "RenderSettingsWidget.hpp"
 #include "RenderWindow.hpp"
 #include "ui_RenderSettingsWidget.h"
-
-#include <QThread>
-#include <QTimer>
-#include <thread>
 
 RenderSettingsWidget::RenderSettingsWidget(QWidget* parent)
     : QWidget(parent), ui(new Ui::RenderSettingsWidget), m_renderer(std::make_unique<Renderer>(&m_render_settings)),
@@ -23,12 +25,8 @@ RenderSettingsWidget::RenderSettingsWidget(QWidget* parent)
   connect(ui->widthSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), this, &RenderSettingsWidget::onWidthChanged);
   connect(ui->heightSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), this, &RenderSettingsWidget::onHeightChanged);
 
-  connect(ui->formatComboBox, &QComboBox::currentTextChanged, this, &RenderSettingsWidget::onFormatChanged);
-
   connect(ui->samplesSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), this,
           &RenderSettingsWidget::onSamplesChanged);
-  connect(ui->maxBouncesSpinBox, QOverload<int>::of(&QSpinBox::valueChanged), this,
-          &RenderSettingsWidget::onBouncesChanged);
 
   connect(ui->renderModeComboBox, &QComboBox::currentTextChanged, this, &RenderSettingsWidget::onRenderModeChanged);
 
@@ -51,26 +49,7 @@ void RenderSettingsWidget::updateWidget() {
   ui->widthSpinBox->setValue(m_render_settings.getWidth());
   ui->heightSpinBox->setValue(m_render_settings.getHeight());
 
-  const int channels = m_render_settings.getChannelCount();
-  QString   format;
-  switch(channels) {
-  case 1:
-    format = "Grayscale";
-    break;
-  case 3:
-    format = "RGB";
-    break;
-  case 4:
-    format = "RGBA";
-    break;
-  default:
-    format = "RGB";
-    break;
-  }
-  ui->formatComboBox->setCurrentText(format);
-
   ui->samplesSpinBox->setValue(m_render_settings.getSamplesPerPixel());
-  ui->maxBouncesSpinBox->setValue(m_render_settings.getMaxBounces());
 
   const RenderMode mode     = m_render_settings.getRenderMode();
   const QString    mode_str = (mode == RenderMode::SINGLE_THREADED) ? "Single-threaded" : "Multi-threaded CPU";
@@ -88,19 +67,7 @@ void RenderSettingsWidget::onWidthChanged(int width) { m_render_settings.setWidt
 
 void RenderSettingsWidget::onHeightChanged(int height) { m_render_settings.setHeight(height); }
 
-void RenderSettingsWidget::onFormatChanged(const QString& format) {
-  if(format == "Grayscale") {
-    m_render_settings.setChannelCount(1);
-  } else if(format == "RGB") {
-    m_render_settings.setChannelCount(3);
-  } else if(format == "RGBA") {
-    m_render_settings.setChannelCount(4);
-  }
-}
-
 void RenderSettingsWidget::onSamplesChanged(int samples) { m_render_settings.setSamplesPerPixel(samples); }
-
-void RenderSettingsWidget::onBouncesChanged(int bounces) { m_render_settings.setMaxBounces(bounces); }
 
 void RenderSettingsWidget::onRenderModeChanged(const QString& mode) {
   if(mode == "Single-threaded") {
@@ -125,7 +92,7 @@ void RenderSettingsWidget::onRenderButtonClicked() {
   }
   ui->renderButton->setEnabled(false);
   openRenderWindow();
-  emit renderStarted(m_render_settings.getImageProperties());
+  emit renderStarted(m_render_settings.getImageResolution());
 
   auto* timer = new QTimer(this);
   connect(timer, &QTimer::timeout, this,

@@ -17,7 +17,6 @@ protected:
   void SetUp() override {
     settings.setWidth(2);
     settings.setHeight(2);
-    settings.setChannelCount(3);
     settings.setSamplesPerPixel(1);
   }
 };

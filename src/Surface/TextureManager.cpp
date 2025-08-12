@@ -3,6 +3,7 @@
 #include <string>
 #include <unordered_map>
 #include <utility>
+#include <vector>
 
 #include "Core/Config.hpp"
 #include "Core/MathConstants.hpp"
@@ -20,7 +21,7 @@ Texture* TextureManager::DefaultSkyboxTexture() {
   if(s_default_skybox_texture == nullptr) {
     s_default_skybox_texture = std::make_unique<Texture>();
     s_default_skybox_texture->setValue(
-        ColorRGBA{DEFAULT_SKYBOX_COLOR_R, DEFAULT_SKYBOX_COLOR_G, DEFAULT_SKYBOX_COLOR_B, 1.0});
+        ColorRGB{DEFAULT_SKYBOX_COLOR_R, DEFAULT_SKYBOX_COLOR_G, DEFAULT_SKYBOX_COLOR_B});
     s_default_skybox_texture->setColorSpace(ColorSpace::LINEAR);
   }
   return s_default_skybox_texture.get();
@@ -29,7 +30,7 @@ Texture* TextureManager::DefaultSkyboxTexture() {
 Texture* TextureManager::DefaultDiffuseTexture() {
   if(s_default_diffuse_texture == nullptr) {
     s_default_diffuse_texture = std::make_unique<Texture>();
-    s_default_diffuse_texture->setValue(ColorRGBA{1.0, 1.0, 1.0, 1.0});
+    s_default_diffuse_texture->setValue(ColorRGB{1.0, 1.0, 1.0});
     s_default_diffuse_texture->setColorSpace(ColorSpace::LINEAR);
   }
   return s_default_diffuse_texture.get();

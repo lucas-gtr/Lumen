@@ -28,7 +28,7 @@ TextureUV Skybox::GetUvCoordinates(const linalg::Vec3d& direction) {
   return uv_coord;
 }
 
-ColorRGBA Skybox::getColor(const linalg::Vec3d& direction) const {
+ColorRGB Skybox::getColor(const linalg::Vec3d& direction) const {
   const TextureUV uv_coord = GetUvCoordinates(direction);
-  return m_texture->getValue4d(uv_coord);
+  return m_texture->getValue3d(uv_coord);
 }

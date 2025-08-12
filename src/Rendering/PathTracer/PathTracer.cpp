@@ -1,8 +1,19 @@
-#include "Rendering/PathTracer/PathTracer.hpp"
+#include <algorithm>
+#include <linalg/Mat3.hpp>
+#include <linalg/Vec3.hpp>
+#include <linalg/linalg.hpp>
+#include <vector>
+
 #include "Core/Color.hpp"
+#include "Core/Random.hpp"
+#include "Core/Ray.hpp"
 #include "Rendering/PathTracer/DirectionSampler.hpp"
 #include "Rendering/PathTracer/PBR.hpp"
+#include "Rendering/PathTracer/PathTracer.hpp"
 #include "Rendering/PathTracer/RayIntersection.hpp"
+#include "Scene/LightSample.hpp"
+#include "Scene/Scene.hpp"
+#include "SceneObjects/Camera.hpp"
 
 bool PathTracer::isValidHit(double distance) const {
   return distance > 0.0 && distance <= m_scene->getCamera()->getFarPlane();
@@ -47,16 +58,15 @@ ColorRGB PathTracer::computeDirectLighting(const PBR::BRDFInput& brdf_input, con
     return ColorRGB(0.0);
   }
 
-  const ColorRGB brdf_color = PBR::evaluateBrdf(brdf_input, light_dir);
-  const double   cos_theta  = std::max(0.0, dot(brdf_input.normal, light_dir));
-
   const double        pdf      = Sampler::pdfLightSample(m_scene->getLightSampleCount(), light_hit, light_dir);
   std::vector<double> all_pdfs = Sampler::pdfListBrdf(brdf_input.specular_ratio, brdf_input.roughness,
                                                       brdf_input.incoming_dir, brdf_input.normal, light_dir);
   all_pdfs.push_back(pdf);
   const double mis_weight = Sampler::balanceHeuristic(pdf, all_pdfs);
 
-  return mis_weight * brdf_color * light_color * cos_theta / pdf;
+  const ColorRGB brdf_contribution = PathTracer::ComputeBrdfContribution(brdf_input, light_dir, pdf);
+
+  return mis_weight * brdf_contribution * light_color;
 }
 
 ColorRGB PathTracer::ComputeBrdfContribution(const PBR::BRDFInput& brdf_input, const linalg::Vec3d& outgoing_dir,

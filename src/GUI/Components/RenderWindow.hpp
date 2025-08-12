@@ -45,7 +45,7 @@ public:
   ~RenderWindow();
 
 public slots:
-  void onRenderStarted(ImageProperties properties);
+  void onRenderStarted(Resolution resolution);
   void onRenderProgress(RenderStats stats);
   void onRenderFinished(double elapsed_time);
 
@@ -63,8 +63,8 @@ private:
   std::unique_ptr<RenderExporter> m_exporter;
   bool                            m_render_finished = false;
 
-  ImageProperties m_render_image_properties;
-  QPixmap         m_render_image;
+  Resolution m_image_resolution;
+  QPixmap    m_render_image;
 
   void updateImageToExport();
 

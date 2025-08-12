@@ -1,22 +1,7 @@
 #include "Geometry/SphereMeshBuilder.hpp"
+#include "Geometry/Mesh.hpp"
 
 #include "gtest/gtest.h"
-
-// TEST(SphereMeshBuilderTest, TestBuildMeshWithZeroRings) {
-//     SphereMeshBuilder builder(1.0, 10, 0);
-//     Mesh mesh = builder.build();
-
-//     ASSERT_EQ(mesh.getVertices().size(), 2);
-//     ASSERT_EQ(mesh.getFaces().size(), 0);
-// }
-
-// TEST(SphereMeshBuilderTest, TestBuildMeshWithZeroSegments) {
-//     SphereMeshBuilder builder(1.0, 0, 10);
-//     Mesh mesh = builder.build();
-
-//     ASSERT_EQ(mesh.getVertices().size(), 11);
-//     ASSERT_EQ(mesh.getFaces().size(), 0);
-// }
 
 TEST(SphereMeshBuilderTest, TestBuildMeshWithValidParams) {
     SphereMeshBuilder builder(1.0, 10, 10);

@@ -50,10 +50,11 @@ public:
   ~ExportWidget() override; ///< Default destructor for the ExportWidget class.
 
 signals:
-  void toneMappingChanged();
+  void exportPreviewChanged();
 
 private slots:
   void onFormatChanged(const QString& format);
+  void onColorChannelsChanged(const QString& channel);
   void onJpegQualityChanged(int quality);
   void onFileNameChanged(const QString& filename);
   void onFilePathChanged(const QString& path);

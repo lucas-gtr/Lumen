@@ -1,7 +1,7 @@
 #include <cstddef>
+#include <functional>
 #include <linalg/Vec3.hpp>
 #include <linalg/linalg.hpp>
-#include <stdexcept>
 
 #include "Geometry/Mesh.hpp"
 #include "SceneObjects/Object3D.hpp"

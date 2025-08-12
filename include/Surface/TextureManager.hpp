@@ -10,7 +10,8 @@
 #include <unordered_map>
 
 #include "Core/Observer.hpp"
-#include "Surface/Texture.hpp"
+
+class Texture;
 
 /**
  * @class TextureManager

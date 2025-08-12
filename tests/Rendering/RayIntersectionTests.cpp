@@ -2,6 +2,9 @@
 #include "Rendering/PathTracer/RayIntersection.hpp"
 #include "Scene/Scene.hpp"
 #include "Geometry/CubeMeshBuilder.hpp"
+#include "BVH/BVHNode.hpp"
+#include "Surface/Texture.hpp"
+#include "SceneObjects/Camera.hpp"
 
 #include <limits>
 

@@ -1,23 +1,6 @@
 #include <gtest/gtest.h>
 #include "PostProcessing/ToneMapping/LuminanceReinhard.hpp"
 
-TEST(LuminanceReinhardToneMappingTests, ConvertScalarToLDR_Zero) {
-  LuminanceReinhardToneMapping toneMapping;
-  EXPECT_DOUBLE_EQ(toneMapping.convertToLDR(0.0), 0.0);
-}
-
-TEST(LuminanceReinhardToneMappingTests, ConvertScalarToLDR_Negative) {
-  LuminanceReinhardToneMapping toneMapping;
-  EXPECT_DOUBLE_EQ(toneMapping.convertToLDR(-5.0), 0.0);
-}
-
-TEST(LuminanceReinhardToneMappingTests, ConvertScalarToLDR_Positive) {
-  LuminanceReinhardToneMapping toneMapping;
-  EXPECT_NEAR(toneMapping.convertToLDR(1.0), 0.5, 1e-9);
-  EXPECT_NEAR(toneMapping.convertToLDR(4.0), 0.8, 1e-9);
-  EXPECT_NEAR(toneMapping.convertToLDR(9.0), 0.9, 1e-9);
-}
-
 TEST(LuminanceReinhardToneMappingTests, ConvertColorToLDR_White) {
   LuminanceReinhardToneMapping toneMapping;
   ColorRGB white(1.0, 1.0, 1.0);

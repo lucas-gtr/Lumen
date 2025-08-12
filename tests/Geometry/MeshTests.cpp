@@ -1,4 +1,6 @@
+#include "BVH/BVHNode.hpp"
 #include "Geometry/Mesh.hpp"
+#include "Geometry/SphereMeshBuilder.hpp"
 
 #include <gtest/gtest.h>
 
@@ -124,7 +126,7 @@ TEST(MeshTest, FaceEquality) {
     EXPECT_EQ(f1, f6);  // Identical indices
 }
 
-TEST(MeshTest, BuildBVH) {
+TEST(MeshTest, BuildBVHNotEnoughVertices) {
     Vertex v1 {linalg::Vec3d(1.0, 2.0, 3.0), linalg::Vec3d(0.0, 1.0, 0.0), {0.5, 0.5}};
     Vertex v2 {linalg::Vec3d(4.0, 5.0, 6.0), linalg::Vec3d(0.0, 0.0, 1.0), {0.25, 0.25}};
     Vertex v3 {linalg::Vec3d(7.0, 8.0, 9.0), linalg::Vec3d(1.0, 0.0, 0.0), {0.75, 0.75}};
@@ -137,5 +139,15 @@ TEST(MeshTest, BuildBVH) {
     mesh.buildBVH();
 
     EXPECT_EQ(mesh.getBVHRoot(), nullptr);
-    // EXPECT_EQ(mesh.getBVHRoot()->getLeafIndex(), 0);
 }
+
+TEST(MeshTest, BuildBVHWithFaces) {
+  SphereMeshBuilder builder(1.0, 16, 32);
+  Mesh mesh = builder.build();
+  mesh.buildBVH();
+
+  EXPECT_EQ(mesh.getBVHRoot()->getLeafIndex(), -1);
+  EXPECT_TRUE(mesh.getBVHRoot()->getMinBound().isApprox(linalg::Vec3d(-1.0, -1.0, -1.0), 1e-3));
+  EXPECT_TRUE(mesh.getBVHRoot()->getMaxBound().isApprox(linalg::Vec3d(1.0, 1.0, 1.0), 1e-3));
+}
+

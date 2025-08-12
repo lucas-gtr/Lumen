@@ -1,21 +1,22 @@
 // GCOVR_EXCL_START
 #include <QApplication>
 #include <QFile>
+#include <cmath>
+#include <iostream>
 #include <memory>
 #include <utility>
 
 #include "Core/Color.hpp"
-#include "Core/ScopedTimer.hpp"
 #include "GUI/Application.hpp"
 #include "Geometry/CubeMeshBuilder.hpp"
 #include "Geometry/PlaneMeshBuilder.hpp"
 #include "Geometry/SphereMeshBuilder.hpp"
 #include "Lighting/DirectionalLight.hpp"
 #include "Lighting/PointLight.hpp"
-#include "Rendering/PathTracer/PBR.hpp"
 #include "Rendering/RenderSettings.hpp"
 #include "Rendering/Renderer.hpp"
 #include "Scene/Scene.hpp"
+#include "SceneObjects/Camera.hpp"
 #include "SceneObjects/Object3D.hpp"
 #include "Surface/MaterialManager.hpp"
 #include "Surface/TextureManager.hpp"
@@ -359,7 +360,7 @@ void Application::debugPBR() {
 
   PixelCoord sub_pixel(1, 1);
 
-  ColorRGBA color(0.0);
+  ColorRGB  color(0.0);
   const int iterations = 100; // 3x3 grid of sub-pixels
   for(int i = 0; i < iterations; ++i) {
     sub_pixel.x = i % static_cast<int>(std::sqrt(iterations));
@@ -373,7 +374,7 @@ void Application::debugPBR() {
   color *= 255.0; // Convert to 0-255 range
 
   std::cout << "Color at pixel (" << pixel.x << ", " << pixel.y << "): " << "R: " << color.r << ", G: " << color.g
-            << ", B: " << color.b << ", A: " << color.a << '\n';
+            << ", B: " << color.b << '\n';
 }
 // NOLINTEND(cppcoreguidelines-avoid-magic-numbers, readability-magic-numbers)
 

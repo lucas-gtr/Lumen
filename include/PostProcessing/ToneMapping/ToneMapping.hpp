@@ -32,38 +32,10 @@ public:
   ToneMappingStrategy(ToneMappingStrategy&&)                 = delete;
   ToneMappingStrategy& operator=(ToneMappingStrategy&&)      = delete;
 
-  virtual double convertToLDR(double value) const = 0;
-
   virtual ColorRGB convertToLDR(const ColorRGB& color) const = 0;
 
-  void apply(const double* framebuffer, unsigned char* output, int pixel_count, int channels) const {
-    for(int base_index = 0; base_index < pixel_count * channels; base_index += channels) {
-      switch(channels) {
-      case 1:
-        output[base_index] = static_cast<unsigned char>(convertToLDR(framebuffer[base_index]) * NORMALIZED_TO_COLOR8);
-        break;
-      case 3:
-      case 4: {
-        const ColorRGB pixel_color = {framebuffer[base_index], framebuffer[base_index + 1],
-                                      framebuffer[base_index + 2]};
-        ColorRGB       ldr_color   = convertToLDR(pixel_color);
-        ldr_color.clamp(0.0, 1.0);
-
-        output[base_index]     = static_cast<unsigned char>(ldr_color.r * NORMALIZED_TO_COLOR8);
-        output[base_index + 1] = static_cast<unsigned char>(ldr_color.g * NORMALIZED_TO_COLOR8);
-        output[base_index + 2] = static_cast<unsigned char>(ldr_color.b * NORMALIZED_TO_COLOR8);
-        break;
-      }
-      default:
-        throw std::runtime_error("Unsupported number of channels for tone mapping: " + std::to_string(channels));
-      }
-
-      if(channels == 4) {
-        const double alpha     = std::clamp(framebuffer[base_index + 3], 0.0, 1.0);
-        output[base_index + 3] = static_cast<unsigned char>(alpha * NORMALIZED_TO_COLOR8);
-      }
-    }
-  }
+  void apply(const double* framebuffer, unsigned char* output, int pixel_count, int in_channels,
+             int out_channels) const;
 
   /**
    * @brief Virtual destructor for the ToneMappingStrategy class.

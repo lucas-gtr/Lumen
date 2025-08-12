@@ -3,8 +3,8 @@
 #include <string>
 #include <unordered_map>
 #include <utility>
+#include <vector>
 
-#include "Core/Config.hpp"
 #include "Surface/Material.hpp"
 #include "Surface/MaterialManager.hpp"
 #include "Surface/TextureManager.hpp"

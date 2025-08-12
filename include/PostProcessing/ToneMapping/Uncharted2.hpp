@@ -46,18 +46,6 @@ public:
   }
 
   /**
-   * @brief Converts a value to LDR using the Uncharted2 tone mapping algorithm.
-   * @param value The value to convert.
-   * @return The converted value in LDR format.
-   */
-  double convertToLDR(double value) const override {
-    const double mapped_value = GetUncharted2ToneMapPartial(value);
-
-    const double white_scale = 1.0 / GetUncharted2ToneMapPartial(m_white_point);
-    return mapped_value * white_scale;
-  }
-
-  /**
    * @brief Converts a ColorRGB object to LDR using the Uncharted2 tone mapping algorithm.
    * @param color The ColorRGB object to convert.
    * @return The converted ColorRGB object in LDR format.

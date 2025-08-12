@@ -1,6 +1,8 @@
 // GCOVR_EXCL_START
-#include "ObjectWidget.hpp"
+#include <string>
+
 #include "Core/Config.hpp"
+#include "ObjectWidget.hpp"
 #include "SceneObjects/Object3D.hpp"
 #include "Surface/MaterialManager.hpp"
 #include "ui_ObjectWidget.h"

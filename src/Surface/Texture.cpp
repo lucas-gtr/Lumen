@@ -99,14 +99,16 @@ void Texture::setTextureType(TextureType type) {
   }
 
   m_texture_type = type;
-  finalizeTexture();
+  generatePreviewData();
+  m_texture_data_observer.notify();
 }
 
 void Texture::loadFromFile(const char* filename) {
   TextureLoader::load(filename, m_image_data, m_texture_properties);
   m_texture_type = TextureType::IMAGE_TEXTURE;
   m_texture_path = filename;
-  finalizeTexture();
+  generatePreviewData();
+  m_texture_data_observer.notify();
 }
 
 void Texture::generateTexture(const ImageProperties& properties, const std::vector<double>& image_data) {
@@ -114,10 +116,6 @@ void Texture::generateTexture(const ImageProperties& properties, const std::vect
   m_image_data         = image_data;
   m_texture_path.clear();
 
-  finalizeTexture();
-}
-
-void Texture::finalizeTexture() {
   generatePreviewData();
   m_texture_data_observer.notify();
 }
@@ -133,7 +131,8 @@ void Texture::flipVertically() {
       }
     }
   }
-  finalizeTexture();
+  generatePreviewData();
+  m_texture_data_observer.notify();
 }
 
 void Texture::setFlippedVertically(bool flipped) {
@@ -143,154 +142,85 @@ void Texture::setFlippedVertically(bool flipped) {
   }
 }
 
-double Texture::getValue1d(TextureUV uv_coord) const {
-  if(m_texture_properties.channels == 3) {
-    return getValue3d(uv_coord).grayscale();
+void Texture::readPixelChannels(int x, int y, double* out) const {
+  const int w     = m_texture_properties.width;
+  const int c     = m_texture_properties.channels;
+  const int index = (y * w + x) * c;
+  for(int i = 0; i < c; ++i) {
+    out[i] = m_image_data[index + i];
   }
-  if(m_texture_properties.channels == 4) {
-    return getValue4d(uv_coord).grayscale();
-  }
-  TextureSampling::wrapCoordinates(uv_coord, m_wrapping_mode);
-
-  double     value     = 0.0;
-  const bool is_border = (uv_coord.u == -1.0 || uv_coord.v == -1.0);
-
-  if(is_border) {
-    value = m_border_color.grayscale();
-  } else {
-    const int w = m_texture_properties.width;
-    const int h = m_texture_properties.height;
-    const int c = m_texture_properties.channels;
-
-    switch(m_filtering_mode) {
-    case TextureSampling::TextureFiltering::NEAREST: {
-      const auto coord = TextureSampling::sampleNearest(uv_coord, {w, h});
-      value            = m_image_data[coord.y * w * c + coord.x * c];
-      break;
-    }
-    case TextureSampling::TextureFiltering::BILINEAR: {
-      const auto   info = TextureSampling::sampleBilinear(uv_coord, {w, h});
-      auto         get  = [&](int x, int y) { return m_image_data[y * w * c + x * c]; };
-      const double c00  = get(info.x0, info.y0);
-      const double c01  = get(info.x1, info.y0);
-      const double c10  = get(info.x0, info.y1);
-      const double c11  = get(info.x1, info.y1);
-      value             = (1.0 - info.dx) * (1.0 - info.dy) * c00 + info.dx * (1.0 - info.dy) * c01 +
-              (1.0 - info.dx) * info.dy * c10 + info.dx * info.dy * c11;
-      break;
-    }
-    }
-  }
-
-  if(m_color_space == ColorSpace::LINEAR) {
-    convertToLinearSpace(value);
-  }
-
-  return value;
 }
 
-ColorRGB Texture::getValue3d(TextureUV uv_coord) const {
-  if(m_texture_properties.channels == 1) {
-    return ColorRGB(getValue1d(uv_coord));
-  }
-  if(m_texture_properties.channels == 4) {
-    return getValue4d(uv_coord).toRGB();
-  }
+ColorRGBA Texture::samplePixelColor(TextureUV uv) const {
+  TextureSampling::wrapCoordinates(uv, m_wrapping_mode);
+  const int             c = m_texture_properties.channels;
+  std::array<double, 4> out{0.0, 0.0, 0.0, 1.0};
 
-  TextureSampling::wrapCoordinates(uv_coord, m_wrapping_mode);
-
-  ColorRGB   color;
-  const bool is_border = (uv_coord.u == -1.0 || uv_coord.v == -1.0);
-
-  if(is_border) {
-    color = m_border_color;
+  if(uv.u == -1.0 || uv.v == -1.0) {
+    if(c == 1) {
+      const double g = m_border_color.grayscale();
+      out[0] = out[1] = out[2] = g;
+    } else {
+      out[0] = m_border_color.r;
+      out[1] = m_border_color.g;
+      out[2] = m_border_color.b;
+    }
   } else {
     const int w = m_texture_properties.width;
     const int h = m_texture_properties.height;
-    const int c = m_texture_properties.channels;
 
-    switch(m_filtering_mode) {
-    case TextureSampling::TextureFiltering::NEAREST: {
-      const auto coord = TextureSampling::sampleNearest(uv_coord, {w, h});
-      const int  index = coord.y * w * c + coord.x * c;
-      color            = {m_image_data[index + 0], m_image_data[index + 1], m_image_data[index + 2]};
-      break;
-    }
-    case TextureSampling::TextureFiltering::BILINEAR: {
-      const auto info = TextureSampling::sampleBilinear(uv_coord, {w, h});
-      auto       get  = [&](int x, int y) -> ColorRGB {
-        const int idx = y * w * c + x * c;
-        return {m_image_data[idx + 0], m_image_data[idx + 1], m_image_data[idx + 2]};
-      };
-      const ColorRGB c00 = get(info.x0, info.y0);
-      const ColorRGB c01 = get(info.x1, info.y0);
-      const ColorRGB c10 = get(info.x0, info.y1);
-      const ColorRGB c11 = get(info.x1, info.y1);
-      color              = (1.0 - info.dx) * (1.0 - info.dy) * c00 + info.dx * (1.0 - info.dy) * c01 +
-              (1.0 - info.dx) * info.dy * c10 + info.dx * info.dy * c11;
-      break;
-    }
+    if(m_filtering_mode == TextureSampling::TextureFiltering::NEAREST) {
+      const auto coord = TextureSampling::sampleNearest(uv, {w, h});
+      readPixelChannels(coord.x, coord.y, out.data());
+    } else {
+      const auto            info = TextureSampling::sampleBilinear(uv, {w, h});
+      std::array<double, 4> c00{}, c01{}, c10{}, c11{}; // NOLINT(readability-isolate-declaration)
+      readPixelChannels(info.x0, info.y0, c00.data());
+      readPixelChannels(info.x1, info.y0, c01.data());
+      readPixelChannels(info.x0, info.y1, c10.data());
+      readPixelChannels(info.x1, info.y1, c11.data());
+
+      for(int ch = 0; ch < c; ++ch) {
+        out[ch] = (1.0 - info.dx) * (1.0 - info.dy) * c00[ch] + info.dx * (1.0 - info.dy) * c01[ch] +
+                  (1.0 - info.dx) * info.dy * c10[ch] + info.dx * info.dy * c11[ch];
+      }
     }
   }
 
+  ColorRGBA color{0.0};
+  switch(c) {
+  case 1:
+    color = {out[0], out[0], out[0], 1.0};
+    break;
+  case 3:
+    color = {out[0], out[1], out[2], 1.0};
+    break;
+  default:
+    color = {out[0], out[1], out[2], out[3]};
+    break;
+  }
+
   if(m_color_space == ColorSpace::LINEAR) {
-    return color.toLinearSpace();
+    color = color.toLinearSpace();
   }
   return color;
 }
 
-ColorRGBA Texture::getValue4d(TextureUV uv_coord) const {
-  if(m_texture_properties.channels == 1) {
-    return ColorRGBA(getValue1d(uv_coord));
-  }
-  if(m_texture_properties.channels == 3) {
-    return getValue3d(uv_coord).toRGBA();
-  }
-  TextureSampling::wrapCoordinates(uv_coord, m_wrapping_mode);
-
-  ColorRGBA  color;
-  const bool is_border = (uv_coord.u == -1.0 || uv_coord.v == -1.0);
-
-  if(is_border) {
-    color = ColorRGBA(m_border_color);
-  } else {
-    const int w = m_texture_properties.width;
-    const int h = m_texture_properties.height;
-    const int c = m_texture_properties.channels;
-
-    switch(m_filtering_mode) {
-    case TextureSampling::TextureFiltering::NEAREST: {
-      const auto coord = TextureSampling::sampleNearest(uv_coord, {w, h});
-      const int  index = coord.y * w * c + coord.x * c;
-      color = {m_image_data[index + 0], m_image_data[index + 1], m_image_data[index + 2], m_image_data[index + 3]};
-      break;
-    }
-    case TextureSampling::TextureFiltering::BILINEAR: {
-      const auto info = TextureSampling::sampleBilinear(uv_coord, {w, h});
-      auto       get  = [&](int x, int y) -> ColorRGBA {
-        const int idx = y * w * c + x * c;
-        return {m_image_data[idx + 0], m_image_data[idx + 1], m_image_data[idx + 2], m_image_data[idx + 3]};
-      };
-      const ColorRGBA c00 = get(info.x0, info.y0);
-      const ColorRGBA c01 = get(info.x1, info.y0);
-      const ColorRGBA c10 = get(info.x0, info.y1);
-      const ColorRGBA c11 = get(info.x1, info.y1);
-      color               = (1.0 - info.dx) * (1.0 - info.dy) * c00 + info.dx * (1.0 - info.dy) * c01 +
-              (1.0 - info.dx) * info.dy * c10 + info.dx * info.dy * c11;
-      break;
-    }
-    }
-  }
-
-  if(m_color_space == ColorSpace::LINEAR) {
-    return color.toLinearSpace();
-  }
-  return color;
+double Texture::getValue1d(TextureUV uv) const {
+  const ColorRGBA c = samplePixelColor(uv);
+  return c.grayscale();
 }
+
+ColorRGB Texture::getValue3d(TextureUV uv) const {
+  const ColorRGBA c = samplePixelColor(uv);
+  return {c.r, c.g, c.b};
+}
+
+ColorRGBA Texture::getValue4d(TextureUV uv) const { return samplePixelColor(uv); }
 
 void Texture::setColorSpace(ColorSpace color_space) {
   m_color_space = color_space;
-  m_texture_data_observer.notify();
+  m_texture_parameters_observer.notify();
 }
 
 void Texture::setBorderColor(const ColorRGBA& color) {

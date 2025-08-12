@@ -20,18 +20,6 @@ public:
   LuminanceReinhardToneMapping() = default; ///< Default constructor.
 
   /**
-   * @brief Converts a value to LDR using the Reinhard tone mapping algorithm based on luminance.
-   * @param value The value to convert.
-   * @return The converted value in LDR format.
-   */
-  double convertToLDR(double value) const override {
-    if(value <= 0.0) {
-      return 0.0;
-    }
-    return value / (1.0 + value);
-  }
-
-  /**
    * @brief Converts a ColorRGB object to LDR using the Reinhard tone mapping algorithm based on luminance.
    * @param color The ColorRGB object to convert.
    * @return The converted ColorRGB object in LDR format.

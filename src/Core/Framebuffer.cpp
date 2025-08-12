@@ -13,28 +13,26 @@
 
 thread_local int Framebuffer::m_thread_id = -1;
 
-Framebuffer::Framebuffer(ImageProperties properties) : m_framebuffer_properties(properties) { updateFrameBuffer(); }
+Framebuffer::Framebuffer(Resolution resolution) : m_resolution(resolution) { updateFrameBuffer(); }
 
 void Framebuffer::updateFrameBuffer() {
   delete[] m_framebuffer;
-  m_framebuffer = new double[m_framebuffer_properties.bufferSize()];
-  for(std::uint64_t i = 0; i < m_framebuffer_properties.bufferSize(); ++i) {
-    m_framebuffer[i] = 0.0;
-  }
+  m_buffer_size = m_buffer_size = static_cast<size_t>(m_resolution.width) * m_resolution.height * m_channel_count;
+  m_framebuffer                 = new double[m_buffer_size];
+  std::fill_n(m_framebuffer, m_buffer_size, 0.0);
 }
 
-void Framebuffer::setFramebufferProperties(ImageProperties properties) {
-  if(m_framebuffer_properties.width != properties.width || m_framebuffer_properties.height != properties.height ||
-     m_framebuffer_properties.channels != properties.channels) {
-    m_framebuffer_properties = properties;
+void Framebuffer::setResolution(Resolution resolution) {
+  if(m_resolution.width != resolution.width || m_resolution.height != resolution.height) {
+    m_resolution = resolution;
     updateFrameBuffer();
   }
 }
 
 void Framebuffer::convertToSRGBColorSpace() {
-  for(int i = 0; i < m_framebuffer_properties.width * m_framebuffer_properties.height; ++i) {
-    for(int j = 0; j < std::min(m_framebuffer_properties.channels, 3); j++) {
-      convertToSRGBSpace(m_framebuffer[i * m_framebuffer_properties.channels + j]);
+  for(int i = 0; i < m_resolution.width * m_resolution.height; ++i) {
+    for(int j = 0; j < 3; j++) {
+      convertToSRGBSpace(m_framebuffer[m_channel_count * i + j]);
     }
   }
 }
@@ -43,15 +41,12 @@ void Framebuffer::initThreadBuffers(unsigned int num_threads) {
   num_threads = std::max(1U, num_threads);
   m_thread_buffers.resize(num_threads);
   for(auto& buffer : m_thread_buffers) {
-    buffer.resize(m_framebuffer_properties.bufferSize(), 0.0);
+    buffer.resize(m_buffer_size, 0.0);
   }
 }
 
 void Framebuffer::reduceThreadBuffers() {
-  const int pixel_count = m_framebuffer_properties.width * m_framebuffer_properties.height;
-  const int channels    = m_framebuffer_properties.channels;
-
-  std::vector<int> indices(static_cast<size_t>(pixel_count * channels));
+  std::vector<int> indices(m_buffer_size);
   std::iota(indices.begin(), indices.end(), 0);
 
   std::for_each(std::execution::par, indices.begin(), indices.end(), [&](int index) {
@@ -62,16 +57,16 @@ void Framebuffer::reduceThreadBuffers() {
 }
 
 void Framebuffer::scaleBufferValues(double factor) {
-  for(std::uint64_t i = 0; i < m_framebuffer_properties.bufferSize(); ++i) {
+  for(size_t i = 0; i < m_buffer_size; ++i) {
     m_framebuffer[i] *= factor;
   }
 }
 
 void Framebuffer::clearThreadBuffers() { m_thread_buffers = std::vector<std::vector<double>>(); }
 
-void Framebuffer::setPixelColor(const PixelCoord& pixel_coord, const ColorRGBA& color, double weight) {
-  if(pixel_coord.x < 0 || pixel_coord.x >= m_framebuffer_properties.width || pixel_coord.y < 0 ||
-     pixel_coord.y >= m_framebuffer_properties.height) {
+void Framebuffer::setPixelColor(const PixelCoord& pixel_coord, const ColorRGB& color, double weight) {
+  if(pixel_coord.x < 0 || pixel_coord.x >= m_resolution.width || pixel_coord.y < 0 ||
+     pixel_coord.y >= m_resolution.height) {
     std::cerr << "Pixel coordinates out of bounds: (" << pixel_coord.x << ", " << pixel_coord.y << ").\n";
     return;
   }
@@ -81,35 +76,17 @@ void Framebuffer::setPixelColor(const PixelCoord& pixel_coord, const ColorRGBA& 
     return;
   }
 
-  const int index =
-      (pixel_coord.y * m_framebuffer_properties.width + pixel_coord.x) * m_framebuffer_properties.channels;
+  const int index = m_channel_count * (pixel_coord.y * m_resolution.width + pixel_coord.x);
 
-  switch(m_framebuffer_properties.channels) {
-  case 1:
-    m_thread_buffers[m_thread_id][index] += color.grayscale() * weight;
-    break;
-  case 3:
-    m_thread_buffers[m_thread_id][index] += color.r * weight;
-    m_thread_buffers[m_thread_id][index + 1] += color.g * weight;
-    m_thread_buffers[m_thread_id][index + 2] += color.b * weight;
-    break;
-  case 4:
-    m_thread_buffers[m_thread_id][index] += color.r * weight;
-    m_thread_buffers[m_thread_id][index + 1] += color.g * weight;
-    m_thread_buffers[m_thread_id][index + 2] += color.b * weight;
-    m_thread_buffers[m_thread_id][index + 3] += 1.0 * weight;
-    break;
-  default:
-    std::cerr << "Unsupported channel count: " << m_framebuffer_properties.channels
-              << ". Supported counts are 1, 3, or 4." << '\n';
-    break; // Unsupported channel count
-  }
+  m_thread_buffers[m_thread_id][index] += color.r * weight;
+  m_thread_buffers[m_thread_id][index + 1] += color.g * weight;
+  m_thread_buffers[m_thread_id][index + 2] += color.b * weight;
 }
 
 double Framebuffer::getMaximumValue() const {
   double max_value = 0.0;
-  for(std::uint64_t i = 0; i < m_framebuffer_properties.bufferSize(); ++i) {
-    if(m_framebuffer_properties.channels == 4 && i % 4 == 3) {
+  for(size_t i = 0; i < m_buffer_size; ++i) {
+    if(m_channel_count == 4 && i % 4 == 3) {
       continue; // Skip alpha channel
     }
     max_value = std::max(max_value, m_framebuffer[i]);
