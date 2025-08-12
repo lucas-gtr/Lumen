@@ -8,7 +8,7 @@
 #include <linalg/Mat3.hpp>
 #include <linalg/Vec3.hpp>
 
-#include "Core/Ray.hpp"
+class Ray;
 
 /**
  * @struct RayEmitterParameters

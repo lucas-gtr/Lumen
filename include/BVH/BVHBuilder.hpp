@@ -5,11 +5,11 @@
 #ifndef BVH_BVHBUILDER_HPP
 #define BVH_BVHBUILDER_HPP
 
+#include <linalg/Vec3.hpp>
 #include <memory>
 #include <vector>
 
 #include "BVH/BVHNode.hpp"
-#include <linalg/Vec3.hpp>
 
 /**
  * @namespace BVH

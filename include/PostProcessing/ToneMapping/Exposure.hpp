@@ -23,24 +23,19 @@ class ExposureToneMapping : public ToneMappingStrategy {
 private:
   double m_exposure = 1.0;
 
+  double convertToLDR(double value) const {
+    if(value <= 0.0) {
+      return 0.0;
+    }
+    return 1.0 - std::exp(-value * m_exposure);
+  }
+
 public:
   /**
    * @brief Constructor for the ExposureToneMapping class.
    * @param exposure The exposure value to be used in the tone mapping algorithm.
    */
   explicit ExposureToneMapping(double exposure) : m_exposure(exposure) {}
-
-  /**
-   * @brief Converts a value to LDR using the exposure tone mapping algorithm.
-   * @param value The value to convert.
-   * @return The converted value in LDR format.
-   */
-  double convertToLDR(double value) const override {
-    if(value <= 0.0) {
-      return 0.0;
-    }
-    return 1.0 - std::exp(-value * m_exposure);
-  }
 
   /**
    * @brief Converts a ColorRGB object to LDR using the exposure tone mapping algorithm.

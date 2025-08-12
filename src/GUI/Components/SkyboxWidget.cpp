@@ -5,6 +5,7 @@
 #include "ui_SkyboxWidget.h"
 
 #include "Scene/Skybox.hpp"
+#include "Surface/Texture.hpp"
 
 SkyboxWidget::SkyboxWidget(QWidget* parent) : QWidget(parent), ui(new Ui::SkyboxWidget) {
   ui->setupUi(this);

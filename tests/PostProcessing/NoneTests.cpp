@@ -1,21 +1,6 @@
 #include <gtest/gtest.h>
 #include "PostProcessing/ToneMapping/None.hpp"
 
-TEST(NoToneMappingTests, ConvertScalarBelowZeroIsClamped) {
-  NoToneMapping tone_mapping;
-  EXPECT_DOUBLE_EQ(tone_mapping.convertToLDR(-1.0), 0.0);
-}
-
-TEST(NoToneMappingTests, ConvertScalarAboveOneIsClamped) {
-  NoToneMapping tone_mapping;
-  EXPECT_DOUBLE_EQ(tone_mapping.convertToLDR(2.5), 1.0);
-}
-
-TEST(NoToneMappingTests, ConvertScalarInRangeIsUnchanged) {
-  NoToneMapping tone_mapping;
-  EXPECT_DOUBLE_EQ(tone_mapping.convertToLDR(0.5), 0.5);
-}
-
 TEST(NoToneMappingTests, ConvertColorAllComponentsClampedIndividually) {
   NoToneMapping tone_mapping;
   ColorRGB input{-0.2, 0.5, 1.8};

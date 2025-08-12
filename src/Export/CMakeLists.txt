@@ -11,4 +11,4 @@ target_include_directories(Export PRIVATE
     ${CMAKE_SOURCE_DIR}/include
     ${CMAKE_SOURCE_DIR}/external/stb
 )
-target_link_libraries(Export PRIVATE Core Rendering)
+target_link_libraries(Export PRIVATE Core PostProcessing Rendering)

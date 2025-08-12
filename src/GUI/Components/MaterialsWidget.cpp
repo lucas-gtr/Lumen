@@ -4,7 +4,9 @@
 #include <QMessageBox>
 #include <QSignalBlocker>
 
+#include "Surface/Material.hpp"
 #include "Surface/MaterialManager.hpp"
+#include "Surface/Texture.hpp"
 #include "Surface/TextureManager.hpp"
 
 #include "MaterialsWidget.hpp"
@@ -16,6 +18,8 @@ MaterialsWidget::MaterialsWidget(QWidget* parent) : QWidget(parent), ui(new Ui::
   setupDoubleSliderSpinBox(ui->emissiveStrengthSliderSpinBox, 0.0, MAX_EMISSIVE_STRENGTH);
   setupDoubleSliderSpinBox(ui->roughnessDoubleSliderSpinBox, 0.0, 1.0);
   setupDoubleSliderSpinBox(ui->metalDoubleSliderSpinBox, 0.0, 1.0);
+  setupDoubleSliderSpinBox(ui->transmissionDoubleSliderSpinBox, 0.0, 1.0);
+  setupDoubleSliderSpinBox(ui->IORSliderSpinBox, 1.0, MAX_IOR);
 
   setPreviewsMaximumSize(TEXTURE_PREVIEW_MAX_SIZE);
 
@@ -39,6 +43,7 @@ void MaterialsWidget::setPreviewsMaximumSize(int size) {
   ui->emissivePreview->setMaximumSize(max_size);
   ui->roughnessPreview->setMaximumSize(max_size);
   ui->metalPreview->setMaximumSize(max_size);
+  ui->transmissionPreview->setMaximumSize(max_size);
 }
 
 void MaterialsWidget::initializeTextureBindings() {
@@ -102,11 +107,24 @@ void MaterialsWidget::initializeTextureBindings() {
                        }
                      }};
 
+  m_transmission_binding = {ui->transmissionTextureCombobox,
+                            ui->browseTransmissionButton,
+                            ui->transmissionPreview,
+                            TextureManager::DefaultBlackTexture(),
+                            [this](const QString& p) { emit transmissionTextureCreated(p); },
+                            [this](Texture* texture) {
+                              if(m_current_material != nullptr) {
+                                m_current_material->setTransmissionTexture(texture);
+                                updateTexturePreview(texture, ui->transmissionPreview);
+                              }
+                            }};
+
   setupTextureBinding(&m_diffuse_binding);
   setupTextureBinding(&m_normal_binding);
   setupTextureBinding(&m_emissive_binding);
   setupTextureBinding(&m_roughness_binding);
   setupTextureBinding(&m_metal_binding);
+  setupTextureBinding(&m_transmission_binding);
 }
 
 void MaterialsWidget::setupConnections() {
@@ -124,6 +142,13 @@ void MaterialsWidget::setupConnections() {
   connect(ui->metalDoubleSliderSpinBox, &DoubleSliderSpinBox::valueChanged, this,
           &MaterialsWidget::onMetallicValueChanged);
   connect(ui->metalUseTextureCheckbox, &QCheckBox::toggled, this, &MaterialsWidget::onUseTextureMetallicChanged);
+
+  connect(ui->transmissionDoubleSliderSpinBox, &DoubleSliderSpinBox::valueChanged, this,
+          &MaterialsWidget::onTransmissionValueChanged);
+  connect(ui->transmissionUseTextureCheckbox, &QCheckBox::toggled, this,
+          &MaterialsWidget::onUseTextureTransmissionChanged);
+
+  connect(ui->IORSliderSpinBox, &DoubleSliderSpinBox::valueChanged, this, &MaterialsWidget::onIndexOfRefractionChanged);
 }
 
 void MaterialsWidget::setMaterialManager(MaterialManager* material_manager) { m_material_manager = material_manager; }
@@ -146,6 +171,7 @@ void MaterialsWidget::setTexturesListModel(DefaultOptionProxyModel* model) {
   ui->emissiveTextureComboBox->setModel(m_textures_list_model);
   ui->roughnessTextureComboBox->setModel(m_textures_list_model);
   ui->metalTextureComboBox->setModel(m_textures_list_model);
+  ui->transmissionTextureCombobox->setModel(m_textures_list_model);
 }
 
 void MaterialsWidget::setTexture(QComboBox* combo_box, const QString& name) {
@@ -173,6 +199,10 @@ void MaterialsWidget::setRoughnessTexture(const QString& texture_name) {
 
 void MaterialsWidget::setMetalTexture(const QString& texture_name) {
   setTexture(ui->metalTextureComboBox, texture_name);
+}
+
+void MaterialsWidget::setTransmissionTexture(const QString& texture_name) {
+  setTexture(ui->transmissionTextureCombobox, texture_name);
 }
 
 void MaterialsWidget::setupTextureBinding(TextureBinding* binding) {
@@ -221,6 +251,8 @@ void MaterialsWidget::updateWidget() {
   const QSignalBlocker blocker_roughness_slider(ui->roughnessDoubleSliderSpinBox);
   const QSignalBlocker blocker_metal_checkbox(ui->metalUseTextureCheckbox);
   const QSignalBlocker blocker_metal_slider(ui->metalDoubleSliderSpinBox);
+  const QSignalBlocker blocker_transmission_checkbox(ui->transmissionUseTextureCheckbox);
+  const QSignalBlocker blocker_transmission_slider(ui->transmissionDoubleSliderSpinBox);
 
   ui->emissiveStrengthSliderSpinBox->setValue(m_current_material->getEmissiveIntensity());
 
@@ -243,6 +275,19 @@ void MaterialsWidget::updateWidget() {
   } else {
     ui->metalDoubleSliderSpinBox->setValue(m_current_material->getMetalness({0, 0}));
   }
+
+  const bool is_using_transmission_texture = m_current_material->isUsingTextureTransmission();
+  ui->transmissionUseTextureCheckbox->setChecked(is_using_transmission_texture);
+  ui->transmissionPreview->setVisible(is_using_transmission_texture);
+  ui->transmissionStackedWidget->setCurrentIndex(is_using_transmission_texture ? 0 : 1);
+  if(m_current_material->isUsingTextureTransmission()) {
+    updateTextureWidget(ui->transmissionTextureCombobox, ui->transmissionPreview,
+                        m_current_material->getTransmissionTexture());
+  } else {
+    ui->transmissionDoubleSliderSpinBox->setValue(m_current_material->getTransmission({0, 0}));
+  }
+
+  ui->IORSliderSpinBox->setValue(m_current_material->getIndexOfRefraction());
 }
 
 void MaterialsWidget::updateTextureWidget(QComboBox* combo_box, TexturePreview* preview_label, Texture* texture) {
@@ -347,6 +392,28 @@ void MaterialsWidget::onUseTextureMetallicChanged(bool checked) {
 void MaterialsWidget::onMetallicValueChanged(double value) {
   if(m_current_material != nullptr) {
     m_current_material->setMetallicValue(value);
+  }
+}
+
+void MaterialsWidget::onUseTextureTransmissionChanged(bool checked) {
+  ui->transmissionStackedWidget->setCurrentIndex(checked ? 0 : 1);
+  ui->transmissionPreview->setVisible(checked);
+  m_current_material->setUseTextureTransmission(checked);
+  if(checked) {
+    updateTextureWidget(ui->transmissionTextureCombobox, ui->transmissionPreview,
+                        m_current_material->getTransmissionTexture());
+  }
+}
+
+void MaterialsWidget::onTransmissionValueChanged(double value) {
+  if(m_current_material != nullptr) {
+    m_current_material->setTransmissionValue(value);
+  }
+}
+
+void MaterialsWidget::onIndexOfRefractionChanged(double value) {
+  if(m_current_material != nullptr) {
+    m_current_material->setIndexOfRefraction(value);
   }
 }
 

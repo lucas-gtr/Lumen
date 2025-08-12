@@ -5,7 +5,7 @@
 #ifndef GEOMETRY_MESHBUILDER_HPP
 #define GEOMETRY_MESHBUILDER_HPP
 
-#include "Mesh.hpp"
+class Mesh;
 
 /**
  * @class MeshBuilder

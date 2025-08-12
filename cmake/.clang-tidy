@@ -42,4 +42,6 @@ CheckOptions:
     value: UPPER_CASE
   - key: readability-identifier-naming.ParameterCase
     value: lower_case
+  - key: misc-include-cleaner.IgnoreHeaders
+    value: '["<QObject>"]'
 WarningsAsErrors: '*'

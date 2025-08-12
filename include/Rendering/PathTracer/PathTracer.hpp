@@ -5,7 +5,8 @@
 
 #include "Rendering/PathTracer/DirectionSampler.hpp"
 #include "Rendering/PathTracer/PBR.hpp"
-#include "Scene/Scene.hpp"
+
+class Scene;
 
 class PathTracer {
 private:

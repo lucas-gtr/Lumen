@@ -10,15 +10,16 @@
 #include <utility>
 #include <vector>
 
-#include "BVH/BVHNode.hpp"
 #include "Core/ImageTypes.hpp"
 #include "Core/Observer.hpp"
 #include "Lighting/Light.hpp"
 #include "Scene/LightSample.hpp"
 #include "Scene/Skybox.hpp"
 #include "SceneObjects/Camera.hpp"
-#include "SceneObjects/Object3D.hpp"
-#include "Surface/Texture.hpp"
+
+class BVHNode;
+class Object3D;
+class Texture;
 
 /**
  * @class Scene
@@ -188,7 +189,7 @@ public:
    * @param direction The direction vector for which to get the skybox color.
    * @return The color of the skybox.
    */
-  ColorRGBA getSkyboxColor(const linalg::Vec3d& direction) const { return m_skybox->getColor(direction); }
+  ColorRGB getSkyboxColor(const linalg::Vec3d& direction) const { return m_skybox->getColor(direction); }
 
   /**
    * @brief Sets the skybox texture for the scene.

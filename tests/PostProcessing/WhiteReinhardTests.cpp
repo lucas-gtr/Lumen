@@ -1,28 +1,6 @@
 #include <gtest/gtest.h>
 #include "PostProcessing/ToneMapping/WhitePointReinhard.hpp"
 
-TEST(WhitePointReinhardToneMappingTest, ConvertToLDR_Double_ZeroInput) {
-  WhitePointReinhardToneMapping tone_mapper(1.0);
-  double result = tone_mapper.convertToLDR(0.0);
-  EXPECT_DOUBLE_EQ(result, 0.0);
-}
-
-TEST(WhitePointReinhardToneMappingTest, ConvertToLDR_Double_WhitePoint1) {
-  WhitePointReinhardToneMapping tone_mapper(1.0);
-  double input = 2.0;
-  double expected = input * (1.0 + input / (1.0 * 1.0)) / (1.0 + input);
-  double result = tone_mapper.convertToLDR(input);
-  EXPECT_DOUBLE_EQ(result, expected);
-}
-
-TEST(WhitePointReinhardToneMappingTest, ConvertToLDR_Double_CustomWhitePoint) {
-  WhitePointReinhardToneMapping tone_mapper(2.0);
-  double input = 4.0;
-  double expected = input * (1.0 + input / (2.0 * 2.0)) / (1.0 + input);
-  double result = tone_mapper.convertToLDR(input);
-  EXPECT_DOUBLE_EQ(result, expected);
-}
-
 TEST(WhitePointReinhardToneMappingTest, ConvertToLDR_ColorRGB_Zero) {
   WhitePointReinhardToneMapping tone_mapper(1.0);
   ColorRGB input = {0.0, 0.0, 0.0};

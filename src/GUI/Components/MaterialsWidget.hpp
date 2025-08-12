@@ -121,6 +121,12 @@ public:
    */
   void setMetalTexture(const QString& texture_name);
 
+  /**
+   * @brief Sets the transmission texture for the current material.
+   * @param texture_name The name of the texture to set as the transmission texture.
+   */
+  void setTransmissionTexture(const QString& texture_name);
+
   ~MaterialsWidget() override; ///< Default destructor for the MaterialsWidget class.
 
 signals:
@@ -129,6 +135,7 @@ signals:
   void emissiveTextureCreated(const QString& texture_path);
   void roughnessTextureCreated(const QString& texture_path);
   void metalTextureCreated(const QString& texture_path);
+  void transmissionTextureCreated(const QString& texture_path);
 
 private slots:
   void onAddButtonClicked();
@@ -141,6 +148,9 @@ private slots:
   void onUseTextureRoughnessChanged(bool checked);
   void onMetallicValueChanged(double value);
   void onUseTextureMetallicChanged(bool checked);
+  void onTransmissionValueChanged(double value);
+  void onUseTextureTransmissionChanged(bool checked);
+  void onIndexOfRefractionChanged(double value);
 
 private:
   Ui::MaterialsWidget* ui;
@@ -156,6 +166,7 @@ private:
   TextureBinding m_emissive_binding;
   TextureBinding m_roughness_binding;
   TextureBinding m_metal_binding;
+  TextureBinding m_transmission_binding;
 
   void        initializeTextureBindings();
   void        setPreviewsMaximumSize(int size);

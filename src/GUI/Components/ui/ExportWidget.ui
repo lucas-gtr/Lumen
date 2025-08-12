@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>304</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -33,54 +33,54 @@
       <item row="0" column="1">
        <widget class="QComboBox" name="formatComboBox"/>
       </item>
-      <item row="1" column="0">
+      <item row="2" column="0">
        <widget class="QLabel" name="jpegQualityLabel">
         <property name="text">
          <string>JPEG Quality </string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
+      <item row="2" column="1">
        <widget class="SliderSpinBox" name="jpegQualityWidget" native="true"/>
       </item>
-      <item row="2" column="0">
+      <item row="3" column="0">
        <widget class="QLabel" name="fileNameLabel">
         <property name="text">
          <string>File Name</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="0">
+      <item row="4" column="0">
        <widget class="QLabel" name="pathLabel">
         <property name="text">
          <string>Path</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="1">
+      <item row="4" column="1">
        <widget class="FileSelector" name="fileSelector" native="true"/>
       </item>
-      <item row="4" column="0">
+      <item row="5" column="0">
        <widget class="QLabel" name="toneMappingLabel">
         <property name="text">
          <string>Tone Mapping</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="1">
+      <item row="5" column="1">
        <widget class="QComboBox" name="toneMappingComboBox"/>
       </item>
-      <item row="5" column="0">
+      <item row="6" column="0">
        <widget class="QLabel" name="exposureLabel">
         <property name="text">
          <string>Exposure</string>
         </property>
        </widget>
       </item>
-      <item row="5" column="1">
+      <item row="6" column="1">
        <widget class="QDoubleSpinBox" name="exposureSpinBox"/>
       </item>
-      <item row="2" column="1">
+      <item row="3" column="1">
        <widget class="QWidget" name="widget_2" native="true">
         <layout class="QHBoxLayout" name="horizontalLayout">
          <property name="leftMargin">
@@ -108,14 +108,14 @@
         </layout>
        </widget>
       </item>
-      <item row="6" column="0">
+      <item row="7" column="0">
        <widget class="QLabel" name="whitePointLabel">
         <property name="text">
          <string>White Point </string>
         </property>
        </widget>
       </item>
-      <item row="6" column="1">
+      <item row="7" column="1">
        <widget class="QWidget" name="whitePointWidget" native="true">
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <property name="leftMargin">
@@ -145,6 +145,27 @@
           </widget>
          </item>
         </layout>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Color Channels </string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="channelsCombobox">
+        <item>
+         <property name="text">
+          <string>Grayscale</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>RGB</string>
+         </property>
+        </item>
        </widget>
       </item>
      </layout>

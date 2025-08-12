@@ -1,6 +1,7 @@
 #include "SceneObjects/Object3D.hpp"
 #include "Geometry/CubeMeshBuilder.hpp"
 #include "Surface/MaterialManager.hpp"
+#include "Surface/Material.hpp"
 
 #include <gtest/gtest.h>
 

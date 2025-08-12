@@ -1,4 +1,5 @@
 #include "Rendering/CameraRayEmitter.hpp"
+#include "Core/Ray.hpp"
 
 #include <gtest/gtest.h>
 

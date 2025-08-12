@@ -1,6 +1,7 @@
 #include <algorithm>
 
 #include "Core/Color.hpp"
+#include "Core/Config.hpp"
 #include "Core/ImageTypes.hpp"
 #include "Surface/Material.hpp"
 #include "Surface/Texture.hpp"
@@ -76,17 +77,29 @@ void Material::setEmissiveIntensity(double intensity) {
   m_material_changed_observer.notify(this);
 }
 
-Texture* Material::getDiffuseTexture() const { return m_diffuse_texture; }
+void Material::setTransmissionTexture(Texture* texture) {
+  if(texture != nullptr) {
+    m_transmission_texture = texture;
+  } else {
+    m_transmission_texture = TextureManager::DefaultBlackTexture();
+  }
+  m_material_changed_observer.notify(this);
+}
 
-Texture* Material::getNormalTexture() const { return m_normal_texture; }
+void Material::setTransmissionValue(double value) {
+  m_transmission_value = std::clamp(value, 0.0, 1.0);
+  m_material_changed_observer.notify(this);
+}
 
-Texture* Material::getRoughnessTexture() const { return m_roughness_texture; }
+void Material::setUseTextureTransmission(bool use_texture) {
+  m_use_texture_transmission = use_texture;
+  m_material_changed_observer.notify(this);
+}
 
-Texture* Material::getMetallicTexture() const { return m_metallic_texture; }
-
-Texture* Material::getEmissiveTexture() const { return m_emissive_texture; }
-
-double Material::getEmissiveIntensity() const { return m_emissive_intensity; }
+void Material::setIndexOfRefraction(double ior) {
+  m_index_of_refraction = std::clamp(ior, 1.0, MAX_IOR);
+  m_material_changed_observer.notify(this);
+}
 
 ColorRGB Material::getDiffuse(TextureUV uv_coord) const { return m_diffuse_texture->getValue3d(uv_coord); }
 
@@ -107,3 +120,14 @@ double Material::getMetalness(TextureUV uv_coord) const {
 }
 
 ColorRGB Material::getEmissive(TextureUV uv_coord) const { return m_emissive_texture->getValue3d(uv_coord); }
+
+double Material::getTransmission(TextureUV uv_coord) const {
+  if(m_use_texture_transmission) {
+    return m_transmission_texture->getValue1d(uv_coord);
+  }
+  return m_transmission_value;
+}
+
+double Material::getEmissiveIntensity() const { return m_emissive_intensity; }
+
+double Material::getIndexOfRefraction() const { return m_index_of_refraction; }

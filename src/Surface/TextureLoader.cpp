@@ -1,5 +1,9 @@
+#include <algorithm>
+#include <cctype>
+#include <cstddef>
 #include <cstdint>
 #include <iostream>
+#include <string>
 #include <vector>
 
 #define STB_IMAGE_IMPLEMENTATION
@@ -71,7 +75,9 @@ void loadLDR(const char* filename, std::vector<double>& image_data, ImagePropert
 void load(const char* filename, std::vector<double>& image_data, ImageProperties& texture_properties) {
   const std::string extension = getFileExtension(filename);
 
-  if(extension == "hdr") {
+  if(extension.empty()) {
+    handleLoadFailure(image_data, texture_properties, "No file extension found");
+  } else if(extension == "hdr") {
     loadHDR(filename, image_data, texture_properties);
   } else {
     loadLDR(filename, image_data, texture_properties);

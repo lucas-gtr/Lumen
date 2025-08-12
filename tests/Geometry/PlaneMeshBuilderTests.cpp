@@ -1,4 +1,5 @@
 #include "Geometry/PlaneMeshBuilder.hpp"
+#include "Geometry/Mesh.hpp"
 
 #include <gtest/gtest.h>
 

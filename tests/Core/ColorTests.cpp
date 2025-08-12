@@ -69,6 +69,15 @@ TEST(ColorTest, DivisionByZeroRGB) {
   EXPECT_THROW(c /= ColorRGB(1.0, 0.0, 1.0), std::runtime_error);
 }
 
+TEST(ColorTest, RGBLinearSpaceBackSRGB) {
+  ColorRGB color(0.3, 0.5, 0.7);
+  ColorRGB linear_color = color.toLinearSpace();
+  ColorRGB srgb_color   = linear_color.toSRGBSpace();
+  EXPECT_NEAR(srgb_color.r, color.r, 1e-6);
+  EXPECT_NEAR(srgb_color.g, color.g, 1e-6);
+  EXPECT_NEAR(srgb_color.b, color.b, 1e-6);
+}
+
 TEST(ColorTest, ConstructorsRGBA) {
   ColorRGBA c1;
   EXPECT_DOUBLE_EQ(c1.r, 0.0);
@@ -145,7 +154,7 @@ TEST(ColorTest, RGBAtoRGBandBack) {
   EXPECT_EQ(converted, ColorRGBA(0.2, 0.4, 0.6, 0.4));
 }
 
-TEST(ColorTest, Vector3dToGrayscale) {
+TEST(ColorTest, ColorToGrayscale) {
     ColorRGB color(0.5, 0.2, 0.3);
     double expectedGrayscale = GRAY_RED_CHANNEL * 0.5 + GRAY_GREEN_CHANNEL * 0.2 + GRAY_BLUE_CHANNEL * 0.3;
     EXPECT_DOUBLE_EQ(color.grayscale(), expectedGrayscale);
@@ -241,6 +250,16 @@ TEST(ColorTest, ConvertToLinearFloatAboveThreshold) {
                               static_cast<float>(SRGB_GAMMA));
     convertToLinearSpace(value);
     EXPECT_NEAR(value, expected, 1e-7f);
+}
+
+TEST(ColorTest, RGBALinearSpaceBackSRGB) {
+  ColorRGBA color(0.3, 0.5, 0.7, 0.8);
+  ColorRGBA linear_color = color.toLinearSpace();
+  ColorRGBA srgb_color   = linear_color.toSRGBSpace();
+  EXPECT_NEAR(srgb_color.r, color.r, 1e-6);
+  EXPECT_NEAR(srgb_color.g, color.g, 1e-6);
+  EXPECT_NEAR(srgb_color.b, color.b, 1e-6);
+  EXPECT_NEAR(srgb_color.a, color.a, 1e-6);
 }
 
 TEST(ColorTest, RGBStreamOperator) {

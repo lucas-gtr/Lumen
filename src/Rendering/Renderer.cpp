@@ -12,18 +12,16 @@
 #include "Core/ScopedTimer.hpp"
 #include "Rendering/CameraRayEmitter.hpp"
 #include "Rendering/MultiThreadedCPU.hpp"
-#include "Rendering/PathTracer/PBR.hpp"
-#include "Rendering/PathTracer/RayIntersection.hpp"
 #include "Rendering/RenderSettings.hpp"
 #include "Rendering/RenderTime.hpp"
 #include "Rendering/Renderer.hpp"
 #include "Rendering/SingleThreaded.hpp"
 #include "Scene/Scene.hpp"
+#include "SceneObjects/Camera.hpp"
 #include "Surface/Material.hpp"
 
 Renderer::Renderer(RenderSettings* render_settings)
-    : m_render_time(std::make_unique<RenderTime>()), m_framebuffer(new Framebuffer({1, 1, 1})),
-      m_render_settings(render_settings), m_path_tracer() {}
+    : m_framebuffer(new Framebuffer({1, 1})), m_render_settings(render_settings), m_path_tracer() {}
 
 void Renderer::setScene(Scene* scene) {
   m_scene = scene;
@@ -31,8 +29,8 @@ void Renderer::setScene(Scene* scene) {
 }
 
 void Renderer::updateRenderMode() {
-  const ImageProperties properties = m_render_settings->getImageProperties();
-  m_framebuffer->setFramebufferProperties(properties);
+  const Resolution properties = m_render_settings->getImageResolution();
+  m_framebuffer->setResolution(properties);
 
   switch(m_render_settings->getRenderMode()) {
   case RenderMode::SINGLE_THREADED:
@@ -92,20 +90,20 @@ bool Renderer::renderFrame() {
 
   m_framebuffer->convertToSRGBColorSpace();
 
-  m_render_time->stop();
-  std::cout << "Rendering completed in " << m_render_time->getRenderStats().elapsed_time << " seconds.\n";
+  m_render_time.stop();
+  std::cout << "Rendering completed in " << m_render_time.getRenderStats().elapsed_time << " seconds.\n";
 
   ScopedTimer::PrintStats();
   return true;
 }
 
-ColorRGBA Renderer::getPixelColor(const PixelCoord& pixel, double dx, double dy, const PixelCoord& subpixel_grid_pos,
-                                  double cell_size) const {
+ColorRGB Renderer::getPixelColor(const PixelCoord& pixel, double dx, double dy, const PixelCoord& subpixel_grid_pos,
+                                 double cell_size) const {
   const double   v        = (static_cast<double>(pixel.y) + (subpixel_grid_pos.y + randomUniform01()) * cell_size) * dy;
   const double   u        = (static_cast<double>(pixel.x) + (subpixel_grid_pos.x + randomUniform01()) * cell_size) * dx;
   const Ray      ray      = m_camera_ray_emitter.generateRay(u, v);
   const ColorRGB radiance = m_path_tracer.traceRay(ray);
-  return ColorRGBA(radiance);
+  return radiance;
 }
 
 void Renderer::renderSample(const PixelCoord& pixel_start, const PixelCoord& pixel_end, double sample_weight,
@@ -115,7 +113,7 @@ void Renderer::renderSample(const PixelCoord& pixel_start, const PixelCoord& pix
 
   for(int y = pixel_start.y; y < pixel_end.y; ++y) {
     for(int x = pixel_start.x; x < pixel_end.x; ++x) {
-      const ColorRGBA color = getPixelColor({x, y}, dx, dy, subpixel_grid_pos, cell_size);
+      const ColorRGB color = getPixelColor({x, y}, dx, dy, subpixel_grid_pos, cell_size);
       m_framebuffer->setPixelColor({x, y}, color, sample_weight);
     }
   }

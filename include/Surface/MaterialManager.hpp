@@ -9,7 +9,9 @@
 #include <string>
 #include <unordered_map>
 
-#include "Surface/Material.hpp"
+#include "Core/Observer.hpp"
+
+class Material;
 
 /**
  * @class MaterialManager

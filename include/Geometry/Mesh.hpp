@@ -11,8 +11,9 @@
 #include <memory>
 #include <vector>
 
-#include "BVH/BVHNode.hpp"
 #include "Core/ImageTypes.hpp"
+
+class BVHNode;
 
 /**
  * @struct Vertex

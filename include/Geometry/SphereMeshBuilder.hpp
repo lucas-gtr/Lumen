@@ -5,8 +5,9 @@
 #ifndef GEOMETRY_SPHEREMESHBUILDER_HPP
 #define GEOMETRY_SPHEREMESHBUILDER_HPP
 
-#include "Geometry/Mesh.hpp"
 #include "Geometry/MeshBuilder.hpp"
+
+class Mesh;
 
 /**
  * @class SphereMeshBuilder

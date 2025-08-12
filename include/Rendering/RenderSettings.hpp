@@ -28,9 +28,8 @@ enum class RenderMode : std::uint8_t { SINGLE_THREADED, MULTI_THREADED_CPU, GPU_
  */
 class RenderSettings {
 private:
-  ImageProperties m_properties = {DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_CHANNEL_COUNT};
+  Resolution m_resolution = {DEFAULT_WIDTH, DEFAULT_HEIGHT};
 
-  int m_max_bounces        = DEFAULT_MAX_BOUNCES;
   int m_samples_per_pixels = DEFAULT_SAMPLES_PER_PIXEL;
 
   RenderMode m_render_mode = RenderMode::SINGLE_THREADED;
@@ -38,8 +37,8 @@ private:
   int          m_chunk_size   = DEFAULT_CHUNK_SIZE;
   unsigned int m_thread_count = std::max(1U, std::thread::hardware_concurrency() - 4);
 
-  double m_dx = 1.0 / static_cast<double>(m_properties.width);
-  double m_dy = 1.0 / static_cast<double>(m_properties.height);
+  double m_dx = 1.0 / static_cast<double>(m_resolution.width);
+  double m_dy = 1.0 / static_cast<double>(m_resolution.height);
 
 public:
   RenderSettings() = default; ///< Default constructor initializes with default settings.
@@ -49,13 +48,13 @@ public:
   RenderSettings(RenderSettings&&)                 = delete;
   RenderSettings& operator=(RenderSettings&&)      = delete;
 
-  ImageProperties getImageProperties() const { return m_properties; }
+  Resolution getImageResolution() const { return m_resolution; }
 
   /**
    * @brief Get the width of the rendered image.
    * @return The width of the image in pixels.
    */
-  int getWidth() const { return m_properties.width; }
+  int getWidth() const { return m_resolution.width; }
 
   /**
    * @brief Get the horizontal step size for pixel coordinates.
@@ -69,7 +68,7 @@ public:
    * @param width The width of the image in pixels.
    */
   void setWidth(int width) {
-    m_properties.width = std::clamp(width, MIN_WIDTH, MAX_IMAGE_WIDTH);
+    m_resolution.width = std::clamp(width, MIN_WIDTH, MAX_IMAGE_WIDTH);
     m_dx               = 1.0 / static_cast<double>(width);
   }
 
@@ -77,7 +76,7 @@ public:
    * @brief Get the height of the rendered image.
    * @return The height of the image in pixels.
    */
-  int getHeight() const { return m_properties.height; }
+  int getHeight() const { return m_resolution.height; }
 
   /**
    * @brief Get the vertical step size for pixel coordinates.
@@ -91,37 +90,9 @@ public:
    * @param height The height of the image in pixels.
    */
   void setHeight(int height) {
-    m_properties.height = std::clamp(height, MIN_HEIGHT, MAX_IMAGE_HEIGHT);
+    m_resolution.height = std::clamp(height, MIN_HEIGHT, MAX_IMAGE_HEIGHT);
     m_dy                = 1.0 / static_cast<double>(height);
   }
-
-  /**
-   * @brief Get the number of color channels.
-   * @return The number of color channels (e.g., 3 for RGB, 4 for RGBA).
-   */
-  int getChannelCount() const { return m_properties.channels; }
-
-  /**
-   * @brief Set the number of color channels.
-   * The channel count will be clamped to a valid range between MIN_CHANNEL_COUNT and MAX_CHANNEL_COUNT.
-   * @param channels The number of color channels.
-   */
-  void setChannelCount(int channels) {
-    m_properties.channels = std::clamp(channels, MIN_CHANNEL_COUNT, MAX_CHANNEL_COUNT);
-  }
-
-  /**
-   * @brief Get the maximum number of bounces for ray tracing.
-   * @return The maximum number of bounces.
-   */
-  int getMaxBounces() const { return m_max_bounces; }
-
-  /**
-   * @brief Set the maximum number of bounces for ray tracing.
-   * The number of bounces will be clamped to a valid range between MIN_MAX_BOUNCES and MAX_BOUNCES.
-   * @param max_bounces The maximum number of bounces.
-   */
-  void setMaxBounces(int max_bounces) { m_max_bounces = std::clamp(max_bounces, MIN_MAX_BOUNCES, MAX_BOUNCES); }
 
   /**
    * @brief Get the number of samples per pixel for anti-aliasing.

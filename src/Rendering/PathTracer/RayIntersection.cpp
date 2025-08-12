@@ -2,11 +2,10 @@
 #include <cmath>
 #include <limits>
 #include <linalg/Mat3.hpp>
-#include <linalg/Mat4.hpp>
 #include <linalg/Vec3.hpp>
 #include <linalg/linalg.hpp>
-#include <stack>
 #include <string>
+#include <utility>
 #include <vector>
 
 #include <cassert>

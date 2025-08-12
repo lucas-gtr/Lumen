@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>815</width>
-    <height>730</height>
+    <height>898</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -410,7 +410,7 @@
          <item>
           <widget class="QStackedWidget" name="roughnessStackedWidget">
            <property name="currentIndex">
-            <number>0</number>
+            <number>1</number>
            </property>
            <widget class="QWidget" name="textureRoughnessWidget">
             <layout class="QHBoxLayout" name="horizontalLayout_11">
@@ -438,7 +438,7 @@
              </item>
             </layout>
            </widget>
-           <widget class="QWidget" name="sliderRoughnessWidget" native="true">
+           <widget class="QWidget" name="sliderRoughnessWidget">
             <layout class="QHBoxLayout" name="horizontalLayout_9">
              <property name="leftMargin">
               <number>0</number>
@@ -547,6 +547,128 @@
          </item>
         </layout>
        </widget>
+      </item>
+      <item alignment="Qt::AlignHCenter">
+       <widget class="TexturePreview" name="transmissionPreview">
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>200</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Box</enum>
+        </property>
+        <property name="text">
+         <string>TransmissionPreview</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="transmissionLayout">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="transmissionLabelLyout">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="transmissionLabel">
+            <property name="text">
+             <string>Transmission</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="transmissionUseTextureCheckbox">
+            <property name="text">
+             <string>Use Texture</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QStackedWidget" name="transmissionStackedWidget">
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <widget class="QWidget" name="textureTransmissionWidget">
+           <layout class="QHBoxLayout" name="horizontalLayout_14">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QComboBox" name="transmissionTextureCombobox"/>
+            </item>
+            <item>
+             <widget class="QPushButton" name="browseTransmissionButton">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Browse</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="sliderTransmissionWidget">
+           <layout class="QHBoxLayout" name="horizontalLayout_13">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="DoubleSliderSpinBox" name="transmissionDoubleSliderSpinBox" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="IORLayout">
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="IORLabel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>IOR</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="DoubleSliderSpinBox" name="IORSliderSpinBox" native="true"/>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>

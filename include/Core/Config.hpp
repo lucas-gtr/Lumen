@@ -69,13 +69,11 @@ static constexpr int DEFAULT_CHANNEL_COUNT = 3; // RGB
 static constexpr int MIN_CHANNEL_COUNT     = 1;
 static constexpr int MAX_CHANNEL_COUNT     = 4;
 
-static constexpr int DEFAULT_MAX_BOUNCES = 5; // for path tracing
-static constexpr int MIN_MAX_BOUNCES     = 0;
-static constexpr int MAX_BOUNCES         = 100;
-
 static constexpr int DEFAULT_SAMPLES_PER_PIXEL = 9;
 static constexpr int MIN_SAMPLES_PER_PIXEL     = 1;
 static constexpr int MAX_SAMPLES_PER_PIXEL     = 20000;
+
+static constexpr int FRAMEBUFFER_CHANNEL_COUNT = 3; // RGB
 
 //<-------- RENDER EXPORTER --------->
 static constexpr std::string_view DEFAULT_FILE_PATH    = "RenderImages/";
@@ -101,6 +99,7 @@ static constexpr int    MAX_PREVIEW_TEXTURE_SIZE    = 256;
 //<-------- MATERIAL --------->
 static constexpr double MAX_EMISSIVE_STRENGTH   = 1000.0;
 static constexpr double DEFAULT_ROUGHNESS_VALUE = 0.5;
+static constexpr double MAX_IOR                 = 4.0;
 
 //<-------- LIGHT --------->
 static constexpr double DEFAULT_LIGHT_INTENSITY        = 1.0;

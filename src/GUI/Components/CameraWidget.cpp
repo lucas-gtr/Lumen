@@ -1,4 +1,6 @@
 // GCOVR_EXCL_START
+#include <string>
+
 #include "CameraWidget.hpp"
 #include "Core/Config.hpp"
 #include "SceneObjects/Camera.hpp"

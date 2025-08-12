@@ -5,8 +5,9 @@
 #ifndef GEOMETRY_PLANEMESHBUILDER_HPP
 #define GEOMETRY_PLANEMESHBUILDER_HPP
 
-#include "Geometry/Mesh.hpp"
 #include "Geometry/MeshBuilder.hpp"
+
+class Mesh;
 
 /**
  * @class PlaneMeshBuilder

@@ -10,8 +10,9 @@
 #include "Core/Color.hpp"
 #include "Core/ImageTypes.hpp"
 #include "Core/Observer.hpp"
-#include "Surface/Texture.hpp"
 #include "Surface/TextureManager.hpp"
+
+class Texture;
 
 /**
  * @class Material
@@ -34,6 +35,12 @@ private:
 
   Texture* m_emissive_texture   = TextureManager::DefaultBlackTexture();
   double   m_emissive_intensity = 0.0;
+
+  Texture* m_transmission_texture     = TextureManager::DefaultBlackTexture();
+  double   m_transmission_value       = 0.0;
+  bool     m_use_texture_transmission = false;
+
+  double m_index_of_refraction = 1.0;
 
   Observer<const Material*> m_material_changed_observer;
 
@@ -61,13 +68,13 @@ public:
    * @brief Gets the diffuse texture of this material.
    * @return The pointer to the diffuse texture.
    */
-  Texture* getDiffuseTexture() const;
+  Texture* getDiffuseTexture() const { return m_diffuse_texture; }
 
   /**
    * @brief Gets the normal texture of this material.
    * @return The pointer to the normal texture.
    */
-  Texture* getNormalTexture() const;
+  Texture* getNormalTexture() const { return m_normal_texture; }
 
   /**
    * @brief Sets the normal texture for this material.
@@ -91,7 +98,7 @@ public:
    * @brief Gets the roughness texture of this material.
    * @return The pointer to the roughness texture.
    */
-  Texture* getRoughnessTexture() const;
+  Texture* getRoughnessTexture() const { return m_roughness_texture; }
 
   /**
    * @brief Checks if the material is using a texture for roughness.
@@ -121,7 +128,7 @@ public:
    * @brief Gets the metallic texture of this material.
    * @return The pointer to the metallic texture.
    */
-  Texture* getMetallicTexture() const;
+  Texture* getMetallicTexture() const { return m_metallic_texture; }
 
   /**
    * @brief Checks if the material is using a texture for metallic.
@@ -145,13 +152,49 @@ public:
    * @brief Gets the emissive texture of this material.
    * @return The pointer to the emissive texture.
    */
-  Texture* getEmissiveTexture() const;
+  Texture* getEmissiveTexture() const { return m_emissive_texture; }
 
   /**
    * @brief Sets the emissive intensity for this material.
    * @param intensity The emissive intensity to set.
    */
   void setEmissiveIntensity(double intensity);
+
+  /**
+   * @brief Sets the transmission texture for this material.
+   * @param texture The texture to set as the transmission texture.
+   */
+  void setTransmissionTexture(Texture* texture);
+
+  /**
+   * @brief Sets the transmission value for this material.
+   * @param value The transmission value to set.
+   */
+  void setTransmissionValue(double value);
+
+  /**
+   * @brief Gets the transmission texture of this material.
+   * @return The pointer to the transmission texture.
+   */
+  Texture* getTransmissionTexture() const { return m_transmission_texture; }
+
+  /**
+   * @brief Sets whether to use a texture for transmission.
+   * @param use_texture True to use a texture, false to use a value.
+   */
+  void setUseTextureTransmission(bool use_texture);
+
+  /**
+   * @brief Checks if the material is using a texture for transmission.
+   * @return True if a texture is used for transmission, false otherwise.
+   */
+  bool isUsingTextureTransmission() const { return m_use_texture_transmission; }
+
+  /**
+   * @brief Sets the index of refraction for this material.
+   * @param ior The index of refraction to set.
+   */
+  void setIndexOfRefraction(double ior);
 
   /**
    * @brief Gets the albedo texture of this material.
@@ -187,6 +230,18 @@ public:
    * @return The emissive intensity.
    */
   double getEmissiveIntensity() const;
+
+  /**
+   * @brief Gets the transmission texture of this material.
+   * @return The transmission texture.
+   */
+  double getTransmission(TextureUV uv_coord) const;
+
+  /**
+   * @brief Gets the index of refraction of this material.
+   * @return The index of refraction.
+   */
+  double getIndexOfRefraction() const;
 
   ~Material() = default; ///< Default destructor.
 };

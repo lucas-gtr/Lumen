@@ -1,5 +1,6 @@
 // GCOVR_EXCL_START
 #include <QGuiApplication>
+#include <memory>
 
 #include "GPU/OpenGL/EngineGL.hpp"
 #include "OpenGLWidget.hpp"

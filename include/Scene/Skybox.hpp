@@ -12,7 +12,8 @@
 #include "Core/Color.hpp"
 #include "Core/ImageTypes.hpp"
 #include "Core/Observer.hpp"
-#include "Surface/Texture.hpp"
+
+class Texture;
 
 /**
  * @class Skybox
@@ -59,7 +60,7 @@ public:
    * @param direction The direction vector for which to get the color.
    * @return The color for the given direction.
    */
-  ColorRGBA getColor(const linalg::Vec3d& direction) const;
+  ColorRGB getColor(const linalg::Vec3d& direction) const;
 
   /**
    * @brief Gets the texture associated with the skybox.

@@ -9,30 +9,28 @@ TEST(SkyboxTest, DefaultConstructorUsesDefaultColor) {
   Skybox skybox;
 
   linalg::Vec3d direction(1.0, 0.0, 0.0);
-  ColorRGBA color = skybox.getColor(direction);
+  ColorRGB color = skybox.getColor(direction);
 
   EXPECT_DOUBLE_EQ(color.r, 0.0);
   EXPECT_DOUBLE_EQ(color.g, 0.0);
   EXPECT_DOUBLE_EQ(color.b, 0.0);
-  EXPECT_DOUBLE_EQ(color.a, 1.0);
 }
 
 TEST(SkyboxTest, SetTextureWithSingleColorReturnsCorrectColor) {
   Skybox skybox;
 
   linalg::Vec3d direction(0.0, 1.0, 0.0);
-  ColorRGBA color_rgb(0.2, 0.4, 0.6, 1.0);
+  ColorRGB color_rgb(0.2, 0.4, 0.6);
   Texture texture;
   texture.setValue(color_rgb);
   texture.setColorSpace(ColorSpace::LINEAR);
   skybox.setTexture(&texture);
 
-  ColorRGBA color = skybox.getColor(direction);
+  ColorRGB color = skybox.getColor(direction);
 
   color_rgb.toLinearSpace();
 
   EXPECT_EQ(color, color_rgb.toLinearSpace());
-  EXPECT_EQ(color.a, 1.0);
 }
 
 TEST(SkyboxTest, GetUVCoordinatesIsCorrectlyComputed) {
@@ -91,12 +89,11 @@ TEST(SkyboxTest, ReturnsDefaultColorAfterTextureIsResetToNull) {
   convertToLinearSpace(b);
 
   linalg::Vec3d direction(0.0, 0.0, 1.0);
-  ColorRGBA color = skybox.getColor(direction);
+  ColorRGB color = skybox.getColor(direction);
 
   EXPECT_DOUBLE_EQ(color.r, r);
   EXPECT_DOUBLE_EQ(color.g, g);
   EXPECT_DOUBLE_EQ(color.b, b);
-  EXPECT_DOUBLE_EQ(color.a, 1.0);
 }
 
 TEST(SkyboxTest, GetTexture) {

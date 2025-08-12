@@ -4,7 +4,6 @@
 #include <memory>
 #include <vector>
 
-#include "Core/Color.hpp"
 #include "Core/Config.hpp"
 #include "Core/Framebuffer.hpp"
 #include "Export/OutputFormat.hpp"
@@ -28,11 +27,19 @@ RenderExporter::RenderExporter(Framebuffer* framebuffer)
 
 void RenderExporter::updateImageToExport() {
   const double* framebuffer = m_framebuffer->getFramebuffer();
+  const int     pixel_count = m_framebuffer->getWidth() * m_framebuffer->getHeight();
+
   m_image_to_export.resize(m_framebuffer->getSize());
 
-  m_tone_mapping_strategy->apply(framebuffer, m_image_to_export.data(),
-                                 m_framebuffer->getWidth() * m_framebuffer->getHeight(),
-                                 m_framebuffer->getChannelCount());
+  m_tone_mapping_strategy->apply(framebuffer, m_image_to_export.data(), pixel_count, m_framebuffer->getChannelCount(),
+                                 m_channel_count);
+}
+
+void RenderExporter::setChannelCount(int channel_count) {
+  if(channel_count != 1 && channel_count != 3 && channel_count != 4) {
+    throw std::invalid_argument("Channel count must be 1 (grayscale), 3 (RGB), or 4 (RGBA).");
+  }
+  m_channel_count = channel_count;
 }
 
 void RenderExporter::setExposure(double exposure) {
@@ -110,22 +117,27 @@ void RenderExporter::setOutputFormat(OutputFormat output_format) {
 }
 
 bool RenderExporter::exportHDR() const {
-  std::vector<float> framebuffer(
-      static_cast<size_t>(m_framebuffer->getWidth() * m_framebuffer->getHeight() * m_framebuffer->getChannelCount()));
+  std::vector<float> framebuffer(m_framebuffer->getSize());
 
   for(size_t i = 0; i < framebuffer.size(); ++i) {
     framebuffer[i] = static_cast<float>(m_framebuffer->getFramebuffer()[i]);
   }
 
+  const auto pixel_count = static_cast<size_t>(m_framebuffer->getWidth()) * m_framebuffer->getHeight();
+  for(size_t i = 0; i < pixel_count; ++i) {
+    for(int channel = 0; channel < m_channel_count; ++channel) {
+      framebuffer[i * m_channel_count + channel] =
+          static_cast<float>(m_framebuffer->getFramebuffer()[m_channel_count * i + channel]);
+    }
+  }
+
   return OutputFormatHdr::WriteImageHdr(getPath() + getFilename(), m_framebuffer->getWidth(),
-                                        m_framebuffer->getHeight(), m_framebuffer->getChannelCount(),
-                                        framebuffer.data());
+                                        m_framebuffer->getHeight(), m_channel_count, framebuffer.data());
 }
 
 bool RenderExporter::exportLDR() const {
   return m_output_format_strategy->writeImage(getPath() + getFilename(), m_framebuffer->getWidth(),
-                                              m_framebuffer->getHeight(), m_framebuffer->getChannelCount(),
-                                              m_image_to_export.data());
+                                              m_framebuffer->getHeight(), m_channel_count, m_image_to_export.data());
 }
 
 bool RenderExporter::exportRender() {

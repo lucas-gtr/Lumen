@@ -1,4 +1,5 @@
 #include "Geometry/CubeMeshBuilder.hpp"
+#include "Geometry/Mesh.hpp"
 
 #include <gtest/gtest.h>
 

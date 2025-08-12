@@ -16,7 +16,8 @@
 #include "Scene/Scene.hpp"
 #include "SceneObjects/Object3D.hpp"
 #include "Surface/Material.hpp"
-#include <BVH/BVHNode.hpp>
+
+class BVHNode;
 
 /**
  * @struct RayHitInfo

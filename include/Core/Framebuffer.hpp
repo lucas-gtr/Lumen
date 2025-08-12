@@ -23,16 +23,18 @@ private:
   double*                          m_framebuffer = nullptr;
   std::vector<std::vector<double>> m_thread_buffers;
 
-  ImageProperties m_framebuffer_properties;
+  Resolution m_resolution;
+  int        m_channel_count = 3;
+  size_t     m_buffer_size   = 0;
 
   static thread_local int m_thread_id;
 
 public:
   /**
    * @brief Constructor for the Framebuffer class.
-   * @param framebuffer_properties The properties of the image (width, height, and channel count).
+   * @param resolution The resolution of the framebuffer.
    */
-  explicit Framebuffer(ImageProperties framebuffer_properties);
+  explicit Framebuffer(Resolution resolution);
 
   Framebuffer(const Framebuffer&)            = delete;
   Framebuffer& operator=(const Framebuffer&) = delete;
@@ -43,32 +45,32 @@ public:
    * @brief Gets the width of the framebuffer.
    * @return The width of the framebuffer.
    */
-  int getWidth() const { return m_framebuffer_properties.width; }
+  int getWidth() const { return m_resolution.width; }
 
   /**
    * @brief Gets the height of the framebuffer.
    * @return The height of the framebuffer.
    */
-  int getHeight() const { return m_framebuffer_properties.height; }
+  int getHeight() const { return m_resolution.height; }
 
   /**
-   * @brief Gets the number of channels per pixel.
-   * @return The number of channels per pixel.
+   * @brief Gets the resolution of the framebuffer.
+   * @return The resolution of the framebuffer.
    */
-  int getChannelCount() const { return m_framebuffer_properties.channels; }
+  int getChannelCount() const { return m_channel_count; }
 
   /**
    * @brief Gets the size of the framebuffer.
    * @return The size of the framebuffer.
    */
-  size_t getSize() const { return m_framebuffer_properties.bufferSize(); }
+  size_t getSize() const { return m_buffer_size; }
 
   /**
    * @brief Sets the properties of the framebuffer (width, height, and channel count).
    * @param framebuffer_properties The properties of the image to be set.
    * @note This method will clear the framebuffer and reallocate memory if the properties change.
    */
-  void setFramebufferProperties(ImageProperties framebuffer_properties);
+  void setResolution(Resolution resolution);
 
   /**
    * @brief Converts the framebuffer data to sRGB color space.
@@ -115,7 +117,7 @@ public:
    * @param color The color to set the pixel to.
    * @param weight The weight of the color to apply.
    */
-  void setPixelColor(const PixelCoord& pixel_coord, const ColorRGBA& color, double weight);
+  void setPixelColor(const PixelCoord& pixel_coord, const ColorRGB& color, double weight);
 
   double getMaximumValue() const;
 

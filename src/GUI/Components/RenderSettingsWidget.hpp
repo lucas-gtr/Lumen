@@ -51,16 +51,14 @@ public:
   ~RenderSettingsWidget() override; ///< Default destructor for the RenderSettingsWidget class.
 
 signals:
-  void renderStarted(ImageProperties properties);
+  void renderStarted(Resolution resolution);
   void renderProgress(RenderStats stats);
   void renderFinished(double elapsed_time);
 
 private slots:
   void onWidthChanged(int width);
   void onHeightChanged(int height);
-  void onFormatChanged(const QString& format);
   void onSamplesChanged(int samples);
-  void onBouncesChanged(int bounces);
   void onRenderModeChanged(const QString& mode);
   void onThreadCountChanged(int count);
   void onChunkSizeChanged(int size);

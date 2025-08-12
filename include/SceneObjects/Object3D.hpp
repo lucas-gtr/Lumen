@@ -11,7 +11,8 @@
 #include "Core/Observer.hpp"
 #include "Core/Transform.hpp"
 #include "Geometry/Mesh.hpp"
-#include "Surface/Material.hpp"
+
+class Material;
 
 /**
  * @class Object3D

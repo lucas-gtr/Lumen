@@ -1,6 +1,13 @@
 // GCOVR_EXCL_START
-#include "TexturesListModel.hpp"
+#include <QAbstractListModel>
+#include <QItemSelection>
+#include <QModelIndex>
+#include <QString>
+#include <QVariant>
+#include <string>
+
 #include "Surface/TextureManager.hpp"
+#include "TexturesListModel.hpp"
 
 TexturesListModel::TexturesListModel(TextureManager* texture_manager, QObject* parent)
     : QAbstractListModel(parent), m_texture_manager(texture_manager) {

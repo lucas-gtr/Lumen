@@ -9,9 +9,10 @@
 #include <string>
 
 #include "Core/Config.hpp"
-#include "Core/Framebuffer.hpp"
 #include "Export/OutputFormat.hpp"
 #include "PostProcessing/ToneMapping/ToneMapping.hpp"
+
+class Framebuffer;
 
 /**
  * @class RenderExporter
@@ -28,6 +29,8 @@ private:
   int                                   m_jpeg_quality  = DEFAULT_JPEG_QUALITY;
   OutputFormat                          m_output_format = OutputFormat::PNG;
   std::unique_ptr<OutputFormatStrategy> m_output_format_strategy;
+
+  int m_channel_count = 3;
 
   double                               m_exposure     = 1.0;
   double                               m_white_point  = DEFAULT_WHITE_POINT;
@@ -95,6 +98,18 @@ public:
    * @return The current output format of the render.
    */
   OutputFormat getOutputFormat() const { return m_output_format; }
+
+  /**
+   * @brief Sets the channel count for the render.
+   * @param channel_count The number of channels in the render (1 for grayscale, 3 for RGB, 4 for RGBA).
+   */
+  void setChannelCount(int channel_count);
+
+  /**
+   * @brief Retrieves the channel count for the render.
+   * @return The number of channels in the render (e.g., 3 for RGB, 4 for RGBA).
+   */
+  int getChannelCount() const { return m_channel_count; }
 
   /**
    * @brief Sets the tone mapping strategy for the render.

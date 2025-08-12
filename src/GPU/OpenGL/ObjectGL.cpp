@@ -1,7 +1,6 @@
 // GCOVR_EXCL_START
 #include <GL/gl.h>
 #include <GL/glext.h>
-#include <iostream>
 
 #include "Core/Config.hpp"
 #include "GPU/IObjectGPU.hpp"
