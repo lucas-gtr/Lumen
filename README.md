@@ -150,7 +150,6 @@ These are the available Make targets:
 
 Planned enhancements for future development:
 
-- **Next Event Estimation (NEE)**: Improve light transport efficiency by explicitly sampling direct illumination from light sources at each bounce.
 - **Real-Time Viewport Enhancements**: Add support for post-processing effects such as Bloom, Fog, and Screen Space Ambient Occlusion (SSAO) to enhance visual realism.
 - **Deferred Shading Pipeline**: Introduce a deferred renderer to decouple geometry pass from lighting calculations, allowing efficient rendering of complex scenes with many lights.
 - **glTF Support**: Implement a glTF 2.0 parser for loading entire scenes.

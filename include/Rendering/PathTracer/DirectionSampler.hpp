@@ -27,7 +27,7 @@ inline linalg::Vec3d sampleCosineHemisphere(const linalg::Mat3d& tbn_matrix) {
 }
 
 inline double pdfCosineHemisphere(double probability, const linalg::Vec3d& normal, const linalg::Vec3d& direction) {
-  return probability * std::max(DOT_TOLERANCE, linalg::dot(normal, direction)) / PI;
+  return probability * std::max(0.0, linalg::dot(normal, direction)) / PI;
 }
 
 inline linalg::Vec3d sampleHalfVectorGgx(double roughness, const linalg::Mat3d& tbn_matrix) {
@@ -44,15 +44,53 @@ inline linalg::Vec3d sampleHalfVectorGgx(double roughness, const linalg::Mat3d& 
   return tbn_matrix * half_vector;
 }
 
+inline double pdfHalfVectorGgx(double probability, double roughness, const linalg::Vec3d& incident,
+                               const linalg::Vec3d& normal, const linalg::Vec3d& half_vector) {
+  double cos_theta_v = std::max(0.0, linalg::dot(incident, normal));
+  if(cos_theta_v == 0.0) {
+    return 0.0;
+  }
+  return probability * PBR::getDistributionGgx(normal, half_vector, roughness) / (4.0 * cos_theta_v);
+}
+
+inline linalg::Vec3d sampleRefractedDirection(const linalg::Vec3d& incident, const linalg::Vec3d& normal,
+                                              double ior_from, double ior_to) {
+  const double cos_theta_i = std::max(0.0, linalg::dot(incident, normal));
+  const double ior_ratio   = ior_from / ior_to;
+
+  const linalg::Vec3d refracted_dir =
+      -(ior_ratio)*incident +
+      normal * (cos_theta_i * ior_ratio - std::sqrt(1 - (ior_ratio * ior_ratio) * (1 - cos_theta_i * cos_theta_i)));
+
+  return refracted_dir.normalized();
+}
+
+inline double pdfRefractedDirection(double probability, const linalg::Vec3d& incident, double roughness,
+                                    const linalg::Vec3d& normal, const linalg::Vec3d& direction, double ior_from,
+                                    double ior_to) {
+
+  linalg::Vec3d half_vector = (incident * ior_from + direction * ior_to).normalized();
+  if(ior_from < ior_to) {
+    half_vector = -half_vector;
+  }
+
+  const double cos_theta_o = std::max(0.0, linalg::dot(direction, -half_vector));
+  if(linalg::dot(direction, normal) >= 0.0) {
+    return 0.0;
+  }
+  const double cos_theta_i = std::max(0.0, linalg::dot(incident, half_vector));
+  const double denominator = (ior_from * cos_theta_i + ior_to * cos_theta_o);
+
+  const double numerator = (ior_to * ior_to) * cos_theta_o;
+
+  const double D = PBR::getDistributionGgx(normal, half_vector, roughness);
+
+  return probability * D * numerator / (denominator * denominator);
+}
+
 inline linalg::Vec3d sampleLight(const LightSample* light_sample, const linalg::Vec3d& position) {
   const linalg::Vec3d sample_point = light_sample->randomSample();
   return (sample_point - position).normalized();
-}
-
-inline double pdfHalfVectorGgx(double probability, double roughness, const linalg::Vec3d& incident,
-                               const linalg::Vec3d& normal, const linalg::Vec3d& half_vector) {
-  return probability * PBR::getDistributionGgx(normal, half_vector, roughness) /
-         (4.0 * std::max(DOT_TOLERANCE, linalg::dot(incident, normal))); // NOLINT
 }
 
 inline double pdfLightSample(int num_light, const RayHitInfo& hit, const linalg::Vec3d& direction) {
@@ -65,18 +103,25 @@ inline double pdfLightSample(int num_light, const RayHitInfo& hit, const linalg:
 
   const double cos_light = std::max(DOT_TOLERANCE, dot(direction, -hit.normal));
 
+  // if(cos_light == 0.0) {
+  //   return 0.0;
+  // }
+
   return (hit.distance * hit.distance) / (num_light * cos_light * hit.area);
 }
 
-inline std::vector<double> pdfListBrdf(double reflection_probability, double roughness, const linalg::Vec3d& incident,
-                                       const linalg::Vec3d& normal, const linalg::Vec3d& outgoing_direction) {
+inline std::vector<double> pdfListBsdf(double reflection_prob, double transmission_prob, double roughness,
+                                       const linalg::Vec3d& incident, const linalg::Vec3d& normal,
+                                       const linalg::Vec3d& outgoing_direction, double ior_from, double ior_to) {
   std::vector<double> pdf_list;
-  pdf_list.reserve(2);
+  pdf_list.reserve(3);
 
   const linalg::Vec3d half_vector = (incident + outgoing_direction).normalized();
 
-  pdf_list.push_back(pdfCosineHemisphere(1 - reflection_probability, normal, outgoing_direction));
-  pdf_list.push_back(pdfHalfVectorGgx(reflection_probability, roughness, incident, normal, half_vector));
+  pdf_list.push_back(pdfCosineHemisphere(1 - reflection_prob, normal, outgoing_direction));
+  pdf_list.push_back(pdfHalfVectorGgx(reflection_prob, roughness, incident, normal, half_vector));
+  pdf_list.push_back(
+      pdfRefractedDirection(transmission_prob, incident, roughness, normal, outgoing_direction, ior_from, ior_to));
 
   return pdf_list;
 }

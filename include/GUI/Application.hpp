@@ -33,6 +33,7 @@ private:
   void        createCornellBoxScene();
   void        createSphereScene();
   void        createRoughnessScene();
+  void        createTransmissionScene();
 
   void        debugPBR();
   static void SetStylesheet();

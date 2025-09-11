@@ -19,6 +19,7 @@
 #include "SceneObjects/Camera.hpp"
 #include "SceneObjects/Object3D.hpp"
 #include "Surface/MaterialManager.hpp"
+#include "Surface/TextureLoader.hpp"
 #include "Surface/TextureManager.hpp"
 
 Application::Application(int& argc, char** argv)
@@ -30,9 +31,10 @@ Application::Application(int& argc, char** argv)
   // createDefaultScene();
   createCornellBoxScene();
   // createSphereScene();
+  // createTransmissionScene();
   // createRoughnessScene();
 
-  // debugPBR();
+  debugPBR();
 
   m_window = new MainWindow(m_scene.get(), m_texture_manager.get(), m_material_manager.get()); // NOLINT
   m_window->setAttribute(Qt::WA_QuitOnClose);
@@ -55,6 +57,33 @@ void Application::createDefaultScene() {
   m_scene->setSkybox(TextureManager::DefaultSkyboxTexture());
 }
 
+void Application::createTransmissionScene() {
+  m_material_manager->addMaterial("Glass");
+  m_material_manager->getMaterial("Glass")->setTransmissionValue(1.0);
+  m_material_manager->getMaterial("Glass")->setIndexOfRefraction(1.5);
+  m_material_manager->getMaterial("Glass")->setRoughnessValue(0.0);
+
+  const SphereMeshBuilder sphere_mesh_builder(1.0, 64, 32);
+  auto                    sphere_mesh = sphere_mesh_builder.build();
+  auto                    sphere1     = std::make_unique<Object3D>(sphere_mesh);
+  sphere1->setPosition({0.0, 0.0, 0.0});
+  sphere1->setMaterial(m_material_manager->getMaterial("Glass"));
+  m_scene->addObject("Glass Sphere", std::move(sphere1));
+
+  m_texture_manager->addTexture("Skybox");
+  m_texture_manager->getTexture("Skybox")->loadFromFile("Resources/Textures/citrus_orchard_road_puresky_4k.hdr");
+  m_texture_manager->getTexture("Skybox")->setColorSpace(ColorSpace::LINEAR);
+  m_scene->setSkybox(m_texture_manager->getTexture("Skybox"));
+
+  Camera* camera = m_scene->getCamera();
+  camera->setPosition({0.0, 0.0, -10.0});
+  camera->setRotationDeg({0.0, -180.0, 0.0});
+  camera->setHorizontalFov(40.0);
+  camera->setFarPlane(5000.0);
+  camera->setAperture(22.0);
+  camera->setFocusDistance(10.0);
+}
+
 void Application::createCornellBoxScene() {
   m_material_manager->addMaterial("Red");
   m_texture_manager->addTexture("RedDiffuse");
@@ -75,8 +104,10 @@ void Application::createCornellBoxScene() {
   m_material_manager->getMaterial("White")->setDiffuseTexture(m_texture_manager->getTexture("WhiteDiffuse"));
   m_material_manager->getMaterial("White")->setRoughnessValue(0.5);
 
-  m_material_manager->addMaterial("Mirror");
-  m_material_manager->getMaterial("Mirror")->setMetallicValue(1.0);
+  m_material_manager->addMaterial("Glass");
+  m_material_manager->getMaterial("Glass")->setMetallicValue(1.0);
+  m_material_manager->getMaterial("Glass")->setIndexOfRefraction(1.5);
+  m_material_manager->getMaterial("Glass")->setRoughnessValue(0.0);
 
   m_material_manager->addMaterial("Light");
   m_texture_manager->addTexture("LightEmissive");
@@ -142,7 +173,7 @@ void Application::createCornellBoxScene() {
   auto left_sphere_object = std::make_unique<Object3D>(sphere_mesh);
   left_sphere_object->setPosition({92.5, 82.5, 152.5});
   left_sphere_object->setRotationDeg({0.0, 15.0, 0.0});
-  left_sphere_object->setMaterial(m_material_manager->getMaterial("White"));
+  left_sphere_object->setMaterial(m_material_manager->getMaterial("Glass"));
   m_scene->addObject("Right Cube", std::move(left_sphere_object));
 
   Camera* camera = m_scene->getCamera();
@@ -354,17 +385,24 @@ void Application::debugPBR() {
   m_scene->buildBVH();
   renderer.setupRayEmitterParameters();
 
-  const PixelCoord pixel(120, 307);
+  const PixelCoord pixel(265, 731);
   const double     dx = (1 / 800.0);
   const double     dy = (1 / 800.0);
 
   PixelCoord sub_pixel(1, 1);
 
-  ColorRGB  color(0.0);
-  const int iterations = 100; // 3x3 grid of sub-pixels
+  ColorRGB     color(0.0);
+  const int    iterations      = 100;
+  const double sqrt_iterations = std::sqrt(iterations);
   for(int i = 0; i < iterations; ++i) {
-    sub_pixel.x = i % static_cast<int>(std::sqrt(iterations));
-    sub_pixel.y = i / static_cast<int>(std::sqrt(iterations));
+    sub_pixel.x = i % static_cast<int>(sqrt_iterations);
+    sub_pixel.y = i / static_cast<int>(sqrt_iterations);
+
+    const ColorRGB pixel_color = renderer.getPixelColor(pixel, dx, dy, sub_pixel, 1.0 / sqrt_iterations);
+    if(pixel_color.r > 10.0) {
+      // std::cout << "Bright pixel color: " << pixel_color.r << ", " << pixel_color.g << ", " << pixel_color.b << "\n";
+    }
+    color += pixel_color / iterations;
   }
 
   convertToSRGBSpace(color.r);
