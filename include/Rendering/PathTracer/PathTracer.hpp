@@ -16,14 +16,14 @@ private:
 
   static PBR::BSDFInput CreateBsdfInput(const RayHitInfo& hit_info, const linalg::Vec3d& incoming_dir);
 
-  static linalg::Vec3d Reflect(const linalg::Vec3d& incident, const linalg::Vec3d& normal) {
-    return incident - 2 * linalg::dot(incident, normal) * normal;
-  }
+  static linalg::Vec3d SampleOutgoingDirection(const PBR::BSDFInput& input, const PBR::LobeProbabilities& lobe_probs,
+                                               const linalg::Mat3d& tbn, const linalg::Vec3d& micro_normal,
+                                               double& pdf);
 
-  static linalg::Vec3d SampleOutgoingDirection(const PBR::BSDFInput& input, const linalg::Mat3d& tbn, double& pdf);
-
-  ColorRGB        computeDirectLighting(const PBR::BSDFInput& input, const linalg::Vec3d& hit_position) const;
   static ColorRGB ComputeBsdfContribution(const PBR::BSDFInput& input, const linalg::Vec3d& outgoing_dir, double pdf);
+
+  ColorRGB computeDirectLighting(const PBR::BSDFInput& input, const PBR::LobeProbabilities& lobe_probs,
+                                 const linalg::Vec3d& hit_position) const;
 
 public:
   PathTracer() = default;

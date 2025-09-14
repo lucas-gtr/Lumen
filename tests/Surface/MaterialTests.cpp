@@ -174,7 +174,7 @@ TEST(MaterialTest, SetTransmissionTexture) {
 
 TEST(MaterialTest, DefaultIOR) {
     Material material;
-    EXPECT_DOUBLE_EQ(material.getIndexOfRefraction(), 1.0);
+    EXPECT_DOUBLE_EQ(material.getIndexOfRefraction(), 1.5);
 }
 
 TEST(MaterialTest, SetIOR) {

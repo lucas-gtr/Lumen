@@ -95,15 +95,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac1abb3f43f04010f2ecdc16abbb3b1be" id="r_ac1abb3f43f04010f2ecdc16abbb3b1be"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#ac1abb3f43f04010f2ecdc16abbb3b1be">getTriangleIntersection</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const linalg::Vec3d &amp;p0, const linalg::Vec3d &amp;p1, const linalg::Vec3d &amp;p2, double &amp;hit_distance, linalg::Vec3d &amp;bary_coords)</td></tr>
-<tr class="memdesc:ac1abb3f43f04010f2ecdc16abbb3b1be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for intersection between a ray and a triangle defined by three points.  <br /></td></tr>
-<tr class="separator:ac1abb3f43f04010f2ecdc16abbb3b1be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0b74d99b0ccd8ad017f98a41f9c8228" id="r_aa0b74d99b0ccd8ad017f98a41f9c8228"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#aa0b74d99b0ccd8ad017f98a41f9c8228">processFaceIntersection</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const <a class="el" href="classMesh.html">Mesh</a> &amp;mesh, const <a class="el" href="structFace.html">Face</a> &amp;face, <a class="el" href="structRayHitInfo.html">RayHitInfo</a> &amp;closest_hit)</td></tr>
 <tr class="memdesc:aa0b74d99b0ccd8ad017f98a41f9c8228"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the intersection of a ray with a face in a mesh.  <br /></td></tr>
 <tr class="separator:aa0b74d99b0ccd8ad017f98a41f9c8228"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76b731fb7ea3a7ac4552b90d8ed07197" id="r_a76b731fb7ea3a7ac4552b90d8ed07197"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a76b731fb7ea3a7ac4552b90d8ed07197">updateHitInfoFromBarycentric</a> (<a class="el" href="structRayHitInfo.html">RayHitInfo</a> &amp;hit_info, double distance, const linalg::Vec3d &amp;bary, const <a class="el" href="structVertex.html">Vertex</a> &amp;v0, const <a class="el" href="structVertex.html">Vertex</a> &amp;v1, const <a class="el" href="structVertex.html">Vertex</a> &amp;v2)</td></tr>
-<tr class="memdesc:a76b731fb7ea3a7ac4552b90d8ed07197"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the <a class="el" href="structRayHitInfo.html" title="Structure that holds information about a ray intersection.">RayHitInfo</a> with barycentric coordinates and vertex information.  <br /></td></tr>
-<tr class="separator:a76b731fb7ea3a7ac4552b90d8ed07197"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d8be2a4c366ee5a69f0f0b011a6793d" id="r_a9d8be2a4c366ee5a69f0f0b011a6793d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRayHitInfo.html">RayHitInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a9d8be2a4c366ee5a69f0f0b011a6793d">getMeshIntersectionWithBVH</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const <a class="el" href="classMesh.html">Mesh</a> &amp;mesh)</td></tr>
 <tr class="memdesc:a9d8be2a4c366ee5a69f0f0b011a6793d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the intersection of a ray with a mesh using a <a class="el" href="namespaceBVH.html" title="Namespace for Bounding Volume Hierarchy (BVH) related functions.">BVH</a>.  <br /></td></tr>
 <tr class="separator:a9d8be2a4c366ee5a69f0f0b011a6793d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,18 +110,9 @@ Functions</h2></td></tr>
 <tr class="memitem:adfd5b7fa4d8f7c00503dbde587fc9b6d" id="r_adfd5b7fa4d8f7c00503dbde587fc9b6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#adfd5b7fa4d8f7c00503dbde587fc9b6d">updateNormalWithTangentSpace</a> (<a class="el" href="structRayHitInfo.html">RayHitInfo</a> &amp;hit_info)</td></tr>
 <tr class="memdesc:adfd5b7fa4d8f7c00503dbde587fc9b6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the normal vector in the hit information using tangent space.  <br /></td></tr>
 <tr class="separator:adfd5b7fa4d8f7c00503dbde587fc9b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8250133de9c2e677707dded1c46fd6f" id="r_aa8250133de9c2e677707dded1c46fd6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRay.html">Ray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#aa8250133de9c2e677707dded1c46fd6f">transformRayToObjectSpace</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const <a class="el" href="classObject3D.html">Object3D</a> *object)</td></tr>
-<tr class="memdesc:aa8250133de9c2e677707dded1c46fd6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a ray from world space to object space.  <br /></td></tr>
-<tr class="separator:aa8250133de9c2e677707dded1c46fd6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50261cf0e3ca183ae3b0ea427df5ad91" id="r_a50261cf0e3ca183ae3b0ea427df5ad91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a50261cf0e3ca183ae3b0ea427df5ad91">transformHitInfoToWorldSpace</a> (<a class="el" href="structRayHitInfo.html">RayHitInfo</a> &amp;hit_info, const <a class="el" href="structRay.html">Ray</a> &amp;local_ray, const <a class="el" href="structRay.html">Ray</a> &amp;original_ray, const <a class="el" href="classObject3D.html">Object3D</a> *object)</td></tr>
-<tr class="memdesc:a50261cf0e3ca183ae3b0ea427df5ad91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms the hit information from object space to world space.  <br /></td></tr>
-<tr class="separator:a50261cf0e3ca183ae3b0ea427df5ad91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac54b3b3579e4786bb20dbbf6de74786a" id="r_ac54b3b3579e4786bb20dbbf6de74786a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRayHitInfo.html">RayHitInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#ac54b3b3579e4786bb20dbbf6de74786a">getObjectIntersection</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const <a class="el" href="classObject3D.html">Object3D</a> *object)</td></tr>
 <tr class="memdesc:ac54b3b3579e4786bb20dbbf6de74786a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the intersection information of a ray with an object in the scene.  <br /></td></tr>
 <tr class="separator:ac54b3b3579e4786bb20dbbf6de74786a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33f57296c5bf396c11711040f4f9cc2d" id="r_a33f57296c5bf396c11711040f4f9cc2d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a33f57296c5bf396c11711040f4f9cc2d">getAABBIntersection</a> (const linalg::Vec3d &amp;origin, const linalg::Vec3d &amp;inv_dir, const linalg::Vec3d &amp;min_bound, const linalg::Vec3d &amp;max_bound, double &amp;hit_distance)</td></tr>
-<tr class="memdesc:a33f57296c5bf396c11711040f4f9cc2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a ray intersects with an axis-aligned bounding box (AABB).  <br /></td></tr>
-<tr class="separator:a33f57296c5bf396c11711040f4f9cc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab66d92c959f852f29067f533763429cc" id="r_ab66d92c959f852f29067f533763429cc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structRayIntersection_1_1RayBVHHitInfo.html">RayBVHHitInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#ab66d92c959f852f29067f533763429cc">getBVHIntersection</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const <a class="el" href="classBVHNode.html">BVHNode</a> *bvh_node)</td></tr>
 <tr class="memdesc:ab66d92c959f852f29067f533763429cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the intersection information of a ray with a <a class="el" href="namespaceBVH.html" title="Namespace for Bounding Volume Hierarchy (BVH) related functions.">BVH</a> node.  <br /></td></tr>
 <tr class="separator:ab66d92c959f852f29067f533763429cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,6 +128,21 @@ Functions</h2></td></tr>
 <tr class="memitem:a69407475c8a132dd692f8efc8276dfdf" id="r_a69407475c8a132dd692f8efc8276dfdf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRayHitInfo.html">RayHitInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a69407475c8a132dd692f8efc8276dfdf">getSceneIntersection</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const <a class="el" href="classScene.html">Scene</a> *scene)</td></tr>
 <tr class="memdesc:a69407475c8a132dd692f8efc8276dfdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the intersection information of a ray with the scene.  <br /></td></tr>
 <tr class="separator:a69407475c8a132dd692f8efc8276dfdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1abb3f43f04010f2ecdc16abbb3b1be" id="r_ac1abb3f43f04010f2ecdc16abbb3b1be"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#ac1abb3f43f04010f2ecdc16abbb3b1be">getTriangleIntersection</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const linalg::Vec3d &amp;p0, const linalg::Vec3d &amp;p1, const linalg::Vec3d &amp;p2, double &amp;hit_distance, linalg::Vec3d &amp;bary_coords)</td></tr>
+<tr class="memdesc:ac1abb3f43f04010f2ecdc16abbb3b1be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for intersection between a ray and a triangle defined by three points.  <br /></td></tr>
+<tr class="separator:ac1abb3f43f04010f2ecdc16abbb3b1be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33f57296c5bf396c11711040f4f9cc2d" id="r_a33f57296c5bf396c11711040f4f9cc2d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a33f57296c5bf396c11711040f4f9cc2d">getAABBIntersection</a> (const linalg::Vec3d &amp;origin, const linalg::Vec3d &amp;inv_dir, const linalg::Vec3d &amp;min_bound, const linalg::Vec3d &amp;max_bound, double &amp;hit_distance)</td></tr>
+<tr class="memdesc:a33f57296c5bf396c11711040f4f9cc2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a ray intersects with an axis-aligned bounding box (AABB).  <br /></td></tr>
+<tr class="separator:a33f57296c5bf396c11711040f4f9cc2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76b731fb7ea3a7ac4552b90d8ed07197" id="r_a76b731fb7ea3a7ac4552b90d8ed07197"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a76b731fb7ea3a7ac4552b90d8ed07197">updateHitInfoFromBarycentric</a> (<a class="el" href="structRayHitInfo.html">RayHitInfo</a> &amp;hit_info, double distance, const linalg::Vec3d &amp;bary, const <a class="el" href="structVertex.html">Vertex</a> &amp;v0, const <a class="el" href="structVertex.html">Vertex</a> &amp;v1, const <a class="el" href="structVertex.html">Vertex</a> &amp;v2)</td></tr>
+<tr class="memdesc:a76b731fb7ea3a7ac4552b90d8ed07197"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the <a class="el" href="structRayHitInfo.html" title="Structure that holds information about a ray intersection.">RayHitInfo</a> with barycentric coordinates and vertex information.  <br /></td></tr>
+<tr class="separator:a76b731fb7ea3a7ac4552b90d8ed07197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8250133de9c2e677707dded1c46fd6f" id="r_aa8250133de9c2e677707dded1c46fd6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRay.html">Ray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#aa8250133de9c2e677707dded1c46fd6f">transformRayToObjectSpace</a> (const <a class="el" href="structRay.html">Ray</a> &amp;ray, const <a class="el" href="classObject3D.html">Object3D</a> *object)</td></tr>
+<tr class="memdesc:aa8250133de9c2e677707dded1c46fd6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a ray from world space to object space.  <br /></td></tr>
+<tr class="separator:aa8250133de9c2e677707dded1c46fd6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50261cf0e3ca183ae3b0ea427df5ad91" id="r_a50261cf0e3ca183ae3b0ea427df5ad91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceRayIntersection.html#a50261cf0e3ca183ae3b0ea427df5ad91">transformHitInfoToWorldSpace</a> (<a class="el" href="structRayHitInfo.html">RayHitInfo</a> &amp;hit_info, const <a class="el" href="structRay.html">Ray</a> &amp;local_ray, const <a class="el" href="structRay.html">Ray</a> &amp;original_ray, const <a class="el" href="classObject3D.html">Object3D</a> *object)</td></tr>
+<tr class="memdesc:a50261cf0e3ca183ae3b0ea427df5ad91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms the hit information from object space to world space.  <br /></td></tr>
+<tr class="separator:a50261cf0e3ca183ae3b0ea427df5ad91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -159,6 +159,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool RayIntersection::getAABBIntersection </td>
@@ -196,6 +199,11 @@ Variables</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Checks if a ray intersects with an axis-aligned bounding box (AABB). </p>
@@ -560,6 +568,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool RayIntersection::getTriangleIntersection </td>
@@ -603,6 +614,11 @@ Variables</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Checks for intersection between a ray and a triangle defined by three points. </p>
@@ -677,6 +693,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void RayIntersection::transformHitInfoToWorldSpace </td>
@@ -708,6 +727,11 @@ Variables</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Transforms the hit information from object space to world space. </p>
@@ -728,6 +752,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="structRay.html">Ray</a> RayIntersection::transformRayToObjectSpace </td>
@@ -747,6 +774,11 @@ Variables</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Transforms a ray from world space to object space. </p>
@@ -766,6 +798,9 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void RayIntersection::updateHitInfoFromBarycentric </td>
@@ -809,6 +844,11 @@ Variables</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Updates the <a class="el" href="structRayHitInfo.html" title="Structure that holds information about a ray intersection.">RayHitInfo</a> with barycentric coordinates and vertex information. </p>

@@ -127,7 +127,7 @@ TEST(MaterialManagerTest, DefaultMaterialProperties) {
     EXPECT_DOUBLE_EQ(defaultMaterial->getRoughness({0, 0}), 0.5);
     EXPECT_DOUBLE_EQ(defaultMaterial->getMetalness({0, 0}), 0.0);
     EXPECT_DOUBLE_EQ(defaultMaterial->getTransmission({0, 0}), 0.0);
-    EXPECT_DOUBLE_EQ(defaultMaterial->getIndexOfRefraction(), 1.0);
+    EXPECT_DOUBLE_EQ(defaultMaterial->getIndexOfRefraction(), 1.5);
 }
 
 TEST(MaterialManagerTest, GetAllMaterialsName) {

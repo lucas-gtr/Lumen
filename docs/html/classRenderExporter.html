@@ -125,6 +125,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a37dbf5c8366f74dc3cbc0dd8c5f02416" id="r_a37dbf5c8366f74dc3cbc0dd8c5f02416"><td class="memItemLeft" align="right" valign="top"><a class="el" href="OutputFormat_8hpp.html#a98dc27a624eda851a90dea794d0e715b">OutputFormat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a37dbf5c8366f74dc3cbc0dd8c5f02416">getOutputFormat</a> () const</td></tr>
 <tr class="memdesc:a37dbf5c8366f74dc3cbc0dd8c5f02416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current output format.  <br /></td></tr>
 <tr class="separator:a37dbf5c8366f74dc3cbc0dd8c5f02416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aef697b8ee761f9488cd034b1df2f89" id="r_a2aef697b8ee761f9488cd034b1df2f89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a2aef697b8ee761f9488cd034b1df2f89">setChannelCount</a> (int channel_count)</td></tr>
+<tr class="memdesc:a2aef697b8ee761f9488cd034b1df2f89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the channel count for the render.  <br /></td></tr>
+<tr class="separator:a2aef697b8ee761f9488cd034b1df2f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88ce1c2a50d6fb5f5f7c4a373f75eeb5" id="r_a88ce1c2a50d6fb5f5f7c4a373f75eeb5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#a88ce1c2a50d6fb5f5f7c4a373f75eeb5">getChannelCount</a> () const</td></tr>
+<tr class="memdesc:a88ce1c2a50d6fb5f5f7c4a373f75eeb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the channel count for the render.  <br /></td></tr>
+<tr class="separator:a88ce1c2a50d6fb5f5f7c4a373f75eeb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9f5c022178f8df6b10c486fc0394245" id="r_ae9f5c022178f8df6b10c486fc0394245"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRenderExporter.html#ae9f5c022178f8df6b10c486fc0394245">setToneMapping</a> (<a class="el" href="ToneMapping_8hpp.html#a864b9093408eb25e8a8f0e9bf1aa8efb">ToneMapping</a> tone_mapping)</td></tr>
 <tr class="memdesc:ae9f5c022178f8df6b10c486fc0394245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the tone mapping strategy for the render.  <br /></td></tr>
 <tr class="separator:ae9f5c022178f8df6b10c486fc0394245"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -293,6 +299,34 @@ Public Member Functions</h2></td></tr>
 
 <p>Exports the render to the specified location. </p>
 <dl class="section return"><dt>Returns</dt><dd>True if the export was successful, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a88ce1c2a50d6fb5f5f7c4a373f75eeb5" name="a88ce1c2a50d6fb5f5f7c4a373f75eeb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88ce1c2a50d6fb5f5f7c4a373f75eeb5">&#9670;&#160;</a></span>getChannelCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int RenderExporter::getChannelCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the channel count for the render. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of channels in the render (e.g., 3 for RGB, 4 for RGBA). </dd></dl>
 
 </div>
 </div>
@@ -597,6 +631,32 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2aef697b8ee761f9488cd034b1df2f89" name="a2aef697b8ee761f9488cd034b1df2f89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2aef697b8ee761f9488cd034b1df2f89">&#9670;&#160;</a></span>setChannelCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RenderExporter::setChannelCount </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>channel_count</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the channel count for the render. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel_count</td><td>The number of channels in the render (1 for grayscale, 3 for RGB, 4 for RGBA). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

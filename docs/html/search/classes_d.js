@@ -15,6 +15,5 @@ var searchData=
   ['spotlight_12',['SpotLight',['../classSpotLight.html',1,'']]],
   ['spotlightgl_13',['SpotLightGL',['../classSpotLightGL.html',1,'']]],
   ['spotlightgpu_14',['SpotLightGPU',['../classSpotLightGPU.html',1,'']]],
-  ['squarespinbox_15',['SquareSpinBox',['../classSquareSpinBox.html',1,'']]],
-  ['surfaceinteraction_16',['SurfaceInteraction',['../structPBR_1_1SurfaceInteraction.html',1,'PBR']]]
+  ['squarespinbox_15',['SquareSpinBox',['../classSquareSpinBox.html',1,'']]]
 ];

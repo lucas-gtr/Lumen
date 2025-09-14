@@ -44,25 +44,14 @@ inline linalg::Vec3d sampleHalfVectorGgx(double roughness, const linalg::Mat3d& 
   return tbn_matrix * half_vector;
 }
 
-inline double pdfHalfVectorGgx(double probability, double roughness, const linalg::Vec3d& incident,
-                               const linalg::Vec3d& normal, const linalg::Vec3d& half_vector) {
-  double cos_theta_v = std::max(0.0, linalg::dot(incident, normal));
+inline double pdfReflectedDirection(double probability, double roughness, const linalg::Vec3d& incident,
+                                    const linalg::Vec3d& normal, const linalg::Vec3d& half_vector) {
+  const double cos_theta_v = std::max(0.0, linalg::dot(incident, normal));
   if(cos_theta_v == 0.0) {
     return 0.0;
   }
-  return probability * PBR::getDistributionGgx(normal, half_vector, roughness) / (4.0 * cos_theta_v);
-}
-
-inline linalg::Vec3d sampleRefractedDirection(const linalg::Vec3d& incident, const linalg::Vec3d& normal,
-                                              double ior_from, double ior_to) {
-  const double cos_theta_i = std::max(0.0, linalg::dot(incident, normal));
-  const double ior_ratio   = ior_from / ior_to;
-
-  const linalg::Vec3d refracted_dir =
-      -(ior_ratio)*incident +
-      normal * (cos_theta_i * ior_ratio - std::sqrt(1 - (ior_ratio * ior_ratio) * (1 - cos_theta_i * cos_theta_i)));
-
-  return refracted_dir.normalized();
+  return probability * PBR::getDistributionGgx(normal, half_vector, roughness) /
+         (4.0 * cos_theta_v); // NOLINT(cppcoreguidelines-avoid-magic-numbers,readability-magic-numbers)
 }
 
 inline double pdfRefractedDirection(double probability, const linalg::Vec3d& incident, double roughness,
@@ -73,7 +62,6 @@ inline double pdfRefractedDirection(double probability, const linalg::Vec3d& inc
   if(ior_from < ior_to) {
     half_vector = -half_vector;
   }
-
   const double cos_theta_o = std::max(0.0, linalg::dot(direction, -half_vector));
   if(linalg::dot(direction, normal) >= 0.0) {
     return 0.0;
@@ -83,9 +71,8 @@ inline double pdfRefractedDirection(double probability, const linalg::Vec3d& inc
 
   const double numerator = (ior_to * ior_to) * cos_theta_o;
 
-  const double D = PBR::getDistributionGgx(normal, half_vector, roughness);
-
-  return probability * D * numerator / (denominator * denominator);
+  return probability * PBR::getDistributionGgx(normal, half_vector, roughness) * numerator /
+         (denominator * denominator);
 }
 
 inline linalg::Vec3d sampleLight(const LightSample* light_sample, const linalg::Vec3d& position) {
@@ -103,14 +90,10 @@ inline double pdfLightSample(int num_light, const RayHitInfo& hit, const linalg:
 
   const double cos_light = std::max(DOT_TOLERANCE, dot(direction, -hit.normal));
 
-  // if(cos_light == 0.0) {
-  //   return 0.0;
-  // }
-
   return (hit.distance * hit.distance) / (num_light * cos_light * hit.area);
 }
 
-inline std::vector<double> pdfListBsdf(double reflection_prob, double transmission_prob, double roughness,
+inline std::vector<double> pdfListBsdf(PBR::LobeProbabilities lobe_probs, double roughness,
                                        const linalg::Vec3d& incident, const linalg::Vec3d& normal,
                                        const linalg::Vec3d& outgoing_direction, double ior_from, double ior_to) {
   std::vector<double> pdf_list;
@@ -118,10 +101,10 @@ inline std::vector<double> pdfListBsdf(double reflection_prob, double transmissi
 
   const linalg::Vec3d half_vector = (incident + outgoing_direction).normalized();
 
-  pdf_list.push_back(pdfCosineHemisphere(1 - reflection_prob, normal, outgoing_direction));
-  pdf_list.push_back(pdfHalfVectorGgx(reflection_prob, roughness, incident, normal, half_vector));
-  pdf_list.push_back(
-      pdfRefractedDirection(transmission_prob, incident, roughness, normal, outgoing_direction, ior_from, ior_to));
+  pdf_list.push_back(pdfCosineHemisphere(lobe_probs.diffuse, normal, outgoing_direction));
+  pdf_list.push_back(pdfReflectedDirection(lobe_probs.specular, roughness, incident, normal, half_vector));
+  pdf_list.push_back(pdfRefractedDirection(lobe_probs.transmission, incident, roughness, normal, outgoing_direction,
+                                           ior_from, ior_to));
 
   return pdf_list;
 }

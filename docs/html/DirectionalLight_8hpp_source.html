@@ -94,7 +94,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;linalg/Vec3.hpp&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="CommonTypes_8hpp.html">Core/CommonTypes.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="Color_8hpp.html">Core/Color.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="Light_8hpp.html">Lighting/Light.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
@@ -125,9 +125,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#endif </span><span class="comment">// LIGHTING_DIRECTIONALLIGHT_HPP</span></div>
 </div>
 </div>
-<div class="ttc" id="aCommonTypes_8hpp_html"><div class="ttname"><a href="CommonTypes_8hpp.html">CommonTypes.hpp</a></div><div class="ttdoc">Header file for common types used in the project.</div></div>
+<div class="ttc" id="aColor_8hpp_html"><div class="ttname"><a href="Color_8hpp.html">Color.hpp</a></div><div class="ttdoc">Header file for color utility.</div></div>
 <div class="ttc" id="aLight_8hpp_html"><div class="ttname"><a href="Light_8hpp.html">Light.hpp</a></div><div class="ttdoc">Header file for the Light class.</div></div>
-<div class="ttc" id="aLight_8hpp_html_a334f02e8b0313de02a05fab6e8bf4c12"><div class="ttname"><a href="Light_8hpp.html#a334f02e8b0313de02a05fab6e8bf4c12">LightType</a></div><div class="ttdeci">LightType</div><div class="ttdef"><b>Definition</b> Light.hpp:15</div></div>
+<div class="ttc" id="aLight_8hpp_html_a334f02e8b0313de02a05fab6e8bf4c12"><div class="ttname"><a href="Light_8hpp.html#a334f02e8b0313de02a05fab6e8bf4c12">LightType</a></div><div class="ttdeci">LightType</div><div class="ttdef"><b>Definition</b> Light.hpp:16</div></div>
 <div class="ttc" id="aLight_8hpp_html_a334f02e8b0313de02a05fab6e8bf4c12ab6f2249394a4def60a78b342dcc925b9"><div class="ttname"><a href="Light_8hpp.html#a334f02e8b0313de02a05fab6e8bf4c12ab6f2249394a4def60a78b342dcc925b9">LightType::DIRECTIONAL</a></div><div class="ttdeci">@ DIRECTIONAL</div></div>
 <div class="ttc" id="aclassDirectionalLight_html"><div class="ttname"><a href="classDirectionalLight.html">DirectionalLight</a></div><div class="ttdoc">A class representing a directional light source in a 3D scene.</div><div class="ttdef"><b>Definition</b> DirectionalLight.hpp:20</div></div>
 <div class="ttc" id="aclassDirectionalLight_html_a002d003ff6540c9d8d44d28fc5de3fba"><div class="ttname"><a href="classDirectionalLight.html#a002d003ff6540c9d8d44d28fc5de3fba">DirectionalLight::operator=</a></div><div class="ttdeci">DirectionalLight &amp; operator=(DirectionalLight &amp;&amp;)=delete</div></div>
@@ -140,8 +140,8 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="aclassDirectionalLight_html_ae8535003ce3f45978522630edfdef955"><div class="ttname"><a href="classDirectionalLight.html#ae8535003ce3f45978522630edfdef955">DirectionalLight::operator=</a></div><div class="ttdeci">DirectionalLight &amp; operator=(const DirectionalLight &amp;)=delete</div></div>
 <div class="ttc" id="aclassDirectionalLight_html_aea6a2c56380faab93b08fc99f0d4adcd"><div class="ttname"><a href="classDirectionalLight.html#aea6a2c56380faab93b08fc99f0d4adcd">DirectionalLight::~DirectionalLight</a></div><div class="ttdeci">~DirectionalLight() override=default</div><div class="ttdoc">Default destructor.</div></div>
 <div class="ttc" id="aclassDirectionalLight_html_af5059170002016bc5a5e895aee4edca4"><div class="ttname"><a href="classDirectionalLight.html#af5059170002016bc5a5e895aee4edca4">DirectionalLight::getLightFactor</a></div><div class="ttdeci">ColorRGB getLightFactor(const linalg::Vec3d &amp;point, const linalg::Vec3d &amp;normal) const override</div><div class="ttdoc">Gets the light factor at a given point and normal.</div><div class="ttdef"><b>Definition</b> DirectionalLight.cpp:19</div></div>
-<div class="ttc" id="aclassLight_html"><div class="ttname"><a href="classLight.html">Light</a></div><div class="ttdoc">A class representing a light source in a 3D scene.</div><div class="ttdef"><b>Definition</b> Light.hpp:26</div></div>
-<div class="ttc" id="astructColorRGB_html"><div class="ttname"><a href="structColorRGB.html">ColorRGB</a></div><div class="ttdoc">Forward declaration for ColorRGBA.</div><div class="ttdef"><b>Definition</b> CommonTypes.hpp:65</div></div>
+<div class="ttc" id="aclassLight_html"><div class="ttname"><a href="classLight.html">Light</a></div><div class="ttdoc">A class representing a light source in a 3D scene.</div><div class="ttdef"><b>Definition</b> Light.hpp:27</div></div>
+<div class="ttc" id="astructColorRGB_html"><div class="ttname"><a href="structColorRGB.html">ColorRGB</a></div><div class="ttdoc">Forward declaration for ColorRGBA.</div><div class="ttdef"><b>Definition</b> Color.hpp:67</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

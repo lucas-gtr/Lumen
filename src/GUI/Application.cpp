@@ -105,9 +105,9 @@ void Application::createCornellBoxScene() {
   m_material_manager->getMaterial("White")->setRoughnessValue(0.5);
 
   m_material_manager->addMaterial("Glass");
-  m_material_manager->getMaterial("Glass")->setMetallicValue(1.0);
+  m_material_manager->getMaterial("Glass")->setTransmissionValue(1.0);
   m_material_manager->getMaterial("Glass")->setIndexOfRefraction(1.5);
-  m_material_manager->getMaterial("Glass")->setRoughnessValue(0.0);
+  m_material_manager->getMaterial("Glass")->setRoughnessValue(1.0);
 
   m_material_manager->addMaterial("Light");
   m_texture_manager->addTexture("LightEmissive");
@@ -116,77 +116,77 @@ void Application::createCornellBoxScene() {
   m_material_manager->getMaterial("Light")->setEmissiveTexture(m_texture_manager->getTexture("LightEmissive"));
   m_material_manager->getMaterial("Light")->setEmissiveIntensity(15.0);
 
-  const PlaneMeshBuilder plane_builder(555.0, 555.0);
+  const PlaneMeshBuilder plane_builder(5.55, 5.55);
   auto                   plane_mesh = plane_builder.build();
 
   auto floor_object = std::make_unique<Object3D>(plane_mesh);
-  floor_object->setPosition({0, 0.0, 277.5});
+  floor_object->setPosition({0, 0.0, 2.775});
   floor_object->setMaterial(m_material_manager->getMaterial("White"));
   m_scene->addObject("Floor", std::move(floor_object));
 
   auto ceiling_object = std::make_unique<Object3D>(plane_mesh);
-  ceiling_object->setPosition({0, 555.0, 277.5});
+  ceiling_object->setPosition({0, 5.55, 2.775});
   ceiling_object->setRotationDeg({180.0, 0.0, 0.0});
   ceiling_object->setMaterial(m_material_manager->getMaterial("White"));
   m_scene->addObject("Ceiling", std::move(ceiling_object));
 
   auto right_wall_object = std::make_unique<Object3D>(plane_mesh);
-  right_wall_object->setPosition({-277.5, 277.5, 277.5});
+  right_wall_object->setPosition({-2.775, 2.775, 2.775});
   right_wall_object->setRotationDeg({0.0, 0.0, -90.0});
   right_wall_object->setMaterial(m_material_manager->getMaterial("Red"));
   m_scene->addObject("Right Wall", std::move(right_wall_object));
 
   auto left_wall_object = std::make_unique<Object3D>(plane_mesh);
-  left_wall_object->setPosition({277.5, 277.5, 277.5});
+  left_wall_object->setPosition({2.775, 2.775, 2.775});
   left_wall_object->setRotationDeg({0.0, 0.0, 90.0});
   left_wall_object->setMaterial(m_material_manager->getMaterial("Green"));
   m_scene->addObject("Left Wall", std::move(left_wall_object));
 
   auto back_wall_object = std::make_unique<Object3D>(plane_mesh);
-  back_wall_object->setPosition({0.0, 277.5, 555.5});
+  back_wall_object->setPosition({0.0, 2.775, 5.555});
   back_wall_object->setRotationDeg({-90.0, 0.0, 0.0});
   back_wall_object->setMaterial(m_material_manager->getMaterial("White"));
   m_scene->addObject("Back Wall", std::move(back_wall_object));
 
-  const PlaneMeshBuilder light_plane_builder(130.0, 105.0);
+  const PlaneMeshBuilder light_plane_builder(1.3, 1.05);
   auto                   light_plane_mesh = light_plane_builder.build();
 
   auto light_object = std::make_unique<Object3D>(light_plane_mesh);
-  light_object->setPosition({0, 554.0, 277.5});
+  light_object->setPosition({0, 5.54, 2.775});
   light_object->setRotationDeg({180.0, 0.0, 0.0});
   light_object->setMaterial(m_material_manager->getMaterial("Light"));
   m_scene->addObject("Light", std::move(light_object));
 
-  const CubeMeshBuilder cube_mesh_builder(165.0);
+  const CubeMeshBuilder cube_mesh_builder(1.65);
   auto                  cube_mesh = cube_mesh_builder.build();
 
   auto right_cube_object = std::make_unique<Object3D>(cube_mesh);
-  right_cube_object->setPosition({-92.5, 165, 327.5});
+  right_cube_object->setPosition({-0.925, 1.65, 3.275});
   right_cube_object->setRotationDeg({0.0, -18.0, 0.0});
   right_cube_object->setScaleY(2.0);
-  right_cube_object->setMaterial(m_material_manager->getMaterial("White"));
+  right_cube_object->setMaterial(m_material_manager->getMaterial("Glass"));
   m_scene->addObject("Left Cube", std::move(right_cube_object));
 
-  const SphereMeshBuilder sphere_mesh_builder(82.5, 128, 128);
+  const SphereMeshBuilder sphere_mesh_builder(0.825, 128, 128);
   auto                    sphere_mesh = sphere_mesh_builder.build();
 
   auto left_sphere_object = std::make_unique<Object3D>(sphere_mesh);
-  left_sphere_object->setPosition({92.5, 82.5, 152.5});
+  left_sphere_object->setPosition({0.925, 0.825, 1.525});
   left_sphere_object->setRotationDeg({0.0, 15.0, 0.0});
   left_sphere_object->setMaterial(m_material_manager->getMaterial("Glass"));
   m_scene->addObject("Right Cube", std::move(left_sphere_object));
 
   Camera* camera = m_scene->getCamera();
-  camera->setPosition({0.0, 278.0, -800.0});
+  camera->setPosition({0.0, 2.780, -8.0});
   camera->setRotationDeg({0.0, -180.0, 0.0});
   camera->setHorizontalFov(40.0);
   camera->setFarPlane(5000.0);
   camera->setAperture(22.0);
-  camera->setFocusDistance(900.0);
+  camera->setFocusDistance(9.0);
 
   auto point_light = std::make_unique<PointLight>();
-  point_light->setIntensity(100000.0);
-  point_light->setPosition({0.0, 554.0, 277.5});
+  point_light->setIntensity(10.0);
+  point_light->setPosition({0.0, 5.54, 2.775});
   m_scene->addLight("Point Light", std::move(point_light));
 }
 
@@ -385,7 +385,7 @@ void Application::debugPBR() {
   m_scene->buildBVH();
   renderer.setupRayEmitterParameters();
 
-  const PixelCoord pixel(265, 731);
+  const PixelCoord pixel(399, 379);
   const double     dx = (1 / 800.0);
   const double     dy = (1 / 800.0);
 
@@ -399,9 +399,6 @@ void Application::debugPBR() {
     sub_pixel.y = i / static_cast<int>(sqrt_iterations);
 
     const ColorRGB pixel_color = renderer.getPixelColor(pixel, dx, dy, sub_pixel, 1.0 / sqrt_iterations);
-    if(pixel_color.r > 10.0) {
-      // std::cout << "Bright pixel color: " << pixel_color.r << ", " << pixel_color.g << ", " << pixel_color.b << "\n";
-    }
     color += pixel_color / iterations;
   }
 

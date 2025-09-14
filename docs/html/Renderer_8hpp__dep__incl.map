@@ -1,13 +1,15 @@
 <map id="/home/lucasgtr/lumen/include/Rendering/Renderer.hpp" name="/home/lucasgtr/lumen/include/Rendering/Renderer.hpp">
-<area shape="rect" id="Node000001" title="Header file for the Renderer class." alt="" coords="399,5,632,45"/>
-<area shape="rect" id="Node000002" href="$RenderSettingsWidget_8hpp.html" title="Header file for the RenderSettingsWidget class, which provides a user interface for configuring rende..." alt="" coords="5,93,268,148"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="426,51,244,96,242,91,425,46"/>
-<area shape="rect" id="Node000004" href="$MultiThreadedCPU_8cpp.html" title=" " alt="" coords="293,93,506,148"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="483,56,434,95,430,91,479,52"/>
-<area shape="rect" id="Node000005" href="$Renderer_8cpp.html" title=" " alt="" coords="531,101,735,141"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="551,52,611,99,607,103,548,56"/>
-<area shape="rect" id="Node000006" href="$SingleThreaded_8cpp.html" title=" " alt="" coords="759,101,1005,141"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="603,46,809,98,807,103,602,51"/>
-<area shape="rect" id="Node000003" href="$RenderSettingsWidget_8cpp.html" title=" " alt="" coords="5,196,268,251"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="139,162,139,196,134,196,134,162"/>
+<area shape="rect" id="Node000001" title="Header file for the Renderer class." alt="" coords="484,5,717,45"/>
+<area shape="rect" id="Node000002" href="$Application_8cpp.html" title=" " alt="" coords="5,101,183,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="471,48,338,69,196,96,164,103,163,98,195,91,337,64,470,42"/>
+<area shape="rect" id="Node000003" href="$RenderSettingsWidget_8hpp.html" title="Header file for the RenderSettingsWidget class, which provides a user interface for configuring rende..." alt="" coords="207,93,469,148"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="536,52,413,96,411,91,534,47"/>
+<area shape="rect" id="Node000005" href="$MultiThreadedCPU_8cpp.html" title=" " alt="" coords="494,93,707,148"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="603,59,603,93,598,93,598,59"/>
+<area shape="rect" id="Node000006" href="$Renderer_8cpp.html" title=" " alt="" coords="732,101,936,141"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="662,48,788,98,786,103,660,53"/>
+<area shape="rect" id="Node000007" href="$SingleThreaded_8cpp.html" title=" " alt="" coords="960,101,1207,141"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="712,45,949,91,987,98,986,103,948,96,711,51"/>
+<area shape="rect" id="Node000004" href="$RenderSettingsWidget_8cpp.html" title=" " alt="" coords="207,196,469,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="341,162,341,196,335,196,335,162"/>
 </map>

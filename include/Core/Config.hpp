@@ -82,6 +82,9 @@ static constexpr int              DEFAULT_JPEG_QUALITY = 90;
 static constexpr int              MIN_JPEG_QUALITY     = 1;
 static constexpr int              MAX_JPEG_QUALITY     = 100;
 
+//<-------- PATH TRACER --------->
+static constexpr int DEFAULT_MAX_BOUNCES = 20;
+
 //<-------- POST-PROCESSING --------->
 static constexpr double DEFAULT_WHITE_POINT = 10.0;
 
@@ -99,6 +102,7 @@ static constexpr int    MAX_PREVIEW_TEXTURE_SIZE    = 256;
 //<-------- MATERIAL --------->
 static constexpr double MAX_EMISSIVE_STRENGTH   = 1000.0;
 static constexpr double DEFAULT_ROUGHNESS_VALUE = 0.5;
+static constexpr double DEFAULT_IOR             = 1.5;
 static constexpr double MAX_IOR                 = 4.0;
 
 //<-------- LIGHT --------->

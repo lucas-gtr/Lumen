@@ -41,7 +41,7 @@ private:
   double   m_transmission_value       = 0.0;
   bool     m_use_texture_transmission = false;
 
-  double m_index_of_refraction = 1.5;
+  double m_index_of_refraction = DEFAULT_IOR;
 
   Observer<const Material*> m_material_changed_observer;
 

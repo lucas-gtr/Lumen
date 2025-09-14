@@ -112,7 +112,7 @@ void Transform::updateTransformationMatrix() {
 
   const linalg::Mat4d scale_matrix4d(m_scale_matrix);
 
-  m_transformation_matrix = m_translation_matrix * scale_matrix4d * rotation_matrix4d;
+  m_transformation_matrix = m_translation_matrix * rotation_matrix4d * scale_matrix4d;
   updateInverseMatrix();
   updateNormalMatrix();
 
