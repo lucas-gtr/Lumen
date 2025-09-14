@@ -16,9 +16,10 @@ class Texture;
 
 /**
  * @class Material
- * @brief Class representing a material with albedo and normal textures.
+ * @brief Class representing a material with albedo, normal, roughness, metallic, emissive, and transmission properties.
  *
- * This class encapsulates the properties of a material, including its albedo and normal textures.
+ * The Material class encapsulates various textures and properties that define the appearance of a surface in a 3D
+ * scene.
  */
 class Material {
 private:
@@ -40,7 +41,7 @@ private:
   double   m_transmission_value       = 0.0;
   bool     m_use_texture_transmission = false;
 
-  double m_index_of_refraction = 1.0;
+  double m_index_of_refraction = DEFAULT_IOR;
 
   Observer<const Material*> m_material_changed_observer;
 

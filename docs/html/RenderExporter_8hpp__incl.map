@@ -1,46 +1,38 @@
 <map id="/home/lucasgtr/lumen/include/Export/RenderExporter.hpp" name="/home/lucasgtr/lumen/include/Export/RenderExporter.hpp">
-<area shape="rect" id="Node000001" title="Header file for the RenderExporter class." alt="" coords="388,5,638,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="9,101,86,126"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="388,43,248,64,99,96,89,99,88,94,98,91,247,59,387,38"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="726,181,785,207"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="640,40,689,60,712,74,732,92,745,109,752,129,758,167,753,168,747,130,740,111,728,95,709,78,687,64,638,45"/>
-<area shape="rect" id="Node000004" href="$Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="460,328,585,353"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="639,36,703,56,733,72,760,91,779,111,789,131,800,181,800,214,789,243,768,267,739,286,706,302,670,315,599,332,598,327,668,310,704,297,737,282,764,263,784,240,795,213,794,182,784,133,775,114,757,95,730,76,701,61,638,41"/>
-<area shape="rect" id="Node000007" href="$Framebuffer_8hpp.html" title="Header file for the Framebuffer class." alt="" coords="110,101,273,126"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="443,48,248,100,247,95,442,43"/>
-<area shape="rect" id="Node000014" href="$OutputFormat_8hpp.html" title="Header file for the OutputFormatStrategy class." alt="" coords="532,101,718,126"/>
-<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="539,43,600,90,597,94,536,48"/>
-<area shape="rect" id="Node000016" href="$ToneMapping_8hpp.html" title="Header file for the ToneMappingStrategy class." alt="" coords="297,93,508,133"/>
-<area shape="poly" id="edge20_Node000001_Node000016" title=" " alt="" coords="490,48,439,87,436,83,487,43"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="170,401,240,427"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="472,356,255,404,253,399,471,351"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="474,401,571,427"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="525,354,525,388,520,388,520,354"/>
-<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="173,128,117,166,84,192,53,222,28,254,12,287,10,320,14,336,23,352,50,378,85,395,122,405,157,409,156,415,121,410,83,400,47,382,19,355,9,338,4,320,7,285,24,251,49,218,81,188,114,162,170,124"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="440,181,503,207"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="233,123,428,178,426,183,232,129"/>
-<area shape="rect" id="Node000009" href="$CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="98,255,278,280"/>
-<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="194,126,191,241,186,241,189,126"/>
-<area shape="poly" id="edge14_Node000009_Node000004" title=" " alt="" coords="242,277,455,322,454,328,241,283"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="260,328,345,353"/>
-<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="208,278,273,318,271,323,205,282"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="369,328,436,353"/>
-<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="223,277,357,322,355,327,221,283"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="33,328,132,353"/>
-<area shape="poly" id="edge12_Node000009_Node000012" title=" " alt="" coords="172,282,112,323,109,318,169,278"/>
-<area shape="rect" id="Node000013" title=" " alt="" coords="156,328,236,353"/>
-<area shape="poly" id="edge13_Node000009_Node000013" title=" " alt="" coords="192,280,196,314,190,315,186,281"/>
-<area shape="poly" id="edge17_Node000014_Node000003" title=" " alt="" coords="646,124,726,172,723,176,643,128"/>
-<area shape="poly" id="edge19_Node000014_Node000008" title=" " alt="" coords="604,129,508,177,505,173,601,124"/>
-<area shape="poly" id="edge16_Node000014_Node000011" title=" " alt="" coords="639,125,653,141,665,162,671,185,666,208,652,224,631,240,573,273,448,326,446,321,571,268,628,236,648,220,661,205,666,185,660,164,648,144,635,128"/>
-<area shape="rect" id="Node000015" title=" " alt="" coords="527,181,651,207"/>
-<area shape="poly" id="edge18_Node000014_Node000015" title=" " alt="" coords="622,127,602,170,598,168,617,125"/>
-<area shape="poly" id="edge23_Node000016_Node000008" title=" " alt="" coords="421,132,454,169,450,172,417,135"/>
-<area shape="poly" id="edge21_Node000016_Node000011" title=" " alt="" coords="405,133,405,314,400,314,400,133"/>
-<area shape="poly" id="edge22_Node000016_Node000015" title=" " alt="" coords="448,131,550,173,548,178,446,136"/>
-<area shape="rect" id="Node000017" href="$ColorUtils_8hpp.html" title="Header file for color utility functions." alt="" coords="216,181,364,207"/>
-<area shape="poly" id="edge24_Node000016_Node000017" title=" " alt="" coords="377,136,320,175,317,171,374,131"/>
-<area shape="poly" id="edge26_Node000017_Node000009" title=" " alt="" coords="275,209,217,249,214,244,272,204"/>
-<area shape="rect" id="Node000018" title=" " alt="" coords="302,255,364,280"/>
-<area shape="poly" id="edge25_Node000017_Node000018" title=" " alt="" coords="300,206,321,242,317,244,295,208"/>
+<area shape="rect" id="Node000001" title="Header file for the RenderExporter class." alt="" coords="125,5,376,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,101,83,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,48,85,98,83,93,204,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="105,181,164,207"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="204,48,173,68,148,95,140,112,135,131,134,168,129,167,130,130,135,110,143,92,169,63,201,43"/>
+<area shape="rect" id="Node000004" href="$Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="704,255,829,280"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="377,31,429,39,485,51,540,68,592,91,643,125,689,166,726,207,753,242,748,245,722,211,685,170,640,129,589,96,538,73,483,56,428,44,376,37"/>
+<area shape="rect" id="Node000007" href="$OutputFormat_8hpp.html" title="Header file for the OutputFormatStrategy class." alt="" coords="157,101,344,126"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="253,46,253,87,248,87,248,46"/>
+<area shape="rect" id="Node000011" href="$ToneMapping_8hpp.html" title="Header file for the ToneMappingStrategy class." alt="" coords="368,93,579,133"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="300,43,413,86,411,91,299,48"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="677,328,747,353"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="760,282,731,319,727,316,756,279"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="771,328,869,353"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="778,279,805,316,801,319,773,282"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="235,128,165,176,162,171,232,124"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="195,181,261,207"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="250,127,238,169,233,167,245,125"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="286,181,410,207"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="267,124,325,171,321,175,263,128"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="434,181,497,207"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="283,124,422,174,420,179,281,129"/>
+<area shape="poly" id="edge12_Node000011_Node000008" title=" " alt="" coords="415,136,275,181,273,175,414,131"/>
+<area shape="poly" id="edge13_Node000011_Node000009" title=" " alt="" coords="444,136,379,176,376,172,442,131"/>
+<area shape="poly" id="edge14_Node000011_Node000010" title=" " alt="" coords="474,134,471,168,465,167,469,133"/>
+<area shape="rect" id="Node000012" href="$Color_8hpp.html" title="Header file for color utility." alt="" coords="521,181,639,207"/>
+<area shape="poly" id="edge15_Node000011_Node000012" title=" " alt="" coords="501,131,554,171,551,175,498,136"/>
+<area shape="poly" id="edge20_Node000012_Node000004" title=" " alt="" coords="611,204,724,247,723,252,609,209"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="507,255,592,280"/>
+<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="577,208,562,243,557,241,572,206"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="617,255,679,280"/>
+<area shape="poly" id="edge17_Node000012_Node000014" title=" " alt="" coords="593,205,629,243,625,246,589,209"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="280,255,379,280"/>
+<area shape="poly" id="edge18_Node000012_Node000015" title=" " alt="" coords="540,209,384,253,382,248,539,204"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="403,255,483,280"/>
+<area shape="poly" id="edge19_Node000012_Node000016" title=" " alt="" coords="559,209,478,251,476,246,557,204"/>
 </map>

@@ -83,7 +83,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Class representing a material with albedo and normal textures.  
+<p>Class representing a material with albedo, normal, roughness, metallic, emissive, and transmission properties.  
  <a href="classMaterial.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Material_8hpp_source.html">Material.hpp</a>&gt;</code></p>
@@ -155,31 +155,55 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a55897f02adcd7240af8ad7f3301d4e58" id="r_a55897f02adcd7240af8ad7f3301d4e58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#a55897f02adcd7240af8ad7f3301d4e58">setEmissiveIntensity</a> (double intensity)</td></tr>
 <tr class="memdesc:a55897f02adcd7240af8ad7f3301d4e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the emissive intensity for this material.  <br /></td></tr>
 <tr class="separator:a55897f02adcd7240af8ad7f3301d4e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f5d491ebcacee8b2e3525ec368b60e7" id="r_a6f5d491ebcacee8b2e3525ec368b60e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structColorRGBA.html">ColorRGBA</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#a6f5d491ebcacee8b2e3525ec368b60e7">getDiffuse</a> (<a class="el" href="structTextureUV.html">TextureUV</a> uv_coord) const</td></tr>
-<tr class="memdesc:a6f5d491ebcacee8b2e3525ec368b60e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the albedo texture of this material.  <br /></td></tr>
-<tr class="separator:a6f5d491ebcacee8b2e3525ec368b60e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44d49f443cadbe15da3c47f6b04bc30c" id="r_a44d49f443cadbe15da3c47f6b04bc30c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#a44d49f443cadbe15da3c47f6b04bc30c">setTransmissionTexture</a> (<a class="el" href="classTexture.html">Texture</a> *texture)</td></tr>
+<tr class="memdesc:a44d49f443cadbe15da3c47f6b04bc30c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the transmission texture for this material.  <br /></td></tr>
+<tr class="separator:a44d49f443cadbe15da3c47f6b04bc30c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada3659558839e70c732d37bde51a30bd" id="r_ada3659558839e70c732d37bde51a30bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#ada3659558839e70c732d37bde51a30bd">setTransmissionValue</a> (double value)</td></tr>
+<tr class="memdesc:ada3659558839e70c732d37bde51a30bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the transmission value for this material.  <br /></td></tr>
+<tr class="separator:ada3659558839e70c732d37bde51a30bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0676c78e423b938da2ca6884045a21b8" id="r_a0676c78e423b938da2ca6884045a21b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTexture.html">Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#a0676c78e423b938da2ca6884045a21b8">getTransmissionTexture</a> () const</td></tr>
+<tr class="memdesc:a0676c78e423b938da2ca6884045a21b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the transmission texture of this material.  <br /></td></tr>
+<tr class="separator:a0676c78e423b938da2ca6884045a21b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c47f6053f73e51ea7a56f2045cce5fc" id="r_a9c47f6053f73e51ea7a56f2045cce5fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#a9c47f6053f73e51ea7a56f2045cce5fc">setUseTextureTransmission</a> (bool use_texture)</td></tr>
+<tr class="memdesc:a9c47f6053f73e51ea7a56f2045cce5fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether to use a texture for transmission.  <br /></td></tr>
+<tr class="separator:a9c47f6053f73e51ea7a56f2045cce5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a627ffc5066c17dd0088bf0cfb2ba2bfa" id="r_a627ffc5066c17dd0088bf0cfb2ba2bfa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#a627ffc5066c17dd0088bf0cfb2ba2bfa">isUsingTextureTransmission</a> () const</td></tr>
+<tr class="memdesc:a627ffc5066c17dd0088bf0cfb2ba2bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the material is using a texture for transmission.  <br /></td></tr>
+<tr class="separator:a627ffc5066c17dd0088bf0cfb2ba2bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae32e560c73a6a75ed92fcd050e89d280" id="r_ae32e560c73a6a75ed92fcd050e89d280"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#ae32e560c73a6a75ed92fcd050e89d280">setIndexOfRefraction</a> (double ior)</td></tr>
+<tr class="memdesc:ae32e560c73a6a75ed92fcd050e89d280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the index of refraction for this material.  <br /></td></tr>
+<tr class="separator:ae32e560c73a6a75ed92fcd050e89d280"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab764df54ff0563220f508052058e10fe" id="r_ab764df54ff0563220f508052058e10fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structColorRGB.html">ColorRGB</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#ab764df54ff0563220f508052058e10fe">getDiffuse</a> (<a class="el" href="structTextureUV.html">TextureUV</a> uv_coord) const</td></tr>
+<tr class="memdesc:ab764df54ff0563220f508052058e10fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the albedo texture of this material.  <br /></td></tr>
+<tr class="separator:ab764df54ff0563220f508052058e10fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11ef7ca3922b018db53e7329a18f4c18" id="r_a11ef7ca3922b018db53e7329a18f4c18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structColorRGB.html">ColorRGB</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#a11ef7ca3922b018db53e7329a18f4c18">getNormal</a> (<a class="el" href="structTextureUV.html">TextureUV</a> uv_coord) const</td></tr>
 <tr class="memdesc:a11ef7ca3922b018db53e7329a18f4c18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the normal texture of this material.  <br /></td></tr>
 <tr class="separator:a11ef7ca3922b018db53e7329a18f4c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a9a5d73c01628c9ec29a0561ff5612d" id="r_a9a9a5d73c01628c9ec29a0561ff5612d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#a9a9a5d73c01628c9ec29a0561ff5612d">getRoughness</a> (<a class="el" href="structTextureUV.html">TextureUV</a> uv_coord) const</td></tr>
 <tr class="memdesc:a9a9a5d73c01628c9ec29a0561ff5612d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the roughness texture of this material.  <br /></td></tr>
 <tr class="separator:a9a9a5d73c01628c9ec29a0561ff5612d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51024c4fe6a6596e905bd9093c779de7" id="r_a51024c4fe6a6596e905bd9093c779de7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#a51024c4fe6a6596e905bd9093c779de7">getMetallic</a> (<a class="el" href="structTextureUV.html">TextureUV</a> uv_coord) const</td></tr>
-<tr class="memdesc:a51024c4fe6a6596e905bd9093c779de7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the metallic texture of this material.  <br /></td></tr>
-<tr class="separator:a51024c4fe6a6596e905bd9093c779de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff9a0d1979abeb1bdb404d17853eefe1" id="r_aff9a0d1979abeb1bdb404d17853eefe1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#aff9a0d1979abeb1bdb404d17853eefe1">getMetalness</a> (<a class="el" href="structTextureUV.html">TextureUV</a> uv_coord) const</td></tr>
+<tr class="memdesc:aff9a0d1979abeb1bdb404d17853eefe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the metallic texture of this material.  <br /></td></tr>
+<tr class="separator:aff9a0d1979abeb1bdb404d17853eefe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02302ccaa180cdb61ee309637e8a7d9b" id="r_a02302ccaa180cdb61ee309637e8a7d9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structColorRGB.html">ColorRGB</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#a02302ccaa180cdb61ee309637e8a7d9b">getEmissive</a> (<a class="el" href="structTextureUV.html">TextureUV</a> uv_coord) const</td></tr>
 <tr class="memdesc:a02302ccaa180cdb61ee309637e8a7d9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the emissive texture of this material.  <br /></td></tr>
 <tr class="separator:a02302ccaa180cdb61ee309637e8a7d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a828448b67f30600380df91ecc276c774" id="r_a828448b67f30600380df91ecc276c774"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#a828448b67f30600380df91ecc276c774">getEmissiveIntensity</a> () const</td></tr>
 <tr class="memdesc:a828448b67f30600380df91ecc276c774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the emissive intensity of this material.  <br /></td></tr>
 <tr class="separator:a828448b67f30600380df91ecc276c774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab91dd123b06f0053c59f2ce541d9785a" id="r_ab91dd123b06f0053c59f2ce541d9785a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#ab91dd123b06f0053c59f2ce541d9785a">getTransmission</a> (<a class="el" href="structTextureUV.html">TextureUV</a> uv_coord) const</td></tr>
+<tr class="memdesc:ab91dd123b06f0053c59f2ce541d9785a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the transmission texture of this material.  <br /></td></tr>
+<tr class="separator:ab91dd123b06f0053c59f2ce541d9785a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91b881c0ae99b2b00f633256f618b43d" id="r_a91b881c0ae99b2b00f633256f618b43d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#a91b881c0ae99b2b00f633256f618b43d">getIndexOfRefraction</a> () const</td></tr>
+<tr class="memdesc:a91b881c0ae99b2b00f633256f618b43d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the index of refraction of this material.  <br /></td></tr>
+<tr class="separator:a91b881c0ae99b2b00f633256f618b43d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac61ec3cbd9a4ca9e59ef8fd8e74406ab" id="r_ac61ec3cbd9a4ca9e59ef8fd8e74406ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMaterial.html#ac61ec3cbd9a4ca9e59ef8fd8e74406ab">~Material</a> ()=default</td></tr>
 <tr class="memdesc:ac61ec3cbd9a4ca9e59ef8fd8e74406ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
 <tr class="separator:ac61ec3cbd9a4ca9e59ef8fd8e74406ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class representing a material with albedo and normal textures. </p>
-<p>This class encapsulates the properties of a material, including its albedo and normal textures. </p>
+<div class="textblock"><p>Class representing a material with albedo, normal, roughness, metallic, emissive, and transmission properties. </p>
+<p>The <a class="el" href="classMaterial.html" title="Class representing a material with albedo, normal, roughness, metallic, emissive, and transmission pr...">Material</a> class encapsulates various textures and properties that define the appearance of a surface in a 3D scene. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6059ec72855855b11672ff25962e9336" name="a6059ec72855855b11672ff25962e9336"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6059ec72855855b11672ff25962e9336">&#9670;&#160;</a></span>Material() <span class="overload">[1/3]</span></h2>
@@ -288,14 +312,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6f5d491ebcacee8b2e3525ec368b60e7" name="a6f5d491ebcacee8b2e3525ec368b60e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f5d491ebcacee8b2e3525ec368b60e7">&#9670;&#160;</a></span>getDiffuse()</h2>
+<a id="ab764df54ff0563220f508052058e10fe" name="ab764df54ff0563220f508052058e10fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab764df54ff0563220f508052058e10fe">&#9670;&#160;</a></span>getDiffuse()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structColorRGBA.html">ColorRGBA</a> Material::getDiffuse </td>
+          <td class="memname"><a class="el" href="structColorRGB.html">ColorRGB</a> Material::getDiffuse </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structTextureUV.html">TextureUV</a>&#160;</td>
           <td class="paramname"><em>uv_coord</em></td><td>)</td>
@@ -314,6 +338,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classTexture.html">Texture</a> * Material::getDiffuseTexture </td>
@@ -322,6 +349,11 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the diffuse texture of this material. </p>
@@ -375,6 +407,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classTexture.html">Texture</a> * Material::getEmissiveTexture </td>
@@ -383,10 +418,35 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the emissive texture of this material. </p>
 <dl class="section return"><dt>Returns</dt><dd>The pointer to the emissive texture. </dd></dl>
+
+</div>
+</div>
+<a id="a91b881c0ae99b2b00f633256f618b43d" name="a91b881c0ae99b2b00f633256f618b43d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91b881c0ae99b2b00f633256f618b43d">&#9670;&#160;</a></span>getIndexOfRefraction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Material::getIndexOfRefraction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the index of refraction of this material. </p>
+<dl class="section return"><dt>Returns</dt><dd>The index of refraction. </dd></dl>
 
 </div>
 </div>
@@ -418,14 +478,42 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a51024c4fe6a6596e905bd9093c779de7" name="a51024c4fe6a6596e905bd9093c779de7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51024c4fe6a6596e905bd9093c779de7">&#9670;&#160;</a></span>getMetallic()</h2>
+<a id="a1b95809f918bec4d7f1a7c99efd1d071" name="a1b95809f918bec4d7f1a7c99efd1d071"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b95809f918bec4d7f1a7c99efd1d071">&#9670;&#160;</a></span>getMetallicTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTexture.html">Texture</a> * Material::getMetallicTexture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the metallic texture of this material. </p>
+<dl class="section return"><dt>Returns</dt><dd>The pointer to the metallic texture. </dd></dl>
+
+</div>
+</div>
+<a id="aff9a0d1979abeb1bdb404d17853eefe1" name="aff9a0d1979abeb1bdb404d17853eefe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff9a0d1979abeb1bdb404d17853eefe1">&#9670;&#160;</a></span>getMetalness()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double Material::getMetallic </td>
+          <td class="memname">double Material::getMetalness </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structTextureUV.html">TextureUV</a>&#160;</td>
           <td class="paramname"><em>uv_coord</em></td><td>)</td>
@@ -436,26 +524,6 @@ Public Member Functions</h2></td></tr>
 
 <p>Gets the metallic texture of this material. </p>
 <dl class="section return"><dt>Returns</dt><dd>The metallic texture. </dd></dl>
-
-</div>
-</div>
-<a id="a1b95809f918bec4d7f1a7c99efd1d071" name="a1b95809f918bec4d7f1a7c99efd1d071"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b95809f918bec4d7f1a7c99efd1d071">&#9670;&#160;</a></span>getMetallicTexture()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classTexture.html">Texture</a> * Material::getMetallicTexture </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the metallic texture of this material. </p>
-<dl class="section return"><dt>Returns</dt><dd>The pointer to the metallic texture. </dd></dl>
 
 </div>
 </div>
@@ -485,6 +553,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classTexture.html">Texture</a> * Material::getNormalTexture </td>
@@ -493,6 +564,11 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the normal texture of this material. </p>
@@ -526,6 +602,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classTexture.html">Texture</a> * Material::getRoughnessTexture </td>
@@ -534,10 +613,64 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Gets the roughness texture of this material. </p>
 <dl class="section return"><dt>Returns</dt><dd>The pointer to the roughness texture. </dd></dl>
+
+</div>
+</div>
+<a id="ab91dd123b06f0053c59f2ce541d9785a" name="ab91dd123b06f0053c59f2ce541d9785a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab91dd123b06f0053c59f2ce541d9785a">&#9670;&#160;</a></span>getTransmission()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Material::getTransmission </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTextureUV.html">TextureUV</a>&#160;</td>
+          <td class="paramname"><em>uv_coord</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the transmission texture of this material. </p>
+<dl class="section return"><dt>Returns</dt><dd>The transmission texture. </dd></dl>
+
+</div>
+</div>
+<a id="a0676c78e423b938da2ca6884045a21b8" name="a0676c78e423b938da2ca6884045a21b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0676c78e423b938da2ca6884045a21b8">&#9670;&#160;</a></span>getTransmissionTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTexture.html">Texture</a> * Material::getTransmissionTexture </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the transmission texture of this material. </p>
+<dl class="section return"><dt>Returns</dt><dd>The pointer to the transmission texture. </dd></dl>
 
 </div>
 </div>
@@ -594,6 +727,34 @@ Public Member Functions</h2></td></tr>
 
 <p>Checks if the material is using a texture for roughness. </p>
 <dl class="section return"><dt>Returns</dt><dd>True if a texture is used for roughness, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a627ffc5066c17dd0088bf0cfb2ba2bfa" name="a627ffc5066c17dd0088bf0cfb2ba2bfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a627ffc5066c17dd0088bf0cfb2ba2bfa">&#9670;&#160;</a></span>isUsingTextureTransmission()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Material::isUsingTextureTransmission </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if the material is using a texture for transmission. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if a texture is used for transmission, false otherwise. </dd></dl>
 
 </div>
 </div>
@@ -721,6 +882,32 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">texture</td><td>The texture to set as the emissive texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae32e560c73a6a75ed92fcd050e89d280" name="ae32e560c73a6a75ed92fcd050e89d280"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae32e560c73a6a75ed92fcd050e89d280">&#9670;&#160;</a></span>setIndexOfRefraction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Material::setIndexOfRefraction </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ior</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the index of refraction for this material. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ior</td><td>The index of refraction to set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -857,6 +1044,58 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a44d49f443cadbe15da3c47f6b04bc30c" name="a44d49f443cadbe15da3c47f6b04bc30c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44d49f443cadbe15da3c47f6b04bc30c">&#9670;&#160;</a></span>setTransmissionTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Material::setTransmissionTexture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTexture.html">Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the transmission texture for this material. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texture</td><td>The texture to set as the transmission texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ada3659558839e70c732d37bde51a30bd" name="ada3659558839e70c732d37bde51a30bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada3659558839e70c732d37bde51a30bd">&#9670;&#160;</a></span>setTransmissionValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Material::setTransmissionValue </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the transmission value for this material. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The transmission value to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa48eb7fde32d2f937e52151343d5a873" name="aa48eb7fde32d2f937e52151343d5a873"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa48eb7fde32d2f937e52151343d5a873">&#9670;&#160;</a></span>setUseTextureMetallic()</h2>
 
@@ -900,6 +1139,32 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets whether to use a texture for roughness. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">use_texture</td><td>True to use a texture, false to use a value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9c47f6053f73e51ea7a56f2045cce5fc" name="a9c47f6053f73e51ea7a56f2045cce5fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c47f6053f73e51ea7a56f2045cce5fc">&#9670;&#160;</a></span>setUseTextureTransmission()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Material::setUseTextureTransmission </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_texture</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets whether to use a texture for transmission. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">use_texture</td><td>True to use a texture, false to use a value. </td></tr>

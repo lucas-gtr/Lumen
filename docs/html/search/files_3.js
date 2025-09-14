@@ -8,6 +8,7 @@ var searchData=
   ['directionalgpu_2ehpp_5',['DirectionalGPU.hpp',['../DirectionalGPU_8hpp.html',1,'']]],
   ['directionallight_2ecpp_6',['DirectionalLight.cpp',['../DirectionalLight_8cpp.html',1,'']]],
   ['directionallight_2ehpp_7',['DirectionalLight.hpp',['../DirectionalLight_8hpp.html',1,'']]],
-  ['doublesliderspinbox_2ecpp_8',['DoubleSliderSpinBox.cpp',['../DoubleSliderSpinBox_8cpp.html',1,'']]],
-  ['doublesliderspinbox_2ehpp_9',['DoubleSliderSpinBox.hpp',['../DoubleSliderSpinBox_8hpp.html',1,'']]]
+  ['directionsampler_2ehpp_8',['DirectionSampler.hpp',['../DirectionSampler_8hpp.html',1,'']]],
+  ['doublesliderspinbox_2ecpp_9',['DoubleSliderSpinBox.cpp',['../DoubleSliderSpinBox_8cpp.html',1,'']]],
+  ['doublesliderspinbox_2ehpp_10',['DoubleSliderSpinBox.hpp',['../DoubleSliderSpinBox_8hpp.html',1,'']]]
 ];

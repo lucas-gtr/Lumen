@@ -145,15 +145,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a173a7f620f711e0b103a7c5e150be4c4" id="r_a173a7f620f711e0b103a7c5e150be4c4"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classLight.html">Light</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a173a7f620f711e0b103a7c5e150be4c4">getLightList</a> () const</td></tr>
 <tr class="memdesc:a173a7f620f711e0b103a7c5e150be4c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the list of lights in the scene.  <br /></td></tr>
 <tr class="separator:a173a7f620f711e0b103a7c5e150be4c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b117d2138afdd5a01d982fb89c3aa1c" id="r_a6b117d2138afdd5a01d982fb89c3aa1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a6b117d2138afdd5a01d982fb89c3aa1c">addLightSample</a> (const <a class="el" href="classObject3D.html">Object3D</a> &amp;object, double intensity)</td></tr>
+<tr class="memdesc:a6b117d2138afdd5a01d982fb89c3aa1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a light sample from the given object to the scene's light samples.  <br /></td></tr>
+<tr class="separator:a6b117d2138afdd5a01d982fb89c3aa1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a025d8507320ccf8e0641c0f8280622b7" id="r_a025d8507320ccf8e0641c0f8280622b7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a025d8507320ccf8e0641c0f8280622b7">getLightSampleCount</a> () const</td></tr>
+<tr class="memdesc:a025d8507320ccf8e0641c0f8280622b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of light samples in the scene.  <br /></td></tr>
+<tr class="separator:a025d8507320ccf8e0641c0f8280622b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab317d4c5e9d84085337aa09b6402ebd5" id="r_ab317d4c5e9d84085337aa09b6402ebd5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structLightSample.html">LightSample</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#ab317d4c5e9d84085337aa09b6402ebd5">getLightSample</a> () const</td></tr>
+<tr class="separator:ab317d4c5e9d84085337aa09b6402ebd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6b25a8a1ca75a090607b941cf494cc3" id="r_ae6b25a8a1ca75a090607b941cf494cc3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLight.html">Light</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#ae6b25a8a1ca75a090607b941cf494cc3">getLight</a> (const std::string &amp;name) const</td></tr>
 <tr class="memdesc:ae6b25a8a1ca75a090607b941cf494cc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a light by its name.  <br /></td></tr>
 <tr class="separator:ae6b25a8a1ca75a090607b941cf494cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c5c3688bfac51727cc15eac4880f4d1" id="r_a0c5c3688bfac51727cc15eac4880f4d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCamera.html">Camera</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a0c5c3688bfac51727cc15eac4880f4d1">getCamera</a> () const</td></tr>
 <tr class="memdesc:a0c5c3688bfac51727cc15eac4880f4d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current camera of the scene.  <br /></td></tr>
 <tr class="separator:a0c5c3688bfac51727cc15eac4880f4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ee33efd10af660f6ecfac635c39402e" id="r_a2ee33efd10af660f6ecfac635c39402e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structColorRGBA.html">ColorRGBA</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a2ee33efd10af660f6ecfac635c39402e">getSkyboxColor</a> (const linalg::Vec3d &amp;direction) const</td></tr>
-<tr class="memdesc:a2ee33efd10af660f6ecfac635c39402e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the color of the skybox based on a given direction.  <br /></td></tr>
-<tr class="separator:a2ee33efd10af660f6ecfac635c39402e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a99719bc61f59816706b30456616524" id="r_a3a99719bc61f59816706b30456616524"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structColorRGB.html">ColorRGB</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a3a99719bc61f59816706b30456616524">getSkyboxColor</a> (const linalg::Vec3d &amp;direction) const</td></tr>
+<tr class="memdesc:a3a99719bc61f59816706b30456616524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the color of the skybox based on a given direction.  <br /></td></tr>
+<tr class="separator:a3a99719bc61f59816706b30456616524"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a191b431275478b56422aa412e1a2070b" id="r_a191b431275478b56422aa412e1a2070b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScene.html#a191b431275478b56422aa412e1a2070b">setSkybox</a> (<a class="el" href="classTexture.html">Texture</a> *skybox_texture)</td></tr>
 <tr class="memdesc:a191b431275478b56422aa412e1a2070b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the skybox texture for the scene.  <br /></td></tr>
 <tr class="separator:a191b431275478b56422aa412e1a2070b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -301,6 +309,43 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">name</td><td>The name of the light to be added. </td></tr>
     <tr><td class="paramname">light</td><td>A unique pointer to a <a class="el" href="classLight.html" title="A class representing a light source in a 3D scene.">Light</a> object to be added to the scene. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6b117d2138afdd5a01d982fb89c3aa1c" name="a6b117d2138afdd5a01d982fb89c3aa1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b117d2138afdd5a01d982fb89c3aa1c">&#9670;&#160;</a></span>addLightSample()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Scene::addLightSample </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classObject3D.html">Object3D</a> &amp;&#160;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>intensity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a light sample from the given object to the scene's light samples. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>The <a class="el" href="classObject3D.html" title="A class representing a 3D object with a mesh and transformation.">Object3D</a> from which to create the light sample. </td></tr>
+    <tr><td class="paramname">intensity</td><td>The intensity of the light sample. </td></tr>
   </table>
   </dd>
 </dl>
@@ -583,6 +628,43 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ab317d4c5e9d84085337aa09b6402ebd5" name="ab317d4c5e9d84085337aa09b6402ebd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab317d4c5e9d84085337aa09b6402ebd5">&#9670;&#160;</a></span>getLightSample()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structLightSample.html">LightSample</a> * Scene::getLightSample </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a025d8507320ccf8e0641c0f8280622b7" name="a025d8507320ccf8e0641c0f8280622b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a025d8507320ccf8e0641c0f8280622b7">&#9670;&#160;</a></span>getLightSampleCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Scene::getLightSampleCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the number of light samples in the scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of light samples. </dd></dl>
+
+</div>
+</div>
 <a id="a3d64d2c58011625c88e0bf994b86ac12" name="a3d64d2c58011625c88e0bf994b86ac12"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d64d2c58011625c88e0bf994b86ac12">&#9670;&#160;</a></span>getObject()</h2>
 
@@ -721,8 +803,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a2ee33efd10af660f6ecfac635c39402e" name="a2ee33efd10af660f6ecfac635c39402e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ee33efd10af660f6ecfac635c39402e">&#9670;&#160;</a></span>getSkyboxColor()</h2>
+<a id="a3a99719bc61f59816706b30456616524" name="a3a99719bc61f59816706b30456616524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a99719bc61f59816706b30456616524">&#9670;&#160;</a></span>getSkyboxColor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -731,7 +813,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structColorRGBA.html">ColorRGBA</a> Scene::getSkyboxColor </td>
+          <td class="memname"><a class="el" href="structColorRGB.html">ColorRGB</a> Scene::getSkyboxColor </td>
           <td>(</td>
           <td class="paramtype">const linalg::Vec3d &amp;&#160;</td>
           <td class="paramname"><em>direction</em></td><td>)</td>
@@ -963,7 +1045,7 @@ Public Member Functions</h2></td></tr>
 <p>Sets the skybox texture for the scene. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">skybox_texture</td><td>A shared pointer to the <a class="el" href="classTexture.html" title="Class representing a texture for 3D rendering.">Texture</a> to be used as the skybox. </td></tr>
+    <tr><td class="paramname">skybox_texture</td><td>A pointer to the <a class="el" href="classTexture.html" title="Class representing a texture for 3D rendering.">Texture</a> to be used as the skybox. </td></tr>
   </table>
   </dd>
 </dl>

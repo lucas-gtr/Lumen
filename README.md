@@ -14,7 +14,7 @@ Lumen is a modern C++20 3D rendering engine built from scratch, designed to expl
 - **Texturing:** Supports albedo and normal mapping, with configurable wrapping (`REPEAT`, `MIRROR_REPEAT`, `CLAMP_TO_EDGE`, `CLAMP_TO_BORDER`) and filtering (`BILINEAR`, `NEAREST`) modes
 - **Modular Architecture:** Clean separation of concerns across different modules
 - **Mesh Generation & Loading:** Procedural generation of cubes, spheres, and planes, along with OBJ file loading capabilities
-- **Advanced Lighting:** Implements directional, point, and spot lights with customizable parameters
+- **Advanced Lighting:** Implements directional, point, and spot lights with customizable parameters for realtime view
 - **Camera System:** Configurable camera with aperture, focus distance, field of view, and transformation controls
 - **OpenGL Rendering View:** Real-time viewport with support for lights, shadows, tone mapping, gamma correction, textured materials, and skybox rendering  
 - **Qt User Interface**: Developed a full-featured user interface using Qt and Qt Designer (`.ui` files), allowing dynamic control and inspection of all scene elements  
@@ -22,6 +22,7 @@ Lumen is a modern C++20 3D rendering engine built from scratch, designed to expl
 - **Image Exporting:** Renders can be exported as PNG, JPEG, BMP, TGA and HDR images with tone mapping and exposure adjustments
 - **Tone Mapping**: Multiple tone mapping operators including `Exposure`, `Reinhard`, `ACES`, and `Uncharted2`
 - **Physically-Based CPU Renderer**: Custom path tracer implemented on CPU, supporting both single-threaded and multi-threaded modes. Features GGX microfacet distribution, Multiple Importance Sampling (MIS), Russian Roulette termination and Next Event Estimation 
+- **Configurable Materials:** Fully parameterized materials with controllable **albedo**, **roughness**, **metalness**, **transmission**, and **index of refraction (IOR)** for physically-based rendering  
 - **Ray Acceleration:** Ray traversal acceleration with a *Bounding Volume Hierarchy* (BVH)
 - **Comprehensive CI:** Automated formatting, linting and testing via GitHub Actions
 
@@ -55,7 +56,7 @@ It includes detailed class references and module overviews.
 - **Configurable Sampling**: The number of samples per pixel is fully configurable, allowing a balance between image quality and rendering time
 - **Light Transport**: Supports direct and indirect lighting via global illumination. Paths are traced recursively with Russian Roulette termination to optimize performance without bias
 - **Next Event Estimation**: Explicitly samples direct illumination by connecting visible light sources from each bounce, significantly improving convergence in scenes with complex lighting
-- **BRDF Sampling**: Uses importance sampling of the GGX microfacet distribution, combined with Multiple Importance Sampling (MIS) for efficient and realistic light integration
+- **BSDF Sampling**: Unified treatment of reflection (BRDF) and transmission (BTDF), using importance sampling of GGX microfacets combined with Multiple Importance Sampling (MIS) for efficient and physically accurate light integration
 - **Color Accuracy & Tone Mapping**: All shading is performed in linear space. Final output undergoes gamma correction and tone mapping using operators such as `Exposure`, `Reinhard`, `ACES`, and `Uncharted2`
 
 ## 🛠️ Build & Run Instructions
@@ -150,7 +151,6 @@ These are the available Make targets:
 
 Planned enhancements for future development:
 
-- **Next Event Estimation (NEE)**: Improve light transport efficiency by explicitly sampling direct illumination from light sources at each bounce.
 - **Real-Time Viewport Enhancements**: Add support for post-processing effects such as Bloom, Fog, and Screen Space Ambient Occlusion (SSAO) to enhance visual realism.
 - **Deferred Shading Pipeline**: Introduce a deferred renderer to decouple geometry pass from lighting calculations, allowing efficient rendering of complex scenes with many lights.
 - **glTF Support**: Implement a glTF 2.0 parser for loading entire scenes.

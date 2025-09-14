@@ -93,38 +93,35 @@ $(function() {
 <div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
-<code>#include &quot;<a class="el" href="ColorUtils_8hpp_source.html">Core/ColorUtils.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Color_8hpp_source.html">Core/Color.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ToneMapping.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ToneMapping_8hpp__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2PostProcessing_2ToneMapping_2ToneMapping_8hpp" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2include_2PostProcessing_2ToneMapping_2ToneMapping_8hpp" id="a_2home_2lucasgtr_2lumen_2include_2PostProcessing_2ToneMapping_2ToneMapping_8hpp">
-<area shape="rect" title="Header file for the ToneMappingStrategy class." alt="" coords="49,5,279,60"/>
-<area shape="rect" title=" " alt="" coords="5,255,72,280"/>
-<area shape="poly" title=" " alt="" coords="87,62,56,82,33,109,21,143,20,178,25,213,32,241,27,243,19,214,14,179,16,141,28,107,53,78,84,58"/>
-<area shape="rect" title=" " alt="" coords="43,108,167,133"/>
-<area shape="poly" title=" " alt="" coords="148,62,123,98,119,95,144,59"/>
-<area shape="rect" title=" " alt="" coords="191,108,254,133"/>
-<area shape="poly" title=" " alt="" coords="184,59,209,95,205,98,180,62"/>
-<area shape="rect" href="ColorUtils_8hpp.html" title="Header file for color utility functions." alt="" coords="278,108,426,133"/>
-<area shape="poly" title=" " alt="" coords="223,58,316,100,313,105,220,62"/>
-<area shape="rect" title=" " alt="" coords="175,181,238,207"/>
-<area shape="poly" title=" " alt="" coords="330,136,244,178,241,173,327,131"/>
-<area shape="rect" href="CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="262,181,442,207"/>
-<area shape="poly" title=" " alt="" coords="355,134,355,168,349,168,349,134"/>
-<area shape="poly" title=" " alt="" coords="302,209,86,258,85,253,301,204"/>
-<area shape="rect" title=" " alt="" coords="161,255,247,280"/>
-<area shape="poly" title=" " alt="" coords="329,209,242,251,239,246,327,204"/>
-<area shape="rect" title=" " alt="" coords="271,255,369,280"/>
-<area shape="poly" title=" " alt="" coords="349,208,333,243,328,241,344,206"/>
-<area shape="rect" title=" " alt="" coords="393,255,473,280"/>
-<area shape="poly" title=" " alt="" coords="367,205,412,244,408,248,363,209"/>
-<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="497,255,623,280"/>
-<area shape="poly" title=" " alt="" coords="386,204,514,248,512,253,385,209"/>
-<area shape="rect" title=" " alt="" coords="470,328,541,353"/>
-<area shape="poly" title=" " alt="" coords="553,282,525,319,520,316,549,279"/>
-<area shape="rect" title=" " alt="" coords="565,328,662,353"/>
-<area shape="poly" title=" " alt="" coords="571,279,599,316,594,319,567,282"/>
+<area shape="rect" title="Header file for the ToneMappingStrategy class." alt="" coords="102,5,333,60"/>
+<area shape="rect" title=" " alt="" coords="5,108,72,133"/>
+<area shape="poly" title=" " alt="" coords="164,62,76,104,74,100,162,58"/>
+<area shape="rect" title=" " alt="" coords="97,108,221,133"/>
+<area shape="poly" title=" " alt="" coords="202,62,176,98,172,95,197,59"/>
+<area shape="rect" title=" " alt="" coords="245,108,307,133"/>
+<area shape="poly" title=" " alt="" coords="237,59,263,95,258,98,233,62"/>
+<area shape="rect" href="Color_8hpp.html" title="Header file for color utility." alt="" coords="332,108,449,133"/>
+<area shape="poly" title=" " alt="" coords="271,58,356,99,354,104,269,62"/>
+<area shape="rect" title=" " alt="" coords="144,181,229,207"/>
+<area shape="poly" title=" " alt="" coords="359,136,233,179,232,174,357,131"/>
+<area shape="rect" title=" " alt="" coords="254,181,317,207"/>
+<area shape="poly" title=" " alt="" coords="375,136,315,176,312,171,372,131"/>
+<area shape="rect" title=" " alt="" coords="341,181,440,207"/>
+<area shape="poly" title=" " alt="" coords="393,134,393,168,388,168,388,134"/>
+<area shape="rect" title=" " alt="" coords="464,181,544,207"/>
+<area shape="poly" title=" " alt="" coords="410,131,476,172,473,176,407,136"/>
+<area shape="rect" href="Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="568,181,693,207"/>
+<area shape="poly" title=" " alt="" coords="430,131,579,175,578,180,428,136"/>
+<area shape="rect" title=" " alt="" coords="541,255,611,280"/>
+<area shape="poly" title=" " alt="" coords="624,209,595,245,591,242,620,205"/>
+<area shape="rect" title=" " alt="" coords="635,255,733,280"/>
+<area shape="poly" title=" " alt="" coords="642,205,669,242,665,245,637,209"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -132,30 +129,32 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ToneMapping_8hpp__dep__incl.png" border="0" usemap="#a_2home_2lucasgtr_2lumen_2include_2PostProcessing_2ToneMapping_2ToneMapping_8hppdep" alt=""/></div>
 <map name="a_2home_2lucasgtr_2lumen_2include_2PostProcessing_2ToneMapping_2ToneMapping_8hppdep" id="a_2home_2lucasgtr_2lumen_2include_2PostProcessing_2ToneMapping_2ToneMapping_8hppdep">
-<area shape="rect" title="Header file for the ToneMappingStrategy class." alt="" coords="1099,5,1329,60"/>
+<area shape="rect" title="Header file for the ToneMappingStrategy class." alt="" coords="1131,5,1361,60"/>
 <area shape="rect" href="RenderExporter_8hpp.html" title="Header file for the RenderExporter class." alt="" coords="182,115,433,155"/>
-<area shape="poly" title=" " alt="" coords="1085,45,791,70,618,89,445,111,400,118,399,113,444,105,617,83,791,65,1084,40"/>
-<area shape="rect" href="RenderExporter_8cpp.html" title=" " alt="" coords="1016,218,1239,258"/>
-<area shape="poly" title=" " alt="" coords="1213,74,1205,118,1190,164,1171,194,1149,219,1145,216,1166,191,1185,162,1200,117,1208,73"/>
+<area shape="poly" title=" " alt="" coords="1117,45,810,69,627,88,445,111,400,118,399,113,444,105,627,83,809,64,1116,39"/>
+<area shape="rect" href="RenderExporter_8cpp.html" title=" " alt="" coords="964,218,1187,258"/>
+<area shape="poly" title=" " alt="" coords="1118,55,1074,77,1055,91,1039,109,1033,122,1030,136,1035,165,1047,193,1062,216,1058,219,1043,195,1030,166,1025,136,1027,121,1034,107,1051,88,1071,72,1116,50"/>
 <area shape="rect" href="ExportWidget_8cpp.html" title=" " alt="" coords="5,218,284,258"/>
-<area shape="poly" title=" " alt="" coords="1085,37,840,41,554,53,420,62,305,74,218,90,190,100,172,110,154,134,146,163,144,193,145,218,139,218,138,193,141,162,150,132,168,106,187,95,217,85,304,69,419,57,554,47,840,36,1085,32"/>
+<area shape="poly" title=" " alt="" coords="1117,37,865,41,568,51,429,61,310,73,220,90,190,100,172,110,154,134,146,163,143,193,145,218,139,218,138,193,141,162,150,132,168,106,188,95,219,85,309,68,429,55,568,46,865,35,1117,32"/>
 <area shape="rect" href="EngineGL_8hpp.html" title="Header file for the EngineGL class, which implements the OpenGL rendering engine." alt="" coords="2031,115,2285,155"/>
-<area shape="poly" title=" " alt="" coords="1343,40,1649,65,1831,83,2013,105,2060,113,2060,118,2012,111,1831,89,1649,70,1343,45"/>
+<area shape="poly" title=" " alt="" coords="1376,41,1668,66,2013,105,2060,113,2059,118,2012,111,1667,71,1375,46"/>
 <area shape="rect" href="EngineGL_8cpp.html" title=" " alt="" coords="1882,218,2106,258"/>
-<area shape="poly" title=" " alt="" coords="1343,36,1520,44,1715,58,1880,78,1937,91,1969,106,1988,132,1997,162,2000,192,1999,218,1994,218,1994,192,1992,163,1983,134,1966,110,1935,96,1879,84,1714,64,1520,50,1343,41"/>
-<area shape="rect" href="ACES_8hpp.html" title="Header file for the AcesToneMapping class." alt="" coords="1251,108,1430,163"/>
-<area shape="poly" title=" " alt="" coords="1260,67,1309,106,1306,110,1257,71"/>
-<area shape="rect" href="Exposure_8hpp.html" title="Header file for the ExposureToneMapping class." alt="" coords="1455,108,1659,163"/>
-<area shape="poly" title=" " alt="" coords="1317,61,1468,105,1467,111,1316,66"/>
-<area shape="rect" href="LuminanceReinhard_8hpp.html" title="Header file for the LuminanceReinhardToneMapping class." alt="" coords="1683,108,1956,163"/>
-<area shape="poly" title=" " alt="" coords="1343,52,1670,105,1683,108,1682,113,1670,111,1343,57"/>
-<area shape="rect" href="None_8hpp.html" title="Header file for the NoToneMapping class." alt="" coords="457,108,635,163"/>
-<area shape="poly" title=" " alt="" coords="1085,49,879,74,648,111,636,113,635,108,647,105,878,68,1085,44"/>
-<area shape="rect" href="Uncharted2_8hpp.html" title="Header file for the Uncharted2ToneMapping class." alt="" coords="659,108,878,163"/>
-<area shape="poly" title=" " alt="" coords="1085,66,879,112,878,107,1084,60"/>
-<area shape="rect" href="WhitePointReinhard_8hpp.html" title="Header file for the WhitePointReinhardToneMapping class." alt="" coords="903,108,1176,163"/>
-<area shape="poly" title=" " alt="" coords="1158,69,1086,110,1084,105,1155,64"/>
-<area shape="poly" title=" " alt="" coords="414,155,445,160,755,199,1016,225,1016,230,754,204,444,165,413,160"/>
+<area shape="poly" title=" " alt="" coords="1375,36,1545,45,1730,59,1886,79,1940,92,1970,106,1989,132,1998,162,2000,192,1999,218,1994,218,1995,192,1992,163,1984,134,1967,110,1938,97,1885,85,1729,65,1545,51,1375,42"/>
+<area shape="rect" href="ACES_8hpp.html" title="Header file for the AcesToneMapping class." alt="" coords="1049,108,1227,163"/>
+<area shape="poly" title=" " alt="" coords="1209,72,1168,110,1164,106,1206,68"/>
+<area shape="rect" href="Exposure_8hpp.html" title="Header file for the ExposureToneMapping class." alt="" coords="1252,108,1456,163"/>
+<area shape="poly" title=" " alt="" coords="1286,68,1328,106,1324,110,1283,72"/>
+<area shape="rect" href="LuminanceReinhard_8hpp.html" title="Header file for the LuminanceReinhardToneMapping class." alt="" coords="1480,108,1753,163"/>
+<area shape="poly" title=" " alt="" coords="1356,61,1521,105,1519,111,1355,66"/>
+<area shape="rect" href="None_8hpp.html" title="Header file for the NoToneMapping class." alt="" coords="1778,108,1957,163"/>
+<area shape="poly" title=" " alt="" coords="1375,46,1560,71,1765,105,1778,108,1777,113,1764,111,1559,76,1374,51"/>
+<area shape="rect" href="Uncharted2_8hpp.html" title="Header file for the Uncharted2ToneMapping class." alt="" coords="457,108,675,163"/>
+<area shape="poly" title=" " alt="" coords="1117,51,915,76,688,111,676,113,675,107,687,105,914,71,1117,45"/>
+<area shape="rect" href="WhitePointReinhard_8hpp.html" title="Header file for the WhitePointReinhardToneMapping class." alt="" coords="700,108,973,163"/>
+<area shape="poly" title=" " alt="" coords="1127,66,944,111,943,105,1126,61"/>
+<area shape="rect" href="ToneMapping_8cpp.html" title=" " alt="" coords="2309,115,2573,155"/>
+<area shape="poly" title=" " alt="" coords="1375,36,1786,58,2041,78,2297,105,2346,113,2345,118,2296,111,2041,83,1786,63,1375,41"/>
+<area shape="poly" title=" " alt="" coords="415,155,445,160,725,197,964,223,964,229,725,203,444,165,414,160"/>
 <area shape="poly" title=" " alt="" coords="267,165,177,220,174,216,264,160"/>
 <area shape="rect" href="RenderWindow_8hpp.html" title="Header file for the RenderWindow class, which provides a user interface for rendering and exporting i..." alt="" coords="309,218,597,258"/>
 <area shape="poly" title=" " alt="" coords="347,161,427,216,424,220,344,165"/>
@@ -171,12 +170,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" href="OpenGLWidget_8cpp.html" title=" " alt="" coords="2181,218,2439,258"/>
 <area shape="poly" title=" " alt="" coords="2200,161,2283,216,2280,220,2197,165"/>
 <area shape="poly" title=" " alt="" coords="2507,273,2415,316,2413,311,2504,269"/>
-<area shape="poly" title=" " alt="" coords="1274,171,1169,220,1166,215,1272,166"/>
-<area shape="poly" title=" " alt="" coords="1442,166,1208,221,1207,215,1441,161"/>
-<area shape="poly" title=" " alt="" coords="1670,165,1239,225,1238,220,1669,160"/>
-<area shape="poly" title=" " alt="" coords="649,160,847,195,1016,220,1015,225,846,201,648,165"/>
-<area shape="poly" title=" " alt="" coords="876,164,1061,215,1059,220,874,169"/>
-<area shape="poly" title=" " alt="" coords="1073,171,1112,216,1108,219,1069,175"/>
+<area shape="poly" title=" " alt="" coords="1117,176,1090,219,1085,216,1112,173"/>
+<area shape="poly" title=" " alt="" coords="1270,170,1129,220,1127,215,1268,165"/>
+<area shape="poly" title=" " alt="" coords="1467,167,1177,221,1176,215,1466,162"/>
+<area shape="poly" title=" " alt="" coords="1766,165,1765,165,1609,190,1452,209,1187,232,1187,227,1451,203,1608,184,1764,160,1765,160"/>
+<area shape="poly" title=" " alt="" coords="690,160,974,215,973,221,689,166"/>
+<area shape="poly" title=" " alt="" coords="912,165,1032,215,1029,220,910,170"/>
 </map>
 </div>
 </div>

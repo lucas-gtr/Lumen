@@ -143,21 +143,20 @@ public:
 
   /**
    * @brief Gets the list of objects in the scene.
-   *
    * @return A constant reference to the list of Object3D pointers in the scene.
    */
   const std::vector<Object3D*>& getObjectList() const { return m_object_index; }
 
   /**
    * @brief Gets the list of lights in the scene.
-   *
    * @return A constant reference to the list of Light pointers in the scene.
    */
   const std::vector<Light*>& getLightList() const { return m_light_index; }
 
   /**
-   * @brief Gets a random light sample from the scene.
-   * @return A pointer to a LightSample object representing the light sample.
+   * @brief Adds a light sample from the given object to the scene's light samples.
+   * @param object The Object3D from which to create the light sample.
+   * @param intensity The intensity of the light sample.
    */
   void addLightSample(const Object3D& object, double intensity);
 

@@ -88,7 +88,7 @@ $(function() {
 <p>Structure to hold RGBA color values.  
  <a href="structColorRGBA.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="CommonTypes_8hpp_source.html">CommonTypes.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Color_8hpp_source.html">Color.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -96,9 +96,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3c7044a18d3521e03a334d28de0a6f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc0e0d2b8b3435059b53805f2c8f2f84" id="r_adc0e0d2b8b3435059b53805f2c8f2f84"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structColorRGBA.html#adc0e0d2b8b3435059b53805f2c8f2f84">ColorRGBA</a> (double red, double green, double blue, double alpha)</td></tr>
 <tr class="separator:adc0e0d2b8b3435059b53805f2c8f2f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35ed019c7541cba52c0eb67b16b5e85f" id="r_a35ed019c7541cba52c0eb67b16b5e85f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structColorRGBA.html#a35ed019c7541cba52c0eb67b16b5e85f">ColorRGBA</a> (double grayscale)</td></tr>
+<tr class="memitem:a35ed019c7541cba52c0eb67b16b5e85f" id="r_a35ed019c7541cba52c0eb67b16b5e85f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structColorRGBA.html#a35ed019c7541cba52c0eb67b16b5e85f">ColorRGBA</a> (double <a class="el" href="structColorRGBA.html#a5d0ce19180f566afa1ff6c683c760f71">grayscale</a>)</td></tr>
 <tr class="separator:a35ed019c7541cba52c0eb67b16b5e85f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a531028b718741a6583e9ee0159b44322" id="r_a531028b718741a6583e9ee0159b44322"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structColorRGBA.html#a531028b718741a6583e9ee0159b44322">ColorRGBA</a> (double grayscale, double alpha)</td></tr>
+<tr class="memitem:a531028b718741a6583e9ee0159b44322" id="r_a531028b718741a6583e9ee0159b44322"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structColorRGBA.html#a531028b718741a6583e9ee0159b44322">ColorRGBA</a> (double <a class="el" href="structColorRGBA.html#a5d0ce19180f566afa1ff6c683c760f71">grayscale</a>, double alpha)</td></tr>
 <tr class="separator:a531028b718741a6583e9ee0159b44322"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12337688bc22f25528bbad848a71320b" id="r_a12337688bc22f25528bbad848a71320b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structColorRGBA.html#a12337688bc22f25528bbad848a71320b">ColorRGBA</a> (const <a class="el" href="structColorRGB.html">ColorRGB</a> &amp;color)</td></tr>
 <tr class="separator:a12337688bc22f25528bbad848a71320b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,6 +142,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa911429a452d806093e7d7dbfede34f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8cefc206441bc2cc3eb5fbc09d214bb" id="r_ad8cefc206441bc2cc3eb5fbc09d214bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structColorRGBA.html#ad8cefc206441bc2cc3eb5fbc09d214bb">clamp</a> (double min, double max)</td></tr>
 <tr class="separator:ad8cefc206441bc2cc3eb5fbc09d214bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d0ce19180f566afa1ff6c683c760f71" id="r_a5d0ce19180f566afa1ff6c683c760f71"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structColorRGBA.html#a5d0ce19180f566afa1ff6c683c760f71">grayscale</a> () const</td></tr>
+<tr class="separator:a5d0ce19180f566afa1ff6c683c760f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af031343cb18344969f8f149dbc33bffe" id="r_af031343cb18344969f8f149dbc33bffe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structColorRGB.html">ColorRGB</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structColorRGBA.html#af031343cb18344969f8f149dbc33bffe">toRGB</a> () const</td></tr>
+<tr class="separator:af031343cb18344969f8f149dbc33bffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d03facff07eb93216c21d0e772b1a73" id="r_a0d03facff07eb93216c21d0e772b1a73"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structColorRGBA.html#a0d03facff07eb93216c21d0e772b1a73">luminance</a> () const</td></tr>
+<tr class="separator:a0d03facff07eb93216c21d0e772b1a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01c5dbe3e10405815cc8cba7ad8335d3" id="r_a01c5dbe3e10405815cc8cba7ad8335d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structColorRGBA.html">ColorRGBA</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structColorRGBA.html#a01c5dbe3e10405815cc8cba7ad8335d3">toLinearSpace</a> () const</td></tr>
+<tr class="separator:a01c5dbe3e10405815cc8cba7ad8335d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69d16243f4949cecfbd6bc54990c198b" id="r_a69d16243f4949cecfbd6bc54990c198b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structColorRGBA.html">ColorRGBA</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structColorRGBA.html#a69d16243f4949cecfbd6bc54990c198b">toSRGBSpace</a> () const</td></tr>
+<tr class="separator:a69d16243f4949cecfbd6bc54990c198b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -391,6 +401,56 @@ Friends</h2></td></tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5d0ce19180f566afa1ff6c683c760f71" name="a5d0ce19180f566afa1ff6c683c760f71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d0ce19180f566afa1ff6c683c760f71">&#9670;&#160;</a></span>grayscale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ColorRGBA::grayscale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d03facff07eb93216c21d0e772b1a73" name="a0d03facff07eb93216c21d0e772b1a73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d03facff07eb93216c21d0e772b1a73">&#9670;&#160;</a></span>luminance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ColorRGBA::luminance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -868,6 +928,81 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a01c5dbe3e10405815cc8cba7ad8335d3" name="a01c5dbe3e10405815cc8cba7ad8335d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01c5dbe3e10405815cc8cba7ad8335d3">&#9670;&#160;</a></span>toLinearSpace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structColorRGBA.html">ColorRGBA</a> ColorRGBA::toLinearSpace </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af031343cb18344969f8f149dbc33bffe" name="af031343cb18344969f8f149dbc33bffe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af031343cb18344969f8f149dbc33bffe">&#9670;&#160;</a></span>toRGB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structColorRGB.html">ColorRGB</a> ColorRGBA::toRGB </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69d16243f4949cecfbd6bc54990c198b" name="a69d16243f4949cecfbd6bc54990c198b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69d16243f4949cecfbd6bc54990c198b">&#9670;&#160;</a></span>toSRGBSpace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structColorRGBA.html">ColorRGBA</a> ColorRGBA::toSRGBSpace </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Friends And Related Symbol Documentation</h2>
 <a id="a41ec2f2866b1bfec96ab24a96f3dbee1" name="a41ec2f2866b1bfec96ab24a96f3dbee1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41ec2f2866b1bfec96ab24a96f3dbee1">&#9670;&#160;</a></span>lerp <span class="overload">[1/2]</span></h2>
@@ -1083,7 +1218,7 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/lucasgtr/lumen/include/Core/<a class="el" href="CommonTypes_8hpp_source.html">CommonTypes.hpp</a></li>
+<li>/home/lucasgtr/lumen/include/Core/<a class="el" href="Color_8hpp_source.html">Color.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

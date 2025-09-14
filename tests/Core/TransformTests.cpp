@@ -197,16 +197,18 @@ TEST(TransformTest, CombinedTransformationMatrixTest) {
     expectedTransformationMatrix.m[1][3] = position.y;
     expectedTransformationMatrix.m[2][3] = position.z;
 
-
     expectedTransformationMatrix(0, 0) *= scale.x;
-    expectedTransformationMatrix(0, 1) *= scale.x;
-    expectedTransformationMatrix(0, 2) *= scale.x;
-    expectedTransformationMatrix(1, 0) *= scale.y;
+    expectedTransformationMatrix(1, 0) *= scale.x;
+    expectedTransformationMatrix(2, 0) *= scale.x;
+    expectedTransformationMatrix(0, 1) *= scale.y;
     expectedTransformationMatrix(1, 1) *= scale.y;
-    expectedTransformationMatrix(1, 2) *= scale.y;
-    expectedTransformationMatrix(2, 0) *= scale.z;
-    expectedTransformationMatrix(2, 1) *= scale.z;
+    expectedTransformationMatrix(2, 1) *= scale.y;
+    expectedTransformationMatrix(0, 2) *= scale.z;
+    expectedTransformationMatrix(1, 2) *= scale.z;
     expectedTransformationMatrix(2, 2) *= scale.z;
+
+    std::cout << "Expected Transformation Matrix:\n" << expectedTransformationMatrix << std::endl;
+    std::cout << "Actual Transformation Matrix:\n" << t.getTransformationMatrix() << std::endl;
 
     EXPECT_TRUE(t.getTransformationMatrix().isApprox(expectedTransformationMatrix, 1e-9));
     EXPECT_TRUE(t.getInverseMatrix().isApprox(expectedTransformationMatrix.inverse(), 1e-9));

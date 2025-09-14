@@ -14,16 +14,16 @@ private:
 
   bool isValidHit(double distance) const;
 
-  static PBR::BRDFInput CreateBrdfInput(const RayHitInfo& hit_info, const linalg::Vec3d& incoming_dir);
+  static PBR::BSDFInput CreateBsdfInput(const RayHitInfo& hit_info, const linalg::Vec3d& incoming_dir);
 
-  static linalg::Vec3d Reflect(const linalg::Vec3d& incident, const linalg::Vec3d& normal) {
-    return incident - 2 * linalg::dot(incident, normal) * normal;
-  }
+  static linalg::Vec3d SampleOutgoingDirection(const PBR::BSDFInput& input, const PBR::LobeProbabilities& lobe_probs,
+                                               const linalg::Mat3d& tbn, const linalg::Vec3d& micro_normal,
+                                               double& pdf);
 
-  static linalg::Vec3d SampleOutgoingDirection(const PBR::BRDFInput& input, const linalg::Mat3d& tbn, double& pdf);
+  static ColorRGB ComputeBsdfContribution(const PBR::BSDFInput& input, const linalg::Vec3d& outgoing_dir, double pdf);
 
-  ColorRGB        computeDirectLighting(const PBR::BRDFInput& input, const linalg::Vec3d& hit_position) const;
-  static ColorRGB ComputeBrdfContribution(const PBR::BRDFInput& input, const linalg::Vec3d& outgoing_dir, double pdf);
+  ColorRGB computeDirectLighting(const PBR::BSDFInput& input, const PBR::LobeProbabilities& lobe_probs,
+                                 const linalg::Vec3d& hit_position) const;
 
 public:
   PathTracer() = default;
@@ -37,7 +37,7 @@ public:
 
   ColorRGB traceRay(const Ray& ray_in) const;
   ColorRGB traceRayRecursion(const Ray& ray, const ColorRGB& throughput = ColorRGB(1.0), int depth = 0,
-                             double prev_brdf_pdf = 1.0, std::vector<double> prev_brdf_pdf_list = {1.0}) const;
+                             double prev_bsdf_pdf = 1.0, std::vector<double> prev_bsdf_pdf_list = {1.0}) const;
 
   ~PathTracer() = default;
 };

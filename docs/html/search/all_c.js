@@ -29,7 +29,7 @@ var searchData=
   ['mesh_2ehpp_26',['Mesh.hpp',['../Mesh_8hpp.html',1,'']]],
   ['meshbuilder_27',['meshbuilder',['../classMeshBuilder.html#a475f13b40eea88ea35b5346c85c1488f',1,'MeshBuilder::MeshBuilder(MeshBuilder &amp;&amp;)=delete'],['../classMeshBuilder.html#ae45f093db313f5052d78db1c73e92ae6',1,'MeshBuilder::MeshBuilder(const MeshBuilder &amp;)=delete'],['../classMeshBuilder.html#a223a1ebfe32c13f2f59f8f004dd52d61',1,'MeshBuilder::MeshBuilder()=default'],['../classMeshBuilder.html',1,'MeshBuilder']]],
   ['meshbuilder_2ehpp_28',['MeshBuilder.hpp',['../MeshBuilder_8hpp.html',1,'']]],
-  ['metalness_29',['metalness',['../structPBR_1_1SurfaceInteraction.html#a14a9ea4ced3f2d6f653ac570ca2b44ac',1,'PBR::SurfaceInteraction']]],
+  ['metalness_29',['metalness',['../structPBR_1_1BSDFInput.html#a82c17ae343e64832cad2fc923e01581c',1,'PBR::BSDFInput']]],
   ['metaltexturecreated_30',['metalTextureCreated',['../classMaterialsWidget.html#a3093cb29696779b73e836bca0d9f4efe',1,'MaterialsWidget']]],
   ['mincomponent_31',['mincomponent',['../structColorRGB.html#a45b8ffd8a25b0e0f436d43ae24f6d6d4',1,'ColorRGB::minComponent()'],['../structColorRGBA.html#aa911429a452d806093e7d7dbfede34f4',1,'ColorRGBA::minComponent()']]],
   ['mirror_32',['mirror',['../namespaceTextureSampling.html#a960724f4037c851362c5fb0e436312ce',1,'TextureSampling']]],

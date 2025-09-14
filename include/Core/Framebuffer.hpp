@@ -66,9 +66,8 @@ public:
   size_t getSize() const { return m_buffer_size; }
 
   /**
-   * @brief Sets the properties of the framebuffer (width, height, and channel count).
-   * @param framebuffer_properties The properties of the image to be set.
-   * @note This method will clear the framebuffer and reallocate memory if the properties change.
+   * @brief Sets the resolution of the framebuffer.
+   * @param resolution The new resolution to set.
    */
   void setResolution(Resolution resolution);
 

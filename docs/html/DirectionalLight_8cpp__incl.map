@@ -1,54 +1,62 @@
 <map id="/home/lucasgtr/lumen/src/Lighting/DirectionalLight.cpp" name="/home/lucasgtr/lumen/src/Lighting/DirectionalLight.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="536,5,771,45"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="496,5,731,45"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,313,91,339"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="612,48,508,96,264,217,83,309,81,305,261,212,506,91,610,43"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="1250,313,1371,339"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="696,43,1274,305,1272,310,694,48"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="1062,93,1189,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="767,43,1049,89,1048,95,766,48"/>
-<area shape="rect" id="Node000005" href="$CommonTypes_8hpp.html" title="Header file for common types used in the project." alt="" coords="326,240,506,265"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="613,48,575,69,539,95,506,129,476,165,432,230,427,227,471,162,502,125,536,91,573,64,610,43"/>
-<area shape="rect" id="Node000012" href="$DirectionalLight_8hpp.html" title="Header file for the DirectionalLight class." alt="" coords="549,93,758,119"/>
-<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="656,46,656,79,651,79,651,46"/>
-<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="355,268,105,316,104,310,354,263"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="491,313,557,339"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="435,263,496,303,493,308,432,268"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="115,313,213,339"/>
-<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="376,268,219,312,217,307,375,263"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="237,313,317,339"/>
-<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="395,268,313,309,311,305,393,263"/>
-<area shape="rect" id="Node000009" href="$Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="341,313,467,339"/>
-<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="417,266,411,300,406,299,411,265"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="450,387,521,412"/>
-<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="419,337,464,376,460,380,415,341"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="329,387,426,412"/>
-<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="402,340,389,375,384,373,397,338"/>
-<area shape="poly" id="edge13_Node000012_Node000003" title=" " alt="" coords="679,116,858,199,1006,263,1109,286,1237,310,1236,315,1108,292,1005,268,856,203,677,121"/>
-<area shape="poly" id="edge14_Node000012_Node000005" title=" " alt="" coords="636,121,448,235,445,230,633,117"/>
-<area shape="rect" id="Node000013" href="$Light_8hpp.html" title="Header file for the Light class." alt="" coords="584,167,723,192"/>
-<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="656,119,656,153,651,153,651,119"/>
-<area shape="poly" id="edge17_Node000013_Node000003" title=" " alt="" coords="713,189,801,209,898,237,927,251,955,263,1236,310,1236,315,954,268,925,255,896,243,800,215,712,195"/>
-<area shape="poly" id="edge18_Node000013_Node000005" title=" " alt="" coords="616,195,468,239,467,233,614,189"/>
-<area shape="poly" id="edge16_Node000013_Node000006" title=" " alt="" coords="645,194,545,305,542,301,641,191"/>
-<area shape="rect" id="Node000014" href="$Observer_8hpp.html" title="Header file for the Observer class, which implements the observer pattern." alt="" coords="582,313,725,339"/>
-<area shape="poly" id="edge19_Node000013_Node000014" title=" " alt="" coords="656,192,656,300,651,300,651,192"/>
-<area shape="rect" id="Node000018" href="$Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="736,240,885,265"/>
-<area shape="poly" id="edge24_Node000013_Node000018" title=" " alt="" coords="680,190,774,232,772,237,678,194"/>
-<area shape="poly" id="edge21_Node000014_Node000010" title=" " alt="" coords="627,341,526,384,524,379,625,336"/>
-<area shape="rect" id="Node000015" title=" " alt="" coords="545,387,612,412"/>
-<area shape="poly" id="edge20_Node000014_Node000015" title=" " alt="" coords="643,341,603,379,599,375,640,337"/>
-<area shape="rect" id="Node000016" title=" " alt="" coords="637,387,723,412"/>
-<area shape="poly" id="edge22_Node000014_Node000016" title=" " alt="" coords="660,338,673,373,668,375,655,340"/>
-<area shape="rect" id="Node000017" title=" " alt="" coords="747,387,871,412"/>
-<area shape="poly" id="edge23_Node000014_Node000017" title=" " alt="" coords="679,336,772,378,770,383,677,341"/>
-<area shape="poly" id="edge27_Node000018_Node000003" title=" " alt="" coords="886,261,1237,310,1236,316,885,267"/>
-<area shape="poly" id="edge30_Node000018_Node000014" title=" " alt="" coords="786,268,692,310,690,305,784,263"/>
-<area shape="rect" id="Node000019" title=" " alt="" coords="749,313,872,339"/>
-<area shape="poly" id="edge25_Node000018_Node000019" title=" " alt="" coords="813,266,813,300,808,300,808,266"/>
-<area shape="rect" id="Node000020" title=" " alt="" coords="896,313,1019,339"/>
-<area shape="poly" id="edge26_Node000018_Node000020" title=" " alt="" coords="835,263,922,305,920,310,833,268"/>
-<area shape="rect" id="Node000021" href="$MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="1043,313,1226,339"/>
-<area shape="poly" id="edge28_Node000018_Node000021" title=" " alt="" coords="863,263,1069,308,1068,313,862,268"/>
-<area shape="rect" id="Node000022" title=" " alt="" coords="1095,387,1174,412"/>
-<area shape="poly" id="edge29_Node000021_Node000022" title=" " alt="" coords="1137,339,1137,373,1132,373,1132,339"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="569,48,464,96,242,214,80,309,77,304,240,210,461,91,567,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="746,313,867,339"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="666,43,701,63,733,92,765,144,787,202,800,257,807,299,802,300,795,258,782,204,761,147,729,95,698,68,663,48"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="794,93,921,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="673,43,809,86,808,92,671,48"/>
+<area shape="rect" id="Node000005" href="$Color_8hpp.html" title="Header file for color utility." alt="" coords="288,240,405,265"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="576,48,538,69,499,95,459,130,422,167,366,231,362,228,418,163,456,126,496,91,535,65,573,43"/>
+<area shape="rect" id="Node000012" href="$DirectionalLight_8hpp.html" title="Header file for the DirectionalLight class." alt="" coords="509,93,718,119"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="616,46,616,79,611,79,611,46"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="299,268,105,314,104,309,298,263"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="115,313,178,339"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="315,268,192,311,190,306,314,263"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="203,313,301,339"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="333,267,280,307,277,303,330,263"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="325,313,405,339"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="352,265,361,300,356,301,347,266"/>
+<area shape="rect" id="Node000009" href="$Config_8hpp.html" title="Configuration file for the rendering engine." alt="" coords="429,313,555,339"/>
+<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="371,263,457,305,455,310,369,268"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="489,387,559,412"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="500,338,516,373,511,375,495,340"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="367,387,465,412"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="482,341,440,379,437,375,478,337"/>
+<area shape="poly" id="edge13_Node000012_Node000003" title=" " alt="" coords="651,116,693,135,733,165,758,198,778,234,803,299,798,301,774,236,754,201,729,169,690,140,649,121"/>
+<area shape="poly" id="edge14_Node000012_Node000005" title=" " alt="" coords="593,121,381,236,378,231,591,117"/>
+<area shape="rect" id="Node000013" href="$Light_8hpp.html" title="Header file for the Light class." alt="" coords="580,167,719,192"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="622,118,640,153,635,156,617,120"/>
+<area shape="poly" id="edge17_Node000013_Node000003" title=" " alt="" coords="663,190,739,263,784,302,781,306,736,267,659,194"/>
+<area shape="poly" id="edge18_Node000013_Node000005" title=" " alt="" coords="601,195,409,239,408,234,600,189"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="1393,313,1460,339"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="719,188,1023,237,1200,271,1380,310,1379,316,1199,276,1022,243,719,193"/>
+<area shape="rect" id="Node000015" href="$ImageTypes_8hpp.html" title="Header file for image types used in the project." alt="" coords="429,240,592,265"/>
+<area shape="poly" id="edge19_Node000013_Node000015" title=" " alt="" coords="628,194,547,236,544,231,626,190"/>
+<area shape="rect" id="Node000016" href="$Observer_8hpp.html" title="Header file for the Observer class, which implements the observer pattern." alt="" coords="579,313,722,339"/>
+<area shape="poly" id="edge25_Node000013_Node000016" title=" " alt="" coords="652,192,653,300,648,300,647,192"/>
+<area shape="rect" id="Node000020" href="$Transform_8hpp.html" title="Header file for the Transform class." alt="" coords="861,240,1011,265"/>
+<area shape="poly" id="edge30_Node000013_Node000020" title=" " alt="" coords="696,189,877,234,876,239,695,195"/>
+<area shape="poly" id="edge20_Node000015_Node000002" title=" " alt="" coords="430,267,282,287,105,316,104,311,282,282,429,262"/>
+<area shape="poly" id="edge22_Node000015_Node000007" title=" " alt="" coords="470,268,308,312,306,307,468,263"/>
+<area shape="poly" id="edge23_Node000015_Node000008" title=" " alt="" coords="488,268,402,310,400,305,486,263"/>
+<area shape="poly" id="edge24_Node000015_Node000009" title=" " alt="" coords="510,266,501,301,496,300,505,265"/>
+<area shape="poly" id="edge21_Node000015_Node000014" title=" " alt="" coords="592,255,989,277,1209,293,1380,311,1379,316,1209,298,989,282,592,260"/>
+<area shape="poly" id="edge27_Node000016_Node000010" title=" " alt="" coords="632,341,558,382,555,377,629,336"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="584,387,651,412"/>
+<area shape="poly" id="edge26_Node000016_Node000017" title=" " alt="" coords="648,340,631,375,626,373,643,338"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="675,387,762,412"/>
+<area shape="poly" id="edge28_Node000016_Node000018" title=" " alt="" coords="664,337,700,375,696,378,660,341"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="786,387,910,412"/>
+<area shape="poly" id="edge29_Node000016_Node000019" title=" " alt="" coords="683,336,804,379,802,384,681,341"/>
+<area shape="poly" id="edge33_Node000020_Node000003" title=" " alt="" coords="916,268,841,309,839,304,914,263"/>
+<area shape="poly" id="edge36_Node000020_Node000016" title=" " alt="" coords="891,268,711,313,709,307,890,263"/>
+<area shape="rect" id="Node000021" title=" " alt="" coords="892,313,1015,339"/>
+<area shape="poly" id="edge31_Node000020_Node000021" title=" " alt="" coords="941,265,950,300,945,301,936,266"/>
+<area shape="rect" id="Node000022" title=" " alt="" coords="1039,313,1161,339"/>
+<area shape="poly" id="edge32_Node000020_Node000022" title=" " alt="" coords="963,263,1062,305,1060,310,961,268"/>
+<area shape="rect" id="Node000023" href="$MathConstants_8hpp.html" title="Header file for mathematical constants used in the project." alt="" coords="1186,313,1369,339"/>
+<area shape="poly" id="edge34_Node000020_Node000023" title=" " alt="" coords="991,263,1209,308,1208,313,990,268"/>
+<area shape="rect" id="Node000024" title=" " alt="" coords="1238,387,1317,412"/>
+<area shape="poly" id="edge35_Node000023_Node000024" title=" " alt="" coords="1280,339,1280,373,1275,373,1275,339"/>
 </map>
